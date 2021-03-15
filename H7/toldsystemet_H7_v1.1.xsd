@@ -39,16 +39,53 @@
 				<xs:complexType>
 					<xs:sequence>
 						<xs:element name="Name" type="ds:AgentNameTextType" minOccurs="0"/>
+							<xs:annotation>
+								<xs:documentation xml:lang="EN">
+									Can be used if declarant uses a third party for importing.
+									Not mandatory.
+								</xs:documentation>
+							</xs:annotation>
 						<xs:element name="ID" type="ds:AgentIdentificationIDType" minOccurs="1"/>
+							<xs:annotation>
+								<xs:documentation xml:lang="EN">
+									EORI.
+									Mandatory. </xs:documentation>
+							</xs:annotation>
 						<xs:element name="FunctionCode" type="ds:AgentFunctionCodeType" minOccurs="1"/>
+							<xs:annotation>
+								<xs:documentation xml:lang="EN">
+									Form of representation: direct representation or indirect representation. 
+
+									- Code 2: Direct representation 
+									- Code 3: Indirect representation. In order to use code 3, the agent has to have a Danish EORI.
+									Mandatory.
+								 </xs:documentation>
+							</xs:annotation>
 						<!-- Address is removed in EUCDM 6.0 -->
 						<xs:element name="Address" minOccurs="0" maxOccurs="1">
 							<xs:complexType>
 								<xs:sequence>
 									<xs:element name="CityName" type="ds:AddressCityNameTextType" minOccurs="0"/>
+									<xs:annotation>
+										<xs:documentation xml:lang="EN">
+											Not necessary as the information will be collected from the EORI (Agent\ID).
+										</xs:documentation>
+									</xs:annotation>
 									<xs:element name="CountryCode" type="ds:AddressCountryCodeType" minOccurs="0"/>
+									<xs:annotation>
+										<xs:documentation xml:lang="EN">
+											Not necessary as the information will be collected from the EORI (Agent\ID).
+										</xs:documentation>
 									<xs:element name="Line" type="ds:AddressLineTextType" minOccurs="0"/>
+									<xs:annotation>
+										<xs:documentation xml:lang="EN">
+											Not necessary as the information will be collected from the EORI (Agent\ID).
+										</xs:documentation>
 									<xs:element name="PostcodeID" type="ds:AddressPostcodeIDType" minOccurs="0"/>
+									<xs:annotation>
+										<xs:documentation xml:lang="EN">
+											Not necessary as the information will be collected from the EORI (Agent\ID).
+										</xs:documentation>
 								</xs:sequence>
 							</xs:complexType>
 						</xs:element>
@@ -59,14 +96,49 @@
 				<xs:complexType>
 					<xs:sequence>
 						<xs:element name="Name" type="ds:DeclarantNameTextType" minOccurs="0"/>
+						<xs:annotation>
+							<documentation>
+								Name and address of the person or company importing the good(s). 
+								Importer and declarant can be the same. 
+
+								If private - DK9999 is used in C08.
+								Not mandatory.
+							</documentation>
+						</xs:annotation>
 						<xs:element name="ID" type="ds:DeclarantIdentificationIDType" minOccurs="1"/>
+						<xs:annotation>
+							<documentation>
+								EORI. 
+								Mandatory.
+							</documentation>
+						</xs:annotation>
 						<xs:element name="Address" minOccurs="0" maxOccurs="1">
 							<xs:complexType>
 								<xs:sequence>
 									<xs:element name="CityName" type="ds:AddressCityNameTextType" minOccurs="1"/>
+									<xs:annotation>
+										<documentation>
+											Only used for C08	
+										</documentation>
+									</xs:annotation>
 									<xs:element name="CountryCode" type="ds:AddressCountryCodeType" minOccurs="1"/>
+									<xs:annotation>
+										<documentation>
+											Only used for C08
+										</documentation>
+									</xs:annotation>
 									<xs:element name="Line" type="ds:AddressLineTextType" minOccurs="1"/>
+									<xs:annotation>
+										<documentation>
+											Only used for C08
+										</documentation>
+									</xs:annotation>
 									<xs:element name="PostcodeID" type="ds:AddressPostcodeIDType" minOccurs="1"/>
+									<xs:annotation>
+										<documentation>
+											Only used for C08
+										</documentation>
+									</xs:annotation>
 								</xs:sequence>
 							</xs:complexType>
 						</xs:element>
