@@ -1,2 +1,2 @@
 # dms-public
-Public redistribution of examples/code/schemas
+Branch for keeping track on XML-schemas
