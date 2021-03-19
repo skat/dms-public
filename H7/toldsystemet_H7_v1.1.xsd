@@ -6,21 +6,87 @@
 	<xs:complexType name="Declaration">
 		<xs:sequence>
 			<xs:element name="FunctionCode" type="ds:DeclarationFunctionCodeType"/>
+			<xs:annotation>
+					<xs:documentation>
+						<type>DMS specific field</type>
+						<details>
+							- "9"	For initial submission
+							- "13"	For correction
+						</details>
+					</xs:documentation>
+				</xs:annotation>
 			<xs:element name="ProcedureCategory" type="ds:DeclarationProcedureCategoryCodeType">
 			</xs:element>
 			<xs:element name="FunctionalReferenceID" type="ds:DeclarationFunctionalReferenceIDType" minOccurs="1">
 				<xs:annotation>
-					<xs:documentation xml:lang="EN">LRN</xs:documentation>
+					<xs:documentation>
+						<type>EUCDM 5.2+</type>
+						<code>2/5</code>
+						<details>
+							LRN - The local reference number (LRN) shall be used. It is nationally defined and allocated
+							by the declarant in agreement with the competent authorities to identify each single
+							declaration. Must be unique.
+						</details>
+					</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="ID" type="ds:DeclarationIdentificationIDType" minOccurs="0">
 				<xs:annotation>
-					<xs:documentation xml:lang="EN">MRN</xs:documentation>
+					<xs:documentation>
+						<type>DMS specific field</type>
+						<details>
+							MRN - used for corrections, invalidation, or amendment. Ignored on submit.
+							The MRN is automatically generated following the EUCDM legislation as a unique combination
+							of 18 characters.
+							The combination of the 18 characters is, in the time of writing, as follows:
+							1. The last two digits of the year of formal acceptance of the declaration (e.g. 20 for	
+							2020)
+								a. Consist of 2 digits
+							2. Country where the declaration/proof of the customs status of union goods/notification is	
+							lodged (e.g. DK for Denmark)
+								a. Consist of 2 letters
+							3. Unique identifier based on year and country (e.g. 49DE04K21LO1)
+								a. Consist of 12 alphanumeric characters
+							4. Procedure identifier of the declaration (e.g. R for H1, H2, H3, H4, H6, H7 or I1)
+								a. Consist of 1 alphanumeric character
+							5. Control digit (e.g. 5)
+								a. Consist of 1 alphanumeric character
+							6. Based on the ISO 6346 algorithm
+						</details>
+					</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="TypeCode" type="ds:DeclarationTypeCodeType" minOccurs="1"/>
+				<xs:annotation>
+					<xs:documentation>
+						<type>DMS specific field</type>
+						<details>
+							Follows the 1/1 from H1:
+							- "IMA" 	For a standard customs declaration (under Article 162 of the Code).
+							- "IMD" 	For lodging a standard customs declaration (such as referred to under code A) in
+							accordance with Article 171 of the Code.
+						</details>
+					</xs:documentation>
+				</xs:annotation>
 			<xs:element name="GoodsItemQuantity" type="ds:DeclarationGoodsItemQuantityType" minOccurs="1"/>
+				<xs:annotation>
+					<xs:documentation>
+						<type>DMS specific field</type>
+						<details>
+							Total number of items in the declaration.
+						</details>
+					</xs:documentation>
+				</xs:annotation>
 			<xs:element name="DeclarationOfficeID" type="ds:DeclarationDeclarationOfficeIDType" minOccurs="0"/>
+				<xs:annotation>
+					<xs:documentation>
+						<type>EUCDM 5.2+</type>
+						<code>5/23</code>
+						<details>
+							See supplied DeclarationOfficeID.xlsx for valid entries.
+						</details>
+					</xs:documentation>
+				</xs:annotation>
 			<xs:element name="TotalGrossMassMeasure" type="ds:DeclarationTotalGrossMassMeasureType" minOccurs="0"/>
 			<xs:element name="Submitter">
 				<xs:annotation>
