@@ -25,6 +25,16 @@
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
+            <xs:element name="ProcedureCategory" type="ds:DeclarationProcedureCategoryCodeType">
+                <xs:annotation>
+                    <xs:documentation>
+                        <type>DMS Specific field</type>
+                        <details>
+                            For Submit H7, always fill in "H7".
+                        </details>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
             <xs:element name="FunctionalReferenceID" type="ds:DeclarationFunctionalReferenceIDType" minOccurs="1">
                 <xs:annotation>
                     <xs:documentation>
@@ -479,6 +489,8 @@
                         <xs:element name="DomesticDutyTaxParty" minOccurs="0" maxOccurs="unbounded">
                             <xs:complexType>
                                 <xs:sequence>
+                                    <xs:element name="SequenceNumeric" type="ds:DomesticDutyTaxPartySequenceNumericType" minOccurs="1">
+                                    </xs:element>
                                     <xs:element name="ID" type="ds:DomesticDutyTaxPartyIdentificationIDType"
                                                 minOccurs="0"/>
                                     <xs:element name="RoleCode" type="ds:DomesticDutyTaxPartyRoleCodeType"
@@ -613,6 +625,9 @@
                                                 <xs:element name="Classification" minOccurs="1">
                                                     <xs:complexType>
                                                         <xs:sequence>
+                                                            <xs:element name="SequenceNumeric" type="ds:CommodityClassificationSequenceNumericType" minOccurs="1">
+
+                                                            </xs:element>
                                                             <xs:element name="ID"
                                                                         type="ds:ClassificationIdentificationIDType"
                                                                         minOccurs="1">
@@ -760,6 +775,9 @@
                                         </xs:annotation>
                                         <xs:complexType>
                                             <xs:sequence>
+                                                <xs:element name="SequenceNumeric" type="ds:DomesticDutyTaxPartySequenceNumericType" minOccurs="1">
+
+                                                </xs:element>
                                                 <xs:element name="ID" type="ds:DomesticDutyTaxPartyIdentificationIDType"
                                                             minOccurs="0">
                                                 </xs:element>
@@ -840,6 +858,8 @@
                                         </xs:annotation>
                                         <xs:complexType>
                                             <xs:sequence>
+                                                <xs:element name="SequenceNumeric" type="ds:PreviousDocumentSequenceNumericType"  minOccurs="1">
+                                                </xs:element>
                                                 <xs:element name="CategoryCode"
                                                             type="ds:PreviousDocumentCategoryCodeType" minOccurs="1">
                                                     <xs:annotation>
@@ -938,6 +958,8 @@
                             </xs:annotation>
                             <xs:complexType>
                                 <xs:sequence>
+                                    <xs:element name="SequenceNumeric" type="ds:PreviousDocumentSequenceNumericType" minOccurs="1">
+                                    </xs:element>
                                     <xs:element name="CategoryCode" type="ds:PreviousDocumentCategoryCodeType"
                                                 minOccurs="1">
                                         <xs:annotation>
