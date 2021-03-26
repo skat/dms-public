@@ -12,6 +12,8 @@
 						<details>
 							- "9"	For initial submission
 							- "13"	For correction
+
+							The value should be "9" for an I2 declaration. This will change for Ermis 4.3
 						</details>
 					</xs:documentation>
 				</xs:annotation>
@@ -45,7 +47,7 @@
 					<xs:documentation>
 						<type>DMS specific field</type>
 						<details>
-							Total number of items in the declaration.
+							Total number of items in the declaration. !!!!!!!!!!!!!!!!!!! TEST FOR THIS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 						</details>
 					</xs:documentation>
 				</xs:annotation>
@@ -130,48 +132,38 @@
 
 			<xs:element name="Agent" minOccurs="0" maxOccurs="1">
 				<annotation>
-							<documentation>
-								<type>EUDCM 5.2+</type>
-								<code>3/20</code>
-								<details>
-									A representative. 
-									Mandatory on header level.
-								</details>
-							</documentation>
-						</annotation>
+					<documentation>
+						<type>EUDCM 5.2</type>
+						<code>3/20</code>
+						<details>
+						A representative. 
+						EIDR field. 
+						</details>
+					</documentation>
+				</annotation>
 				<xs:complexType>
 					<xs:sequence>
-						<!--<xs:element name="Name" type="ds:AgentNameTextType" minOccurs="0"/>
+						<xs:element name="ID" type="ds:AgentIdentificationIDType" minOccurs="0"/>
 						<annotation>
 							<documentation>
-								<type>
-									3/19 EUCDM 5.2+	
-								</type>
-								<details>
-									Not in I2.
-									Declarant can use a third party for importing. 
-								</details>
-							</documentation>
-						</annotation> -->
-						<xs:element name="ID" type="ds:AgentIdentificationIDType" minOccurs="1"/>
-						<annotation>
-							<documentation>
-								<type>EUCDM 5.2+</type>
+								<type>EUCDM 5.2</type>
 								<code>3/20</code>
 								<details>
-									EORI
+									EORI.
+									EIDR field. 
 								</details>
 							</documentation>
 						</annotation>
-						<xs:element name="FunctionCode" type="ds:AgentFunctionCodeType" minOccurs="1"/>
+						<xs:element name="FunctionCode" type="ds:AgentFunctionCodeType" minOccurs="0"/>
 						<annotation>
 							<documentation>
-								<type>EUCDM 5.2+</type>
+								<type>EUCDM 5.2</type>
 								<code>3/21</code>
 								<details>
 									Form of representation
 										- Code 2 is direct representation. 
 										- Code 3, indirect represenation. In order to use code 3 the agent has to have a danish EORI.
+									EIDR field. 
 								</details>
 							</documentation>
 						</annotation>
@@ -179,14 +171,15 @@
 				</xs:complexType>
 			</xs:element>
 
-			<xs:element name="AuthorisationHolder" minOccurs="1" maxOccurs="unbounded">
+			<xs:element name="AuthorisationHolder" minOccurs="0" maxOccurs="unbounded">
 				<annotation>
 					<documentation>
-						<type>EUCDM 5.2+</type>
+						<type>EUCDM 5.2</type>
 						<code>3/39</code>
 						<details>
 							Holder of the authorisation.
-							This information shall not be required in case a customs declaration has been lodged prior to the presentation of the goods pursuant to Article 171 of the Code.	
+							This information shall not be required in case a customs declaration has been lodged prior to the presentation of the goods pursuant to Article 171 of the Code.
+							EIDR field. 	
 						</details>
 					</documentation>
 				</annotation>
@@ -198,24 +191,26 @@
 								ERMIS requires this field
 							</documentation>
 						</annotation>
-						<xs:element name="ID" type="ds:AuthorisationHolderIdentificationIDType" minOccurs="1">
+						<xs:element name="ID" type="ds:AuthorisationHolderIdentificationIDType" minOccurs="0">
 						</xs:element>
 						<annotation>
 							<documentation>
-								<type>EUCDM 5.2+</type>
+								<type>EUCDM 5.2</type>
 								<code>3/39</code>
 								<details>
-									EORI
+									EORI.
+									EIDR field. 
 							</documentation>
 						</annotation>
-						<xs:element name="CategoryCode" type="ds:AuthorisationHolderCategoryCodeType" minOccurs="1"> Using the relevant Union code, enter the type of the authorisation
+						<xs:element name="CategoryCode" type="ds:AuthorisationHolderCategoryCodeType" minOccurs="0"> 
 						</xs:element>
 						<annotation>
 							<documentation>
-								<type>EUCDM 5.2+</type>
+								<type>EUCDM 5.2</type>
 								<code>3/39</code>
 								<details>
-									Relevant Union code for the type of the authorisation
+									Using the relevant Union code, enter the type of the authorisation.
+									EIDR field. 
 								</details>
 							</documentation>
 						</annotation>
@@ -226,38 +221,26 @@
 			<xs:element name="Declarant">
 				<annotation>
 					<documentation>
-						<type>EUCDM 5.2+</type>
+						<type>EUCDM 5.2</type>
 						<code>3/41</code>
 						<details>
 							Person presenting the goods to customs in case of entry in the declarant's records or pre-lodged customs declaration
 						</details>
-							</documentation>
-						</annotation>
+					</documentation>
+				</annotation>
 				<xs:complexType>
 					<xs:sequence>
-						<!--<xs:element name="Name" type="ds:DeclarantNameTextType" minOccurs="0"/> -->
-						<xs:element name="ID" type="ds:DeclarantIdentificationIDType" minOccurs="1"/>
+						<xs:element name="ID" type="ds:DeclarantIdentificationIDType" minOccurs="0"/>
 						<annotation>
 							<documentation>
-								<type>EUCDM 5.2+</type>
+								<type>EUCDM 5.2</type>
 								<code>3/41</code>
 								<details>
-									EORI
+									EORI.
+									EIDR field. 
 								</details>
 							</documentation>
 						</annotation>
-						<!--	<xs:element name="Address" minOccurs="0" maxOccurs="1">
-							<xs:complexType>
-								<xs:sequence>
-									<xs:element name="CityName" type="ds:AddressCityNameTextType" minOccurs="1"/>
-									<xs:element name="CountryCode" type="ds:AddressCountryCodeType" minOccurs="1"/>
-									<xs:element name="CountrySubDivisionCode" type="ds:AddressCountrySubDivisionCodeType" minOccurs="0"/>
-									<xs:element name="CountrySubDivisionName" type="ds:AddressCountrySubDivisionNameTextType" minOccurs="0"/>
-									<xs:element name="Line" type="ds:AddressLineTextType" minOccurs="1"/>
-									<xs:element name="PostcodeID" type="ds:AddressPostcodeIDType" minOccurs="1"/>
-								</xs:sequence>
-							</xs:complexType>
-						</xs:element>-->
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
@@ -271,7 +254,7 @@
 									<xs:element name="GoodsLocation">
 										<annotation>
 											<documentation>
-												<type>EUCDM 5.2+</type>
+												<type>EUCDM 5.2</type>
 												<code>5/23</code>
 												<details>
 													The location of goods
@@ -300,22 +283,22 @@
 														<xs:documentation xml:lang="EN">Type of location</xs:documentation>
 													</xs:annotation>
 												</xs:element>
-												<xs:element name="Address">
+												<xs:element name="Address" minOccurs="0">
 													<xs:complexType>
 														<xs:sequence>
-															<xs:element name="TypeCode" type="ds:AddressTypeCodeType" minOccurs="0">
+															<xs:element name="TypeCode" type="ds:AddressTypeCodeType" minOccurs="1">
 																<xs:annotation>
 																	<xs:documentation xml:lang="EN">Qualifier of identification</xs:documentation>
 																</xs:annotation>
 															</xs:element>
-															<xs:element name="CityName" type="ds:AddressCityNameTextType" minOccurs="0"/>
+															<xs:element name="CityName" type="ds:AddressCityNameTextType" minOccurs="1"/>
 															<xs:element name="CountryCode" type="ds:AddressCountryCodeType" minOccurs="1">
 																<xs:annotation>
 																	<xs:documentation xml:lang="EN">Required field in ERMIS</xs:documentation>
 																</xs:annotation>
 															</xs:element>
-															<xs:element name="Line" type="ds:AddressLineTextType" minOccurs="0"/>
-															<xs:element name="PostcodeID" type="ds:AddressPostcodeIDType" minOccurs="0"/>
+															<xs:element name="Line" type="ds:AddressLineTextType" minOccurs="1"/>
+															<xs:element name="PostcodeID" type="ds:AddressPostcodeIDType" minOccurs="1"/>
 														</xs:sequence>
 													</xs:complexType>
 												</xs:element>
