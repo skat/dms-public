@@ -230,7 +230,8 @@
                             <xs:annotation>
                                 <xs:documentation>
                                     <details>
-                                        The ID given by the client certificate used for the submission of declarations.
+                                        Temporarily added - Use the CVR number again.
+                                        Example: 30808460
                                     </details>
                                 </xs:documentation>
                             </xs:annotation>
@@ -645,7 +646,19 @@
                                 <xs:sequence>
                                     <xs:element name="SequenceNumeric" type="ds:DomesticDutyTaxPartySequenceNumericType" minOccurs="1"/>
                                     <xs:element name="ID" type="ds:DomesticDutyTaxPartyIdentificationIDType" minOccurs="0"/>
-                                    <xs:element name="RoleCode" type="ds:DomesticDutyTaxPartyRoleCodeType" minOccurs="0"/>
+                                    <xs:element name="RoleCode" type="ds:DomesticDutyTaxPartyRoleCodeType" minOccurs="0">
+                                        <xs:annotation>
+                                            <xs:documentation>
+                                                Role Code; Party; Description
+                                                FR1; Importer; Person or persons designated or recognised as liable for the payment of value added tax by the Member State of importation in accordance with Article 201 of Directive 2006/112/EC
+                                                FR2; Customer; Person liable for the payment of Value Added Tax on the intra-Union acquisition of goods in accordance with Article 200 of Directive 2006/112/EC
+                                                FR3; Tax Representative; Tax representative liable for the payment of value added tax in the Member State of importation appointed by the importer
+                                                FR4; Holder of the deferred payment authorisation; The  taxable person or the person liable for payment or another person that has received deferment of payment in accordance with Article 211 of Directive 2006/112/EC
+                                                FR5; Vendor (IOSS); Taxable person making use of the special scheme for distance sales of goods imported from third countries and territories set out in Title XII Chapter 6 Section 4 of Directive 2006/112/EC and holder of the VAT identification number referred to in Article 369q therein.
+                                                FR7; Taxable person or of the person liable for payment of VAT; VAT identification number of the taxable person or of the person liable for payment of VAT where the payment of VAT is postponed in accordance with Article 211 second subparagraph of Directive 2006/112/EC.
+                                            </xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
                                 </xs:sequence>
                             </xs:complexType>
                         </xs:element>
@@ -1008,8 +1021,11 @@
                                             <xs:documentation>
                                                 <type>DMS specific field</type>
                                                 <details>
-                                                    - CurrentCode should always be either "40" or "C07" or "C08" or "F48" or "F49". 
-                                                      For guidance see: https://www.skat.dk/skat.aspx?oId=109754
+                                                    - CurrentCode should always be either "40" or "C07" or "C08" or "F48" or "F49".
+                                                    * F48 -  Import under the special scheme for distance sales of goods imported from third countries and territories set out in Title XII Chapter 6 Section 4 of Directive 2006/112/EC.
+                                                    * F49 -  Import under the special arrangements for declaration and payment of import VAT set out in Title XII Chapter 7 of Directive 2006/112/EC. C07 Must be present when this code is used.
+                                                    * C07 -  Consignments of negligible value.
+                                                    * C08 -  Consignments sent from one private individual to another.
                                                     - PreviousCode should always be "00".
                                                 </details>
                                                 <submission>
