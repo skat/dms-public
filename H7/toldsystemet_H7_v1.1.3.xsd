@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns="urn:wco:datamodel:WCO:DEC-DMS:2" xmlns:xs="http://www.w3.org/2001/XMLSchema"
            xmlns:ds="urn:wco:datamodel:WCO:Declaration_DS:DMS:2" targetNamespace="urn:wco:datamodel:WCO:DEC-DMS:2"
-           elementFormDefault="qualified" version="1.1.2">
+           elementFormDefault="qualified" version="1.1.3">
     <xs:import namespace="urn:wco:datamodel:WCO:Declaration_DS:DMS:2"
                schemaLocation="toldsystemet_DS/toldsystemet_DS_v1.xsd"/>
     <xs:element name="Declaration" type="Declaration"/>
@@ -1026,7 +1026,9 @@
                                                     * F49 -  Import under the special arrangements for declaration and payment of import VAT set out in Title XII Chapter 7 of Directive 2006/112/EC. C07 Must be present when this code is used.
                                                     * C07 -  Consignments of negligible value.
                                                     * C08 -  Consignments sent from one private individual to another.
-                                                    - PreviousCode should always be "00".
+                                                    For further guidance see: https://www.skat.dk/skat.aspx?oId=109754
+                                                  
+                                                    - PreviousCode should only be used when CurrentCode = "40" and then set to "00".
                                                 </details>
                                                 <submission>
                                                     See details above.
@@ -1043,7 +1045,7 @@
                                             <xs:sequence>
                                                 <xs:element name="SequenceNumeric" type="ds:GovernmentProcedureSequenceNumericType" minOccurs="1"/>
                                                 <xs:element name="CurrentCode" type="ds:GovernmentProcedureCurrentCodeType" minOccurs="1"/>
-                                                <xs:element name="PreviousCode" type="ds:GovernmentProcedurePreviousCodeType" minOccurs="1"/>
+                                                <xs:element name="PreviousCode" type="ds:GovernmentProcedurePreviousCodeType" minOccurs="0"/>
                                             </xs:sequence>
                                         </xs:complexType>
                                     </xs:element>
