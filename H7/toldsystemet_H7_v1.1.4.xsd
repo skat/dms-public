@@ -1,0 +1,1382 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="urn:wco:datamodel:WCO:DEC-DMS:2" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:ds="urn:wco:datamodel:WCO:Declaration_DS:DMS:2" targetNamespace="urn:wco:datamodel:WCO:DEC-DMS:2"
+           elementFormDefault="qualified" version="1.1.4">
+    <xs:import namespace="urn:wco:datamodel:WCO:Declaration_DS:DMS:2"
+               schemaLocation="toldsystemet_DS/toldsystemet_DS_v1.xsd"/>
+    <xs:element name="Declaration" type="Declaration"/>
+    <xs:complexType name="Declaration">
+        <xs:annotation>
+            <xs:documentation>
+                <details>
+                    H7 declaration.
+
+                    Guide for annotation:
+                    - "<submission>...</submission>": Describes relevant rules/actions for submitting a declaration.
+                    - "<amendment>...</amendment>": Describes relevant rules/actions for amendment of an already submitted declaration.
+                    - "<correction>...</correction>": Describes relevant rules/actions for correction of an already submitted declaration. 
+                </details>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="FunctionCode" type="ds:DeclarationFunctionCodeType">
+                <xs:annotation>
+                    <xs:documentation>
+                        <type>DMS specific field</type>
+                        <details>
+                            Code for type of action.
+                        </details>
+                        <submission>
+                            "9" For initial submission
+                        </submission>
+                        <amendment>
+                            "13" for amendment
+                        </amendment>
+                        <correction>
+                            "13" for correction
+                        </correction>  
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="ProcedureCategory" type="ds:DeclarationProcedureCategoryCodeType">
+                <xs:annotation>
+                    <xs:documentation>
+                        <type>DMS Specific field</type>
+                        <details>
+                            The type of declaration you want to submit.
+                        </details>
+                        <submission>
+                            For submission of an H7-declaration, fill in "H7". 
+                        </submission>
+                        <amendment>
+                            For amendment of an H7-declaration, fill in "H7".
+                        </amendment>
+                        <correction>
+                            For correction of an H7-declaration, fill in "H7".
+                        </correction> 
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="FunctionalReferenceID" type="ds:DeclarationFunctionalReferenceIDType" minOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>
+                        <type>EUCDM 5.2</type>
+                        <code>2/5</code>
+                        <details>
+                            LRN - The local reference number (LRN) shall be used. It is nationally defined and allocated
+                            by the declarant in agreement with the competent authorities to identify each single
+                            declaration. Must be unique.
+                        </details>
+                        <submission>
+                            See details above. 
+                        </submission>
+                        <amendment>
+                            Can be corrected for an amendment.
+                        </amendment>
+                        <correction>
+                            Can be corrected for a correction.
+                        </correction> 
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="ID" type="ds:DeclarationIdentificationIDType" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>
+                        <type>DMS specific field</type>
+                        <details>
+                            Used for corrections, invalidation, or amendment. Not used for submission.
+                            The MRN is automatically generated following the EUCDM legislation as a unique combination
+                            of 18 characters.
+                            The combination of the 18 characters is, in the time of writing, as follows:
+                            1. The last two digits of the year of formal acceptance of the declaration (e.g. 20 for
+                            2020)
+                            a. Consist of 2 digits
+                            2. Country where the declaration/proof of the customs status of union goods/notification is
+                            lodged (e.g. DK for Denmark)
+                            a. Consist of 2 letters
+                            3. Unique identifier based on year and country (e.g. 49DE04K21LO1)
+                            a. Consist of 12 alphanumeric characters
+                            4. Procedure identifier of the declaration (e.g. R for H1, H2, H3, H4, H6, H7 or I1)
+                            a. Consist of 1 alphanumeric character
+                            5. Control digit (e.g. 5)
+                            a. Consist of 1 alphanumeric character
+                            6. Based on the ISO 6346 algorithm
+                        </details>
+                        <submission>
+                            Not used in submission of a declaration.
+                        </submission>
+                        <amendment>
+                            Can not be corrected for an amendment.
+                        </amendment>
+                        <correction>
+                            Can not be corrected for a correction. 
+                        </correction> 
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="TypeCode" type="ds:DeclarationTypeCodeType" minOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>
+                        <type>DMS specific field</type>
+                        <details>
+                            Follows the 1/1 from H1:
+                            - "IMA" For a standard customs declaration (under Article 162 of the Code).
+                            - "IMD" For lodging a standard customs declaration (such as referred to under code A) in accordance with Article 171 of the Code.
+
+                            For codes, see: https://svn.taxud.gefeg.com/svn/Documentation/EUCDM/EN/EUCDM/Annex-B/e31.htm#1FMain/FData%20groups/TGroup-1/EB-1-2
+                        </details>
+                        <submission>
+                            See details above.
+                        </submission>
+                        <amendment>
+                            Fill in "COR" for an amendment. 
+                        </amendment>
+                        <correction>
+                            Fill in "COR" for a correction. 
+                        </correction> 
+                    </xs:documentation>3
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="GoodsItemQuantity" type="ds:DeclarationGoodsItemQuantityType" minOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>
+                        <type>DMS specific field</type>
+                        <details>
+                            Total number of items in the declaration.
+                        </details>
+                        <submission>
+                            See details above.
+                        </submission>
+                        <amendment>
+                            Can be corrected for an amendment.
+                        </amendment>
+                        <correction>
+                            Can be corrected for a correction. 
+                        </correction> 
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="DeclarationOfficeID" type="ds:DeclarationDeclarationOfficeIDType" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>
+                        <type>EUCDM 5.2</type>
+                        <code>5/23</code>
+                        <details>
+                            See supplied DeclarationOfficeID.xlsx for valid entries.
+                        </details>
+                        <submission>
+                            See details above.
+                        </submission>
+                        <amendment>
+                            Can be corrected for an amendment.
+                        </amendment>
+                        <correction>
+                            Can be corrected for a correction. 
+                        </correction>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="TotalGrossMassMeasure" type="ds:DeclarationTotalGrossMassMeasureType" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>
+                        <type>EUCDM 5.2</type>
+                        <code>6/5</code>
+                        <details>
+                            Weight of packages.
+                        </details>
+                        <submission>
+                            See details above.
+                        </submission>
+                        <amendment>
+                            Can be corrected for an amendment.
+                        </amendment>
+                        <correction>
+                            Can be corrected for a correction. 
+                        </correction>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Submitter">
+                <xs:annotation>
+                    <xs:documentation>
+                        <type>DMS specific field</type>
+                        <details>
+                            Name and identifier of submitting company.
+                        </details>
+                        <submission>
+                            See details above and under the subfields below.
+                        </submission>
+                        <amendment>
+                            All subfields can be corrected for an amendment.
+                        </amendment>
+                        <correction>
+                            All subfields can be corrected for a correction. 
+                        </correction>
+                    </xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="Name" type="ds:SubmitterNameTextType" minOccurs="1">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    <details>
+                                        The CVR/SE-number/EORI given by the client certificate used for the submission of declarations.
+                                        Example: 30808460
+                                    </details>
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="ID" type="ds:SubmitterIdentificationIDType" minOccurs="1">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    <details>
+                                        The ID given by the client certificate used for the submission of declarations.
+                                    </details>
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="Agent" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>
+                        <details>
+                            Details on importing third party.
+                            Also known as Representative in EUCDM.
+                        </details>
+                        <submission>
+                           See details above or under the subfields below.
+                        </submission>
+                        <amendment>
+                            All subfields can be corrected for an amendment.
+                        </amendment>
+                        <correction>
+                            All subfields can be corrected for a correction. 
+                        </correction>
+                    </xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="Name" type="ds:AgentNameTextType" minOccurs="0">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    <type>EUCDM 5.2</type>
+                                    <code>3/19</code>
+                                    <details>
+                                        Representative name. Only provide info, if Declaration/Agent/ID isn't filled.
+                                        EORI.
+                                    </details>
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="ID" type="ds:AgentIdentificationIDType" minOccurs="1">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    <type>EUCDM 5.2</type>
+                                    <code>3/20</code>
+                                    <details>
+                                        Representative identification No. - Normally EORI.
+                                    </details>
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="FunctionCode" type="ds:AgentFunctionCodeType" minOccurs="1">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    <type>EUCDM 5.2</type>
+                                    <code>3/21</code>
+                                    <details>
+                                        Representative status code:
+                                        - "2" is direct representation.
+                                        - "3" indirect representation.
+                                        In order to use code 3 the agent has to have a danish EORI.
+                                    </details>
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Address" minOccurs="1" maxOccurs="1">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="CityName" type="ds:AddressCityNameTextType" minOccurs="1"/>
+                                    <xs:element name="CountryCode" type="ds:AddressCountryCodeType" minOccurs="1"/>
+                                    <xs:element name="Line" type="ds:AddressLineTextType" minOccurs="1"/>
+                                    <xs:element name="PostcodeID" type="ds:AddressPostcodeIDType" minOccurs="1"/>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="Declarant">
+                <xs:annotation>
+                    <xs:documentation>
+                        <details>
+                            Name and address of the person or company importing the good. Importer and declarant can be
+                            the same.
+                        </details>
+                        <submission>
+                            See details above or under the subfields below.
+                        </submission>
+                        <amendment>
+                            All subfields can be corrected for an amendment.
+                        </amendment>
+                        <correction>
+                            All subfields can be corrected for a correction. 
+                        </correction>
+                    </xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="Name" type="ds:DeclarantNameTextType" minOccurs="0">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    <type>EUCDM 5.2</type>
+                                    <code>3/17</code>
+                                    <details>
+                                        Name and address of the person or company importing the good(s).
+                                        Importer and declarant can be the same.
+
+                                        If private - DK9999 is used in C08.
+                                    </details>
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="ID" type="ds:DeclarantIdentificationIDType" minOccurs="1">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    <type>EUCDM 5.2</type>
+                                    <code>3/18</code>
+                                    <details>
+                                        Declarant identification No. - EORI
+                                    </details>
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Address" minOccurs="0" maxOccurs="1">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    <details>
+                                        Declarant Address. Only needed for C08 or if EORI is DK09999981. Country code is
+                                        ISO 3166 ALPHA-2.
+                                    </details>
+                                </xs:documentation>
+                            </xs:annotation>
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="CityName" type="ds:AddressCityNameTextType" minOccurs="1"/>
+                                    <xs:element name="CountryCode" type="ds:AddressCountryCodeType" minOccurs="1"/>
+                                    <xs:element name="Line" type="ds:AddressLineTextType" minOccurs="1"/>
+                                    <xs:element name="PostcodeID" type="ds:AddressPostcodeIDType" minOccurs="1"/>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="Exporter" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>
+                        <details>
+                            The party exporting the good into the union.
+                        </details>
+                        <submission>
+                            See details above or under the subfields below.
+                        </submission>
+                        <amendment>
+                            All subfields can be corrected for an amendment.
+                        </amendment>
+                        <correction>
+                            All subfields can be corrected for a correction. 
+                        </correction>
+                    </xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="Name" type="ds:ExporterNameTextType" minOccurs="1">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    <type>EUCDM 5.2</type>
+                                    <code>3/1</code>
+                                    <details>
+                                        Person or Company name.
+                                    </details>
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="ID" type="ds:ExporterIdentificationIDType" minOccurs="1" maxOccurs="1">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    <type>DMS specific field</type>
+                                    <details>
+                                        Currently required. Will be removed in the future. Use the Name again.
+                                    </details>
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Address" minOccurs="0" maxOccurs="1">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    <type>EUCDM 5.2</type>
+                                    <code>3/1</code>
+                                    <details>
+                                        Exporter Address. Country code is ISO 3166 ALPHA-2
+                                    </details>
+                                </xs:documentation>
+                            </xs:annotation>
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="CityName" type="ds:AddressCityNameTextType" minOccurs="1"/>
+                                    <xs:element name="CountryCode" type="ds:AddressCountryCodeType" minOccurs="1"/>
+                                    <xs:element name="Line" type="ds:AddressLineTextType" minOccurs="1"/>
+                                    <xs:element name="PostcodeID" type="ds:AddressPostcodeIDType" minOccurs="1"/>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="GoodsShipment">
+                <xs:annotation>
+                    <xs:documentation>
+                        <details>
+                            H7 declaration goods.
+                        </details>
+                    </xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="AdditionalDocument" minOccurs="0" maxOccurs="unbounded">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    <type>EUCDM 5.2</type>
+                                    <code>2/3</code>
+                                    <details>
+                                        All subfields have to be filled, if one is filled.
+                                        
+                                        For information on which codes to fill in the subfields, see here: 
+                                        https://www.skat.dk/skat.aspx?oId=109749
+                                        https://www.skat.dk/skat.aspx?oId=109751
+                                        https://unece.org/fileadmin/DAM/trade/untdid/d16b/tred/tred1001.htm
+                                    </details>
+                                    <submission>
+                                        See details above.
+                                    </submission>
+                                    <amendment>
+                                        All subfields can be corrected for an amendment.
+                                    </amendment>
+                                    <correction>
+                                        All subfields can be corrected for a correction. 
+                                    </correction>
+                                </xs:documentation>
+                            </xs:annotation>
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="SequenceNumeric" type="ds:AdditionalDocumentSequenceNumericType" minOccurs="1"/>
+                                    <xs:element name="CategoryCode" type="ds:AdditionalDocumentCategoryCodeType" minOccurs="1">
+                                        <xs:annotation>
+                                            <xs:documentation>
+                                                In H7 documentation this is the type code, but here it's split into two
+                                                fields, category code and type code.
+                                            </xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="ID" type="ds:AdditionalDocumentIdentificationIDType" minOccurs="1"/>
+                                    <xs:element name="TypeCode" type="ds:AdditionalDocumentTypeCodeType" minOccurs="1"/>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="AdditionalInformation" minOccurs="0" maxOccurs="unbounded">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    <type>EUCDM 5.2</type>
+                                    <code>2/2</code>
+                                    <details>
+                                        Used for any additional information.
+                                        If filled, both codes (StatementCode and StatementTypeCode) have to be filled.
+                                    </details>
+                                    <submission>
+                                        See details above or under the subfields below.
+                                    </submission>
+                                    <amendment>
+                                        All subfields can be corrected for an amendment.
+                                    </amendment>
+                                    <correction>
+                                        All subfields can be corrected for a correction. 
+                                    </correction>
+                                </xs:documentation>
+                            </xs:annotation>
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="SequenceNumeric" type="ds:AdditionalInformationSequenceNumericType" minOccurs="1"/>
+                                    <xs:element name="StatementCode" type="ds:AdditionalInformationStatementCodeType" minOccurs="1">
+                                        <xs:annotation>
+                                            <xs:documentation>
+                                                Statement code will always start with '1' for import.
+                                                One character.
+                                            </xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="StatementDescription" type="ds:AdditionalInformationStatementDescriptionTextType" minOccurs="0"/>
+                                    <xs:element name="StatementTypeCode" type="ds:AdditionalInformationStatementTypeCodeType" minOccurs="1">
+                                        <xs:annotation>
+                                            <xs:documentation>
+                                                Four characters.
+                                            </xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="Consignment" minOccurs="0" maxOccurs="1">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    Mandatory for an IMA.
+                                </xs:documentation>
+                            </xs:annotation>
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="GoodsLocation" minOccurs="1" maxOccurs="1">
+                                        <xs:annotation>
+                                            <xs:documentation>
+                                                <type>EUCDM 5.2</type>
+                                                <code>5/23</code>
+                                                <details>
+                                                    Location of good. Country code is ISO 3166 ALPHA-2.
+
+                                                    Valid combinations of GoodsLocation/TypeCode and GoodsLocation/Address/TypeCode: 
+
+                                                    - GoodsLocation/TypeCode "A" (Designated place): 
+                                                    	- GoodsLocation/Address/TypeCode: "U" (UN/LOCODE)
+                                                    	- GoodsLocation/Address/TypeCode: "V" (Customs office identifier)
+                                                    
+                                                    - GoodsLocation/TypeCode "B" (Authorised place): 
+                                                    	- GoodsLocation/Address/TypeCode: "Y" (Authorisation number)
+                                                    	  This case is used if the goods are cleared through customs from MIO (temporary storage).
+                                                   	      
+                                                    - GoodsLocation/TypeCode "C" (Approved place): 
+                                                    	- GoodsLocation/Address/TypeCode: "Z" (Free text - address)
+                                                   
+                                                    - GoodsLocation/TypeCode "D" (Other): 
+                                                    	- GoodsLocation/Address/TypeCode: "Z" (Free text - address)
+                                                </details>
+                                                <submission>
+                                                    See details above or in the subfields below.
+                                                </submission>
+                                                <amendment>
+                                                    NONE of the subfields can be corrected for an amendment.
+                                                </amendment>
+                                                <correction>
+                                                    All the subfields an be corrected for a correction. 
+                                                </correction>
+                                            </xs:documentation>
+                                        </xs:annotation>
+                                        <xs:complexType>
+                                            <xs:sequence>
+                                                <xs:element name="Name" type="ds:GoodsLocationNameTextType" minOccurs="0">
+                                                    <xs:annotation>
+                                                        <xs:documentation>
+                                                        	If
+                                                        	- GoodsLocation/Address/TypeCode = "U" this field should be the UN/LOCODE
+                                                        	- GoodsLocation/Address/TypeCode = "V" this field should not be filled
+                                                        	- GoodsLocation/Address/TypeCode = "Y" this field should be filled with the name of the location
+                                                        	- GoodsLocation/Address/TypeCode = "Z" this field should be filled with the name of the location
+                                                        </xs:documentation>
+                                                    </xs:annotation>
+                                                </xs:element>
+                                                <xs:element name="ID" type="ds:GoodsLocationIdentificationIDType" minOccurs="0">
+                                                    <xs:annotation>
+                                                        <xs:documentation>
+                                                        	If
+                                                        	- GoodsLocation/TypeCode = "A" and GoodsLocation/Address/TypeCode = "U": Additional identifier of the UN/LOCODE
+                                                        	- GoodsLocation/TypeCode = "A" and GoodsLocation/Address/TypeCode = "V": Customs office ID 
+                                                        	- GoodsLocation/TypeCode = "B" and GoodsLocation/Address/TypeCode = "Y": Authorisation number 
+                                                        	- GoodsLocation/TypeCode = "C" and GoodsLocation/Address/TypeCode = "Z": This field should not be filled
+                                                        	- GoodsLocation/TypeCode = "D" and GoodsLocation/Address/TypeCode = "Z": This field should not be filled
+                                                        </xs:documentation>
+                                                    </xs:annotation>
+                                                </xs:element>
+                                                <xs:element name="TypeCode" type="ds:GoodsLocationTypeCodeType" minOccurs="1">
+                                                    <xs:annotation>
+                                                        <xs:documentation>
+                                                        	Type of location
+                                                        	- "A": Designated place (can be combined with GoodsLocation/Address/TypeCode: "U" and "V")
+                                                        	- "B": Authorised place (can be combined with GoodsLocation/Address/TypeCode: "Y")
+                                                        	- "C": Approved place (can be combined with GoodsLocation/Address/TypeCode: "Z")
+                                                        	- "D": Other (can be combined with GoodsLocation/Address/TypeCode: "Z")
+                                                        </xs:documentation>
+                                                    </xs:annotation>
+                                                </xs:element>
+                                                <xs:element name="Address">
+                                                    <xs:complexType>
+                                                        <xs:sequence>
+                                                            <xs:element name="TypeCode" type="ds:AddressTypeCodeType" minOccurs="1">
+                                                                <xs:annotation>
+                                                                    <xs:documentation xml:lang="EN">
+                                                                        Qualifier of identification
+                                                                        Codes relevant for H7: 
+			                                                        	- "U": UN/LOCODE
+			                                                        	- "V": Customs office identifier
+			                                                        	- "Y": Authorisation number
+			                                                        	- "Z": Free text (Fill in GoodsLocation/Address/... fields) 
+                                                                    </xs:documentation>
+                                                                </xs:annotation>
+                                                            </xs:element>
+                                                            <xs:element name="CityName" type="ds:AddressCityNameTextType" minOccurs="0"/>
+                                                            <xs:element name="CountryCode" type="ds:AddressCountryCodeType" minOccurs="0"/>
+                                                            <xs:element name="Line" type="ds:AddressLineTextType" minOccurs="0"/>
+                                                            <xs:element name="PostcodeID" type="ds:AddressPostcodeIDType" minOccurs="0"/>
+                                                        </xs:sequence>
+                                                    </xs:complexType>
+                                                </xs:element>
+                                            </xs:sequence>
+                                        </xs:complexType>
+                                    </xs:element>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="CustomsValuation" minOccurs="0" maxOccurs="1">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    <type>EUCDM 5.2</type>
+                                    <code>4/19</code>
+                                    <details>
+                                        Transportation cost.
+                                    </details>
+                                    <submission>
+                                        See details above.
+                                    </submission>
+                                    <amendment>
+                                        Can be corrected for an amendment.
+                                    </amendment>
+                                    <correction>
+                                        Can be corrected for a correction. 
+                                    </correction>
+                                </xs:documentation>
+                            </xs:annotation>
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="FreightChargeAmount" type="ds:CustomsValuationFreightChargeAmountType" minOccurs="1"/>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="DomesticDutyTaxParty" minOccurs="0" maxOccurs="unbounded">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    <type>EUCDM 5.2</type>
+                                    <code>3/40</code>
+                                    <details>
+                                        Additional fiscal references
+                                    </details>
+                                    <submission>
+                                        See details above.
+                                    </submission>
+                                    <amendment>
+                                        All subfields can be corrected for an amendment.
+                                    </amendment>
+                                    <correction>
+                                        All subfields can be corrected for a correction. 
+                                    </correction>
+                                </xs:documentation>
+                            </xs:annotation>
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="SequenceNumeric" type="ds:DomesticDutyTaxPartySequenceNumericType" minOccurs="1"/>
+                                    <xs:element name="ID" type="ds:DomesticDutyTaxPartyIdentificationIDType" minOccurs="0"/>
+                                    <xs:element name="RoleCode" type="ds:DomesticDutyTaxPartyRoleCodeType" minOccurs="0"/>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="GovernmentAgencyGoodsItem" minOccurs="1" maxOccurs="999">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    <details>
+                                        H7 Item.
+                                    </details>
+                                </xs:documentation>
+                            </xs:annotation>
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="CustomsValueAmount" type="ds:GovernmentAgencyGoodsItemCustomsValueAmountType" minOccurs="1">
+                                        <xs:annotation>
+                                            <xs:documentation>
+                                                <type>EUCDM 5.2</type>
+                                                <code>4/18</code>
+                                                <details>
+                                                    The value of the imported Item. Written as CurrencyCode + Value. Any currency code is allowed.
+                                                </details>
+                                                <submission>
+                                                    See details above.
+                                                </submission>
+                                                <amendment>
+                                                    Can be corrected for an amendment.
+                                                </amendment>
+                                                <correction>
+                                                    Can be corrected for a correction. 
+                                                </correction>
+                                            </xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="SequenceNumeric" type="ds:GovernmentAgencyGoodsItemSequenceNumericType" minOccurs="1">
+                                        <xs:annotation>
+                                            <xs:documentation>
+                                                <type>EUCDM 5.2</type>
+                                                <code>1/6</code>
+                                                <details>
+                                                    Goods item number. The sequence identifier. Has to be sequential.
+                                                    Start at 1.
+                                                </details>
+                                                <submission>
+                                                    See details above.
+                                                </submission>
+                                                <amendment>
+                                                    Can be corrected for an amendment.
+                                                </amendment>
+                                                <correction>
+                                                    Can be corrected for a correction. 
+                                                </correction>
+                                            </xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="AdditionalDocument" minOccurs="1" maxOccurs="unbounded">
+                                        <xs:annotation>
+                                            <xs:documentation>
+                                                <type>EUCDM 5.2</type>
+                                                <code>2/3</code>
+                                                <details>
+                                                    Used for any additional documents.
+                                                    All subfields have to be filled, if one is filled.
+                                        
+                                                    For information on which codes to fill in the subfields, see here: 
+                                                    https://www.skat.dk/skat.aspx?oId=109749
+                                                    https://www.skat.dk/skat.aspx?oId=109751
+                                                    https://unece.org/fileadmin/DAM/trade/untdid/d16b/tred/tred1001.htm
+                                                </details>
+                                                <submission>
+                                                    See details above.
+                                                </submission>
+                                                <amendment>
+                                                    All subfields can be corrected for an amendment.
+                                                </amendment>
+                                                <correction>
+                                                    All subfields can be corrected for a correction. 
+                                                </correction>
+                                            </xs:documentation>
+                                        </xs:annotation>
+                                        <xs:complexType>
+                                            <xs:sequence>
+                                                <xs:element name="SequenceNumeric" type="ds:AdditionalDocumentSequenceNumericType" minOccurs="1">
+                                                </xs:element>
+                                                <xs:element name="CategoryCode" type="ds:AdditionalDocumentCategoryCodeType" minOccurs="1">
+                                                    <xs:annotation>
+                                                        <xs:documentation>
+                                                            In H7 documentation this is the type code, but here it's split into two fields, category code and type code.
+                                                        </xs:documentation>
+                                                    </xs:annotation>
+                                                </xs:element>
+                                                <xs:element name="ID" type="ds:AdditionalDocumentIdentificationIDType" minOccurs="1"/>
+                                                <xs:element name="TypeCode" type="ds:AdditionalDocumentTypeCodeType" minOccurs="1"/>
+                                            </xs:sequence>
+                                        </xs:complexType>
+                                    </xs:element>
+                                    <xs:element name="AdditionalInformation" minOccurs="0" maxOccurs="unbounded">
+                                        <xs:annotation>
+                                            <xs:documentation>
+                                                <type>EUCDM 5.2</type>
+                                                <code>2/2</code>
+                                                <details>
+                                                    Used for any additional information.
+                                                    If filled, both codes (StatementCode and StatementTypeCode) have to
+                                                    be filled.
+                                                </details>
+                                                <submission>
+                                                    See details above or under the subfields below.
+                                                </submission>
+                                                <amendment>
+                                                    All subfields can be corrected for an amendment.
+                                                </amendment>
+                                                <correction>
+                                                    All subfields can be corrected for a correction. 
+                                                </correction>
+                                            </xs:documentation>
+                                        </xs:annotation>
+                                        <xs:complexType>
+                                            <xs:sequence>
+                                                <xs:element name="SequenceNumeric" type="ds:AdditionalInformationSequenceNumericType" minOccurs="1"/>
+                                                <xs:element name="StatementCode" type="ds:AdditionalInformationStatementCodeType" minOccurs="1">
+                                                    <xs:annotation>
+                                                        <xs:documentation>
+                                                            Statement code will always start with '1' for import.
+                                                            One character.
+                                                        </xs:documentation>
+                                                    </xs:annotation>
+                                                </xs:element>
+                                                <xs:element name="StatementDescription" type="ds:AdditionalInformationStatementDescriptionTextType" minOccurs="0"/>
+                                                <xs:element name="StatementTypeCode" type="ds:AdditionalInformationStatementTypeCodeType" minOccurs="1">
+                                                    <xs:annotation>
+                                                        <xs:documentation>
+                                                            Four characters
+                                                        </xs:documentation>
+                                                    </xs:annotation>
+                                                </xs:element>
+                                            </xs:sequence>
+                                        </xs:complexType>
+                                    </xs:element>
+                                    <xs:element name="Commodity">
+                                        <xs:complexType>
+                                            <xs:sequence>
+                                                <xs:element name="Description" type="ds:CommodityDescriptionTextType" minOccurs="1">
+                                                    <xs:annotation>
+                                                        <xs:documentation>
+                                                            <type>EUCDM 5.2</type>
+                                                            <code>6/8</code>
+                                                            <details>Short description of the goods item.</details>
+                                                        </xs:documentation>
+                                                    </xs:annotation>
+                                                </xs:element>
+                                                <xs:element name="Classification" minOccurs="1">
+                                                    <xs:complexType>
+                                                        <xs:sequence>
+                                                            <xs:element name="SequenceNumeric" type="ds:CommodityClassificationSequenceNumericType" minOccurs="1">
+                                                            </xs:element>
+                                                            <xs:element name="ID" type="ds:ClassificationIdentificationIDType" minOccurs="1">
+                                                                <xs:annotation>
+                                                                    <xs:documentation>
+                                                                        <type>EUCDM 5.2</type>
+                                                                        <code>6/14</code>
+                                                                        <details>
+                                                                            Type of goods.
+                                                                            6 characters.
+                                                                            There will be a reference list for it.
+                                                                            Validated towards Taric.
+                                                                        </details>
+                                                                        <submission>
+                                                                            See details above.
+                                                                        </submission>
+                                                                        <amendment>
+                                                                            Can be corrected for an amendment.
+                                                                        </amendment>
+                                                                        <correction>
+                                                                            Can be corrected for a correction. 
+                                                                        </correction>
+                                                                    </xs:documentation>
+                                                                </xs:annotation>
+                                                            </xs:element>
+                                                            <xs:element name="IdentificationTypeCode" type="ds:ClassificationIdentificationTypeCodeType" minOccurs="1">
+                                                                <xs:annotation>
+                                                                    <xs:documentation>
+                                                                        <type>DMS Specific field</type>
+                                                                        <details>
+                                                                            Set to TSP for all H7 declarations.
+                                                                            Scheduled for future removal.
+                                                                        </details>
+                                                                        <submission>
+                                                                            Fill in "TSP" for submission.
+                                                                        </submission>
+                                                                        <amendment>
+                                                                            Fill in "TSP" for an amendment.
+                                                                        </amendment>
+                                                                        <correction>
+                                                                            Fill in "TSP" for a correction. 
+                                                                        </correction>
+                                                                    </xs:documentation>
+                                                                </xs:annotation>
+                                                            </xs:element>
+                                                        </xs:sequence>
+                                                    </xs:complexType>
+                                                </xs:element>
+                                                <xs:element name="GoodsMeasure" minOccurs="0" maxOccurs="1">
+                                                    <xs:complexType>
+                                                        <xs:sequence>
+                                                            <xs:element name="GrossMassMeasure" type="ds:GoodsMeasureGrossMassMeasureType" minOccurs="1">
+                                                                <xs:annotation>
+                                                                    <xs:documentation>
+                                                                        <type>EUCDM 5.2</type>
+                                                                        <code>6/5</code>
+                                                                        <details>
+                                                                            Can be filled on either item or header
+                                                                            level.
+                                                                            System has a ruleset for maximum weight.
+                                                                            On header level it is the total gross
+                                                                            weight.
+                                                                        </details>
+                                                                        <submission>
+                                                                            See details above.
+                                                                        </submission>
+                                                                        <amendment>
+                                                                            Can be corrected for an amendment.
+                                                                        </amendment>
+                                                                        <correction>
+                                                                            Can be corrected for a correction. 
+                                                                        </correction>
+                                                                    </xs:documentation>
+                                                                </xs:annotation>
+                                                            </xs:element>
+                                                            <xs:element name="TariffQuantity" type="ds:GoodsMeasureTariffQuantityType" minOccurs="0">
+                                                                <xs:annotation>
+                                                                    <xs:documentation>
+                                                                        <type>EUCDM 5.2</type>
+                                                                        <code>6/5</code>
+                                                                        <details>
+                                                                            Only needed if CurrentCode C08.
+                                                                        </details>
+                                                                        <submission>
+                                                                            See details above.
+                                                                        </submission>
+                                                                        <amendment>
+                                                                            Can be corrected for an amendment.
+                                                                        </amendment>
+                                                                        <correction>
+                                                                            Can be corrected for a correction. 
+                                                                        </correction>
+                                                                    </xs:documentation>
+                                                                </xs:annotation>
+                                                            </xs:element>
+                                                        </xs:sequence>
+                                                    </xs:complexType>
+                                                </xs:element>
+                                            </xs:sequence>
+                                        </xs:complexType>
+                                    </xs:element>
+                                    <xs:element name="Consignor" minOccurs="0" maxOccurs="1">
+                                        <xs:annotation>
+                                            <xs:documentation>
+                                                <type>EUCDM 5.2</type>
+                                                <code>3/1</code>
+                                                <details>
+                                                    Item level exporter information.
+                                                </details>
+                                                <submission>
+                                                    See details above or under the subfields below.
+                                                </submission>
+                                                <amendment>
+                                                    All subfields can be corrected for an amendment.
+                                                </amendment>
+                                                <correction>
+                                                    All subfields can be corrected for a correction. 
+                                                </correction>
+                                            </xs:documentation>
+                                        </xs:annotation>
+                                        <xs:complexType>
+                                            <xs:sequence>
+                                                <xs:element name="Name" type="ds:ConsignorNameTextType" minOccurs="1"/>
+                                                <xs:element name="ID" type="ds:ConsignorIdentificationIDType" minOccurs="1">
+                                                    <xs:annotation>
+                                                        <xs:documentation>
+                                                            <type>EUCDM 5.2</type>
+                                                            <code>3/2</code>
+                                                            <details>
+                                                                Exporter identification No.
+                                                                Use EORI where available.
+                                                                Country code is ISO 3166 ALPHA-2
+                                                            </details>
+                                                        </xs:documentation>
+                                                    </xs:annotation>
+                                                </xs:element>
+                                                <xs:element name="Address" minOccurs="0" maxOccurs="1">
+                                                    <xs:complexType>
+                                                        <xs:sequence>
+                                                            <xs:element name="CityName" type="ds:AddressCityNameTextType" minOccurs="1"/>
+                                                            <xs:element name="CountryCode" type="ds:AddressCountryCodeType" minOccurs="1"/>
+                                                            <xs:element name="Line" type="ds:AddressLineTextType" minOccurs="1"/>
+                                                            <xs:element name="PostcodeID" type="ds:AddressPostcodeIDType" minOccurs="1"/>
+                                                        </xs:sequence>
+                                                    </xs:complexType>
+                                                </xs:element>
+                                            </xs:sequence>
+                                        </xs:complexType>
+                                    </xs:element>
+                                    <xs:element name="CustomsValuation" minOccurs="0" maxOccurs="1">
+                                        <xs:complexType>
+                                            <xs:sequence>
+                                                <xs:element name="FreightChargeAmount" type="ds:CustomsValuationFreightChargeAmountType" minOccurs="1">
+                                                    <xs:annotation>
+                                                        <xs:documentation>
+                                                            <type>EUCDM 5.2</type>
+                                                            <code>4/19</code>
+                                                            <details>
+                                                                Transportation cost, specific on each item.
+                                                            </details>
+                                                            <submission>
+                                                                See details above.
+                                                            </submission>
+                                                            <amendment>
+                                                                Can be corrected for an amendment.
+                                                            </amendment>
+                                                            <correction>
+                                                                Can be corrected for a correction. 
+                                                            </correction>
+                                                        </xs:documentation>
+                                                    </xs:annotation>
+                                                </xs:element>
+                                            </xs:sequence>
+                                        </xs:complexType>
+                                    </xs:element>
+                                    <xs:element name="DomesticDutyTaxParty" minOccurs="0" maxOccurs="unbounded">
+                                        <xs:annotation>
+                                            <xs:documentation>
+                                                <type>EUCDM 5.2</type>
+                                                <code>3/40</code>
+                                                <details>
+                                                    Required by DMS if RoleCode = IOSS. Can either be filed out with IOSS number or VAT number.
+                                                </details>
+                                                <submission>
+                                                    See details above.
+                                                </submission>
+                                                <amendment>
+                                                    All subfields can be corrected for an amendment.
+                                                </amendment>
+                                                <correction>
+                                                    All subfields can be corrected for a correction. 
+                                                </correction>
+                                            </xs:documentation>
+                                        </xs:annotation>
+                                        <xs:complexType>
+                                            <xs:sequence>
+                                                <xs:element name="SequenceNumeric" type="ds:DomesticDutyTaxPartySequenceNumericType" minOccurs="1"/>
+                                                <xs:element name="ID" type="ds:DomesticDutyTaxPartyIdentificationIDType" minOccurs="0"/>
+                                                <xs:element name="RoleCode" type="ds:DomesticDutyTaxPartyRoleCodeType" minOccurs="0"/>
+                                            </xs:sequence>
+                                        </xs:complexType>
+                                    </xs:element>
+                                    <xs:element name="GovernmentProcedure" minOccurs="1" maxOccurs="3">
+                                        <xs:annotation>
+                                            <xs:documentation>
+                                                <type>DMS specific field</type>
+                                                <details>
+                                                    - CurrentCode should always be either "40" or "C07" or "C08" or "F48" or "F49". 
+                                                      For guidance see: https://www.skat.dk/skat.aspx?oId=109754
+                                                    - PreviousCode should only be used when CurrentCode = "40" and then set to "00".
+                                                </details>
+                                                <submission>
+                                                    See details above.
+                                                </submission>
+                                                <amendment>
+                                                    All subfields can be corrected for an amendment.
+                                                </amendment>
+                                                <correction>
+                                                    All subfields can be corrected for a correction. 
+                                                </correction>
+                                            </xs:documentation>
+                                        </xs:annotation>
+                                        <xs:complexType>
+                                            <xs:sequence>
+                                                <xs:element name="SequenceNumeric" type="ds:GovernmentProcedureSequenceNumericType" minOccurs="1"/>
+                                                <xs:element name="CurrentCode" type="ds:GovernmentProcedureCurrentCodeType" minOccurs="1"/>
+                                                <xs:element name="PreviousCode" type="ds:GovernmentProcedurePreviousCodeType" minOccurs="0"/>
+                                            </xs:sequence>
+                                        </xs:complexType>
+                                    </xs:element>
+                                    <xs:element name="Packaging" minOccurs="1" maxOccurs="unbounded">
+                                        <xs:annotation>
+                                            <xs:documentation>
+                                                <type>EUCDM 5.2</type>
+                                                <code>6/10</code>
+                                                <details>
+                                                    Number of packages. The SequenceNumeric is for the quantity on that
+                                                    item.
+                                                </details>
+                                                <submission>
+                                                    See details above or under the subfields below.
+                                                </submission>
+                                                <amendment>
+                                                    All subfields can be corrected for an amendment.
+                                                </amendment>
+                                                <correction>
+                                                    All subfields can be corrected for a correction. 
+                                                </correction>
+                                            </xs:documentation>
+                                        </xs:annotation>
+                                        <xs:complexType>
+                                            <xs:sequence>
+                                                <xs:element name="SequenceNumeric" type="ds:PackagingSequenceNumericType" minOccurs="1">
+                                                    <xs:annotation>
+                                                        <xs:documentation>
+                                                            <type>DMS specific field</type>
+                                                            <details>
+                                                                DMS currently requires this. Fill the sequential number
+                                                                of the package.
+                                                            </details>
+                                                        </xs:documentation>
+                                                    </xs:annotation>
+                                                </xs:element>
+                                                <xs:element name="QuantityQuantity" type="ds:PackagingQuantityQuantityType" minOccurs="0">
+                                                    <xs:annotation>
+                                                        <xs:documentation>
+                                                            Number of packages
+                                                        </xs:documentation>
+                                                    </xs:annotation>
+                                                </xs:element>
+                                            </xs:sequence>
+                                        </xs:complexType>
+                                    </xs:element>
+                                    <xs:element name="PreviousDocument" minOccurs="0" maxOccurs="unbounded">
+                                        <xs:annotation>
+                                            <xs:documentation>
+                                                <type>EUCDM 5.2</type>
+                                                <code>2/1</code>
+                                                <details>
+                                                    If one subfield is filled, all subfields have to be filled.
+
+                                                    - CategoryCode should be filled with: 
+                                                        - "X": Summary declaration 
+                                                        - "Y": Initial declaration 
+                                                        - "Z": Preceding declaration
+                                                    - TypeCode should be filled according to type of document, see https://www.skat.dk/skat.aspx?oId=1658884 under "Dok art"-column.
+                                                </details>
+                                                <submission>
+                                                    See details above or under the subfields below.
+                                                </submission>
+                                                <amendment>
+                                                    All subfields can be corrected for an amendment.
+                                                </amendment>
+                                                <correction>
+                                                    All subfields can be corrected for a correction. 
+                                                </correction>
+                                            </xs:documentation>
+                                        </xs:annotation>
+                                        <xs:complexType>
+                                            <xs:sequence>
+                                                <xs:element name="SequenceNumeric" type="ds:PreviousDocumentSequenceNumericType"  minOccurs="1">
+                                                </xs:element>
+                                                <xs:element name="CategoryCode" type="ds:PreviousDocumentCategoryCodeType" minOccurs="1">
+                                                    <xs:annotation>
+                                                        <xs:documentation>
+                                                            In H7 documentation this is the type code, but here it's
+                                                            split into two fields, category code and type code.
+                                                        </xs:documentation>
+                                                    </xs:annotation>
+                                                </xs:element>
+                                                <xs:element name="ID" type="ds:PreviousDocumentIdentificationIDType" minOccurs="1"/>
+                                                <xs:element name="TypeCode" type="ds:PreviousDocumentTypeCodeType" minOccurs="1"/>
+                                                <xs:element name="LineNumeric" type="ds:PreviousDocumentLineNumericType" minOccurs="1"/>
+                                            </xs:sequence>
+                                        </xs:complexType>
+                                    </xs:element>
+                                    <xs:element name="UCR" minOccurs="0" maxOccurs="1">
+                                        <xs:annotation>
+                                            <xs:documentation>
+                                                <type>EUCDM 5.2</type>
+                                                <code>2/4</code>
+                                                <details>
+                                                    Unique number that follows the good all the way. Used by
+                                                    transporters.
+                                                </details>
+                                                <submission>
+                                                    See details above.
+                                                </submission>
+                                                <amendment>
+                                                    Can be corrected for an amendment.
+                                                </amendment>
+                                                <correction>
+                                                    Can be corrected for a correction. 
+                                                </correction>
+                                            </xs:documentation>
+                                        </xs:annotation>
+                                        <xs:complexType>
+                                            <xs:sequence>
+                                                <xs:element name="TraderAssignedReferenceID" type="ds:UCRTraderAssignedReferenceIDType" minOccurs="1"/>
+                                            </xs:sequence>
+                                        </xs:complexType>
+                                    </xs:element>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="Importer">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="Name" type="ds:ImporterNameTextType" minOccurs="0">
+                                        <xs:annotation>
+                                            <xs:documentation>
+                                                <type>EUCDM 5.2</type>
+                                                <code>3/15</code>
+                                                <details>
+                                                    Importer name.
+                                                </details>
+                                                <submission>
+                                                    See details above.
+                                                </submission>
+                                                <amendment>
+                                                    If ../Importer/ID is "09999981" this field can not be corrected for an amendment.
+                                                </amendment>
+                                                <correction>
+                                                    Can be corrected for a correction. 
+                                                </correction>
+                                            </xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="ID" type="ds:ImporterIdentificationIDType" minOccurs="1">
+                                        <xs:annotation>
+                                            <xs:documentation>
+                                                <type>EUCDM 5.2</type>
+                                                <code>3/16</code>
+                                                <details>
+                                                    EORI.
+                                                </details>
+                                                <submission>
+                                                    See details above.
+                                                </submission>
+                                                <amendment>
+                                                    If ID is 09999981 the remaining Importer/* fields can not be corrected for an amendment.
+                                                </amendment>
+                                                <correction>
+                                                    Can be corrected for a correction. 
+                                                </correction>
+                                            </xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="Address" minOccurs="1" maxOccurs="1">
+                                        <xs:complexType>
+                                            <xs:sequence>
+                                                <xs:element name="CityName" type="ds:AddressCityNameTextType" minOccurs="0">
+                                                    <xs:annotation>
+                                                        <xs:documentation>
+                                                            <details>
+                                                                City name.
+                                                            </details>
+                                                            <submission>
+                                                                See details above.
+                                                            </submission>
+                                                            <amendment>
+                                                                If ../Importer/ID is "09999981" this field can not be corrected for an amendment.
+                                                            </amendment>
+                                                            <correction>
+                                                                Can be corrected for a correction. 
+                                                            </correction>
+                                                        </xs:documentation>
+                                                    </xs:annotation>
+                                                </xs:element>
+                                                <xs:element name="CountryCode" type="ds:AddressCountryCodeType" minOccurs="1">
+                                                    <xs:annotation>
+                                                        <xs:documentation>
+                                                            <details>
+                                                                Must always be DK.
+                                                            </details>
+                                                            <submission>
+                                                                Fill in "DK".
+                                                            </submission>
+                                                            <amendment>
+                                                                If ../Importer/ID is "09999981" this field can not be corrected for an amendment.
+                                                            </amendment>
+                                                            <correction>
+                                                                Can be corrected for a correction. 
+                                                            </correction>
+                                                        </xs:documentation>
+                                                    </xs:annotation>
+                                                </xs:element>
+                                                <xs:element name="Line" type="ds:AddressLineTextType" minOccurs="0">
+                                                    <xs:annotation>
+                                                        <xs:documentation>
+                                                            <details>
+                                                                Address Line 
+                                                            </details>
+                                                            <submission>
+                                                                See details above.
+                                                            </submission>
+                                                            <amendment>
+                                                                If ../Importer/ID is "09999981" this field can not be corrected for an amendment.
+                                                            </amendment>
+                                                            <correction>
+                                                                Can be corrected for a correction. 
+                                                            </correction>
+                                                        </xs:documentation>
+                                                    </xs:annotation>
+                                                </xs:element>
+                                                <xs:element name="PostcodeID" type="ds:AddressPostcodeIDType" minOccurs="0">
+                                                    <xs:annotation>
+                                                        <xs:documentation>
+                                                            <details>
+                                                                Post code
+                                                            </details>
+                                                            <submission>
+                                                                See details above.
+                                                            </submission>
+                                                            <amendment>
+                                                                If ../Importer/ID is "09999981" this field can not be corrected for an amendment.
+                                                            </amendment>
+                                                            <correction>
+                                                                Can be corrected for a correction. 
+                                                            </correction>
+                                                        </xs:documentation>
+                                                    </xs:annotation>
+                                                </xs:element>
+                                            </xs:sequence>
+                                        </xs:complexType>
+                                    </xs:element>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="PreviousDocument" minOccurs="0" maxOccurs="unbounded">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    <type>EUCDM 5.2</type>
+                                    <code>2/1</code>
+                                    <details>
+                                        If one subfield is filled, all subfields have to be filled.
+
+                                        - CategoryCode should be filled with: 
+                                                - "X": Summary declaration 
+                                                - "Y": Initial declaration 
+                                                - "Z": Preceding declaration
+                                        - TypeCode should be filled according to type of document, see https://www.skat.dk/skat.aspx?oId=1658884 under "Dok art"-column. 
+                                    </details>
+                                    <submission>
+                                        See details above.
+                                    </submission>
+                                    <amendment>
+                                        All subfields can be corrected for an amendment
+                                    </amendment>
+                                    <correction>
+                                        All subfields can be corrected for a correction. 
+                                    </correction>
+                                </xs:documentation>
+                            </xs:annotation>
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="SequenceNumeric" type="ds:PreviousDocumentSequenceNumericType" minOccurs="1">
+                                    </xs:element>
+                                    <xs:element name="CategoryCode" type="ds:PreviousDocumentCategoryCodeType" minOccurs="1">
+                                        <xs:annotation>
+                                            <xs:documentation>
+                                                In H7 documentation this is the type code, but here it's split into two
+                                                fields, category code and type code.
+                                            </xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="ID" type="ds:PreviousDocumentIdentificationIDType" minOccurs="1"/>
+                                    <xs:element name="TypeCode" type="ds:PreviousDocumentTypeCodeType" minOccurs="1"/>
+                                    <xs:element name="LineNumeric" type="ds:PreviousDocumentLineNumericType" minOccurs="1"/>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="UCR" minOccurs="0" maxOccurs="1">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    <type>EUCDM 5.2</type>
+                                    <code>2/4</code>
+                                    <details>
+                                        Unique number that follows the good all the way. Used by transporters.
+                                    </details>
+                                    <submission>
+                                        See details above.
+                                    </submission>
+                                    <amendment>
+                                        Can be corrected for an amendment.                           
+                                    </amendment>
+                                    <correction>
+                                        Can be corrected for a correction. 
+                                    </correction>
+                                </xs:documentation>
+                            </xs:annotation>
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="TraderAssignedReferenceID" type="ds:UCRTraderAssignedReferenceIDType" minOccurs="1"/>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
