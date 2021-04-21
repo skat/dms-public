@@ -24,16 +24,16 @@
                     <xs:documentation>
                         <type>DMS specific field</type>
                         <details>
-                            Code for type of action.
+                            Code for type of declaration/request.
                         </details>
                         <submission>
                             "9" For initial submission
                         </submission>
                         <amendment>
-                            "13" for amendment
+                            "4" for amendment
                         </amendment>
                         <correction>
-                            "13" for correction
+                            "4" for correction
                         </correction>  
                     </xs:documentation>
                 </xs:annotation>
@@ -134,7 +134,7 @@
                         <correction>
                             Fill in "COR" for a correction. 
                         </correction> 
-                    </xs:documentation>
+                    </xs:documentation>3
                 </xs:annotation>
             </xs:element>
             <xs:element name="GoodsItemQuantity" type="ds:DeclarationGoodsItemQuantityType" minOccurs="1">
@@ -162,7 +162,7 @@
                         <type>EUCDM 5.2</type>
                         <code>5/23</code>
                         <details>
-                            See supplied DeclarationOfficeID.xlsx for valid entries.
+                            Find Declaration Office ID's here: https://ec.europa.eu/taxation_customs/dds2/rd/rd_search_home.jsp?Lang=en
                         </details>
                         <submission>
                             See details above.
@@ -290,7 +290,7 @@
                                         Representative status code:
                                         - "2" is direct representation.
                                         - "3" indirect representation.
-                                        In order to use code 3 the agent has to have a danish EORI.
+                                          In order to use code "3" the agent has to have a danish EORI.
                                     </details>
                                 </xs:documentation>
                             </xs:annotation>
@@ -547,18 +547,18 @@
                                                     Valid combinations of GoodsLocation/TypeCode and GoodsLocation/Address/TypeCode: 
 
                                                     - GoodsLocation/TypeCode "A" (Designated place): 
-                                                    	- GoodsLocation/Address/TypeCode: "U" (UN/LOCODE)
-                                                    	- GoodsLocation/Address/TypeCode: "V" (Customs office identifier)
+                                                        - GoodsLocation/Address/TypeCode: "U" (UN/LOCODE)
+                                                        - GoodsLocation/Address/TypeCode: "V" (Customs office identifier)
                                                     
                                                     - GoodsLocation/TypeCode "B" (Authorised place): 
-                                                    	- GoodsLocation/Address/TypeCode: "Y" (Authorisation number)
-                                                    	  This case is used if the goods are cleared through customs from MIO (temporary storage).
-                                                   	      
+                                                        - GoodsLocation/Address/TypeCode: "Y" (Authorisation number)
+                                                          This case is used if the goods are cleared through customs from MIO (temporary storage).
+                                                          
                                                     - GoodsLocation/TypeCode "C" (Approved place): 
-                                                    	- GoodsLocation/Address/TypeCode: "Z" (Free text - address)
+                                                        - GoodsLocation/Address/TypeCode: "Z" (Free text - address)
                                                    
                                                     - GoodsLocation/TypeCode "D" (Other): 
-                                                    	- GoodsLocation/Address/TypeCode: "Z" (Free text - address)
+                                                        - GoodsLocation/Address/TypeCode: "Z" (Free text - address)
                                                 </details>
                                                 <submission>
                                                     See details above or in the subfields below.
@@ -576,34 +576,34 @@
                                                 <xs:element name="Name" type="ds:GoodsLocationNameTextType" minOccurs="0">
                                                     <xs:annotation>
                                                         <xs:documentation>
-                                                        	If
-                                                        	- GoodsLocation/Address/TypeCode = "U" this field should be the UN/LOCODE
-                                                        	- GoodsLocation/Address/TypeCode = "V" this field should not be filled
-                                                        	- GoodsLocation/Address/TypeCode = "Y" this field should be filled with the name of the location
-                                                        	- GoodsLocation/Address/TypeCode = "Z" this field should be filled with the name of the location
+                                                            If
+                                                            - GoodsLocation/Address/TypeCode = "U" this field should be the UN/LOCODE
+                                                            - GoodsLocation/Address/TypeCode = "V" this field should not be filled
+                                                            - GoodsLocation/Address/TypeCode = "Y" this field should be filled with the name of the location
+                                                            - GoodsLocation/Address/TypeCode = "Z" this field should be filled with the name of the location
                                                         </xs:documentation>
                                                     </xs:annotation>
                                                 </xs:element>
                                                 <xs:element name="ID" type="ds:GoodsLocationIdentificationIDType" minOccurs="0">
                                                     <xs:annotation>
                                                         <xs:documentation>
-                                                        	If
-                                                        	- GoodsLocation/TypeCode = "A" and GoodsLocation/Address/TypeCode = "U": Additional identifier of the UN/LOCODE
-                                                        	- GoodsLocation/TypeCode = "A" and GoodsLocation/Address/TypeCode = "V": Customs office ID 
-                                                        	- GoodsLocation/TypeCode = "B" and GoodsLocation/Address/TypeCode = "Y": Authorisation number 
-                                                        	- GoodsLocation/TypeCode = "C" and GoodsLocation/Address/TypeCode = "Z": This field should not be filled
-                                                        	- GoodsLocation/TypeCode = "D" and GoodsLocation/Address/TypeCode = "Z": This field should not be filled
+                                                            If
+                                                            - GoodsLocation/TypeCode = "A" and GoodsLocation/Address/TypeCode = "U": Additional identifier of the UN/LOCODE
+                                                            - GoodsLocation/TypeCode = "A" and GoodsLocation/Address/TypeCode = "V": Customs office ID 
+                                                            - GoodsLocation/TypeCode = "B" and GoodsLocation/Address/TypeCode = "Y": Authorisation number 
+                                                            - GoodsLocation/TypeCode = "C" and GoodsLocation/Address/TypeCode = "Z": This field should not be filled
+                                                            - GoodsLocation/TypeCode = "D" and GoodsLocation/Address/TypeCode = "Z": This field should not be filled
                                                         </xs:documentation>
                                                     </xs:annotation>
                                                 </xs:element>
                                                 <xs:element name="TypeCode" type="ds:GoodsLocationTypeCodeType" minOccurs="1">
                                                     <xs:annotation>
                                                         <xs:documentation>
-                                                        	Type of location
-                                                        	- "A": Designated place (can be combined with GoodsLocation/Address/TypeCode: "U" and "V")
-                                                        	- "B": Authorised place (can be combined with GoodsLocation/Address/TypeCode: "Y")
-                                                        	- "C": Approved place (can be combined with GoodsLocation/Address/TypeCode: "Z")
-                                                        	- "D": Other (can be combined with GoodsLocation/Address/TypeCode: "Z")
+                                                            Type of location
+                                                            - "A": Designated place (can be combined with GoodsLocation/Address/TypeCode: "U" and "V")
+                                                            - "B": Authorised place (can be combined with GoodsLocation/Address/TypeCode: "Y")
+                                                            - "C": Approved place (can be combined with GoodsLocation/Address/TypeCode: "Z")
+                                                            - "D": Other (can be combined with GoodsLocation/Address/TypeCode: "Z")
                                                         </xs:documentation>
                                                     </xs:annotation>
                                                 </xs:element>
@@ -615,10 +615,10 @@
                                                                     <xs:documentation xml:lang="EN">
                                                                         Qualifier of identification
                                                                         Codes relevant for H7: 
-			                                                        	- "U": UN/LOCODE
-			                                                        	- "V": Customs office identifier
-			                                                        	- "Y": Authorisation number
-			                                                        	- "Z": Free text (Fill in GoodsLocation/Address/... fields) 
+                                                                        - "U": UN/LOCODE
+                                                                        - "V": Customs office identifier
+                                                                        - "Y": Authorisation number
+                                                                        - "Z": Free text (Fill in GoodsLocation/Address/... fields) 
                                                                     </xs:documentation>
                                                                 </xs:annotation>
                                                             </xs:element>
@@ -1051,19 +1051,23 @@
                                             </xs:sequence>
                                         </xs:complexType>
                                     </xs:element>
-                                    <xs:element name="GovernmentProcedure" minOccurs="1" maxOccurs="3">
+                                    <xs:element name="GovernmentProcedure" minOccurs="2" maxOccurs="3">
                                         <xs:annotation>
                                             <xs:documentation>
                                                 <type>DMS specific field</type>
+                                                <code>1/10 and 1/11</code>
                                                 <details>
-                                                    - CurrentCode should always be either "40" or "C07" or "C08" or "F48" or "F49".
-                                                    * F48 -  Import under the special scheme for distance sales of goods imported from third countries and territories set out in Title XII Chapter 6 Section 4 of Directive 2006/112/EC.
-                                                    * F49 -  Import under the special arrangements for declaration and payment of import VAT set out in Title XII Chapter 7 of Directive 2006/112/EC. C07 Must be present when this code is used.
-                                                    * C07 -  Consignments of negligible value.
-                                                    * C08 -  Consignments sent from one private individual to another.
-                                                    For further guidance see: https://www.skat.dk/skat.aspx?oId=109754
-                                                  
-                                                    - PreviousCode should only be used when CurrentCode = "40" and then set to "00".
+                                                    There should be declared to separate fields of GovernmentProcedure - one for EUCDM 5.2 D.E 1/10 and one for EUCDM 5.2 D.E 1/11: 
+
+                                                    For the first one - 1/10:
+                                                    Both CurrentCode and PreviousCode is mandatory. 
+                                                    - CurrentCode should always be "40" for an H7 
+                                                    - PreviousCode should always be "00" for an H7 
+
+                                                    For the second one - 1/11:
+                                                    Only CurrentCode is mandatory.
+                                                    - CurrentCode should either be "C07" or "C08" or "F48" or "F49". 
+                                                      For guidance see: https://www.skat.dk/skat.aspx?oId=109754
                                                 </details>
                                                 <submission>
                                                     See details above.
@@ -1154,8 +1158,7 @@
                                         </xs:annotation>
                                         <xs:complexType>
                                             <xs:sequence>
-                                                <xs:element name="SequenceNumeric" type="ds:PreviousDocumentSequenceNumericType"  minOccurs="1">
-                                                </xs:element>
+                                                <xs:element name="SequenceNumeric" type="ds:PreviousDocumentSequenceNumericType"  minOccurs="1"/>
                                                 <xs:element name="CategoryCode" type="ds:PreviousDocumentCategoryCodeType" minOccurs="1">
                                                     <xs:annotation>
                                                         <xs:documentation>
