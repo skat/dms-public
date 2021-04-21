@@ -1,4 +1,7 @@
 # dms-public
+
+[Connectivity Guide findes her](dokumenter/ConnectivityGuide.docx)
+
 Changelog from version 1.0.0 to 1.1.1:
 * Declaration/ProcedureCategory - Element was added 
 * Declaration/Submitter/ID - Removed ID for submitter.
