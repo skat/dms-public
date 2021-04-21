@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns="urn:wco:datamodel:WCO:DEC-DMS:2" xmlns:xs="http://www.w3.org/2001/XMLSchema"
            xmlns:ds="urn:wco:datamodel:WCO:Declaration_DS:DMS:2" targetNamespace="urn:wco:datamodel:WCO:DEC-DMS:2"
-           elementFormDefault="qualified" version="1.1.3">
+           elementFormDefault="qualified" version="1.1.4">
     <xs:import namespace="urn:wco:datamodel:WCO:Declaration_DS:DMS:2"
                schemaLocation="toldsystemet_DS/toldsystemet_DS_v1.xsd"/>
     <xs:element name="Declaration" type="Declaration"/>
@@ -134,7 +134,7 @@
                         <correction>
                             Fill in "COR" for a correction. 
                         </correction> 
-                    </xs:documentation>
+                    </xs:documentation>3
                 </xs:annotation>
             </xs:element>
             <xs:element name="GoodsItemQuantity" type="ds:DeclarationGoodsItemQuantityType" minOccurs="1">
@@ -230,8 +230,7 @@
                             <xs:annotation>
                                 <xs:documentation>
                                     <details>
-                                        Temporarily added - Use the CVR number again.
-                                        Example: 30808460
+                                        The ID given by the client certificate used for the submission of declarations.
                                     </details>
                                 </xs:documentation>
                             </xs:annotation>
@@ -357,8 +356,6 @@
                         <xs:element name="Address" minOccurs="0" maxOccurs="1">
                             <xs:annotation>
                                 <xs:documentation>
-                                    <type>EUCDM 5.2</type>
-                                    <code>3/17</code>
                                     <details>
                                         Declarant Address. Only needed for C08 or if EORI is DK09999981. Country code is
                                         ISO 3166 ALPHA-2.
@@ -546,6 +543,22 @@
                                                 <code>5/23</code>
                                                 <details>
                                                     Location of good. Country code is ISO 3166 ALPHA-2.
+
+                                                    Valid combinations of GoodsLocation/TypeCode and GoodsLocation/Address/TypeCode: 
+
+                                                    - GoodsLocation/TypeCode "A" (Designated place): 
+                                                    	- GoodsLocation/Address/TypeCode: "U" (UN/LOCODE)
+                                                    	- GoodsLocation/Address/TypeCode: "V" (Customs office identifier)
+                                                    
+                                                    - GoodsLocation/TypeCode "B" (Authorised place): 
+                                                    	- GoodsLocation/Address/TypeCode: "Y" (Authorisation number)
+                                                    	  This case is used if the goods are cleared through customs from MIO (temporary storage).
+                                                   	      
+                                                    - GoodsLocation/TypeCode "C" (Approved place): 
+                                                    	- GoodsLocation/Address/TypeCode: "Z" (Free text - address)
+                                                   
+                                                    - GoodsLocation/TypeCode "D" (Other): 
+                                                    	- GoodsLocation/Address/TypeCode: "Z" (Free text - address)
                                                 </details>
                                                 <submission>
                                                     See details above or in the subfields below.
@@ -560,19 +573,38 @@
                                         </xs:annotation>
                                         <xs:complexType>
                                             <xs:sequence>
-                                                <xs:element name="Name" type="ds:GoodsLocationNameTextType" minOccurs="1">
+                                                <xs:element name="Name" type="ds:GoodsLocationNameTextType" minOccurs="0">
                                                     <xs:annotation>
-                                                        <xs:documentation>UN/LOCODE</xs:documentation>
+                                                        <xs:documentation>
+                                                        	If
+                                                        	- GoodsLocation/Address/TypeCode = "U" this field should be the UN/LOCODE
+                                                        	- GoodsLocation/Address/TypeCode = "V" this field should not be filled
+                                                        	- GoodsLocation/Address/TypeCode = "Y" this field should be filled with the name of the location
+                                                        	- GoodsLocation/Address/TypeCode = "Z" this field should be filled with the name of the location
+                                                        </xs:documentation>
                                                     </xs:annotation>
                                                 </xs:element>
-                                                <xs:element name="ID" type="ds:GoodsLocationIdentificationIDType" minOccurs="1">
+                                                <xs:element name="ID" type="ds:GoodsLocationIdentificationIDType" minOccurs="0">
                                                     <xs:annotation>
-                                                        <xs:documentation>Additional identifier</xs:documentation>
+                                                        <xs:documentation>
+                                                        	If
+                                                        	- GoodsLocation/TypeCode = "A" and GoodsLocation/Address/TypeCode = "U": Additional identifier of the UN/LOCODE
+                                                        	- GoodsLocation/TypeCode = "A" and GoodsLocation/Address/TypeCode = "V": Customs office ID 
+                                                        	- GoodsLocation/TypeCode = "B" and GoodsLocation/Address/TypeCode = "Y": Authorisation number 
+                                                        	- GoodsLocation/TypeCode = "C" and GoodsLocation/Address/TypeCode = "Z": This field should not be filled
+                                                        	- GoodsLocation/TypeCode = "D" and GoodsLocation/Address/TypeCode = "Z": This field should not be filled
+                                                        </xs:documentation>
                                                     </xs:annotation>
                                                 </xs:element>
                                                 <xs:element name="TypeCode" type="ds:GoodsLocationTypeCodeType" minOccurs="1">
                                                     <xs:annotation>
-                                                        <xs:documentation>Type of location</xs:documentation>
+                                                        <xs:documentation>
+                                                        	Type of location
+                                                        	- "A": Designated place (can be combined with GoodsLocation/Address/TypeCode: "U" and "V")
+                                                        	- "B": Authorised place (can be combined with GoodsLocation/Address/TypeCode: "Y")
+                                                        	- "C": Approved place (can be combined with GoodsLocation/Address/TypeCode: "Z")
+                                                        	- "D": Other (can be combined with GoodsLocation/Address/TypeCode: "Z")
+                                                        </xs:documentation>
                                                     </xs:annotation>
                                                 </xs:element>
                                                 <xs:element name="Address">
@@ -582,13 +614,18 @@
                                                                 <xs:annotation>
                                                                     <xs:documentation xml:lang="EN">
                                                                         Qualifier of identification
+                                                                        Codes relevant for H7: 
+			                                                        	- "U": UN/LOCODE
+			                                                        	- "V": Customs office identifier
+			                                                        	- "Y": Authorisation number
+			                                                        	- "Z": Free text (Fill in GoodsLocation/Address/... fields) 
                                                                     </xs:documentation>
                                                                 </xs:annotation>
                                                             </xs:element>
-                                                            <xs:element name="CityName" type="ds:AddressCityNameTextType" minOccurs="1"/>
-                                                            <xs:element name="CountryCode" type="ds:AddressCountryCodeType" minOccurs="1"/>
-                                                            <xs:element name="Line" type="ds:AddressLineTextType" minOccurs="1"/>
-                                                            <xs:element name="PostcodeID" type="ds:AddressPostcodeIDType" minOccurs="1"/>
+                                                            <xs:element name="CityName" type="ds:AddressCityNameTextType" minOccurs="0"/>
+                                                            <xs:element name="CountryCode" type="ds:AddressCountryCodeType" minOccurs="0"/>
+                                                            <xs:element name="Line" type="ds:AddressLineTextType" minOccurs="0"/>
+                                                            <xs:element name="PostcodeID" type="ds:AddressPostcodeIDType" minOccurs="0"/>
                                                         </xs:sequence>
                                                     </xs:complexType>
                                                 </xs:element>
@@ -646,19 +683,7 @@
                                 <xs:sequence>
                                     <xs:element name="SequenceNumeric" type="ds:DomesticDutyTaxPartySequenceNumericType" minOccurs="1"/>
                                     <xs:element name="ID" type="ds:DomesticDutyTaxPartyIdentificationIDType" minOccurs="0"/>
-                                    <xs:element name="RoleCode" type="ds:DomesticDutyTaxPartyRoleCodeType" minOccurs="0">
-                                        <xs:annotation>
-                                            <xs:documentation>
-                                                Role Code; Party; Description
-                                                FR1; Importer; Person or persons designated or recognised as liable for the payment of value added tax by the Member State of importation in accordance with Article 201 of Directive 2006/112/EC
-                                                FR2; Customer; Person liable for the payment of Value Added Tax on the intra-Union acquisition of goods in accordance with Article 200 of Directive 2006/112/EC
-                                                FR3; Tax Representative; Tax representative liable for the payment of value added tax in the Member State of importation appointed by the importer
-                                                FR4; Holder of the deferred payment authorisation; The  taxable person or the person liable for payment or another person that has received deferment of payment in accordance with Article 211 of Directive 2006/112/EC
-                                                FR5; Vendor (IOSS); Taxable person making use of the special scheme for distance sales of goods imported from third countries and territories set out in Title XII Chapter 6 Section 4 of Directive 2006/112/EC and holder of the VAT identification number referred to in Article 369q therein.
-                                                FR7; Taxable person or of the person liable for payment of VAT; VAT identification number of the taxable person or of the person liable for payment of VAT where the payment of VAT is postponed in accordance with Article 211 second subparagraph of Directive 2006/112/EC.
-                                            </xs:documentation>
-                                        </xs:annotation>
-                                    </xs:element>
+                                    <xs:element name="RoleCode" type="ds:DomesticDutyTaxPartyRoleCodeType" minOccurs="0"/>
                                 </xs:sequence>
                             </xs:complexType>
                         </xs:element>
@@ -678,8 +703,7 @@
                                                 <type>EUCDM 5.2</type>
                                                 <code>4/18</code>
                                                 <details>
-                                                    The value of the imported Item. Written as CurrencyCode + Value. Any
-                                                    Currency code is allowed.
+                                                    The value of the imported Item. Written as CurrencyCode + Value. Any currency code is allowed.
                                                 </details>
                                                 <submission>
                                                     See details above.
@@ -746,8 +770,7 @@
                                                 <xs:element name="CategoryCode" type="ds:AdditionalDocumentCategoryCodeType" minOccurs="1">
                                                     <xs:annotation>
                                                         <xs:documentation>
-                                                            In H7 documentation this is the type code, but here it's
-                                                            split into two fields, category code and type code.
+                                                            In H7 documentation this is the type code, but here it's split into two fields, category code and type code.
                                                         </xs:documentation>
                                                     </xs:annotation>
                                                 </xs:element>
@@ -1021,13 +1044,8 @@
                                             <xs:documentation>
                                                 <type>DMS specific field</type>
                                                 <details>
-                                                    - CurrentCode should always be either "40" or "C07" or "C08" or "F48" or "F49".
-                                                    * F48 -  Import under the special scheme for distance sales of goods imported from third countries and territories set out in Title XII Chapter 6 Section 4 of Directive 2006/112/EC.
-                                                    * F49 -  Import under the special arrangements for declaration and payment of import VAT set out in Title XII Chapter 7 of Directive 2006/112/EC. C07 Must be present when this code is used.
-                                                    * C07 -  Consignments of negligible value.
-                                                    * C08 -  Consignments sent from one private individual to another.
-                                                    For further guidance see: https://www.skat.dk/skat.aspx?oId=109754
-                                                  
+                                                    - CurrentCode should always be either "40" or "C07" or "C08" or "F48" or "F49". 
+                                                      For guidance see: https://www.skat.dk/skat.aspx?oId=109754
                                                     - PreviousCode should only be used when CurrentCode = "40" and then set to "00".
                                                 </details>
                                                 <submission>
