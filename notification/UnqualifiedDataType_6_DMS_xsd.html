@@ -27,7 +27,8 @@
 				'properties_CodeType_listSchemeURI', 
 				'properties_QuantityType_unitCode', 
 				'properties_TextType_languageID');
-var facetsBoxes= new Array('facets_FormatCodeType', 
+var facetsBoxes= new Array('facets_DateTimePatternType', 
+				'facets_FormatCodeType', 
 				'facets_MeasurementUnitCommonCodeContentType', 
 				'facets_IndicatorType', 
 				'facets_IDType_schemeAgencyID', 
@@ -750,7 +751,26 @@ var attributesBoxes= new Array('attributes_IDType',
                      </tr>
                      <tr>
                         <td class="firstColumn"><b>Type</b></td>
-                        <td><b>xsd:string</b></td>
+                        <td>restriction of <b>xsd:string</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Facets</b></div>
+                           <div class="floatRight"><input id="button_facets_DateTimePatternType" type="image" src="img/btM.gif" value="-" onclick="switchState('facets_DateTimePatternType');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="facets_DateTimePatternType" style="display:block">
+                              <table class="facetsTable">
+                                 <tr>
+                                    <td class="firstColumn">pattern</td>
+                                    <td width="30%"><b>(20\d{6})(\d{6}(Z|[-+]\d\d))?</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
                      </tr>
                      <tr>
                         <td class="firstColumn">
@@ -780,7 +800,7 @@ var attributesBoxes= new Array('attributes_IDType',
                                     <td width="100%">
                                        <pre><span class="tEl">&lt;xsd:simpleType</span><span class="tAN"> name=</span><span class="tAV">"DateTimePatternType"</span><span class="tEl">&gt;</span><span class="tI">
   </span><span class="tEl">&lt;xsd:restriction</span><span class="tAN"> base=</span><span class="tAV">"xsd:string"</span><span class="tEl">&gt;</span><span class="tI">
-    </span><span class="tC">&lt;!-- &lt;xsd:pattern value="(20\d{6})(\d{6}(Z|[-+]\d\d))?"/&gt; --&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xsd:pattern</span><span class="tAN"> value=</span><span class="tAV">"(20\d{6})(\d{6}(Z|[-+]\d\d))?"</span><span class="tEl">/&gt;</span><span class="tI">
   </span><span class="tEl">&lt;/xsd:restriction&gt;</span><span class="tI">
 </span><span class="tEl">&lt;/xsd:simpleType&gt;</span></pre>
                                     </td>
