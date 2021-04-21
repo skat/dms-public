@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--======================================================================-->
+<!--=====  Unqualified Data Type Schema Module                                                          =====-->
+<!--======================================================================-->
+<!--
+Schema agency: 	UN/CEFACT 
+  	Schema version:	6.0
+  	Schema date: 	 26 January 2009
+  	
+  	Copyright (C) UN/CEFACT (2009). All Rights Reserved.
+
+	This document and translations of it may be copied and furnished to others, 
+	and derivative works that comment on or otherwise explain it or assist 
+	in its implementation may be prepared, copied, published and distributed, 
+	in whole or in part, without restriction of any kind, provided that the 
+	above copyright notice and this paragraph are included on all such copies 
+	and derivative works. However, this document itself may not be modified in 
+	any way, such as by removing the copyright notice or references to 
+	UN/CEFACT, except as needed for the purpose of developing UN/CEFACT 
+	specifications, in which case the procedures for copyrights defined in the 
+	UN/CEFACT Intellectual Property Rights document must be followed, or as 
+	required to translate it into languages other than English.
+
+	The limited permissions granted above are perpetual and will not be revoked 
+	by UN/CEFACT or its successors or assigns.
+
+	This document and the information contained herein is provided on an "AS IS"
+	basis and UN/CEFACT DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING 
+	BUT NOT LIMITED TO ANY WARRANTY THAT THE USE OF THE INFORMATION HEREIN WILL 
+	NOT INFRINGE ANY RIGHTS OR ANY IMPLIED WARRANTIES OF MERCHANTABILITY OR 
+	FITNESS FOR A PARTICULAR PURPOSE.
+-->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ccts="urn:un:unece:uncefact:documentation:standard:CoreComponentsTechnicalSpecification:2" xmlns:clm6Recommendation20="urn:un:unece:uncefact:codelist:standard:6:Recommendation20:5" xmlns:clm60133="urn:un:unece:uncefact:codelist:standard:6:0133:40106" xmlns:clm5ISO42173A="urn:un:unece:uncefact:codelist:standard:ISO:ISO3AlphaCurrencyCode:2012-08-31" xmlns:ids5ISO316612A="urn:un:unece:uncefact:identifierlist:standard:5:ISO316612A:SecondEdition2006VI-3" xmlns:clmIANAMIMEMediaType="urn:un:unece:uncefact:codelist:standard:IANA:MIMEMediaType:2008-11-12" xmlns:clmIANACharacterSetCode="urn:un:unece:uncefact:codelist:standard:IANA:CharacterSetCode:2007-05-14" xmlns:clm63055="urn:un:unece:uncefact:codelist:standard:UNECE:AgencyIdentificationCode:D12B" xmlns:udt="urn:un:unece:uncefact:data:standard:UnqualifiedDataType:6" xmlns:clm62379="urn:un:unece:uncefact:codelist:standard:6:2379:D09B" targetNamespace="urn:un:unece:uncefact:data:standard:UnqualifiedDataType:6" elementFormDefault="qualified" attributeFormDefault="unqualified" version="6.1.1">
+	<xsd:import namespace="urn:un:unece:uncefact:codelist:standard:ISO:ISO3AlphaCurrencyCode:2012-08-31" schemaLocation="ISO_ISO3AlphaCurrencyCode_2012-08-31.xsd"/>
+	<xsd:import namespace="urn:un:unece:uncefact:codelist:standard:UNECE:AgencyIdentificationCode:D12B" schemaLocation="UNECE_AgencyIdentificationCode_D12B.xsd"/>
+	<xsd:complexType name="AmountType">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:decimal">
+				<xsd:attribute name="currencyID" type="clm5ISO42173A:ISO3AlphaCurrencyCodeContentType" use="optional"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="CodeType">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:token">
+				<xsd:attribute name="listID" type="xsd:token" use="optional"/>
+				<xsd:attribute name="listAgencyID" type="clm63055:AgencyIdentificationCodeContentType" use="optional"/>
+				<xsd:attribute name="listAgencyName" type="xsd:string" use="optional"/>
+				<xsd:attribute name="listName" type="xsd:string" use="optional"/>
+				<xsd:attribute name="listVersionID" type="xsd:token" use="optional"/>
+				<xsd:attribute name="name" type="xsd:string" use="optional"/>
+				<xsd:attribute name="languageID" type="xsd:language" use="optional"/>
+				<xsd:attribute name="listURI" type="xsd:anyURI" use="optional"/>
+				<xsd:attribute name="listSchemeURI" type="xsd:anyURI" use="optional"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="FormatCodeType">
+ 		<xsd:restriction base="xsd:string">
+ 			<xsd:enumeration value="102" />
+ 			<xsd:enumeration value="304" />
+ 		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="DateTimePatternType">
+		<xsd:restriction base="xsd:string">
+              <xsd:pattern value="(20\d{6})(\d{6}(Z|[-+]\d\d))?"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="DateTimeType">
+          <xsd:simpleContent>
+            <xsd:extension base="udt:DateTimePatternType">
+              <xsd:attribute name="formatCode" type="udt:FormatCodeType" use="required"/>
+            </xsd:extension>
+          </xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="IDType">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:token">
+				<xsd:attribute name="schemeID" type="xsd:token" use="optional"/>
+				<xsd:attribute name="schemeName" type="xsd:string" use="optional"/>
+				<xsd:attribute name="schemeAgencyID" type="clm63055:AgencyIdentificationCodeContentType" use="optional"/>
+				<xsd:attribute name="schemeAgencyName" type="xsd:string" use="optional"/>
+				<xsd:attribute name="schemeVersionID" type="xsd:token" use="optional"/>
+				<xsd:attribute name="schemeDataURI" type="xsd:anyURI" use="optional"/>
+				<xsd:attribute name="schemeURI" type="xsd:anyURI" use="optional"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="IndicatorType">
+		<xsd:restriction base="xsd:boolean">
+			<xsd:pattern value="false"/>
+			<xsd:pattern value="true"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="MeasureType">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:decimal">
+				<xsd:attribute name="unitCode" type="udt:MeasurementUnitCommonCodeContentType" use="optional"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="NumericType">
+		<xsd:restriction base="xsd:decimal"/>
+	</xsd:simpleType>
+	<xsd:complexType name="QuantityType">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:decimal">
+				<xsd:attribute name="unitCode" type="udt:MeasurementUnitCommonCodeContentType" use="optional"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="TextType">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attribute name="languageID" type="xsd:language" use="optional"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="ValueType">
+		<xsd:restriction base="xsd:decimal"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="MeasurementUnitCommonCodeContentType">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="1"/>
+			<xsd:maxLength value="5"/>
+		</xsd:restriction>
+    </xsd:simpleType>
+</xsd:schema>
