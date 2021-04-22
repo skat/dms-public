@@ -22,43 +22,32 @@ export default function FileSystemNavigator() {
       defaultCollapseIcon={<ExpandMoreIcon />}
       defaultExpandIcon={<ChevronRightIcon />}
     >
-        <TreeItem nodeId="1" label="Declaration">
-          <TreeItem nodeId="2" label="FunctionCode" />
-          <TreeItem nodeId="3" label="ReferenceID" />
-          <TreeItem nodeId="4" label="ID" />
-          <TreeItem nodeId="5" label="TypeCode" />
-          <TreeItem nodeId="6" label="GoodsItemQuality" />
+      <TreeItem nodeId="1" label="Resources" >
+        <TreeItem nodeId="2" label="Schemas" >
+          <TreeItem nodeId="21" label={<a href="https://skat.github.io/dms-public/h7/">H7</a>} />
+          <TreeItem nodeId="21" label={<a href="https://skat.github.io/dms-public/notification/">Notification</a>} />
 
-          <TreeItem nodeId="8" label="DeclarationOfficeID" />
-          <TreeItem nodeId="9" label="TotalGrossMarkedMeasure" />
-          <TreeItem nodeId="10" label="Submitter" >
-            <TreeItem nodeId="111" label="Name" />
+        </TreeItem>
+        <TreeItem nodeId="3" label="Test Data" >
+          <TreeItem nodeId="31" label={<a href="https://skat.github.io/dms-public/test-data/">Eori numbers</a>} />
+        </TreeItem>
+
+      </TreeItem>
+        <TreeItem nodeId="6" label="Test examples" >
+          <TreeItem nodeId="7" label="Amend examples" >
+            <TreeItem nodeId="71" label={<a href="https://skat.github.io/dms-public/test-data/">Init_sub_amend</a>} />
+            <TreeItem nodeId="72" label={<a href="https://skat.github.io/dms-public/test-data/">senario_1_amend_success</a>} />
+            <TreeItem nodeId="73" label={<a href="https://skat.github.io/dms-public/test-data/">senario_1_amend_syntax_error</a>} />
+            <TreeItem nodeId="74" label={<a href="https://skat.github.io/dms-public/test-data/">senario_2_amend_field_error</a>} />
+            <TreeItem nodeId="75" label={<a href="https://skat.github.io/dms-public/test-data/">senario_2_amend_value_error</a>} />
+            <TreeItem nodeId="76" label={<a href="https://skat.github.io/dms-public/test-data/">senario_3_amend_manual_amend</a>} />
+            <TreeItem nodeId="77" label={<a href="https://skat.github.io/dms-public/test-data/">senario_4_amend_auto_amend</a>} />
+            <TreeItem nodeId="78" label={<a href="https://skat.github.io/dms-public/test-data/">senario_5_amend_change_VAT</a>} />
           </TreeItem>
-          <TreeItem nodeId="11" label="Agent" >
-            <TreeItem nodeId="112" label="Name" />
-            <TreeItem nodeId="113" label="ID" />
-            <TreeItem nodeId="114" label="FunctionCode" />
-          </TreeItem>
-          <TreeItem nodeId="12" label="Declarant" >
-            <TreeItem nodeId="122" label="Name" />
-            <TreeItem nodeId="123" label="ID" />
-            <TreeItem nodeId="124" label="Address" />
-          </TreeItem>
-          <TreeItem nodeId="13" label="Exporter" >
-            <TreeItem nodeId="132" label="Name" />
-            <TreeItem nodeId="133" label="ID" />
-            <TreeItem nodeId="134" label="Address" />
-          </TreeItem>
-          <TreeItem nodeId="14" label="GoodsShipment" >
-            <TreeItem nodeId="142" label="AdditionalDocumentation" />
-            <TreeItem nodeId="143" label="AdditionalInformation" />
-            <TreeItem nodeId="144" label="Consignment" />
-            <TreeItem nodeId="145" label="CustomsValuation" />
-            <TreeItem nodeId="146" label="DomesticDutyTaxParty" />
-            <TreeItem nodeId="147" label="GovernmentAgencyGoodsItem" />
-            <TreeItem nodeId="148" label="Importer" />
-            <TreeItem nodeId="149" label="PreviousDocument" />
-            <TreeItem nodeId="1499" label="UCR" />
+          <TreeItem nodeId="8" label="Correction examples" >
+            <TreeItem nodeId="81" label={<a href="https://skat.github.io/dms-public/test-data/">Init_sub_corr</a>} />
+            <TreeItem nodeId="82" label={<a href="https://skat.github.io/dms-public/test-data/">senario_1_corr_success</a>} />
+            <TreeItem nodeId="83" label={<a href="https://skat.github.io/dms-public/test-data/">senario_1_corr_syntax_error</a>} />
           </TreeItem>
         </TreeItem>
       </TreeView>
