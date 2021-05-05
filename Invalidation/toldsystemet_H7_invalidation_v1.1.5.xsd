@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="urn:wco:datamodel:WCO:DEC-DMS:2" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ds="urn:wco:datamodel:WCO:Declaration_DS:DMS:2" targetNamespace="urn:wco:datamodel:WCO:DEC-DMS:2" elementFormDefault="qualified" version="1.1.5">
+	<xs:import namespace="urn:wco:datamodel:WCO:Declaration_DS:DMS:2" schemaLocation="toldsystemet_DS/toldsystemet_DS_v1.xsd"/>
+	<xs:element name="Declaration" type="Declaration"/>
+	<xs:complexType name="Declaration">
+		<xs:sequence>
+			<xs:element name="FunctionCode" type="ds:DeclarationFunctionCodeType" minOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						<type>DMS specific field</type>
+						<details>
+							Fill in '1' for invalidation
+						</details>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ProcedureCategory" type="ds:DeclarationProcedureCategoryCodeType" minOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						<type>DMS specific field</type>
+						<details>
+							Fill in 'H7' for invalidation of an H7 declaration.
+						</details>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="FunctionalReferenceID" type="ds:DeclarationFunctionalReferenceIDType" minOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						<type>EUCDM 5.2</type>
+						<code>2/5</code>
+						<details>
+							LRN - The local reference number (LRN) shall be used. It is nationally defined and allocated
+							by the declarant in agreement with the competent authorities to identify each single
+							declaration. Must be unique.
+						</details>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ID" type="ds:DeclarationIdentificationIDType" minOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						MRN.
+						Fill in the MRN of the H7 declaration you want to invalidate.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TypeCode" type="ds:DeclarationTypeCodeType" minOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						Fill in 'INV' for an invalidation request.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Submitter" minOccurs="1">
+                <xs:annotation>
+					<xs:documentation>
+						<type>DMS specific field</type>
+						<details>
+							Name and identifier of submitting company.
+							This should be the same as for the initial submission. 
+						</details>
+					</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Name" type="ds:SubmitterNameTextType"	minOccurs="1">
+							<xs:annotation>
+								<xs:documentation>
+									<details>
+										The CVR/SE-number/EORI given by the client certificate used for the submission of declarations.
+										Example: 30808460
+									</details>
+								</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="ID" type="ds:SubmitterIdentificationIDType" minOccurs="1">
+							<xs:annotation>
+								<xs:documentation>
+									<details>
+										The CVR/SE-number/EORI given by the client certificate used for the submission of declarations.
+										Example: 30808460
+									</details>
+								</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+				<xs:element name="Amendment" minOccurs="1" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="SequenceNumeric" type="ds:AmendmentSequenceNumericType" minOccurs="1"/>
+						<xs:element name="ChangeReasonCode" type="ds:AmendmentChangeReasonCodeType" minOccurs="1">
+							<xs:annotation>
+								<xs:documentation>
+									Code for reason for invalidation.
+
+									- '22': Goods have been returned to supplier (Art. 148, 3 DA)
+									- '23': Union goods declared by mistake (Art. 148, 4b DA)
+									- '24': Registration of same goods on several declarations (Art. 148, C DA)
+									- '25': Postal low value consignments returned on basis of barcode S10 (Art. 148 (3) and Art. 140 (1)(d) and Art. 141 (4) DA)
+									- '26': Accepted declarations with goods to be placed under another customs procedure (Art. 174, 1a UCC)
+									- '27': The customs procedure is no longer justified due to special circumstances (Art. 174, 1b UCC)
+									- '28': For Customs officers only!: Disposal of goods (Art. 198 UCC)
+								</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element> 
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>
