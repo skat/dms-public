@@ -1,0 +1,534 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="urn:wco:datamodel:WCO:DEC-DMS:2" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:ds="urn:wco:datamodel:WCO:Declaration_DS:DMS:2" targetNamespace="urn:wco:datamodel:WCO:DEC-DMS:2"
+           elementFormDefault="qualified" version="1.1.5">
+    <xs:import namespace="urn:wco:datamodel:WCO:Declaration_DS:DMS:2"
+               schemaLocation="toldsystemet_DS/toldsystemet_DS_v1.xsd"/>
+    <xs:element name="Declaration" type="Declaration"/>
+    <xs:complexType name="Declaration">
+        <xs:annotation>
+            <xs:documentation>
+                <details>
+                    I2 declaration.
+                </details>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+
+            <xs:element name="FunctionCode" type="ds:DeclarationFunctionCodeType">
+                <xs:annotation>
+                    <xs:documentation>
+                        <type>DMS specific field</type>
+                        <details>
+                            Code for type of declaration.
+                            Fill in '24' for goods presentation with an I2 declaration.
+                        </details>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="ProcedureCategory" type="ds:DeclarationProcedureCategoryCodeType">
+                <xs:annotation>
+                    <xs:documentation>
+                        <type>DMS specific field</type>
+                        <details>
+                            The type of initial declaration.
+                            Fill in 'H7' for presenting goods in an H7 declaration
+                        </details>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="FunctionalReferenceID" type="ds:DeclarationFunctionalReferenceIDType" minOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>
+                        <type>EUCDM 5.2</type>
+                        <code>2/5</code>
+                        <details>
+                            LRN - The local reference number (LRN) shall be used. It is nationally defined and allocated
+                            by the declarant in agreement with the competent authorities to identify each single
+                            declaration. Must be unique.
+                        </details>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="ID" type="ds:DeclarationIdentificationIDType" minOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>
+                        <type>DMS specific field</type>
+                        <details>
+                            The MRN.
+                            Fill in the MRN for the H7 declaration the I2 should be added to.
+                        </details>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="TypeCode" type="ds:DeclarationTypeCodeType" minOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>
+                        <type>DMS specific field</type>
+                        <details>
+                            Code for type of declaration.
+                            Fill in 'GPR' for in I2 - Goods Presentation.
+                        </details>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="TotalGrossMassMeasure" type="ds:DeclarationTotalGrossMassMeasureType" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>
+                        <type>EUCDM 5.2</type>
+                        <code>6/5</code>
+                        <details>
+                            Weight of packages.
+
+                            This information shall only be provided if the discharge of the goods under
+                            temporary storage concerns only parts of the declaration for temporary storage
+                            lodged previously in relation with the goods concerned.
+
+                            If filled, and is also filled on initial H7 declaration, it is validated against initial
+                            declaration and they must be the same.
+                        </details>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="Submitter" minOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>
+                        <type>DMS specific field</type>
+                        <details>
+                            Name and identifier of submitting company.
+                        </details>
+                    </xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="Name" type="ds:SubmitterNameTextType" minOccurs="1">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    <details>
+                                        The CVR/SE-number/EORI given by the client certificate used for the submission
+                                        of declarations.
+                                        Example: 30808460
+                                    </details>
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
+            <xs:element name="GoodsShipment">
+                <xs:annotation>
+                    <xs:documentation>
+                        <details>
+                            H7 declaration goods.
+                        </details>
+                    </xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="Consignment" minOccurs="0" maxOccurs="1">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="GoodsLocation" minOccurs="1">
+                                        <xs:annotation>
+                                            <xs:documentation>
+                                                <type>EUCDM 5.2</type>
+                                                <code>5/23</code>
+                                                <details>
+                                                    The location of goods.
+                                                    Mandatory for an I2 if not specified on initial pre-lodged H7
+                                                    declaration.
+
+                                                    Valid combinations of GoodsLocation/TypeCode and
+                                                    GoodsLocation/Address/TypeCode:
+
+                                                    - GoodsLocation/TypeCode 'A' (Designated place):
+                                                    - GoodsLocation/Address/TypeCode: 'U' (UN/LOCODE)
+                                                    - GoodsLocation/Address/TypeCode: 'V' (Customs office identifier)
+
+                                                    - GoodsLocation/TypeCode 'B' (Authorised place):
+                                                    - GoodsLocation/Address/TypeCode: 'Y' (Authorisation number)
+                                                    This case is used if the goods are cleared through customs from MIO
+                                                    (temporary storage).
+
+                                                    - GoodsLocation/TypeCode 'C' (Approved place):
+                                                    - GoodsLocation/Address/TypeCode: 'Z' (Free text - address)
+
+                                                    - GoodsLocation/TypeCode 'D' (Other):
+                                                    - GoodsLocation/Address/TypeCode: 'Z' (Free text - address)
+                                                </details>
+                                            </xs:documentation>
+                                        </xs:annotation>
+                                        <xs:complexType>
+                                            <xs:sequence>
+                                                <xs:element name="Name" type="ds:GoodsLocationNameTextType"
+                                                            minOccurs="0">
+                                                    <xs:annotation>
+                                                        <xs:documentation xml:lang="EN">
+                                                            Identification of location.
+                                                            If
+                                                            - GoodsLocation/Address/TypeCode = 'U' this field should be
+                                                            the UN/LOCODE
+                                                            - GoodsLocation/Address/TypeCode = 'V' this field should not
+                                                            be filled
+                                                            - GoodsLocation/Address/TypeCode = 'Y' this field should be
+                                                            filled with the name of the location
+                                                            - GoodsLocation/Address/TypeCode = 'Z' this field should be
+                                                            filled with the name of the location
+                                                        </xs:documentation>
+                                                    </xs:annotation>
+                                                </xs:element>
+                                                <xs:element name="ID" type="ds:GoodsLocationIdentificationIDType"
+                                                            minOccurs="0">
+                                                    <xs:annotation>
+                                                        <xs:documentation>
+                                                            ID qualifier code.
+                                                            If
+                                                            - GoodsLocation/TypeCode = 'A' and
+                                                            GoodsLocation/Address/TypeCode = 'U': Additional identifier
+                                                            of the UN/LOCODE
+                                                            - GoodsLocation/TypeCode = 'A' and
+                                                            GoodsLocation/Address/TypeCode = 'V': Customs office ID
+                                                            - GoodsLocation/TypeCode = 'B' and
+                                                            GoodsLocation/Address/TypeCode = 'Y': Authorisation number
+                                                            - GoodsLocation/TypeCode = 'C' and
+                                                            GoodsLocation/Address/TypeCode = 'Z': This field should not
+                                                            be filled
+                                                            - GoodsLocation/TypeCode = 'D' and
+                                                            GoodsLocation/Address/TypeCode = 'Z': This field should not
+                                                            be filled
+                                                        </xs:documentation>
+                                                    </xs:annotation>
+                                                </xs:element>
+                                                <xs:element name="TypeCode" type="ds:GoodsLocationTypeCodeType"
+                                                            minOccurs="1">
+                                                    <xs:annotation>
+                                                        <xs:documentation>
+                                                            Type of location.
+                                                            - 'A': Designated place (can be combined with
+                                                            GoodsLocation/Address/TypeCode: 'U' and 'V')
+                                                            - 'B': Authorised place (can be combined with
+                                                            GoodsLocation/Address/TypeCode: 'Y')
+                                                            - 'C': Approved place (can be combined with
+                                                            GoodsLocation/Address/TypeCode: 'Z')
+                                                            - 'D': Other (can be combined with
+                                                            GoodsLocation/Address/TypeCode: 'Z')
+                                                        </xs:documentation>
+                                                    </xs:annotation>
+                                                </xs:element>
+                                                <xs:element name="Address">
+                                                    <xs:complexType>
+                                                        <xs:sequence>
+                                                            <xs:element name="TypeCode" type="ds:AddressTypeCodeType"
+                                                                        minOccurs="1">
+                                                                <xs:annotation>
+                                                                    <xs:documentation xml:lang="EN">
+                                                                        Qualifier of identification
+                                                                        Codes relevant for H7:
+                                                                        - 'U': UN/LOCODE
+                                                                        - 'V': Customs office identifier
+                                                                        - 'Y': Authorisation number
+                                                                        - 'Z': Free text (Fill in
+                                                                        GoodsLocation/Address/... fields)
+                                                                    </xs:documentation>
+                                                                </xs:annotation>
+                                                            </xs:element>
+                                                            <xs:element name="CityName"
+                                                                        type="ds:AddressCityNameTextType" minOccurs="0">
+                                                                <xs:annotation>
+                                                                    <xs:documentation>
+                                                                        City Name.
+                                                                    </xs:documentation>
+                                                                </xs:annotation>
+                                                            </xs:element>
+                                                            <xs:element name="CountryCode"
+                                                                        type="ds:AddressCountryCodeType" minOccurs="0">
+                                                                <xs:annotation>
+                                                                    <xs:documentation>
+                                                                        Country code.
+                                                                    </xs:documentation>
+                                                                </xs:annotation>
+                                                            </xs:element>
+                                                            <xs:element name="Line" type="ds:AddressLineTextType"
+                                                                        minOccurs="0">
+                                                                <xs:annotation>
+                                                                    <xs:documentation>
+                                                                        Address Line.
+                                                                    </xs:documentation>
+                                                                </xs:annotation>
+                                                            </xs:element>
+                                                            <xs:element name="PostcodeID"
+                                                                        type="ds:AddressPostcodeIDType" minOccurs="0">
+                                                                <xs:annotation>
+                                                                    <xs:documentation>
+                                                                        Post code.
+                                                                    </xs:documentation>
+                                                                </xs:annotation>
+                                                            </xs:element>
+                                                        </xs:sequence>
+                                                    </xs:complexType>
+                                                </xs:element>
+                                            </xs:sequence>
+                                        </xs:complexType>
+                                    </xs:element>
+
+                                    <xs:element name="GovernmentAgencyGoodsItem" minOccurs="0" maxOccurs="999">
+                                        <xs:complexType>
+                                            <xs:sequence>
+                                                <xs:element name="SequenceNumeric"
+                                                            type="ds:GovernmentAgencyGoodsItemSequenceNumericType"
+                                                            minOccurs="1">
+                                                    <xs:annotation>
+                                                        <xs:documentation>
+                                                            <type>EUCDM 5.2</type>
+                                                            <code>1/6</code>
+                                                            <details>
+                                                                Goods item number.
+                                                                If filled, and is also filled on initial H7 declaration,
+                                                                it is validated against initial declaration and they
+                                                                must be the same.
+                                                            </details>
+                                                        </xs:documentation>
+                                                    </xs:annotation>
+                                                </xs:element>
+                                                <xs:element name="Commodity">
+                                                    <xs:complexType>
+                                                        <xs:sequence>
+                                                            <xs:element name="GoodsMeasure" minOccurs="0" maxOccurs="1">
+                                                                <xs:complexType>
+                                                                    <xs:sequence>
+                                                                        <xs:element name="GrossMassMeasure"
+                                                                                    type="ds:GoodsMeasureGrossMassMeasureType"
+                                                                                    minOccurs="0">
+                                                                            <xs:annotation>
+                                                                                <xs:documentation>
+                                                                                    <type>EUCDM 5.2</type>
+                                                                                    <code>6/5</code>
+                                                                                    <details>
+                                                                                        Gross mass in kilograms.
+                                                                                        The gross mass is the weight of
+                                                                                        goods including packaging, but
+                                                                                        excluding the carrier's
+                                                                                        equipment for the declaration.
+
+                                                                                        This information shall only be
+                                                                                        provided if the discharge of the
+                                                                                        goods under
+                                                                                        temporary storage concerns only
+                                                                                        parts of the declaration for
+                                                                                        temporary storage
+                                                                                        lodged previously in relation
+                                                                                        with the goods concerned.
+
+                                                                                        If filled, and is also filled on
+                                                                                        initial H7 declaration, it is
+                                                                                        validated against initial
+                                                                                        declaration and they must be the
+                                                                                        same.
+                                                                                    </details>
+                                                                                </xs:documentation>
+                                                                            </xs:annotation>
+                                                                        </xs:element>
+                                                                    </xs:sequence>
+                                                                </xs:complexType>
+                                                            </xs:element>
+                                                            <xs:element name="TransportEquipment" minOccurs="0"
+                                                                        maxOccurs="unbounded">
+                                                                <xs:annotation>
+                                                                    <xs:documentation>
+                                                                        <type>EUCDM 5.2</type>
+                                                                        <code>7/10</code>
+                                                                        <details>
+                                                                            Container identification
+                                                                        </details>
+                                                                    </xs:documentation>
+                                                                </xs:annotation>
+                                                                <xs:complexType>
+                                                                    <xs:sequence>
+                                                                        <xs:element name="SequenceNumeric"
+                                                                                    type="ds:TransportEquipmentSequenceNumericType"
+                                                                                    minOccurs="1"/>
+                                                                        <xs:element name="ID"
+                                                                                    type="ds:TransportEquipmentIdentificationIDType"
+                                                                                    minOccurs="1">
+                                                                            <xs:annotation>
+                                                                                <xs:documentation>
+                                                                                    Container identification number.
+                                                                                    If filled, and is also filled on
+                                                                                    initial H7 declaration, it is
+                                                                                    validated against initial
+                                                                                    declaration and they must be the
+                                                                                    same.
+                                                                                </xs:documentation>
+                                                                            </xs:annotation>
+                                                                        </xs:element>
+                                                                    </xs:sequence>
+                                                                </xs:complexType>
+                                                            </xs:element>
+                                                        </xs:sequence>
+                                                    </xs:complexType>
+                                                </xs:element>
+                                                <xs:element name="Packaging" minOccurs="0" maxOccurs="unbounded">
+                                                    <xs:complexType>
+                                                        <xs:sequence>
+                                                            <xs:element name="SequenceNumeric"
+                                                                        type="ds:PackagingSequenceNumericType"
+                                                                        minOccurs="1"/>
+                                                            <xs:element name="QuantityQuantity"
+                                                                        type="ds:PackagingQuantityQuantityType"
+                                                                        minOccurs="0">
+                                                                <xs:annotation>
+                                                                    <xs:documentation>
+                                                                        <type>EUCDM 5.2</type>
+                                                                        <code>6/10</code>
+                                                                        <details>
+                                                                            Number of packages.
+
+                                                                            This information shall only be provided if
+                                                                            the discharge of the goods under
+                                                                            temporary storage concerns only parts of the
+                                                                            declaration for temporary storage
+                                                                            lodged previously in relation with the goods
+                                                                            concerned.
+
+                                                                            If filled, and is also filled on initial H7
+                                                                            declaration, it is validated against initial
+                                                                            declaration and they must be the same.
+                                                                        </details>
+                                                                    </xs:documentation>
+                                                                </xs:annotation>
+                                                            </xs:element>
+                                                            <xs:element name="TypeCode" type="ds:PackagingTypeCodeType"
+                                                                        minOccurs="0">
+                                                                <xs:annotation>
+                                                                    <xs:documentation>
+                                                                        <type>EUCDM 5.2</type>
+                                                                        <code>6/9</code>
+                                                                        <details>
+                                                                            Type of packages.
+
+                                                                            This information shall only be provided if
+                                                                            the discharge of the goods under
+                                                                            temporary storage concerns only parts of the
+                                                                            declaration for temporary storage
+                                                                            lodged previously in relation with the goods
+                                                                            concerned.
+
+                                                                            If filled, and is also filled on initial H7
+                                                                            declaration, it is validated against initial
+                                                                            declaration and they must be the same.
+                                                                        </details>
+                                                                    </xs:documentation>
+                                                                </xs:annotation>
+                                                            </xs:element>
+                                                        </xs:sequence>
+                                                    </xs:complexType>
+                                                </xs:element>
+                                                <xs:element name="PreviousDocument" minOccurs="0" maxOccurs="unbounded">
+                                                    <xs:annotation>
+                                                        <xs:documentation>
+                                                            <type>EUCDM 5.2</type>
+                                                            <code>2/1</code>
+                                                            <details>
+                                                                If one subfield is filled, all subfields have to be
+                                                                filled.
+
+                                                                - CategoryCode should be filled with:
+                                                                - 'X': Summary declaration
+                                                                - 'Y': Initial declaration
+                                                                - 'Z': Preceding declaration
+
+                                                                - TypeCode should be filled according to type of
+                                                                document, see https://www.skat.dk/skat.aspx?oId=1658884
+                                                                under "Dok art"-column.
+                                                            </details>
+                                                        </xs:documentation>
+                                                    </xs:annotation>
+                                                    <xs:complexType>
+                                                        <xs:sequence>
+                                                            <xs:element name="SequenceNumeric"
+                                                                        type="ds:PreviousDocumentSequenceNumericType"
+                                                                        minOccurs="1"/>
+                                                            <xs:element name="CategoryCode"
+                                                                        type="ds:PreviousDocumentCategoryCodeType"
+                                                                        minOccurs="1">
+                                                                <xs:annotation>
+                                                                    <xs:documentation>
+                                                                        In H7 documentation this is the type code, but
+                                                                        here it's
+                                                                        split into two fields, category code and type
+                                                                        code.
+                                                                    </xs:documentation>
+                                                                </xs:annotation>
+                                                            </xs:element>
+                                                            <xs:element name="ID"
+                                                                        type="ds:PreviousDocumentIdentificationIDType"
+                                                                        minOccurs="1"/>
+                                                            <xs:element name="TypeCode"
+                                                                        type="ds:PreviousDocumentTypeCodeType"
+                                                                        minOccurs="1"/>
+                                                            <xs:element name="LineNumeric"
+                                                                        type="ds:PreviousDocumentLineNumericType"
+                                                                        minOccurs="1"/>
+                                                        </xs:sequence>
+                                                    </xs:complexType>
+                                                </xs:element>
+                                            </xs:sequence>
+                                        </xs:complexType>
+                                    </xs:element>
+                                    <xs:element name="PreviousDocument" minOccurs="0" maxOccurs="unbounded">
+                                        <xs:annotation>
+                                            <xs:documentation>
+                                                <type>EUCDM 5.2</type>
+                                                <code>2/1</code>
+                                                <details>
+                                                    If one subfield is filled, all subfields have to be filled.
+
+                                                    - CategoryCode should be filled with:
+                                                    - 'X': Summary declaration
+                                                    - 'Y': Initial declaration
+                                                    - 'Z': Preceding declaration
+
+                                                    - TypeCode should be filled according to type of document, see
+                                                    https://www.skat.dk/skat.aspx?oId=1658884 under "Dok art"-column.
+                                                </details>
+                                            </xs:documentation>
+                                        </xs:annotation>
+                                        <xs:complexType>
+                                            <xs:sequence>
+                                                <xs:element name="SequenceNumeric"
+                                                            type="ds:PreviousDocumentSequenceNumericType"
+                                                            minOccurs="1"/>
+                                                <xs:element name="CategoryCode"
+                                                            type="ds:PreviousDocumentCategoryCodeType" minOccurs="1">
+                                                    <xs:annotation>
+                                                        <xs:documentation>
+                                                            In H7 documentation this is the type code, but here it's
+                                                            split into two fields, category code and type code.
+                                                        </xs:documentation>
+                                                    </xs:annotation>
+                                                </xs:element>
+                                                <xs:element name="ID" type="ds:PreviousDocumentIdentificationIDType"
+                                                            minOccurs="1"/>
+                                                <xs:element name="TypeCode" type="ds:PreviousDocumentTypeCodeType"
+                                                            minOccurs="1"/>
+                                                <xs:element name="LineNumeric" type="ds:PreviousDocumentLineNumericType"
+                                                            minOccurs="1"/>
+                                            </xs:sequence>
+                                        </xs:complexType>
+                                    </xs:element>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
