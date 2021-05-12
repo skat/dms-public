@@ -155,34 +155,14 @@
                 </xs:annotation>
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element name="AttachedDocument" minOccurs="0" maxOccurs="unbounded">
-                            <xs:annotation>
-                                <xs:documentation>
-                                    <type>EUCDM 5.2 - Annex A</type>
-                                    <code>2/4</code>
-                                    <details>
-                                        If on subfield is filled, they all have to be filled.
-                                    </details>
-                                </xs:documentation>
-                            </xs:annotation>
-                            <xs:complexType>
-                                <xs:sequence>
-                                    <xs:element name="Type" type="eds:AttachedDocumentTypeType" minOccurs="1"/>
-                                    <xs:element name="AttachedDocumentID" type="eds:AttachedDocumentIdentifierType"
-                                                minOccurs="1"/>
-                                    <xs:element name="AttachedDocumentDate" type="udt:DateTimeType" minOccurs="1"/>
-                                </xs:sequence>
-                            </xs:complexType>
-                        </xs:element>
-
+                        
                         <xs:element name="ApplicationHolder" minOccurs="0" maxOccurs="1">
                             <xs:annotation>
                                 <xs:documentation>
                                     <type>EUCDM 5.2 - Annex A</type>
                                     <code>3/1</code>
                                     <details>
-                                        If D.E 3/2 - ApplicationHolderId is NOT filled, this should be filled and all
-                                        subfields should be filled.
+                                        If D.E 3/2 - ApplicationHolderId is 'DK09999981' all subfields must be filled.
                                     </details>
                                 </xs:documentation>
                             </xs:annotation>
@@ -197,15 +177,14 @@
                             </xs:complexType>
                         </xs:element>
 
-                        <xs:element name="ApplicationHolderId" type="eds:AuthorisationIDType" minOccurs="0"
+                        <xs:element name="ApplicationHolderId" type="eds:AuthorisationIDType" minOccurs="1"
                                     maxOccurs="1">
                             <xs:annotation>
                                 <xs:documentation>
                                     <type>EUCDM 5.2 - Annex A</type>
                                     <code>3/2</code>
                                     <details>
-                                        If D.E 3/1 - ApplicationHolder is NOT filled, this should be filled.
-                                        Fill in EORI.
+                                        Fill in EORI - must be the same as D.E 3/18 - Declarant/ID in original H7 declaration.
                                     </details>
                                 </xs:documentation>
                             </xs:annotation>
@@ -247,8 +226,6 @@
                                     <code>3/3</code>
                                     <details>
                                         Contact details of the representative.
-                                        If D.E. 3/4 - RepresentativeId is NOT filled, this should be filled and all
-                                        subfields should be filled.
                                     </details>
                                 </xs:documentation>
                             </xs:annotation>
@@ -310,7 +287,8 @@
                                     <xs:element name="Amount" type="eds:AmountTypeType" minOccurs="1">
                                         <xs:annotation>
                                             <xs:documentation>
-                                                Fill in the duty amount in DKK.
+                                                Fill in the VAT amount in DKK.
+                                                Must be the same as the VAT amount in the original H7 declaration.  
                                             </xs:documentation>
                                         </xs:annotation>
                                     </xs:element>
