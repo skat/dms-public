@@ -155,6 +155,44 @@
                 </xs:annotation>
                 <xs:complexType>
                     <xs:sequence>
+
+                        <xs:element name="ApplicationCodeType" type="eds:AuthorisationCodeType" minOccurs="1" maxOccurs="1">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    <type>EUCDM 5.2 - Annex A</type>
+                                    <code>1/1</code>
+                                    <details>
+                                        Code for type of application. 
+                                        Fill in "REP" for a repayment application. 
+                                    </details>
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+
+                        <xs:element name="AttachedDocument" minOccurs="0" maxOccurs="unbounded">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    <type>EUCDM 5.2 - Annex A</type>
+                                    <code>2/4</code>
+                                    <details>
+                                        If on subfield is filled, they all have to be filled.
+                                    </details>
+                                </xs:documentation>
+                            </xs:annotation>
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="Type" type="eds:AttachedDocumentTypeType" minOccurs="1"/>
+                                    <xs:element name="AttachedDocumentID" type="eds:AttachedDocumentIdentifierType" minOccurs="1"/>
+                                    <xs:element name="AttachedDocumentDate" type="udt:DateTimeType" minOccurs="1"> 
+                                        <xs:annotation>
+                                            <xs:documentation>
+                                                Date format is 'yyyymmdd'.
+                                            </xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
                         
                         <xs:element name="ApplicationHolder" minOccurs="0" maxOccurs="1">
                             <xs:annotation>
@@ -177,8 +215,7 @@
                             </xs:complexType>
                         </xs:element>
 
-                        <xs:element name="ApplicationHolderId" type="eds:AuthorisationIDType" minOccurs="1"
-                                    maxOccurs="1">
+                        <xs:element name="ApplicationHolderId" type="eds:AuthorisationIDType" minOccurs="1" maxOccurs="1">
                             <xs:annotation>
                                 <xs:documentation>
                                     <type>EUCDM 5.2 - Annex A</type>
@@ -308,7 +345,7 @@
                             </xs:annotation>
                             <xs:complexType>
                                 <xs:sequence>
-                                    <xs:element name="UnionCode" type="eds:UnionCodeType">
+                                    <xs:element name="UnionCode" type="eds:UnionCodeType" minOccurs="1">
                                         <xs:annotation>
                                             <xs:documentation>
                                                 Fill in "B00".
