@@ -3,7 +3,7 @@
            xmlns:eds="urn:wco:datamodel:WCO:WCO_DEC_EDS_AUTHORISATION:1"
            xmlns:udt="urn:un:unece:uncefact:data:standard:UnqualifiedDataType:6"
            xmlns="urn:wco:datamodel:WCO:DEC-DMS:2"
-           targetNamespace="urn:wco:datamodel:WCO:DEC-DMS:2" elementFormDefault="qualified" version="1.1.5">
+           targetNamespace="urn:wco:datamodel:WCO:DEC-DMS:2" elementFormDefault="qualified" version="1.1.6">
     <xs:import namespace="urn:wco:datamodel:WCO:Declaration_DS:DMS:2"
                schemaLocation="toldsystemet_DS/toldsystemet_DS_v1.xsd"/>
     <xs:import namespace="urn:un:unece:uncefact:data:standard:UnqualifiedDataType:6"
@@ -155,7 +155,47 @@
                 </xs:annotation>
                 <xs:complexType>
                     <xs:sequence>
-                        
+
+                        <xs:element name="ApplicationCodeType" type="eds:AuthorisationCodeType" minOccurs="1"
+                                    maxOccurs="1">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    <type>EUCDM 5.2 - Annex A</type>
+                                    <code>1/1</code>
+                                    <details>
+                                        Code for type of application.
+                                        Fill in "REP" for a repayment application.
+                                    </details>
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+
+                        <xs:element name="AttachedDocument" minOccurs="0" maxOccurs="unbounded">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    <type>EUCDM 5.2 - Annex A</type>
+                                    <code>2/4</code>
+                                    <details>
+                                        If on subfield is filled, they all have to be filled.
+                                    </details>
+                                </xs:documentation>
+                            </xs:annotation>
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="Type" type="eds:AttachedDocumentTypeType" minOccurs="1"/>
+                                    <xs:element name="AttachedDocumentID" type="eds:AttachedDocumentIdentifierType"
+                                                minOccurs="1"/>
+                                    <xs:element name="AttachedDocumentDate" type="udt:DateTimeType" minOccurs="1">
+                                        <xs:annotation>
+                                            <xs:documentation>
+                                                Date format is 'yyyymmdd'.
+                                            </xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+
                         <xs:element name="ApplicationHolder" minOccurs="0" maxOccurs="1">
                             <xs:annotation>
                                 <xs:documentation>
@@ -184,7 +224,8 @@
                                     <type>EUCDM 5.2 - Annex A</type>
                                     <code>3/2</code>
                                     <details>
-                                        Fill in EORI - must be the same as D.E 3/18 - Declarant/ID in original H7 declaration.
+                                        Fill in EORI - must be the same as D.E 3/18 - Declarant/ID in original H7
+                                        declaration.
                                     </details>
                                 </xs:documentation>
                             </xs:annotation>
@@ -288,7 +329,7 @@
                                         <xs:annotation>
                                             <xs:documentation>
                                                 Fill in the VAT amount in DKK.
-                                                Must be the same as the VAT amount in the original H7 declaration.  
+                                                Must be the same as the VAT amount in the original H7 declaration.
                                             </xs:documentation>
                                         </xs:annotation>
                                     </xs:element>
@@ -308,7 +349,7 @@
                             </xs:annotation>
                             <xs:complexType>
                                 <xs:sequence>
-                                    <xs:element name="UnionCode" type="eds:UnionCodeType">
+                                    <xs:element name="UnionCode" type="eds:UnionCodeType" minOccurs="1">
                                         <xs:annotation>
                                             <xs:documentation>
                                                 Fill in "B00".
