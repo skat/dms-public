@@ -281,7 +281,7 @@
                             </xs:complexType>
                         </xs:element>
 
-                        <xs:element name="RepresentativeId" type="eds:AuthorisationIDType" minOccurs="0" maxOccurs="1">
+                        <xs:element name="RepresentativeId" type="eds:AuthorisationIDType" minOccurs="1" maxOccurs="1">
                             <xs:annotation>
                                 <xs:documentation>
                                     <type>EUCDM 5.2 - Annex A</type>
@@ -304,6 +304,48 @@
                                     </details>
                                 </xs:documentation>
                             </xs:annotation>
+                        </xs:element>
+
+
+                        <xs:element name="CustomsOfficeNotified" type="eds:CustomsOfficeNotifiedType" minOccurs="1">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    VIII/2 - Annex A
+                                    Customs office where the customs debt was notified. 
+                                    Fill in the DeclarationCustomsOfficeID from the original H7 declaration. 
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+
+                        <xs:element name="CustomsOfficeLocation" type="eds:CustomsOfficeLocationTextType" minOccurs="1">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    VIII/3 - Annex A
+                                    Customs office responsible for the place where the goods are located. 
+                                    Fill in the DeclarationCustomsOfficeID from the original H7 declaration. 
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+
+                        <xs:element name="CustomsValue" type="eds:ValueType" minOccurs= "1">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    VIII/6 - Annex A
+                                    Customs value
+                                </xs:documentation>
+                            </xs:annotation>
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="Currency" type="eds:CurrencyType">
+                                        <xs:annotation>
+                                            <xs:documentation>
+                                                Fill in "DKK".
+                                            </xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="Amount" type="eds:AmountTypeType"/>
+                                </xs:sequence>
+                            </xs:complexType>
                         </xs:element>
 
                         <xs:element name="AmountDuty" minOccurs="1">

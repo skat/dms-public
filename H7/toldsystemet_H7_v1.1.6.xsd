@@ -75,7 +75,7 @@
                             See details above.
                         </submission>
                         <amendment>
-                            Can be corrected for an amendment.
+                            Can not be corrected for an amendment.
                         </amendment>
                         <correction>
                             Can be corrected for a correction.
@@ -172,7 +172,7 @@
                 <xs:annotation>
                     <xs:documentation>
                         <type>EUCDM 5.2</type>
-                        <code>5/23</code>
+                        <code>5/26</code>
                         <details>
                             Find Declaration Office ID's here:
                             https://ec.europa.eu/taxation_customs/dds2/rd/rd_search_home.jsp?Lang=en
@@ -393,6 +393,8 @@
                                         - If .../Declarant/ID is not 'DK09999981' this should not be filled.
                                         - If .../Declarant/ID is not 'DK09999981' this should not be filled.
                                         - If declarant is private 'DK9999' is used for 'C08'.
+
+                                        NB: Only the following special characters are allowed: ' ( ) " . , _  \
                                     </details>
                                 </xs:documentation>
                             </xs:annotation>
@@ -481,6 +483,8 @@
                                     <code>3/1</code>
                                     <details>
                                         Person or Company name.
+
+                                        NB: Only the following special characters are allowed: ' ( ) " . , _  \
                                     </details>
                                 </xs:documentation>
                             </xs:annotation>
@@ -550,7 +554,7 @@
                                     <details>
                                         All subfields have to be filled, if one is filled.
 
-                                        For information on which codes to fill in the subfields, see here:
+                                        For information on which codes to use, see here:
                                         https://www.skat.dk/skat.aspx?oId=109749
                                         https://www.skat.dk/skat.aspx?oId=109751
                                         https://unece.org/fileadmin/DAM/trade/untdid/d16b/tred/tred1001.htm
@@ -568,26 +572,36 @@
                             </xs:annotation>
                             <xs:complexType>
                                 <xs:sequence>
-                                    <xs:element name="SequenceNumeric" type="ds:AdditionalDocumentSequenceNumericType"
-                                                minOccurs="1">
+                                    <xs:element name="SequenceNumeric" type="ds:AdditionalDocumentSequenceNumericType" minOccurs="1">
                                         <xs:annotation>
                                             <xs:documentation>
-                                                Fill in the sequential number of document.
+                                                Fill in the sequential number of the document.
                                             </xs:documentation>
                                         </xs:annotation>
                                     </xs:element>
-                                    <xs:element name="CategoryCode" type="ds:AdditionalDocumentCategoryCodeType"
-                                                minOccurs="1">
+                                    <xs:element name="CategoryCode" type="ds:AdditionalDocumentCategoryCodeType" minOccurs="1">
                                         <xs:annotation>
                                             <xs:documentation>
-                                                In H7 documentation this is the type code, but here it's split into two
-                                                fields, category code and type code.
+                                                This is the letter part of the document code, eg. for a 'Commercial invoice'/'Handels faktura', which is 'N380',
+                                                the letter 'N' should be filled here.
                                             </xs:documentation>
                                         </xs:annotation>
                                     </xs:element>
-                                    <xs:element name="ID" type="ds:AdditionalDocumentIdentificationIDType"
-                                                minOccurs="1"/>
-                                    <xs:element name="TypeCode" type="ds:AdditionalDocumentTypeCodeType" minOccurs="1"/>
+                                    <xs:element name="ID" type="ds:AdditionalDocumentIdentificationIDType" minOccurs="1">
+                                        <xs:annotation>
+                                            <xs:documentation>
+                                                Fill in the ID number of the document.
+                                            </xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="TypeCode" type="ds:AdditionalDocumentTypeCodeType" minOccurs="1">
+                                        <xs:annotation>
+                                            <xs:documentation>
+                                                This is the number part of the document code, eg. for a 'Commercial invoice'/'Handelsfaktura', which is 'N380',
+                                                the numbers '380' should be filled here.
+                                            </xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
                                 </xs:sequence>
                             </xs:complexType>
                         </xs:element>
@@ -598,7 +612,8 @@
                                     <code>2/2</code>
                                     <details>
                                         Used for any additional information.
-                                        If filled, both codes (StatementCode and StatementTypeCode) have to be filled.
+                                        If filled, both codes (StatementCode and StatementTypeCode) have to
+                                        be filled.
                                     </details>
                                     <submission>
                                         See details above or under the subfields below.
@@ -613,25 +628,39 @@
                             </xs:annotation>
                             <xs:complexType>
                                 <xs:sequence>
-                                    <xs:element name="SequenceNumeric"
-                                                type="ds:AdditionalInformationSequenceNumericType" minOccurs="1"/>
-                                    <xs:element name="StatementCode" type="ds:AdditionalInformationStatementCodeType"
-                                                minOccurs="1">
+                                    <xs:element name="SequenceNumeric" type="ds:AdditionalInformationSequenceNumericType" minOccurs="1"/>
+                                    <xs:element name="StatementCode" type="ds:AdditionalInformationStatementCodeType" minOccurs="1">
                                         <xs:annotation>
                                             <xs:documentation>
-                                                Statement code will always start with '1' for import.
-                                                One character.
+                                                Code for specifying the additional information.
+                                                For codes see: https://svn.taxud.gefeg.com/svn/Documentation/Archive/EUCDM%205.2/EN/EUCDM/Annex-B/i21.htm#1FMain/FData%20groups/TGroup-2/EB-2-2
                                             </xs:documentation>
                                         </xs:annotation>
                                     </xs:element>
-                                    <xs:element name="StatementDescription"
-                                                type="ds:AdditionalInformationStatementDescriptionTextType"
-                                                minOccurs="0"/>
-                                    <xs:element name="StatementTypeCode"
-                                                type="ds:AdditionalInformationStatementTypeCodeType" minOccurs="1">
+                                    <xs:element name="StatementDescription" type="ds:AdditionalInformationStatementDescriptionTextType" minOccurs="0">
                                         <xs:annotation>
                                             <xs:documentation>
-                                                Four characters.
+                                                Free text field describing the additional information provided.
+                                            </xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="StatementTypeCode" type="ds:AdditionalInformationStatementTypeCodeType" minOccurs="1">
+                                        <xs:annotation>
+                                            <xs:documentation>
+                                                Code for the type of additional information.
+                                                The valid codes for H7 are:
+                                                - ABC: Conditions of sale or purchase - Additional information regarding terms and
+                                                conditions which apply to the transaction.
+                                                - ACA: Documentary requirements - Specification of the documentary requirements.                                                            Documentary requirements
+                                                - ACB: Additional information - Self explanatory.
+                                                - ACD: Reason - Reason for a request or response.
+                                                - AFB: Comment - Denotes that the associated text is a comment.
+                                                - CEX: Customs clearance instructions export - Any coded or clear instruction agreed by customer
+                                                and carrier regarding the export declaration of the goods.
+                                                - CUS: Customs declaration information - Note contains customs declaration information.
+                                                - TRR: Requested tariff - Stipulation of the tariffs to be applied showing,
+                                                where applicable, special agreement numbers or references. (Tariff Quota Order Number)
+                                                - ZZZ: Mutually defined - Note contains information mutually defined by trading partners.
                                             </xs:documentation>
                                         </xs:annotation>
                                     </xs:element>
@@ -661,7 +690,6 @@
                                                     type of location where the goods will be presented.
                                                     The TypeCodes are:
                                                     - 'A' (Designated place)
-                                                    - 'B' (Authorised place)
                                                     - 'C' (Approved place)
                                                     - 'D' (Other)
 
@@ -670,7 +698,6 @@
                                                     The Address/TypeCodes are:
                                                     - 'U' (UN/LOCODE)
                                                     - 'V' (Customs Office ID)
-                                                    - 'Y' (Authorisation number)
                                                     - 'Z' (Free text)
 
                                                     Valid combinations of GoodsLocation/TypeCode and
@@ -683,11 +710,6 @@
                                                     of the location and the address fields.
                                                     - 'D' and 'Z': The address will be declared by filling in the name
                                                     of the location and the address fields.
-                                                    - 'B' and 'Y': Authorisation number - This case is used if the goods
-                                                    are cleared through customs from MIO
-                                                    (temporary storage). The format is 'DK' + 9-13 digits (authorisation
-                                                    number/journal number) +
-                                                    authorisation code (eg. DK123456789408)
 
                                                 </details>
                                             </xs:documentation>
@@ -702,10 +724,10 @@
                                                             If
                                                             - GoodsLocation/Address/TypeCode = 'U' this field should be
                                                             the UN/LOCODE (eg. 'DKCPH')
+
                                                             - GoodsLocation/Address/TypeCode = 'V' this field should be
                                                             the country code part of the Customs Office ID (eg. 'DK')
-                                                            - GoodsLocation/Address/TypeCode = 'Y' this field should be
-                                                            filled with the name of the location
+
                                                             - GoodsLocation/Address/TypeCode = 'Z' this field should be
                                                             filled with the name of the location
                                                         </xs:documentation>
@@ -719,7 +741,7 @@
                                                             If
                                                             - GoodsLocation/Address/TypeCode = 'U': The additional
                                                             identifier of the UN/LOCODE
-                                                            (eg. '0011', which toegther with the Name (ie. 'DKCPH') is
+                                                            (eg. '0011', which together with the Name (ie. 'DKCPH') is
                                                             DKCPH-0011 which indicates
                                                             Langelinie in Copenhagen)
 
@@ -730,20 +752,10 @@
                                                             See the list of Customs Office ID's here:
                                                             https://ec.europa.eu/taxation_customs/dds2/rd/rd_search_home.jsp?Lang=en
 
-                                                            - GoodsLocation/Address/TypeCode = 'Y': Authorisation number
-                                                            given on the
-                                                            format: 'DK' + 9-13 digits (authorisation number/journal
-                                                            number) +
-                                                            authorisation code (eg. DK123456789408)
-                                                            The authorisation code must be one of the following:
-                                                            - '402'
-                                                            - '406'
-                                                            - '408'
-                                                            - '409'
-
                                                             - GoodsLocation/TypeCode = 'C' and
-                                                            GoodsLocation/Address/TypeCode = 'Z': This field should not
-                                                            be filled
+                                                            GoodsLocation/Address/TypeCode = 'Z': This field should be filled with the ID
+                                                            the approved place.
+
                                                             - GoodsLocation/TypeCode = 'D' and
                                                             GoodsLocation/Address/TypeCode = 'Z': This field should not
                                                             be filled
@@ -757,8 +769,6 @@
                                                             Type of location.
                                                             - 'A': Designated place (can be combined with
                                                             GoodsLocation/Address/TypeCode: 'U' and 'V')
-                                                            - 'B': Authorised place (can be combined with
-                                                            GoodsLocation/Address/TypeCode: 'Y')
                                                             - 'C': Approved place (can be combined with
                                                             GoodsLocation/Address/TypeCode: 'Z')
                                                             - 'D': Other (can be combined with
@@ -777,7 +787,6 @@
                                                                         Codes relevant for H7:
                                                                         - 'U': UN/LOCODE
                                                                         - 'V': Customs office identifier
-                                                                        - 'Y': Authorisation number
                                                                         - 'Z': Free text (Fill in
                                                                         GoodsLocation/Address/... fields)
                                                                     </xs:documentation>
@@ -842,7 +851,8 @@
                                                 <type>EUCDM 5.2</type>
                                                 <code>4/19</code>
                                                 <details>
-                                                    Transportation cost - header level.
+                                                    Transportation cost to final destination - header level.
+
                                                     If it the transportation costs are not filled on item level
                                                     (.../GovernmentAgencyGoodsItem/CustomsValuation/FreightChargeAmount)
                                                     this has to be filled.
@@ -901,33 +911,12 @@
                                             <xs:documentation>
                                                 Role Codes:
 
-                                                - 'FR1': Importer - Person or persons designated or recognised as liable
-                                                for the payment of value added tax by the Member State of importation in
-                                                accordance with Article 201 of Directive 2006/112/EC
-
-                                                - 'FR2': Customer - Person liable for the payment of Value Added Tax on
-                                                the intra-Union acquisition of goods in accordance with Article 200 of
-                                                Directive 2006/112/EC
-
-                                                - 'FR3': Tax Representative - Tax representative liable for the payment
-                                                of value added tax in the Member State of importation appointed by the
-                                                importer
-
-                                                - 'FR4': Holder of the deferred payment authorisation - The taxable
-                                                person or the person liable for payment or another person that has
-                                                received deferment of payment in accordance with Article 211 of
-                                                Directive 2006/112/EC
-
                                                 - 'FR5': Vendor (IOSS) - Taxable person making use of the special scheme
                                                 for distance sales of goods imported from third countries and
                                                 territories set out in Title XII Chapter 6 Section 4 of Directive
                                                 2006/112/EC and holder of the VAT identification number referred to in
                                                 Article 369q therein.
 
-                                                - 'FR7':' Taxable person or of the person liable for payment of VAT -
-                                                VAT identification number of the taxable person or of the person liable
-                                                for payment of VAT where the payment of VAT is postponed in accordance
-                                                with Article 211 second subparagraph of Directive 2006/112/EC.
                                             </xs:documentation>
                                         </xs:annotation>
                                     </xs:element>
@@ -951,8 +940,10 @@
                                                 <type>EUCDM 5.2</type>
                                                 <code>4/18</code>
                                                 <details>
-                                                    The value of the imported Item. Written as CurrencyCode + Value. Any
-                                                    currency code is allowed.
+                                                    The value of the imported item. Written as CurrencyCode + Value, eg:
+                                                    <CustomsValueAmount currencyID="DKK">160.00</CustomsValueAmount>
+
+                                                    Any currency code is allowed.
                                                 </details>
                                                 <submission>
                                                     See details above.
@@ -1015,23 +1006,36 @@
                                         </xs:annotation>
                                         <xs:complexType>
                                             <xs:sequence>
-                                                <xs:element name="SequenceNumeric"
-                                                            type="ds:AdditionalDocumentSequenceNumericType"
-                                                            minOccurs="1">
-                                                </xs:element>
-                                                <xs:element name="CategoryCode"
-                                                            type="ds:AdditionalDocumentCategoryCodeType" minOccurs="1">
+                                                <xs:element name="SequenceNumeric" type="ds:AdditionalDocumentSequenceNumericType" minOccurs="1">
                                                     <xs:annotation>
                                                         <xs:documentation>
-                                                            In H7 documentation this is the type code, but here it's
-                                                            split into two fields, category code and type code.
+                                                            Fill in the sequential number of the document.
                                                         </xs:documentation>
                                                     </xs:annotation>
                                                 </xs:element>
-                                                <xs:element name="ID" type="ds:AdditionalDocumentIdentificationIDType"
-                                                            minOccurs="1"/>
-                                                <xs:element name="TypeCode" type="ds:AdditionalDocumentTypeCodeType"
-                                                            minOccurs="1"/>
+                                                <xs:element name="CategoryCode" type="ds:AdditionalDocumentCategoryCodeType" minOccurs="1">
+                                                    <xs:annotation>
+                                                        <xs:documentation>
+                                                            This is the letter part of the document code, eg. for a 'Commercial invoice'/'Handels faktura', which is 'N380',
+                                                            the letter 'N' should be filled here.
+                                                        </xs:documentation>
+                                                    </xs:annotation>
+                                                </xs:element>
+                                                <xs:element name="ID" type="ds:AdditionalDocumentIdentificationIDType" minOccurs="1">
+                                                    <xs:annotation>
+                                                        <xs:documentation>
+                                                            Fill in the ID number of the document.
+                                                        </xs:documentation>
+                                                    </xs:annotation>
+                                                </xs:element>
+                                                <xs:element name="TypeCode" type="ds:AdditionalDocumentTypeCodeType" minOccurs="1">
+                                                    <xs:annotation>
+                                                        <xs:documentation>
+                                                            This is the number part of the document code, eg. for a 'Commercial invoice'/'Handelsfaktura', which is 'N380',
+                                                            the numbers '380' should be filled here.
+                                                        </xs:documentation>
+                                                    </xs:annotation>
+                                                </xs:element>
                                             </xs:sequence>
                                         </xs:complexType>
                                     </xs:element>
@@ -1058,28 +1062,39 @@
                                         </xs:annotation>
                                         <xs:complexType>
                                             <xs:sequence>
-                                                <xs:element name="SequenceNumeric"
-                                                            type="ds:AdditionalInformationSequenceNumericType"
-                                                            minOccurs="1"/>
-                                                <xs:element name="StatementCode"
-                                                            type="ds:AdditionalInformationStatementCodeType"
-                                                            minOccurs="1">
+                                                <xs:element name="SequenceNumeric" type="ds:AdditionalInformationSequenceNumericType" minOccurs="1"/>
+                                                <xs:element name="StatementCode" type="ds:AdditionalInformationStatementCodeType" minOccurs="1">
                                                     <xs:annotation>
                                                         <xs:documentation>
-                                                            Statement code will always start with '1' for import.
-                                                            One character.
+                                                            Code for specifying the additional information.
+                                                            For codes see: https://svn.taxud.gefeg.com/svn/Documentation/Archive/EUCDM%205.2/EN/EUCDM/Annex-B/i21.htm#1FMain/FData%20groups/TGroup-2/EB-2-2
                                                         </xs:documentation>
                                                     </xs:annotation>
                                                 </xs:element>
-                                                <xs:element name="StatementDescription"
-                                                            type="ds:AdditionalInformationStatementDescriptionTextType"
-                                                            minOccurs="0"/>
-                                                <xs:element name="StatementTypeCode"
-                                                            type="ds:AdditionalInformationStatementTypeCodeType"
-                                                            minOccurs="1">
+                                                <xs:element name="StatementDescription" type="ds:AdditionalInformationStatementDescriptionTextType" minOccurs="0">
                                                     <xs:annotation>
                                                         <xs:documentation>
-                                                            Four characters
+                                                            Free text field describing the additional information provided.
+                                                        </xs:documentation>
+                                                    </xs:annotation>
+                                                </xs:element>
+                                                <xs:element name="StatementTypeCode" type="ds:AdditionalInformationStatementTypeCodeType" minOccurs="1">
+                                                    <xs:annotation>
+                                                        <xs:documentation>
+                                                            Code for the type of additional information.
+                                                            The valid codes for H7 are:
+                                                            - ABC: Conditions of sale or purchase - Additional information regarding terms and
+                                                            conditions which apply to the transaction.
+                                                            - ACA: Documentary requirements - Specification of the documentary requirements.                                                            Documentary requirements
+                                                            - ACB: Additional information - Self explanatory.
+                                                            - ACD: Reason - Reason for a request or response.
+                                                            - AFB: Comment - Denotes that the associated text is a comment.
+                                                            - CEX: Customs clearance instructions export - Any coded or clear instruction agreed by customer
+                                                            and carrier regarding the export declaration of the goods.
+                                                            - CUS: Customs declaration information - Note contains customs declaration information.
+                                                            - TRR: Requested tariff - Stipulation of the tariffs to be applied showing,
+                                                            where applicable, special agreement numbers or references. (Tariff Quota Order Number)
+                                                            - ZZZ: Mutually defined - Note contains information mutually defined by trading partners.
                                                         </xs:documentation>
                                                     </xs:annotation>
                                                 </xs:element>
@@ -1095,7 +1110,7 @@
                                                         <xs:documentation>
                                                             <type>EUCDM 5.2</type>
                                                             <code>6/8</code>
-                                                            <details>Short description of the goods item.</details>
+                                                            <details>Free text field - short description of the goods item.</details>
                                                             <submission>
                                                                 See details above.
                                                             </submission>
@@ -1138,7 +1153,7 @@
                                                                         <details>
                                                                             Type of goods.
                                                                             6 characters.
-                                                                            For relevant codes see:
+                                                                            For relevant commodity codes see:
                                                                             https://skat.dk/skat.aspx?oid=2247456
                                                                         </details>
                                                                         <submission>
@@ -1211,7 +1226,12 @@
                                                                         <type>EUCDM 5.2</type>
                                                                         <code>6/2</code>
                                                                         <details>
-                                                                            Only needed if CurrentCode 'C08'.
+                                                                            Only needed if CurrentCode 'C08' AND if it concerns goods referred to in Article 27 of Regulation (EC) No 1186/2009:
+                                                                            - Tobacco products
+                                                                            - Alcohols and alcoholic beverages
+                                                                            - Perfumes and toilet waters
+
+                                                                            For more details see: https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32009R1186
                                                                         </details>
                                                                         <submission>
                                                                             See details above.
@@ -1238,7 +1258,7 @@
                                                 <code>3/1</code>
                                                 <details>
                                                     Item level exporter information.
-                                                    This applies to the speficic item.
+                                                    This applies to the specific item.
                                                 </details>
                                                 <submission>
                                                     If D.E 3/1 - .../Exporter is not filled, this must be filled.
@@ -1257,6 +1277,8 @@
                                                     <xs:annotation>
                                                         <xs:documentation>
                                                             Consignor name.
+
+                                                            NB: Only the following special characters are allowed: ' ( ) " . , _  \
                                                         </xs:documentation>
                                                     </xs:annotation>
                                                 </xs:element>
@@ -1312,7 +1334,7 @@
                                                             <type>EUCDM 5.2</type>
                                                             <code>4/19</code>
                                                             <details>
-                                                                Transportation cost - item level, specific on each item.
+                                                                Transportation cost to the final destination - item level, specific on each item.
                                                                 If it is not filled in header level
                                                                 (Declaration/GoodsShipment/CustomsValuation/FreightChargeAmount)
                                                                 this has to be filled.
@@ -1369,35 +1391,12 @@
                                                         <xs:documentation>
                                                             Role Codes:
 
-                                                            - 'FR1': Importer - Person or persons designated or
-                                                            recognised as liable for the payment of value added tax by
-                                                            the Member State of importation in accordance with Article
-                                                            201 of Directive 2006/112/EC
-
-                                                            - 'FR2': Customer - Person liable for the payment of Value
-                                                            Added Tax on the intra-Union acquisition of goods in
-                                                            accordance with Article 200 of Directive 2006/112/EC
-
-                                                            - 'FR3': Tax Representative - Tax representative liable for
-                                                            the payment of value added tax in the Member State of
-                                                            importation appointed by the importer
-
-                                                            - 'FR4': Holder of the deferred payment authorisation - The
-                                                            taxable person or the person liable for payment or another
-                                                            person that has received deferment of payment in accordance
-                                                            with Article 211 of Directive 2006/112/EC
-
                                                             - 'FR5': Vendor (IOSS) - Taxable person making use of the
                                                             special scheme for distance sales of goods imported from
                                                             third countries and territories set out in Title XII Chapter
                                                             6 Section 4 of Directive 2006/112/EC and holder of the VAT
                                                             identification number referred to in Article 369q therein.
 
-                                                            - 'FR7´':' Taxable person or of the person liable for
-                                                            payment of VAT - VAT identification number of the taxable
-                                                            person or of the person liable for payment of VAT where the
-                                                            payment of VAT is postponed in accordance with Article 211
-                                                            second subparagraph of Directive 2006/112/EC.
                                                         </xs:documentation>
                                                     </xs:annotation>
                                                 </xs:element>
@@ -1453,9 +1452,7 @@
                                                 <type>EUCDM 5.2</type>
                                                 <code>6/10</code>
                                                 <details>
-                                                    Number of packages. The 'SequenceNumeric' is for the quantity on
-                                                    that
-                                                    item.
+                                                    Number of packages.
                                                 </details>
                                                 <submission>
                                                     See details above or under the subfields below.
@@ -1476,8 +1473,7 @@
                                                         <xs:documentation>
                                                             <type>DMS specific field</type>
                                                             <details>
-                                                                DMS currently requires this. Fill the sequential number
-                                                                of the package.
+                                                                DMS currently requires this. Fill in sequential numbers.
                                                             </details>
                                                         </xs:documentation>
                                                     </xs:annotation>
@@ -1486,7 +1482,7 @@
                                                             type="ds:PackagingQuantityQuantityType" minOccurs="0">
                                                     <xs:annotation>
                                                         <xs:documentation>
-                                                            Number of packages
+                                                                Number of packages.
                                                         </xs:documentation>
                                                     </xs:annotation>
                                                 </xs:element>
@@ -1627,6 +1623,8 @@
                                                 <code>3/15</code>
                                                 <details>
                                                     Importer name.
+
+                                                    NB: Only the following special characters are allowed: ' ( ) " . , _  \
                                                 </details>
                                                 <submission>
                                                     If .../Importer/ID is 'DK09999981' this should be filled.
