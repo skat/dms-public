@@ -161,11 +161,6 @@
                                                     - GoodsLocation/Address/TypeCode: 'U' (UN/LOCODE)
                                                     - GoodsLocation/Address/TypeCode: 'V' (Customs office identifier)
 
-                                                    - GoodsLocation/TypeCode 'B' (Authorised place):
-                                                    - GoodsLocation/Address/TypeCode: 'Y' (Authorisation number)
-                                                    This case is used if the goods are cleared through customs from MIO
-                                                    (temporary storage).
-
                                                     - GoodsLocation/TypeCode 'C' (Approved place):
                                                     - GoodsLocation/Address/TypeCode: 'Z' (Free text - address)
 
@@ -183,9 +178,11 @@
                                                             Identification of location.
                                                             If
                                                             - GoodsLocation/Address/TypeCode = 'U' this field should be
-                                                            the UN/LOCODE
-                                                            - GoodsLocation/Address/TypeCode = 'V' this field should not
-                                                            be filled
+                                                            the UN/LOCODE (eg. 'DKCPH')
+
+                                                            - GoodsLocation/Address/TypeCode = 'V' this field should be
+                                                            the first part of the Customs Office ID (eg. 'DK00')
+
                                                             - GoodsLocation/Address/TypeCode = 'Z' this field should be
                                                             filled with the name of the location
                                                         </xs:documentation>
@@ -197,14 +194,23 @@
                                                         <xs:documentation>
                                                             ID qualifier code.
                                                             If
-                                                            - GoodsLocation/TypeCode = 'A' and
-                                                            GoodsLocation/Address/TypeCode = 'U': Additional identifier
-                                                            of the UN/LOCODE
-                                                            - GoodsLocation/TypeCode = 'A' and
-                                                            GoodsLocation/Address/TypeCode = 'V': Customs office ID
+                                                            - GoodsLocation/Address/TypeCode = 'U': The additional
+                                                            identifier of the UN/LOCODE
+                                                            (eg. '0011', which together with the Name (ie. 'DKCPH') is
+                                                            DKCPH-0011 which indicates
+                                                            Langelinie in Copenhagen)
+
+                                                            - GoodsLocation/Address/TypeCode = 'V': The number part of
+                                                            the Customs office ID
+                                                            (eg. 7900, which together with the Name (ie. 'DK00') is
+                                                            DK007900 which indicates Skattecenter København)
+                                                            See the list of Customs Office ID's here:
+                                                            https://ec.europa.eu/taxation_customs/dds2/rd/rd_search_home.jsp?Lang=en
+
                                                             - GoodsLocation/TypeCode = 'C' and
-                                                            GoodsLocation/Address/TypeCode = 'Z': This field should not
-                                                            be filled
+                                                            GoodsLocation/Address/TypeCode = 'Z': This field should be filled with the ID
+                                                            the approved place.
+
                                                             - GoodsLocation/TypeCode = 'D' and
                                                             GoodsLocation/Address/TypeCode = 'Z': This field should not
                                                             be filled
@@ -218,8 +224,6 @@
                                                             Type of location.
                                                             - 'A': Designated place (can be combined with
                                                             GoodsLocation/Address/TypeCode: 'U' and 'V')
-                                                            - 'B': Authorised place (can be combined with
-                                                            GoodsLocation/Address/TypeCode: 'Y')
                                                             - 'C': Approved place (can be combined with
                                                             GoodsLocation/Address/TypeCode: 'Z')
                                                             - 'D': Other (can be combined with
@@ -239,7 +243,6 @@
                                                                         Codes relevant for H7:
                                                                         - 'U': UN/LOCODE
                                                                         - 'V': Customs office identifier
-                                                                        - 'Y': Authorisation number
                                                                         - 'Z': Free text (Fill in
                                                                         GoodsLocation/Address/... fields)
                                                                     </xs:documentation>
@@ -250,14 +253,18 @@
                                                                 <xs:annotation>
                                                                     <xs:documentation>
                                                                         City Name.
+                                                                        Should only be filled when Address/TypeCode is
+                                                                        'Z'.
                                                                     </xs:documentation>
                                                                 </xs:annotation>
                                                             </xs:element>
                                                             <xs:element name="CountryCode"
-                                                                        type="ds:AddressCountryCodeType" minOccurs="0">
+                                                                        type="ds:AddressCountryCodeType" minOccurs="1">
                                                                 <xs:annotation>
                                                                     <xs:documentation>
                                                                         Country code.
+                                                                        The country code should always be filled.
+                                                                        Fill in 'DK'.
                                                                     </xs:documentation>
                                                                 </xs:annotation>
                                                             </xs:element>
@@ -266,6 +273,8 @@
                                                                 <xs:annotation>
                                                                     <xs:documentation>
                                                                         Address Line.
+                                                                        Should only be filled when Address/TypeCode is
+                                                                        'Z'.
                                                                     </xs:documentation>
                                                                 </xs:annotation>
                                                             </xs:element>
@@ -274,6 +283,8 @@
                                                                 <xs:annotation>
                                                                     <xs:documentation>
                                                                         Post code.
+                                                                        Should only be filled when Address/TypeCode is
+                                                                        'Z'.
                                                                     </xs:documentation>
                                                                 </xs:annotation>
                                                             </xs:element>
