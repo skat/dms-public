@@ -9,10 +9,14 @@
         <xs:annotation>
             <xs:documentation>
                 <details>
-                    H7 declaration.
+                    Amendment and correction schema for an H7 declaration.
 
                     Guide for annotation:
-                    - '<details>...</details>': Describes relevant rules/actions for submitting a declaration.
+                    - '<details>...</details>': Describes the field and any relevant rules/actions on how to fill the field.
+                    - '<amendment>...</amendment>': Describes any relevant rules/actions for amendment of an already
+                    submitted declaration.
+                    - '<correction>...</correction>': Describes any relevant rules/actions for correction of an already
+                    submitted declaration.
                 </details>
             </xs:documentation>
         </xs:annotation>
@@ -23,10 +27,14 @@
                         <type>DMS specific field</type>
                         <details>
                             Code for type of declaration/request.
-
-                            Fill in '9' for initial submission
                         </details>
-                     </xs:documentation>
+                        <amendment>
+                            '4' for amendment
+                        </amendment>
+                        <correction>
+                            '4' for correction
+                        </correction>
+                    </xs:documentation>
                 </xs:annotation>
             </xs:element>
 
@@ -35,10 +43,14 @@
                     <xs:documentation>
                         <type>DMS Specific field</type>
                         <details>
-                            The type of declaration you want to submit.
-
-                            For submission of an H7-declaration, fill in 'H7'.
+                            The type of declaration you want to amend/correct.
                         </details>
+                        <amendment>
+                            For amendment of an H7-declaration, fill in 'H7'.
+                        </amendment>
+                        <correction>
+                            For correction of an H7-declaration, fill in 'H7'.
+                        </correction>
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
@@ -53,6 +65,47 @@
                             by the declarant in agreement with the competent authorities to identify each single
                             declaration. Must be unique.
                         </details>
+                        <amendment>
+                            Can not be corrected for an amendment.
+                        </amendment>
+                        <correction>
+                            Can be corrected for a correction.
+                        </correction>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="ID" type="ds:DeclarationIdentificationIDType" minOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>
+                        <type>DMS specific field</type>
+                        <details>
+                            Used for corrections, invalidation, or amendment.
+                            The MRN is automatically generated following the EUCDM legislation as a unique combination
+                            of 18 characters.
+                            The combination of the 18 characters is, in the time of writing, as follows:
+                            1. The last two digits of the year of formal acceptance of the declaration (e.g. '20' for
+                            2020)
+                            a. Consist of 2 digits
+                            2. Country where the declaration/proof of the customs status of union goods/notification is
+                            lodged (e.g. 'DK' for Denmark)
+                            a. Consist of 2 letters
+                            3. Unique identifier based on year and country (e.g. 49DE04K21LO1)
+                            a. Consist of 12 alphanumeric characters
+                            4. Procedure identifier of the declaration (e.g. R for H1, H2, H3, H4, H6, H7 or I1)
+                            a. Consist of 1 alphanumeric character
+                            5. Control digit (e.g. '5')
+                            a. Consist of 1 alphanumeric character
+                            6. Based on the ISO 6346 algorithm
+                        </details>
+                        <amendment>
+                            Has to be filled for an amendment request - fill in the given MRN of the H7 declaration you want to amend.
+                            Can not be corrected for an amendment.
+                        </amendment>
+                        <correction>
+                            Has to be filled for an amendment request - fill in the given MRN of the H7 declaration you want to amend.
+                            Can not be corrected for a correction.
+                        </correction>
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
@@ -62,14 +115,14 @@
                     <xs:documentation>
                         <type>DMS specific field</type>
                         <details>
-                            Follows the 1/1 from H1:
-                            - 'IMA' For a standard customs declaration (under Article 162 of the Code).
-                            - 'IMD' For lodging a standard customs declaration (such as referred to under code A) in
-                            accordance with Article 171 of the Code.
-
-                            For codes, see:
-                            https://svn.taxud.gefeg.com/svn/Documentation/EUCDM/EN/EUCDM/Annex-B/e31.htm#1FMain/FData%20groups/TGroup-1/EB-1-2
+                            Type of H7 declaration or type of request.
                         </details>
+                        <amendment>
+                            Fill in 'COR' for an amendment.
+                        </amendment>
+                        <correction>
+                            Fill in 'COR' for a correction.
+                        </correction>
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
@@ -81,6 +134,12 @@
                         <details>
                             Total number of items in the declaration.
                         </details>
+                        <amendment>
+                            Can not be corrected for an amendment.
+                        </amendment>
+                        <correction>
+                            Can be corrected for a correction.
+                        </correction>
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
@@ -91,11 +150,15 @@
                         <type>EUCDM 5.2</type>
                         <code>5/26</code>
                         <details>
-                            Customs office where the declaration is lodged.
-
                             Find Declaration Office ID's here:
                             https://ec.europa.eu/taxation_customs/dds2/rd/rd_search_home.jsp?Lang=en
                         </details>
+                        <amendment>
+                            Can not be corrected for an amendment.
+                        </amendment>
+                        <correction>
+                            Can be corrected for a correction.
+                        </correction>
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
@@ -107,10 +170,15 @@
                         <code>6/5</code>
                         <details>
                             Weight of packages.
-
                             Fill in the sum of the values in .../GovernmentAgencyGoodsItem/GrossMassMeasure of the
                             individual goods items.
                         </details>
+                        <amendment>
+                            Can not corrected for an amendment.
+                        </amendment>
+                        <correction>
+                            Can be corrected for a correction.
+                        </correction>
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
@@ -122,6 +190,12 @@
                         <details>
                             Name and identifier of submitting company.
                         </details>
+                        <amendment>
+                            No subfields can be corrected for an amendment.
+                        </amendment>
+                        <correction>
+                            All subfields can be corrected for a correction.
+                        </correction>
                     </xs:documentation>
                 </xs:annotation>
                 <xs:complexType>
@@ -150,6 +224,54 @@
                 </xs:complexType>
             </xs:element>
 
+            <xs:element name="Amendment" minOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>
+                        <type>DMS specific field</type>
+                        <details>
+                            Reason for requesting a correction or amendment.
+                        </details>
+                        <amendment>
+                            Fill in all fields for a correction.
+                        </amendment>
+                        <correction>
+                            Fill in all fields for an amendment.
+                        </correction>
+                    </xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="SequenceNumeric" type="ds:AmendmentSequenceNumericType" minOccurs="1"/>
+                        <xs:element name="ChangeReasonCode" type="ds:AmendmentChangeReasonCodeType" minOccurs="1">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    Code for reason for invalidation.
+                                    Possible codes:
+
+                                    - '5': Corrected by declarant.
+                                    - '6': Addition of missing data element.
+                                    - '7': Mistaken customs procedure.
+                                    - '8': Special circumstances that do not justify placement.
+                                    - '10': Corrected by Customs.
+                                    - '11': Corrected - quota quantity addition agreed.
+                                    - '13': Corrected - by DMS.
+                                    - '14': Corrected - by DMS.
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="ChangeReasonText" type="ds:AmendmentChangeReasonTextType" minOccurs="1">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    Description of reason for correction/amendment.
+                                    Min.
+                                    Max. 255 characters.
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
             <xs:element name="Agent" minOccurs="0" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>
@@ -157,6 +279,12 @@
                             Details on importing third party.
                             Also known as Representative in EUCDM.
                         </details>
+                        <amendment>
+                            No subfields can be corrected for an amendment.
+                        </amendment>
+                        <correction>
+                            All subfields can be corrected for a correction.
+                        </correction>
                     </xs:documentation>
                 </xs:annotation>
                 <xs:complexType>
@@ -205,6 +333,12 @@
                             should be filled.
                             - If .../Declarant/ID is not 'DK09999981' .../Declarant/Name should not be filled.
                         </details>
+                        <amendment>
+                            No subfields can be corrected for an amendment.
+                        </amendment>
+                        <correction>
+                            All subfields can be corrected for a correction.
+                        </correction>
                     </xs:documentation>
                 </xs:annotation>
                 <xs:complexType>
@@ -293,6 +427,12 @@
 
                             If D.E 3/1 - .../GovernmentAgencyGoodsItem/Consignor is not filled, this must be filled.
                         </details>
+                        <amendment>
+                            No subfields can be corrected for an amendment.
+                        </amendment>
+                        <correction>
+                            All subfields can be corrected for a correction.
+                        </correction>
                     </xs:documentation>
                 </xs:annotation>
                 <xs:complexType>
@@ -380,6 +520,12 @@
                                         https://www.skat.dk/skat.aspx?oId=109751
                                         https://unece.org/fileadmin/DAM/trade/untdid/d16b/tred/tred1001.htm
                                     </details>
+                                    <amendment>
+                                        No subfields can be corrected for an amendment.
+                                    </amendment>
+                                    <correction>
+                                        All subfields can be corrected for a correction.
+                                    </correction>
                                 </xs:documentation>
                             </xs:annotation>
                             <xs:complexType>
@@ -427,6 +573,12 @@
                                         If filled, both codes (StatementCode and StatementTypeCode) have to
                                         be filled.
                                     </details>
+                                    <amendment>
+                                        No subfields can be corrected for an amendment.
+                                    </amendment>
+                                    <correction>
+                                        All subfields can be corrected for a correction.
+                                    </correction>
                                 </xs:documentation>
                             </xs:annotation>
                             <xs:complexType>
@@ -515,6 +667,12 @@
                                                     of the location and the address fields.
 
                                                 </details>
+                                                <amendment>
+                                                    No subfields can be corrected for an amendment.
+                                                </amendment>
+                                                <correction>
+                                                    All subfields can be corrected for a correction.
+                                                </correction>
                                             </xs:documentation>
                                         </xs:annotation>
                                         <xs:complexType>
@@ -631,7 +789,7 @@
                                                                     <xs:documentation>
                                                                         Post code.
                                                                         Should only be filled when Address/TypeCode is
-                                                                        'Z'. 
+                                                                        'Z'.
                                                                     </xs:documentation>
                                                                 </xs:annotation>
                                                             </xs:element>
@@ -661,16 +819,22 @@
 
                                                     Only certain currencies are allowed, find them here: https://www.nationalbanken.dk/valutakurser
 
-                                                    - If it the transportation costs are not filled on item level
+                                                    -  If it the transportation costs are not filled on item level
                                                     (.../GovernmentAgencyGoodsItem/CustomsValuation/FreightChargeAmount)
                                                     this has to be filled.
-                                                    - If this is filled, it is the total transportation costs for all
+                                                    -  If this is filled, it is the total transportation costs for all
                                                     the declared items.
                                                     - If this is filled AND
                                                     .../GovernmentAgencyGoodsItem/CustomsValuation/FreightChargeAmount
                                                     is also filled for each item, this must be the sum of the
                                                     FreightChargeAmount for all items.
                                                 </details>
+                                                <amendment>
+                                                    Can be corrected for an amendment.
+                                                </amendment>
+                                                <correction>
+                                                    Can be corrected for a correction.
+                                                </correction>
                                             </xs:documentation>
                                         </xs:annotation>
                                     </xs:element>
@@ -688,6 +852,12 @@
                                         number or VAT number.
                                         If filled, this applies to all goods items in the declaration.
                                     </details>
+                                    <amendment>
+                                        No subfields can be corrected for an amendment.
+                                    </amendment>
+                                    <correction>
+                                        All subfields can be corrected for a correction.
+                                    </correction>
                                 </xs:documentation>
                             </xs:annotation>
                             <xs:complexType>
@@ -742,6 +912,12 @@
 
                                                     Only certain currencies are allowed, find them here: https://www.nationalbanken.dk/valutakurser
                                                 </details>
+                                                <amendment>
+                                                    Can be corrected for an amendment.
+                                                </amendment>
+                                                <correction>
+                                                    Can be corrected for a correction.
+                                                </correction>
                                             </xs:documentation>
                                         </xs:annotation>
                                     </xs:element>
@@ -755,6 +931,12 @@
                                                     Goods item number. The sequence identifier. Has to be sequential.
                                                     Start at 1.
                                                 </details>
+                                                <amendment>
+                                                    Can not be corrected for an amendment.
+                                                </amendment>
+                                                <correction>
+                                                    Can be corrected for a correction.
+                                                </correction>
                                             </xs:documentation>
                                         </xs:annotation>
                                     </xs:element>
@@ -772,6 +954,12 @@
                                                     https://www.skat.dk/skat.aspx?oId=109751
                                                     https://unece.org/fileadmin/DAM/trade/untdid/d16b/tred/tred1001.htm
                                                 </details>
+                                                <amendment>
+                                                    No subfields can be corrected for an amendment.
+                                                </amendment>
+                                                <correction>
+                                                    All subfields can be corrected for a correction.
+                                                </correction>
                                             </xs:documentation>
                                         </xs:annotation>
                                         <xs:complexType>
@@ -819,6 +1007,12 @@
                                                     If filled, both codes (StatementCode and StatementTypeCode) have to
                                                     be filled.
                                                 </details>
+                                                <amendment>
+                                                    No subfields can be corrected for an amendment.
+                                                </amendment>
+                                                <correction>
+                                                    All subfields can be corrected for a correction.
+                                                </correction>
                                             </xs:documentation>
                                         </xs:annotation>
                                         <xs:complexType>
@@ -871,7 +1065,15 @@
                                                         <xs:documentation>
                                                             <type>EUCDM 5.2</type>
                                                             <code>6/8</code>
-                                                            <details>Free text field - short description of the goods item.</details>
+                                                            <details>
+                                                                Free text field - short description of the goods item.
+                                                            </details>
+                                                            <amendment>
+                                                                Can not be corrected for an amendment.
+                                                            </amendment>
+                                                            <correction>
+                                                                Can be corrected for a correction.
+                                                            </correction>
                                                         </xs:documentation>
                                                     </xs:annotation>
                                                 </xs:element>
@@ -886,6 +1088,12 @@
                                                                         <details>
                                                                             Fill in sequential numbers.
                                                                         </details>
+                                                                        <amendment>
+                                                                            Can not be corrected for an amendment.
+                                                                        </amendment>
+                                                                        <correction>
+                                                                            Can be corrected for a correction.
+                                                                        </correction>
                                                                     </xs:documentation>
                                                                 </xs:annotation>
                                                             </xs:element>
@@ -902,6 +1110,12 @@
                                                                             For relevant commodity codes see:
                                                                             https://skat.dk/skat.aspx?oid=2247456
                                                                         </details>
+                                                                        <amendment>
+                                                                            Can be corrected for an amendment.
+                                                                        </amendment>
+                                                                        <correction>
+                                                                            Can be corrected for a correction.
+                                                                        </correction>
                                                                     </xs:documentation>
                                                                 </xs:annotation>
                                                             </xs:element>
@@ -913,8 +1127,14 @@
                                                                         <type>DMS Specific field</type>
                                                                         <details>
                                                                             Set to TSP for all H7 declarations.
-                                                                            Fill in 'TSP'.
+                                                                            Scheduled for future removal.
                                                                         </details>
+                                                                        <amendment>
+                                                                            Fill in 'TSP' for an amendment.
+                                                                        </amendment>
+                                                                        <correction>
+                                                                            Fill in 'TSP' for a correction.
+                                                                        </correction>
                                                                     </xs:documentation>
                                                                 </xs:annotation>
                                                             </xs:element>
@@ -934,6 +1154,12 @@
                                                                         <details>
                                                                             Weight of the goods item.
                                                                         </details>
+                                                                        <amendment>
+                                                                            Can not be corrected for an amendment.
+                                                                        </amendment>
+                                                                        <correction>
+                                                                            Can be corrected for a correction.
+                                                                        </correction>
                                                                     </xs:documentation>
                                                                 </xs:annotation>
                                                             </xs:element>
@@ -952,6 +1178,12 @@
 
                                                                             For more details see: https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32009R1186
                                                                         </details>
+                                                                        <amendment>
+                                                                            Can not be corrected for an amendment.
+                                                                        </amendment>
+                                                                        <correction>
+                                                                            Can be corrected for a correction.
+                                                                        </correction>
                                                                     </xs:documentation>
                                                                 </xs:annotation>
                                                             </xs:element>
@@ -972,6 +1204,12 @@
 
                                                     If D.E 3/1 - .../Exporter is not filled, this must be filled.
                                                 </details>
+                                                <amendment>
+                                                    No subfields can be corrected for an amendment.
+                                                </amendment>
+                                                <correction>
+                                                    All subfields can be corrected for a correction.
+                                                </correction>
                                             </xs:documentation>
                                         </xs:annotation>
                                         <xs:complexType>
@@ -1037,17 +1275,22 @@
                                                             <type>EUCDM 5.2</type>
                                                             <code>4/19</code>
                                                             <details>
-                                                                Transportation cost to the final destination - item level, specific for each item.
-
+                                                                Transportation cost to the final destination - item level, specific on each item.
                                                                 Written as CurrencyCode + costs, eg:
                                                                 <FreightChargeAmount currencyID="DKK">10.00</FreightChargeAmount>
 
                                                                 Only certain currencies are allowed, find them here: https://www.nationalbanken.dk/valutakurser
 
-                                                                - If it is not filled in header level
+                                                                If it is not filled in header level
                                                                 (Declaration/GoodsShipment/CustomsValuation/FreightChargeAmount)
                                                                 this has to be filled.
                                                             </details>
+                                                            <amendment>
+                                                                Can be corrected for an amendment.
+                                                            </amendment>
+                                                            <correction>
+                                                                Can be corrected for a correction.
+                                                            </correction>
                                                         </xs:documentation>
                                                     </xs:annotation>
                                                 </xs:element>
@@ -1067,7 +1310,14 @@
                                                     If it is the same for all items in the declaration, fill in the
                                                     field on header level instead:
                                                     Declaration/GoodsShipment/DomesticDutyTaxParty.
+
                                                 </details>
+                                                <amendment>
+                                                    No subfields can be corrected for an amendment.
+                                                </amendment>
+                                                <correction>
+                                                    All subfields can be corrected for a correction.
+                                                </correction>
                                             </xs:documentation>
                                         </xs:annotation>
                                         <xs:complexType>
@@ -1120,6 +1370,12 @@
                                                     - CurrentCode should either be 'C07' or 'C08' or 'F48' or 'F49'.
                                                     For guidance see: https://www.skat.dk/skat.aspx?oId=109754
                                                 </details>
+                                                <amendment>
+                                                    No subfields can be corrected for an amendment.
+                                                </amendment>
+                                                <correction>
+                                                    All subfields can be corrected for a correction.
+                                                </correction>
                                             </xs:documentation>
                                         </xs:annotation>
                                         <xs:complexType>
@@ -1143,6 +1399,12 @@
                                                 <details>
                                                     Number of packages.
                                                 </details>
+                                                <amendment>
+                                                    No subfields can be corrected for an amendment.
+                                                </amendment>
+                                                <correction>
+                                                    All subfields can be corrected for a correction.
+                                                </correction>
                                             </xs:documentation>
                                         </xs:annotation>
                                         <xs:complexType>
@@ -1162,7 +1424,7 @@
                                                             type="ds:PackagingQuantityQuantityType" minOccurs="0">
                                                     <xs:annotation>
                                                         <xs:documentation>
-                                                                Number of packages.
+                                                            Number of packages.
                                                         </xs:documentation>
                                                     </xs:annotation>
                                                 </xs:element>
@@ -1185,6 +1447,12 @@
                                                     - TypeCode should be filled according to type of document, see
                                                     https://www.skat.dk/skat.aspx?oId=1658884 under "Dok art"-column.
                                                 </details>
+                                                <amendment>
+                                                    No subfields can be corrected for an amendment.
+                                                </amendment>
+                                                <correction>
+                                                    All subfields can be corrected for a correction.
+                                                </correction>
                                             </xs:documentation>
                                         </xs:annotation>
                                         <xs:complexType>
@@ -1250,6 +1518,12 @@
                                                     Unique number that follows the good all the way. Used by
                                                     transporters.
                                                 </details>
+                                                <amendment>
+                                                    Can not be corrected for an amendment.
+                                                </amendment>
+                                                <correction>
+                                                    Can be corrected for a correction.
+                                                </correction>
                                             </xs:documentation>
                                         </xs:annotation>
                                         <xs:complexType>
@@ -1291,6 +1565,12 @@
 
                                                     NB: Only the following special characters are allowed: ' ( ) " . , _  \ /
                                                 </details>
+                                                <amendment>
+                                                    Can not be corrected for an amendment.
+                                                </amendment>
+                                                <correction>
+                                                    Can be corrected for a correction.
+                                                </correction>
                                             </xs:documentation>
                                         </xs:annotation>
                                     </xs:element>
@@ -1302,6 +1582,12 @@
                                                 <details>
                                                     EORI.
                                                 </details>
+                                                <amendment>
+                                                    Can not be corrected for an amendment.
+                                                </amendment>
+                                                <correction>
+                                                    Can be corrected for a correction.
+                                                </correction>
                                             </xs:documentation>
                                         </xs:annotation>
                                     </xs:element>
@@ -1320,6 +1606,12 @@
                                                                 If .../Importer/ID is not 'DK09999981' this should not
                                                                 be filled.
                                                             </details>
+                                                            <amendment>
+                                                                Can not be corrected for an amendment.
+                                                            </amendment>
+                                                            <correction>
+                                                                Can be corrected for a correction.
+                                                            </correction>
                                                         </xs:documentation>
                                                     </xs:annotation>
                                                 </xs:element>
@@ -1330,6 +1622,12 @@
                                                             <details>
                                                                 Must always be filled with 'DK'.
                                                             </details>
+                                                            <amendment>
+                                                                Can not be corrected for an amendment.
+                                                            </amendment>
+                                                            <correction>
+                                                                Can be corrected for a correction.
+                                                            </correction>
                                                         </xs:documentation>
                                                     </xs:annotation>
                                                 </xs:element>
@@ -1344,6 +1642,12 @@
                                                                 If .../Importer/ID is not 'DK09999981' this should not
                                                                 be filled.
                                                             </details>
+                                                            <amendment>
+                                                                Can not be corrected for an amendment.
+                                                            </amendment>
+                                                            <correction>
+                                                                Can be corrected for a correction.
+                                                            </correction>
                                                         </xs:documentation>
                                                     </xs:annotation>
                                                 </xs:element>
@@ -1359,6 +1663,12 @@
                                                                 If .../Importer/ID is not 'DK09999981' this should not
                                                                 be filled.
                                                             </details>
+                                                            <amendment>
+                                                                Can not be corrected for an amendment.
+                                                            </amendment>
+                                                            <correction>
+                                                                Can be corrected for a correction.
+                                                            </correction>
                                                         </xs:documentation>
                                                     </xs:annotation>
                                                 </xs:element>
@@ -1384,6 +1694,12 @@
                                         - TypeCode should be filled according to type of document, see
                                         https://www.skat.dk/skat.aspx?oId=1658884 under "Dok art"-column.
                                     </details>
+                                    <amendment>
+                                        No subfields can be corrected for an amendment
+                                    </amendment>
+                                    <correction>
+                                        All subfields can be corrected for a correction.
+                                    </correction>
                                 </xs:documentation>
                             </xs:annotation>
                             <xs:complexType>
@@ -1445,6 +1761,12 @@
                                     <details>
                                         Unique number that follows the good all the way. Used by transporters.
                                     </details>
+                                    <amendment>
+                                        Can not be corrected for an amendment.
+                                    </amendment>
+                                    <correction>
+                                        Can be corrected for a correction.
+                                    </correction>
                                 </xs:documentation>
                             </xs:annotation>
                             <xs:complexType>
