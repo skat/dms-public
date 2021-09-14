@@ -1,4 +1,5 @@
 # dms-public
+[For onboarding, start with this document: Onboarding Guide (in danish)]()
 [Overall system guide can be downloaded here](https://github.com/skat/dms-public/raw/master/dokumenter/ImportH7SystemGuide.docx) <br/><br/>
 [Connectivity Guide can be downloaded here](https://github.com/skat/dms-public/raw/master/dokumenter/ConnectivityGuide.docx) <br/><br/>
 [Test cases and relevant datacan be downloaded here](https://github.com/skat/dms-public/raw/master/dokumenter/test-cases_and_data.zip) <br/><br/>
