@@ -43,7 +43,7 @@
                 </xs:annotation>
             </xs:element>
 
-            <xs:element name="FunctionalReferenceID" type="ds:DeclarationFunctionalReferenceIDType" minOccurs="1">
+            <xs:element name="FunctionalReferenceID" type="ds:DeclarationFunctionalReferenceIDType">
                 <xs:annotation>
                     <xs:documentation>
                         <type>EUCDM 5.2</type>
@@ -56,7 +56,7 @@
                 </xs:annotation>
             </xs:element>
 
-            <xs:element name="ID" type="ds:DeclarationIdentificationIDType" minOccurs="1">
+            <xs:element name="ID" type="ds:DeclarationIdentificationIDType">
                 <xs:annotation>
                     <xs:documentation>
                         <type>DMS specific field</type>
@@ -68,7 +68,7 @@
                 </xs:annotation>
             </xs:element>
 
-            <xs:element name="TypeCode" type="ds:DeclarationTypeCodeType" minOccurs="1">
+            <xs:element name="TypeCode" type="ds:DeclarationTypeCodeType">
                 <xs:annotation>
                     <xs:documentation>
                         <type>DMS specific field</type>
@@ -90,7 +90,7 @@
                 </xs:annotation>
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element name="Name" type="ds:SubmitterNameTextType" minOccurs="1">
+                        <xs:element name="Name" type="ds:SubmitterNameTextType">
                             <xs:annotation>
                                 <xs:documentation>
                                     <details>
@@ -100,7 +100,7 @@
                                 </xs:documentation>
                             </xs:annotation>
                         </xs:element>
-                        <xs:element name="ID" type="ds:SubmitterIdentificationIDType" minOccurs="1">
+                        <xs:element name="ID" type="ds:SubmitterIdentificationIDType">
                             <xs:annotation>
                                 <xs:documentation>
                                     <details>
@@ -113,11 +113,11 @@
                 </xs:complexType>
             </xs:element>
 
-            <xs:element name="Amendment" minOccurs="1" maxOccurs="unbounded">
+            <xs:element name="Amendment" maxOccurs="unbounded">
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element name="SequenceNumeric" type="ds:AmendmentSequenceNumericType" minOccurs="1"/>
-                        <xs:element name="ChangeReasonCode" type="ds:AmendmentChangeReasonCodeType" minOccurs="1">
+                        <xs:element name="SequenceNumeric" type="ds:AmendmentSequenceNumericType"/>
+                        <xs:element name="ChangeReasonCode" type="ds:AmendmentChangeReasonCodeType">
                             <xs:annotation>
                                 <xs:documentation>
                                     Code for reason for invalidation.
@@ -135,7 +135,7 @@
                                 </xs:documentation>
                             </xs:annotation>
                         </xs:element>
-                        <xs:element name="ChangeReasonText" type="ds:AmendmentChangeReasonTextType" minOccurs="1">
+                        <xs:element name="ChangeReasonText" type="ds:AmendmentChangeReasonTextType">
                             <xs:annotation>
                                 <xs:documentation>
                                     Description of reason for invalidation.
@@ -147,7 +147,7 @@
                 </xs:complexType>
             </xs:element>
 
-            <xs:element name="RepaymentRemissionAuthorisation" minOccurs="1" maxOccurs="unbounded">
+            <xs:element name="RepaymentRemissionAuthorisation" maxOccurs="unbounded">
                 <xs:annotation>
                     <xs:documentation>
                         Dataset 4C
@@ -156,7 +156,7 @@
                 <xs:complexType>
                     <xs:sequence>
 
-                        <xs:element name="ApplicationCodeType" type="eds:AuthorisationCodeType" minOccurs="1"
+                        <xs:element name="ApplicationCodeType" type="eds:AuthorisationCodeType"
                                     maxOccurs="1">
                             <xs:annotation>
                                 <xs:documentation>
@@ -182,10 +182,10 @@
                             </xs:annotation>
                             <xs:complexType>
                                 <xs:sequence>
-                                    <xs:element name="Type" type="eds:AttachedDocumentTypeType" minOccurs="1"/>
+                                    <xs:element name="Type" type="eds:AttachedDocumentTypeType"/>
                                     <xs:element name="AttachedDocumentID" type="eds:AttachedDocumentIdentifierType"
-                                                minOccurs="1"/>
-                                    <xs:element name="AttachedDocumentDate" type="udt:DateTimeType" minOccurs="1">
+                                               />
+                                    <xs:element name="AttachedDocumentDate" type="udt:DateTimeType">
                                         <xs:annotation>
                                             <xs:documentation>
                                                 Date format is 'yyyymmdd'.
@@ -208,16 +208,16 @@
                             </xs:annotation>
                             <xs:complexType>
                                 <xs:sequence>
-                                    <xs:element name="Name" type="eds:RepresentativeNameTextType" minOccurs="1"/>
-                                    <xs:element name="StreetAndNumber" type="eds:StreetAndNumberType" minOccurs="1"/>
-                                    <xs:element name="CountryCode" type="ds:AddressCountryCodeType" minOccurs="1"/>
-                                    <xs:element name="PostCode" type="ds:AddressPostcodeIDType" minOccurs="1"/>
-                                    <xs:element name="City" type="ds:AddressCityNameTextType" minOccurs="1"/>
+                                    <xs:element name="Name" type="eds:RepresentativeNameTextType"/>
+                                    <xs:element name="StreetAndNumber" type="eds:StreetAndNumberType"/>
+                                    <xs:element name="CountryCode" type="ds:AddressCountryCodeType"/>
+                                    <xs:element name="PostCode" type="ds:AddressPostcodeIDType"/>
+                                    <xs:element name="City" type="ds:AddressCityNameTextType"/>
                                 </xs:sequence>
                             </xs:complexType>
                         </xs:element>
 
-                        <xs:element name="ApplicationHolderId" type="eds:AuthorisationIDType" minOccurs="1"
+                        <xs:element name="ApplicationHolderId" type="eds:AuthorisationIDType"
                                     maxOccurs="1">
                             <xs:annotation>
                                 <xs:documentation>
@@ -244,7 +244,7 @@
                             </xs:annotation>
                             <xs:complexType>
                                 <xs:sequence>
-                                    <xs:element name="Name" type="eds:PersonContactDetailsNameTextType" minOccurs="1">
+                                    <xs:element name="Name" type="eds:PersonContactDetailsNameTextType">
                                         <xs:annotation>
                                             <xs:documentation>
                                                 Fill in the name of the application supervisor together with at least
@@ -272,11 +272,11 @@
                             </xs:annotation>
                             <xs:complexType>
                                 <xs:sequence>
-                                    <xs:element name="Name" type="eds:RepresentativeNameTextType" minOccurs="1"/>
-                                    <xs:element name="StreetAndNumber" type="eds:StreetAndNumberType" minOccurs="1"/>
-                                    <xs:element name="CountryCode" type="ds:AddressCountryCodeType" minOccurs="1"/>
-                                    <xs:element name="PostCode" type="ds:AddressPostcodeIDType" minOccurs="1"/>
-                                    <xs:element name="City" type="ds:AddressCityNameTextType" minOccurs="1"/>
+                                    <xs:element name="Name" type="eds:RepresentativeNameTextType"/>
+                                    <xs:element name="StreetAndNumber" type="eds:StreetAndNumberType"/>
+                                    <xs:element name="CountryCode" type="ds:AddressCountryCodeType"/>
+                                    <xs:element name="PostCode" type="ds:AddressPostcodeIDType"/>
+                                    <xs:element name="City" type="ds:AddressCityNameTextType"/>
                                 </xs:sequence>
                             </xs:complexType>
                         </xs:element>
@@ -306,7 +306,7 @@
                             </xs:annotation>
                         </xs:element>
 
-                        <xs:element name="AmountDuty" minOccurs="1">
+                        <xs:element name="AmountDuty">
                             <xs:annotation>
                                 <xs:documentation>
                                     <type>EUCDM 5.2 - Annex A</type>
@@ -318,14 +318,14 @@
                             </xs:annotation>
                             <xs:complexType>
                                 <xs:sequence>
-                                    <xs:element name="Currency" type="eds:CurrencyType" minOccurs="1">
+                                    <xs:element name="Currency" type="eds:CurrencyType">
                                         <xs:annotation>
                                             <xs:documentation>
                                                 Fill in "DKK".
                                             </xs:documentation>
                                         </xs:annotation>
                                     </xs:element>
-                                    <xs:element name="Amount" type="eds:AmountTypeType" minOccurs="1">
+                                    <xs:element name="Amount" type="eds:AmountTypeType">
                                         <xs:annotation>
                                             <xs:documentation>
                                                 Fill in the VAT amount in DKK.
@@ -337,7 +337,7 @@
                             </xs:complexType>
                         </xs:element>
 
-                        <xs:element name="DutyType" minOccurs="1">
+                        <xs:element name="DutyType">
                             <xs:annotation>
                                 <xs:documentation>
                                     <type>EUCDM 5.2 - Annex A</type>
@@ -349,7 +349,7 @@
                             </xs:annotation>
                             <xs:complexType>
                                 <xs:sequence>
-                                    <xs:element name="UnionCode" type="eds:UnionCodeType" minOccurs="1">
+                                    <xs:element name="UnionCode" type="eds:UnionCodeType">
                                         <xs:annotation>
                                             <xs:documentation>
                                                 Fill in "B00" for VAT.
@@ -367,7 +367,7 @@
                             </xs:complexType>
                         </xs:element>
 
-                        <xs:element name="LegalBasis" type="eds:LegalBasisTextType" minOccurs="1">
+                        <xs:element name="LegalBasis" type="eds:LegalBasisTextType">
                             <xs:annotation>
                                 <xs:documentation>
                                     <type>EUCDM 5.2 - Annex A</type>
