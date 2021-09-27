@@ -9,7 +9,7 @@
         <xs:annotation>
             <xs:documentation>
                 <details>
-                    H7 declaration.
+                    H7 correction or amendment.
                 </details>
             </xs:documentation>
         </xs:annotation>
@@ -26,6 +26,8 @@
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
+
+            <xs:element name="ID" type="ds:DeclarationIdentificationIDType"/>
 
             <xs:element name="TypeCode" type="ds:DeclarationTypeCodeType"/>
 
@@ -54,6 +56,16 @@
                     <xs:sequence>
                         <xs:element name="Name" type="ds:SubmitterNameTextType"/>
                         <xs:element name="ID" type="ds:SubmitterIdentificationIDType"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
+            <xs:element name="Amendment">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="SequenceNumeric" type="ds:AmendmentSequenceNumericType"/>
+                        <xs:element name="ChangeReasonCode" type="ds:AmendmentChangeReasonCodeType"/>
+                        <xs:element name="ChangeReasonText" type="ds:AmendmentChangeReasonTextType"/>
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
@@ -461,7 +473,7 @@
                                             <xs:documentation>
                                                 <type>EUCDM 5.2</type>
                                                 <code>2/4</code>
-                                                </xs:documentation>
+                                            </xs:documentation>
                                         </xs:annotation>
                                         <xs:complexType>
                                             <xs:sequence>
