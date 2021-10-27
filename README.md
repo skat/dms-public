@@ -5,6 +5,9 @@ For onboarding start reading the onboarding guide: <br/>
 For establishing connectivity read the connectivity guide: <br/>
 [Connectivity Guide](https://github.com/skat/dms-public/raw/master/Onboarding%20Documents/ConnectivityGuide.docx) <br/><br/>
 
+Additionally for connectivity, the DMS project has developped a simple AS client here: <br/>
+[Simple-AS4-Client Github Repository](https://github.com/skat/simple-as4-client) <br/><br/>
+
 An overview of the functionalities of the system can be found in the import system guide: <br/>
 [Overall Import System Guide](https://github.com/skat/dms-public/raw/master/Onboarding%20Documents/ImportSystemGuide.docx) <br/><br/>
 
