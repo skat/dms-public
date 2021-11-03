@@ -20,8 +20,8 @@ Download the latest XSD-schemas, and see changelog here: <br/>
 
 See schemas, download and read schema documentation for the different declaration schemas: <br/>
 
-[H7 schema documentation](https://skat.github.io/dms-public/H7%20XSDs/) <br/>
-[I2 schema documentation](https://skat.github.io/dms-public/I2%20XSDs/) <br/>
-[Notification schema documentation](https://skat.github.io/dms-public/Notification%20XSDs/) <br/>
+[H7 schema documentation](https://github.com/skat/dms-public/tree/master/H7%20XSDs) <br/>
+[I2 schema documentation](https://github.com/skat/dms-public/tree/master/I2%20XSDs) <br/>
+[Notification schema documentation](https://github.com/skat/dms-public/tree/master/Notification%20XSDs) <br/>
 
 
