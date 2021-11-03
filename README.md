@@ -11,7 +11,7 @@ Additionally for connectivity, the DMS project has developped a simple AS client
 An overview of the functionalities of the system can be found in the import system guide: <br/>
 [Overall Import System Guide](https://github.com/skat/dms-public/raw/master/Onboarding%20Documents/ImportSystemGuide.docx) <br/><br/>
 
-An overview of Toldsystemets User Interface and how to find various functionalities can be found in the User guide: <br/>
+An overview of Toldsystemet's User Interface and how to find various functionalities can be found in the User guide: <br/>
 [Link to User Manual Toldsystemet](https://github.com/skat/dms-public/blob/master/Onboarding%20Documents/BrugerManual/BrugermanualToldsystemet.pdf) <br/><br/>
 
 For testing, verifying connectivity and functionality, test cases and test data can be found here: <br/>
