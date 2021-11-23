@@ -1,4 +1,13 @@
 # dms-public
+
+##Headline 2 example
+
+###Headline 3 example
+
+**Bold example**
+
+***Bold and italics example***
+
 For onboarding start reading the onboarding guide: <br/>
 [Onboarding Guide (Danish)](https://github.com/skat/dms-public/raw/master/Onboarding%20Documents/OnboardingGuideToldsystemet.docx) <br/><br/>
 
