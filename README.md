@@ -1,4 +1,9 @@
 # dms-public
+
+### Please note that the documents on this site are aimed at the current implementation of the H7 and I2 declaration messages. Onboarding of other declaration types has not yet started, and the document are subject to change.
+
+### The documents however will give a good understanding of the onboarding effort.
+
 For onboarding start reading the onboarding guide: <br/>
 [Onboarding Guide (Danish)](https://github.com/skat/dms-public/raw/master/Onboarding%20Documents/OnboardingGuideToldsystemet.docx) <br/><br/>
 
