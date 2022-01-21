@@ -82,6 +82,47 @@
             <xs:fractionDigits value="0"/>
         </xs:restriction>
     </xs:simpleType>
+    <xs:simpleType name="AdditionalReferenceSequenceNumericType">
+        <xs:annotation>
+            <xs:documentation>
+                <WCOID>006</WCOID>
+                <WCOFormat>n..5</WCOFormat>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="udt:NumericType">
+            <xs:totalDigits value="5"/>
+            <xs:fractionDigits value="0"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:complexType name="AdditionalReferenceIdentificationIDType">
+        <xs:annotation>
+            <xs:documentation>
+                <WCOID>D005</WCOID>
+                <WCOFormat>an..70</WCOFormat>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:simpleContent>
+            <xs:restriction base="udt:IDType">
+                <xs:maxLength value="70"/>
+                <xs:pattern value=".*[^\s].*"/>
+            </xs:restriction>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="AdditionalReferenceTypeCodeType">
+        <xs:annotation>
+            <xs:documentation>
+                <WCOID>D006</WCOID>
+                <WCOFormat>an..4</WCOFormat>
+                <EUCDMFormat>an4</EUCDMFormat>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:simpleContent>
+            <xs:restriction base="udt:CodeType">
+                <xs:length value="4"/>
+                <xs:pattern value=".*[^\s].*"/>
+            </xs:restriction>
+        </xs:simpleContent>
+    </xs:complexType>
     <xs:simpleType name="GovernmentProcedureSequenceNumericType">
         <xs:annotation>
             <xs:documentation>
@@ -186,11 +227,12 @@
             <xs:documentation>
                 <WCOID>226</WCOID>
                 <WCOFormat>an..17</WCOFormat>
+                <EUCDMFormat>an5</EUCDMFormat>
             </xs:documentation>
         </xs:annotation>
         <xs:simpleContent>
             <xs:restriction base="udt:CodeType">
-                <xs:maxLength value="17"/>
+                <xs:length value="5"/>
                 <xs:pattern value=".*[^\s].*"/>
             </xs:restriction>
         </xs:simpleContent>
@@ -300,12 +342,27 @@
             <xs:documentation>
                 <WCOID>245</WCOID>
                 <WCOFormat>an..9</WCOFormat>
+                <EUCDMFormat>an..17</EUCDMFormat>
             </xs:documentation>
         </xs:annotation>
         <xs:simpleContent>
             <xs:restriction base="udt:IDType">
                 <xs:minLength value="2"/>
-                <xs:maxLength value="9"/>
+                <xs:maxLength value="17"/>
+                <xs:pattern value=".*[^\s].*"/>
+            </xs:restriction>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="AddressStreetNumberType">
+        <xs:annotation>
+            <xs:documentation>
+                <WCOID>251</WCOID>
+                <WCOFormat>an..35</WCOFormat>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:simpleContent>
+            <xs:restriction base="udt:TextType">
+                <xs:maxLength value="35"/>
                 <xs:pattern value=".*[^\s].*"/>
             </xs:restriction>
         </xs:simpleContent>
@@ -316,7 +373,7 @@
                 <WCOID>410</WCOID>
                 <WCOFormat>an..3</WCOFormat>
                 <EUCDMID>16 15 046 000</EUCDMID>
-                <EUCDMFormat>an..1</EUCDMFormat>
+                <EUCDMFormat>a1</EUCDMFormat>
             </xs:documentation>
         </xs:annotation>
         <xs:simpleContent>
@@ -352,6 +409,32 @@
         <xs:simpleContent>
             <xs:restriction base="udt:CodeType">
                 <xs:maxLength value="3"/>
+                <xs:pattern value=".*[^\s].*"/>
+            </xs:restriction>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:simpleType name="AgentCommunicationSequenceNumericType">
+        <xs:annotation>
+            <xs:documentation>
+                <WCOID>006</WCOID>
+                <WCOFormat>n..5</WCOFormat>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="udt:NumericType">
+            <xs:totalDigits value="5"/>
+            <xs:fractionDigits value="0"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:complexType name="AgentContactNameType">
+        <xs:annotation>
+            <xs:documentation>
+                <WCOID>241</WCOID>
+                <WCOFormat>an..70</WCOFormat>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:simpleContent>
+            <xs:restriction base="udt:TextType">
+                <xs:maxLength value="70"/>
                 <xs:pattern value=".*[^\s].*"/>
             </xs:restriction>
         </xs:simpleContent>
@@ -767,13 +850,13 @@
                 <WCOID>145</WCOID>
                 <WCOFormat>an..18</WCOFormat>
                 <EUCDMID>6/14</EUCDMID>
-                <EUCDMFormat>an..8</EUCDMFormat>
+                <EUCDMFormat>an..9</EUCDMFormat>
             </xs:documentation>
         </xs:annotation>
         <xs:simpleContent>
             <xs:restriction base="udt:IDType">
                 <!--<xs:maxLength value="18"/>-->
-                <xs:maxLength value="6"/>
+                <xs:maxLength value="9"/>
                 <xs:pattern value=".*[^\s].*"/>
             </xs:restriction>
         </xs:simpleContent>
@@ -837,11 +920,12 @@
             <xs:documentation>
                 <WCOID>240</WCOID>
                 <WCOFormat>an..50</WCOFormat>
+                <EUCDMFormat>an...256 (E-mail) an..35 (Phone number)</EUCDMFormat>
             </xs:documentation>
         </xs:annotation>
         <xs:simpleContent>
             <xs:restriction base="udt:IDType">
-                <xs:maxLength value="50"/>
+                <xs:maxLength value="256"/>
                 <xs:pattern value=".*[^\s].*"/>
             </xs:restriction>
         </xs:simpleContent>
@@ -990,12 +1074,13 @@
             <xs:documentation>
                 <WCOID>117</WCOID>
                 <WCOFormat>n..16,3</WCOFormat>
+                <EUCDMFormat>n..16,2</EUCDMFormat>
             </xs:documentation>
         </xs:annotation>
         <xs:simpleContent>
             <xs:restriction base="udt:AmountType">
                 <xs:totalDigits value="16"/>
-                <xs:fractionDigits value="3"/>
+                <xs:fractionDigits value="2"/>
             </xs:restriction>
         </xs:simpleContent>
     </xs:complexType>
@@ -1039,6 +1124,30 @@
             </xs:restriction>
         </xs:simpleContent>
     </xs:complexType>
+    <xs:simpleType name="DeclarantCommunicationSequenceNumericType">
+        <xs:annotation>
+            <xs:documentation>
+                <WCOID>006</WCOID>
+                <WCOFormat>n..5</WCOFormat>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="udt:NumericType">
+            <xs:totalDigits value="5"/>
+            <xs:fractionDigits value="0"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="DeclarantContactSequenceNumericType">
+        <xs:annotation>
+            <xs:documentation>
+                <WCOID>006</WCOID>
+                <WCOFormat>n..5</WCOFormat>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="udt:NumericType">
+            <xs:totalDigits value="5"/>
+            <xs:fractionDigits value="0"/>
+        </xs:restriction>
+    </xs:simpleType>
     <xs:complexType name="DeclarantIdentificationIDType">
         <xs:annotation>
             <xs:documentation>
@@ -1106,11 +1215,12 @@
             <xs:documentation>
                 <WCOID>D026</WCOID>
                 <WCOFormat>an..35</WCOFormat>
+                <EUCDMFormat>an..</EUCDMFormat>
             </xs:documentation>
         </xs:annotation>
         <xs:simpleContent>
             <xs:restriction base="udt:IDType">
-                <xs:maxLength value="35"/>
+                <xs:maxLength value="22"/>
                 <xs:pattern value=".*[^\s].*"/>
             </xs:restriction>
         </xs:simpleContent>
@@ -1611,16 +1721,121 @@
             </xs:restriction>
         </xs:simpleContent>
     </xs:complexType>
+    <xs:complexType name="GoodsLocationAuthorisationReferenceNumber">
+        <xs:annotation>
+            <xs:documentation>
+                <WCOID>L110</WCOID>
+                <WCOFormat>an..3</WCOFormat>
+                <EUCDMFormat>an..35</EUCDMFormat>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:simpleContent>
+            <xs:restriction base="udt:TextType">
+                <xs:maxLength value="35"/>
+                <xs:pattern value=".*[^\s].*"/>
+            </xs:restriction>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="GoodsLocationLatitude">
+        <xs:annotation>
+            <xs:documentation>
+                <WCOID>L110</WCOID>
+                <WCOFormat>an..3</WCOFormat>
+                <EUCDMFormat>an..17</EUCDMFormat>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:simpleContent>
+            <xs:restriction base="udt:TextType">
+                <xs:maxLength value="17"/>
+                <xs:pattern value=".*[^\s].*"/>
+            </xs:restriction>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="GoodsLocationLongitude">
+        <xs:annotation>
+            <xs:documentation>
+                <WCOID>L110</WCOID>
+                <WCOFormat>an..3</WCOFormat>
+                <EUCDMFormat>an..17</EUCDMFormat>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:simpleContent>
+            <xs:restriction base="udt:TextType">
+                <xs:maxLength value="17"/>
+                <xs:pattern value=".*[^\s].*"/>
+            </xs:restriction>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="GoodsLocationCustomsOfficeIdentification">
+        <xs:annotation>
+            <xs:documentation>
+                <WCOID>L111</WCOID>
+                <WCOFormat>an..3</WCOFormat>
+                <EUCDMFormat>an..8</EUCDMFormat>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:simpleContent>
+            <xs:restriction base="udt:TextType">
+                <xs:maxLength value="8"/>
+                <xs:pattern value=".*[^\s].*"/>
+            </xs:restriction>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="GoodsLocationCustomsOfficeType">
+        <xs:annotation>
+            <xs:documentation>
+                <WCOID>L111</WCOID>
+                <WCOFormat>an..3</WCOFormat>
+                <EUCDMFormat>an..8</EUCDMFormat>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:simpleContent>
+            <xs:restriction base="udt:TextType">
+                <xs:maxLength value="8"/>
+                <xs:pattern value=".*[^\s].*"/>
+            </xs:restriction>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="GoodsLocationEconomicOperatorIdentification">
+        <xs:annotation>
+            <xs:documentation>
+                <WCOID>L110</WCOID>
+                <WCOFormat>an..3</WCOFormat>
+                <EUCDMFormat>an..17</EUCDMFormat>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:simpleContent>
+            <xs:restriction base="udt:TextType">
+                <xs:maxLength value="17"/>
+                <xs:pattern value=".*[^\s].*"/>
+            </xs:restriction>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="GoodsLocationEconomicOperatorRole">
+        <xs:annotation>
+            <xs:documentation>
+                <WCOID>L110</WCOID>
+                <WCOFormat>an..3</WCOFormat>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:simpleContent>
+            <xs:restriction base="udt:TextType">
+                <xs:maxLength value="3"/>
+                <xs:pattern value=".*[^\s].*"/>
+            </xs:restriction>
+        </xs:simpleContent>
+    </xs:complexType>
     <xs:complexType name="GoodsLocationIdentificationIDType">
         <xs:annotation>
             <xs:documentation>
                 <WCOID>L017</WCOID>
                 <WCOFormat>an..17</WCOFormat>
+                <EUCDMFormat>an..4</EUCDMFormat>
             </xs:documentation>
         </xs:annotation>
         <xs:simpleContent>
             <xs:restriction base="udt:IDType">
-                <xs:maxLength value="17"/>
+                <xs:maxLength value="4"/>
                 <xs:pattern value=".*[^\s].*"/>
             </xs:restriction>
         </xs:simpleContent>
@@ -1630,11 +1845,12 @@
             <xs:documentation>
                 <WCOID>L016</WCOID>
                 <WCOFormat>an..256</WCOFormat>
+                <EUCDMFormat>an..17</EUCDMFormat>
             </xs:documentation>
         </xs:annotation>
         <xs:simpleContent>
             <xs:restriction base="udt:TextType">
-                <xs:maxLength value="256"/>
+                <xs:maxLength value="17"/>
                 <xs:pattern value=".*[^\s].*"/>
             </xs:restriction>
         </xs:simpleContent>
@@ -1645,7 +1861,7 @@
                 <WCOID>L110</WCOID>
                 <WCOFormat>an..3</WCOFormat>
                 <EUCDMID>16 15 045 000</EUCDMID>
-                <EUCDMFormat>an..1</EUCDMFormat>
+                <EUCDMFormat>a1</EUCDMFormat>
             </xs:documentation>
         </xs:annotation>
         <xs:simpleContent>
@@ -1792,12 +2008,13 @@
             <xs:documentation>
                 <WCOID>166</WCOID>
                 <WCOFormat>an..7</WCOFormat>
+                <EUCDMFormat>an..3</EUCDMFormat>
             </xs:documentation>
         </xs:annotation>
         <xs:simpleContent>
             <xs:restriction base="udt:CodeType">
                 <xs:minLength value="2"/>
-                <xs:maxLength value="7"/>
+                <xs:maxLength value="3"/>
                 <xs:pattern value=".*[^\s].*"/>
             </xs:restriction>
         </xs:simpleContent>
@@ -1807,11 +2024,12 @@
             <xs:documentation>
                 <WCOID>161</WCOID>
                 <WCOFormat>an..7</WCOFormat>
+                <EUCDMFormat>an2</EUCDMFormat>
             </xs:documentation>
         </xs:annotation>
         <xs:simpleContent>
             <xs:restriction base="udt:CodeType">
-                <xs:maxLength value="7"/>
+                <xs:length value="2"/>
                 <xs:pattern value=".*[^\s].*"/>
             </xs:restriction>
         </xs:simpleContent>
@@ -1897,12 +2115,13 @@
             <xs:documentation>
                 <WCOID>112</WCOID>
                 <WCOFormat>n..16,3</WCOFormat>
+                <EUCDMFormat>n..16,2</EUCDMFormat>
             </xs:documentation>
         </xs:annotation>
         <xs:simpleContent>
             <xs:restriction base="udt:AmountType">
                 <xs:totalDigits value="16"/>
-                <xs:fractionDigits value="3"/>
+                <xs:fractionDigits value="2"/>
             </xs:restriction>
         </xs:simpleContent>
     </xs:complexType>
@@ -2380,13 +2599,13 @@
                 <WCOID>D018</WCOID>
                 <WCOFormat>an..70</WCOFormat>
                 <EUCDMID>2/1</EUCDMID>
-                <EUCDMFormat>an..35</EUCDMFormat>
+                <EUCDMFormat>an..70</EUCDMFormat>
             </xs:documentation>
         </xs:annotation>
         <xs:simpleContent>
             <xs:restriction base="udt:IDType">
                 <!--<xs:maxLength value="70"/>-->
-                <xs:maxLength value="35"/>
+                <xs:maxLength value="70"/>
                 <xs:pattern value=".*[^\s].*"/>
             </xs:restriction>
         </xs:simpleContent>
@@ -2408,11 +2627,12 @@
             <xs:documentation>
                 <WCOID>D019</WCOID>
                 <WCOFormat>an..3</WCOFormat>
+                <EUCDMFormat>an4</EUCDMFormat>
             </xs:documentation>
         </xs:annotation>
         <xs:simpleContent>
             <xs:restriction base="udt:CodeType">
-                <xs:maxLength value="3"/>
+                <xs:length value="4"/>
                 <xs:pattern value=".*[^\s].*"/>
             </xs:restriction>
         </xs:simpleContent>
@@ -2555,6 +2775,46 @@
             </xs:restriction>
         </xs:simpleContent>
     </xs:complexType>
+    <xs:simpleType name="SupportingDocumentSequenceNumericType">
+        <xs:annotation>
+            <xs:documentation>
+                <WCOID>006</WCOID>
+                <WCOFormat>n..5</WCOFormat>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="udt:NumericType">
+            <xs:totalDigits value="5"/>
+            <xs:fractionDigits value="0"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:complexType name="SupportingDocumentIdentificationIDType">
+        <xs:annotation>
+            <xs:documentation>
+                <WCOID>D005</WCOID>
+                <WCOFormat>an..70</WCOFormat>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:simpleContent>
+            <xs:restriction base="udt:IDType">
+                <xs:maxLength value="70"/>
+                <xs:pattern value=".*[^\s].*"/>
+            </xs:restriction>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="SupportingDocumentTypeCodeType">
+        <xs:annotation>
+            <xs:documentation>
+                <WCOID>D006</WCOID>
+                <WCOFormat>an..4</WCOFormat>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:simpleContent>
+            <xs:restriction base="udt:CodeType">
+                <xs:length value="4"/>
+                <xs:pattern value=".*[^\s].*"/>
+            </xs:restriction>
+        </xs:simpleContent>
+    </xs:complexType>
     <xs:complexType name="SuretyIdentificationIDType">
         <xs:annotation>
             <xs:documentation>
@@ -2649,6 +2909,48 @@
         <xs:simpleContent>
             <xs:restriction base="udt:TextType">
                 <xs:maxLength value="256"/>
+                <xs:pattern value=".*[^\s].*"/>
+            </xs:restriction>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="TransportContractDocumentIdentificationIDType">
+        <xs:annotation>
+            <xs:documentation>
+                <WCOID>159</WCOID>
+                <WCOFormat>an..17</WCOFormat>
+                <EUCDMFormat>an..70</EUCDMFormat>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:simpleContent>
+            <xs:restriction base="udt:IDType">
+                <xs:maxLength value="70"/>
+                <xs:pattern value=".*[^\s].*"/>
+            </xs:restriction>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:simpleType name="TransportContractDocumentSequenceNumericType">
+        <xs:annotation>
+            <xs:documentation>
+                <WCOID>006</WCOID>
+                <WCOFormat>n..5</WCOFormat>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="udt:NumericType">
+            <xs:totalDigits value="5"/>
+            <xs:fractionDigits value="0"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:complexType name="TransportContractDocumentType">
+        <xs:annotation>
+            <xs:documentation>
+                <WCOID>135</WCOID>
+                <WCOFormat>a3</WCOFormat>
+                <EUCDMFormat>an4</EUCDMFormat>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:simpleContent>
+            <xs:restriction base="udt:CodeType">
+                <xs:maxLength value="4"/>
                 <xs:pattern value=".*[^\s].*"/>
             </xs:restriction>
         </xs:simpleContent>
