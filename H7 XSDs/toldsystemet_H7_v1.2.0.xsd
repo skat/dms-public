@@ -163,19 +163,19 @@
             <xs:element name="GoodsShipment">
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element name="AdditionalInformation" minOccurs="0" maxOccurs="unbounded">
-                            <xs:annotation>
-                                <xs:documentation>
-                                    <type>EUCDM 5.2</type>
-                                    <code>2/2</code>
-                                </xs:documentation>
-                            </xs:annotation>
+                        <xs:element name="SupportingDocument" minOccurs="0"
+                                    maxOccurs="unbounded">
                             <xs:complexType>
                                 <xs:sequence>
-                                    <xs:element name="SequenceNumeric" type="ds:AdditionalInformationSequenceNumericType"/>
-                                    <xs:element name="StatementCode" type="ds:AdditionalInformationStatementCodeType"/>
-                                    <xs:element name="StatementDescription" type="ds:AdditionalInformationStatementDescriptionTextType" minOccurs="0"/>
-                                    </xs:sequence>
+                                    <xs:element name="SequenceNumeric" type="ds:SupportingDocumentSequenceNumericType" minOccurs="1">
+                                    </xs:element>
+                                    <xs:element name="ID"
+                                                type="ds:SupportingDocumentIdentificationIDType" minOccurs="0">
+                                    </xs:element>
+                                    <xs:element name="TypeCode" type="ds:SupportingDocumentTypeCodeType"
+                                                minOccurs="0">
+                                    </xs:element>
+                                </xs:sequence>
                             </xs:complexType>
                         </xs:element>
                         <xs:element name="AdditionalReference" minOccurs="0"
@@ -199,6 +199,21 @@
                                     <xs:element name="TypeCode" type="ds:AdditionalReferenceTypeCodeType"
                                                 minOccurs="0">
                                     </xs:element>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="AdditionalInformation" minOccurs="0" maxOccurs="unbounded">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    <type>EUCDM 5.2</type>
+                                    <code>2/2</code>
+                                </xs:documentation>
+                            </xs:annotation>
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="SequenceNumeric" type="ds:AdditionalInformationSequenceNumericType"/>
+                                    <xs:element name="StatementCode" type="ds:AdditionalInformationStatementCodeType"/>
+                                    <xs:element name="StatementDescription" type="ds:AdditionalInformationStatementDescriptionTextType" minOccurs="0"/>
                                 </xs:sequence>
                             </xs:complexType>
                         </xs:element>
@@ -287,21 +302,6 @@
                             </xs:complexType>
                         </xs:element>
 
-                        <xs:element name="DomesticDutyTaxParty" minOccurs="0" maxOccurs="unbounded">
-                            <xs:annotation>
-                                <xs:documentation>
-                                    <type>EUCDM 5.2</type>
-                                    <code>3/40</code>
-                                </xs:documentation>
-                            </xs:annotation>
-                            <xs:complexType>
-                                <xs:sequence>
-                                    <xs:element name="SequenceNumeric" type="ds:DomesticDutyTaxPartySequenceNumericType"/>
-                                    <xs:element name="ID" type="ds:DomesticDutyTaxPartyIdentificationIDType" minOccurs="0"/>
-                                    <xs:element name="RoleCode" type="ds:DomesticDutyTaxPartyRoleCodeType" minOccurs="0"/>
-                                </xs:sequence>
-                            </xs:complexType>
-                        </xs:element>
                         <xs:element name="Consignor" minOccurs="0">
                             <xs:complexType>
                                 <xs:sequence>
@@ -332,7 +332,22 @@
                                 </xs:sequence>
                             </xs:complexType>
                         </xs:element>
-                        <xs:element name="GoodsMeasure" minOccurs="1" maxOccurs="1">
+                        <xs:element name="DomesticDutyTaxParty" minOccurs="0" maxOccurs="unbounded">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    <type>EUCDM 5.2</type>
+                                    <code>3/40</code>
+                                </xs:documentation>
+                            </xs:annotation>
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="SequenceNumeric" type="ds:DomesticDutyTaxPartySequenceNumericType"/>
+                                    <xs:element name="ID" type="ds:DomesticDutyTaxPartyIdentificationIDType" minOccurs="0"/>
+                                    <xs:element name="RoleCode" type="ds:DomesticDutyTaxPartyRoleCodeType" minOccurs="0"/>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="GoodsMeasure" minOccurs="0" maxOccurs="1">
                             <xs:complexType>
                                 <xs:sequence>
                                     <xs:element name="GrossMassMeasure" type="ds:GoodsMeasureGrossMassMeasureType">
@@ -377,30 +392,6 @@
                                                 <xs:element name="SequenceNumeric" type="ds:AdditionalInformationSequenceNumericType"/>
                                                 <xs:element name="StatementCode" type="ds:AdditionalInformationStatementCodeType"/>
                                                 <xs:element name="StatementDescription" type="ds:AdditionalInformationStatementDescriptionTextType" minOccurs="0"/>
-                                            </xs:sequence>
-                                        </xs:complexType>
-                                    </xs:element>
-                                    <xs:element name="AdditionalReference" minOccurs="0"
-                                                maxOccurs="unbounded">
-                                        <xs:annotation>
-                                            <xs:documentation xml:lang="EN">
-                                                <WCOID>22A</WCOID>
-                                                <WCOName>SupportingDocument</WCOName>
-                                                <WCODescription>Details related to supporting documents supplied
-                                                    as part of a declaration or sought as part of a response
-                                                </WCODescription>
-                                            </xs:documentation>
-                                        </xs:annotation>
-                                        <xs:complexType>
-                                            <xs:sequence>
-                                                <xs:element name="SequenceNumeric" type="ds:AdditionalReferenceSequenceNumericType" minOccurs="1">
-                                                </xs:element>
-                                                <xs:element name="ID"
-                                                            type="ds:AdditionalReferenceIdentificationIDType" minOccurs="0">
-                                                </xs:element>
-                                                <xs:element name="TypeCode" type="ds:AdditionalReferenceTypeCodeType"
-                                                            minOccurs="0">
-                                                </xs:element>
                                             </xs:sequence>
                                         </xs:complexType>
                                     </xs:element>
@@ -466,11 +457,31 @@
                                             </xs:sequence>
                                         </xs:complexType>
                                     </xs:element>
-                                    <xs:element name="Freight" minOccurs="0">
+                                    <xs:element name="Consignor" minOccurs="0"
+                                                maxOccurs="1">
                                         <xs:complexType>
                                             <xs:sequence>
-                                                <xs:element name="rate"
-                                                            type="ds:CustomsValuationFreightChargeAmountType" minOccurs="0">
+                                                <xs:element name="Name" type="ds:ConsignorNameTextType"
+                                                            minOccurs="0">
+                                                </xs:element>
+                                                <xs:element name="Address" minOccurs="0"
+                                                            maxOccurs="1">
+                                                    <xs:complexType>
+                                                        <xs:sequence>
+                                                            <xs:element name="CityName" type="ds:AddressCityNameTextType"
+                                                                        minOccurs="0">
+                                                            </xs:element>
+                                                            <xs:element name="CountryCode" type="ds:AddressCountryCodeType"
+                                                                        minOccurs="0">
+                                                            </xs:element>
+                                                            <xs:element name="Line" type="ds:AddressLineTextType"
+                                                                        minOccurs="0">
+                                                            </xs:element>
+                                                            <xs:element name="PostcodeID" type="ds:AddressPostcodeIDType"
+                                                                        minOccurs="0">
+                                                            </xs:element>
+                                                        </xs:sequence>
+                                                    </xs:complexType>
                                                 </xs:element>
                                             </xs:sequence>
                                         </xs:complexType>
@@ -504,7 +515,7 @@
                                             </xs:sequence>
                                         </xs:complexType>
                                     </xs:element>
-                                    <xs:element name="PreviousDocument" minOccurs="1" maxOccurs="unbounded">
+                                    <xs:element name="PreviousDocument" minOccurs="0" maxOccurs="unbounded">
                                         <xs:annotation>
                                             <xs:documentation>
                                                 <type>EUCDM 5.2</type>
@@ -514,8 +525,25 @@
                                         <xs:complexType>
                                             <xs:sequence>
                                                 <xs:element name="SequenceNumeric" type="ds:PreviousDocumentSequenceNumericType"/>
+                                                <xs:element name="CategoryCode" type="ds:PreviousDocumentCategoryCodeType" minOccurs="0">
+                                                </xs:element>
                                                 <xs:element name="ID" type="ds:PreviousDocumentIdentificationIDType"/>
                                                 <xs:element name="TypeCode" type="ds:PreviousDocumentTypeCodeType"/>
+                                                <xs:element name="LineNumeric" type="ds:PreviousDocumentLineNumericType" minOccurs="0">
+                                                </xs:element>
+                                            </xs:sequence>
+                                        </xs:complexType>
+                                    </xs:element>
+                                    <xs:element name="UCR" minOccurs="0" maxOccurs="1">
+                                        <xs:annotation>
+                                            <xs:documentation>
+                                                <type>EUCDM 5.2</type>
+                                                <code>2/4</code>
+                                            </xs:documentation>
+                                        </xs:annotation>
+                                        <xs:complexType>
+                                            <xs:sequence>
+                                                <xs:element name="TraderAssignedReferenceID" type="ds:UCRTraderAssignedReferenceIDType"/>
                                             </xs:sequence>
                                         </xs:complexType>
                                     </xs:element>
@@ -534,16 +562,36 @@
                                             </xs:sequence>
                                         </xs:complexType>
                                     </xs:element>
-                                    <xs:element name="UCR" minOccurs="0" maxOccurs="1">
+                                    <xs:element name="AdditionalReference" minOccurs="0"
+                                                maxOccurs="unbounded">
                                         <xs:annotation>
-                                            <xs:documentation>
-                                                <type>EUCDM 5.2</type>
-                                                <code>2/4</code>
+                                            <xs:documentation xml:lang="EN">
+                                                <WCOID>22A</WCOID>
+                                                <WCOName>SupportingDocument</WCOName>
+                                                <WCODescription>Details related to supporting documents supplied
+                                                    as part of a declaration or sought as part of a response
+                                                </WCODescription>
                                             </xs:documentation>
                                         </xs:annotation>
                                         <xs:complexType>
                                             <xs:sequence>
-                                                <xs:element name="TraderAssignedReferenceID" type="ds:UCRTraderAssignedReferenceIDType"/>
+                                                <xs:element name="SequenceNumeric" type="ds:AdditionalReferenceSequenceNumericType" minOccurs="1">
+                                                </xs:element>
+                                                <xs:element name="ID"
+                                                            type="ds:AdditionalReferenceIdentificationIDType" minOccurs="0">
+                                                </xs:element>
+                                                <xs:element name="TypeCode" type="ds:AdditionalReferenceTypeCodeType"
+                                                            minOccurs="0">
+                                                </xs:element>
+                                            </xs:sequence>
+                                        </xs:complexType>
+                                    </xs:element>
+                                    <xs:element name="Freight" minOccurs="0">
+                                        <xs:complexType>
+                                            <xs:sequence>
+                                                <xs:element name="rate"
+                                                            type="ds:CustomsValuationFreightChargeAmountType" minOccurs="0">
+                                                </xs:element>
                                             </xs:sequence>
                                         </xs:complexType>
                                     </xs:element>
@@ -562,82 +610,10 @@
                                             </xs:sequence>
                                         </xs:complexType>
                                     </xs:element>
-                                    <xs:element name="Consignor" minOccurs="0"
-                                                maxOccurs="1">
-                                        <xs:complexType>
-                                            <xs:sequence>
-                                                <xs:element name="Name" type="ds:ConsignorNameTextType"
-                                                            minOccurs="0">
-                                                </xs:element>
-                                                <xs:element name="Address" minOccurs="0"
-                                                            maxOccurs="1">
-                                                    <xs:complexType>
-                                                        <xs:sequence>
-                                                            <xs:element name="CityName" type="ds:AddressCityNameTextType"
-                                                                        minOccurs="0">
-                                                            </xs:element>
-                                                            <xs:element name="CountryCode" type="ds:AddressCountryCodeType"
-                                                                        minOccurs="0">
-                                                            </xs:element>
-                                                            <xs:element name="Line" type="ds:AddressLineTextType"
-                                                                        minOccurs="0">
-                                                            </xs:element>
-                                                            <xs:element name="PostcodeID" type="ds:AddressPostcodeIDType"
-                                                                        minOccurs="0">
-                                                            </xs:element>
-                                                        </xs:sequence>
-                                                    </xs:complexType>
-                                                </xs:element>
-                                            </xs:sequence>
-                                        </xs:complexType>
-                                    </xs:element>
                                 </xs:sequence>
                             </xs:complexType>
                         </xs:element>
 
-                        <xs:element name="PreviousDocument" minOccurs="1" maxOccurs="unbounded">
-                            <xs:annotation>
-                                <xs:documentation>
-                                    <type>EUCDM 5.2</type>
-                                    <code>2/1</code>
-                                </xs:documentation>
-                            </xs:annotation>
-                            <xs:complexType>
-                                <xs:sequence>
-                                    <xs:element name="SequenceNumeric" type="ds:PreviousDocumentSequenceNumericType"/>
-                                    <xs:element name="ID" type="ds:PreviousDocumentIdentificationIDType"/>
-                                    <xs:element name="TypeCode" type="ds:PreviousDocumentTypeCodeType"/>
-                                    </xs:sequence>
-                            </xs:complexType>
-                        </xs:element>
-                        <xs:element name="SupportingDocument" minOccurs="0"
-                                    maxOccurs="unbounded">
-                            <xs:complexType>
-                                <xs:sequence>
-                                    <xs:element name="SequenceNumeric" type="ds:SupportingDocumentSequenceNumericType" minOccurs="1">
-                                    </xs:element>
-                                    <xs:element name="ID"
-                                                type="ds:SupportingDocumentIdentificationIDType" minOccurs="0">
-                                    </xs:element>
-                                    <xs:element name="TypeCode" type="ds:SupportingDocumentTypeCodeType"
-                                                minOccurs="0">
-                                    </xs:element>
-                                </xs:sequence>
-                            </xs:complexType>
-                        </xs:element>
-                        <xs:element name="UCR" minOccurs="0" maxOccurs="1">
-                            <xs:annotation>
-                                <xs:documentation>
-                                    <type>EUCDM 5.2</type>
-                                    <code>2/4</code>
-                                </xs:documentation>
-                            </xs:annotation>
-                            <xs:complexType>
-                                <xs:sequence>
-                                    <xs:element name="TraderAssignedReferenceID" type="ds:UCRTraderAssignedReferenceIDType"/>
-                                </xs:sequence>
-                            </xs:complexType>
-                        </xs:element>
                         <xs:element name="Importer">
                             <xs:complexType>
                                 <xs:sequence>
@@ -657,11 +633,11 @@
                                             </xs:documentation>
                                         </xs:annotation>
                                     </xs:element>
-                                    <xs:element name="Address">
+                                    <xs:element name="Address" minOccurs="0">
                                         <xs:complexType>
                                             <xs:sequence>
                                                 <xs:element name="CityName" type="ds:AddressCityNameTextType" minOccurs="0"/>
-                                                <xs:element name="CountryCode" type="ds:AddressCountryCodeType"/>
+                                                <xs:element name="CountryCode" type="ds:AddressCountryCodeType" minOccurs="0"/>
                                                 <xs:element name="Line" type="ds:AddressLineTextType" minOccurs="0"/>
                                                 <xs:element name="PostcodeID" type="ds:AddressPostcodeIDType" minOccurs="0"/>
                                             </xs:sequence>
@@ -670,7 +646,39 @@
                                 </xs:sequence>
                             </xs:complexType>
                         </xs:element>
-                       </xs:sequence>
+                        <xs:element name="PreviousDocument" minOccurs="0" maxOccurs="unbounded">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    <type>EUCDM 5.2</type>
+                                    <code>2/1</code>
+                                </xs:documentation>
+                            </xs:annotation>
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="SequenceNumeric" type="ds:PreviousDocumentSequenceNumericType"/>
+                                    <xs:element name="CategoryCode" type="ds:PreviousDocumentCategoryCodeType" minOccurs="0">
+                                    </xs:element>
+                                    <xs:element name="ID" type="ds:PreviousDocumentIdentificationIDType"/>
+                                    <xs:element name="TypeCode" type="ds:PreviousDocumentTypeCodeType"/>
+                                    <xs:element name="LineNumeric" type="ds:PreviousDocumentLineNumericType" minOccurs="0">
+                                    </xs:element>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="UCR" minOccurs="0" maxOccurs="1">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    <type>EUCDM 5.2</type>
+                                    <code>2/4</code>
+                                </xs:documentation>
+                            </xs:annotation>
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="TraderAssignedReferenceID" type="ds:UCRTraderAssignedReferenceIDType"/>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
                 </xs:complexType>
             </xs:element>
         </xs:sequence>
