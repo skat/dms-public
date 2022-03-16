@@ -50,17 +50,7 @@
                 </xs:complexType>
             </xs:element>
 
-            <xs:element name="Amendment">
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:element name="SequenceNumeric" type="ds:AmendmentSequenceNumericType"/>
-                        <xs:element name="ChangeReasonCode" type="ds:AmendmentChangeReasonCodeType"/>
-                        <xs:element name="ChangeReasonText" type="ds:AmendmentChangeReasonTextType"/>
-                    </xs:sequence>
-                </xs:complexType>
-            </xs:element>
-
-            <xs:element name="Agent" minOccurs="0" maxOccurs="1">
+            <xs:element name="Agent" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>
                         <type>EUCDM 6.1</type>
@@ -94,6 +84,7 @@
                             </xs:annotation>
                             <xs:complexType>
                                 <xs:sequence>
+                                    <xs:element name="SequenceNumeric" type="ds:AgentContactSequenceNumericType"/>
                                     <xs:element name="name" type="ds:AgentContactNameType" minOccurs="1">
                                         <xs:annotation>
                                             <xs:documentation>
@@ -114,6 +105,16 @@
                                 </xs:sequence>
                             </xs:complexType>
                         </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
+            <xs:element name="Amendment">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="SequenceNumeric" type="ds:AmendmentSequenceNumericType"/>
+                        <xs:element name="ChangeReasonCode" type="ds:AmendmentChangeReasonCodeType"/>
+                        <xs:element name="ChangeReasonText" type="ds:AmendmentChangeReasonTextType"/>
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
