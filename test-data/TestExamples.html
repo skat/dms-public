@@ -1,0 +1,226 @@
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>DMS test data</title>
+    <link rel="stylesheet" href="style.css" type="text/css"/>
+    <script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+
+<header class="MPtop">
+    <div class="container-fluid">
+        <div class="header-row bg-header position-relative">
+            <h1>
+                <center>
+                    Test examples for H7
+                </center>
+            </h1>
+        </div>
+    </div>
+</header>
+<div class="container-data">
+    <div class="container-grid">
+        <div class="menu-grid">
+            <p class="menu-header">EUCDM 6.1</p>
+            <p class="menu-item-header">Test data</p>
+            <a class="menu-item" href="FunctionalTestCases.html">Functional test cases</a>
+            <a class="menu-item" href="TestExamples.html">Examples</a>
+            <a class="menu-item" href="BusinessScenarios.html">Business cases</a>
+            <p class="menu-item-header">Earlier versions</p>
+            <a class="menu-item" href="EUCDM5.2.html">EUCDM 5.2</a>
+        </div>
+        <div class="content-grid">
+
+            <!-- EXAMPLE H7 XML-FILES -->
+            <h2>H7 example XMLs</h2>
+            <p>The following XML examples are intended to show how to fill an H7 XML file in different scenarios, such as multiple
+                goods items, different currencies, etc.
+                <br>
+                Each file is accompanied by a short description as well as the expected notifications that should be received.
+            </p>
+
+            <div class="grid-container">
+                <div class="grid-header">Test case</div>
+                <div class="grid-header">Description</div>
+                <div class="grid-header">XML file</div>
+                <div class="grid-header">Notifications</div>
+                <div class="grid-header">Relevant notes</div>
+
+                <!--  IMA C07 auto release -->
+                <div class="grid-item">Standard (IMA) C07 with automatic release</div>
+                <div class="grid-item">A standard H7 declaration with C07 procedure (Consignments of low value) and automatic release of goods.</div>
+                <div class="grid-item"><a href="EUCDM6.1-data/Test%20examples/IMA_C07_AR.xml">IMA_C07_AR.xml</a></div>
+                <div class="grid-item">
+                    CWMACC
+                    <br>
+                    CWMTAX
+                    <br>
+                    CWMCLE
+                </div>
+                <div class="grid-item">
+
+                </div>
+
+                <!--  IMA C07 manual release -->
+           <!--     <div class="grid-item">Standard (IMA) C07 with manual release</div>
+                <div class="grid-item">A standard H7 declaration with C07 procedure (Consignments of low value) and manual release.</div>
+                <div class="grid-item"><a href="example-data/XML%20examples/Standard%20C07%20with%20automatic%20release.xml">IMA_C07_MR.xml</a></div>
+                <div class="grid-item">
+                    CWMACC
+                    <br>
+                    CWMTAX
+                    <br>
+                    <i>After manual handling:</i>
+                    <br>
+                    CWMCLE
+                </div>
+                <div class="grid-item">
+                    The Importer is not registered for deferred payment (has pligtkode 079) and the declaration is selected for
+                    manual handling by a Customs Officer.
+                </div> -->
+
+                <!--  IMA C07 automatic release and direct representation-->
+                <div class="grid-item">Standard (IMA) C07 with automatic release and direct representation</div>
+                <div class="grid-item">A standard H7 declaration with C07 procedure (Consignments of low value), automatic release and direct representation.</div>
+                <div class="grid-item"><a href="EUCDM6.1-data/Test%20examples/IMA_C07_AR_DR.xml">IMA_C07_AR_DR.xml</a></div>
+                <div class="grid-item">
+                    CWMACC
+                    <br>
+                    CWMTAX
+                    <br>
+                    CWMCLE
+                </div>
+                <div class="grid-item">
+                    The Agent-field is filled out with FunctionCode = 2, which means direct representation.
+                </div>
+
+                <!--  IMA C07 automatic release and IOSS -->
+                <div class="grid-item">Standard (IMA) C07 with automatic release and IOSS </div>
+                <div class="grid-item">A standard H7 declaration with C07 and F48 procedure (Consignments of low value), automatic release, direct representation and IOSS.</div>
+                <div class="grid-item"><a href="EUCDM6.1-data/Test%20examples/IMA_C07_AR_DR_IOSS.xml">IMA_C07_AR_DR_IOSS.xml</a></div>
+                <div class="grid-item">
+                    CWMACC
+                    <br>
+                    CWMCLE
+                </div>
+                <div class="grid-item">
+                    The DomesticDutyTaxParty-field is filled out with RoleCode = FR5 and an extra GovernmentProcedure is declared (F48), meaning that the declaration makes use of the IOSS scheme.
+                    <br>
+                    When a declaration contains an IOSS-number no VAT will be calculated, and therefore no CWMTAX-notification will be sent.
+                </div>
+
+                <!--  IMA C07 automatic release and 3 different items with different currencies -->
+                <div class="grid-item">Standard (IMA) C07 with automatic release, 3 different items with different currencies </div>
+                <div class="grid-item">A standard H7 declaration with C07 (Consignments of low value) and automatic release.
+                    <br>There are 3 different goods items declared, all declared with different currencies as well.
+                </div>
+                <div class="grid-item"><a href="EUCDM6.1-data/Test%20examples/IMA_C07_AR_3GI_3CUR.xml">IMA_C07_AR_3GI_3CUR.xml</a></div>
+                <div class="grid-item">
+                    CWMACC
+                    <br>
+                    CWMTAX
+                    <br>
+                    CWMCLE
+                </div>
+                <div class="grid-item">
+                    It is possible to declared different goods items with different currencies. In the CWMTAX-notification they will
+                    all be calculated and stated in DKK.
+                </div>
+
+                <!--  IMD C07 auto release -->
+                <div class="grid-item">Pre-lodged (IMD) C07 with automatic release</div>
+                <div class="grid-item">A pre-lodged H7 declaration with C07 procedure (Consignments of low value) and automatic release of goods.</div>
+                <div class="grid-item"><a href="EUCDM6.1-data/Test%20examples/IMD_C07_AR.xml">IMD_C07_AR.xml</a></div>
+                <div class="grid-item">
+                    CWMTAX
+                    <br>
+                    CWMRCV
+                </div>
+                <div class="grid-item">
+                    When sending a pre-lodged declaration there will be a pre-calculation of VAT sent in the CWMTAX-notification.
+                    <br>
+                    When the goods have been presented, a final VAT calculation will be done and the remaining notifications will be
+                    sent (see the notications for an IMA).
+                </div>
+
+                <!--  IMA C08 VAT auto release -->
+                <div class="grid-item">Standard (IMA) C08 with VAT and automatic release</div>
+                <div class="grid-item">A standard H7 declaration with C08 procedure (Consignments sent from one private individual to another), imposed VAT and automatic release of goods.</div>
+                <div class="grid-item"><a href="EUCDM6.1-data/Test%20examples/IMA_C08_AR_VAT.xml">IMA_C08_AR_VAT.xml</a></div>
+                <div class="grid-item">
+                    CWMACC
+                    <br>
+                    CWMTAX
+                    <br>
+                    CWMCLE
+                </div>
+                <div class="grid-item">
+                    The declaration contains goods items mentioned in Article 27 of Regulation (EC) No 1186/2009
+                    (tobacco, alcohol and toilet water) and is therefore not relieved from VAT.
+                    <br>
+                    Notice that that the GoodsMeasure-field also has the TariffQuantity-field filled when declaring this kind of
+                    goods item.
+                </div>
+
+                <!--  IMA C08 VAT manual release -->
+                <div class="grid-item">Standard (IMA) C08 with VAT and manual release</div>
+                <div class="grid-item">A standard H7 declaration with C08 procedure (Consignments sent from one private individual to another), imposed VAT and manual release of goods.</div>
+                <div class="grid-item"><a href="EUCDM6.1-data/Test%20examples/IMA_C08_MR_VAT.xml">IMA_C08_MR_VAT.xml</a></div>
+                <div class="grid-item">
+                    CWMACC
+                    <br>
+                    CWMTAX
+                    <br>
+                    <i>After manual handling:</i>
+                    <br>
+                    CWMCLE
+                </div>
+                <div class="grid-item">
+                    The declaration contains goods items mentioned in Article 27 of Regulation (EC) No 1186/2009
+                    (tobacco, alcohol and toilet water) and is therefore not relieved from VAT.
+                    <br>
+                    Notice that that the GoodsMeasure-field also has the TariffQuantity-field filled when declaring this kind of
+                    goods item.
+                    <br>
+                    The Importer is not registered for deferred payment (has pligtkode 079), as they are a private person, and the declaration is selected for
+                    manual handling by a Customs Officer.
+                </div>
+
+                <!--  IMA C08 no VAT auto release -->
+                <div class="grid-item">Standard (IMA) C08 with no VAT and automatic release</div>
+                <div class="grid-item">A standard H7 declaration with C08 procedure (Consignments sent from one private individual to another), no VAT and automatic release of goods.</div>
+                <div class="grid-item"><a href="EUCDM6.1-data/Test%20examples/IMA_C08_AR_noVAT.xml">IMA_C08_AR_noVAT.xml</a></div>
+                <div class="grid-item">
+                    CWMACC
+                    <br>
+                    CWMCLE
+                </div>
+                <div class="grid-item">
+                    Since the declaration does not contains goods items mentioned in Article 27 of Regulation (EC) No 1186/2009
+                    (tobacco, alcohol and toilet water) it is relieved from Import VAT. Therefore there is no CWMTAX-notification.
+                </div>
+
+                <!--  IMD C08 no VAT auto release -->
+                <div class="grid-item">Pre-lodged (IMD) C08 with no VAT and automatic release</div>
+                <div class="grid-item">A pre-lodged H7 declaration with C08 procedure (Consignments sent from one private individual to another), no VAT and automatic release of goods.</div>
+                <div class="grid-item"><a href="EUCDM6.1-data/Test%20examples/IMD_C08_AR_DR_noVAT.xml">IMD_C08_AR_DR_noVAT.xml</a></div>
+                <div class="grid-item">
+                    CWMRCV
+                </div>
+                <div class="grid-item">
+                    Since the declaration does not contains goods items mentioned in Article 27 of Regulation (EC) No 1186/2009
+                    (tobacco, alcohol and toilet water) it is relieved from Import VAT. Therefore there is no CWMTAX-notification.
+                    <br>
+                    When the goods have been presented, the remaining notifications will be
+                    sent (see the notications for an IMA with no VAT).
+                </div>
+            </div>
+
+            <!-- END XML EXAMPLES -->
+        </div>
+    </div>
+</div>
+</body>
+</html>
