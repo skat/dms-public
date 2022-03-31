@@ -5,7 +5,7 @@
 		version="1.0">
 
 	<xs:import namespace="urn:un:unece:uncefact:data:standard:UnqualifiedDataType:6"
-			schemaLocation="../UNECE/UnqualifiedDataType_6_DMS.xsd"/>
+			schemaLocation="UNECE/UnqualifiedDataType_6_DMS.xsd"/>
 
 	<xs:complexType name="CustomsPosition">
 		<xs:annotation>
@@ -191,7 +191,7 @@
 		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element minOccurs="1" maxOccurs="1" name="NotificationEventType" type="EventType">
+				<xs:element minOccurs="1" maxOccurs="1" name="NotificationEventType" type="xs:string">
 					<xs:annotation>
 						<xs:documentation xml:lang="en">
 							The type of the notification
@@ -254,6 +254,14 @@
 					<xs:annotation>
 						<xs:documentation xml:lang="en">
 							The information of the additional documents of the notification
+						</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+
+				<xs:element minOccurs="0" name="AdditionalMessage" type="AdditionalMessage">
+					<xs:annotation>
+						<xs:documentation xml:lang="en">
+							The Additional Message that this notification belongs to
 						</xs:documentation>
 					</xs:annotation>
 				</xs:element>
@@ -461,6 +469,25 @@
 				<xs:annotation>
 					<xs:documentation xml:lang="en">
 						The Tax assessed amount
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="AdditionalMessage">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="MRN" type="declarationMRN">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">
+						The id of the Additional Message information being received from cwm
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="URN" type="declarationMRN">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">
+						The unique reference number of the Additional Message information being received from cwm, used interchangeably with the MRN.
 					</xs:documentation>
 				</xs:annotation>
 			</xs:element>

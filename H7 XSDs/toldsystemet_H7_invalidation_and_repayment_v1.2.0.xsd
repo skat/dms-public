@@ -5,7 +5,7 @@
            xmlns="urn:wco:datamodel:WCO:DEC-DMS:2"
            targetNamespace="urn:wco:datamodel:WCO:DEC-DMS:2" elementFormDefault="qualified" version="1.1.7">
     <xs:import namespace="urn:wco:datamodel:WCO:Declaration_DS:DMS:2"
-               schemaLocation="toldsystemet_DS/toldsystemet_DS_v1.xsd"/>
+               schemaLocation="toldsystemet_DS/toldsystemet_DS_v1.2.xsd"/>
     <xs:import namespace="urn:un:unece:uncefact:data:standard:UnqualifiedDataType:6"
                schemaLocation="UNECE/UnqualifiedDataType_6_DMS.xsd"/>
     <xs:import namespace="urn:wco:datamodel:WCO:WCO_DEC_EDS_AUTHORISATION:1"
@@ -43,11 +43,11 @@
                 </xs:annotation>
             </xs:element>
 
-            <xs:element name="FunctionalReferenceID" type="ds:DeclarationFunctionalReferenceIDType">
+            <xs:element name="FunctionalReferenceID" type="ds:AdditionalMessageFunctionalReferenceIDType">
                 <xs:annotation>
                     <xs:documentation>
-                        <type>EUCDM 5.2</type>
-                        <code>2/5</code>
+                        <type>EUCDM 6.1</type>
+                        <code>12 09 001 000</code>
                         <details>
                             LRN.
                             Fill in the LRN of the declaration you want to request invalidation and repayment for.
@@ -150,17 +150,16 @@
             <xs:element name="RepaymentRemissionAuthorisation" maxOccurs="unbounded">
                 <xs:annotation>
                     <xs:documentation>
-                        Dataset 4C
+                        Dataset 4C - Annex A
                     </xs:documentation>
                 </xs:annotation>
                 <xs:complexType>
                     <xs:sequence>
 
-                        <xs:element name="ApplicationCodeType" type="eds:AuthorisationCodeType"
-                                    maxOccurs="1">
+                        <xs:element name="ApplicationCodeType" type="eds:AuthorisationCodeType">
                             <xs:annotation>
                                 <xs:documentation>
-                                    <type>EUCDM 5.2 - Annex A</type>
+                                    <type>EUCDM 6.1 - Annex A</type>
                                     <code>1/1</code>
                                     <details>
                                         Code for type of application.
@@ -173,7 +172,7 @@
                         <xs:element name="AttachedDocument" minOccurs="0" maxOccurs="unbounded">
                             <xs:annotation>
                                 <xs:documentation>
-                                    <type>EUCDM 5.2 - Annex A</type>
+                                    <type>EUCDM 6.1 - Annex A</type>
                                     <code>2/4</code>
                                     <details>
                                         If on subfield is filled, they all have to be filled.
@@ -183,8 +182,7 @@
                             <xs:complexType>
                                 <xs:sequence>
                                     <xs:element name="Type" type="eds:AttachedDocumentTypeType"/>
-                                    <xs:element name="AttachedDocumentID" type="eds:AttachedDocumentIdentifierType"
-                                               />
+                                    <xs:element name="AttachedDocumentID" type="eds:AttachedDocumentIdentifierType"/>
                                     <xs:element name="AttachedDocumentDate" type="udt:DateTimeType">
                                         <xs:annotation>
                                             <xs:documentation>
@@ -196,10 +194,10 @@
                             </xs:complexType>
                         </xs:element>
 
-                        <xs:element name="ApplicationHolder" minOccurs="0" maxOccurs="1">
+                        <xs:element name="ApplicationHolder" minOccurs="0">
                             <xs:annotation>
                                 <xs:documentation>
-                                    <type>EUCDM 5.2 - Annex A</type>
+                                    <type>EUCDM 6.1 - Annex A</type>
                                     <code>3/1</code>
                                     <details>
                                         If D.E 3/2 - ApplicationHolderId is 'DK09999981' all subfields must be filled.
@@ -217,11 +215,10 @@
                             </xs:complexType>
                         </xs:element>
 
-                        <xs:element name="ApplicationHolderId" type="eds:AuthorisationIDType"
-                                    maxOccurs="1">
+                        <xs:element name="ApplicationHolderId" type="eds:AuthorisationIDType">
                             <xs:annotation>
                                 <xs:documentation>
-                                    <type>EUCDM 5.2 - Annex A</type>
+                                    <type>EUCDM 6.1 - Annex A</type>
                                     <code>3/2</code>
                                     <details>
                                         Fill in EORI - must be the same as D.E 3/18 - Declarant/ID in original H7
@@ -234,7 +231,7 @@
                         <xs:element name="ApplicationSupervisor">
                             <xs:annotation>
                                 <xs:documentation>
-                                    <type>EUCDM 5.2 - Annex A</type>
+                                    <type>EUCDM 6.1 - Annex A</type>
                                     <code>3/6</code>
                                     <details>
                                         Contact details of person responsible for the application.
@@ -252,18 +249,17 @@
                                             </xs:documentation>
                                         </xs:annotation>
                                     </xs:element>
-                                    <xs:element name="TelephoneNumber" type="eds:TelephoneNumberTextType"
-                                                minOccurs="0"/>
+                                    <xs:element name="TelephoneNumber" type="eds:TelephoneNumberTextType" minOccurs="0"/>
                                     <xs:element name="FaxNumber" type="eds:TelephoneNumberTextType" minOccurs="0"/>
                                     <xs:element name="EmailAddress" type="eds:EmailTextType" minOccurs="0"/>
                                 </xs:sequence>
                             </xs:complexType>
                         </xs:element>
 
-                        <xs:element name="Representative" minOccurs="0" maxOccurs="1">
+                        <xs:element name="Representative" minOccurs="0">
                             <xs:annotation>
                                 <xs:documentation>
-                                    <type>EUCDM 5.2 - Annex A</type>
+                                    <type>EUCDM 6.1 - Annex A</type>
                                     <code>3/3</code>
                                     <details>
                                         Contact details of the representative.
@@ -284,7 +280,7 @@
                         <xs:element name="RepresentativeId" type="eds:AuthorisationIDType" minOccurs="0" maxOccurs="1">
                             <xs:annotation>
                                 <xs:documentation>
-                                    <type>EUCDM 5.2 - Annex A</type>
+                                    <type>EUCDM 6.1 - Annex A</type>
                                     <code>3/4</code>
                                     <details>
                                         EORI number of the representative.
@@ -296,7 +292,7 @@
                         <xs:element name="AdditionalInformation" type="eds:AdditionalInformationTextType" minOccurs="0">
                             <xs:annotation>
                                 <xs:documentation>
-                                    <type>EUCDM 5.2 - Annex A</type>
+                                    <type>EUCDM 6.1 - Annex A</type>
                                     <code>8/5</code>
                                     <details>
                                         Fill in any relevant additional information.
@@ -309,7 +305,7 @@
                         <xs:element name="AmountDuty">
                             <xs:annotation>
                                 <xs:documentation>
-                                    <type>EUCDM 5.2 - Annex A</type>
+                                    <type>EUCDM 6.1 - Annex A</type>
                                     <code>VIII/7</code>
                                     <details>
                                         Amount of import or export duty to be repaid or remitted of.
@@ -340,7 +336,7 @@
                         <xs:element name="DutyType">
                             <xs:annotation>
                                 <xs:documentation>
-                                    <type>EUCDM 5.2 - Annex A</type>
+                                    <type>EUCDM 6.1 - Annex A</type>
                                     <code>VIII/8</code>
                                     <details>
                                         Type of import or export duty.
@@ -370,7 +366,7 @@
                         <xs:element name="LegalBasis" type="eds:LegalBasisTextType">
                             <xs:annotation>
                                 <xs:documentation>
-                                    <type>EUCDM 5.2 - Annex A</type>
+                                    <type>EUCDM 6.1 - Annex A</type>
                                     <code>VIII/9</code>
                                     <details>
                                         Legal basis.

@@ -3,7 +3,7 @@
            xmlns="urn:wco:datamodel:WCO:DEC-DMS:2" targetNamespace="urn:wco:datamodel:WCO:DEC-DMS:2"
            elementFormDefault="qualified" version="1.1.7">
     <xs:import namespace="urn:wco:datamodel:WCO:Declaration_DS:DMS:2"
-               schemaLocation="toldsystemet_DS/toldsystemet_DS_v1.xsd"/>
+               schemaLocation="toldsystemet_DS/toldsystemet_DS_v1.2.xsd"/>
     <xs:element name="Declaration" type="Declaration"/>
     <xs:complexType name="Declaration">
         <xs:annotation>
@@ -15,20 +15,25 @@
         </xs:annotation>
         <xs:sequence>
             <xs:element name="FunctionCode" type="ds:DeclarationFunctionCodeType"/>
-
             <xs:element name="ProcedureCategory" type="ds:DeclarationProcedureCategoryCodeType"/>
 
-            <xs:element name="FunctionalReferenceID" type="ds:DeclarationFunctionalReferenceIDType">
+            <xs:element name="FunctionalReferenceID" type="ds:AdditionalMessageFunctionalReferenceIDType">
                 <xs:annotation>
                     <xs:documentation>
-                        <type>EUCDM 5.2</type>
-                        <code>2/5</code>
+                        <type>EUCDM 6.1</type>
+                        <code>12 09 001 000</code>
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
             <xs:element name="ID" type="ds:DeclarationIdentificationIDType"/>
-
-            <xs:element name="TypeCode" type="ds:DeclarationTypeCodeType"/>
+            <xs:element name="TypeCode" type="ds:DeclarationTypeCodeType">
+                <xs:annotation>
+                    <xs:documentation>
+                        <type>EUCDM 6.1</type>
+                        <code>11 01 001 000 and 11 02 001 000</code>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
 
             <xs:element name="Submitter">
                 <xs:complexType>
@@ -38,6 +43,7 @@
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
+
             <xs:element name="Amendment" maxOccurs="unbounded">
                 <xs:complexType>
                     <xs:sequence>
