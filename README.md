@@ -8,7 +8,7 @@ For onboarding start reading the onboarding guide: <br/>
 [Onboarding Guide (Danish)](https://github.com/skat/dms-public/raw/master/Onboarding%20Documents/OnboardingGuideToldsystemet.docx) <br/><br/>
 
 For establishing connectivity read the connectivity guide: <br/>
-[Connectivity Guide](https://github.com/skat/dms-public/raw/master/Onboarding%20Documents/ConnectivityGuide.docx) <br/><br/>
+[Connectivity Guide](https://github.com/skat/dms-public/raw/master/Onboarding%20Documents/ConnectivityGuide%20(v3).pdf) <br/><br/>
 
 Additionally for connectivity, the DMS project has developped a simple AS client here: <br/>
 [Simple-AS4-Client Github Repository](https://github.com/skat/simple-as4-client) <br/><br/>
