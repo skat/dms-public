@@ -5,16 +5,16 @@
 ### The documents however will give a good understanding of the onboarding effort.
 
 For onboarding start reading the onboarding guide: <br/>
-[Onboarding Guide (Danish)](https://github.com/skat/dms-public/raw/master/Onboarding%20Documents/OnboardingGuideToldsystemet.docx) <br/><br/>
+[DMS Onboarding Guide (Danish)](https://github.com/skat/dms-public/blob/master/Onboarding%20Documents/DMS%20Onboardingguide.pdf) <br/><br/>
 
 For establishing connectivity read the connectivity guide: <br/>
-[Connectivity Guide](https://github.com/skat/dms-public/raw/master/Onboarding%20Documents/ConnectivityGuide%20(v3).pdf) <br/><br/>
+[DMS Connectivity Guide](https://github.com/skat/dms-public/blob/master/Onboarding%20Documents/DMS%20Connectivity%20Guide.pdf) <br/><br/>
 
 Additionally for connectivity, the DMS project has developped a simple AS client here: <br/>
 [Simple-AS4-Client Github Repository](https://github.com/skat/simple-as4-client) <br/><br/>
 
 An overview of the functionalities of the system can be found in the import system guide: <br/>
-[Overall Import System Guide](https://github.com/skat/dms-public/raw/master/Onboarding%20Documents/ImportSystemGuide%20(v4.1).pdf) <br/><br/>
+[DMS System Guide](https://github.com/skat/dms-public/raw/master/Onboarding%20Documents/DMS System Guide.pdf) <br/><br/>
 
 An overview of Toldsystemet's User Interface and how to find various functionalities can be found in the User guide: <br/>
 [Link to User Manual Toldsystemet](https://github.com/skat/dms-public/blob/master/Onboarding%20Documents/BrugerManual/BrugermanualToldsystemet.pdf) <br/><br/>
