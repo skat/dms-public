@@ -14,7 +14,7 @@ Additionally for connectivity, the DMS project has developped a simple AS client
 [Simple-AS4-Client Github Repository](https://github.com/skat/simple-as4-client) <br/><br/>
 
 An overview of the functionalities of the system can be found in the import system guide: <br/>
-[DMS System Guide](https://github.com/skat/dms-public/raw/master/Onboarding%20Documents/DMS System Guide.pdf) <br/><br/>
+[DMS System Guide](https://github.com/skat/dms-public/raw/master/Onboarding%20Documents/DMS%20System Guide.pdf) <br/><br/>
 
 An overview of Toldsystemet's User Interface and how to find various functionalities can be found in the User guide: <br/>
 [Link to User Manual Toldsystemet](https://github.com/skat/dms-public/blob/master/Onboarding%20Documents/BrugerManual/BrugermanualToldsystemet.pdf) <br/><br/>
