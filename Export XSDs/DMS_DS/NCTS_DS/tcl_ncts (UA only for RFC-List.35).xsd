@@ -1,0 +1,1215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tcl_ncts="http://ncts.dgtaxud.ec/tcl_ncts" xmlns:doc="http://ncts.dgtaxud.ec/doc" targetNamespace="http://ncts.dgtaxud.ec/tcl_ncts" attributeFormDefault="unqualified" elementFormDefault="unqualified" version="40.20">
+  <!--======================================================================================================-->
+  <!--======================================================================================================-->
+  <!--===== IMPORTANT ! This file must be renamed 'tcl_ncts.xsd' and replaces it once UA is in operation    -->
+  <!--======================================================================================================-->
+  <!--===== Technical Code Lists                                                                            -->
+  <!--===== NCTS P4 Domain Definition                                                                       -->
+  <!--===== DDNTA 20.00                                                                                     -->
+  <!--===== XSD version v40.20                                                                              -->
+  <!--======================================================================================================-->
+  <!--===== Aligned with RFC-List.29 + UPDATED FOR RFC-LIST.30 (BREXIT) + UPDATED FOR RFC-LIST.35 (UA only) -->
+  <!--======================================================================================================-->
+  <!--======================================================================================================-->
+  <!--===== Imports =====-->
+  <xs:import namespace="http://ncts.dgtaxud.ec/doc" schemaLocation="doc.xsd" />
+  <!--=========================================-->
+  <!--===== NctsUnEdifactMessageTypes =====-->
+  <!--===== Used for attribute MESSAGE ERRORS.Message Type. =====-->
+  <!--===== Format: an..6 =====-->
+  <!--===== CL001 =====-->
+  <!--=========================================-->
+  <xs:simpleType name="NctsUnEdifactMessageTypes">
+    <xs:annotation>
+      <xs:documentation>Used for attribute MESSAGE ERRORS.Message Type. [Format: an..6]</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="BANSTA">
+        <xs:annotation>
+          <xs:documentation>Banking Status Message</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CUSDEC">
+        <xs:annotation>
+          <xs:documentation>Customs declaration</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CUSRES">
+        <xs:annotation>
+          <xs:documentation>Customs response</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FINSTA">
+        <xs:annotation>
+          <xs:documentation>Financial statement of an account message</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GESMES">
+        <xs:annotation>
+          <xs:documentation>General Statistics Message</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PARTTC">
+        <xs:annotation>
+          <xs:documentation>Party Information Message</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SANCRT">
+        <xs:annotation>
+          <xs:documentation>International movement of goods governmental regulatory message</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================-->
+  <!--===== SyntaxIdentifier =====-->
+  <!--===== Character set taken from the used UN/EDIFACT syntax version. =====-->
+  <!--===== Format: a4 =====-->
+  <!--===== CL021 =====-->
+  <!--=========================================-->
+  <xs:simpleType name="SyntaxIdentifier">
+    <xs:annotation>
+      <xs:documentation>Character set taken from the used UN/EDIFACT syntax version. [Format: a4]</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="UNOC">
+        <xs:annotation>
+          <xs:documentation>UNOC</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================-->
+  <!--===== SyntaxVersionNumber =====-->
+  <!--===== UN/EDIFACT syntax version used for Information Exchanges. =====-->
+  <!--===== Format: n1 =====-->
+  <!--===== CL022 =====-->
+  <!--=========================================-->
+  <xs:simpleType name="SyntaxVersionNumber">
+    <xs:annotation>
+      <xs:documentation>UN/EDIFACT syntax version used for Information Exchanges. [Format: n1]</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:nonNegativeInteger">
+      <xs:enumeration value="3">
+        <xs:annotation>
+          <xs:documentation>3</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================-->
+  <!--===== ErrorCodesForEdiNck =====-->
+  <!--===== Subset of the UN/EDIFACT generic error table. - For remarks on the codes : see the main document of the DDNTA Sec. VIII.3.3. =====-->
+  <!--===== Format: n..2 =====-->
+  <!--===== CL023 =====-->
+  <!--=========================================-->
+  <xs:simpleType name="ErrorCodesForEdiNck">
+    <xs:annotation>
+      <xs:documentation>Subset of the UN/EDIFACT generic error table. - For remarks on the codes : see the main document of the DDNTA Sec. VIII.3.3. [Format: n..2]</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:nonNegativeInteger">
+      <xs:enumeration value="12">
+        <xs:annotation>
+          <xs:documentation>Incorrect (code) value</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="13">
+        <xs:annotation>
+          <xs:documentation>Missing</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="14">
+        <xs:annotation>
+          <xs:documentation>Value not supported in this position (code value constraint)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="15">
+        <xs:annotation>
+          <xs:documentation>Not supported in this position</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="16">
+        <xs:annotation>
+          <xs:documentation>Too many constituents</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="18">
+        <xs:annotation>
+          <xs:documentation>Unspecified error</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="19">
+        <xs:annotation>
+          <xs:documentation>Invalid decimal notation</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2">
+        <xs:annotation>
+          <xs:documentation>Syntax version or level not supported</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="21">
+        <xs:annotation>
+          <xs:documentation>Invalid character(s)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="22">
+        <xs:annotation>
+          <xs:documentation>Invalid service character(s)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="23">
+        <xs:annotation>
+          <xs:documentation>Unknown interchange sender</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="26">
+        <xs:annotation>
+          <xs:documentation>Duplicate detected</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="28">
+        <xs:annotation>
+          <xs:documentation>Invalid control reference</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="29">
+        <xs:annotation>
+          <xs:documentation>Invalid control count</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="3">
+        <xs:annotation>
+          <xs:documentation>Message version/release not supported</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="32">
+        <xs:annotation>
+          <xs:documentation>Lower level empty</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="33">
+        <xs:annotation>
+          <xs:documentation>Invalid occurrence outside message</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="35">
+        <xs:annotation>
+          <xs:documentation>Too many repetitions</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="36">
+        <xs:annotation>
+          <xs:documentation>Too many segment group repetitions</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="37">
+        <xs:annotation>
+          <xs:documentation>Invalid type of character(s) (data type differences)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="38">
+        <xs:annotation>
+          <xs:documentation>Missing digit in front of decimal sign</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="39">
+        <xs:annotation>
+          <xs:documentation>Element too long (length constraint)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="40">
+        <xs:annotation>
+          <xs:documentation>Element too short (length constraint)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="6">
+        <xs:annotation>
+          <xs:documentation>Data segment missing/invalid</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7">
+        <xs:annotation>
+          <xs:documentation>Interchange recipient not actual recipient</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================-->
+  <!--===== AddressType =====-->
+  <!--===== Used in data group GUARANTEE REFERENCE. GUARANTOR.GUARANTOR OTHER ADDRESSES in IE37. =====-->
+  <!--===== Format: a1 =====-->
+  <!--===== CL025 =====-->
+  <!--=========================================-->
+  <xs:simpleType name="AddressType">
+    <xs:annotation>
+      <xs:documentation>Used in data group GUARANTEE REFERENCE. GUARANTOR.GUARANTOR OTHER ADDRESSES in IE37. [Format: a1]</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="L">
+        <xs:annotation>
+          <xs:documentation>Local address</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="S">
+        <xs:annotation>
+          <xs:documentation>Service address for other states</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================-->
+  <!--===== FirstLast =====-->
+  <!--===== Format: a1 =====-->
+  <!--===== CL028 =====-->
+  <!--=========================================-->
+  <xs:simpleType name="FirstLast">
+    <xs:annotation>
+      <xs:documentation>[Format: a1]</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="F">
+        <xs:annotation>
+          <xs:documentation>First</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="L">
+        <xs:annotation>
+          <xs:documentation>Last</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================-->
+  <!--===== ActionCodes =====-->
+  <!--===== Used for attribute MESSAGE ERRORS.Action taken by recipient. =====-->
+  <!--===== Format: an..3 =====-->
+  <!--===== CL032 =====-->
+  <!--=========================================-->
+  <xs:simpleType name="ActionCodes">
+    <xs:annotation>
+      <xs:documentation>Used for attribute MESSAGE ERRORS.Action taken by recipient. [Format: an..3]</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="4">
+        <xs:annotation>
+          <xs:documentation>This level and lower levels rejected</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7">
+        <xs:annotation>
+          <xs:documentation>This level acknowledged and next lower level acknowledged if not explicitly rejected</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================-->
+  <!--===== InterchangeServiceSegmentTags =====-->
+  <!--===== Used to denote the Interchange Segment in which an error was detected. =====-->
+  <!--===== Format: a3 =====-->
+  <!--===== CL033 =====-->
+  <!--=========================================-->
+  <xs:simpleType name="InterchangeServiceSegmentTags">
+    <xs:annotation>
+      <xs:documentation>Used to denote the Interchange Segment in which an error was detected. [Format: a3]</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="UNB">
+        <xs:annotation>
+          <xs:documentation>Interchange header segment</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="UNZ">
+        <xs:annotation>
+          <xs:documentation>Interchange trailer segment</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================-->
+  <!--===== MessageServiceSegmentTags =====-->
+  <!--===== Used to denote the Message Segment in which an error was detected. =====-->
+  <!--===== Format: a3 =====-->
+  <!--===== CL034 =====-->
+  <!--=========================================-->
+  <xs:simpleType name="MessageServiceSegmentTags">
+    <xs:annotation>
+      <xs:documentation>Used to denote the Message Segment in which an error was detected. [Format: a3]</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="UNH">
+        <xs:annotation>
+          <xs:documentation>Message header</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="UNT">
+        <xs:annotation>
+          <xs:documentation>Message trailer</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================-->
+  <!--===== VersionNumbers =====-->
+  <!--===== Format: an..3 =====-->
+  <!--===== CL035 =====-->
+  <!--=========================================-->
+  <xs:simpleType name="VersionNumbers">
+    <xs:annotation>
+      <xs:documentation>[Format: an..3]</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="D">
+        <xs:annotation>
+          <xs:documentation>Draft UN/EDIFACT directory</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================-->
+  <!--===== ReleaseNumbers =====-->
+  <!--===== Format: an..3 =====-->
+  <!--===== CL036 =====-->
+  <!--=========================================-->
+  <xs:simpleType name="ReleaseNumbers">
+    <xs:annotation>
+      <xs:documentation>[Format: an..3]</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="96B">
+        <xs:annotation>
+          <xs:documentation>UN/EDIFACT 96B directory</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================-->
+  <!--===== ControllingAgencies =====-->
+  <!--===== Format: an..2 =====-->
+  <!--===== CL037 =====-->
+  <!--=========================================-->
+  <xs:simpleType name="ControllingAgencies">
+    <xs:annotation>
+      <xs:documentation>[Format: an..2]</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="EC">
+        <xs:annotation>
+          <xs:documentation>European Community</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="UN">
+        <xs:annotation>
+          <xs:documentation>United Nations</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================-->
+  <!--===== MessageTypes =====-->
+  <!--===== Used for attribute MESSAGE ERRORS.Association assigned code and MESSAGE.Message Type. The usage of each code in one of the UNSM templates is defined in the Remarks column. CC should in all cases be instantiated to the value of the particular domain in which the message is created. [Format: an..6] All values are listed in the table below. The values of this codelist are also available and updated in CS/RD2. =====-->
+  <!--===== Format: an..6 =====-->
+  <!--===== CL060 =====-->
+  <!--=========================================-->
+  <xs:simpleType name="MessageTypes">
+    <xs:annotation>
+      <xs:documentation>Used for attribute MESSAGE ERRORS.Association assigned code and MESSAGE.Message Type. The usage of each code in one of the UNSM templates is defined in the Remarks column. CC should in all cases be instantiated to the value of the particular domain in which the message is created. [Format: an..6] All values are listed in the table below. The values of this codelist are also available and updated in CS/RD2. [Format: an..6]</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="CC004A">
+        <xs:annotation>
+          <xs:documentation>Amendment acceptance</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CC005A">
+        <xs:annotation>
+          <xs:documentation>Amendment Rejection</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CC007A">
+        <xs:annotation>
+          <xs:documentation>Arrival notification</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CC008A">
+        <xs:annotation>
+          <xs:documentation>Arrival notification rejection</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CC009A">
+        <xs:annotation>
+          <xs:documentation>Cancellation decision</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CC013B">
+        <xs:annotation>
+          <xs:documentation>Declaration amendment</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CC014A">
+        <xs:annotation>
+          <xs:documentation>Declaration cancellation request</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CC015A">
+        <xs:annotation>
+          <xs:documentation>Declaration data</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CC015B">
+        <xs:annotation>
+          <xs:documentation>Declaration data</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CC016A">
+        <xs:annotation>
+          <xs:documentation>Declaration rejected</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CC017B">
+        <xs:annotation>
+          <xs:documentation>Departure control results</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CC019A">
+        <xs:annotation>
+          <xs:documentation>Discrepancies</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CC021A">
+        <xs:annotation>
+          <xs:documentation>AAR rejection notification</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CC023A">
+        <xs:annotation>
+          <xs:documentation>Guarantor notification</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CC025A">
+        <xs:annotation>
+          <xs:documentation>Goods release notification</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CC026A">
+        <xs:annotation>
+          <xs:documentation>Guarantee Access Codes</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CC028A">
+        <xs:annotation>
+          <xs:documentation>MRN allocated</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CC029B">
+        <xs:annotation>
+          <xs:documentation>Release for Transit</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CC035A">
+        <xs:annotation>
+          <xs:documentation>Recovery Notification</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CC043A">
+        <xs:annotation>
+          <xs:documentation>Unloading permission</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CC044A">
+        <xs:annotation>
+          <xs:documentation>Unloading remarks</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CC045A">
+        <xs:annotation>
+          <xs:documentation>Write-off notification</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CC051B">
+        <xs:annotation>
+          <xs:documentation>No Release for Transit</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CC054A">
+        <xs:annotation>
+          <xs:documentation>Request of release</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CC055A">
+        <xs:annotation>
+          <xs:documentation>Guarantee not Valid</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CC058A">
+        <xs:annotation>
+          <xs:documentation>Unloading remarks rejection</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CC060A">
+        <xs:annotation>
+          <xs:documentation>Control decision notification</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CC062A">
+        <xs:annotation>
+          <xs:documentation>Release request rejection</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CC100A">
+        <xs:annotation>
+          <xs:documentation>Ask for documents</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CC140A">
+        <xs:annotation>
+          <xs:documentation>Request on non-arrived movement</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CC141A">
+        <xs:annotation>
+          <xs:documentation>Information about non-arrived movement</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CC224A">
+        <xs:annotation>
+          <xs:documentation>Individual Guarantee Voucher Sold</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CC225A">
+        <xs:annotation>
+          <xs:documentation>Guarantee update notification</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CC228A">
+        <xs:annotation>
+          <xs:documentation>Comprehensive Guarantee Cancellation Liability Liberation</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CC229A">
+        <xs:annotation>
+          <xs:documentation>Individual Guarantee Voucher Revocation Notification</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CC231A">
+        <xs:annotation>
+          <xs:documentation>Comprehensive Guarantee Cancellation Notification</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CC928A">
+        <xs:annotation>
+          <xs:documentation>Positive Acknowledge</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CD001B">
+        <xs:annotation>
+          <xs:documentation>Anticipated arrival record</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CD002A">
+        <xs:annotation>
+          <xs:documentation>AAR Request</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CD003B">
+        <xs:annotation>
+          <xs:documentation>AAR Response</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CD006A">
+        <xs:annotation>
+          <xs:documentation>Arrival advice</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CD010A">
+        <xs:annotation>
+          <xs:documentation>Cancellation notification</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CD011A">
+        <xs:annotation>
+          <xs:documentation>Sensitive goods notification</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CD012B">
+        <xs:annotation>
+          <xs:documentation>AAR-TIR-SPEED</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CD018B">
+        <xs:annotation>
+          <xs:documentation>Destination control results</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CD020A">
+        <xs:annotation>
+          <xs:documentation>Discrepancies solved notification</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CD024A">
+        <xs:annotation>
+          <xs:documentation>Forwarded arrival advice</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CD027A">
+        <xs:annotation>
+          <xs:documentation>Movement query</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CD030B">
+        <xs:annotation>
+          <xs:documentation>Notification of customs offices modification to common domain</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CD031B">
+        <xs:annotation>
+          <xs:documentation>Notification of customs offices modification to national domain</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CD032B">
+        <xs:annotation>
+          <xs:documentation>Notification of common reference data modification to ND</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CD034A">
+        <xs:annotation>
+          <xs:documentation>Query on Guarantees</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CD037A">
+        <xs:annotation>
+          <xs:documentation>Response Query on Guarantees</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CD038B">
+        <xs:annotation>
+          <xs:documentation>Response to Movement Query</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CD050B">
+        <xs:annotation>
+          <xs:documentation>ATR</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CD059A">
+        <xs:annotation>
+          <xs:documentation>Cancel Enquiry Notification</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CD063A">
+        <xs:annotation>
+          <xs:documentation>Recovery Communication</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CD070A">
+        <xs:annotation>
+          <xs:documentation>NOTIFICATION OF SYSTEM UNAVAILABILITY TO CD</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CD071A">
+        <xs:annotation>
+          <xs:documentation>NOTIFICATION OF SYSTEM UNAVAILABILITY TO ND</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CD114A">
+        <xs:annotation>
+          <xs:documentation>ATR Request</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CD115B">
+        <xs:annotation>
+          <xs:documentation>ATR Response</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CD118A">
+        <xs:annotation>
+          <xs:documentation>NCF</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CD142A">
+        <xs:annotation>
+          <xs:documentation>Enquiry Request</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CD143A">
+        <xs:annotation>
+          <xs:documentation>Enquiry Response</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CD144A">
+        <xs:annotation>
+          <xs:documentation>Enquiry information</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CD145A">
+        <xs:annotation>
+          <xs:documentation>Enquiry information request</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CD150A">
+        <xs:annotation>
+          <xs:documentation>Recovery request</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CD151A">
+        <xs:annotation>
+          <xs:documentation>Recovery acceptance notification</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CD152A">
+        <xs:annotation>
+          <xs:documentation>Recovery dispatch notification</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CD200A">
+        <xs:annotation>
+          <xs:documentation>Guarantee Check</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CD201A">
+        <xs:annotation>
+          <xs:documentation>Guarantee Check Result</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CD203A">
+        <xs:annotation>
+          <xs:documentation>Guarantee Use</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CD204A">
+        <xs:annotation>
+          <xs:documentation>Guarantee Use Cancellation</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CD205A">
+        <xs:annotation>
+          <xs:documentation>Guarantee Use Result</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CD209A">
+        <xs:annotation>
+          <xs:documentation>Credit Reference Amount</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CD411B">
+        <xs:annotation>
+          <xs:documentation>Sending of statistics data</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CD411C">
+        <xs:annotation>
+          <xs:documentation>Sending of statistics data</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CD412C">
+        <xs:annotation>
+          <xs:documentation>Statistics generated sent to national domain</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CD901B">
+        <xs:annotation>
+          <xs:documentation>Cancellation acknowledgement</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CD904A">
+        <xs:annotation>
+          <xs:documentation>Status request</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CD905A">
+        <xs:annotation>
+          <xs:documentation>Status response</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CD906A">
+        <xs:annotation>
+          <xs:documentation>Functional NACK</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CD907A">
+        <xs:annotation>
+          <xs:documentation>EDIFACT NACK</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CD912A">
+        <xs:annotation>
+          <xs:documentation>Availability Matrix</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CD913A">
+        <xs:annotation>
+          <xs:documentation>Upload parsing response</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CD914A">
+        <xs:annotation>
+          <xs:documentation>COL request</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CD916A">
+        <xs:annotation>
+          <xs:documentation>Common RD Request</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CD918A">
+        <xs:annotation>
+          <xs:documentation>MRN List Query</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CD919A">
+        <xs:annotation>
+          <xs:documentation>MRN List Response</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CD931B">
+        <xs:annotation>
+          <xs:documentation>COL DATA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CD932B">
+        <xs:annotation>
+          <xs:documentation>Common RD Data</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CD971A">
+        <xs:annotation>
+          <xs:documentation>FULL UNAVAILABILITY SCHEDULE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================-->
+  <!--===== SensitiveGoodsCode =====-->
+  <!--===== Used as verification for the additional identifier. =====-->
+  <!--===== Format: n..2 =====-->
+  <!--===== CL064 =====-->
+  <!--=========================================-->
+  <xs:simpleType name="SensitiveGoodsCode">
+    <xs:annotation>
+      <xs:documentation>Used as verification for the additional identifier. [Format: n..2]</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:nonNegativeInteger">
+      <xs:enumeration value="1">
+        <xs:annotation>
+          <xs:documentation>1</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================-->
+  <!--===== BusinessFunctionalityCode =====-->
+  <!--===== Format: a1 =====-->
+  <!--===== CL068 =====-->
+  <!--=========================================-->
+  <xs:simpleType name="BusinessFunctionalityCode">
+    <xs:annotation>
+      <xs:documentation>[Format: a1]</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="A">
+        <xs:annotation>
+          <xs:documentation>All Functionality</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="B">
+        <xs:annotation>
+          <xs:documentation>Departure Processing</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="C">
+        <xs:annotation>
+          <xs:documentation>Arrival Processing</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="D">
+        <xs:annotation>
+          <xs:documentation>Guarantee</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="E">
+        <xs:annotation>
+          <xs:documentation>Enquiry</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="G">
+        <xs:annotation>
+          <xs:documentation>Office of Transit Processing</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="H">
+        <xs:annotation>
+          <xs:documentation>Reference Data</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="J">
+        <xs:annotation>
+          <xs:documentation>Consignee Query</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M">
+        <xs:annotation>
+          <xs:documentation>OLAF</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="T">
+        <xs:annotation>
+          <xs:documentation>NCTS P4 functionality (Security &amp; ATIS)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================-->
+  <!--===== CountryCodesGuaranteeManagementNonEc =====-->
+  <!--===== The codes of 'SM' as well as the codes of all the countries included in code list CL063 - Country Codes (Common Transit outside Community), excluding the 'LI' and 'SJ' will be included. =====-->
+  <!--===== Format: a2 =====-->
+  <!--===== CL071 =====-->
+  <!--=========================================-->
+  <xs:simpleType name="CountryCodesGuaranteeManagementNonEc">
+    <xs:annotation>
+      <xs:documentation>The codes of 'SM' as well as the codes of all the countries included in code list CL063 - Country Codes (Common Transit outside Community), excluding the 'LI' and 'SJ' will be included. [Format: a2]</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="AD">
+        <xs:annotation>
+          <xs:documentation>Andorra</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CH">
+        <xs:annotation>
+          <xs:documentation>Switzerland</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GB">
+        <xs:annotation>
+          <xs:documentation>United Kingdom</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="IS">
+        <xs:annotation>
+          <xs:documentation>Iceland</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MK">
+        <xs:annotation>
+          <xs:documentation>North Macedonia</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NO">
+        <xs:annotation>
+          <xs:documentation>Norway</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RS">
+        <xs:annotation>
+          <xs:documentation>Serbia</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SM">
+        <xs:annotation>
+          <xs:documentation>San Marino</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TR">
+        <xs:annotation>
+          <xs:documentation>Turkey</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+	  <xs:enumeration value="UA">
+        <xs:annotation>
+          <xs:documentation>Ukraine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================-->
+  <!--===== CsMisStatus =====-->
+  <!--===== Used to represent the statuses that CS/MIS supports. =====-->
+  <!--===== Format: an2 =====-->
+  <!--===== CL081 =====-->
+  <!--=========================================-->
+  <xs:simpleType name="CsMisStatus">
+    <xs:annotation>
+      <xs:documentation>Used to represent the statuses that CS/MIS supports. [Format: an2]</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="CM">
+        <xs:annotation>
+          <xs:documentation>Control Results Sent by Office of Destination (been completed by a IE18)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CN">
+        <xs:annotation>
+          <xs:documentation>Cancelled (manually within CS/MIS or by a IE10)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NF">
+        <xs:annotation>
+          <xs:documentation>No results</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PN">
+        <xs:annotation>
+          <xs:documentation>Open (movements with status neither Closed nor Released nor Arrived)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="UM">
+        <xs:annotation>
+          <xs:documentation>Under Enquiry Reminder (awaiting answer to IE105, no IE59 or IE63 sent)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="UQ">
+        <xs:annotation>
+          <xs:documentation>Under Enquiry Request (awaiting answer to IE104, no IE59 or IE63 sent)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="UR">
+        <xs:annotation>
+          <xs:documentation>Under Recovery Procedure (IE63 is sent)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="W0">
+        <xs:annotation>
+          <xs:documentation>Released (Awaiting IE06/IE10 for at least M days)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="W8">
+        <xs:annotation>
+          <xs:documentation>Arrived (Awaiting IE18 for at least N days)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================-->
+  <!--===== CsiReturnedCode =====-->
+  <!--===== Used to represent the CSI returned code for the CSI report messages. =====-->
+  <!--===== Format: n1 =====-->
+  <!--===== CL082 =====-->
+  <!--=========================================-->
+  <xs:simpleType name="CsiReturnedCode">
+    <xs:annotation>
+      <xs:documentation>Used to represent the CSI returned code for the CSI report messages. [Format: n1]</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:nonNegativeInteger">
+      <xs:enumeration value="0">
+        <xs:annotation>
+          <xs:documentation>CSI successful in both sending and receiving gateways;</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1">
+        <xs:annotation>
+          <xs:documentation>CSI erroneous;</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2">
+        <xs:annotation>
+          <xs:documentation>Not exists in the sending or receiving gateway;</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================-->
+  <!--===== MrnFollowUpQueriesRoleARoleB =====-->
+  <!--===== Used to represent the roles in the MRN Follow up queries. =====-->
+  <!--===== Format: a2 =====-->
+  <!--===== CL083 =====-->
+  <!--=========================================-->
+  <xs:simpleType name="MrnFollowUpQueriesRoleARoleB">
+    <xs:annotation>
+      <xs:documentation>Used to represent the roles in the MRN Follow up queries. [Format: a2]</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="CA">
+        <xs:annotation>
+          <xs:documentation>Competent Authority</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DE">
+        <xs:annotation>
+          <xs:documentation>Departure</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DS">
+        <xs:annotation>
+          <xs:documentation>Destination</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HA">
+        <xs:annotation>
+          <xs:documentation>Higher Authority</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NR">
+        <xs:annotation>
+          <xs:documentation>No Role</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TR">
+        <xs:annotation>
+          <xs:documentation>Transit</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================-->
+  <!--===== CsMisStatusExplanationCode =====-->
+  <!--===== Used to represent the reason that no MRN query results were returned. =====-->
+  <!--===== Format: n..2 =====-->
+  <!--===== CL084 =====-->
+  <!--=========================================-->
+  <xs:simpleType name="CsMisStatusExplanationCode">
+    <xs:annotation>
+      <xs:documentation>Used to represent the reason that no MRN query results were returned. [Format: n..2]</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:nonNegativeInteger">
+      <xs:enumeration value="1">
+        <xs:annotation>
+          <xs:documentation>The requested MRN is not compliant to the MRN algorithm;</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2">
+        <xs:annotation>
+          <xs:documentation>The requested MRN does not exist in the CS/MIS database;</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="3">
+        <xs:annotation>
+          <xs:documentation>The requested MRN was found but it does not match the query parameters;</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4">
+        <xs:annotation>
+          <xs:documentation>The period of request is not well formatted;</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="5">
+        <xs:annotation>
+          <xs:documentation>The ‘period to’ data item is less than the ‘period from’ data item;</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="6">
+        <xs:annotation>
+          <xs:documentation>The roles specified are identical.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================-->
+  <!--===== SecurityIndicator =====-->
+  <!--===== Format: n1 =====-->
+  <!--===== CL117 =====-->
+  <!--=========================================-->
+  <xs:simpleType name="SecurityIndicator">
+    <xs:annotation>
+      <xs:documentation>[Format: n1]</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:nonNegativeInteger">
+      <xs:enumeration value="1">
+        <xs:annotation>
+          <xs:documentation>Declaration used for safety and security purposes</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
+
