@@ -28,6 +28,15 @@
 					</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element name="ID" type="ds:DeclarationIdentificationIDType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<EUCDMname>MRN</EUCDMname>
+						<type>EUCDM 6.1</type>
+						<code></code>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="TypeCode" type="ds:DeclarationTypeCodeType">
 				<xs:annotation>
 					<xs:documentation>
@@ -108,7 +117,7 @@
 				</xs:annotation>
 				<xs:complexType>
 					<xs:sequence>
-						<xs:element name="SequenceNumeric" type="ds:AuthorisationSequenceNumericType">
+						<xs:element name="SequenceNumeric" type="ds:AuthorisationSequenceNumericType" minOccurs="1">
 							<xs:annotation>
 								<xs:documentation xml:lang="EN">
 									<WCOID>006</WCOID>
@@ -302,7 +311,7 @@
 							</xs:annotation>
 							<xs:complexType>
 								<xs:sequence>
-									<xs:element name="GoodsLocation" minOccurs="0">
+									<xs:element name="GoodsLocation" minOccurs="1" maxOccurs="1">
 										<xs:annotation>
 											<xs:documentation>
 												<EUCDMname>Location of goods</EUCDMname>
@@ -313,8 +322,7 @@
 										<xs:complexType>
 											<xs:sequence>
 
-												<xs:element name="Name" type="ds:GoodsLocationNameTextType"
-															minOccurs="0">
+												<xs:element name="Name" type="ds:GoodsLocationNameTextType" minOccurs="0">
 													<xs:annotation>
 														<xs:documentation>
 															<EUCDMname>UN/LOCODE</EUCDMname>
@@ -335,8 +343,7 @@
 
 												</xs:element>
 
-												<xs:element name="TypeCode" type="ds:GoodsLocationTypeCodeType"
-															minOccurs="0">
+												<xs:element name="TypeCode" type="ds:GoodsLocationTypeCodeType" minOccurs="1">
 													<xs:annotation>
 														<xs:documentation>
 															<EUCDMname>Type of location</EUCDMname>
@@ -346,8 +353,7 @@
 													</xs:annotation>
 												</xs:element>
 
-												<xs:element name="IdentificationType"
-															type="ds:IdentificationQualifierCodeType" minOccurs="0">
+												<xs:element name="IdentificationType" type="ds:IdentificationQualifierCodeType" minOccurs="1">
 													<xs:annotation>
 														<xs:documentation>
 															<EUCDMname>Qualifier of identification</EUCDMname>
@@ -472,7 +478,7 @@
 												<xs:element name="latitude" type="ds:GoodsLocationLatitude" minOccurs="0">
 													<xs:annotation>
 														<xs:documentation>
-															<EUCDMname>Location of goods</EUCDMname>
+															<EUCDMname>Latitude</EUCDMname>
 															<type>EUCDM 6.1</type>
 															<code>16 15 048 049</code>
 														</xs:documentation>
@@ -482,7 +488,7 @@
 												<xs:element name="longitude" type="ds:GoodsLocationLongitude" minOccurs="0">
 													<xs:annotation>
 														<xs:documentation>
-															<EUCDMname>Location of goods</EUCDMname>
+															<EUCDMname>Longitude</EUCDMname>
 															<type>EUCDM 6.1</type>
 															<code>16 15 048 050</code>
 														</xs:documentation>
@@ -522,8 +528,7 @@
 													</xs:annotation>
 													<xs:complexType>
 														<xs:sequence>
-															<xs:element name="name" type="ds:GoodsLocationContactNameType"
-																		minOccurs="0">
+															<xs:element name="name" type="ds:GoodsLocationContactNameType" minOccurs="0">
 																<xs:annotation>
 																	<xs:documentation>
 																		<EUCDMname>Name</EUCDMname>
@@ -533,8 +538,7 @@
 																</xs:annotation>
 
 															</xs:element>
-															<xs:element name="Communication" minOccurs="0"
-																		maxOccurs="unbounded">
+															<xs:element name="Communication" minOccurs="0" maxOccurs="9">
 																<xs:annotation>
 																	<xs:documentation>
 																		<EUCDMname>Communication</EUCDMname>
@@ -545,8 +549,7 @@
 																<xs:complexType>
 																	<xs:sequence>
 																		<xs:element name="SequenceNumeric" type="ds:GoodsLocationContactCommunicationSequenceNumericType"/>
-																		<xs:element name="ID"
-																					type="ds:CommunicationIdentificationIDType" minOccurs="0">
+																		<xs:element name="ID" type="ds:CommunicationIdentificationIDType" minOccurs="0">
 																			<xs:annotation>
 																				<xs:documentation>
 																					<EUCDMname>Phone Number</EUCDMname>
@@ -560,8 +563,7 @@
 																				</xs:documentation>
 																			</xs:annotation>
 																		</xs:element>
-																		<xs:element name="TypeCode" type="ds:CommunicationTypeCodeType"
-																					minOccurs="0">
+																		<xs:element name="TypeCode" type="ds:CommunicationTypeCodeType" minOccurs="0">
 																			<xs:annotation>
 																				<xs:documentation>
 																					<EUCDMname>Phone Number</EUCDMname>
@@ -589,7 +591,7 @@
 							</xs:complexType>
 						</xs:element>
 
-						<xs:element name="GovernmentAgencyGoodsItem" maxOccurs="999">
+						<xs:element name="GovernmentAgencyGoodsItem" minOccurs="0" maxOccurs="999">
 							<xs:annotation>
 								<xs:documentation>
 									<EUCDMname>Goods item number</EUCDMname>
@@ -599,7 +601,7 @@
 							</xs:annotation>
 							<xs:complexType>
 								<xs:sequence>
-									<xs:element name="SequenceNumeric" type="ds:GovernmentAgencyGoodsItemSequenceNumericType">
+									<xs:element name="SequenceNumeric" type="ds:GovernmentAgencyGoodsItemSequenceNumericType" minOccurs="0">
 										<xs:annotation>
 											<xs:documentation>
 												<EUCDMname>Goods item number</EUCDMname>
@@ -619,7 +621,7 @@
 										</xs:annotation>
 										<xs:complexType>
 											<xs:sequence>
-												<xs:element name="SequenceNumeric" type="ds:PreviousDocumentSequenceNumericType"  minOccurs="1"/>
+												<xs:element name="SequenceNumeric" type="ds:PreviousDocumentSequenceNumericType" minOccurs="1"/>
 												<xs:element name="WriteOff" minOccurs="0" maxOccurs="1">
 													<xs:annotation>
 														<xs:documentation>
@@ -646,8 +648,7 @@
 																				</xs:documentation>
 																			</xs:annotation>
 																		</xs:element>
-																		<xs:element name="TypeCode" type="ds:PackagingTypeCodeType"
-																					minOccurs="0">
+																		<xs:element name="TypeCode" type="ds:PackagingTypeCodeType" minOccurs="0">
 																			<xs:annotation>
 																				<xs:documentation>
 																					<EUCDMname>Type of packages</EUCDMname>
@@ -664,8 +665,7 @@
 												</xs:element>
 												<xs:element name="CategoryCode" type="ds:PreviousDocumentCategoryCodeType" minOccurs="0">
 												</xs:element>
-												<xs:element name="ID"
-															type="ds:PreviousDocumentIdentificationIDType" minOccurs="0">
+												<xs:element name="ID" type="ds:PreviousDocumentIdentificationIDType" minOccurs="0">
 													<xs:annotation>
 														<xs:documentation>
 															<EUCDMname>Reference number</EUCDMname>
@@ -674,8 +674,7 @@
 														</xs:documentation>
 													</xs:annotation>
 												</xs:element>
-												<xs:element name="TypeCode"
-															type="ds:PreviousDocumentTypeCodeType" minOccurs="0">
+												<xs:element name="TypeCode" type="ds:PreviousDocumentTypeCodeType" minOccurs="0">
 													<xs:annotation>
 														<xs:documentation>
 															<EUCDMname>Type</EUCDMname>
@@ -684,8 +683,7 @@
 														</xs:documentation>
 													</xs:annotation>
 												</xs:element>
-												<xs:element name="LineNumeric"
-															type="ds:PreviousDocumentLineNumericType" minOccurs="0">
+												<xs:element name="LineNumeric" type="ds:PreviousDocumentLineNumericType" minOccurs="0">
 													<xs:annotation>
 														<xs:documentation>
 															<EUCDMname>Goods item identifier</EUCDMname>
@@ -738,10 +736,8 @@
 													</xs:annotation>
 													<xs:complexType>
 														<xs:sequence>
-															<xs:element name="SequenceNumeric"
-																		type="ds:AuthorisationHolderSequenceNumericType" minOccurs="1"/>
-															<xs:element name="ID"
-																		type="ds:AuthorisationHolderIdentificationIDType" minOccurs="0">
+															<xs:element name="SequenceNumeric" type="ds:AuthorisationHolderSequenceNumericType" minOccurs="1"/>
+															<xs:element name="ID" type="ds:AuthorisationHolderIdentificationIDType" minOccurs="0">
 																<xs:annotation>
 																	<xs:documentation>
 																		<EUCDMname>Holder of the authorisation</EUCDMname>
@@ -787,8 +783,7 @@
 											</xs:documentation>
 										</xs:annotation>
 									</xs:element>
-									<xs:element name="CategoryCode"
-												type="ds:PreviousDocumentCategoryCodeType" minOccurs="0"/>
+									<xs:element name="CategoryCode" type="ds:PreviousDocumentCategoryCodeType" minOccurs="0"/>
 									<xs:element name="ID" type="ds:PreviousDocumentIdentificationIDType" minOccurs="0">
 										<xs:annotation>
 											<xs:documentation>
