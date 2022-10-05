@@ -48,6 +48,14 @@
 			<xs:element name="DeclarationOfficeID" type="ds:DeclarationDeclarationOfficeIDType"/>
 
 			<xs:element name="InvoiceAmount" type="ds:DeclarationInvoiceAmountType">
+				<xs:annotation>
+					<xs:documentation>
+						<EUCDMname>Deferred payment</EUCDMname>
+						<type>EUCDM 6.1</type>
+						<code>14 06 001 000</code>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 
 			<xs:element name="Submitter">
 				<xs:complexType>
@@ -81,7 +89,7 @@
 				</xs:complexType>
 		    </xs:element>
 
-			<xs:element name="Agent" minOccurs="0" maxOccurs="1">
+			<xs:element name="Agent" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>
 						<EUCDMname>Representative</EUCDMname>
@@ -91,7 +99,7 @@
 				</xs:annotation>
 				<xs:complexType>
 					<xs:sequence>
-						<xs:element name="ID" type="ds:AgentIdentificationIDType" minOccurs="0">
+						<xs:element name="ID" type="ds:AgentIdentificationIDType">
 							<xs:annotation>
 								<xs:documentation>
 									<EUCDMname>Identification number</EUCDMname>
@@ -101,7 +109,7 @@
 							</xs:annotation>
 						</xs:element>
 
-						<xs:element name="FunctionCode" type="ds:AgentFunctionCodeType" minOccurs="0">
+						<xs:element name="FunctionCode" type="ds:AgentFunctionCodeType">
 							<xs:annotation>
 								<xs:documentation>
 									<EUCDMname>Status</EUCDMname>
@@ -121,7 +129,7 @@
 							</xs:annotation>
 							<xs:complexType>
 								<xs:sequence>
-									<xs:element name="SequenceNumeric" type="ds:AgentContactSequenceNumericType" minOccurs="1"/>
+									<xs:element name="SequenceNumeric" type="ds:AgentContactSequenceNumericType"/>
 
 									<xs:element name="name" type="ds:AgentContactNameType">
 										<xs:annotation>
@@ -133,7 +141,7 @@
 										</xs:annotation>
 									</xs:element>
 
-									<xs:element name="Communication" minOccurs="0">
+									<xs:element name="Communication" minOccurs="2">
 										<xs:complexType>
 											<xs:sequence>
 												<xs:element name="SequenceNumeric" type="ds:AgentCommunicationSequenceNumericType"/>
@@ -199,7 +207,7 @@
 					<xs:sequence>
 						<xs:element name="SequenceNumeric" type="ds:AuthorisationSequenceNumericType">
 						</xs:element>
-						<xs:element name="ID" type="ds:AuthorisationIdentificationIDType" minOccurs="0" maxOccurs="1">
+						<xs:element name="ID" type="ds:AuthorisationIdentificationIDType">
 							<xs:annotation>
 								<xs:documentation>
 									<EUCDMname>Authorisation</EUCDMname>
@@ -209,7 +217,7 @@
 							</xs:annotation>
 
 						</xs:element>
-						<xs:element name="Type" type="ds:AuthorisationReferenceType" minOccurs="0" maxOccurs="1">
+						<xs:element name="Type" type="ds:AuthorisationReferenceType">
 							<xs:annotation>
 								<xs:documentation>
 									<EUCDMname>Authorisation</EUCDMname>
@@ -218,7 +226,7 @@
 								</xs:documentation>
 							</xs:annotation>
 						</xs:element>
-						<xs:element name="AuthorisationHolder" type="ds:AuthorisationHolderIdentificationIDType" minOccurs="0" maxOccurs="1">
+						<xs:element name="AuthorisationHolder" type="ds:AuthorisationHolderIdentificationIDType" minOccurs="0">
 							<xs:annotation>
 								<xs:documentation>
 									<EUCDMname>AuthorisationHolder</EUCDMname>
@@ -265,7 +273,7 @@
 				</xs:complexType>
 			</xs:element>
 
-			<xs:element name="Declarant" minOccurs="0" maxOccurs="1">
+			<xs:element name="Declarant" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>
 						<EUCDMname>Declarant</EUCDMname>
