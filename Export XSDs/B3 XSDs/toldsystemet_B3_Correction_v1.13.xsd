@@ -5,6 +5,7 @@
 	<xs:import namespace="urn:wco:datamodel:WCO:Declaration_DS:DMS:2"
 			   schemaLocation="DMS_DS/DMS_DS_v1.3.xsd"/>
 
+
 	<xs:element name="Declaration" type="Declaration">
 		<xs:annotation>
 			<xs:documentation>
@@ -42,20 +43,6 @@
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="DeclarationOfficeID" type="ds:DeclarationDeclarationOfficeIDType"/>
-			<xs:element name="InvoiceAmount" type="ds:DeclarationInvoiceAmountType" minOccurs="0">
-				<xs:annotation>
-					<xs:documentation>
-						<EUCDMname>Total amount invoiced</EUCDMname>
-						<type>EUCDM 6.1</type>
-						<code>14 06 001 000</code>
-					</xs:documentation>
-					<xs:documentation>
-						<EUCDMname>Total amount invoiced currency</EUCDMname>
-						<type>EUCDM 6.1</type>
-						<code>14 05 001 000</code>
-					</xs:documentation>
-				</xs:annotation>
-			</xs:element>
 			<xs:element name="Submitter">
 				<xs:complexType>
 					<xs:sequence>
@@ -84,6 +71,7 @@
 								</xs:documentation>
 							</xs:annotation>
 						</xs:element>
+
 						<xs:element name="FunctionCode" type="ds:AgentFunctionCodeType">
 							<xs:annotation>
 								<xs:documentation>
@@ -93,6 +81,7 @@
 								</xs:documentation>
 							</xs:annotation>
 						</xs:element>
+
 						<xs:element name="Contact" minOccurs="0" maxOccurs="9">
 							<xs:annotation>
 								<xs:documentation>
@@ -104,6 +93,7 @@
 							<xs:complexType>
 								<xs:sequence>
 									<xs:element name="SequenceNumeric" type="ds:AgentContactSequenceNumericType"/>
+
 									<xs:element name="name" type="ds:AgentContactNameType">
 										<xs:annotation>
 											<xs:documentation>
@@ -113,10 +103,12 @@
 											</xs:documentation>
 										</xs:annotation>
 									</xs:element>
+
 									<xs:element name="Communication" maxOccurs="unbounded">
 										<xs:complexType>
 											<xs:sequence>
 												<xs:element name="SequenceNumeric" type="ds:AgentCommunicationSequenceNumericType"/>
+
 												<xs:element name="ID" type="ds:CommunicationIdentificationIDType">
 													<xs:annotation>
 														<xs:documentation>
@@ -135,6 +127,7 @@
 														</xs:documentation>
 													</xs:annotation>
 												</xs:element>
+
 												<xs:element name="TypeCode" type="ds:CommunicationTypeCodeType">
 													<xs:annotation>
 														<xs:documentation>
@@ -203,7 +196,6 @@
 									<code>12 12 001 000</code>
 								</xs:documentation>
 							</xs:annotation>
-
 						</xs:element>
 						<xs:element name="Type" type="ds:AuthorisationReferenceType" minOccurs="0">
 							<xs:annotation>
@@ -513,6 +505,7 @@
 				</xs:complexType>
 			</xs:element>
 
+
 			<xs:element name="GoodsShipment" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>
@@ -579,7 +572,6 @@
 											</xs:documentation>
 										</xs:annotation>
 									</xs:element>
-
 								</xs:sequence>
 							</xs:complexType>
 						</xs:element>
@@ -616,16 +608,6 @@
 									</xs:element>
 								</xs:sequence>
 							</xs:complexType>
-						</xs:element>
-
-						<xs:element name="TransactionNatureCode" type="ds:GoodsShipmentTransactionNatureCodeType" minOccurs="0">
-							<xs:annotation>
-								<xs:documentation>
-									<EUCDMname>Nature of transaction</EUCDMname>
-									<type>EUCDM 6.1</type>
-									<code>99 05 001 000</code>
-								</xs:documentation>
-							</xs:annotation>
 						</xs:element>
 
 						<xs:element name="AEOMutualRecognitionParty" minOccurs="0" maxOccurs="99">
@@ -745,7 +727,193 @@
 								</xs:sequence>
 							</xs:complexType>
 						</xs:element>
-
+						<xs:element name="Amendment" minOccurs="0" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation xml:lang="EN">
+									<WCOID>06A</WCOID>
+									<WCOName>Amendment</WCOName>
+									<WCODescription>Details for updating declaration data. Can cover
+										the whole WCO Data Model</WCODescription>
+								</xs:documentation>
+								<xs:documentation>
+									<WCOUsageDeclarationIM>X</WCOUsageDeclarationIM>
+									<WCOUsageDeclarationEX>X</WCOUsageDeclarationEX>
+									<WCOUsageDeclarationCRI>X</WCOUsageDeclarationCRI>
+									<WCOUsageDeclarationCRE>X</WCOUsageDeclarationCRE>
+									<WCOUsageDeclarationCONV>X</WCOUsageDeclarationCONV>
+									<WCOUsageDeclarationTRT>X</WCOUsageDeclarationTRT>
+								</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="SequenceNumeric" type="ds:AmendmentSequenceNumericType" minOccurs="1">
+										<xs:annotation>
+											<xs:documentation xml:lang="EN">
+												<WCOID>006</WCOID>
+												<WCOName>Sequence number</WCOName>
+												<WCODescription>Number indicating the position in a sequence</WCODescription>
+												<WCOFormat>n..5</WCOFormat>
+											</xs:documentation>
+											<xs:documentation>
+												<TDEDUID>1050</TDEDUID>
+												<TDEDName>Sequence. Position.Identifier</TDEDName>
+												<DictionaryEntryName>Amendment. Sequence. Numeric</DictionaryEntryName>
+												<NamedComplexType>AmendmentSequenceNumericType</NamedComplexType>
+												<XMLTag>SequenceNumeric</XMLTag>
+												<UniquePositionID>10348</UniquePositionID>
+												<WCOUsageDeclarationCRI>X</WCOUsageDeclarationCRI>
+												<WCOUsageDeclarationCRE>X</WCOUsageDeclarationCRE>
+												<WCOUsageDeclarationTRT>X</WCOUsageDeclarationTRT>
+											</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="ChangeReasonCode" type="ds:AmendmentChangeReasonCodeType"
+												minOccurs="0">
+										<xs:annotation>
+											<xs:documentation xml:lang="EN">
+												<WCOCodeRemarks>User codes</WCOCodeRemarks>
+												<WCOID>099</WCOID>
+												<WCOName>Amendment code</WCOName>
+												<WCODescription>Code specifying the reason for a change
+												</WCODescription>
+												<WCOFormat>an..3</WCOFormat>
+											</xs:documentation>
+											<xs:documentation>
+												<TDEDUID>4295</TDEDUID>
+												<TDEDName>Change.Reason.Code</TDEDName>
+												<DictionaryEntryName>Amendment. Change Reason. Code
+												</DictionaryEntryName>
+												<NamedComplexType>AmendmentChangeReasonCodeType
+												</NamedComplexType>
+												<XMLTag>ChangeReasonCode</XMLTag>
+												<UniquePositionID>427</UniquePositionID>
+												<WCOUsageDeclarationIM>X</WCOUsageDeclarationIM>
+												<WCOUsageDeclarationEX>X</WCOUsageDeclarationEX>
+												<WCOUsageDeclarationCRI>X</WCOUsageDeclarationCRI>
+												<WCOUsageDeclarationCRE>X</WCOUsageDeclarationCRE>
+												<WCOUsageDeclarationCONV>X</WCOUsageDeclarationCONV>
+												<WCOUsageDeclarationTRT>X</WCOUsageDeclarationTRT>
+											</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="ChangeReasonText" type="ds:AmendmentChangeReasonTextType"
+												minOccurs="0">
+										<xs:annotation>
+											<xs:documentation xml:lang="EN">
+												<WCOName>Amendment text</WCOName>
+												<WCODescription>Text specifying the reason for a change</WCODescription>
+												<WCOFormat>an..255</WCOFormat>
+											</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="Pointer" minOccurs="0" maxOccurs="unbounded">
+										<xs:annotation>
+											<xs:documentation xml:lang="EN">
+												<WCOID>97A</WCOID>
+												<WCOName>Pointer</WCOName>
+												<WCODescription>Details to refer to a functional attribute
+													within a declaration</WCODescription>
+											</xs:documentation>
+											<xs:documentation>
+												<WCOUsageDeclarationIM>X</WCOUsageDeclarationIM>
+												<WCOUsageDeclarationEX>X</WCOUsageDeclarationEX>
+												<WCOUsageDeclarationCRI>X</WCOUsageDeclarationCRI>
+												<WCOUsageDeclarationCRE>X</WCOUsageDeclarationCRE>
+												<WCOUsageDeclarationCONV>X</WCOUsageDeclarationCONV>
+												<WCOUsageDeclarationTRT>X</WCOUsageDeclarationTRT>
+											</xs:documentation>
+										</xs:annotation>
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element name="SequenceNumeric" type="ds:PointerSequenceNumericType"
+															minOccurs="1">
+													<xs:annotation>
+														<xs:documentation xml:lang="EN">
+															<WCOID>006</WCOID>
+															<WCOName>Sequence number</WCOName>
+															<WCODescription>Number indicating the position in a sequence
+															</WCODescription>
+															<WCOFormat>n..5</WCOFormat>
+														</xs:documentation>
+														<xs:documentation>
+															<TDEDUID>1050</TDEDUID>
+															<TDEDName>Sequence. Position.Identifier</TDEDName>
+															<DictionaryEntryName>Pointer. Sequence. Numeric
+															</DictionaryEntryName>
+															<NamedComplexType>PointerSequenceNumericType
+															</NamedComplexType>
+															<XMLTag>SequenceNumeric</XMLTag>
+															<UniquePositionID>428</UniquePositionID>
+															<WCOUsageDeclarationIM>X</WCOUsageDeclarationIM>
+															<WCOUsageDeclarationEX>X</WCOUsageDeclarationEX>
+															<WCOUsageDeclarationCRI>X</WCOUsageDeclarationCRI>
+															<WCOUsageDeclarationCRE>X</WCOUsageDeclarationCRE>
+															<WCOUsageDeclarationCONV>X</WCOUsageDeclarationCONV>
+															<WCOUsageDeclarationTRT>X</WCOUsageDeclarationTRT>
+														</xs:documentation>
+													</xs:annotation>
+												</xs:element>
+												<xs:element name="DocumentSectionCode" type="ds:PointerDocumentSectionCodeType"
+															minOccurs="0">
+													<xs:annotation>
+														<xs:documentation xml:lang="EN">
+															<WCOCodeRemarks>EDIFACT codes (1049)</WCOCodeRemarks>
+															<WCOID>375</WCOID>
+															<WCOName>Document/message section, coded</WCOName>
+															<WCODescription>Code specifying a section of a
+																document/message</WCODescription>
+															<WCOFormat>an..3</WCOFormat>
+														</xs:documentation>
+														<xs:documentation>
+															<TDEDUID>1049</TDEDUID>
+															<TDEDName>Document. Section.Code</TDEDName>
+															<DictionaryEntryName>Pointer. Document Section. Code
+															</DictionaryEntryName>
+															<NamedComplexType>PointerDocumentSectionCodeType
+															</NamedComplexType>
+															<XMLTag>DocumentSectionCode</XMLTag>
+															<UniquePositionID>429</UniquePositionID>
+															<WCOUsageDeclarationIM>X</WCOUsageDeclarationIM>
+															<WCOUsageDeclarationEX>X</WCOUsageDeclarationEX>
+															<WCOUsageDeclarationCRI>X</WCOUsageDeclarationCRI>
+															<WCOUsageDeclarationCRE>X</WCOUsageDeclarationCRE>
+															<WCOUsageDeclarationCONV>X</WCOUsageDeclarationCONV>
+															<WCOUsageDeclarationTRT>X</WCOUsageDeclarationTRT>
+														</xs:documentation>
+													</xs:annotation>
+												</xs:element>
+												<xs:element name="TagID" type="ds:PointerTagIDType"
+															minOccurs="0">
+													<xs:annotation>
+														<xs:documentation xml:lang="EN">
+															<WCOID>381</WCOID>
+															<WCOName>Tag identifier</WCOName>
+															<WCODescription>Data element tag identifier</WCODescription>
+															<WCOFormat>an..4</WCOFormat>
+														</xs:documentation>
+														<xs:documentation>
+															<TDEDUID>9162</TDEDUID>
+															<TDEDName>Data Element. Tag.Identifier</TDEDName>
+															<DictionaryEntryName>Pointer. Tag. Identifier
+															</DictionaryEntryName>
+															<NamedComplexType>PointerTagIDType</NamedComplexType>
+															<XMLTag>TagID</XMLTag>
+															<UniquePositionID>430</UniquePositionID>
+															<WCOUsageDeclarationIM>X</WCOUsageDeclarationIM>
+															<WCOUsageDeclarationEX>X</WCOUsageDeclarationEX>
+															<WCOUsageDeclarationCRI>X</WCOUsageDeclarationCRI>
+															<WCOUsageDeclarationCRE>X</WCOUsageDeclarationCRE>
+															<WCOUsageDeclarationCONV>X</WCOUsageDeclarationCONV>
+															<WCOUsageDeclarationTRT>X</WCOUsageDeclarationTRT>
+														</xs:documentation>
+													</xs:annotation>
+												</xs:element>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
 						<xs:element name="Consignment" minOccurs="0">
 							<xs:annotation>
 								<xs:documentation>
@@ -756,15 +924,6 @@
 							</xs:annotation>
 							<xs:complexType>
 								<xs:sequence>
-									<xs:element name="ContainerCode" type="ds:ConsignmentContainerCodeType" minOccurs="0">
-										<xs:annotation>
-											<xs:documentation>
-												<EUCDMname>Container indicator</EUCDMname>
-												<type>EUCDM 6.1</type>
-												<code>19 01 001 000</code>
-											</xs:documentation>
-										</xs:annotation>
-									</xs:element>
 									<xs:element name="BorderTransportMeans" minOccurs="0">
 										<xs:annotation>
 											<xs:documentation>
@@ -775,6 +934,34 @@
 										</xs:annotation>
 										<xs:complexType>
 											<xs:sequence>
+												<xs:element name="ID" type="ds:BorderTransportMeansIdentificationIDType" minOccurs="0">
+													<xs:annotation>
+														<xs:documentation>
+															<EUCDMname>Identification number</EUCDMname>
+															<type>EUCDM 6.1</type>
+															<code>19 08 017 000</code>
+														</xs:documentation>
+													</xs:annotation>
+												</xs:element>
+												<xs:element name="IdentificationTypeCode" type="ds:BorderTransportMeansIdentificationTypeCodeType" minOccurs="0">
+													<xs:annotation>
+														<xs:documentation>
+															<EUCDMname>Type of identification</EUCDMname>
+															<type>EUCDM 6.1</type>
+															<code>19 08 061 000</code>
+														</xs:documentation>
+													</xs:annotation>
+												</xs:element>
+												<xs:element name="RegistrationNationalityCode" type="ds:BorderTransportMeansRegistrationNationalityCodeType"
+															minOccurs="0">
+													<xs:annotation>
+														<xs:documentation>
+															<EUCDMname>Nationality</EUCDMname>
+															<type>EUCDM 6.1</type>
+															<code>19 08 062 000</code>
+														</xs:documentation>
+													</xs:annotation>
+												</xs:element>
 												<xs:element name="ModeCode" type="ds:BorderTransportMeansModeCodeType" minOccurs="0">
 													<xs:annotation>
 														<xs:documentation>
@@ -787,6 +974,71 @@
 											</xs:sequence>
 										</xs:complexType>
 									</xs:element>
+
+									<xs:element name="ContainerCode" type="ds:ConsignmentContainerCodeType" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>
+												<EUCDMname>Container indicator</EUCDMname>
+												<type>EUCDM 6.1</type>
+												<code>19 01 001 000</code>
+											</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+
+
+
+									<xs:element name="DepartureTransportMeans" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>
+												<EUCDMname>Inland mode of transport</EUCDMname>
+												<type>EUCDM 6.1</type>
+												<code>19 04 000 000</code>
+											</xs:documentation>
+										</xs:annotation>
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element name="ID" type="ds:DepartureTransportMeansIdentificationIDType" minOccurs="0">
+													<xs:annotation>
+														<xs:documentation>
+															<EUCDMname>Identification number</EUCDMname>
+															<type>EUCDM 6.1</type>
+															<code>19 05 017 000</code>
+														</xs:documentation>
+													</xs:annotation>
+												</xs:element>
+												<xs:element name="IdentificationTypeCode" type="ds:DepartureTransportMeansIdentificationTypeCodeType" minOccurs="0">
+													<xs:annotation>
+														<xs:documentation>
+															<EUCDMname>Type of identification</EUCDMname>
+															<type>EUCDM 6.1</type>
+															<code>19 05 061 000</code>
+														</xs:documentation>
+													</xs:annotation>
+												</xs:element>
+												<xs:element name="RegistrationNationalityCode"
+															type="ds:DepartureTransportMeansRegistrationNationalityCodeType"
+															minOccurs="0">
+													<xs:annotation>
+														<xs:documentation>
+															<EUCDMname>Nationality</EUCDMname>
+															<type>EUCDM 6.1</type>
+															<code>19 05 062 000</code>
+														</xs:documentation>
+													</xs:annotation>
+												</xs:element>
+												<xs:element name="ModeCode" type="ds:DepartureTransportMeansModeCodeType" minOccurs="0">
+													<xs:annotation>
+														<xs:documentation>
+															<EUCDMname>Inland mode of transport</EUCDMname>
+															<type>EUCDM 6.1</type>
+															<code>19 04 001 000</code>
+														</xs:documentation>
+													</xs:annotation>
+												</xs:element>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+
 									<xs:element name="GoodsLocation" minOccurs="0">
 										<xs:annotation>
 											<xs:documentation>
@@ -1058,6 +1310,7 @@
 											</xs:sequence>
 										</xs:complexType>
 									</xs:element>
+
 									<xs:element name="TransportEquipment" minOccurs="0" maxOccurs="9999">
 										<xs:annotation>
 											<xs:documentation>
@@ -1083,52 +1336,6 @@
 															<EUCDMname>Equipment identification number</EUCDMname>
 															<type>EUCDM 6.1</type>
 															<code>19 07 063 000</code>
-														</xs:documentation>
-													</xs:annotation>
-												</xs:element>
-											</xs:sequence>
-										</xs:complexType>
-									</xs:element>
-									<xs:element name="TransportContractDocument" minOccurs="0" maxOccurs="99">
-										<xs:annotation>
-											<xs:documentation>
-												<EUCDMname>Transport document</EUCDMname>
-												<type>EUCDM 6.1</type>
-												<code>12 05 000 000</code>
-											</xs:documentation>
-										</xs:annotation>
-										<xs:complexType>
-											<xs:sequence>
-												<xs:element name="SequenceNumeric"
-															type="ds:TransportContractDocumentSequenceNumericType" minOccurs="1">
-													<xs:annotation>
-														<xs:documentation xml:lang="EN">
-															<WCOID>006</WCOID>
-															<WCOName>Sequence number</WCOName>
-															<WCODescription>Number indicating the position in a
-																sequence</WCODescription>
-															<EUCDMVersion>EUCDM 6.0</EUCDMVersion>
-															<WCOFormat>n..5</WCOFormat>
-														</xs:documentation>
-													</xs:annotation>
-												</xs:element>
-												<xs:element name="ID"
-															type="ds:TransportContractDocumentIdentificationIDType" minOccurs="0">
-													<xs:annotation>
-														<xs:documentation xml:lang="EN">
-															<EUCDMname>Transport document number</EUCDMname>
-															<type>EUCDM 6.1</type>
-															<code>12 05 001 000</code>
-														</xs:documentation>
-													</xs:annotation>
-												</xs:element>
-												<xs:element name="Type"
-															type="ds:TransportContractDocumentType" minOccurs="0">
-													<xs:annotation>
-														<xs:documentation xml:lang="EN">
-															<EUCDMname>Transport document type</EUCDMname>
-															<type>EUCDM 6.1</type>
-															<code>12 05 002 000</code>
 														</xs:documentation>
 													</xs:annotation>
 												</xs:element>
@@ -1238,21 +1445,13 @@
 											</xs:documentation>
 										</xs:annotation>
 									</xs:element>
+
 									<xs:element name="StatisticalValueAmount" type="ds:GovernmentAgencyGoodsItemStatisticalValueAmountType" minOccurs="0">
 										<xs:annotation>
 											<xs:documentation>
 												<EUCDMname>Statistical value</EUCDMname>
 												<type>EUCDM 6.1</type>
 												<code>99 06 001 000</code>
-											</xs:documentation>
-										</xs:annotation>
-									</xs:element>
-									<xs:element name="TransactionNatureCode" type="ds:GovernmentAgencyGoodsItemTransactionNatureCodeType" minOccurs="0">
-										<xs:annotation>
-											<xs:documentation>
-												<EUCDMname>Nature of transaction</EUCDMname>
-												<type>EUCDM 6.1</type>
-												<code>99 05 001 000</code>
 											</xs:documentation>
 										</xs:annotation>
 									</xs:element>
@@ -1389,7 +1588,6 @@
 														</xs:sequence>
 													</xs:complexType>
 												</xs:element>
-
 												<xs:element name="GoodsMeasure" minOccurs="0">
 													<xs:annotation>
 														<xs:documentation>
@@ -1436,6 +1634,80 @@
 																		<code>18 02 001 000</code>
 																	</xs:documentation>
 																</xs:annotation>
+															</xs:element>
+														</xs:sequence>
+													</xs:complexType>
+												</xs:element>
+												<xs:element name="TaxCalculation" minOccurs="0" maxOccurs="99">
+													<xs:annotation>
+														<xs:documentation>
+															<EUCDMName>Duties and Taxes</EUCDMName>
+															<code>14 03 000 000</code>
+															<type>EUCDM 6.1</type>
+														</xs:documentation>
+													</xs:annotation>
+													<xs:complexType>
+														<xs:sequence>
+															<xs:element name="DutyTaxFee" minOccurs="0">
+																<xs:annotation>
+																	<xs:documentation>
+																		<EUCDMName>DutyTaxFee</EUCDMName>
+																		<code></code>
+																		<type>EUCDM 6.1</type>
+																	</xs:documentation>
+																</xs:annotation>
+																<xs:complexType>
+																	<xs:sequence>
+																		<xs:element name="SequenceNumeric" type="ds:AuthorisationSequenceNumericType">
+																		</xs:element>
+																		<xs:element name="TaxBase" minOccurs="0">
+																			<xs:annotation>
+																				<xs:documentation>
+																					<EUCDMName>Tax Rate</EUCDMName>
+																					<code>14 03 040 000</code>
+																					<type>EUCDM 6.1</type>
+																				</xs:documentation>
+																			</xs:annotation>
+																			<xs:complexType>
+																				<xs:sequence>
+																					<xs:element name="specificTaxBase" minOccurs="0">
+																						<xs:complexType>
+																							<xs:sequence>
+																								<xs:element name="SpecificTaxBaseQuantity" type="ds:DutyTaxFeeSpecificTaxBaseQuantityType" minOccurs="0">
+																									<xs:annotation>
+																										<xs:documentation>
+																											<EUCDMName>Quantity</EUCDMName>
+																											<code>14 03 040 006</code>
+																											<type>EUCDM 6.1</type>
+																										</xs:documentation>
+																									</xs:annotation>
+																								</xs:element>
+																							</xs:sequence>
+																						</xs:complexType>
+																					</xs:element>
+																					<xs:element name="AdValoremTaxBaseAmount" type="ds:DutyTaxFeeAdValoremTaxBaseAmountType" minOccurs="0">
+																						<xs:annotation>
+																							<xs:documentation>
+																								<EUCDMName>Amount</EUCDMName>
+																								<code>14 03 040 014</code>
+																								<type>EUCDM 6.1</type>
+																							</xs:documentation>
+																						</xs:annotation>
+																					</xs:element>
+																					<xs:element name="Tax" type="ds:DutyTaxFeeTaxAmountType" minOccurs="0">
+																						<xs:annotation>
+																							<xs:documentation>
+																								<EUCDMName>Tax Amount</EUCDMName>
+																								<code>14 03 040 043</code>
+																								<type>EUCDM 6.1</type>
+																							</xs:documentation>
+																						</xs:annotation>
+																					</xs:element>
+																				</xs:sequence>
+																			</xs:complexType>
+																		</xs:element>
+																	</xs:sequence>
+																</xs:complexType>
 															</xs:element>
 														</xs:sequence>
 													</xs:complexType>
@@ -1635,16 +1907,6 @@
 														</xs:documentation>
 													</xs:annotation>
 												</xs:element>
-												<xs:element name="RegionID" type="ds:OriginRegionIDType"
-															minOccurs="0">
-													<xs:annotation>
-														<xs:documentation>
-															<EUCDMname>Region of dispatch</EUCDMname>
-															<type>EUCDM 6.1</type>
-															<code>16 10 001 000</code>
-														</xs:documentation>
-													</xs:annotation>
-												</xs:element>
 												<xs:element name="TypeCode" type="ds:OriginTypeCodeType"
 															minOccurs="0">
 
@@ -1719,12 +1981,6 @@
 										<xs:complexType>
 											<xs:sequence>
 												<xs:element name="SequenceNumeric" type="ds:PreviousDocumentSequenceNumericType"  minOccurs="1"/>
-												<xs:element name="AcceptanceDateTime" type="ds:PreviousDocumentAcceptanceDateTimeType" minOccurs="0">
-													<xs:annotation>
-														<xs:documentation>
-														</xs:documentation>
-													</xs:annotation>
-												</xs:element>
 												<xs:element name="WriteOff" minOccurs="0" maxOccurs="1">
 													<xs:annotation>
 														<xs:documentation>
@@ -1813,8 +2069,7 @@
 										</xs:annotation>
 										<xs:complexType>
 											<xs:sequence>
-												<xs:element name="TraderAssignedReferenceID"
-															type="ds:UCRTraderAssignedReferenceIDType" minOccurs="0">
+												<xs:element name="TraderAssignedReferenceID" type="ds:UCRTraderAssignedReferenceIDType" minOccurs="0">
 													<xs:annotation>
 														<xs:documentation>
 															<EUCDMname>Reference number/UCR</EUCDMname>
@@ -1946,15 +2201,6 @@
 							<xs:complexType>
 								<xs:sequence>
 									<xs:element name="SequenceNumeric" type="ds:PreviousDocumentSequenceNumericType"/>
-									<xs:element name="AcceptanceDateTime" type="ds:PreviousDocumentAcceptanceDateTimeType" minOccurs="0">
-										<xs:annotation>
-											<xs:documentation>
-												<EUCDMname>Date of acceptance</EUCDMname>
-												<type>EUCDM 6.1</type>
-												<code>15 09 001 000</code>
-											</xs:documentation>
-										</xs:annotation>
-									</xs:element>
 									<xs:element name="CategoryCode"
 												type="ds:PreviousDocumentCategoryCodeType" minOccurs="0"/>
 									<xs:element name="ID" type="ds:PreviousDocumentIdentificationIDType" minOccurs="0">
@@ -1975,55 +2221,6 @@
 											</xs:documentation>
 										</xs:annotation>
 									</xs:element>
-								</xs:sequence>
-							</xs:complexType>
-						</xs:element>
-
-						<xs:element name="TradeTerms" minOccurs="0">
-							<xs:annotation>
-								<xs:documentation>
-									<EUCDMname>Delivery terms</EUCDMname>
-									<type>EUCDM 6.1</type>
-									<code>14 01 000 000</code>
-								</xs:documentation>
-							</xs:annotation>
-							<xs:complexType>
-								<xs:sequence>
-									<xs:element name="ConditionCode" type="ds:TradeTermsConditionCodeType" minOccurs="0">
-										<xs:annotation>
-											<xs:documentation>
-												<EUCDMname>INCOTERM code</EUCDMname>
-												<type>EUCDM 6.1</type>
-												<code>14 01 035 000</code>
-											</xs:documentation>
-										</xs:annotation>
-									</xs:element>
-									<xs:element name="LocationID" type="ds:TradeTermsLocationIDType" minOccurs="0">
-										<xs:annotation>
-											<xs:documentation>
-												<EUCDMname>UN/LOCODE</EUCDMname>
-												<type>EUCDM 6.1</type>
-												<code>14 01 036 000</code>
-											</xs:documentation>
-										</xs:annotation>
-									</xs:element>
-									<xs:element name="LocationName" type="ds:TradeTermsLocationNameTextType" minOccurs="0">
-										<xs:annotation>
-											<xs:documentation>
-												<EUCDMname>Location</EUCDMname>
-												<type>EUCDM 6.1</type>
-												<code>14 01 037 000</code>
-											</xs:documentation>
-										</xs:annotation>
-									</xs:element><xs:element name="CountryCode" type="ds:TradeTermsCountryCodeType" minOccurs="0">
-									<xs:annotation>
-										<xs:documentation>
-											<EUCDMname>INCOTERM code</EUCDMname>
-											<type>EUCDM 6.1</type>
-											<code>14 01 020 000</code>
-										</xs:documentation>
-									</xs:annotation>
-								</xs:element>
 								</xs:sequence>
 							</xs:complexType>
 						</xs:element>
@@ -2125,6 +2322,29 @@
 									<EUCDMname>Date and time of presentation of the goods</EUCDMname>
 									<type>EUCDM 6.1</type>
 									<code>15 08 001 000</code>
+								</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+
+			<xs:element name="SupervisingOffice" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<EUCDMname>Supervising customs office</EUCDMname>
+						<type>EUCDM 6.1</type>
+						<code>17 10 000 000</code>
+					</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ID" type="ds:SupervisingOfficeIdentificationIDType" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>
+									<EUCDMname>Reference number</EUCDMname>
+									<type>EUCDM 6.1</type>
+									<code>17 10 001 000</code>
 								</xs:documentation>
 							</xs:annotation>
 						</xs:element>
