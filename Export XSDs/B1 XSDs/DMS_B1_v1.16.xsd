@@ -2,7 +2,8 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
 		   xmlns:ds="urn:wco:datamodel:WCO:Declaration_DS:DMS:2"
 		   xmlns="urn:wco:datamodel:WCO:DEC-DMS:2"
-		   xmlns:udt="urn:un:unece:uncefact:data:standard:UnqualifiedDataType:6"
+		   xmlns:ext="urn:wco:datamodel:WCO:WCO_DEC_EDS_EXTENSIONS:1"
+		   targetNamespace="urn:wco:datamodel:WCO:DEC-DMS:2"
 		   elementFormDefault="qualified" version="1.2.0">
 	<xs:import namespace="urn:wco:datamodel:WCO:Declaration_DS:DMS:2"
 			   schemaLocation="../DMS_DS/DMS_DS_v1.4.xsd"/>
@@ -10,6 +11,8 @@
 			   schemaLocation="../DMS_DS/WCO_EDS/WCO_DEC_EDS_AUTHORISATION.xsd"/>
 	<xs:import namespace="urn:un:unece:uncefact:data:standard:UnqualifiedDataType:6"
 			   schemaLocation="../DMS_DS/UNECE/UnqualifiedDataType_6_DMS.xsd"/>
+	<xs:import namespace="urn:wco:datamodel:WCO:WCO_DEC_EDS_EXTENSIONS:1"
+			   schemaLocation="../DMS_DS/WCO_EDS/WCO_DEC_EDS_EXTENSIONS.xsd"/>
 
 	<xs:element name="Declaration" type="Declaration">
 		<xs:annotation>
@@ -22,30 +25,7 @@
 
 	<xs:complexType name="Declaration">
 		<xs:sequence>
-			<xs:element name="Extensions" minOccurs="0" maxOccurs="15">
-				<xs:complexType>
-					<xs:sequence>
-						<xs:element name="SequenceNumeric">
-							<xs:simpleType>
-								<xs:restriction base="udt:NumericType">
-								</xs:restriction>
-							</xs:simpleType>
-						</xs:element>
-						<xs:element name="Key">
-							<xs:simpleType>
-								<xs:restriction base="xs:string">
-								</xs:restriction>
-							</xs:simpleType>
-						</xs:element>
-						<xs:element name="Value">
-							<xs:simpleType>
-								<xs:restriction base="xs:string">
-								</xs:restriction>
-							</xs:simpleType>
-						</xs:element>
-					</xs:sequence>
-				</xs:complexType>
-			</xs:element>
+			<xs:element name="Extensions" type="ext:Extensions" minOccurs="0" maxOccurs="15"/>
 
 			<xs:element name="FunctionCode" type="ds:DeclarationFunctionCodeType"/>
 
@@ -560,30 +540,7 @@
 				</xs:annotation>
 				<xs:complexType>
 					<xs:sequence>
-						<xs:element name="Extensions" minOccurs="0" maxOccurs="15">
-							<xs:complexType>
-								<xs:sequence>
-									<xs:element name="SequenceNumeric">
-										<xs:simpleType>
-											<xs:restriction base="udt:NumericType">
-											</xs:restriction>
-										</xs:simpleType>
-									</xs:element>
-									<xs:element name="Key">
-										<xs:simpleType>
-											<xs:restriction base="xs:string">
-											</xs:restriction>
-										</xs:simpleType>
-									</xs:element>
-									<xs:element name="Value">
-										<xs:simpleType>
-											<xs:restriction base="xs:string">
-											</xs:restriction>
-										</xs:simpleType>
-									</xs:element>
-								</xs:sequence>
-							</xs:complexType>
-						</xs:element>
+						<xs:element name="Extensions" type="ext:Extensions" minOccurs="0" maxOccurs="15"/>
 
 						<xs:element name="SupportingDocument" minOccurs="0" maxOccurs="99">
 							<xs:annotation>
@@ -1473,30 +1430,7 @@
 										</xs:annotation>
 									</xs:element>
 
-									<xs:element name="Extensions" minOccurs="0" maxOccurs="15">
-										<xs:complexType>
-											<xs:sequence>
-												<xs:element name="SequenceNumeric">
-													<xs:simpleType>
-														<xs:restriction base="udt:NumericType">
-														</xs:restriction>
-													</xs:simpleType>
-												</xs:element>
-												<xs:element name="Key">
-													<xs:simpleType>
-														<xs:restriction base="xs:string">
-														</xs:restriction>
-													</xs:simpleType>
-												</xs:element>
-												<xs:element name="Value">
-													<xs:simpleType>
-														<xs:restriction base="xs:string">
-														</xs:restriction>
-													</xs:simpleType>
-												</xs:element>
-											</xs:sequence>
-										</xs:complexType>
-									</xs:element>
+									<xs:element name="Extensions" type="ext:Extensions" minOccurs="0" maxOccurs="15"/>
 									<xs:element name="StatisticalValueAmount" type="ds:GovernmentAgencyGoodsItemStatisticalValueAmountType">
 										<xs:annotation>
 											<xs:documentation>
@@ -2624,7 +2558,6 @@
 					</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-
 		</xs:sequence>
 	</xs:complexType>
 </xs:schema>
