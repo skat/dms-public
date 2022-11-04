@@ -1,4 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xs:schema [
+		<!ELEMENT xs:schema (xs:import|xs:element|xs:complexType)*>
+		<!ATTLIST xs:schema
+				xmlns:xs CDATA #REQUIRED
+				xmlns:ds CDATA #REQUIRED
+				xmlns CDATA #REQUIRED
+				xmlns:eds CDATA #REQUIRED
+				xmlns:udt CDATA #REQUIRED
+				elementFormDefault CDATA #REQUIRED
+				version CDATA #REQUIRED>
+		<!ELEMENT xs:import (#PCDATA)>
+		<!ATTLIST xs:import
+				namespace CDATA #REQUIRED
+				schemaLocation CDATA #REQUIRED>
+		<!ELEMENT xs:element (xs:annotation|xs:complexType|xs:simpleType)*>
+		<!ATTLIST xs:element
+				maxOccurs CDATA #IMPLIED
+				minOccurs CDATA #IMPLIED
+				name CDATA #REQUIRED
+				type CDATA #IMPLIED>
+		<!ELEMENT xs:annotation (xs:documentation)*>
+		<!ELEMENT xs:documentation (EUCDMname|type|code|info|WCOID|WCOName|WCODescription|EUCDMVersion|WCOFormat|EUCDMName|DEC_ClassID)*>
+		<!ATTLIST xs:documentation
+				xml:lang CDATA #IMPLIED>
+		<!ELEMENT EUCDMname (#PCDATA)>
+		<!ELEMENT type (#PCDATA)>
+		<!ELEMENT xs:complexType (xs:sequence)*>
+		<!ATTLIST xs:complexType
+				name CDATA #IMPLIED>
+		<!ELEMENT xs:sequence (xs:element)*>
+		<!ELEMENT xs:simpleType (xs:restriction)*>
+		<!ELEMENT xs:restriction (#PCDATA)>
+		<!ATTLIST xs:restriction
+				base CDATA #REQUIRED>
+		<!ELEMENT code (#PCDATA)>
+		<!ELEMENT info (#PCDATA)>
+		<!ELEMENT WCOID (#PCDATA)>
+		<!ELEMENT WCOName (#PCDATA)>
+		<!ELEMENT WCODescription (#PCDATA)>
+		<!ELEMENT EUCDMVersion (#PCDATA)>
+		<!ELEMENT WCOFormat (#PCDATA)>
+		<!ELEMENT EUCDMName (#PCDATA)>
+		<!ELEMENT DEC_ClassID (#PCDATA)>
+		]>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
 		   xmlns:ds="urn:wco:datamodel:WCO:Declaration_DS:DMS:2"
 		   xmlns="urn:wco:datamodel:WCO:DEC-DMS:2"
@@ -316,7 +360,7 @@
 				</xs:complexType>
 			</xs:element>
 
-			<xs:element name="Declarant" minOccurs="0">
+			<xs:element name="Declarant">
 				<xs:annotation>
 					<xs:documentation>
 						<EUCDMname>Declarant</EUCDMname>
@@ -2264,7 +2308,7 @@
 									<!-- <xs:element name="CountryCode" type="ds:TradeTermsCountryCodeType" minOccurs="0">
 										<xs:annotation>
 											<xs:documentation>
-												<EUCDMname>INCOTERM code</EUCDMname>
+												<EUCDMname>Country code</EUCDMname>
 												<type>EUCDM 6.1</type>
 												<code>14 01 020 000</code>
 											</xs:documentation>
@@ -2426,7 +2470,7 @@
 				</xs:annotation>
 			</xs:element>
 
-			<xs:element name="AdmissionUseProcessingAuthorisation" minOccurs="0" maxOccurs="1">
+			<xs:element name="AdmissionUseProcessingAuthorisation" minOccurs="0" >
 				<xs:annotation>
 					<xs:documentation>
 						<WCOName>AdmissionUseProcessingAuthorisation</WCOName>
