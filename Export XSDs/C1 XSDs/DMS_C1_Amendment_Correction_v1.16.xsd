@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns="urn:wco:datamodel:WCO:DEC-DMS:2" xmlns:xs="http://www.w3.org/2001/XMLSchema"
-           xmlns:ds="urn:wco:datamodel:WCO:Declaration_DS:DMS:2" targetNamespace="urn:wco:datamodel:WCO:DEC-DMS:2"
-           xmlns:edsmetadata="urn:wco:datamodel:WCO:WCO_DEC_EDS_METADATA:1"
-           elementFormDefault="qualified" version="2.2">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:ds="urn:wco:datamodel:WCO:Declaration_DS:DMS:2"
+           xmlns="urn:wco:datamodel:WCO:DEC-DMS:2"
+           xmlns:extensions="urn:wco:datamodel:WCO:WCO_DEC_EDS_EXTENSIONS:1" targetNamespace="urn:wco:datamodel:WCO:DEC-DMS:2"
+           elementFormDefault="qualified" version="1.2.0">
     <xs:import namespace="urn:wco:datamodel:WCO:Declaration_DS:DMS:2"
                schemaLocation="../DMS_DS/DMS_DS_v1.4.xsd"/>
-    <xs:import namespace="urn:wco:datamodel:WCO:WCO_DEC_EDS_AUTHORISATION:1"
-               schemaLocation="../DMS_DS/WCO_EDS/WCO_DEC_EDS_AUTHORISATION.xsd" />
-    <xs:import namespace="urn:wco:datamodel:WCO:WCO_DEC_EDS_METADATA:1"
-               schemaLocation="../DMS_DS/WCO_EDS/WCO_DEC_EDS_METADATA.xsd" />
+    <xs:import namespace="urn:wco:datamodel:WCO:WCO_DEC_EDS_EXTENSIONS:1"
+               schemaLocation="../DMS_DS/WCO_EDS/WCO_DEC_EDS_EXTENSIONS.xsd"/>
 
     <xs:element name="Declaration" type="Declaration">
         <xs:annotation>
@@ -19,9 +18,9 @@
         </xs:annotation>
     </xs:element>
 
-
     <xs:complexType name="Declaration">
         <xs:sequence>
+            <xs:element name="Extensions" type="extensions:Extensions" minOccurs="0" maxOccurs="15"/>
             <xs:element name="FunctionCode" type="ds:DeclarationFunctionCodeType"/>
             <xs:element name="ProcedureCategory" type="ds:DeclarationProcedureCategoryCodeType"/>
             <xs:element name="FunctionalReferenceID" type="ds:DeclarationFunctionalReferenceIDType">
@@ -33,6 +32,7 @@
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
+            <xs:element name="ID" type="ds:DeclarationIdentificationIDType"/>
             <xs:element name="TypeCode" type="ds:DeclarationTypeCodeType">
                 <xs:annotation>
                     <xs:documentation>
@@ -57,7 +57,7 @@
                 </xs:complexType>
             </xs:element>
 
-           <!-- <xs:element name="AdditionalDocument" minOccurs="0">
+            <xs:element name="AdditionalDocument" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>
                         <EUCDMname>Deferred payment</EUCDMname>
@@ -79,7 +79,7 @@
                         </xs:element>
                     </xs:sequence>
                 </xs:complexType>
-            </xs:element> -->
+            </xs:element>
 
             <xs:element name="Agent" minOccurs="0">
                 <xs:annotation>
@@ -222,6 +222,16 @@
                             </xs:annotation>
                         </xs:element>
 
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
+            <xs:element name="Amendment">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="SequenceNumeric" type="ds:AmendmentSequenceNumericType"/>
+                        <xs:element name="ChangeReasonCode" type="ds:AmendmentChangeReasonCodeType"/>
+                        <xs:element name="ChangeReasonText" type="ds:AmendmentChangeReasonTextType"/>
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
@@ -479,6 +489,7 @@
                 </xs:annotation>
                 <xs:complexType>
                     <xs:sequence>
+                        <xs:element name="Extensions" type="extensions:Extensions" minOccurs="0" maxOccurs="15"/>
                         <xs:element name="SupportingDocument" minOccurs="0" maxOccurs="99">
                             <xs:annotation>
                                 <xs:documentation>
@@ -1194,6 +1205,9 @@
                                             </xs:documentation>
                                         </xs:annotation>
                                     </xs:element>
+
+                                    <xs:element name="Extensions" type="extensions:Extensions" minOccurs="0" maxOccurs="15"/>
+
                                     <xs:element name="AdditionalInformation" minOccurs="0" maxOccurs="99">
                                         <xs:annotation>
                                             <xs:documentation>
@@ -1707,8 +1721,8 @@
                                                     </xs:annotation>
                                                     <xs:complexType>
                                                         <xs:sequence>
-                                                          <xs:element name="QuantityQuantity" type="ds:WriteOffQuantityQuantityType" minOccurs="0">
-                                                          </xs:element>
+                                                            <xs:element name="QuantityQuantity" type="ds:WriteOffQuantityQuantityType" minOccurs="0">
+                                                            </xs:element>
                                                             <xs:element name="Packaging" minOccurs="0">
                                                                 <xs:complexType>
                                                                     <xs:sequence>

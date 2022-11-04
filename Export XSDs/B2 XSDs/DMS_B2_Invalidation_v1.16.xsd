@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns="urn:wco:datamodel:WCO:DEC-DMS:2" xmlns:xs="http://www.w3.org/2001/XMLSchema"
-		   xmlns:ds="urn:wco:datamodel:WCO:Declaration_DS:DMS:2" targetNamespace="urn:wco:datamodel:WCO:DEC-DMS:2"
-		   elementFormDefault="qualified" version="1.0">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ds="urn:wco:datamodel:WCO:Declaration_DS:DMS:2"
+		   xmlns="urn:wco:datamodel:WCO:DEC-DMS:2" targetNamespace="urn:wco:datamodel:WCO:DEC-DMS:2"
+		   elementFormDefault="qualified" version="1.2.0">
 	<xs:import namespace="urn:wco:datamodel:WCO:Declaration_DS:DMS:2"
 			   schemaLocation="../DMS_DS/DMS_DS_v1.4.xsd"/>
-
 
 	<xs:element name="Declaration" type="Declaration">
 		<xs:annotation>
 			<xs:documentation>
-				<EUCDMname>Declaration</EUCDMname>
+				<EUCDMname>Invalidation of declaration</EUCDMname>
 				<type>EUCDM 6.1</type>
 			</xs:documentation>
 		</xs:annotation>
 	</xs:element>
-
 	<xs:complexType name="Declaration">
 		<xs:sequence>
 			<xs:element name="FunctionCode" type="ds:DeclarationFunctionCodeType"/>
+
 			<xs:element name="ProcedureCategory" type="ds:DeclarationProcedureCategoryCodeType"/>
-			<xs:element name="FunctionalReferenceID" type="ds:DeclarationFunctionalReferenceIDType" minOccurs="1">
+
+			<xs:element name="FunctionalReferenceID" type="ds:DeclarationFunctionalReferenceIDType">
 				<xs:annotation>
 					<xs:documentation>
 						<EUCDMname>LRN</EUCDMname>
@@ -28,16 +28,10 @@
 					</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="ID" type="ds:DeclarationIdentificationIDType" minOccurs="0">
-				<xs:annotation>
-					<xs:documentation>
-						<EUCDMname>MRN</EUCDMname>
-						<type>EUCDM 6.1</type>
-						<code></code>
-					</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="TypeCode" type="ds:DeclarationTypeCodeType" minOccurs="1">
+
+			<xs:element name="ID" type="ds:DeclarationIdentificationIDType"/>
+
+			<xs:element name="TypeCode" type="ds:DeclarationTypeCodeType">
 				<xs:annotation>
 					<xs:documentation>
 						<EUCDMname>Declaration type</EUCDMname>
@@ -51,21 +45,7 @@
 					</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="DeclarationOfficeID" type="ds:DeclarationDeclarationOfficeIDType"/>
-			<xs:element name="InvoiceAmount" type="ds:DeclarationInvoiceAmountType" minOccurs="2">
-				<xs:annotation>
-					<xs:documentation>
-						<EUCDMname>Total amount invoiced</EUCDMname>
-						<type>EUCDM 6.1</type>
-						<code>14 06 001 000</code>
-					</xs:documentation>
-					<xs:documentation>
-						<EUCDMname>Total amount invoiced</EUCDMname>
-						<type>EUCDM 6.1</type>
-						<code>14 05 001 000</code>
-					</xs:documentation>
-				</xs:annotation>
-			</xs:element>
+
 			<xs:element name="Submitter">
 				<xs:complexType>
 					<xs:sequence>
@@ -74,6 +54,7 @@
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
+
 			<xs:element name="Amendment">
 				<xs:complexType>
 					<xs:sequence>
