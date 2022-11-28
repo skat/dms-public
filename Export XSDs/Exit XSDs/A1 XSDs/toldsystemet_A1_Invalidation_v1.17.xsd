@@ -4,12 +4,11 @@
            targetNamespace="urn:WCOLibraryE7TAXUDEUCDM52public"
            xmlns:edsmetadata="urn:wco:datamodel:WCO:WCO_DEC_EDS_METADATA:1">
 
-    <xs:include schemaLocation="../DMS_DS/WCO_TS_DEC.xsd"/>
+    <xs:include schemaLocation="../../DMS_DS/WCO_TS_DEC.xsd"/>
 
     <xs:element name="Declaration" type="Declaration"/>
     <xs:complexType name="Declaration">
         <xs:sequence>
-            <xs:element name="id" type="Identifier.Type"/>
             <xs:element name="functionalReference">
                 <xs:annotation>
                     <xs:documentation>
@@ -24,11 +23,22 @@
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
+            <xs:element name="id">
+                <xs:annotation>
+                    <xs:documentation>
+                        <EUCDMname>MRN</EUCDMname>
+                    </xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="Identifier.Content" type="Identifier.Content"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
             <xs:element name="procedureCategory">
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element name="Identifier.Content" type="Identifier.Content">
-                        </xs:element>
+                        <xs:element name="Identifier.Content" type="Identifier.Content"/>
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
