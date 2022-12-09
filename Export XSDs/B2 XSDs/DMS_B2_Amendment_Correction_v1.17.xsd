@@ -252,6 +252,15 @@
 				</xs:complexType>
 			</xs:element>
 
+			<xs:element name="Amendment">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="SequenceNumeric" type="ds:AmendmentSequenceNumericType"/>
+						<xs:element name="ChangeReasonCode" type="ds:AmendmentChangeReasonCodeType"/>
+						<xs:element name="ChangeReasonText" type="ds:AmendmentChangeReasonTextType"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
 			<xs:element name="CurrencyExchange" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>
@@ -466,6 +475,7 @@
 								</xs:documentation>
 							</xs:annotation>
 						</xs:element>
+
 						<xs:element name="ID" type="ds:ExporterIdentificationIDType">
 							<xs:annotation>
 								<xs:documentation>
@@ -793,6 +803,7 @@
 								</xs:sequence>
 							</xs:complexType>
 						</xs:element>
+
 						<xs:element name="Consignment">
 							<xs:annotation>
 								<xs:documentation>
@@ -803,6 +814,15 @@
 							</xs:annotation>
 							<xs:complexType>
 								<xs:sequence>
+									<xs:element name="ContainerCode" type="ds:ConsignmentContainerCodeType" minOccurs="1">
+										<xs:annotation>
+											<xs:documentation>
+												<EUCDMname>Container indicator</EUCDMname>
+												<type>EUCDM 6.1</type>
+												<code>19 01 001 000</code>
+											</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element name="BorderTransportMeans">
 										<xs:annotation>
 											<xs:documentation>
@@ -1401,6 +1421,7 @@
 											</xs:sequence>
 										</xs:complexType>
 									</xs:element>
+
 									<xs:element name="Commodity">
 										<xs:annotation>
 											<xs:documentation>
@@ -2131,6 +2152,7 @@
 								</xs:sequence>
 							</xs:complexType>
 						</xs:element>
+
 						<xs:element name="TradeTerms">
 							<xs:annotation>
 								<xs:documentation>
@@ -2301,6 +2323,7 @@
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
+
 			<xs:element name="ExportOffice">
 				<xs:annotation>
 					<xs:documentation>
@@ -2311,6 +2334,7 @@
 				</xs:annotation>
 				<xs:complexType>
 					<xs:sequence>
+
 						<xs:element name="identification" type="ds:ExportOfficeIdentificationIDType">
 							<xs:annotation>
 								<xs:documentation>
@@ -2323,7 +2347,7 @@
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
-			<xs:element name="SecurityCode" type="ds:DeclarationSecurityType">
+			<xs:element name="Security" type="ds:DeclarationSecurityType">
 				<xs:annotation>
 					<xs:documentation>
 						<EUCDMname>Security</EUCDMname>
@@ -2344,8 +2368,6 @@
 					</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-
-
 		</xs:sequence>
 	</xs:complexType>
 </xs:schema>
