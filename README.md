@@ -8,10 +8,9 @@
 
 <b> DMS Onboarding Guide </b> - Gives an overview of the onboarding effort
 
-<b> DMS Connectivity Guide </b> - Shows how to establish connectivity to the AS4-Gatewy
+<b> DMS Connectivity Guide </b> - Shows how to establish connectivity to the AS4-Gateway
 
 <b> DMS System Guide </b> - Gives an overview of system functionality
-
 
 Additionally for connectivity, the DMS project has developed a simple AS4 Client, which can be found in the
 [Simple-AS4-Client Github Repository](https://github.com/skat/simple-as4-client)
