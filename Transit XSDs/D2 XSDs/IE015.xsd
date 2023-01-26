@@ -22,47 +22,51 @@
     <!--================================================================================-->
     <xs:complexType name="CC015CType">
         <xs:sequence>
-            <xs:element name="messageSender" type="MessageSenderContentType">
-                <xs:annotation>
-                    <xs:documentation>
-                        <description value="Message sender"/>
-                    </xs:documentation>
-                </xs:annotation>
-            </xs:element>
-            <xs:element name="messageRecipient" type="MessageRecipientContentType">
-                <xs:annotation>
-                    <xs:documentation>
-                        <description value="Message recipient"/>
-                    </xs:documentation>
-                </xs:annotation>
-            </xs:element>
-            <xs:element name="preparationDateAndTime" type="PreparationDateAndTimeContentType">
-                <xs:annotation>
-                    <xs:documentation>
-                        <description value="Preparation date and time"/>
-                    </xs:documentation>
-                </xs:annotation>
-            </xs:element>
-            <xs:element name="messageIdentification" type="MessageIdentificationContentType">
-                <xs:annotation>
-                    <xs:documentation>
-                        <description value="Message identification"/>
-                    </xs:documentation>
-                </xs:annotation>
-            </xs:element>
-            <xs:element name="messageType" type="MessageTypes">
-                <xs:annotation>
-                    <xs:documentation>
-                        <description value="Message type"/>
-                    </xs:documentation>
-                </xs:annotation>
-            </xs:element>
-            <xs:element name="correlationIdentifier" type="CorrelationIdentifierContentType" minOccurs="0">
-                <xs:annotation>
-                    <xs:documentation>
-                        <description value="Correlation identifier"/>
-                    </xs:documentation>
-                </xs:annotation>
+            <xs:element name="Message" type="MessageSenderContentType">
+                <xs:sequence>
+                    <xs:element name="messageSender" type="MessageSenderContentType">
+                        <xs:annotation>
+                            <xs:documentation>
+                                <description value="Message sender"/>
+                            </xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                    <xs:element name="messageRecipient" type="MessageRecipientContentType">
+                        <xs:annotation>
+                            <xs:documentation>
+                                <description value="Message recipient"/>
+                            </xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                    <xs:element name="preparationDateAndTime" type="PreparationDateAndTimeContentType">
+                        <xs:annotation>
+                            <xs:documentation>
+                                <description value="Preparation date and time"/>
+                            </xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                    <xs:element name="messageIdentification" type="MessageIdentificationContentType">
+                        <xs:annotation>
+                            <xs:documentation>
+                                <description value="Message identification"/>
+                            </xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                    <xs:element name="messageType" type="MessageTypes">
+                        <xs:annotation>
+                            <xs:documentation>
+                                <description value="Message type"/>
+                            </xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                    <xs:element name="correlationIdentifier" type="CorrelationIdentifierContentType" minOccurs="0">
+                        <xs:annotation>
+                            <xs:documentation>
+                                <description value="Correlation identifier"/>
+                            </xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                </xs:sequence>
             </xs:element>
 
             <xs:element name="TransitOperation">
@@ -790,8 +794,6 @@
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
-
-
             <xs:element name="Consignment">
                 <xs:documentation>
                     <xs:EUCDMName>Container Indicator</xs:EUCDMName>
@@ -2028,15 +2030,21 @@
                                     <description value="DEPARTURE TRANSPORT MEANS"/>
                                     <optionality value="D"/>
                                 </xs:documentation>
+                                <xs:documentation>
+                                    <xs:EUCDMName>Departure Transport Means</xs:EUCDMName>
+                                    <xs:Code>19 05 000 000</xs:Code>
+                                </xs:documentation>
                             </xs:annotation>
                             <xs:complexType>
                                 <xs:sequence>
-                                    <xs:element name="sequenceNumber" type="SequenceNumberContentType">
+                                    <xs:element name="identificationNumber" minOccurs="0"
+                                                type="IdentificationNumberContentType06">
                                         <xs:annotation>
                                             <xs:documentation>
-                                                <description value="Sequence number"/>
-                                                <format value="n..5"/>
-                                                <optionality value="R"/>
+                                                <description value="Identification number"/>
+                                                <format value="an..35"/>
+                                                <optionality value="O"/>
+                                                <xsdBaseType value="AlphaNumeric_MAX35_NoSpaces"/>
                                             </xs:documentation>
                                         </xs:annotation>
                                     </xs:element>
@@ -2049,17 +2057,6 @@
                                                           name="ClTypeofidentificationofmeansoftransport"/>
                                                 <format value="n2"/>
                                                 <optionality value="O"/>
-                                            </xs:documentation>
-                                        </xs:annotation>
-                                    </xs:element>
-                                    <xs:element name="identificationNumber" minOccurs="0"
-                                                type="IdentificationNumberContentType06">
-                                        <xs:annotation>
-                                            <xs:documentation>
-                                                <description value="Identification number"/>
-                                                <format value="an..35"/>
-                                                <optionality value="O"/>
-                                                <xsdBaseType value="AlphaNumeric_MAX35_NoSpaces"/>
                                             </xs:documentation>
                                         </xs:annotation>
                                     </xs:element>
@@ -2753,7 +2750,7 @@
                                                         </xs:documentation>
                                                         <xs:documentation>
                                                             <xs:EUCDMName>Name</xs:EUCDMName>
-                                                            <xs:Code>13 03 0016 000</xs:Code>
+                                                            <xs:Code>13 03 016 000</xs:Code>
                                                         </xs:documentation>
                                                     </xs:annotation>
                                                 </xs:element>
