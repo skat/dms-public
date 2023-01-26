@@ -5,7 +5,7 @@
 		version="1.0">
 
 	<xs:import namespace="urn:un:unece:uncefact:data:standard:UnqualifiedDataType:6"
-			schemaLocation="UNECE/UnqualifiedDataType_6_DMS.xsd"/>
+			schemaLocation="UnqualifiedDataType_6_DMS.xsd"/>
 
 	<xs:complexType name="CustomsPosition">
 		<xs:annotation>
@@ -33,31 +33,66 @@
 
 	<xs:complexType name="Declaration">
 		<xs:sequence>
-			<xs:element minOccurs="0" name="MRN" type="declarationMRN">
-				<xs:annotation>
-					<xs:documentation xml:lang="en">
-						The id of the declaration information being received from cwm
-					</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element minOccurs="0" name="LRN" type="xs:string">
-				<xs:annotation>
-					<xs:documentation xml:lang="en">
-						The functionalReferenceId
-					</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element minOccurs="0" name="VersionID" type="xs:string">
-				<xs:annotation>
-					<xs:documentation xml:lang="en">
-						The version number of the declaration
-					</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element minOccurs="0" name="SubmitterReferenceNumber" type="xs:string">
-				<xs:annotation>
-					<xs:documentation xml:lang="en">
-						The Submitter reference number of the declaration
+      <xs:element minOccurs="0" name="EffectiveDateTime" type="xs:date">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            The effective date time of the notification
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="MRN" type="declarationMRN">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            The id of the declaration information being received from cwm
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="LRN" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            The functionalReferenceId
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="CustomsOfficeOfExport" type="udt:IDType">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            The Custom Office of Export
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Exporter" type="Party">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            The Exporter
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Declarant" type="Party">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            The Declarant
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Agent" type="Party">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            The Declarant
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="VersionID" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            The version number of the declaration
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="SubmitterReferenceNumber" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            The Submitter reference number of the declaration
 					</xs:documentation>
 				</xs:annotation>
 			</xs:element>
@@ -85,31 +120,45 @@
 			<xs:element minOccurs="0" name="DutyTaxFee" type="DutyTaxFee"/>
 			<xs:element minOccurs="0" name="GoodsShipment" type="GoodsShipment"/>
 			<xs:element maxOccurs="unbounded" minOccurs="0" name="amendment" type="Amendment"/>
+			<xs:element minOccurs="0" name="TimerExpirationInfo" type="TimerExpirationInfo"/>
+			<xs:element minOccurs="0" name="SubmitterID" type="xs:string">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">
+						The SSN of the Submitter of the Declaration
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
 
 	<xs:complexType name="GoodsShipment">
 		<xs:annotation>
-			<xs:documentation xml:lang="en">
-				GoodsShipment captures the data of the shipment of the goods belonging to one particular
-				consignment crossing the border of the Customs area
-			</xs:documentation>
-		</xs:annotation>
-		<xs:sequence>
-			<xs:element minOccurs="0" maxOccurs="unbounded" name="GovernmentAgencyGoodsItem"
-					type="GovernmentAgencyGoodsItem"/>
-		</xs:sequence>
-	</xs:complexType>
+      <xs:documentation xml:lang="en">
+        GoodsShipment captures the data of the shipment of the goods belonging to one particular
+        consignment crossing the border of the Customs area
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GovernmentAgencyGoodsItem"
+          type="GovernmentAgencyGoodsItem"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Control">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SequenceNumeric" type="SequenceNumericType"/>
+      <xs:element minOccurs="0" name="LimitDateTime" type="notificationDate"/>
+    </xs:sequence>
+  </xs:complexType>
 
-	<xs:complexType name="GovernmentAgencyGoodsItem">
-		<xs:annotation>
-			<xs:documentation xml:lang="en">
-				GovernmentAgencyGoodsItem stores the data about the goods item as declared to Customs
-			</xs:documentation>
-		</xs:annotation>
-		<xs:sequence>
-			<xs:element minOccurs="0" name="SequenceNumeric" type="SequenceNumericType">
-				<xs:annotation>
+  <xs:complexType name="GovernmentAgencyGoodsItem">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        GovernmentAgencyGoodsItem stores the data about the goods item as declared to Customs
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SequenceNumeric" type="SequenceNumericType">
+        <xs:annotation>
 					<xs:documentation xml:lang="en">
 						The sequence number of the GovernmentAgencyGoodsItem
 					</xs:documentation>
@@ -165,16 +214,23 @@
 			</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element minOccurs="0" name="LRN" type="xs:string">
-				<xs:annotation>
-					<xs:documentation xml:lang="en">
-						The functionalReferenceId
-					</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element minOccurs="0" name="MRN" type="declarationMRN">
-				<xs:annotation>
-					<xs:documentation xml:lang="en">
+      <xs:element minOccurs="0" name="TotalSize" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            Number of notification records
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="LRN" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            The functionalReferenceId
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="MRN" type="declarationMRN">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
 						The id of the declaration information being received from cwm
 					</xs:documentation>
 				</xs:annotation>
@@ -202,29 +258,28 @@
 					<xs:annotation>
 						<xs:documentation xml:lang="en">
 							The unique UUID of the specified notification
-						</xs:documentation>
-					</xs:annotation>
-				</xs:element>
-				<xs:element minOccurs="1" name="Declaration" type="Declaration">
-					<xs:annotation>
-						<xs:documentation xml:lang="en">
-							The declaration that this notification belongs to
-						</xs:documentation>
-					</xs:annotation>
-				</xs:element>
-				<xs:element maxOccurs="unbounded" minOccurs="0" name="Error" type="Error">
-					<xs:annotation>
-						<xs:documentation xml:lang="en">
-							The validation errors of the declaration
-						</xs:documentation>
-					</xs:annotation>
-				</xs:element>
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element minOccurs="1" name="Declaration" type="Declaration">
+          <xs:annotation>
+            <xs:documentation xml:lang="en">
+              The declaration that this notification belongs to
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="Control" type="Control"/>
+        <xs:element maxOccurs="unbounded" minOccurs="0" name="Error" type="Error">
+          <xs:annotation>
+            <xs:documentation xml:lang="en">
+              The validation errors of the declaration
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element minOccurs="0" name="AdditionalInformation" type="AdditionalInformation"/>
+        <xs:element minOccurs="0" name="CustomsPosition" type="CustomsPosition"/>
 
-				<xs:element minOccurs="0" name="AdditionalInformation" type="AdditionalInformation"/>
-
-				<xs:element minOccurs="0" name="CustomsPosition" type="CustomsPosition"/>
-
-				<xs:element minOccurs="0" name="NotificationCreatedDate" type="notificationDate">
+        <xs:element minOccurs="0" name="NotificationCreatedDate" type="notificationDate">
 					<xs:annotation>
 						<xs:documentation xml:lang="en">
 							The creation date of the notification
@@ -310,6 +365,13 @@
 					</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element minOccurs="0" name="StatementDescription" type="xs:string">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">
+						The type of additional information
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
 
@@ -375,26 +437,76 @@
 	</xs:complexType>
 
 	<xs:complexType name="Commodity">
-		<xs:annotation>
-			<xs:documentation xml:lang="en">
-				Details about the properties of the goods
-			</xs:documentation>
-		</xs:annotation>
-		<xs:sequence>
-			<xs:element maxOccurs="unbounded" minOccurs="0" name="DutyTaxFee" type="DutyTaxFee"/>
-		</xs:sequence>
-	</xs:complexType>
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Details about the properties of the goods
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="DutyTaxFee" type="DutyTaxFee"/>
+    </xs:sequence>
+  </xs:complexType>
 
-	<xs:complexType name="DutyTaxFee">
-		<xs:annotation>
-			<xs:documentation xml:lang="en">
-				DutyTaxFee captures a Duty/Tax/Fee data of a particular duty/tax/fee type
-			</xs:documentation>
-		</xs:annotation>
-		<xs:sequence>
-			<xs:element minOccurs="0" name="Payment" type="paymentDTO"/>
-			<xs:element minOccurs="0" name="AdValoremTaxBaseAmount" type="udt:AmountType">
-				<xs:annotation>
+  <xs:complexType name="Party">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Details about the Party
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="0" name="Name" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="ID" type="udt:IDType"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="FunctionCode" type="udt:CodeType"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="Address" type="Address"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="Contact" type="Contact"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Address">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Details about the Address
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="0" name="Line" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="PostcodeID" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="CityName" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="CountryCode" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Contact">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Details about the Contact
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="0" name="Name" type="xs:string"/>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Communication" type="Communication"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Communication">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Details about the Communication
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="0" name="SequenceNumeric" type="SequenceNumericType"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="ID" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="TypeCode" type="udt:CodeType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DutyTaxFee">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        DutyTaxFee captures a Duty/Tax/Fee data of a particular duty/tax/fee type
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Payment" type="paymentDTO"/>
+      <xs:element minOccurs="0" name="AdValoremTaxBaseAmount" type="udt:AmountType">
+        <xs:annotation>
 					<xs:documentation xml:lang="en">
 						The actual base (monetary amount or discrete quantity) on which the Duty/Tax/Fee is
 						founded
@@ -492,27 +604,26 @@
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
-	</xs:complexType>
+  </xs:complexType>
 
-	<xs:complexType name="declarationMRN">
-		<xs:simpleContent>
-			<xs:restriction base="udt:IDType">
-				<xs:maxLength value="70"/>
-				<xs:pattern value=".*[^\s].*"/>
-			</xs:restriction>
-		</xs:simpleContent>
-	</xs:complexType>
-
-	<xs:complexType name="notificationDate">
-		<xs:annotation>
-			<xs:documentation xml:lang="en">
-				The date that the declaration was accepted
-			</xs:documentation>
-		</xs:annotation>
-		<xs:choice>
-			<xs:element name="DateTimeString">
-				<xs:complexType>
-					<xs:simpleContent>
+  <xs:complexType name="declarationMRN">
+    <xs:simpleContent>
+      <xs:restriction base="udt:IDType">
+        <xs:maxLength value="70"/>
+        <xs:pattern value=".*[^\s].*"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="notificationDate">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        The date that the declaration was accepted
+      </xs:documentation>
+    </xs:annotation>
+    <xs:choice>
+      <xs:element name="DateTimeString">
+        <xs:complexType>
+          <xs:simpleContent>
 						<xs:restriction base="udt:DateTimeType">
 							<xs:maxLength value="35"/>
 						</xs:restriction>
@@ -520,6 +631,17 @@
 				</xs:complexType>
 			</xs:element>
 		</xs:choice>
+	</xs:complexType>
+
+	<xs:complexType name="TimerExpirationInfo">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">
+				Timer Expiration Information
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element minOccurs="0" name="ExpirationDateTime" type="notificationDate"/>
+		</xs:sequence>
 	</xs:complexType>
 
 	<xs:simpleType name="GUID">
@@ -530,27 +652,6 @@
 		</xs:annotation>
 		<xs:restriction base="xs:string">
 			<xs:pattern value="[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}"/>
-		</xs:restriction>
-	</xs:simpleType>
-
-	<xs:simpleType name="EventType" final="restriction" >
-		<xs:restriction base="xs:string">
-			<xs:enumeration value="CWMACC" />
-			<xs:enumeration value="CWMROG" />
-			<xs:enumeration value="CWMREJ" />
-			<xs:enumeration value="CWMCTL" />
-			<xs:enumeration value="CWMCLE" />
-			<xs:enumeration value="CWMRES" />
-			<xs:enumeration value="CWMRIS" />
-			<xs:enumeration value="CWMDOC" />
-			<xs:enumeration value="CWMING" />
-			<xs:enumeration value="CWMCPI" />
-			<xs:enumeration value="CWMTAX" />
-			<xs:enumeration value="CWMCPR" />
-			<xs:enumeration value="CWMRCV" />
-			<xs:enumeration value="CWMREQ" />
-			<xs:enumeration value="CWMINV" />
-			<xs:enumeration value="CWMEXT" />
 		</xs:restriction>
 	</xs:simpleType>
 
