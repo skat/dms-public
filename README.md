@@ -1,25 +1,21 @@
-# dms-public
+# DMS-public
 
-### This site contains documents regarding the implementation of both the H7 and I2 declaration messages and the forthcoming implementation of the new export and transit declarations. Onboarding to the other declaration types have not yet begun.
+<b> This site contains onboarding documents regarding the implementation of DMS Import (H7 and I2 declaration messages) and the forthcoming implementation of DMS Export and DMS Transit. Where Import H7 and I2 are live the documentation for DMS Export and DMS Transit are work in progress. </b>
 
-### Please note that the documents will be updated with new information whenever it is available.
+<b> Please note that the documents will be updated with new information whenever it is available. </b>
 
-### The documents give an indication of the onboarding effort.
+<b> When onboarding for DMS we recommend that you start reading the below listed documents. All the following onboarding documents can be found in the </b> [Onboarding Document](https://github.com/skat/dms-public/tree/master/Onboarding%20Documents) folder.
 
-For onboarding start reading the onboarding guide: <br/>
-[DMS Onboarding Guide (Danish)](Onboarding%20Documents/DMS%20Onboardingguide%20v1-3.pdf) <br/><br/>
+<b> DMS Onboarding Guide </b> - Gives an overview of the onboarding effort
 
-For establishing connectivity read the connectivity guide: <br/>
-[DMS Connectivity Guide](Onboarding%20Documents/DMS%20Connectivity%20Guide.pdf) <br/><br/>
+<b> DMS Connectivity Guide </b> - Shows how to establish connectivity to the AS4-Gateway
 
-Additionally for connectivity, the DMS project has developped a simple AS client here: <br/>
-[Simple-AS4-Client Github Repository](https://github.com/skat/simple-as4-client) <br/><br/>
+<b> DMS System Guide </b> - Gives an overview of system functionality
 
-An overview of the functionalities of the system can be found in the import system guide: <br/>
-[DMS System Guide](Onboarding%20Documents/DMS%20System%20Guide%20v1-6.pdf) <br/><br/>
+Additionally for connectivity, the DMS project has developed a simple AS4 Client, which can be found in the
+[Simple-AS4-Client Github Repository](https://github.com/skat/simple-as4-client)
 
-An overview of Toldsystemet's User Interface and how to find various functionalities can be found in the User guide: <br/>
-[Link to User Manual Toldsystemet](Onboarding%20Documents/DMS%20Online%20User%20Manuals/BrugermanualToldsystemet.pdf) <br/><br/>
+An overview of Toldsystemets User Interface and how to find various functionalities, can be found in the [DMS Online User Manuals](https://github.com/skat/dms-public/tree/master/Onboarding%20Documents/DMS%20Online%20User%20Manuals)
 
-Import (H7 and I2): For testing, verifying connectivity and functionality, test cases and test data can be found here: <br/>
-[Test cases and test data](https://skat.github.io/dms-public/test-data) <br/><br/>
+<b> Import (H7 & I2) </b> 
+Testing, verifying connectivity and functionality, test cases and test data can be found here: [Test cases and test data](https://skat.github.io/dms-public/test-data/)
