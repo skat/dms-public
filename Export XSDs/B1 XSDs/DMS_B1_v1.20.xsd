@@ -37,9 +37,7 @@
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="FunctionCode" type="ds:DeclarationFunctionCodeType"/>
-
 			<xs:element name="ProcedureCategory" type="ds:DeclarationProcedureCategoryCodeType"/>
-
 			<xs:element name="FunctionalReferenceID" type="ds:DeclarationFunctionalReferenceIDType">
 				<xs:annotation>
 					<xs:documentation>
@@ -49,7 +47,6 @@
 					</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-
 			<xs:element name="TypeCode" type="ds:DeclarationTypeCodeType">
 				<xs:annotation>
 					<xs:documentation>
@@ -64,9 +61,7 @@
 					</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-
 			<xs:element name="DeclarationOfficeID" type="ds:DeclarationDeclarationOfficeIDType"/>
-
 			<xs:element name="InvoiceAmount" type="ds:DeclarationInvoiceAmountType">
 				<xs:annotation>
 					<xs:documentation>
@@ -76,7 +71,12 @@
 					</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-
+			<xs:element name="SpecificCircumstancesCodeCode" type="ds:DeclarationSpecificCircumstancesCodeCodeType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="Submitter">
 				<xs:complexType>
 					<xs:sequence>
@@ -85,7 +85,6 @@
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
-
 			<xs:element name="AdditionalDocument" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>
@@ -109,7 +108,6 @@
 					</xs:sequence>
 				</xs:complexType>
 		    </xs:element>
-
 			<xs:element name="Agent" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>
@@ -214,7 +212,6 @@
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
-
 			<xs:element name="Authorisation" minOccurs="0" maxOccurs="99">
 				<xs:annotation>
 					<xs:documentation>
@@ -261,6 +258,140 @@
 				</xs:complexType>
 			</xs:element>
 
+			<xs:element name="Consignment" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Consignor" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>
+									<EUCDMname>Consignor</EUCDMname>
+									<type>EUCDM 6.1</type>
+									<code>13 02 000 000</code>
+								</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="Name" type="ds:ConsignorNameTextType" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>
+												<EUCDMname>Name</EUCDMname>
+												<type>EUCDM 6.1</type>
+												<code>13 02 016 000</code>
+											</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="ID" type="ds:ConsignorIdentificationIDType" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>
+												<EUCDMname>Identification number</EUCDMname>
+												<type>EUCDM 6.1</type>
+												<code>13 02 017 000</code>
+											</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="Address" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>
+												<EUCDMname>Address</EUCDMname>
+												<type>EUCDM 6.1</type>
+												<code>13 02 018 000</code>
+											</xs:documentation>
+										</xs:annotation>
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element name="CityName" type="ds:AddressCityNameTextType">
+													<xs:annotation>
+														<xs:documentation>
+															<EUCDMname>City</EUCDMname>
+															<type>EUCDM 6.1</type>
+															<code>13 02 018 022</code>
+														</xs:documentation>
+													</xs:annotation>
+												</xs:element>
+												<xs:element name="CountryCode" type="ds:AddressCountryCodeType">
+													<xs:annotation>
+														<xs:documentation>
+															<EUCDMname>Name</EUCDMname>
+															<type>EUCDM 6.1</type>
+															<code>13 02 018 020</code>
+														</xs:documentation>
+													</xs:annotation>
+												</xs:element>
+												<xs:element name="Line" type="ds:AddressLineTextType">
+													<xs:annotation>
+														<xs:documentation>
+															<EUCDMname>Street and number</EUCDMname>
+															<type>EUCDM 6.1</type>
+															<code>13 02 018 019</code>
+														</xs:documentation>
+													</xs:annotation>
+												</xs:element>
+												<xs:element name="PostcodeID" type="ds:AddressPostcodeIDType">
+													<xs:annotation>
+														<xs:documentation>
+															<EUCDMname>Postcode</EUCDMname>
+															<type>EUCDM 6.1</type>
+															<code>13 02 018 021</code>
+														</xs:documentation>
+													</xs:annotation>
+												</xs:element>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="Freight" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>
+								</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="PaymentMethodCode" type="ds:FreightPaymentMethodCodeType" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>
+											</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="rate" type="ds:CustomsValuationFreightChargeAmountType" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>
+											</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="Itinerary" minOccurs="0" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>
+								</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="SequenceNumeric" type="ds:ItinerarySequenceNumericType">
+										<xs:annotation>
+											<xs:documentation>
+											</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="RoutingCountryCode" type="ds:ItineraryRoutingCountryCodeType">
+										<xs:annotation>
+											<xs:documentation>
+											</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
 			<xs:element name="CurrencyExchange" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>
@@ -293,7 +424,6 @@
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
-
 			<xs:element name="Declarant" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>
@@ -432,7 +562,6 @@
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
-
 			<xs:element name="ExitOffice">
 				<xs:annotation>
 					<xs:documentation>
@@ -455,7 +584,6 @@
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
-
 			<xs:element name="Exporter">
 				<xs:annotation>
 					<xs:documentation>
@@ -550,7 +678,6 @@
 				<xs:complexType>
 					<xs:sequence>
 						<xs:element name="Extensions" type="ext:ExtensionType" minOccurs="0" maxOccurs="15"/>
-
 						<xs:element name="SupportingDocument" minOccurs="0" maxOccurs="99">
 							<xs:annotation>
 								<xs:documentation>
@@ -610,7 +737,6 @@
 								</xs:sequence>
 							</xs:complexType>
 						</xs:element>
-
 						<xs:element name="AdditionalReference" minOccurs="0" maxOccurs="99">
 							<xs:annotation>
 								<xs:documentation>
@@ -644,7 +770,6 @@
 								</xs:sequence>
 							</xs:complexType>
 						</xs:element>
-
 						<xs:element name="AdditionalInformation" minOccurs="0" maxOccurs="99">
 							<xs:annotation>
 								<xs:documentation>
@@ -679,7 +804,6 @@
 								</xs:sequence>
 							</xs:complexType>
 						</xs:element>
-
 						<xs:element name="TransactionNatureCode" type="ds:GoodsShipmentTransactionNatureCodeType" minOccurs="0">
 							<xs:annotation>
 								<xs:documentation>
@@ -689,7 +813,6 @@
 								</xs:documentation>
 							</xs:annotation>
 						</xs:element>
-
 						<xs:element name="AEOMutualRecognitionParty" minOccurs="0" maxOccurs="99">
 							<xs:annotation>
 								<xs:documentation>
@@ -722,7 +845,6 @@
 								</xs:sequence>
 							</xs:complexType>
 						</xs:element>
-
 						<xs:element name="Consignee" minOccurs="0">
 							<xs:annotation>
 								<xs:documentation>
@@ -868,7 +990,6 @@
 											</xs:sequence>
 										</xs:complexType>
 									</xs:element>
-
 									<xs:element name="ContainerCode" type="ds:ConsignmentContainerCodeType">
 										<xs:annotation>
 											<xs:documentation>
@@ -878,7 +999,6 @@
 											</xs:documentation>
 										</xs:annotation>
 									</xs:element>
-
 									<xs:element name="DepartureTransportMeans" minOccurs="0">
 										<xs:annotation>
 											<xs:documentation>
@@ -928,7 +1048,6 @@
 											</xs:sequence>
 										</xs:complexType>
 									</xs:element>
-
 									<xs:element name="GoodsLocation">
 										<xs:annotation>
 											<xs:documentation>
@@ -1117,7 +1236,7 @@
 																	</xs:documentation>
 																</xs:annotation>
 															</xs:element>
-															</xs:sequence>
+														</xs:sequence>
 													</xs:complexType>
 												</xs:element>
 
@@ -1189,7 +1308,6 @@
 											</xs:sequence>
 										</xs:complexType>
 									</xs:element>
-
 									<xs:element name="TransportEquipment" minOccurs="0" maxOccurs="9999">
 										<xs:annotation>
 											<xs:documentation>
@@ -1221,7 +1339,6 @@
 											</xs:sequence>
 										</xs:complexType>
 									</xs:element>
-
 									<xs:element name="TransportContractDocument" minOccurs="0" maxOccurs="99">
 										<xs:annotation>
 											<xs:documentation>
@@ -1254,8 +1371,29 @@
 											</xs:sequence>
 										</xs:complexType>
 									</xs:element>
-
-									</xs:sequence>
+									<xs:element name="Freight" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>
+											</xs:documentation>
+										</xs:annotation>
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element name="PaymentMethodCode" type="ds:FreightPaymentMethodCodeType" minOccurs="0">
+													<xs:annotation>
+														<xs:documentation>
+														</xs:documentation>
+													</xs:annotation>
+												</xs:element>
+												<xs:element name="rate" type="ds:CustomsValuationFreightChargeAmountType" minOccurs="0">
+													<xs:annotation>
+														<xs:documentation>
+														</xs:documentation>
+													</xs:annotation>
+												</xs:element>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
 							</xs:complexType>
 						</xs:element>
 
@@ -1339,7 +1477,6 @@
 								</xs:sequence>
 							</xs:complexType>
 						</xs:element>
-
 						<xs:element name="Destination" minOccurs="0">
 							<xs:annotation>
 								<xs:documentation>
@@ -1362,7 +1499,6 @@
 								</xs:sequence>
 							</xs:complexType>
 						</xs:element>
-
 						<xs:element name="ExportCountry">
 							<xs:annotation>
 								<xs:documentation>
@@ -1385,7 +1521,6 @@
 								</xs:sequence>
 							</xs:complexType>
 						</xs:element>
-
 						<xs:element name="GoodsMeasure">
 							<xs:annotation>
 								<xs:documentation>
@@ -1408,7 +1543,6 @@
 								</xs:sequence>
 							</xs:complexType>
 						</xs:element>
-
 						<xs:element name="GovernmentAgencyGoodsItem" maxOccurs="999">
 							<xs:annotation>
 								<xs:documentation>
@@ -1438,10 +1572,7 @@
 											</xs:documentation>
 										</xs:annotation>
 									</xs:element>
-
-
 									<xs:element name="Extensions" type="ext:ExtensionType" minOccurs="0" maxOccurs="15"/>
-
 									<xs:element name="StatisticalValueAmount" type="ds:GovernmentAgencyGoodsItemStatisticalValueAmountType">
 										<xs:annotation>
 											<xs:documentation>
@@ -1451,7 +1582,6 @@
 											</xs:documentation>
 										</xs:annotation>
 									</xs:element>
-
 									<xs:element name="TransactionNatureCode" type="ds:GovernmentAgencyGoodsItemTransactionNatureCodeType" minOccurs="0">
 										<xs:annotation>
 											<xs:documentation>
@@ -1461,7 +1591,6 @@
 											</xs:documentation>
 										</xs:annotation>
 									</xs:element>
-
 									<xs:element name="AdditionalInformation" minOccurs="0" maxOccurs="99">
 										<xs:annotation>
 											<xs:documentation>
@@ -1494,7 +1623,6 @@
 											</xs:sequence>
 										</xs:complexType>
 									</xs:element>
-
 									<xs:element name="AEOMutualRecognitionParty" minOccurs="0" maxOccurs="99">
 										<xs:annotation>
 											<xs:documentation>
@@ -1527,7 +1655,6 @@
 											</xs:sequence>
 										</xs:complexType>
 									</xs:element>
-
 									<xs:element name="Commodity">
 										<xs:annotation>
 											<xs:documentation>
@@ -1702,7 +1829,7 @@
 													</xs:complexType>
 												</xs:element>
 
-												<xs:element name="GoodsMeasure" minOccurs="1">
+												<xs:element name="GoodsMeasure">
 													<xs:annotation>
 														<xs:documentation>
 															<EUCDMname>Supplementary units</EUCDMname>
@@ -1710,10 +1837,10 @@
 															<code>18 02 000 000</code>
 														</xs:documentation>
 														<xs:documentation>
-														<EUCDMname>Net mass</EUCDMname>
-														<type>EUCDM 6.1</type>
-														<code>18 01 000 000</code>
-													</xs:documentation>
+															<EUCDMname>Net mass</EUCDMname>
+															<type>EUCDM 6.1</type>
+															<code>18 01 000 000</code>
+														</xs:documentation>
 														<xs:documentation>
 															<EUCDMname>Gross mass</EUCDMname>
 															<type>EUCDM 6.1</type>
@@ -1752,128 +1879,9 @@
 														</xs:sequence>
 													</xs:complexType>
 												</xs:element>
-
-												<xs:element name="TaxCalculation" minOccurs="0" maxOccurs="99">
-													<xs:annotation>
-														<xs:documentation>
-															<EUCDMName>Duties and Taxes</EUCDMName>
-															<code>14 03 000 000</code>
-															<type>EUCDM 6.1</type>
-														</xs:documentation>
-													</xs:annotation>
-													<xs:complexType>
-														<xs:sequence>
-															<!--<xs:element name="TaxAssessedAmount" type="ds:PaymentTaxAssessedAmountType" minOccurs="0">
-															</xs:element> -->
-															<xs:element name="DutyTaxFee" minOccurs="0">
-																<xs:annotation>
-																	<xs:documentation>
-																		<EUCDMName>DutyTaxFee</EUCDMName>
-																		<code>14 16 000 000</code>
-																		<type>EUCDM 6.1</type>
-																	</xs:documentation>
-																</xs:annotation>
-																<xs:complexType>
-																	<xs:sequence>
-																		<xs:element name="SequenceNumeric" type="ds:CommodityDutyTaxFeeSequenceNumericType"/>
-																		<xs:element name="TypeCode" type="ds:DutyTaxFeeTypeCodeType" minOccurs="0">
-																			<xs:annotation>
-																				<xs:documentation>
-																					<EUCDMName>Tax Type</EUCDMName>
-																					<code>14 03 039 000</code>
-																					<type>EUCDM 6.1</type>
-																				</xs:documentation>
-																			</xs:annotation>
-																		</xs:element>
-																		<xs:element name="TaxBase" minOccurs="0" maxOccurs="99">
-																			<xs:annotation>
-																				<xs:documentation>
-																					<EUCDMName>Tax Rate</EUCDMName>
-																					<code>14 03 040 000</code>
-																					<type>EUCDM 6.1</type>
-																				</xs:documentation>
-																			</xs:annotation>
-																			<xs:complexType>
-																				<xs:sequence>
-																					<xs:element name="TaxRateNumeric" type="ds:DutyTaxFeeTaxRateNumericType" minOccurs="0">
-																						<xs:annotation>
-																							<xs:documentation>
-																								<EUCDMName>Tax Rate</EUCDMName>
-																								<code>14 03 040 041</code>
-																								<type>EUCDM 6.1</type>
-																							</xs:documentation>
-																						</xs:annotation>
-																					</xs:element>
-																					<xs:element name="specificTaxBase" minOccurs="0">
-																						<xs:complexType>
-																							<xs:sequence>
-																								<xs:element name="SpecificTaxBaseQuantity" type="ds:DutyTaxFeeSpecificTaxBaseQuantityType" minOccurs="0">
-																									<xs:annotation>
-																										<xs:documentation>
-																											<EUCDMName>Quantity</EUCDMName>
-																											<code>14 03 040 006</code>
-																											<type>EUCDM 6.1</type>
-																										</xs:documentation>
-																									</xs:annotation>
-																								</xs:element>
-																							</xs:sequence>
-																						</xs:complexType>
-																					</xs:element>
-																					<xs:element name="AdValoremTaxBaseAmount" type="ds:DutyTaxFeeAdValoremTaxBaseAmountType" minOccurs="0">
-																						<xs:annotation>
-																							<xs:documentation>
-																								<EUCDMName>Amount</EUCDMName>
-																								<code>14 03 040 014</code>
-																								<type>EUCDM 6.1</type>
-																							</xs:documentation>
-																						</xs:annotation>
-																					</xs:element>
-																					<xs:element name="Tax" type="ds:DutyTaxFeeTaxAmountType" minOccurs="0">
-																						<xs:annotation>
-																							<xs:documentation>
-																								<EUCDMName>Tax Amount</EUCDMName>
-																								<code>14 03 040 043</code>
-																								<type>EUCDM 6.1</type>
-																							</xs:documentation>
-																						</xs:annotation>
-																					</xs:element>
-																				</xs:sequence>
-																			</xs:complexType>
-																		</xs:element>
-																		<xs:element name="Payment" minOccurs="0">
-																			<xs:complexType>
-																				<xs:sequence>
-																					<xs:element name="MethodCode" type="ds:PaymentMethodCodeType" minOccurs="0" maxOccurs="99">
-																						<xs:annotation>
-																							<xs:documentation>
-																								<EUCDMName>Method of payment</EUCDMName>
-																								<code>14 03 038 000</code>
-																								<type>EUCDM 6.1</type>
-																							</xs:documentation>
-																						</xs:annotation>
-																					</xs:element>
-																					<xs:element name="PaymentAmount" type="ds:PaymentPaymentAmountType" minOccurs="0">
-																						<xs:annotation>
-																							<xs:documentation>
-																								<EUCDMName>Payable tax amount</EUCDMName>
-																								<code>14 03 042 000</code>
-																								<type>EUCDM 6.1</type>
-																							</xs:documentation>
-																						</xs:annotation>
-																					</xs:element>
-																				</xs:sequence>
-																			</xs:complexType>
-																		</xs:element>
-																		</xs:sequence>
-																</xs:complexType>
-															</xs:element>
-														</xs:sequence>
-													</xs:complexType>
-												</xs:element>
 											</xs:sequence>
 										</xs:complexType>
 									</xs:element>
-
 									<xs:element name="Consignee" minOccurs="0">
 										<xs:annotation>
 											<xs:documentation>
@@ -1954,7 +1962,6 @@
 											</xs:sequence>
 										</xs:complexType>
 									</xs:element>
-
 									<xs:element name="Consignor" minOccurs="0">
 										<xs:annotation>
 											<xs:documentation>
@@ -2035,7 +2042,6 @@
 											</xs:sequence>
 										</xs:complexType>
 									</xs:element>
-
 									<xs:element name="Destination" minOccurs="0">
 										<xs:annotation>
 											<xs:documentation>
@@ -2058,7 +2064,6 @@
 											</xs:sequence>
 										</xs:complexType>
 									</xs:element>
-
 									<xs:element name="ExportCountry" minOccurs="0">
 										<xs:annotation>
 											<xs:documentation>
@@ -2081,7 +2086,6 @@
 											</xs:sequence>
 										</xs:complexType>
 									</xs:element>
-
 									<xs:element name="GovernmentProcedure" minOccurs="2" maxOccurs="100">
 										<xs:annotation>
 											<xs:documentation>
@@ -2114,7 +2118,6 @@
 											</xs:sequence>
 										</xs:complexType>
 									</xs:element>
-
 									<xs:element name="Origin" minOccurs="0">
 										<xs:annotation>
 											<xs:documentation>
@@ -2156,7 +2159,6 @@
 											</xs:sequence>
 										</xs:complexType>
 									</xs:element>
-
 									<xs:element name="Packaging" maxOccurs="99">
 										<xs:annotation>
 											<xs:documentation>
@@ -2198,7 +2200,6 @@
 											</xs:sequence>
 										</xs:complexType>
 									</xs:element>
-
 									<xs:element name="PreviousDocument" minOccurs="0" maxOccurs="99">
 										<xs:annotation>
 											<xs:documentation>
@@ -2281,7 +2282,6 @@
 											</xs:sequence>
 										</xs:complexType>
 									</xs:element>
-
 									<xs:element name="UCR" minOccurs="0">
 										<xs:annotation>
 											<xs:documentation>
@@ -2304,7 +2304,6 @@
 											</xs:sequence>
 										</xs:complexType>
 									</xs:element>
-
 									<xs:element name="SupportingDocument" minOccurs="0" maxOccurs="99">
 										<xs:annotation>
 											<xs:documentation>
@@ -2339,7 +2338,6 @@
 											</xs:sequence>
 										</xs:complexType>
 									</xs:element>
-
 									<xs:element name="AdditionalReference" minOccurs="0" maxOccurs="99">
 										<xs:annotation>
 											<xs:documentation>
@@ -2372,7 +2370,6 @@
 											</xs:sequence>
 										</xs:complexType>
 									</xs:element>
-
 									<xs:element name="Authorisation" minOccurs="0" maxOccurs="99">
 										<xs:annotation>
 											<xs:documentation>
@@ -2414,7 +2411,28 @@
 											</xs:sequence>
 										</xs:complexType>
 									</xs:element>
-
+									<xs:element name="Freight" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>
+											</xs:documentation>
+										</xs:annotation>
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element name="PaymentMethodCode" type="ds:FreightPaymentMethodCodeType" minOccurs="0">
+													<xs:annotation>
+														<xs:documentation>
+														</xs:documentation>
+													</xs:annotation>
+												</xs:element>
+												<xs:element name="rate" type="ds:CustomsValuationFreightChargeAmountType" minOccurs="0">
+													<xs:annotation>
+														<xs:documentation>
+														</xs:documentation>
+													</xs:annotation>
+												</xs:element>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
 								</xs:sequence>
 							</xs:complexType>
 						</xs:element>
@@ -2467,7 +2485,6 @@
 								</xs:sequence>
 							</xs:complexType>
 						</xs:element>
-
 						<xs:element name="TradeTerms">
 							<xs:annotation>
 								<xs:documentation>
@@ -2484,6 +2501,12 @@
 												<EUCDMname>INCOTERM code</EUCDMname>
 												<type>EUCDM 6.1</type>
 												<code>14 01 035 000</code>
+											</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="Description" type="ds:TradeTermsDescriptionTextType" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>
 											</xs:documentation>
 										</xs:annotation>
 									</xs:element>
@@ -2517,7 +2540,6 @@
 								</xs:sequence>
 							</xs:complexType>
 						</xs:element>
-
 						<xs:element name="UCR" minOccurs="0">
 							<xs:annotation>
 								<xs:documentation>
@@ -2540,7 +2562,6 @@
 								</xs:sequence>
 							</xs:complexType>
 						</xs:element>
-
 						<xs:element name="Warehouse" minOccurs="0">
 							<xs:annotation>
 								<xs:documentation>
@@ -2572,7 +2593,6 @@
 								</xs:sequence>
 							</xs:complexType>
 						</xs:element>
-
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
@@ -2599,7 +2619,6 @@
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
-
 			<xs:element name="SupervisingOffice" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>
@@ -2622,7 +2641,6 @@
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
-
 			<xs:element name="ExportOffice">
 				<xs:annotation>
 					<xs:documentation>
@@ -2645,7 +2663,6 @@
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
-
 			<xs:element name="SecurityCode" type="ds:DeclarationSecurityType">
 				<xs:annotation>
 					<xs:documentation>
