@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
+           xmlns="http://ncts.dgtaxud.ec" targetNamespace="http://ncts.dgtaxud.ec"
+           elementFormDefault="unqualified" attributeFormDefault="unqualified" version="51.8.0" vc:minVersion="1.1">
+    <!--================================================================================-->
+    <!--===== IE015: E_DEC_DAT                                                          -->
+    <!--===== DECLARATION DATA                                                          -->
+    <!--===== NCTS P5 Phase Definition                                                  -->
+    <!--===== XSD Version 51.8.0                                                        -->
+    <!--================================================================================-->
+    <!--================================================================================-->
+    <!--===== Includes                                                                  -->
+    <!--================================================================================-->
+    <xs:include schemaLocation="../NCTS_DS/ctypes.xsd"/>
+    <xs:include schemaLocation="../NCTS_DS/htypes.xsd"/>
+    <!--================================================================================-->
+    <!--===== Root Element                                                              -->
+    <!--================================================================================-->
+    <xs:element name="CC010C" type="CC010CType"/>
+    <!--================================================================================-->
+    <!--===== Root Element Content                                                      -->
+    <!--================================================================================-->
+    <xs:complexType name="CC010CType">
+        <xs:sequence>
+            <xs:element name="Message" type="MessageSenderContentType">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="messageSender" type="MessageSenderContentType">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    <description value="Message sender"/>
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="messageRecipient" type="MessageRecipientContentType">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    <description value="Message recipient"/>
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="preparationDateAndTime" type="PreparationDateAndTimeContentType">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    <description value="Preparation date and time"/>
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="messageIdentification" type="MessageIdentificationContentType">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    <description value="Message identification"/>
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="messageType" type="MessageTypes">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    <description value="Message type"/>
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="correlationIdentifier" type="CorrelationIdentifierContentType" minOccurs="0">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    <description value="Correlation identifier"/>
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="TransitOperation">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="MRN">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    <description value="MRN"/>
+                                    <format value="an18"/>
+                                    <optionality value="R"/>
+                                    <xsdBaseType value="MRNType"/>
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="Invalidation">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="decisionDateAndTime" minOccurs="0" type="DecisionDateAndTimeContentType">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    <description value="Decision date and time"/>
+                                    <format value="an19"/>
+                                    <optionality value="D"/>
+                                    <xsdBaseType value="DateTimeType"/>
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="CustomsOfficeOfDeparture" minOccurs="0" maxOccurs="9">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="referenceNumber" type="ReferenceNumberContentType05">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    <description value="Reference number"/>
+                                    <codeList code="CL171" type="business" name="CustomsOfficeDeparture"/>
+                                    <format value="an8"/>
+                                    <optionality value="R"/>
+                                    <xsdBaseType value="CORefNumType"/>
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="CustomsOfficeOfDestinationDeclared">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="referenceNumber" type="ReferenceNumberContentType05">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    <description value="Reference number"/>
+                                    <codeList code="CL172" type="business" name="CustomsOfficeDeparture"/>
+                                    <format value="an8"/>
+                                    <optionality value="R"/>
+                                    <xsdBaseType value="CORefNumType"/>
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="CustomsOfficeOfTransitDeclared">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="sequenceNumber" type="ReferenceNumberContentType05">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    <description value="Sequence number"/>
+                                    <format value="n..5"/>
+                                    <optionality value="R"/>
+                                    <xsdBaseType value="SequenceNumberContentType"/>
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="referenceNumber" type="ReferenceNumberContentType05">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    <description value="Reference number"/>
+                                    <codeList code="CL173" type="business" name="CustomsOfficeDeparture"/>
+                                    <format value="an8"/>
+                                    <optionality value="R"/>
+                                    <xsdBaseType value="CORefNumType"/>
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="CustomsOfficeOfExitForTransitDeclared">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="sequenceNumber" type="ReferenceNumberContentType05">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    <description value="Sequence number"/>
+                                    <format value="n..5"/>
+                                    <optionality value="R"/>
+                                    <xsdBaseType value="SequenceNumberContentType"/>
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="referenceNumber" type="ReferenceNumberContentType05">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    <description value="Reference number"/>
+                                    <codeList code="CL175" type="business" name="CustomsOfficeDeparture"/>
+                                    <format value="an8"/>
+                                    <optionality value="R"/>
+                                    <xsdBaseType value="CORefNumType"/>
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
