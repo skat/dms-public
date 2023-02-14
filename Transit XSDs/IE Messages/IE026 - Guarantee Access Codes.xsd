@@ -20,32 +20,192 @@
   <!--================================================================================-->
   <xs:complexType name="CC026CType">
     <xs:sequence>
-      <xs:group ref="MESSAGE" />
-      <xs:element name="HolderOfTheTransitProcedure" type="HolderOfTheTransitProcedureType04">
+      <xs:element name="messageSender" type="MessageSenderContentType">
         <xs:annotation>
           <xs:documentation>
-            <description value="HOLDER OF THE TRANSIT PROCEDURE" />
-            <optionality value="R" />
+            <description value="Message sender"/>
           </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="CustomsOfficeOfGuarantee" type="CustomsOfficeOfGuaranteeType02">
+      <xs:element name="messageRecipient" type="MessageRecipientContentType">
+        <xs:annotation>
+          <xs:documentation>
+            <description value="Message recipient"/>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="preparationDateAndTime" type="PreparationDateAndTimeContentType">
+        <xs:annotation>
+          <xs:documentation>
+            <description value="Preparation date and time"/>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="messageIdentification" type="MessageIdentificationContentType">
+        <xs:annotation>
+          <xs:documentation>
+            <description value="Message identification"/>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="messageType" type="MessageTypes">
+        <xs:annotation>
+          <xs:documentation>
+            <description value="Message type"/>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="correlationIdentifier" type="CorrelationIdentifierContentType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <description value="Correlation identifier"/>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="HolderOfTheTransitProcedure">
+        <xs:annotation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="identificationNumber" minOccurs="0" type="IdentificationNumberContentType01">
+              <xs:annotation>
+                <xs:documentation>
+                  <description value="Identification number" />
+                  <format value="an..17" />
+                  <optionality value="O" />
+                  <xsdBaseType value="AlphaNumeric_MAX17_NoSpaces" />
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="name" minOccurs="0" type="NameContentType01">
+              <xs:annotation>
+                <xs:documentation>
+                  <description value="Name" />
+                  <format value="an..70" />
+                  <optionality value="D" />
+                  <xsdBaseType value="Alphanumeric_Max70" />
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="Address" minOccurs="0" type="AddressType15">
+              <xs:annotation>
+                <xs:documentation>
+                  <description value="ADDRESS" />
+                  <optionality value="D" />
+                </xs:documentation>
+              </xs:annotation>
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="streetAndNumber" type="StreetAndNumberContentType01">
+                    <xs:annotation>
+                      <xs:documentation>
+                        <description value="Street and number" />
+                        <format value="an..70" />
+                        <optionality value="R" />
+                        <xsdBaseType value="Alphanumeric_Max70" />
+                      </xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+                  <xs:element name="postcode" minOccurs="0" type="PostcodeContentType01">
+                    <xs:annotation>
+                      <xs:documentation>
+                        <description value="Postcode" />
+                        <format value="an..17" />
+                        <optionality value="D" />
+                        <xsdBaseType value="PostalCodeType" />
+                      </xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+                  <xs:element name="city" type="CityContentType02">
+                    <xs:annotation>
+                      <xs:documentation>
+                        <description value="City" />
+                        <format value="an..35" />
+                        <optionality value="R" />
+                        <xsdBaseType value="CityType" />
+                      </xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+                  <xs:element name="country" type="CountryContentType">
+                    <xs:annotation>
+                      <xs:documentation>
+                        <description value="Country" />
+                        <codeList code="CL248" type="business" name="Countrycodesforaddress" />
+                        <format value="a2" />
+                        <optionality value="R" />
+                        <xsdBaseType value="CountryCodeType" />
+                      </xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomsOfficeOfGuarantee">
         <xs:annotation>
           <xs:documentation>
             <description value="CUSTOMS OFFICE OF GUARANTEE" />
             <optionality value="R" />
           </xs:documentation>
         </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="referenceNumber" type="ReferenceNumberContentType05">
+              <xs:annotation>
+                <xs:documentation>
+                  <description value="Reference number" />
+                  <codeList code="CL174" type="business" name="CustomsOfficeGuarantee" />
+                  <format value="an8" />
+                  <optionality value="R" />
+                  <xsdBaseType value="CORefNumType" />
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
       </xs:element>
-      <xs:element name="GuaranteeReference" type="GuaranteeReferenceType05">
+      <xs:element name="GuaranteeReference">
         <xs:annotation>
           <xs:documentation>
             <description value="GUARANTEE REFERENCE" />
             <optionality value="R" />
           </xs:documentation>
         </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="GRN" type="GrnContentType">
+              <xs:annotation>
+                <xs:documentation>
+                  <description value="GRN" />
+                  <format value="an..24" />
+                  <optionality value="R" />
+                  <xsdBaseType value="GRNType" />
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="masterAccessCode" type="MasterAccessCodeContentType">
+              <xs:annotation>
+                <xs:documentation>
+                  <description value="Master access code" />
+                  <format value="an..4" />
+                  <optionality value="R" />
+                  <xsdBaseType value="AlphaNumeric_MAX4_NoSpaces" />
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="AccessCode" type="AccessCodeType01">
+              <xs:annotation>
+                <xs:documentation>
+                  <description value="ACCESS CODE" />
+                  <optionality value="R" />
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
       </xs:element>
     </xs:sequence>
-    <xs:attribute name="PhaseID" type="phaseIDtype" />
   </xs:complexType>
 </xs:schema>
