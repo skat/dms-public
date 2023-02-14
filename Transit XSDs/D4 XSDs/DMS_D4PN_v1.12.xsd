@@ -22,62 +22,56 @@
     <!--================================================================================-->
     <xs:complexType name="CC170CType">
         <xs:sequence>
-            <xs:element name="Message" type="MessageSenderContentType">
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:element name="messageSender" type="MessageSenderContentType">
-                            <xs:annotation>
-                                <xs:documentation>
-                                    <description value="Message sender"/>
-                                </xs:documentation>
-                            </xs:annotation>
-                        </xs:element>
-                        <xs:element name="messageRecipient" type="MessageRecipientContentType">
-                            <xs:annotation>
-                                <xs:documentation>
-                                    <description value="Message recipient"/>
-                                </xs:documentation>
-                            </xs:annotation>
-                        </xs:element>
-                        <xs:element name="preparationDateAndTime" type="PreparationDateAndTimeContentType">
-                            <xs:annotation>
-                                <xs:documentation>
-                                    <description value="Preparation date and time"/>
-                                </xs:documentation>
-                            </xs:annotation>
-                        </xs:element>
-                        <xs:element name="messageIdentification" type="MessageIdentificationContentType">
-                            <xs:annotation>
-                                <xs:documentation>
-                                    <description value="Message identification"/>
-                                </xs:documentation>
-                            </xs:annotation>
-                        </xs:element>
-                        <xs:element name="messageType" type="MessageTypes">
-                            <xs:annotation>
-                                <xs:documentation>
-                                    <description value="Message type"/>
-                                </xs:documentation>
-                            </xs:annotation>
-                        </xs:element>
-                        <xs:element name="correlationIdentifier" type="CorrelationIdentifierContentType" minOccurs="0">
-                            <xs:annotation>
-                                <xs:documentation>
-                                    <description value="Correlation identifier"/>
-                                </xs:documentation>
-                            </xs:annotation>
-                        </xs:element>
-                    </xs:sequence>
-                </xs:complexType>
+            <xs:element name="messageSender" type="MessageSenderContentType">
+                <xs:annotation>
+                    <xs:documentation>
+                        <description value="Message sender"/>
+                    </xs:documentation>
+                </xs:annotation>
             </xs:element>
-            <xs:element name="TransitOperation" type="TransitOperationType24">
+            <xs:element name="messageRecipient" type="MessageRecipientContentType">
+                <xs:annotation>
+                    <xs:documentation>
+                        <description value="Message recipient"/>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="preparationDateAndTime" type="PreparationDateAndTimeContentType">
+                <xs:annotation>
+                    <xs:documentation>
+                        <description value="Preparation date and time"/>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="messageIdentification" type="MessageIdentificationContentType">
+                <xs:annotation>
+                    <xs:documentation>
+                        <description value="Message identification"/>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="messageType" type="MessageTypes">
+                <xs:annotation>
+                    <xs:documentation>
+                        <description value="Message type"/>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="correlationIdentifier" type="CorrelationIdentifierContentType" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>
+                        <description value="Correlation identifier"/>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="TransitOperation">
                 <xs:annotation>
                     <xs:documentation>
                         <description value="TRANSIT OPERATION"/>
                         <optionality value="R"/>
                     </xs:documentation>
                 </xs:annotation>
-                <xs:ComplexType>
+                <xs:complexType>
                     <xs:sequence>
                         <xs:element name="LRN" type="LRNContentType03">
                             <xs:annotation>
@@ -100,16 +94,16 @@
                             </xs:annotation>
                         </xs:element>
                     </xs:sequence>
-                </xs:ComplexType>
+                </xs:complexType>
             </xs:element>
-            <xs:element name="CustomsOfficeOfDeparture" type="CustomsOfficeOfDepartureType03">
+            <xs:element name="CustomsOfficeOfDeparture">
                 <xs:annotation>
                     <xs:documentation>
                         <description value="CUSTOMS OFFICE OF DEPARTURE"/>
                         <optionality value="R"/>
                     </xs:documentation>
                 </xs:annotation>
-                <xs:ComplexType>
+                <xs:complexType>
                     <xs:sequence>
                         <xs:element name="referenceNumber" type="ReferenceNumberContentType05">
                             <xs:annotation>
@@ -123,16 +117,16 @@
                             </xs:annotation>
                         </xs:element>
                     </xs:sequence>
-                </xs:ComplexType>
+                </xs:complexType>
             </xs:element>
-            <xs:element name="HolderOfTheTransitProcedure" type="HolderOfTheTransitProcedureType19">
+            <xs:element name="HolderOfTheTransitProcedure">
                 <xs:annotation>
                     <xs:documentation>
                         <description value="HOLDER OF THE TRANSIT PROCEDURE"/>
                         <optionality value="R"/>
                     </xs:documentation>
                 </xs:annotation>
-                <xs:ComplexType>
+                <xs:complexType>
                     <xs:sequence>
                         <xs:element name="identificationNumber" minOccurs="0" type="IdentificationNumberContentType01">
                             <xs:annotation>
@@ -164,14 +158,14 @@
                                 </xs:documentation>
                             </xs:annotation>
                         </xs:element>
-                        <xs:element name="Address" minOccurs="0" type="AddressType17">
+                        <xs:element name="Address" minOccurs="0">
                             <xs:annotation>
                                 <xs:documentation>
                                     <description value="ADDRESS"/>
                                     <optionality value="D"/>
                                 </xs:documentation>
                             </xs:annotation>
-                            <xs:ComplexType>
+                            <xs:complexType>
                                 <xs:sequence>
                                     <xs:element name="streetAndNumber" type="StreetAndNumberContentType02">
                                         <xs:annotation>
@@ -215,19 +209,19 @@
                                         </xs:annotation>
                                     </xs:element>
                                 </xs:sequence>
-                            </xs:ComplexType>
+                            </xs:complexType>
                         </xs:element>
                     </xs:sequence>
-                </xs:ComplexType>
+                </xs:complexType>
             </xs:element>
-            <xs:element name="Representative" minOccurs="0" type="RepresentativeType05">
+            <xs:element name="Representative" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>
                         <description value="REPRESENTATIVE"/>
                         <optionality value="O"/>
                     </xs:documentation>
                 </xs:annotation>
-                <xs:ComplexType>
+                <xs:complexType>
                     <xs:sequence>
                         <xs:element name="identificationNumber" type="IdentificationNumberContentType01">
                             <xs:annotation>
@@ -249,14 +243,14 @@
                                 </xs:documentation>
                             </xs:annotation>
                         </xs:element>
-                        <xs:element name="ContactPerson" minOccurs="0" type="ContactPersonType05">
+                        <xs:element name="ContactPerson" minOccurs="0">
                             <xs:annotation>
                                 <xs:documentation>
                                     <description value="CONTACT PERSON"/>
                                     <optionality value="O"/>
                                 </xs:documentation>
                             </xs:annotation>
-                            <xs:ComplexType>
+                            <xs:complexType>
                                 <xs:sequence>
                                     <xs:element name="name" type="NameContentType02">
                                         <xs:annotation>
@@ -288,19 +282,19 @@
                                         </xs:annotation>
                                     </xs:element>
                                 </xs:sequence>
-                            </xs:ComplexType>
+                            </xs:complexType>
                         </xs:element>
                     </xs:sequence>
-                </xs:ComplexType>
+                </xs:complexType>
             </xs:element>
-            <xs:element name="Consignment" type="ConsignmentType08">
+            <xs:element name="Consignment">
                 <xs:annotation>
                     <xs:documentation>
                         <description value="CONSIGNMENT"/>
                         <optionality value="R"/>
                     </xs:documentation>
                 </xs:annotation>
-                <xs:ComplexType>
+                <xs:complexType>
                     <xs:sequence>
                         <xs:element name="containerIndicator" minOccurs="0" type="Flag">
                             <xs:annotation>
@@ -332,14 +326,14 @@
                                 </xs:documentation>
                             </xs:annotation>
                         </xs:element>
-                        <xs:element name="TransportEquipment" minOccurs="0" maxOccurs="9999" type="TransportEquipmentType06">
+                        <xs:element name="TransportEquipment" minOccurs="0" maxOccurs="9999">
                             <xs:annotation>
                                 <xs:documentation>
                                     <description value="TRANSPORT EQUIPMENT"/>
                                     <optionality value="D"/>
                                 </xs:documentation>
                             </xs:annotation>
-                            <xs:ComplexType>
+                            <xs:complexType>
                                 <xs:sequence>
                                     <xs:element name="sequenceNumber" type="SequenceNumberContentType">
                                         <xs:annotation>
@@ -370,14 +364,14 @@
                                             </xs:documentation>
                                         </xs:annotation>
                                     </xs:element>
-                                    <xs:element name="Seal" minOccurs="0" maxOccurs="99" type="SealType05">
+                                    <xs:element name="Seal" minOccurs="0" maxOccurs="99">
                                         <xs:annotation>
                                             <xs:documentation>
                                                 <description value="SEAL"/>
                                                 <optionality value="D"/>
                                             </xs:documentation>
                                         </xs:annotation>
-                                        <xs:ComplexType>
+                                        <xs:complexType>
                                             <xs:sequence>
                                                 <xs:element name="sequenceNumber" type="SequenceNumberContentType">
                                                     <xs:annotation>
@@ -399,16 +393,16 @@
                                                     </xs:annotation>
                                                 </xs:element>
                                             </xs:sequence>
-                                        </xs:ComplexType>
+                                        </xs:complexType>
                                     </xs:element>
-                                    <xs:element name="GoodsReference" minOccurs="0" maxOccurs="9999" type="GoodsReferenceType02">
+                                    <xs:element name="GoodsReference" minOccurs="0" maxOccurs="9999">
                                         <xs:annotation>
                                             <xs:documentation>
                                                 <description value="GOODS REFERENCE"/>
                                                 <optionality value="D"/>
                                             </xs:documentation>
                                         </xs:annotation>
-                                        <xs:ComplexType>
+                                        <xs:complexType>
                                             <xs:sequence>
                                                 <xs:element name="sequenceNumber" type="SequenceNumberContentType">
                                                     <xs:annotation>
@@ -430,19 +424,19 @@
                                                     </xs:annotation>
                                                 </xs:element>
                                             </xs:sequence>
-                                        </xs:ComplexType>
+                                        </xs:complexType>
                                     </xs:element>
                                 </xs:sequence>
-                            </xs:ComplexType>
+                            </xs:complexType>
                         </xs:element>
-                        <xs:element name="LocationOfGoods" type="LocationOfGoodsType03">
+                        <xs:element name="LocationOfGoods">
                             <xs:annotation>
                                 <xs:documentation>
                                     <description value="LOCATION OF GOODS"/>
                                     <optionality value="R"/>
                                 </xs:documentation>
                             </xs:annotation>
-                            <xs:ComplexType>
+                            <xs:complexType>
                                 <xs:sequence>
                                     <xs:element name="typeOfLocation" type="TypeOfLocationContentType">
                                         <xs:annotation>
@@ -494,14 +488,14 @@
                                             </xs:documentation>
                                         </xs:annotation>
                                     </xs:element>
-                                    <xs:element name="CustomsOffice" minOccurs="0" type="CustomsOfficeType02">
+                                    <xs:element name="CustomsOffice" minOccurs="0">
                                         <xs:annotation>
                                             <xs:documentation>
                                                 <description value="CUSTOMS OFFICE"/>
                                                 <optionality value="D"/>
                                             </xs:documentation>
                                         </xs:annotation>
-                                        <xs:ComplexType>
+                                        <xs:complexType>
                                             <xs:sequence>
                                                 <xs:element name="referenceNumber" type="ReferenceNumberContentType05">
                                                     <xs:annotation>
@@ -515,16 +509,16 @@
                                                     </xs:annotation>
                                                 </xs:element>
                                             </xs:sequence>
-                                        </xs:ComplexType>
+                                        </xs:complexType>
                                     </xs:element>
-                                    <xs:element name="GNSS" minOccurs="0" type="GNSSType">
+                                    <xs:element name="GNSS" minOccurs="0">
                                         <xs:annotation>
                                             <xs:documentation>
                                                 <description value="GNSS"/>
                                                 <optionality value="D"/>
                                             </xs:documentation>
                                         </xs:annotation>
-                                        <xs:ComplexType>
+                                        <xs:complexType>
                                             <xs:sequence>
                                                 <xs:element name="latitude" type="LatitudeContentType">
                                                     <xs:annotation>
@@ -547,19 +541,18 @@
                                                     </xs:annotation>
                                                 </xs:element>
                                             </xs:sequence>
-                                        </xs:ComplexType>
+                                        </xs:complexType>
                                     </xs:element>
-                                    <xs:element name="EconomicOperator" minOccurs="0" type="EconomicOperatorType03">
+                                    <xs:element name="EconomicOperator" minOccurs="0">
                                         <xs:annotation>
                                             <xs:documentation>
                                                 <description value="ECONOMIC OPERATOR"/>
                                                 <optionality value="D"/>
                                             </xs:documentation>
                                         </xs:annotation>
-                                        <xs:ComplexType>
+                                        <xs:complexType>
                                             <xs:sequence>
-                                                <xs:element name="identificationNumber"
-                                                            type="IdentificationNumberContentType01">
+                                                <xs:element name="identificationNumber" type="IdentificationNumberContentType01">
                                                     <xs:annotation>
                                                         <xs:documentation>
                                                             <description value="Identification number"/>
@@ -570,16 +563,16 @@
                                                     </xs:annotation>
                                                 </xs:element>
                                             </xs:sequence>
-                                        </xs:ComplexType>
+                                        </xs:complexType>
                                     </xs:element>
-                                    <xs:element name="Address" minOccurs="0" type="AddressType14">
+                                    <xs:element name="Address" minOccurs="0">
                                         <xs:annotation>
                                             <xs:documentation>
                                                 <description value="ADDRESS"/>
                                                 <optionality value="D"/>
                                             </xs:documentation>
                                         </xs:annotation>
-                                        <xs:ComplexType>
+                                        <xs:complexType>
                                             <xs:sequence>
                                                 <xs:element name="streetAndNumber" type="StreetAndNumberContentType02">
                                                     <xs:annotation>
@@ -623,16 +616,16 @@
                                                     </xs:annotation>
                                                 </xs:element>
                                             </xs:sequence>
-                                        </xs:ComplexType>
+                                        </xs:complexType>
                                     </xs:element>
-                                    <xs:element name="PostcodeAddress" minOccurs="0" type="PostcodeAddressType02">
+                                    <xs:element name="PostcodeAddress" minOccurs="0">
                                         <xs:annotation>
                                             <xs:documentation>
                                                 <description value="POSTCODE ADDRESS"/>
                                                 <optionality value="D"/>
                                             </xs:documentation>
                                         </xs:annotation>
-                                        <xs:ComplexType>
+                                        <xs:complexType>
                                             <xs:sequence>
                                                 <xs:element name="houseNumber" minOccurs="0" type="HouseNumberContentType02">
                                                     <xs:annotation>
@@ -666,16 +659,16 @@
                                                     </xs:annotation>
                                                 </xs:element>
                                             </xs:sequence>
-                                        </xs:ComplexType>
+                                        </xs:complexType>
                                     </xs:element>
-                                    <xs:element name="ContactPerson" minOccurs="0" type="ContactPersonType06">
+                                    <xs:element name="ContactPerson" minOccurs="0">
                                         <xs:annotation>
                                             <xs:documentation>
                                                 <description value="CONTACT PERSON"/>
                                                 <optionality value="D"/>
                                             </xs:documentation>
                                         </xs:annotation>
-                                        <xs:ComplexType>
+                                        <xs:complexType>
                                             <xs:sequence>
                                                 <xs:element name="name" type="NameContentType02">
                                                     <xs:annotation>
@@ -707,19 +700,19 @@
                                                     </xs:annotation>
                                                 </xs:element>
                                             </xs:sequence>
-                                        </xs:ComplexType>
+                                        </xs:complexType>
                                     </xs:element>
                                 </xs:sequence>
-                            </xs:ComplexType>
+                            </xs:complexType>
                         </xs:element>
-                        <xs:element name="DepartureTransportMeans" minOccurs="0" maxOccurs="999" type="DepartureTransportMeansType05">
+                        <xs:element name="DepartureTransportMeans" minOccurs="0" maxOccurs="999">
                             <xs:annotation>
                                 <xs:documentation>
                                     <description value="DEPARTURE TRANSPORT MEANS"/>
                                     <optionality value="D"/>
                                 </xs:documentation>
                             </xs:annotation>
-                            <xs:ComplexType>
+                            <xs:complexType>
                                 <xs:sequence>
                                     <xs:element name="sequenceNumber" type="SequenceNumberContentType">
                                         <xs:annotation>
@@ -762,16 +755,16 @@
                                         </xs:annotation>
                                     </xs:element>
                                 </xs:sequence>
-                            </xs:ComplexType>
+                            </xs:complexType>
                         </xs:element>
-                        <xs:element name="ActiveBorderTransportMeans" minOccurs="0" maxOccurs="9" type="ActiveBorderTransportMeansType03">
+                        <xs:element name="ActiveBorderTransportMeans" minOccurs="0" maxOccurs="9">
                             <xs:annotation>
                                 <xs:documentation>
                                     <description value="ACTIVE BORDER TRANSPORT MEANS"/>
                                     <optionality value="D"/>
                                 </xs:documentation>
                             </xs:annotation>
-                            <xs:ComplexType>
+                            <xs:complexType>
                                 <xs:sequence>
                                     <xs:element name="sequenceNumber" type="SequenceNumberContentType">
                                         <xs:annotation>
@@ -834,16 +827,16 @@
                                         </xs:annotation>
                                     </xs:element>
                                 </xs:sequence>
-                            </xs:ComplexType>
+                            </xs:complexType>
                         </xs:element>
-                        <xs:element name="PlaceOfLoading" minOccurs="0" type="PlaceOfLoadingType03">
+                        <xs:element name="PlaceOfLoading" minOccurs="0">
                             <xs:annotation>
                                 <xs:documentation>
                                     <description value="PLACE OF LOADING"/>
                                     <optionality value="D"/>
                                 </xs:documentation>
                             </xs:annotation>
-                            <xs:ComplexType>
+                            <xs:complexType>
                                 <xs:sequence>
                                     <xs:element name="UNLocode" minOccurs="0" type="UNLocodeContentType">
                                         <xs:annotation>
@@ -877,16 +870,16 @@
                                         </xs:annotation>
                                     </xs:element>
                                 </xs:sequence>
-                            </xs:ComplexType>
+                            </xs:complexType>
                         </xs:element>
-                        <xs:element name="HouseConsignment" maxOccurs="99" type="HouseConsignmentType06">
+                        <xs:element name="HouseConsignment" maxOccurs="99">
                             <xs:annotation>
                                 <xs:documentation>
                                     <description value="HOUSE CONSIGNMENT"/>
                                     <optionality value="R"/>
                                 </xs:documentation>
                             </xs:annotation>
-                            <xs:ComplexType>
+                            <xs:complexType>
                                 <xs:sequence>
                                     <xs:element name="sequenceNumber" type="SequenceNumberContentType">
                                         <xs:annotation>
@@ -897,14 +890,14 @@
                                             </xs:documentation>
                                         </xs:annotation>
                                     </xs:element>
-                                    <xs:element name="DepartureTransportMeans" minOccurs="0" maxOccurs="999" type="DepartureTransportMeansType05">
+                                    <xs:element name="DepartureTransportMeans" minOccurs="0" maxOccurs="999">
                                         <xs:annotation>
                                             <xs:documentation>
                                                 <description value="DEPARTURE TRANSPORT MEANS"/>
                                                 <optionality value="D"/>
                                             </xs:documentation>
                                         </xs:annotation>
-                                        <xs:ComplexType>
+                                        <xs:complexType>
                                             <xs:sequence>
                                                 <xs:element name="sequenceNumber" type="SequenceNumberContentType">
                                                     <xs:annotation>
@@ -948,13 +941,13 @@
                                                     </xs:annotation>
                                                 </xs:element>
                                             </xs:sequence>
-                                        </xs:ComplexType>
+                                        </xs:complexType>
                                     </xs:element>
                                 </xs:sequence>
-                            </xs:ComplexType>
+                            </xs:complexType>
                         </xs:element>
                     </xs:sequence>
-                </xs:ComplexType>
+                </xs:complexType>
             </xs:element>
         </xs:sequence>
     </xs:complexType>
