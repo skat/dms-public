@@ -15,7 +15,7 @@
 Additionally for connectivity, the DMS project has developed a simple AS4 Client, which can be found in the
 [Simple-AS4-Client Github Repository](https://github.com/skat/simple-as4-client)
 
-An overview of Toldsystemets User Interface and how to find various functionalities, can be found in the [DMS Online User Manuals](https://github.com/skat/dms-public/tree/master/Onboarding%20Documents/DMS%20Online%20User%20Manuals)
+An overview of Toldsystemets User Interface and how to find various functionalities, can be found in the [DMS Online User Manuals](https://github.com/skat/dms-public/tree/master/DMS%20Online%20User%20Manuals)
 
 <b> Import (H7 & I2) </b> 
 Testing, verifying connectivity and functionality, test cases and test data can be found here: [Test cases and test data](https://skat.github.io/dms-public/test-data/)
