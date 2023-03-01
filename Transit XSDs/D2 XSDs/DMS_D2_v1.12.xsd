@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
-           xmlns="http://ncts.dgtaxud.ec" targetNamespace="http://ncts.dgtaxud.ec"
-           elementFormDefault="unqualified" attributeFormDefault="unqualified" version="51.8.0" vc:minVersion="1.1">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://ncts.dgtaxud.ec" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" targetNamespace="http://ncts.dgtaxud.ec" elementFormDefault="unqualified" attributeFormDefault="unqualified" version="51.8.0" vc:minVersion="1.1">
   <!--================================================================================-->
   <!--===== IE015: E_DEC_DAT                                                          -->
   <!--===== DECLARATION DATA                                                          -->
@@ -11,12 +9,12 @@
   <!--================================================================================-->
   <!--===== Includes                                                                  -->
   <!--================================================================================-->
-  <xs:include schemaLocation="../NCTS_DS/ctypes.xsd"/>
-  <xs:include schemaLocation="../NCTS_DS/htypes.xsd"/>
+  <xs:include schemaLocation="../NCTS_DS/ctypes.xsd" />
+  <xs:include schemaLocation="../NCTS_DS/htypes.xsd" />
   <!--================================================================================-->
   <!--===== Root Element                                                              -->
   <!--================================================================================-->
-  <xs:element name="CC015C" type="CC015CType"/>
+  <xs:element name="CC015C" type="CC015CType" />
   <!--================================================================================-->
   <!--===== Root Element Content                                                      -->
   <!--================================================================================-->
@@ -25,46 +23,45 @@
       <xs:element name="messageSender" type="MessageSenderContentType">
         <xs:annotation>
           <xs:documentation>
-            <description value="Message sender"/>
+            <description value="Message sender" />
           </xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element name="messageRecipient" type="MessageRecipientContentType">
         <xs:annotation>
           <xs:documentation>
-            <description value="Message recipient"/>
+            <description value="Message recipient" />
           </xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element name="preparationDateAndTime" type="PreparationDateAndTimeContentType">
         <xs:annotation>
           <xs:documentation>
-            <description value="Preparation date and time"/>
+            <description value="Preparation date and time" />
           </xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element name="messageIdentification" type="MessageIdentificationContentType">
         <xs:annotation>
           <xs:documentation>
-            <description value="Message identification"/>
+            <description value="Message identification" />
           </xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element name="messageType" type="MessageTypes">
         <xs:annotation>
           <xs:documentation>
-            <description value="Message type"/>
+            <description value="Message type" />
           </xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element name="correlationIdentifier" type="CorrelationIdentifierContentType" minOccurs="0">
         <xs:annotation>
           <xs:documentation>
-            <description value="Correlation identifier"/>
+            <description value="Correlation identifier" />
           </xs:documentation>
         </xs:annotation>
       </xs:element>
-
       <xs:element name="TransitOperation">
         <xs:complexType>
           <xs:sequence>
@@ -254,10 +251,12 @@
         </xs:complexType>
       </xs:element>
       <xs:element name="CustomsOfficeOfDeparture">
-        <xs:documentation>
-          <xs:EUCDMName>Customs Office of Departure</xs:EUCDMName>
-          <xs:Code>17 03 000 000</xs:Code>
-        </xs:documentation>
+        <xs:annotation>
+          <xs:documentation>
+            <xs:EUCDMName>Customs Office of Departure</xs:EUCDMName>
+            <xs:Code>17 03 000 000</xs:Code>
+          </xs:documentation>
+        </xs:annotation>
         <xs:complexType>
           <xs:sequence>
             <xs:element name="referenceNumber" type="ReferenceNumberContentType05">
@@ -300,10 +299,12 @@
         </xs:complexType>
       </xs:element>
       <xs:element name="CustomsOfficeOfTransitDeclared" minOccurs="0" maxOccurs="9">
-        <xs:documentation>
-          <xs:EUCDMName>Customs Office of Transit</xs:EUCDMName>
-          <xs:Code>17 04 000 000</xs:Code>
-        </xs:documentation>
+        <xs:annotation>
+          <xs:documentation>
+            <xs:EUCDMName>Customs Office of Transit</xs:EUCDMName>
+            <xs:Code>17 04 000 000</xs:Code>
+          </xs:documentation>
+        </xs:annotation>
         <xs:complexType>
           <xs:sequence>
             <xs:element name="sequenceNumber" type="SequenceNumberContentType">
@@ -380,10 +381,12 @@
         </xs:complexType>
       </xs:element>
       <xs:element name="HolderOfTheTransitProcedure">
+      <xs:annotation>
         <xs:documentation>
           <xs:EUCDMName>Holder of the transit procedure</xs:EUCDMName>
           <xs:Code>13 07 000 000</xs:Code>
         </xs:documentation>
+      </xs:annotation>
         <xs:complexType>
           <xs:sequence>
             <xs:element name="identificationNumber" minOccurs="0" type="IdentificationNumberContentType01">
@@ -563,10 +566,12 @@
         </xs:complexType>
       </xs:element>
       <xs:element name="Representative" minOccurs="0">
+      <xs:annotation>
         <xs:documentation>
           <xs:EUCDMName>Representative</xs:EUCDMName>
           <xs:Code>13 06 000 000</xs:Code>
         </xs:documentation>
+      </xs:annotation>
         <xs:complexType>
           <xs:sequence>
             <xs:element name="identificationNumber" type="IdentificationNumberContentType01">
@@ -690,8 +695,7 @@
                 </xs:documentation>
               </xs:annotation>
             </xs:element>
-            <xs:element name="otherGuaranteeReference" minOccurs="0"
-                        type="OtherGuaranteeReferenceContentType02">
+            <xs:element name="otherGuaranteeReference" minOccurs="0" type="OtherGuaranteeReferenceContentType02">
               <xs:annotation>
                 <xs:documentation>
                   <description value="Other guarantee reference"/>
@@ -755,8 +759,7 @@
                       </xs:documentation>
                     </xs:annotation>
                   </xs:element>
-                  <xs:element name="amountToBeCovered" minOccurs="0"
-                              type="AmountToBeCoveredContentType">
+                  <xs:element name="amountToBeCovered" minOccurs="0" type="AmountToBeCoveredContentType">
                     <xs:annotation>
                       <xs:documentation>
                         <description value="Amount to be covered"/>
@@ -790,13 +793,13 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
-
-
       <xs:element name="Consignment">
-        <xs:documentation>
-          <xs:EUCDMName>Container Indicator</xs:EUCDMName>
-          <xs:Code>19 01 000 000</xs:Code>
-        </xs:documentation>
+        <xs:annotation>
+          <xs:documentation>
+            <xs:EUCDMName>Container Indicator</xs:EUCDMName>
+            <xs:Code>19 01 000 000</xs:Code>
+          </xs:documentation>
+        </xs:annotation>
         <xs:complexType>
           <xs:sequence>
             <xs:element name="PreviousDocument" minOccurs="0" maxOccurs="9999">
@@ -864,7 +867,7 @@
                       </xs:documentation>
                     </xs:annotation>
                   </xs:element>
-                  <xs:element name="goodsItemNumber" minOccurs="0" type="GoodsItemNumberContentType">
+                  <xs:element name="goodsItemNumber" minOccurs="0" type="GoodsItemNumberContentType01">
                     <xs:annotation>
                       <xs:documentation>
                         <description value="Goods item number"/>
@@ -891,8 +894,7 @@
                       </xs:documentation>
                     </xs:annotation>
                   </xs:element>
-                  <xs:element name="numberOfPackages" minOccurs="0"
-                              type="NumberOfPackagesContentType">
+                  <xs:element name="numberOfPackages" minOccurs="0" type="NumberOfPackagesContentType01">
                     <xs:annotation>
                       <xs:documentation>
                         <description value="Number of packages"/>
@@ -905,8 +907,7 @@
                       </xs:documentation>
                     </xs:annotation>
                   </xs:element>
-                  <xs:element name="measurementUnitAndQualifier" minOccurs="0"
-                              type="MeasurementUnitAndQualifierContentType">
+                  <xs:element name="measurementUnitAndQualifier" minOccurs="0" type="MeasurementUnitAndQualifierContentType">
                     <xs:annotation>
                       <xs:documentation>
                         <description value="Measurement unit and qualifier"/>
@@ -2363,8 +2364,7 @@
                             </xs:documentation>
                           </xs:annotation>
                         </xs:element>
-                        <xs:element name="complementOfInformation" minOccurs="0"
-                                    type="ComplementOfInformationContentType02">
+                        <xs:element name="complementOfInformation" minOccurs="0" type="ComplementOfInformationContentType02">
                           <xs:annotation>
                             <xs:documentation>
                               <description value="Complement of information"/>
@@ -2378,8 +2378,7 @@
                             </xs:documentation>
                           </xs:annotation>
                         </xs:element>
-                        <xs:element name="goodsItemNumber" minOccurs="0"
-                                    type="GoodsItemNumberContentType">
+                        <xs:element name="goodsItemNumber" minOccurs="0" type="GoodsItemNumberContentType01">
                           <xs:annotation>
                             <xs:documentation>
                               <description value="Goods item number"/>
@@ -2392,13 +2391,11 @@
                             </xs:documentation>
                           </xs:annotation>
                         </xs:element>
-                        <xs:element name="typeOfPackages" minOccurs="0"
-                                    type="TypeOfPackagesContentType">
+                        <xs:element name="typeOfPackages" minOccurs="0" type="TypeOfPackagesContentType">
                           <xs:annotation>
                             <xs:documentation>
                               <description value="Type of packages"/>
-                              <codeList code="CL017" type="business"
-                                        name="KindOfPackages"/>
+                              <codeList code="CL017" type="business" name="KindOfPackages"/>
                               <format value="an2"/>
                               <optionality value="O"/>
                             </xs:documentation>
@@ -2408,8 +2405,7 @@
                             </xs:documentation>
                           </xs:annotation>
                         </xs:element>
-                        <xs:element name="numberOfPackages" minOccurs="0"
-                                    type="NumberOfPackagesContentType">
+                        <xs:element name="numberOfPackages" minOccurs="0" type="NumberOfPackagesContentType01">
                           <xs:annotation>
                             <xs:documentation>
                               <description value="Number of packages"/>
@@ -2422,8 +2418,7 @@
                             </xs:documentation>
                           </xs:annotation>
                         </xs:element>
-                        <xs:element name="measurementUnitAndQualifier" minOccurs="0"
-                                    type="MeasurementUnitAndQualifierContentType">
+                        <xs:element name="measurementUnitAndQualifier" minOccurs="0" type="MeasurementUnitAndQualifierContentType">
                           <xs:annotation>
                             <xs:documentation>
                               <description value="Measurement unit and qualifier"/>
@@ -2479,8 +2474,7 @@
                           <xs:annotation>
                             <xs:documentation>
                               <description value="Code"/>
-                              <codeList code="CL239" type="business"
-                                        name="Additionalinformation"/>
+                              <codeList code="CL239" type="business" name="Additionalinformation"/>
                               <format value="an5"/>
                               <optionality value="R"/>
                             </xs:documentation>
@@ -2533,8 +2527,7 @@
                           <xs:annotation>
                             <xs:documentation>
                               <description value="Type"/>
-                              <codeList code="CL213" type="business"
-                                        name="SupportingDocumentType"/>
+                              <codeList code="CL213" type="business" name="SupportingDocumentType"/>
                               <format value="an4"/>
                               <optionality value="R"/>
                             </xs:documentation>
@@ -2558,8 +2551,7 @@
                             </xs:documentation>
                           </xs:annotation>
                         </xs:element>
-                        <xs:element name="documentLineItemNumber" minOccurs="0"
-                                    type="DocumentLineItemNumberContentType">
+                        <xs:element name="documentLineItemNumber" minOccurs="0" type="DocumentLineItemNumberContentType">
                           <xs:annotation>
                             <xs:documentation>
                               <description value="Document line item number"/>
@@ -2573,8 +2565,7 @@
                             </xs:documentation>
                           </xs:annotation>
                         </xs:element>
-                        <xs:element name="complementOfInformation" minOccurs="0"
-                                    type="ComplementOfInformationContentType02">
+                        <xs:element name="complementOfInformation" minOccurs="0" type="ComplementOfInformationContentType02">
                           <xs:annotation>
                             <xs:documentation>
                               <description value="Complement of information"/>
@@ -2617,8 +2608,7 @@
                           <xs:annotation>
                             <xs:documentation>
                               <description value="Type"/>
-                              <codeList code="CL380" type="business"
-                                        name="AdditionalReferencesType"/>
+                              <codeList code="CL380" type="business" name="AdditionalReferencesType"/>
                               <format value="an4"/>
                               <optionality value="R"/>
                             </xs:documentation>
@@ -2628,8 +2618,7 @@
                             </xs:documentation>
                           </xs:annotation>
                         </xs:element>
-                        <xs:element name="referenceNumber" minOccurs="0"
-                                    type="ReferenceNumberContentType04">
+                        <xs:element name="referenceNumber" minOccurs="0" type="ReferenceNumberContentType04">
                           <xs:annotation>
                             <xs:documentation>
                               <description value="Reference number"/>
@@ -2672,8 +2661,7 @@
                           <xs:annotation>
                             <xs:documentation>
                               <description value="Type"/>
-                              <codeList code="CL754" type="business"
-                                        name="TransportDocumentType"/>
+                              <codeList code="CL754" type="business" name="TransportDocumentType"/>
                               <format value="an4"/>
                               <optionality value="R"/>
                             </xs:documentation>
@@ -2700,8 +2688,7 @@
                       </xs:sequence>
                     </xs:complexType>
                   </xs:element>
-                  <xs:element name="referenceNumberUCR" minOccurs="0"
-                              type="ReferenceNumberUCRContentType02">
+                  <xs:element name="referenceNumberUCR" minOccurs="0" type="ReferenceNumberUCRContentType02">
                     <xs:annotation>
                       <xs:documentation>
                         <description value="Reference number UCR"/>
@@ -2728,8 +2715,7 @@
                     </xs:annotation>
                     <xs:complexType>
                       <xs:sequence>
-                        <xs:element name="identificationNumber" minOccurs="0"
-                                    type="IdentificationNumberContentType01">
+                        <xs:element name="identificationNumber" minOccurs="0" type="IdentificationNumberContentType01">
                           <xs:annotation>
                             <xs:documentation>
                               <description value="Identification number"/>
@@ -2770,15 +2756,13 @@
                           </xs:annotation>
                           <xs:complexType>
                             <xs:sequence>
-                              <xs:element name="streetAndNumber"
-                                          type="StreetAndNumberContentType02">
+                              <xs:element name="streetAndNumber" type="StreetAndNumberContentType02">
                                 <xs:annotation>
                                   <xs:documentation>
                                     <description value="Street and number"/>
                                     <format value="an..70"/>
                                     <optionality value="R"/>
-                                    <xsdBaseType
-                                            value="AlphaNumeric_MAX70_NoSpaces"/>
+                                    <xsdBaseType value="AlphaNumeric_MAX70_NoSpaces"/>
                                   </xs:documentation>
                                   <xs:documentation>
                                     <xs:EUCDMName>Street and number</xs:EUCDMName>
@@ -2786,15 +2770,13 @@
                                   </xs:documentation>
                                 </xs:annotation>
                               </xs:element>
-                              <xs:element name="postcode" minOccurs="0"
-                                          type="PostcodeContentType02">
+                              <xs:element name="postcode" minOccurs="0" type="PostcodeContentType02">
                                 <xs:annotation>
                                   <xs:documentation>
                                     <description value="Postcode"/>
                                     <format value="an..17"/>
                                     <optionality value="D"/>
-                                    <xsdBaseType
-                                            value="AlphaNumeric_MAX17_NoSpaces"/>
+                                    <xsdBaseType value="AlphaNumeric_MAX17_NoSpaces"/>
                                   </xs:documentation>
                                   <xs:documentation>
                                     <xs:EUCDMName>Postcode</xs:EUCDMName>
@@ -2808,8 +2790,7 @@
                                     <description value="City"/>
                                     <format value="an..35"/>
                                     <optionality value="R"/>
-                                    <xsdBaseType
-                                            value="AlphaNumeric_MAX35_NoSpaces"/>
+                                    <xsdBaseType value="AlphaNumeric_MAX35_NoSpaces"/>
                                   </xs:documentation>
                                   <xs:documentation>
                                     <xs:EUCDMName>City</xs:EUCDMName>
@@ -2821,8 +2802,7 @@
                                 <xs:annotation>
                                   <xs:documentation>
                                     <description value="Country"/>
-                                    <codeList code="CL248" type="business"
-                                              name="Countrycodesforaddress"/>
+                                    <codeList code="CL248" type="business" name="Countrycodesforaddress"/>
                                     <format value="a2"/>
                                     <optionality value="R"/>
                                     <xsdBaseType value="CountryCodeType"/>
@@ -2852,8 +2832,7 @@
                           <xs:annotation>
                             <xs:documentation>
                               <description value="Method of payment"/>
-                              <codeList code="CL116" type="business"
-                                        name="TransportChargesMethodOfPayment"/>
+                              <codeList code="CL116" type="business" name="TransportChargesMethodOfPayment"/>
                               <format value="a1"/>
                               <optionality value="R"/>
                               <xsdBaseType value="AlphaCapital1Type"/>
@@ -2872,7 +2851,6 @@
                       </xs:documentation>
                     </xs:annotation>
                   </xs:element>
-
                   <xs:element name="ConsignmentItem" maxOccurs="999">
                     <xs:annotation>
                       <xs:documentation>
@@ -2891,13 +2869,11 @@
                         </xs:documentation>
                       </xs:annotation>
                       <xs:sequence>
-                        <xs:element name="declarationType" minOccurs="0"
-                                    type="DeclarationTypeContentType02">
+                        <xs:element name="declarationType" minOccurs="0" type="DeclarationTypeContentType02">
                           <xs:annotation>
                             <xs:documentation>
                               <description value="Declaration type"/>
-                              <codeList code="CL232" type="business"
-                                        name="DeclarationTypeItemLevel"/>
+                              <codeList code="CL232" type="business" name="DeclarationTypeItemLevel"/>
                               <format value="an..5"/>
                               <optionality value="D"/>
                             </xs:documentation>
@@ -2916,8 +2892,7 @@
                           </xs:annotation>
                           <xs:complexType>
                             <xs:sequence>
-                              <xs:element name="sequenceNumber"
-                                          type="SequenceNumberContentType">
+                              <xs:element name="sequenceNumber" type="SequenceNumberContentType">
                                 <xs:annotation>
                                   <xs:documentation>
                                     <description value="Sequence number"/>
@@ -2930,8 +2905,7 @@
                                 <xs:annotation>
                                   <xs:documentation>
                                     <description value="Type"/>
-                                    <codeList code="CL214" type="business"
-                                              name="Previousdocumenttype"/>
+                                    <codeList code="CL214" type="business" name="Previousdocumenttype"/>
                                     <format value="an4"/>
                                     <optionality value="R"/>
                                   </xs:documentation>
@@ -2941,15 +2915,13 @@
                                   </xs:documentation>
                                 </xs:annotation>
                               </xs:element>
-                              <xs:element name="referenceNumber"
-                                          type="ReferenceNumberContentType04">
+                              <xs:element name="referenceNumber" type="ReferenceNumberContentType04">
                                 <xs:annotation>
                                   <xs:documentation>
                                     <description value="Reference number"/>
                                     <format value="an..70"/>
                                     <optionality value="R"/>
-                                    <xsdBaseType
-                                            value="AlphaNumeric_MAX70_NoSpaces"/>
+                                    <xsdBaseType value="AlphaNumeric_MAX70_NoSpaces"/>
                                   </xs:documentation>
                                   <xs:documentation>
                                     <xs:EUCDMName>Reference number</xs:EUCDMName>
@@ -2957,15 +2929,13 @@
                                   </xs:documentation>
                                 </xs:annotation>
                               </xs:element>
-                              <xs:element name="complementOfInformation" minOccurs="0"
-                                          type="ComplementOfInformationContentType02">
+                              <xs:element name="complementOfInformation" minOccurs="0" type="ComplementOfInformationContentType02">
                                 <xs:annotation>
                                   <xs:documentation>
                                     <description value="Complement of information"/>
                                     <format value="an..35"/>
                                     <optionality value="O"/>
-                                    <xsdBaseType
-                                            value="AlphaNumeric_MAX35_NoSpaces"/>
+                                    <xsdBaseType value="AlphaNumeric_MAX35_NoSpaces"/>
                                   </xs:documentation>
                                   <xs:documentation>
                                     <xs:EUCDMName>Complement of information
@@ -2974,8 +2944,7 @@
                                   </xs:documentation>
                                 </xs:annotation>
                               </xs:element>
-                              <xs:element name="goodsItemNumber" minOccurs="0"
-                                          type="GoodsItemNumberContentType">
+                              <xs:element name="goodsItemNumber" minOccurs="0" type="GoodsItemNumberContentType01">
                                 <xs:annotation>
                                   <xs:documentation>
                                     <description value="Goods item number"/>
@@ -2989,13 +2958,11 @@
                                   </xs:documentation>
                                 </xs:annotation>
                               </xs:element>
-                              <xs:element name="typeOfPackages" minOccurs="0"
-                                          type="TypeOfPackagesContentType">
+                              <xs:element name="typeOfPackages" minOccurs="0" type="TypeOfPackagesContentType">
                                 <xs:annotation>
                                   <xs:documentation>
                                     <description value="Type of packages"/>
-                                    <codeList code="CL017" type="business"
-                                              name="KindOfPackages"/>
+                                    <codeList code="CL017" type="business" name="KindOfPackages"/>
                                     <format value="an2"/>
                                     <optionality value="O"/>
                                   </xs:documentation>
@@ -3005,8 +2972,7 @@
                                   </xs:documentation>
                                 </xs:annotation>
                               </xs:element>
-                              <xs:element name="numberOfPackages" minOccurs="0"
-                                          type="NumberOfPackagesContentType">
+                              <xs:element name="numberOfPackages" minOccurs="0" type="NumberOfPackagesContentType01">
                                 <xs:annotation>
                                   <xs:documentation>
                                     <description value="Number of packages"/>
