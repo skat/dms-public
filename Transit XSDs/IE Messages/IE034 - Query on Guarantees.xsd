@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
+           xmlns="http://ncts.dgtaxud.ec" targetNamespace="http://ncts.dgtaxud.ec"
+           elementFormDefault="unqualified" attributeFormDefault="unqualified" version="51.8.0" vc:minVersion="1.1">
+  <!--================================================================================-->
+  <!--===== IE034: E_GUA_QUE                                                          -->
+  <!--===== QUERY ON GUARANTEES                                                       -->
+  <!--===== NCTS P5 Phase Definition                                                  -->
+  <!--===== XSD Version 51.8.0                                                        -->
+  <!--================================================================================-->
+  <!--================================================================================-->
+  <!--===== Includes                                                                  -->
+  <!--================================================================================-->
+  <xs:include schemaLocation="../NCTS_DS/ctypes.xsd" />
+  <xs:include schemaLocation="../NCTS_DS/htypes.xsd" />
+  <!--================================================================================-->
+  <!--===== Root Element                                                              -->
+  <!--================================================================================-->
+  <xs:element name="CC034C" type="CC034CType" />
+  <!--================================================================================-->
+  <!--===== Root Element Content                                                      -->
+  <!--================================================================================-->
+  <xs:complexType name="CC034CType">
+    <xs:sequence>
+      <xs:element name="messageSender" type="MessageSenderContentType">
+        <xs:annotation>
+          <xs:documentation>
+            <description value="Message sender"/>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="messageRecipient" type="MessageRecipientContentType">
+        <xs:annotation>
+          <xs:documentation>
+            <description value="Message recipient"/>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="preparationDateAndTime" type="PreparationDateAndTimeContentType">
+        <xs:annotation>
+          <xs:documentation>
+            <description value="Preparation date and time"/>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="messageIdentification" type="MessageIdentificationContentType">
+        <xs:annotation>
+          <xs:documentation>
+            <description value="Message identification"/>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="messageType" type="MessageTypes">
+        <xs:annotation>
+          <xs:documentation>
+            <description value="Message type"/>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="correlationIdentifier" type="CorrelationIdentifierContentType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <description value="Correlation identifier"/>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Requester">
+        <xs:annotation>
+          <xs:documentation>
+            <description value="REQUESTER" />
+            <optionality value="R" />
+          </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="identificationNumber" type="IdentificationNumberContentType01">
+              <xs:annotation>
+                <xs:documentation>
+                  <description value="Identification number" />
+                  <format value="an..17" />
+                  <optionality value="R" />
+                  <xsdBaseType value="AlphaNumeric_MAX17_NoSpaces" />
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="role" type="RoleContentType02">
+              <xs:annotation>
+                <xs:documentation>
+                  <description value="Role" />
+                  <codeList code="CL156" type="business" name="RoleRequester" />
+                  <format value="n1" />
+                  <optionality value="R" />
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GuaranteeReference" maxOccurs="99">
+        <xs:annotation>
+          <xs:documentation>
+            <description value="GUARANTEE REFERENCE" />
+            <optionality value="R" />
+          </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="sequenceNumber" type="SequenceNumberContentType">
+              <xs:annotation>
+                <xs:documentation>
+                  <description value="Sequence number" />
+                  <format value="n..5" />
+                  <optionality value="R" />
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="GRN" type="GrnContentType">
+              <xs:annotation>
+                <xs:documentation>
+                  <description value="GRN" />
+                  <format value="an..24" />
+                  <optionality value="R" />
+                  <xsdBaseType value="GRNType" />
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="GuaranteeQuery" type="GuaranteeQueryType">
+              <xs:annotation>
+                <xs:documentation>
+                  <description value="GUARANTEE QUERY" />
+                  <optionality value="R" />
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="Owner" minOccurs="0" type="OwnerType01">
+              <xs:annotation>
+                <xs:documentation>
+                  <description value="OWNER" />
+                  <optionality value="D" />
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="AccessCode" type="AccessCodeType02">
+              <xs:annotation>
+                <xs:documentation>
+                  <description value="ACCESS CODE" />
+                  <optionality value="R" />
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
