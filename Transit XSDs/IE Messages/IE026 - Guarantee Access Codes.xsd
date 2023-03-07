@@ -197,13 +197,37 @@
                 </xs:documentation>
               </xs:annotation>
             </xs:element>
-            <xs:element name="AccessCode" type="AccessCodeType01">
+            <xs:element name="AccessCode">
               <xs:annotation>
                 <xs:documentation>
                   <description value="ACCESS CODE" />
                   <optionality value="R" />
                 </xs:documentation>
               </xs:annotation>
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="accessCodeCurrent" minOccurs="0" type="AccessCodeCurrentContentType">
+                    <xs:annotation>
+                      <xs:documentation>
+                        <description value="Access code current" />
+                        <format value="an..4" />
+                        <optionality value="O" />
+                        <xsdBaseType value="AlphaNumeric_MAX4_NoSpaces" />
+                      </xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+                  <xs:element name="accessCodeNew" minOccurs="0" type="AccessCodeNewContentType">
+                    <xs:annotation>
+                      <xs:documentation>
+                        <description value="Access code new" />
+                        <format value="an..4" />
+                        <optionality value="O" />
+                        <xsdBaseType value="AlphaNumeric_MAX4_NoSpaces" />
+                      </xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
             </xs:element>
           </xs:sequence>
         </xs:complexType>

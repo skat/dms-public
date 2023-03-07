@@ -9,12 +9,12 @@
     <!--================================================================================-->
     <!--===== Includes                                                                  -->
     <!--================================================================================-->
-    <xs:include schemaLocation="../NCTS_DS/ctypes.xsd" />
-    <xs:include schemaLocation="../NCTS_DS/htypes.xsd" />
+    <xs:include schemaLocation="../NCTS_DS/ctypes.xsd"/>
+    <xs:include schemaLocation="../NCTS_DS/htypes.xsd"/>
     <!--================================================================================-->
     <!--===== Root Element                                                              -->
     <!--================================================================================-->
-    <xs:element name="CC014C" type="CC014CType" />
+    <xs:element name="CC014C" type="CC014CType"/>
     <!--================================================================================-->
     <!--===== Root Element Content                                                      -->
     <!--================================================================================-->
@@ -69,6 +69,7 @@
                         <optionality value="R" />
                     </xs:documentation>
                 </xs:annotation>
+                <xs:complexType>
                 <xs:sequence>
                     <xs:element name="LRN" minOccurs="0" type="LRNContentType03">
                         <xs:annotation>
@@ -91,6 +92,7 @@
                         </xs:annotation>
                     </xs:element>
                 </xs:sequence>
+                </xs:complexType>
             </xs:element>
             <xs:element name="Invalidation">
                 <xs:annotation>
@@ -99,6 +101,7 @@
                         <optionality value="R" />
                     </xs:documentation>
                 </xs:annotation>
+                <xs:complexType>
                 <xs:sequence>
                     <xs:element name="requestDateAndTime" minOccurs="0" type="RequestDateAndTimeContentType">
                         <xs:annotation>
@@ -151,6 +154,7 @@
                         </xs:annotation>
                     </xs:element>
                 </xs:sequence>
+                </xs:complexType>
             </xs:element>
             <xs:element name="CustomsOfficeOfDeparture">
                 <xs:annotation>
@@ -159,6 +163,8 @@
                         <optionality value="R" />
                     </xs:documentation>
                 </xs:annotation>
+                <xs:complexType>
+                <xs:sequence>
                 <xs:element name="referenceNumber" type="ReferenceNumberContentType05">
                     <xs:annotation>
                         <xs:documentation>
@@ -170,6 +176,8 @@
                         </xs:documentation>
                     </xs:annotation>
                 </xs:element>
+                </xs:sequence>
+                </xs:complexType>
             </xs:element>
             <xs:element name="HolderOfTheTransitProcedure">
                 <xs:annotation>
@@ -178,6 +186,7 @@
                         <optionality value="R" />
                     </xs:documentation>
                 </xs:annotation>
+                <xs:complexType>
                 <xs:sequence>
                     <xs:element name="identificationNumber" minOccurs="0" type="IdentificationNumberContentType01">
                         <xs:annotation>
@@ -216,6 +225,7 @@
                                 <optionality value="D" />
                             </xs:documentation>
                         </xs:annotation>
+                        <xs:complexType>
                         <xs:sequence>
                             <xs:element name="streetAndNumber" type="StreetAndNumberContentType01">
                                 <xs:annotation>
@@ -259,6 +269,7 @@
                                 </xs:annotation>
                             </xs:element>
                         </xs:sequence>
+                        </xs:complexType>
                     </xs:element>
                     <xs:element name="ContactPerson" minOccurs="0">
                         <xs:annotation>
@@ -267,6 +278,7 @@
                                 <optionality value="O" />
                             </xs:documentation>
                         </xs:annotation>
+                        <xs:complexType>
                         <xs:sequence>
                             <xs:element name="name" type="NameContentType01">
                                 <xs:annotation>
@@ -298,8 +310,10 @@
                                 </xs:annotation>
                             </xs:element>
                         </xs:sequence>
+                        </xs:complexType>
                     </xs:element>
                 </xs:sequence>
+                </xs:complexType>
             </xs:element>
         </xs:sequence>
         <xs:attribute name="PhaseID" type="phaseIDtype" />
