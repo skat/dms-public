@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
-           xmlns="http://ncts.dgtaxud.ec" targetNamespace="http://ncts.dgtaxud.ec"
-           elementFormDefault="unqualified" attributeFormDefault="unqualified" version="51.8.0" vc:minVersion="1.1">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://ncts.dgtaxud.ec" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" targetNamespace="http://ncts.dgtaxud.ec" elementFormDefault="unqualified" attributeFormDefault="unqualified" version="51.8.0" vc:minVersion="1.1">
     <!--================================================================================-->
-    <!--===== IE015: E_DEC_DAT                                                          -->
-    <!--===== DECLARATION DATA                                                          -->
+    <!--===== IE054: E_REQ_REL                                                          -->
+    <!--===== REQUEST OF RELEASE                                                        -->
     <!--===== NCTS P5 Phase Definition                                                  -->
     <!--===== XSD Version 51.8.0                                                        -->
     <!--================================================================================-->
@@ -22,53 +20,47 @@
     <!--================================================================================-->
     <xs:complexType name="CC054CType">
         <xs:sequence>
-            <xs:element name="Message" type="MessageSenderContentType">
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:element name="messageSender" type="MessageSenderContentType">
-                            <xs:annotation>
-                                <xs:documentation>
-                                    <description value="Message sender"/>
-                                </xs:documentation>
-                            </xs:annotation>
-                        </xs:element>
-                        <xs:element name="messageRecipient" type="MessageRecipientContentType">
-                            <xs:annotation>
-                                <xs:documentation>
-                                    <description value="Message recipient"/>
-                                </xs:documentation>
-                            </xs:annotation>
-                        </xs:element>
-                        <xs:element name="preparationDateAndTime" type="PreparationDateAndTimeContentType">
-                            <xs:annotation>
-                                <xs:documentation>
-                                    <description value="Preparation date and time"/>
-                                </xs:documentation>
-                            </xs:annotation>
-                        </xs:element>
-                        <xs:element name="messageIdentification" type="MessageIdentificationContentType">
-                            <xs:annotation>
-                                <xs:documentation>
-                                    <description value="Message identification"/>
-                                </xs:documentation>
-                            </xs:annotation>
-                        </xs:element>
-                        <xs:element name="messageType" type="MessageTypes">
-                            <xs:annotation>
-                                <xs:documentation>
-                                    <description value="Message type"/>
-                                </xs:documentation>
-                            </xs:annotation>
-                        </xs:element>
-                        <xs:element name="correlationIdentifier" type="CorrelationIdentifierContentType" minOccurs="0">
-                            <xs:annotation>
-                                <xs:documentation>
-                                    <description value="Correlation identifier"/>
-                                </xs:documentation>
-                            </xs:annotation>
-                        </xs:element>
-                    </xs:sequence>
-                </xs:complexType>
+            <xs:element name="messageSender" type="MessageSenderContentType">
+                <xs:annotation>
+                    <xs:documentation>
+                        <description value="Message sender"/>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="messageRecipient" type="MessageRecipientContentType">
+                <xs:annotation>
+                    <xs:documentation>
+                        <description value="Message recipient"/>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="preparationDateAndTime" type="PreparationDateAndTimeContentType">
+                <xs:annotation>
+                    <xs:documentation>
+                        <description value="Preparation date and time"/>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="messageIdentification" type="MessageIdentificationContentType">
+                <xs:annotation>
+                    <xs:documentation>
+                        <description value="Message identification"/>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="messageType" type="MessageTypes">
+                <xs:annotation>
+                    <xs:documentation>
+                        <description value="Message type"/>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="correlationIdentifier" type="CorrelationIdentifierContentType" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>
+                        <description value="Correlation identifier"/>
+                    </xs:documentation>
+                </xs:annotation>
             </xs:element>
             <xs:element name="TransitOperation">
                 <xs:complexType>
@@ -136,8 +128,7 @@
                                 </xs:documentation>
                             </xs:annotation>
                         </xs:element>
-                        <xs:element name="TIRHolderIdentificationNumber" minOccurs="0"
-                                    type="TIRHolderIdentificationNumberContentType02">
+                        <xs:element name="TIRHolderIdentificationNumber" minOccurs="0" type="TIRHolderIdentificationNumberContentType02">
                             <xs:annotation>
                                 <xs:documentation>
                                     <description value="TIR holder identification number"/>
@@ -157,14 +148,14 @@
                                 </xs:documentation>
                             </xs:annotation>
                         </xs:element>
-                        <xs:element name="Address" minOccurs="0" type="AddressType17">
+                        <xs:element name="Address" minOccurs="0">
                             <xs:annotation>
                                 <xs:documentation>
                                     <description value="ADDRESS"/>
                                     <optionality value="D"/>
                                 </xs:documentation>
                             </xs:annotation>
-                            <xs:ComplexType>
+                            <xs:complexType>
                                 <xs:sequence>
                                     <xs:element name="streetAndNumber" type="StreetAndNumberContentType02">
                                         <xs:annotation>
@@ -208,7 +199,7 @@
                                         </xs:annotation>
                                     </xs:element>
                                 </xs:sequence>
-                            </xs:ComplexType>
+                            </xs:complexType>
                         </xs:element>
                     </xs:sequence>
                 </xs:complexType>
