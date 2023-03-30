@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" version="2.2">
+  <xs:include schemaLocation="trader-portal-notification.xsd"/>
+  <xs:element name="NotificationResult">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        The main object that the notification REST API returns. All information are stored
+        under this object
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:sequence>
+          <xs:element name="TotalSize" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Number of notification records</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="LRN" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The functionalReferenceId</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="MRN" type="MRNType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The id of the declaration information being received from cwm</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Notifications" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Optional:</xs:documentation>
+            </xs:annotation>
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Notification" type="Notification" minOccurs="0" maxOccurs="unbounded">
+                  <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                      The XSD to which all the WCO Notification Messages comply.
+                    </xs:documentation>
+                  </xs:annotation>
+                </xs:element>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>
