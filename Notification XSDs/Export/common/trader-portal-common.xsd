@@ -409,9 +409,20 @@
   </xs:complexType>
   <xs:complexType name="Error">
     <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Pointer" type="Pointer"/>
       <xs:element minOccurs="0" name="ValidationCode" type="xs:string">
         <xs:annotation>
           <xs:documentation xml:lang="en">The validation error code</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="ValidationInformation" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">The validation error information</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="ValidationRule" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">The validation error rule</xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element minOccurs="0" name="ValidationText" type="xs:string">
@@ -419,7 +430,6 @@
           <xs:documentation xml:lang="en">The validation error text message</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="Pointer" type="Pointer"/>
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="Pointer">

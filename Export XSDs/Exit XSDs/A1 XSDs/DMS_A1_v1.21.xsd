@@ -31,6 +31,20 @@
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
+            <xs:element name="specificCircumstances" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>
+                        <EUCDMname>Specific Circumstance Indicator</EUCDMname>
+                        <EUCDMversion>EUCDM 6.1</EUCDMversion>
+                        <code>13 06 030 000</code>
+                    </xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="Code.Content" type="Code.Content"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
             <xs:element name="FunctionCode">
                 <xs:complexType>
                     <xs:sequence>
@@ -89,7 +103,7 @@
                                 </xs:sequence>
                             </xs:complexType>
                         </xs:element>
-                        <xs:element name="Contact" minOccurs="0" maxOccurs="9">
+                        <xs:element name="Contact" minOccurs="0">
                             <xs:annotation>
                                 <xs:documentation>
                                     <EUCDMname>Contact person</EUCDMname>
@@ -221,7 +235,7 @@
                                 </xs:sequence>
                             </xs:complexType>
                         </xs:element>
-                        <xs:element name="Contact" minOccurs="0" maxOccurs="9">
+                        <xs:element name="Contact" minOccurs="0">
                             <xs:annotation>
                                 <xs:documentation>
                                     <EUCDMname>Contact person</EUCDMname>
@@ -238,7 +252,7 @@
                                             </xs:sequence>
                                         </xs:complexType>
                                     </xs:element>
-                                    <xs:element name="name" minOccurs="0">
+                                    <xs:element name="name">
                                         <xs:annotation>
                                             <xs:documentation>
                                                 <EUCDMname>Name</EUCDMname>
@@ -357,7 +371,7 @@
                                 </xs:sequence>
                             </xs:complexType>
                         </xs:element>
-                        <xs:element name="container">
+                        <xs:element name="container" minOccurs="0">
                             <xs:annotation>
                                 <xs:documentation>
                                     <EUCDMname>Container Indicator</EUCDMname>
@@ -371,7 +385,7 @@
                                 </xs:sequence>
                             </xs:complexType>
                         </xs:element>
-                        <xs:element name="totalGrossMass">
+                        <xs:element name="totalGrossMass" minOccurs="0">
                             <xs:annotation>
                                 <xs:documentation>
                                     <EUCDMname>Gross Mass</EUCDMname>
@@ -385,7 +399,7 @@
                                 </xs:sequence>
                             </xs:complexType>
                         </xs:element>
-                        <xs:element name="AdditionalInformation" minOccurs="0">
+                        <xs:element name="AdditionalInformation" minOccurs="0" maxOccurs="99">
                             <xs:annotation>
                                 <xs:documentation>
                                     <EUCDMname>Additional Information</EUCDMname>
@@ -417,7 +431,7 @@
                                             </xs:sequence>
                                         </xs:complexType>
                                     </xs:element>
-                                    <xs:element name="statementDescription">
+                                    <xs:element name="statementDescription" minOccurs="0">
                                         <xs:annotation>
                                             <xs:documentation>
                                                 <EUCDMname>Text</EUCDMname>
@@ -435,7 +449,35 @@
                                 </xs:sequence>
                             </xs:complexType>
                         </xs:element>
-                        <xs:element name="AEOMutualRecognitionParty" minOccurs="0">
+                        <xs:element name="AdditionalReference" minOccurs="0" maxOccurs="99">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="sequence">
+                                        <xs:complexType>
+                                            <xs:sequence>
+                                                <xs:element name="Numeric.Content" type="Numeric.Content">
+                                                </xs:element>
+                                            </xs:sequence>
+                                        </xs:complexType>
+                                    </xs:element>
+                                    <xs:element name="identification_2">
+                                        <xs:complexType>
+                                            <xs:sequence>
+                                                <xs:element name="Identifier.Content" type="Identifier.Content"/>
+                                            </xs:sequence>
+                                        </xs:complexType>
+                                    </xs:element>
+                                    <xs:element name="type_3">
+                                        <xs:complexType>
+                                            <xs:sequence>
+                                                <xs:element name="Code.Content" type="Code.Content"/>
+                                            </xs:sequence>
+                                        </xs:complexType>
+                                    </xs:element>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="AEOMutualRecognitionParty" minOccurs="0" maxOccurs="99">
                             <xs:annotation>
                                 <xs:documentation>
                                     <EUCDMname>Additional Supply Chains</EUCDMname>
@@ -509,7 +551,7 @@
                                             </xs:sequence>
                                         </xs:complexType>
                                     </xs:element>
-                                    <xs:element name="Contact" minOccurs="0" maxOccurs="9">
+                                    <xs:element name="Contact" minOccurs="0">
                                         <xs:annotation>
                                             <xs:documentation>
                                                 <EUCDMname>Contact Person</EUCDMname>
@@ -526,7 +568,7 @@
                                                         </xs:sequence>
                                                     </xs:complexType>
                                                 </xs:element>
-                                                <xs:element name="name" minOccurs="0">
+                                                <xs:element name="name">
                                                     <xs:annotation>
                                                         <xs:documentation>
                                                             <EUCDMname>Name</EUCDMname>
@@ -591,7 +633,7 @@
                                             </xs:sequence>
                                         </xs:complexType>
                                     </xs:element>
-                                    <xs:element name="sequence" minOccurs="0">
+                                    <xs:element name="sequence">
                                         <xs:complexType>
                                             <xs:sequence>
                                                 <xs:element name="Numeric.Content" type="Numeric.Content">
@@ -703,7 +745,7 @@
                                                         </xs:sequence>
                                                     </xs:complexType>
                                                 </xs:element>
-                                                <xs:element name="postcode">
+                                                <xs:element name="postcode" minOccurs="0">
                                                     <xs:annotation>
                                                         <xs:documentation>
                                                             <EUCDMname>Postcde</EUCDMname>
@@ -731,7 +773,7 @@
                                 </xs:sequence>
                             </xs:complexType>
                         </xs:element>
-                        <xs:element name="ConsignmentItem">
+                        <xs:element name="ConsignmentItem" maxOccurs="999">
                             <xs:annotation>
                                 <xs:documentation>
                                     <EUCDMname>Consignment Item</EUCDMname>
@@ -756,7 +798,7 @@
                                             </xs:sequence>
                                         </xs:complexType>
                                     </xs:element>
-                                    <xs:element name="Packaging">
+                                    <xs:element name="Packaging" minOccurs="0" maxOccurs="99">
                                         <xs:annotation>
                                             <xs:documentation>
                                                 <EUCDMname>Packaging</EUCDMname>
@@ -788,7 +830,7 @@
                                                         </xs:sequence>
                                                     </xs:complexType>
                                                 </xs:element>
-                                                <xs:element name="quantity">
+                                                <xs:element name="quantity" minOccurs="0">
                                                     <xs:annotation>
                                                         <xs:documentation>
                                                             <EUCDMname>Number of Packages</EUCDMname>
@@ -819,7 +861,7 @@
                                             </xs:sequence>
                                         </xs:complexType>
                                     </xs:element>
-                                    <xs:element name="AdditionalInformation" minOccurs="0">
+                                    <xs:element name="AdditionalInformation" minOccurs="0" maxOccurs="99">
                                         <xs:annotation>
                                             <xs:documentation>
                                                 <EUCDMname>Additional Information</EUCDMname>
@@ -851,7 +893,7 @@
                                                         </xs:sequence>
                                                     </xs:complexType>
                                                 </xs:element>
-                                                <xs:element name="statementDescription">
+                                                <xs:element name="statementDescription" minOccurs="0">
                                                     <xs:annotation>
                                                         <xs:documentation>
                                                             <EUCDMname>Text</EUCDMname>
@@ -869,10 +911,38 @@
                                             </xs:sequence>
                                         </xs:complexType>
                                     </xs:element>
-                                    <xs:element name="AEOMutualRecognitionParty" minOccurs="0">
+                                    <xs:element name="AdditionalReference" minOccurs="0" maxOccurs="99">
+                                        <xs:complexType>
+                                            <xs:sequence>
+                                                <xs:element name="sequence">
+                                                    <xs:complexType>
+                                                        <xs:sequence>
+                                                            <xs:element name="Numeric.Content" type="Numeric.Content">
+                                                            </xs:element>
+                                                        </xs:sequence>
+                                                    </xs:complexType>
+                                                </xs:element>
+                                                <xs:element name="identification_2">
+                                                    <xs:complexType>
+                                                        <xs:sequence>
+                                                            <xs:element name="Identifier.Content" type="Identifier.Content"/>
+                                                        </xs:sequence>
+                                                    </xs:complexType>
+                                                </xs:element>
+                                                <xs:element name="type_3">
+                                                    <xs:complexType>
+                                                        <xs:sequence>
+                                                            <xs:element name="Code.Content" type="Code.Content"/>
+                                                        </xs:sequence>
+                                                    </xs:complexType>
+                                                </xs:element>
+                                            </xs:sequence>
+                                        </xs:complexType>
+                                    </xs:element>
+                                    <xs:element name="AEOMutualRecognitionParty" minOccurs="0" maxOccurs="99">
                                         <xs:annotation>
                                             <xs:documentation>
-                                                <EUCDMname>Additional Supply Chain Actor</EUCDMname>
+                                                <EUCDMname>Additional Supply Chains</EUCDMname>
                                                 <EUCDMversion>EUCDM 6.1</EUCDMversion>
                                                 <code>13 14 000 000</code>
                                             </xs:documentation>
@@ -919,7 +989,7 @@
                                             </xs:sequence>
                                         </xs:complexType>
                                     </xs:element>
-                                    <xs:element name="Commodity" minOccurs="0">
+                                    <xs:element name="Commodity">
                                         <xs:annotation>
                                             <xs:documentation>
                                                 <EUCDMname>Commodity Code</EUCDMname>
@@ -955,7 +1025,7 @@
                                                         </xs:sequence>
                                                     </xs:complexType>
                                                 </xs:element>
-                                                <xs:element name="Classification" minOccurs="0">
+                                                <xs:element name="Classification">
                                                     <xs:annotation>
                                                         <xs:documentation>
                                                             <EUCDMname>CUS Code</EUCDMname>
@@ -1024,7 +1094,7 @@
                                                         </xs:sequence>
                                                     </xs:complexType>
                                                 </xs:element>
-                                                <xs:element name="DangerousGoods" minOccurs="0">
+                                                <xs:element name="DangerousGoods" minOccurs="0" maxOccurs="99">
                                                     <xs:complexType>
                                                         <xs:sequence>
                                                             <xs:element name="sequence">
@@ -1053,7 +1123,7 @@
                                                         </xs:sequence>
                                                     </xs:complexType>
                                                 </xs:element>
-                                                <xs:element name="GoodsMeasure">
+                                                <xs:element name="GoodsMeasure" minOccurs="0">
                                                     <xs:annotation>
                                                         <xs:documentation>
                                                             <EUCDMname>Gross Mass</EUCDMname>
@@ -1119,7 +1189,7 @@
                                                 <xs:element name="identification_2" minOccurs="0">
                                                     <xs:annotation>
                                                         <xs:documentation>
-                                                            <EUCDMname>Identification number</EUCDMname>
+                                                            <EUCDMname>Identification Numer</EUCDMname>
                                                             <EUCDMversion>EUCDM 6.1</EUCDMversion>
                                                             <code>13 03 017 000</code>
                                                         </xs:documentation>
@@ -1192,10 +1262,10 @@
                                                                     </xs:sequence>
                                                                 </xs:complexType>
                                                             </xs:element>
-                                                            <xs:element name="postcode">
+                                                            <xs:element name="postcode" minOccurs="0">
                                                                 <xs:annotation>
                                                                     <xs:documentation>
-                                                                        <EUCDMname>Consignee</EUCDMname>
+                                                                        <EUCDMname>Postcde</EUCDMname>
                                                                         <EUCDMversion>EUCDM 6.1</EUCDMversion>
                                                                         <code>13 03 018 021</code>
                                                                     </xs:documentation>
@@ -1230,7 +1300,7 @@
                                         </xs:annotation>
                                         <xs:complexType>
                                             <xs:sequence>
-                                                <xs:element name="name"  minOccurs="0">
+                                                <xs:element name="name" minOccurs="0">
                                                     <xs:annotation>
                                                         <xs:documentation>
                                                             <EUCDMname>Consignee</EUCDMname>
@@ -1321,7 +1391,7 @@
                                                                     </xs:sequence>
                                                                 </xs:complexType>
                                                             </xs:element>
-                                                            <xs:element name="postcode">
+                                                            <xs:element name="postcode" minOccurs="0">
                                                                 <xs:annotation>
                                                                     <xs:documentation>
                                                                         <EUCDMname>Postcode</EUCDMname>
@@ -1338,7 +1408,7 @@
                                                         </xs:sequence>
                                                     </xs:complexType>
                                                 </xs:element>
-                                                <xs:element name="sequence">
+                                                <xs:element name="sequence" minOccurs="0">
                                                     <xs:complexType>
                                                         <xs:sequence>
                                                             <xs:element name="Numeric.Content" type="Numeric.Content">
@@ -1352,7 +1422,7 @@
                                     <xs:element name="Freight" minOccurs="0">
                                         <xs:annotation>
                                             <xs:documentation>
-                                                <EUCDMname>Transport charges</EUCDMname>
+                                                <EUCDMname>Transport Charges</EUCDMname>
                                                 <EUCDMversion>EUCDM 6.1</EUCDMversion>
                                                 <code>14 02 000 000</code>
                                             </xs:documentation>
@@ -1362,9 +1432,9 @@
                                                 <xs:element name="paymentMethod">
                                                     <xs:annotation>
                                                         <xs:documentation>
-                                                            <EUCDMname>Method of payment</EUCDMname>
+                                                            <EUCDMname>Method of Payment</EUCDMname>
                                                             <EUCDMversion>EUCDM 6.1</EUCDMversion>
-                                                            <code>14 02 038 000</code>
+                                                            <code>14 02 001 000</code>
                                                         </xs:documentation>
                                                     </xs:annotation>
                                                     <xs:complexType>
@@ -1376,7 +1446,7 @@
                                             </xs:sequence>
                                         </xs:complexType>
                                     </xs:element>
-                                    <xs:element name="PreviousDocument" minOccurs="0">
+                                    <xs:element name="PreviousDocument" minOccurs="0" maxOccurs="99">
                                         <xs:annotation>
                                             <xs:documentation>
                                                 <EUCDMname>Previous Document</EUCDMname>
@@ -1425,7 +1495,7 @@
                                             </xs:sequence>
                                         </xs:complexType>
                                     </xs:element>
-                                    <xs:element name="SupportingDocument" minOccurs="0">
+                                    <xs:element name="SupportingDocument" minOccurs="0" maxOccurs="99">
                                         <xs:annotation>
                                             <xs:documentation>
                                                 <EUCDMname>Supporting Document</EUCDMname>
@@ -1613,7 +1683,7 @@
                                                         </xs:sequence>
                                                     </xs:complexType>
                                                 </xs:element>
-                                                <xs:element name="postcode">
+                                                <xs:element name="postcode" minOccurs="0">
                                                     <xs:annotation>
                                                         <xs:documentation>
                                                             <EUCDMname>Postcode</EUCDMname>
@@ -1668,7 +1738,7 @@
                                 </xs:sequence>
                             </xs:complexType>
                         </xs:element>
-                        <xs:element name="GoodsLocation">
+                        <xs:element name="GoodsLocation" minOccurs="0">
                             <xs:annotation>
                                 <xs:documentation>
                                     <EUCDMname>Location of Goods</EUCDMname>
@@ -1767,7 +1837,7 @@
                                                         </xs:sequence>
                                                     </xs:complexType>
                                                 </xs:element>
-                                                <xs:element name="cityName">
+                                                <xs:element name="cityName" minOccurs="0">
                                                     <xs:annotation>
                                                         <xs:documentation>
                                                             <EUCDMname>City</EUCDMname>
@@ -1816,7 +1886,7 @@
                                                         </xs:sequence>
                                                     </xs:complexType>
                                                 </xs:element>
-                                                <xs:element name="postcode">
+                                                <xs:element name="postcode" minOccurs="0">
                                                     <xs:annotation>
                                                         <xs:documentation>
                                                             <EUCDMname>Postcode</EUCDMname>
@@ -1944,7 +2014,7 @@
                                             </xs:sequence>
                                         </xs:complexType>
                                     </xs:element>
-                                    <xs:element name="Contact" minOccurs="0" maxOccurs="9">
+                                    <xs:element name="Contact" minOccurs="0">
                                         <xs:annotation>
                                             <xs:documentation>
                                                 <EUCDMname>Contact person</EUCDMname>
@@ -1961,7 +2031,7 @@
                                                         </xs:sequence>
                                                     </xs:complexType>
                                                 </xs:element>
-                                                <xs:element name="name" minOccurs="0">
+                                                <xs:element name="name">
                                                     <xs:annotation>
                                                         <xs:documentation>
                                                             <EUCDMname>name</EUCDMname>
@@ -2075,7 +2145,7 @@
                                 </xs:sequence>
                             </xs:complexType>
                         </xs:element>
-                        <xs:element name="PreviousDocument" minOccurs="0">
+                        <xs:element name="PreviousDocument" minOccurs="0" maxOccurs="99">
                             <xs:annotation>
                                 <xs:documentation>
                                     <EUCDMname>Previous Document</EUCDMname>
@@ -2124,7 +2194,7 @@
                                 </xs:sequence>
                             </xs:complexType>
                         </xs:element>
-                        <xs:element name="SupportingDocument" minOccurs="0">
+                        <xs:element name="SupportingDocument" minOccurs="0" maxOccurs="99">
                             <xs:annotation>
                                 <xs:documentation>
                                     <EUCDMname>Supporting Document</EUCDMname>
@@ -2173,7 +2243,7 @@
                                 </xs:sequence>
                             </xs:complexType>
                         </xs:element>
-                        <xs:element name="TransportContractDocument" minOccurs="0">
+                        <xs:element name="TransportContractDocument" maxOccurs="99">
                             <xs:annotation>
                                 <xs:documentation>
                                     <EUCDMname>Transport document</EUCDMname>
@@ -2222,7 +2292,7 @@
                                 </xs:sequence>
                             </xs:complexType>
                         </xs:element>
-                        <xs:element name="TransportEquipment" minOccurs="0">
+                        <xs:element name="TransportEquipment" minOccurs="0" maxOccurs="9999">
                             <xs:annotation>
                                 <xs:documentation>
                                     <EUCDMname>Transport Equipment</EUCDMname>
@@ -2247,7 +2317,7 @@
                                             </xs:sequence>
                                         </xs:complexType>
                                     </xs:element>
-                                    <xs:element name="identification_2">
+                                    <xs:element name="identification_2" minOccurs="0">
                                         <xs:annotation>
                                             <xs:documentation>
                                                 <EUCDMname>Container Identification Number</EUCDMname>
@@ -2261,7 +2331,7 @@
                                             </xs:sequence>
                                         </xs:complexType>
                                     </xs:element>
-                                    <xs:element name="sealsAffixed" minOccurs="0">
+                                    <xs:element name="sealsAffixed">
                                         <xs:annotation>
                                             <xs:documentation>
                                                 <EUCDMname>Number of seals</EUCDMname>
@@ -2275,7 +2345,7 @@
                                             </xs:sequence>
                                         </xs:complexType>
                                     </xs:element>
-                                    <xs:element name="Seal" minOccurs="0">
+                                    <xs:element name="Seal" minOccurs="0" maxOccurs="99">
                                         <xs:annotation>
                                             <xs:documentation>
                                                 <EUCDMname>Seal</EUCDMname>
