@@ -1,5 +1,7 @@
 # DMS-public
 
+Changelog can be found [here.](changelog.md)
+
 <b> This site contains onboarding documents regarding the implementation of DMS Import (H7 and I2 declaration messages) and the forthcoming implementation of DMS Export and DMS Transit. Where Import H7 and I2 are live the documentation for DMS Export and DMS Transit are work in progress. </b>
 
 <b> Please note that the documents will be updated with new information whenever it is available. </b>
