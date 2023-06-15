@@ -3,7 +3,7 @@
            xmlns="urn:WCOLibraryE7TAXUDEUCDM52public"
            targetNamespace="urn:WCOLibraryE7TAXUDEUCDM52public"
            elementFormDefault="qualified" version="1.2.0">
-    <xs:include schemaLocation ="../../DMS_DS/WCO_TS_DEC_v1.1.xsd"/>
+    <xs:include schemaLocation ="../../DMS_DS/WCO_TS_DEC_V1.1.xsd"/>
 
     <xs:element name="Declaration" type="Declaration"/>
 
@@ -334,8 +334,7 @@
                         <xs:element name="name">
                             <xs:complexType>
                                 <xs:sequence>
-                                    <xs:element name="Text.Content" type="Text.Content">
-                                    </xs:element>
+                                    <xs:element name="Text.Content" type="Text.Content"/>
                                 </xs:sequence>
                             </xs:complexType>
                         </xs:element>
@@ -467,7 +466,14 @@
                                             </xs:sequence>
                                         </xs:complexType>
                                     </xs:element>
-                                    <xs:element name="identification_2">
+                                    <xs:element name="identification_2" minOccurs="0">
+                                        <xs:annotation>
+                                            <xs:documentation>
+                                                <EUCDMname>Reference Number</EUCDMname>
+                                                <EUCDMversion>EUCDM 6.1</EUCDMversion>
+                                                <code>12 03 001 000</code>
+                                            </xs:documentation>
+                                        </xs:annotation>
                                         <xs:complexType>
                                             <xs:sequence>
                                                 <xs:element name="Identifier.Content" type="Identifier.Content"/>
@@ -475,6 +481,13 @@
                                         </xs:complexType>
                                     </xs:element>
                                     <xs:element name="type_3">
+                                        <xs:annotation>
+                                            <xs:documentation>
+                                                <EUCDMname>Type</EUCDMname>
+                                                <EUCDMversion>EUCDM 6.1</EUCDMversion>
+                                                <code>12 03 002 000</code>
+                                            </xs:documentation>
+                                        </xs:annotation>
                                         <xs:complexType>
                                             <xs:sequence>
                                                 <xs:element name="Code.Content" type="Code.Content"/>
@@ -929,7 +942,7 @@
                                                         </xs:sequence>
                                                     </xs:complexType>
                                                 </xs:element>
-                                                <xs:element name="identification_2">
+                                                <xs:element name="identification_2" minOccurs="0">
                                                     <xs:complexType>
                                                         <xs:sequence>
                                                             <xs:element name="Identifier.Content" type="Identifier.Content"/>
