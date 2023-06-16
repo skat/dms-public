@@ -179,6 +179,7 @@
   <xs:element name="DeclarationGuarantee" type="DeclarationGuarantee"/>
   <xs:element name="DeclarationOffice" type="DeclarationOffice"/>
   <xs:element name="declarationOffice" type="Identifier.Type"/>
+  <xs:element name="DeclarationOfficeID" type="Identifier.Content"/>
   <xs:element name="Deconsolidator" type="Deconsolidator"/>
   <xs:element name="DeliveryDestination" type="DeliveryDestination"/>
   <xs:element name="departure" type="DateTime.Type"/>
@@ -503,6 +504,7 @@
   <xs:element name="status_2" type="DocumentStatusCode"/>
   <xs:element name="Stevedore" type="Stevedore"/>
   <xs:element name="Storage" type="xs:string"/>
+  <xs:element name="storingFlag" type="StoringFlagCode"/>
   <xs:element name="StowPosition" type="StowPosition"/>
   <xs:element name="streetName" type="Text.Type"/>
   <xs:element name="streetNumber" type="Text.Type"/>
@@ -3120,6 +3122,8 @@
       </xs:element>
       <xs:element ref="Consignor" minOccurs="0">
       </xs:element>
+      <xs:element ref="Freight" minOccurs="0">
+      </xs:element>
       <xs:element ref="GoodsLocation" minOccurs="0" maxOccurs="unbounded">
         <xs:annotation>
           <xs:documentation xml:lang="EN" source="WCO Association/IM">stored at</xs:documentation>
@@ -3131,6 +3135,11 @@
         </xs:annotation>
       </xs:element>
       <xs:element ref="HouseConsignment" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element ref="Itinerary" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN" source="WCO Association/TRT">follows</xs:documentation>
+        </xs:annotation>
+      </xs:element>
       <xs:element ref="LoadingLocation" minOccurs="0"/>
       <xs:element ref="NotifyParty" minOccurs="0"/>
       <xs:element ref="PreviousDocument" minOccurs="0" maxOccurs="unbounded">
@@ -3209,7 +3218,7 @@
           <xs:documentation source="DEN/XML Tag">SequenceNumeric</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element ref="Packaging" minOccurs="0"/>
+      <xs:element ref="Packaging" minOccurs="0" maxOccurs="unbounded"/>
       <xs:element ref="AdditionalDocument" minOccurs="0" maxOccurs="unbounded">
         <xs:annotation>
           <xs:documentation xml:lang="EN" source="WCO Association/CRI">requires</xs:documentation>
@@ -3249,6 +3258,8 @@
           <xs:documentation xml:lang="EN" source="WCO Association/TRT">send by</xs:documentation>
         </xs:annotation>
       </xs:element>
+      <xs:element ref="Freight" minOccurs="0">
+      </xs:element>
       <xs:element ref="GoodsLocation" minOccurs="0" maxOccurs="unbounded">
         <xs:annotation>
           <xs:documentation xml:lang="EN" source="WCO Association/CRI">stored at</xs:documentation>
@@ -3260,6 +3271,11 @@
           <xs:documentation xml:lang="EN" source="WCO Association/CRI">quantified by</xs:documentation>
           <xs:documentation xml:lang="EN" source="WCO Association/CRE">quantified by</xs:documentation>
           <xs:documentation xml:lang="EN" source="WCO Association/TRT">is measured by</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element ref="Itinerary" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN" source="WCO Association/TRT">follows</xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element ref="PreviousDocument" minOccurs="0" maxOccurs="unbounded">
@@ -3497,6 +3513,11 @@
     <xs:annotation>
       <xs:documentation source="WCO Code Remarks">EDIFACT codes (7365) subset (codes 68 and 69)</xs:documentation>
     </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="Code.Type"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="StoringFlagCode">
     <xs:complexContent>
       <xs:extension base="Code.Type"/>
     </xs:complexContent>
@@ -5290,10 +5311,12 @@
       <xs:element ref="issue" minOccurs="0"/>
       <xs:element ref="specificCircumstances" minOccurs="0"/>
       <xs:element ref="FunctionCode" minOccurs="0"/>
+      <xs:element ref="storingFlag" minOccurs="0"/>
       <xs:element ref="Amendment" minOccurs="0" maxOccurs="unbounded"/>
       <xs:element ref="BorderTransportMeans" minOccurs="0"/>
       <xs:element ref="EntryOffice" minOccurs="0"/>
       <xs:element ref="ExitOffice" minOccurs="0"/>
+      <xs:element ref="DeclarationOfficeID" minOccurs="0"/>
       <xs:element ref="Authentication" minOccurs="0" maxOccurs="unbounded"/>
       <xs:element ref="Agent" minOccurs="0"/>
       <xs:element ref="Declarant" minOccurs="0"/>
@@ -5803,6 +5826,13 @@
         </xs:annotation>
       </xs:element>
       <xs:element ref="Consignor" minOccurs="0">
+      </xs:element>
+      <xs:element ref="Freight" minOccurs="0">
+      </xs:element>
+      <xs:element ref="Itinerary" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN" source="WCO Association/TRT">follows</xs:documentation>
+        </xs:annotation>
       </xs:element>
       <xs:element ref="NotifyParty" minOccurs="0" />
       <xs:element ref="PreviousDocument" minOccurs="0" maxOccurs="unbounded">
