@@ -1,3 +1,5 @@
+### Upcoming
+
 ### 16-06-2023
 * Updated XSDs for Export, Exit and Transit to comply with the EU emergency changes. Specifics coming soon
 * Changes to Exit declarations, A1 A2, changed GoodsLocation to circumvent bug with Customs office and UN/LOCODE. Refinement:Adding Storing Flags, Deleting Comments and refining the values in some elements with no technical difference.
