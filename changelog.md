@@ -1,4 +1,6 @@
 ### Upcoming
+* Updated description of Error Element in system guide
+* Updated description of Amendment Element in system guide
 * Added a chapter describing how to use and lookup codelists
 * Added chapter about document upload
 
