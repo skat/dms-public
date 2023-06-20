@@ -1,4 +1,5 @@
 ### Upcoming
+* Updated UNLocode in IE507 testcase XML 
 
 ### 16-06-2023
 * Updated XSDs for Export, Exit and Transit to comply with the EU emergency changes. Specifics coming soon
