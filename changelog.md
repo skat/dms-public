@@ -4,6 +4,8 @@
 * Added a chapter describing how to use and lookup codelists
 * Added chapter about document upload
 * Updated UNLocode in IE507 testcase XML 
+* XML Guides has been updated for EU Emergency changes
+  * The affected XML Guides are the following: Export, Exit and Transit.
 
 ### 16-06-2023
 * Updated XSDs for Export, Exit and Transit to comply with the EU emergency changes. Specifics coming soon
