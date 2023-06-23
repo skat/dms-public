@@ -1,4 +1,4 @@
-### Upcoming
+### 23-06-2023
 
 * Updated description of Error Element in system guide
 * Updated description of Amendment Element in system guide
@@ -10,7 +10,7 @@
     * Split Exit XML Guides into 2 guides, so now there is a guide for IE messages and a guide for standard exit
       declarations.
 
-### 23-06-2023
+### 16-06-2023
 
 * Updated XSDs for Export, Exit and Transit to comply with the EU emergency changes. Specifics coming soon
 * Changes to Exit declarations, A1 A2, changed GoodsLocation to circumvent bug with Customs office and UN/LOCODE.
@@ -20,6 +20,5 @@
 * Changes to Export declarations, removing AdditionalInformation to better the Functional Test Cases. B1 Pre-lodge
   changes to office to match amendment.
 * Changelog added
-*
 
 This is the initial changelog point. From here on changes happening to this github repository, will be described here.
