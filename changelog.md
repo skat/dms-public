@@ -6,6 +6,7 @@
 * Updated UNLocode in IE507 testcase XML 
 * XML Guides has been updated for EU Emergency changes
   * The affected XML Guides are the following: Export, Exit and Transit.
+  * Split Exit XML Guides into 2 guides, so now there is a guide for IE messages and a guide for standard exit declarations.
 
 ### 16-06-2023
 * Updated XSDs for Export, Exit and Transit to comply with the EU emergency changes. Specifics coming soon
