@@ -1,3 +1,7 @@
+### Upcoming
+
+* 
+
 ### 26-06-2023
 
 * This is the affected changelog regarding EU Emergency changes as promised.
