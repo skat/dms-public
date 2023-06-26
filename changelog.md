@@ -1,6 +1,22 @@
-### Upcomming
+### 26-06-2023
 
-* field1
+* This is the affected changelog regarding EU Emergency changes as promised.
+* Change of namespace in Export related xsds
+  * Affected B1, B2, B3, B4, C1 and C2
+* Path for schemaLocation has been updated with new file name
+  * Affected A1, A2 and A3
+* Bugfix: Transport Document data element added to IE507-message
+  * Affected IE507
+* Bugfix: Data type “"FreightPaymentMethodCodeType" has been expanded 
+  * Affected DMS_DS
+* Bugfix: Data element “Storing Flag” has been added  
+  * Affected A1, A2 and A3
+* Bugfix: Data element “Itinerary” is now mandatory  
+  * Affected A1 and A2
+* Bugfix: Data element “TransportContractDocument” is now mandatory  
+  * Affected A2
+* Bugfix: Reference number under data element “AdditionalReference” is now optional  
+  * Affected A1, A2 and A3
 
 ### 23-06-2023
 
