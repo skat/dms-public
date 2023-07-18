@@ -1,3 +1,23 @@
+### 21-07-2023
+
+* Review process for Export, Exit, and Exit IE XML Guides have been performed
+    * Elements verified
+    * XML Examples checked
+    * Ensured proper rule code references
+    * Ensured proper codelist references
+    * Checked ID6 reference numbers, formatting, cardinality, and optionality for elements
+* Remember to check for the latest version number on your XML Guides following this update
+
+* Minor changes to Test Case XMLs to guarantee functional acceptance in the system.
+
+* Minor XSD changes to cardinality/restrictions within Exit IE Messages. 
+    * Will not change XSDs functionally
+
+### 18-07-2023
+
+* Minor changes to ID6 reference code in XSDs
+* Reupload test case PDF due to code embedded error on GitHub.
+
 ### 13-07-2023
 
 * Updated System Guide to version 1.13
