@@ -43,7 +43,7 @@
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
-            <xs:element name="specificCircumstances" minOccurs="0">
+            <xs:element name="specificCircumstances">
                 <xs:annotation>
                     <xs:documentation>
                         <EUCDMname>Specific Circumstance Indicator</EUCDMname>
@@ -298,7 +298,7 @@
                                             </xs:sequence>
                                         </xs:complexType>
                                     </xs:element>
-                                    <xs:element name="name">
+                                    <xs:element name="name" minOccurs="0">
                                         <xs:annotation>
                                             <xs:documentation>
                                                 <EUCDMname>Name</EUCDMname>
@@ -1794,27 +1794,12 @@
                             </xs:annotation>
                             <xs:complexType>
                                 <xs:sequence>
-                                    <xs:element name="name" minOccurs="0">
-                                        <xs:annotation>
-                                            <xs:documentation>
-                                                <EUCDMname>UN/LOCODE</EUCDMname>
-                                                <EUCDMversion>EUCDM 6.1</EUCDMversion>
-                                                <code>16 15 036 000</code>
-                                            </xs:documentation>
-                                        </xs:annotation>
-                                        <xs:complexType>
-                                            <xs:sequence>
-                                                <xs:element name="Text.Content" type="Text.Content">
-                                                </xs:element>
-                                            </xs:sequence>
-                                        </xs:complexType>
-                                    </xs:element>
                                     <xs:element name="identification_2" minOccurs="0">
                                         <xs:annotation>
                                             <xs:documentation>
-                                                <EUCDMname>Additional Identifier</EUCDMname>
+                                                <EUCDMname>Identification of Location</EUCDMname>
                                                 <EUCDMversion>EUCDM 6.1</EUCDMversion>
-                                                <code>16 15 053 000</code>
+                                                <code>16 15 036 000</code>
                                             </xs:documentation>
                                         </xs:annotation>
                                         <xs:complexType>
@@ -1829,6 +1814,20 @@
                                                 <EUCDMname>Type of Location</EUCDMname>
                                                 <EUCDMversion>EUCDM 6.1</EUCDMversion>
                                                 <code>16 15 045 000</code>
+                                            </xs:documentation>
+                                        </xs:annotation>
+                                        <xs:complexType>
+                                            <xs:sequence>
+                                                <xs:element name="Code.Content" type="Code.Content"/>
+                                            </xs:sequence>
+                                        </xs:complexType>
+                                    </xs:element>
+                                    <xs:element name="role" minOccurs="0">
+                                        <xs:annotation>
+                                            <xs:documentation>
+                                                <EUCDMname>Additional Identifier</EUCDMname>
+                                                <EUCDMversion>EUCDM 6.1</EUCDMversion>
+                                                <code>16 15 053 000</code>
                                             </xs:documentation>
                                         </xs:annotation>
                                         <xs:complexType>
@@ -2470,3 +2469,4 @@
         </xs:sequence>
     </xs:complexType>
 </xs:schema>
+
