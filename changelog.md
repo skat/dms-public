@@ -1,26 +1,51 @@
-### Upcoming
+### 21-07-2023
 
-* 
+* Review process for Export, Exit, and Exit IE XML Guides have been performed
+    * Elements verified
+    * XML Examples checked
+    * Ensured proper rule code references
+    * Ensured proper codelist references
+    * Checked ID6 reference numbers, formatting, cardinality, and optionality for elements
+* Remember to check for the latest version number on your XML Guides following this update
+
+* Minor changes to Test Case XMLs to guarantee functional acceptance in the system.
+
+* Minor XSD changes to cardinality/restrictions within Exit IE Messages. 
+    * Will not change XSDs functionally
+
+### 18-07-2023
+
+* Minor changes to ID6 reference code in XSDs
+* Reupload test case PDF due to code embedded error on GitHub.
+
+### 13-07-2023
+
+* Updated System Guide to version 1.13
+
+### 07-07-2023
+
+* Updated codelists by splitting it into three files, each representing one domaine (transit, export and global) to
+  better reflect recent ermis changes
 
 ### 26-06-2023
 
 * This is the affected changelog regarding EU Emergency changes as promised.
 * Change of namespace in Export related xsds
-  * Affected B1, B2, B3, B4, C1 and C2
+    * Affected B1, B2, B3, B4, C1 and C2
 * Path for schemaLocation has been updated with new file name
-  * Affected A1, A2 and A3
+    * Affected A1, A2 and A3
 * Bugfix: Transport Document data element added to IE507-message
-  * Affected IE507
-* Bugfix: Data type “"FreightPaymentMethodCodeType" has been expanded 
-  * Affected DMS_DS
-* Bugfix: Data element “Storing Flag” has been added  
-  * Affected A1, A2 and A3
-* Bugfix: Data element “Itinerary” is now mandatory  
-  * Affected A1 and A2
-* Bugfix: Data element “TransportContractDocument” is now mandatory  
-  * Affected A2
-* Bugfix: Reference number under data element “AdditionalReference” is now optional  
-  * Affected A1, A2 and A3
+    * Affected IE507
+* Bugfix: Data type “"FreightPaymentMethodCodeType" has been expanded
+    * Affected DMS_DS
+* Bugfix: Data element “Storing Flag” has been added
+    * Affected A1, A2 and A3
+* Bugfix: Data element “Itinerary” is now mandatory
+    * Affected A1 and A2
+* Bugfix: Data element “TransportContractDocument” is now mandatory
+    * Affected A2
+* Bugfix: Reference number under data element “AdditionalReference” is now optional
+    * Affected A1, A2 and A3
 
 ### 23-06-2023
 
