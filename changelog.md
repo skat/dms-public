@@ -1,3 +1,10 @@
+### 31-07-2023
+
+* Updated System Guide to version 1.14
+
+* Updated Connectivity Guide to version 1.7
+
+
 ### 13-07-2023
 
 * Updated System Guide to version 1.13
