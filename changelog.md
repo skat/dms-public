@@ -1,6 +1,8 @@
-### 21-07-2023
+### 03-08-2023
 
-* Review process for Export, Exit, and Exit IE XML Guides have been performed
+* Updates to DMS Online User Manuals
+
+* Review process for Export, Exit, Exit IE, Transit, and Transit IE XML Guides have been performed
     * Elements verified
     * XML Examples checked
     * Ensured proper rule code references
@@ -12,6 +14,10 @@
 
 * Minor XSD changes to cardinality/restrictions within Exit IE Messages. 
     * Will not change XSDs functionally
+
+* Added TypeCode to B2, B3, B4, C1 and their amendments
+
+* Removed TypeCode from Country of Origin from B1, B2, B3, B4, C1 and their amendments
 
 ### 18-07-2023
 
