@@ -3,11 +3,14 @@
 * Updates to DMS Online User Manuals
 
 * Review process for Export, Exit, Exit IE, Transit, and Transit IE XML Guides have been performed
-    * Elements verified
+    * XSD/XML Elements verified
     * XML Examples checked
+    * Table element description field reviewed
     * Ensured proper rule code references
     * Ensured proper codelist references
     * Checked ID6 reference numbers, formatting, cardinality, and optionality for elements
+    * Verified overall table formatting for each table
+     
 * Remember to check for the latest version number on your XML Guides following this update
 
 * Minor changes to Test Case XMLs to guarantee functional acceptance in the system.
