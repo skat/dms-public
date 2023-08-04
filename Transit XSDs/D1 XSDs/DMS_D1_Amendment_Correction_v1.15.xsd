@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://ncts.dgtaxud.ec" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" targetNamespace="http://ncts.dgtaxud.ec" elementFormDefault="unqualified" attributeFormDefault="unqualified" version="51.8.2" vc:minVersion="1.1">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://ncts.dgtaxud.ec" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" targetNamespace="http://ncts.dgtaxud.ec" elementFormDefault="unqualified" attributeFormDefault="unqualified" version="51.8.0" vc:minVersion="1.1">
     <!--================================================================================-->
-    <!--===== IE015: E_DEC_DAT                                                          -->
-    <!--===== DECLARATION DATA                                                          -->
+    <!--===== IE013: E_DEC_AMD                                                          -->
+    <!--===== DECLARATION AMENDMENT                                                     -->
     <!--===== NCTS P5 Phase Definition                                                  -->
     <!--===== XSD Version 51.8.2                                                        -->
     <!--================================================================================-->
@@ -14,11 +14,11 @@
     <!--================================================================================-->
     <!--===== Root Element                                                              -->
     <!--================================================================================-->
-    <xs:element name="CC015C" type="CC015CType" />
+    <xs:element name="CC013C" type="CC013CType" />
     <!--================================================================================-->
     <!--===== Root Element Content                                                      -->
     <!--================================================================================-->
-    <xs:complexType name="CC015CType">
+    <xs:complexType name="CC013CType">
         <xs:sequence>
             <xs:element name="messageSender" type="MessageSenderContentType">
                 <xs:annotation>
@@ -62,7 +62,6 @@
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
-
             <xs:element name="TransitOperation">
                 <xs:annotation>
                     <xs:documentation>
@@ -72,13 +71,23 @@
                 </xs:annotation>
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element name="LRN" type="LRNContentType03">
+                        <xs:element name="LRN" minOccurs="0" type="LRNContentType03">
                             <xs:annotation>
                                 <xs:documentation>
                                     <description value="LRN" />
                                     <format value="an..22" />
-                                    <optionality value="R" />
+                                    <optionality value="D" />
                                     <xsdBaseType value="AlphaNumeric_MAX22_NoSpaces" />
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="MRN" minOccurs="0" type="MrnContentType05">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    <description value="MRN" />
+                                    <format value="an18" />
+                                    <optionality value="D" />
+                                    <xsdBaseType value="MRNType" />
                                 </xs:documentation>
                             </xs:annotation>
                         </xs:element>
@@ -167,6 +176,16 @@
                             <xs:annotation>
                                 <xs:documentation>
                                     <description value="Binding itinerary" />
+                                    <codeList code="CL027" type="technical" name="Flag" />
+                                    <format value="n1" />
+                                    <optionality value="R" />
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="amendmentTypeFlag" type="Flag">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    <description value="Amendment type flag" />
                                     <codeList code="CL027" type="technical" name="Flag" />
                                     <format value="n1" />
                                     <optionality value="R" />
@@ -594,13 +613,13 @@
                                 </xs:documentation>
                             </xs:annotation>
                         </xs:element>
-                        <xs:element name="guaranteeType" type="GuaranteeTypeContentType">
+                        <xs:element name="guaranteeType" minOccurs="0" type="GuaranteeTypeContentType">
                             <xs:annotation>
                                 <xs:documentation>
                                     <description value="Guarantee type" />
-                                    <codeList code="CL251" type="business" name="GuaranteeType" />
+                                    <codeList code="CL251" type="business" name="Guaranteetype" />
                                     <format value="an1" />
-                                    <optionality value="R" />
+                                    <optionality value="O" />
                                     <xsdBaseType value="AlphanumericCapital1Type" />
                                 </xs:documentation>
                             </xs:annotation>
