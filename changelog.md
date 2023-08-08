@@ -1,3 +1,19 @@
+### 04-08-2023
+
+* B1 + B1 Amend: Origin/TypeCode deleted
+* B2 + B2 Amend: AuhorisationHolder datatype added + Origin/TypeCode deleted
+* B3 + B3 Amend: AuhorisationHolder datatype added + Origin/TypeCode deleted
+* B4 : AuhorisationHolder datatype added + Origin/TypeCode deleted + CurrencyExchange deleted (bug)
+* B4 Amend: AuhorisationHolder datatype added + Origin/TypeCode deleted + Deferred Payment (AdditionalInformation) added
+* C1 + C1 Amend + C1 Supplement: AuhorisationHolder datatype added + Origin/TypeCode deleted
+* D1 Amend: GuaranteeReference unpacked 
+* D2 Amend: GuaranteeReference unpacked 
+* A2 Amend: SpecificCircumstance is now minOccurs = 0
+
+* ID6 Ref numbers aligned
+
+* Changes to notification
+
 ### 03-08-2023
 
 * Updates to DMS Online User Manuals
