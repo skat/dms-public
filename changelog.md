@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ### 04-08-2023
 
 * B1 + B1 Amend: Origin/TypeCode deleted
@@ -28,9 +29,15 @@
     * Verified overall table formatting for each table
      
 * Remember to check for the latest version number on your XML Guides following this update
+=======
+### 31-07-2023
 
-* Minor changes to Test Case XMLs to guarantee functional acceptance in the system.
+* Updated System Guide to version 1.14
+>>>>>>> conflict-resolve
 
+* Updated Connectivity Guide to version 1.7
+
+<<<<<<< HEAD
 * Minor XSD changes to cardinality/restrictions within Exit IE Messages. 
     * Will not change XSDs functionally
 
@@ -42,6 +49,8 @@
 
 * Minor changes to ID6 reference code in XSDs
 * Reupload test case PDF due to code embedded error on GitHub.
+=======
+>>>>>>> conflict-resolve
 
 ### 13-07-2023
 
