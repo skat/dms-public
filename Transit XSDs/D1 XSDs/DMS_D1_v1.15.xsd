@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://ncts.dgtaxud.ec" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" targetNamespace="http://ncts.dgtaxud.ec" elementFormDefault="unqualified" attributeFormDefault="unqualified" version="51.8.0" vc:minVersion="1.1">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://ncts.dgtaxud.ec" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" targetNamespace="http://ncts.dgtaxud.ec" elementFormDefault="unqualified" attributeFormDefault="unqualified" version="51.8.2" vc:minVersion="1.1">
     <!--================================================================================-->
-    <!--===== IE013: E_DEC_AMD                                                          -->
-    <!--===== DECLARATION AMENDMENT                                                     -->
+    <!--===== IE015: E_DEC_DAT                                                          -->
+    <!--===== DECLARATION DATA                                                          -->
     <!--===== NCTS P5 Phase Definition                                                  -->
-    <!--===== XSD Version 51.8.0                                                        -->
+    <!--===== XSD Version 51.8.2                                                        -->
     <!--================================================================================-->
     <!--================================================================================-->
     <!--===== Includes                                                                  -->
@@ -14,11 +14,11 @@
     <!--================================================================================-->
     <!--===== Root Element                                                              -->
     <!--================================================================================-->
-    <xs:element name="CC013C" type="CC013CType" />
+    <xs:element name="CC015C" type="CC015CType" />
     <!--================================================================================-->
     <!--===== Root Element Content                                                      -->
     <!--================================================================================-->
-    <xs:complexType name="CC013CType">
+    <xs:complexType name="CC015CType">
         <xs:sequence>
             <xs:element name="messageSender" type="MessageSenderContentType">
                 <xs:annotation>
@@ -63,25 +63,21 @@
                 </xs:annotation>
             </xs:element>
             <xs:element name="TransitOperation">
+                <xs:annotation>
+                    <xs:documentation>
+                        <description value="TRANSIT OPERATION" />
+                        <optionality value="R" />
+                    </xs:documentation>
+                </xs:annotation>
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element name="LRN" minOccurs="0" type="LRNContentType03">
+                        <xs:element name="LRN" type="LRNContentType03">
                             <xs:annotation>
                                 <xs:documentation>
                                     <description value="LRN" />
                                     <format value="an..22" />
-                                    <optionality value="D" />
+                                    <optionality value="R" />
                                     <xsdBaseType value="AlphaNumeric_MAX22_NoSpaces" />
-                                </xs:documentation>
-                            </xs:annotation>
-                        </xs:element>
-                        <xs:element name="MRN" minOccurs="0" type="MrnContentType05">
-                            <xs:annotation>
-                                <xs:documentation>
-                                    <description value="MRN" />
-                                    <format value="an18" />
-                                    <optionality value="D" />
-                                    <xsdBaseType value="MRNType" />
                                 </xs:documentation>
                             </xs:annotation>
                         </xs:element>
@@ -89,7 +85,7 @@
                             <xs:annotation>
                                 <xs:documentation>
                                     <description value="Declaration type" />
-                                    <codeList code="CL231" type="business" name="Declarationtype" />
+                                    <codeList code="CL231" type="business" name="DeclarationType" />
                                     <format value="an..5" />
                                     <optionality value="R" />
                                 </xs:documentation>
@@ -99,7 +95,7 @@
                             <xs:annotation>
                                 <xs:documentation>
                                     <description value="Additional declaration type" />
-                                    <codeList code="CL042" type="business" name="Declarationtypeadditional" />
+                                    <codeList code="CL042" type="business" name="DeclarationTypeAdditional" />
                                     <format value="a1" />
                                     <optionality value="R" />
                                 </xs:documentation>
@@ -159,7 +155,7 @@
                             <xs:annotation>
                                 <xs:documentation>
                                     <description value="Communication language at departure" />
-                                    <codeList code="CL192" type="business" name="Languagebycustoms" />
+                                    <codeList code="CL192" type="business" name="LanguageByCustoms" />
                                     <format value="a2" />
                                     <optionality value="O" />
                                     <xsdBaseType value="LanguageCodeType" />
@@ -170,16 +166,6 @@
                             <xs:annotation>
                                 <xs:documentation>
                                     <description value="Binding itinerary" />
-                                    <codeList code="CL027" type="technical" name="Flag" />
-                                    <format value="n1" />
-                                    <optionality value="R" />
-                                </xs:documentation>
-                            </xs:annotation>
-                        </xs:element>
-                        <xs:element name="amendmentTypeFlag" type="Flag">
-                            <xs:annotation>
-                                <xs:documentation>
-                                    <description value="Amendment type flag" />
                                     <codeList code="CL027" type="technical" name="Flag" />
                                     <format value="n1" />
                                     <optionality value="R" />
@@ -588,6 +574,10 @@
             <xs:element name="Guarantee" maxOccurs="9">
                 <xs:annotation>
                     <xs:documentation>
+                        <description value="GUARANTEE" />
+                        <optionality value="R" />
+                    </xs:documentation>
+                    <xs:documentation>
                         <xs:EUCDMName>Guarantee Type</xs:EUCDMName>
                         <xs:Code>99 02 000 000</xs:Code>
                     </xs:documentation>
@@ -603,13 +593,13 @@
                                 </xs:documentation>
                             </xs:annotation>
                         </xs:element>
-                        <xs:element name="guaranteeType" minOccurs="0" type="GuaranteeTypeContentType">
+                        <xs:element name="guaranteeType" type="GuaranteeTypeContentType">
                             <xs:annotation>
                                 <xs:documentation>
                                     <description value="Guarantee type" />
-                                    <codeList code="CL251" type="business" name="Guaranteetype" />
+                                    <codeList code="CL251" type="business" name="GuaranteeType" />
                                     <format value="an1" />
-                                    <optionality value="O" />
+                                    <optionality value="R" />
                                     <xsdBaseType value="AlphanumericCapital1Type" />
                                 </xs:documentation>
                             </xs:annotation>
@@ -624,13 +614,66 @@
                                 </xs:documentation>
                             </xs:annotation>
                         </xs:element>
-                        <xs:element name="GuaranteeReference" minOccurs="0" maxOccurs="99" type="GuaranteeReferenceType03">
+                        <xs:element name="GuaranteeReference" minOccurs="0" maxOccurs="99">
                             <xs:annotation>
                                 <xs:documentation>
                                     <description value="GUARANTEE REFERENCE" />
                                     <optionality value="D" />
                                 </xs:documentation>
                             </xs:annotation>
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="sequenceNumber" type="SequenceNumberContentType">
+                                        <xs:annotation>
+                                            <xs:documentation>
+                                                <description value="Sequence number" />
+                                                <format value="n..5" />
+                                                <optionality value="R" />
+                                            </xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="GRN" minOccurs="0" type="GrnContentType">
+                                        <xs:annotation>
+                                            <xs:documentation>
+                                                <description value="GRN" />
+                                                <format value="an..24" />
+                                                <optionality value="D" />
+                                                <xsdBaseType value="GRNType" />
+                                            </xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="accessCode" minOccurs="0" type="AccessCodeContentType02">
+                                        <xs:annotation>
+                                            <xs:documentation>
+                                                <description value="Access code" />
+                                                <format value="an..4" />
+                                                <optionality value="D" />
+                                                <xsdBaseType value="AlphaNumeric_4_NoSpaces" />
+                                            </xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="amountToBeCovered" minOccurs="0" type="AmountToBeCoveredContentType">
+                                        <xs:annotation>
+                                            <xs:documentation>
+                                                <description value="Amount to be covered" />
+                                                <format value="n..16,2" />
+                                                <optionality value="O" />
+                                                <xsdBaseType value="DecimalWithZero_16_2" />
+                                            </xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="currency" minOccurs="0" type="CurrencyContentType">
+                                        <xs:annotation>
+                                            <xs:documentation>
+                                                <description value="Currency" />
+                                                <codeList code="CL048" type="business" name="CurrencyCodes" />
+                                                <format value="a3" />
+                                                <optionality value="O" />
+                                            </xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                </xs:sequence>
+                            </xs:complexType>
                         </xs:element>
                     </xs:sequence>
                 </xs:complexType>
