@@ -1,9 +1,56 @@
+<<<<<<< HEAD
+### 04-08-2023
+
+* B1 + B1 Amend: Origin/TypeCode deleted
+* B2 + B2 Amend: AuhorisationHolder datatype added + Origin/TypeCode deleted
+* B3 + B3 Amend: AuhorisationHolder datatype added + Origin/TypeCode deleted
+* B4 : AuhorisationHolder datatype added + Origin/TypeCode deleted + CurrencyExchange deleted (bug)
+* B4 Amend: AuhorisationHolder datatype added + Origin/TypeCode deleted + Deferred Payment (AdditionalInformation) added
+* C1 + C1 Amend + C1 Supplement: AuhorisationHolder datatype added + Origin/TypeCode deleted
+* D1 Amend: GuaranteeReference unpacked 
+* D2 Amend: GuaranteeReference unpacked 
+* A2 Amend: SpecificCircumstance is now minOccurs = 0
+
+* ID6 Ref numbers aligned
+
+* Changes to notification
+
+### 03-08-2023
+
+* Updates to DMS Online User Manuals
+
+* Review process for Export, Exit, Exit IE, Transit, and Transit IE XML Guides have been performed
+    * XSD/XML Elements verified
+    * XML Examples checked
+    * Table element description field reviewed
+    * Ensured proper rule code references
+    * Ensured proper codelist references
+    * Checked ID6 reference numbers, formatting, cardinality, and optionality for elements
+    * Verified overall table formatting for each table
+     
+* Remember to check for the latest version number on your XML Guides following this update
+=======
 ### 31-07-2023
 
 * Updated System Guide to version 1.14
+>>>>>>> conflict-resolve
 
 * Updated Connectivity Guide to version 1.7
 
+<<<<<<< HEAD
+* Minor XSD changes to cardinality/restrictions within Exit IE Messages. 
+    * Will not change XSDs functionally
+
+* Added TypeCode to B2, B3, B4, C1 and their amendments
+
+* Removed TypeCode from Country of Origin from B1, B2, B3, B4, C1 and their amendments
+
+### 18-07-2023
+
+* Minor changes to ID6 reference code in XSDs
+* Reupload test case PDF due to code embedded error on GitHub.
+=======
+>>>>>>> conflict-resolve
 
 ### 13-07-2023
 
