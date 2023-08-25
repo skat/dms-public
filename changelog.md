@@ -1,3 +1,10 @@
+### 25-08-2023
+
+* Minor changes to SystemGuide as well as adding IE026 explanation
+
+* Fixes to Exit IE messages.
+* Export XML Guide changes to add C2 GPR and C2 EIDR differences. 
+
 ### 04-08-2023
 
 * B1 + B1 Amend: Origin/TypeCode deleted
