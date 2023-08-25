@@ -3,7 +3,7 @@
 * Minor changes to SystemGuide as well as adding IE026 explanation
 
 * Fixes to Exit IE messages.
-* Export XML Guide changes to add C2 GPR and C2 EIDR differences. 
+* Export XML Guide changes to reflect C2 GPR and C2 EIDR differences in the comments.
 
 ### 04-08-2023
 
