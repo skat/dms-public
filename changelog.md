@@ -1,3 +1,12 @@
+### 25-08-2023
+
+* Minor changes to SystemGuide as well as adding IE026 explanation
+
+* Fixes to Exit IE messages.
+* Export XML Guide changes to reflect C2 GPR and C2 EIDR differences in the comments.
+
+* Test Case PDFs for export (B1-4, C1-2) have been updated with new diagrams and notification pull changes in the test case test steps
+
 ### 04-08-2023
 
 * B1 + B1 Amend: Origin/TypeCode deleted
