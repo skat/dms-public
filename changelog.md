@@ -1,3 +1,4 @@
+
 ### 25-08-2023
 
 * Minor changes to SystemGuide as well as adding IE026 explanation
@@ -6,6 +7,7 @@
 * Export XML Guide changes to reflect C2 GPR and C2 EIDR differences in the comments.
 
 * Test Case PDFs for export (B1-4, C1-2) have been updated with new diagrams and notification pull changes in the test case test steps
+
 
 ### 04-08-2023
 
@@ -38,7 +40,13 @@
      
 * Remember to check for the latest version number on your XML Guides following this update
 
-* Minor changes to Test Case XMLs to guarantee functional acceptance in the system.
+### 31-07-2023
+
+* Updated System Guide to version 1.14
+
+
+* Updated Connectivity Guide to version 1.7
+
 
 * Minor XSD changes to cardinality/restrictions within Exit IE Messages. 
     * Will not change XSDs functionally
@@ -51,6 +59,7 @@
 
 * Minor changes to ID6 reference code in XSDs
 * Reupload test case PDF due to code embedded error on GitHub.
+
 
 ### 13-07-2023
 
