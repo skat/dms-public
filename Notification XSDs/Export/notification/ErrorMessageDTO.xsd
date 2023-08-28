@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    elementFormDefault="qualified">
+
+  <!-- ErrorMessageDTO -->
+  <xs:complexType name="ErrorMessageDTO">
+    <xs:sequence>
+      <xs:element name="lrn" type="xs:string" minOccurs="0"/>
+      <xs:element name="mrn" type="xs:string" minOccurs="0"/>
+      <xs:element name="message" type="xs:string" minOccurs="0"/>
+      <xs:element name="submitterId" type="xs:string" minOccurs="0"/>
+      <xs:element name="validationResponse" type="ValidationResponse" minOccurs="0"/>
+      <xs:element name="timestamp" type="CustomDateTime" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- ValidationResponse -->
+  <xs:complexType name="ValidationResponse">
+    <xs:sequence>
+      <xs:element name="lrn" type="xs:string" minOccurs="0"/>
+      <xs:element name="ValidationResults" type="RestValidationResultDTO" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="ValidationServiceStatus" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- RestValidationResultDTO -->
+  <xs:complexType name="RestValidationResultDTO">
+    <xs:sequence>
+      <xs:element name="isRejecting" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="ValidationResultType" type="xs:string" minOccurs="0"/>
+      <xs:element name="ValidationResultText" type="xs:string" minOccurs="0"/>
+      <xs:element name="ViolatedRule" type="xs:string" minOccurs="0"/>
+      <xs:element name="pointers" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- Custom DateTime format -->
+  <xs:simpleType name="CustomDateTime">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Root element -->
+  <xs:element name="ErrorMessageDTO" type="ErrorMessageDTO"/>
+
+</xs:schema>

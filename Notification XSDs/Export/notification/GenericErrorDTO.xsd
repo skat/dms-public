@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+
+  <xs:element name="GenericErrorDTO" type="GenericErrorDTO"/>
+
+  <xs:complexType name="GenericErrorDTO">
+    <xs:sequence>
+      <xs:element name="cause" type="xs:string" minOccurs="0"/>
+      <xs:element name="message" type="xs:string" minOccurs="0"/>
+      <xs:element name="timestamp" type="DateTimeFormat" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="DateTimeFormat">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="\d{2}-\d{2}-\d{4} \d{2}:\d{2}:\d{2}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+</xs:schema>
