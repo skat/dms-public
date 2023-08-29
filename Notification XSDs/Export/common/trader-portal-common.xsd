@@ -25,7 +25,7 @@
         </xs:annotation>
       </xs:element>
       <xs:element name="AdditionalInformation" type="AdditionalInformationType" minOccurs="0"/>
-      <xs:element name="CustomsPosition" type="CustomsPositionType" minOccurs="0"/>
+      <xs:element name="CustomsPosition" type="CustomsPosition" minOccurs="0"/>
       <xs:element name="NotificationCreatedDate" type="NotificationDateType" minOccurs="0">
         <xs:annotation>
           <xs:documentation xml:lang="en">The creation date of the notification</xs:documentation>
@@ -392,6 +392,7 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="SequenceNumeric" type="SequenceNumericType"/>
       <xs:element minOccurs="0" name="LimitDateTime" type="NotificationDateType"/>
+      <xs:element minOccurs="0" name="TypeCode" type="TypeCodeType"/>
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="GovernmentAgencyGoodsItem">
@@ -461,13 +462,13 @@
   </xs:simpleType>
   <xs:simpleType name="CustomsPositionType" final="restriction">
     <xs:restriction base="xs:string">
-      <xs:enumeration value="GRANTED"/>
-      <xs:enumeration value="DENIED"/>
+      <!--<xs:enumeration value="GRANTED"/>
+      <xs:enumeration value="DENIED"/>-->
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="AmendmentReasonType" final="restriction">
     <xs:restriction base="xs:string">
-      <xs:enumeration value="COMPLETED"/>
+      <!--<xs:enumeration value="COMPLETED"/>
       <xs:enumeration value="CONFIRMED"/>
       <xs:enumeration value="CORRECTED_BY_DECLARANT"/>
       <xs:enumeration value="MISTAKEN_CUSTOMS_PROCEDURE"/>
@@ -477,13 +478,17 @@
       <xs:enumeration value="AUTO_COMPLETED"/>
       <xs:enumeration value="FINAL_DUTY_UPDATE"/>
       <xs:enumeration value="COMPLETED_MEASURE_DATA"/>
-      <xs:enumeration value="QUOTA_DISAGREED"/>
+      <xs:enumeration value="QUOTA_DISAGREED"/>-->
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="SequenceNumericType">
     <xs:restriction base="udt:NumericType">
       <xs:totalDigits value="5"/>
       <xs:fractionDigits value="0"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="TypeCodeType">
+    <xs:restriction base="xs:string">
     </xs:restriction>
   </xs:simpleType>
 
