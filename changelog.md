@@ -3,6 +3,7 @@
 
 * Updated trader-portal-common.xsd to newest version
 * Uploaded IE035, IE906, IE917 notifcations
+* Uploaded DTO messages
 
 * System Guide
     * Changes to section 3.1.3, AS4 notifications
