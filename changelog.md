@@ -1,3 +1,28 @@
+### 01-09-2023
+
+* Updated trader-portal-common.xsd to newest version
+* Uploaded IE035, IE906, IE917 notifcations
+
+* System Guide
+    * Changes to section 3.1.3, AS4 notifications
+    * Added notification descriptors to transit IE messages
+        * IE022, IE140, IE182, IE906, IE917
+
+* Export XML Guide
+    * Added changes to reflect C1 Standard and C1 Supplementary optionality difference in the comments
+
+* Brief ManifestReferenceNumber descriptor in IE547 test case PDF. 
+* Changes to diagrams in amendment/correction/invalidation Test Cases for Export
+
+### 25-08-2023
+
+* Minor changes to SystemGuide as well as adding IE026 explanation
+
+* Fixes to Exit IE messages.
+* Export XML Guide changes to reflect C2 GPR and C2 EIDR optionality differences in the comments
+
+* Test Case PDFs for export (B1-4, C1-2) have been updated with new diagrams and notification pull changes in the test case test steps
+
 ### 04-08-2023
 
 * B1 + B1 Amend: Origin/TypeCode deleted

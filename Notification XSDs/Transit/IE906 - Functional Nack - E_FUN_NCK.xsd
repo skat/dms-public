@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://ecs.dgtaxud.ec" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" targetNamespace="http://ecs.dgtaxud.ec" elementFormDefault="unqualified" attributeFormDefault="unqualified" version="51.8.2" vc:minVersion="1.1">
+  <!--================================================================================-->
+  <!--===== IE906: E_FUN_NCK                                                                -->
+  <!--===== FUNCTIONAL NACK                                                                 -->
+  <!--===== AES P1 Phase Definition                                                         -->
+  <!--===== XSD Version 51.8.2                                                              -->
+  <!--================================================================================-->
+  <!--================================================================================-->
+  <!--===== Includes                                                                        -->
+  <!--================================================================================-->
+  <xs:include schemaLocation="../../Transit XSDs/NCTS_DS/ctypes.xsd" />
+  <xs:include schemaLocation="../../Transit XSDs/NCTS_DS/htypes.xsd" />
+  <!--================================================================================-->
+  <!--===== Root Element                                                                    -->
+  <!--================================================================================-->
+  <xs:element name="CC906C" type="CC906CType" />
+  <!--================================================================================-->
+  <!--===== Root Element Content                                                            -->
+  <!--================================================================================-->
+  <xs:complexType name="CC906CType">
+    <xs:sequence>
+      <xs:element name="messageSender" type="MessageSenderContentType">
+        <xs:annotation>
+          <xs:documentation>
+            <description value="Message sender"/>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="messageRecipient" type="MessageRecipientContentType">
+        <xs:annotation>
+          <xs:documentation>
+            <description value="Message recipient"/>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="preparationDateAndTime" type="PreparationDateAndTimeContentType">
+        <xs:annotation>
+          <xs:documentation>
+            <description value="Preparation date and time"/>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="messageIdentification" type="MessageIdentificationContentType">
+        <xs:annotation>
+          <xs:documentation>
+            <description value="Message identification"/>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="messageType" type="MessageTypes">
+        <xs:annotation>
+          <xs:documentation>
+            <description value="Message type"/>
+            <codeList name="MessageTypes"/>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="correlationIdentifier" type="CorrelationIdentifierContentType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <description value="Correlation identifier"/>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Header">
+        <xs:annotation>
+          <xs:documentation>
+            <description value="HEADER" />
+            <optionality value="R" />
+          </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="LRN" minOccurs="0" type="LrnContentType02">
+              <xs:annotation>
+                <xs:documentation>
+                  <description value="LRN"/>
+                  <format value="an..22"/>
+                  <optionality value="D"/>
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="MRN" minOccurs="0" type="MrnContentType04">
+              <xs:annotation>
+                <xs:documentation>
+                  <description value="MRN"/>
+                  <format value="an18"/>
+                  <optionality value="D"/>
+                  <xsdBaseType value="MRNType"/>
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="FunctionalError" maxOccurs="9999">
+        <xs:annotation>
+          <xs:documentation>
+            <description value="FUNCTIONAL ERROR" />
+            <optionality value="R" />
+          </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="errorPointer" type="ErrorPointerContentType">
+              <xs:annotation>
+                <xs:documentation>
+                  <description value="Error pointer"/>
+                  <format value="an..512"/>
+                  <optionality value="R"/>
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="errorCode" type="AesNctsP5FunctionalErrorCodes">
+              <xs:annotation>
+                <xs:documentation>
+                  <description value="Error code"/>
+                  <format value="n2"/>
+                  <optionality value="R"/>
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="errorReason" type="ErrorReasonContentType">
+              <xs:annotation>
+                <xs:documentation>
+                  <description value="Error reason"/>
+                  <format value="an..7"/>
+                  <optionality value="R"/>
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="originalAttributeValue" minOccurs="0" type="OriginalAttributeValueContentType">
+              <xs:annotation>
+                <xs:documentation>
+                  <description value="Original attribute value"/>
+                  <format value="an..512"/>
+                  <optionality value="O"/>
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="PhaseID" type="phaseIDtype" />
+  </xs:complexType>
+</xs:schema>
