@@ -1,4 +1,8 @@
 
+### 07-09-2023
+* Updated all links in the "guide" documents after toldst.dk is the new place for TOLDST related things
+
+
 ### 01-09-2023
 
 * Updated trader-portal-common.xsd to newest version
