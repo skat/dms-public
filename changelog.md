@@ -1,3 +1,15 @@
+### 14-09-2023
+* Updated System Guide
+   * Added AS4 Error Messages section
+* Updated Export XML Guide
+   * Corrected discrepancies in ‘Location of Goods’ and made some of its elements more explicit.
+   * Corrected ‘Country of Origin’ and ‘Total Invoice Amount’ elements.
+   * SE-number not allowed and DKSEN not used.
+   * Removed Inland mode of transport.
+   * Corrected the requirement overview of Active Border Transport Means.
+   * Fixed country formats.
+   * Corrected TransportEquipment.
+
 ### 07-09-2023
 * Updated all links in the "guide" documents after toldst.dk is the new place for TOLDST related things
 
