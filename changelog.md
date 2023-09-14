@@ -9,6 +9,7 @@
    * Corrected the requirement overview of Active Border Transport Means.
    * Fixed country formats.
    * Corrected TransportEquipment.
+   * Corrected Representative information.
 
 ### 07-09-2023
 * Updated all links in the "guide" documents after toldst.dk is the new place for TOLDST related things
