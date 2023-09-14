@@ -10,13 +10,16 @@
    * Fixed country formats.
    * Corrected TransportEquipment.
 
+
 ### 07-09-2023
 * Updated all links in the "guide" documents after toldst.dk is the new place for TOLDST related things
+
 
 ### 01-09-2023
 
 * Updated trader-portal-common.xsd to newest version
 * Uploaded IE035, IE906, IE917 notifcations
+* Uploaded DTO messages
 
 * System Guide
     * Changes to section 3.1.3, AS4 notifications
@@ -29,6 +32,9 @@
 * Brief ManifestReferenceNumber descriptor in IE547 test case PDF. 
 * Changes to diagrams in amendment/correction/invalidation Test Cases for Export
 
+* Minor updates to DMS onboarding manuals
+
+
 ### 25-08-2023
 
 * Minor changes to SystemGuide as well as adding IE026 explanation
@@ -37,6 +43,7 @@
 * Export XML Guide changes to reflect C2 GPR and C2 EIDR optionality differences in the comments
 
 * Test Case PDFs for export (B1-4, C1-2) have been updated with new diagrams and notification pull changes in the test case test steps
+
 
 ### 04-08-2023
 
@@ -69,7 +76,13 @@
      
 * Remember to check for the latest version number on your XML Guides following this update
 
-* Minor changes to Test Case XMLs to guarantee functional acceptance in the system.
+### 31-07-2023
+
+* Updated System Guide to version 1.14
+
+
+* Updated Connectivity Guide to version 1.7
+
 
 * Minor XSD changes to cardinality/restrictions within Exit IE Messages. 
     * Will not change XSDs functionally
@@ -82,6 +95,7 @@
 
 * Minor changes to ID6 reference code in XSDs
 * Reupload test case PDF due to code embedded error on GitHub.
+
 
 ### 13-07-2023
 
