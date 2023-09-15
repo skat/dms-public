@@ -10,6 +10,7 @@
    * Fixed country formats.
    * Corrected TransportEquipment.
    * Corrected Representative information.
+   * Corrected IE906 and IE917 XSDs.
 
 ### 07-09-2023
 * Updated all links in the "guide" documents after toldst.dk is the new place for TOLDST related things
