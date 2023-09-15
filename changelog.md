@@ -1,4 +1,4 @@
-### 14-09-2023
+### 15-09-2023
 * Updated System Guide
    * Added AS4 Error Messages section
 * Updated Export XML Guide
