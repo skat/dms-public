@@ -1,3 +1,9 @@
+### 18-09-2023
+* Updated Transit XML Guide
+  * Added MCL, HCL and HCI abbreviations to the Glossary
+  * Previous Document updated the table, and added MCL, HCL, HCI 
+  * Consignor updated the table, and added MCL, HCL, HCI
+  
 ### 15-09-2023
 * Updated System Guide
    * Added AS4 Error Messages section
