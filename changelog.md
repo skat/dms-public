@@ -1,3 +1,9 @@
+### 21-09-2023
+* Updated System Guide
+  * Added new section describing the Synchronous Messages (section 3.3)
+* Added XSDs for the Synchronous Messages
+  * The new XSDs can be found under Notification XSDs > SynchronousMessages
+
 ### 18-09-2023
 * Updated Transit XML Guide
   * Added MCL, HCL and HCI abbreviations to the Glossary
