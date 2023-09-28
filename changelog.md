@@ -1,3 +1,7 @@
+### 28-09-2023
+* Removed the outdated system guide 1.18, that was accidentally left after latest systemguide update.
+
+
 ### 21-09-2023
 * Updated System Guide
   * Added new section describing the Synchronous Messages (section 3.3)
