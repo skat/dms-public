@@ -1,3 +1,39 @@
+### 04-10-2023
+* Added troubleshooting section to the connectivity guide how to clear certificate link and import certificate to the different web-browsers:
+  * Firefox
+  * Google Chrome
+  * Microsoft Edge
+  
+### 28-09-2023
+* Removed the outdated system guide 1.18, that was accidentally left after latest systemguide update.
+
+
+### 21-09-2023
+* Updated System Guide
+  * Added new section describing the Synchronous Messages (section 3.3)
+* Added XSDs for the Synchronous Messages
+  * The new XSDs can be found under Notification XSDs > SynchronousMessages
+
+### 18-09-2023
+* Updated Transit XML Guide
+  * Added MCL, HCL and HCI abbreviations to the Glossary
+  * Previous Document updated the table, and added MCL, HCL, HCI 
+  * Consignor updated the table, and added MCL, HCL, HCI
+  
+### 15-09-2023
+* Updated System Guide
+   * Added AS4 Error Messages section
+* Updated Export XML Guide
+   * Corrected discrepancies in ‘Location of Goods’ and made some of its elements more explicit.
+   * Corrected ‘Country of Origin’ and ‘Total Invoice Amount’ elements.
+   * SE-number not allowed and DKSEN not used.
+   * Removed Inland mode of transport.
+   * Corrected the requirement overview of Active Border Transport Means.
+   * Fixed country formats.
+   * Corrected TransportEquipment.
+   * Corrected Representative information.
+* Corrected IE906 and IE917 XSDs.
+
 ### 07-09-2023
 * Updated all links in the "guide" documents after toldst.dk is the new place for TOLDST related things
 
