@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+           targetNamespace="http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/"
+           xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
+           xmlns:eb3="http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/"
+           xmlns:env="http://www.w3.org/2003/05/soap-envelope"
+           xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+           xmlns:ec="http://www.w3.org/2001/10/xml-exc-c14n#"
+           xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+    <xs:import namespace="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"
+               schemaLocation="wsse.xsd"/>
+    <xs:import namespace="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+               schemaLocation="wsu.xsd"/>
+    <xs:import namespace="http://www.w3.org/2000/09/xmldsig#" schemaLocation="ds.xsd"/>
+    <xs:import namespace="http://www.w3.org/2001/10/xml-exc-c14n#" schemaLocation="ec.xsd"/>
+    <xs:import namespace="http://www.w3.org/2003/05/soap-envelope" schemaLocation="env.xsd"/>
+    <xs:element name="Messaging">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="eb3:UserMessage"/>
+            </xs:sequence>
+            <xs:attribute ref="wsu:Id" use="required"/>
+            <xs:attribute ref="env:mustUnderstand" use="required"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="UserMessage">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="eb3:MessageInfo"/>
+                <xs:element ref="eb3:PartyInfo"/>
+                <xs:element ref="eb3:CollaborationInfo"/>
+                <xs:element ref="eb3:MessageProperties"/>
+                <xs:element ref="eb3:PayloadInfo"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="MessageInfo">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="eb3:Timestamp"/>
+                <xs:element ref="eb3:MessageId"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Timestamp" type="xs:NMTOKEN"/>
+    <xs:element name="MessageId" type="xs:string"/>
+    <xs:element name="PartyInfo">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="eb3:From"/>
+                <xs:element ref="eb3:To"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="From">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="eb3:PartyId"/>
+                <xs:element ref="eb3:Role"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="To">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="eb3:PartyId"/>
+                <xs:element ref="eb3:Role"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="CollaborationInfo">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Service">
+                    <xs:complexType>
+                        <xs:simpleContent>
+                            <xs:extension base="eb3:ServiceContent">
+                                <xs:attribute name="type" type="xs:string"/>
+                            </xs:extension>
+                        </xs:simpleContent>
+                    </xs:complexType>
+                </xs:element>
+
+                <xs:element name="Action">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="Declaration.Submit"/>
+                            <xs:enumeration value="Declaration.Amend"/>
+                            <xs:enumeration value="Declaration.Invalidate"/>
+                            <xs:enumeration value="Declaration.EIDR"/>
+                            <xs:enumeration value="Declaration.Amend.Goodspresented"/>
+                            <xs:enumeration value="Declaration.Amend.Supplement"/>
+                            <xs:enumeration value="Notification"/>
+                            <xs:enumeration value="Exit.Declaration.Submit"/>
+                            <xs:enumeration value="Exit.Declaration.Amend"/>
+                            <xs:enumeration value="Exit.Declaration.Invalidate"/>
+                            <xs:enumeration value="Declaration.ArrivalNotification"/>
+                            <xs:enumeration value="Declaration.ExitNotification"/>
+                            <xs:enumeration value="Declaration.NonExitedExport"/>
+                            <xs:enumeration value="Declaration.ManifestPresentation"/>
+                            <xs:enumeration value="Declaration.Release"/>
+                            <xs:enumeration value="Declaration.GuaranteesQuery"/>
+                            <xs:enumeration value="Declaration.GuaranteesCodes"/>
+                            <xs:enumeration value="Declaration.NonArrivedMovement"/>
+                            <xs:enumeration value="Declaration.Unload"/>
+                            <xs:enumeration value="Document.Upload"/>
+                            <xs:enumeration value="Declaration.InvalidateRemissionRepayment"/>
+                            <xs:maxLength value="48"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element ref="eb3:ConversationId"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Service">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:NCName">
+                    <xs:attribute name="type" use="required" type="xs:NCName"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Action" type="xs:NCName"/>
+    <xs:element name="ConversationId" type="xs:NCName"/>
+    <xs:element name="MessageProperties">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Property" type="eb3:MPPropertiesType"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="PayloadInfo">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="eb3:PartInfo"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="PartInfo">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="eb3:PartProperties"/>
+            </xs:sequence>
+            <xs:attribute name="href" use="required" type="xs:anyURI"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="PartProperties" type="eb3:eb3.Property"/>
+    <xs:element name="PartyId">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:NCName">
+                    <xs:attribute name="type" use="required" type="xs:NCName"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Role" type="xs:anyURI"/>
+    <xs:complexType name="eb3.Property">
+        <xs:sequence>
+            <xs:element ref="eb3:Property"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="MPPropertiesType">
+        <xs:simpleContent>
+            <xs:extension base="eb3:PropertyContent">
+                <xs:attribute name="name" type="xs:string"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:element name="Property">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:NCName">
+                    <xs:attribute name="name" use="required" type="xs:NCName"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:simpleType name="ServiceContent">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="DMS.Export"/>
+            <xs:enumeration value="DMS.Transit"/>
+            <xs:enumeration value="DMS.Import2"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="PropertyContent">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="B1"/>
+            <xs:enumeration value="B2"/>
+            <xs:enumeration value="B3"/>
+            <xs:enumeration value="B4"/>
+            <xs:enumeration value="C1"/>
+            <xs:enumeration value="C2"/>
+            <xs:enumeration value="A1"/>
+            <xs:enumeration value="A2"/>
+            <xs:enumeration value="A3"/>
+            <xs:enumeration value="D1"/>
+            <xs:enumeration value="D2"/>
+            <xs:enumeration value="D4"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>
