@@ -1,3 +1,9 @@
+### 04-10-2023
+* Added troubleshooting section to the connectivity guide how to clear certificate link and import certificate to the different web-browsers:
+  * Firefox
+  * Google Chrome
+  * Microsoft Edge
+  
 ### 28-09-2023
 * Removed the outdated system guide 1.18, that was accidentally left after latest systemguide update.
 
