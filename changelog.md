@@ -9,7 +9,7 @@
 Added IE582/CC582C XSD notification
 
 ### 05-10-2023
-* Updated "opret angivlese guide".
+* Updated "opret angivelse guide".
 * Updated connectivity guide.
 
 
