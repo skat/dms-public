@@ -1,3 +1,6 @@
+### 12-10-2023
+Added IE582/CC582C XSD notification
+
 ### 04-10-2023
 * Added troubleshooting section to the connectivity guide how to clear certificate link and import certificate to the different web-browsers:
   * Firefox
