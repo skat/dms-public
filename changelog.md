@@ -1,3 +1,34 @@
+### 20-10-2023
+* Updated the following XML Guides
+  * Transit XML Guide
+  * Transit IE XML Guide
+  * Exit XML Guide
+  * Export XML Guide
+* Added new DMS Release notes TFE document
+* Added new AS4 header XSDs to help spot errors
+  * Added the raw XSDs
+  * Added a readMe
+  * Found in Onboarding Documents > appendix > as4_header
+
+### 12-10-2023
+Added IE582/CC582C XSD notification
+
+### 05-10-2023
+* Updated DMS Online User Manuals
+  * Updated "Vejledning - Opret B1-angivelse".
+  * Updated "Vejledning - Indsend meddelelse ved udpassage (Eksport)".
+
+
+### 04-10-2023
+* Added troubleshooting section to the connectivity guide how to clear certificate link and import certificate to the different web-browsers:
+  * Firefox
+  * Google Chrome
+  * Microsoft Edge
+  
+### 28-09-2023
+* Removed the outdated system guide 1.18, that was accidentally left after latest systemguide update.
+
+
 ### 21-09-2023
 * Updated System Guide
   * Added new section describing the Synchronous Messages (section 3.3)

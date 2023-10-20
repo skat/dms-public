@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.w3.org/2000/09/xmldsig#" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:eb3="http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:ec="http://www.w3.org/2001/10/xml-exc-c14n#" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+    <xs:import namespace="http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/" schemaLocation="main.xsd"/>
+    <xs:import namespace="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" schemaLocation="wsse.xsd"/>
+    <xs:import namespace="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" schemaLocation="wsu.xsd"/>
+    <xs:import namespace="http://www.w3.org/2001/10/xml-exc-c14n#" schemaLocation="ec.xsd"/>
+    <xs:import namespace="http://www.w3.org/2003/05/soap-envelope" schemaLocation="env.xsd"/>
+    <xs:element name="Signature">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="ds:SignedInfo"/>
+                <xs:element ref="ds:SignatureValue"/>
+                <xs:element ref="ds:KeyInfo"/>
+            </xs:sequence>
+            <xs:attribute name="Id" use="required"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="SignedInfo">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="ds:CanonicalizationMethod"/>
+                <xs:element ref="ds:SignatureMethod"/>
+                <xs:element maxOccurs="unbounded" ref="ds:Reference"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="CanonicalizationMethod">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="ec:InclusiveNamespaces"/>
+            </xs:sequence>
+            <xs:attribute name="Algorithm" use="required" type="xs:anyURI"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="SignatureMethod">
+        <xs:complexType>
+            <xs:attribute name="Algorithm" use="required" type="xs:anyURI"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Reference">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="ds:Transforms"/>
+                <xs:element ref="ds:DigestMethod"/>
+                <xs:element ref="ds:DigestValue"/>
+            </xs:sequence>
+            <xs:attribute name="URI" use="required" type="xs:anyURI"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Transforms">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="ds:Transform"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Transform">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" ref="ec:InclusiveNamespaces"/>
+            </xs:sequence>
+            <xs:attribute name="Algorithm" use="required" type="xs:anyURI"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="DigestMethod">
+        <xs:complexType>
+            <xs:attribute name="Algorithm" use="required" type="xs:anyURI"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="DigestValue" type="xs:string"/>
+    <xs:element name="SignatureValue" type="xs:base64Binary"/>
+    <xs:element name="KeyInfo">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="wsse:SecurityTokenReference"/>
+            </xs:sequence>
+            <xs:attribute name="Id" use="required"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="X509Data">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="ds:X509IssuerSerial"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="X509IssuerSerial">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="ds:X509IssuerName"/>
+                <xs:element ref="ds:X509SerialNumber"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="X509IssuerName" type="xs:string"/>
+    <xs:element name="X509SerialNumber" type="xs:integer"/>
+</xs:schema>
