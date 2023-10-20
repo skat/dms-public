@@ -4,13 +4,19 @@
   * Transit IE XML Guide
   * Exit XML Guide
   * Export XML Guide
+* Added new DMS Release notes TFE document
+* Added new AS4 header XSDs to help spot errors
+  * Added the raw XSDs
+  * Added a readMe
+  * Found in Onboarding Documents > appendix > as4_header
 
 ### 12-10-2023
 Added IE582/CC582C XSD notification
 
 ### 05-10-2023
-* Updated "opret angivelse guide".
-* Updated connectivity guide.
+* Updated DMS Online User Manuals
+  * Updated "Vejledning - Opret B1-angivelse".
+  * Updated "Vejledning - Indsend meddelelse ved udpassage (Eksport)".
 
 
 ### 04-10-2023
