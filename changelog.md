@@ -1,4 +1,9 @@
-
+### 20-10-2023
+* Updated the following XML Guides
+  * Transit XML Guide
+  * Transit IE XML Guide
+  * Exit XML Guide
+  * Export XML Guide
 
 ### 12-10-2023
 Added IE582/CC582C XSD notification
