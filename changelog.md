@@ -14,6 +14,8 @@
 Added IE582/CC582C XSD notification
 
 ### 05-10-2023
+* Updated "opret angivlese guide".
+* Updated connectivity guide.
 * Updated DMS Online User Manuals
   * Updated "Vejledning - Opret B1-angivelse".
   * Updated "Vejledning - Indsend meddelelse ved udpassage (Eksport)".
