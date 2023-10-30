@@ -1,3 +1,6 @@
+### 30-10-2023
+* Fix formatting of Connectivity Guide
+
 ### 20-10-2023
 * Updated the following XML Guides
   * Transit XML Guide
