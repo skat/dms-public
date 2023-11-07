@@ -1,3 +1,21 @@
+### 03-11-2023
+* Updated System Guide
+  * Added a table mapping CWM notifications to IE messages in section 12.3.1
+  * Figure and table captions and formatting updated for all sections, along with many quality improvements
+  * A few readability changes to content in notification section
+* Updated Connectivity Guide
+  * Added comment about procedureType
+* Updated Export XML Guide
+  * Updated Location of Goods
+* Updated Transit XML Guide
+  * Updated Place of Loading/Unloading
+* Updated Error and Warning codes
+  * Added missing error codes
+* Update codelists and removed duplicates
+
+### 30-10-2023
+* Fix formatting of Connectivity Guide
+
 ### 20-10-2023
 * Updated the following XML Guides
   * Transit XML Guide
