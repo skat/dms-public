@@ -1,3 +1,14 @@
+### 10-11-2023
+* Added new testcases
+	* Controlling and Victualling
+* Updated and corrected all Exit IE Testcases
+	* IE507, IE547, and IE583
+* Updated DMS Online User Manuals
+	* Godkendt frembydelse
+	* Efterfølgende udførselsangivelse
+	* Reeksport fra særlige procedurer
+	* Udførsel til passiv forædling
+
 ### 03-11-2023
 * Updated System Guide
   * Added a table mapping CWM notifications to IE messages in section 12.3.1
