@@ -47,6 +47,7 @@
 					</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element name="ID" type="ds:DeclarationIdentificationIDType"/>
 			<xs:element name="TypeCode" type="ds:DeclarationTypeCodeType">
 				<xs:annotation>
 					<xs:documentation>
@@ -62,7 +63,7 @@
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="DeclarationOfficeID" type="ds:DeclarationDeclarationOfficeIDType"/>
-			<xs:element name="InvoiceAmount" type="ds:DeclarationInvoiceAmountType" minOccurs="0">
+			<xs:element name="InvoiceAmount" type="ds:DeclarationInvoiceAmountType">
 				<xs:annotation>
 					<xs:documentation>
 						<EUCDMname>Total amount invoiced</EUCDMname>
@@ -244,6 +245,17 @@
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
+
+			<xs:element name="Amendment">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="SequenceNumeric" type="ds:AmendmentSequenceNumericType"/>
+						<xs:element name="ChangeReasonCode" type="ds:AmendmentChangeReasonCodeType"/>
+						<xs:element name="ChangeReasonText" type="ds:AmendmentChangeReasonTextType"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+
 			<xs:element name="Consignment" minOccurs="0">
 				<xs:complexType>
 					<xs:sequence>
@@ -2039,15 +2051,6 @@
 															<EUCDMname>Country of origin</EUCDMname>
 															<type>EUCDM 6.1</type>
 															<code>16 08 001 000</code>
-														</xs:documentation>
-													</xs:annotation>
-												</xs:element>
-												<xs:element name="RegionID" type="ds:OriginRegionIDType" minOccurs="0">
-													<xs:annotation>
-														<xs:documentation>
-															<EUCDMname>Region of dispatch</EUCDMname>
-															<type>EUCDM 6.1</type>
-															<code>16 10 001 000</code>
 														</xs:documentation>
 													</xs:annotation>
 												</xs:element>

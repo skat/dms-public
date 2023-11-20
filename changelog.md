@@ -1,3 +1,36 @@
+### 17-11-2023
+* Updated XSDs to reflect PROD update
+* Added IE037 Notification XSD
+
+### 10-11-2023
+* Added new testcases
+	* Controlling and Victualling
+* Updated and corrected all Exit IE Testcases
+	* IE507, IE547, and IE583
+* Updated DMS Online User Manuals
+	* Godkendt frembydelse
+	* Efterfølgende udførselsangivelse
+	* Reeksport fra særlige procedurer
+	* Udførsel til passiv forædling
+
+### 03-11-2023
+* Updated System Guide
+  * Added a table mapping CWM notifications to IE messages in section 12.3.1
+  * Figure and table captions and formatting updated for all sections, along with many quality improvements
+  * A few readability changes to content in notification section
+* Updated Connectivity Guide
+  * Added comment about procedureType
+* Updated Export XML Guide
+  * Updated Location of Goods
+* Updated Transit XML Guide
+  * Updated Place of Loading/Unloading
+* Updated Error and Warning codes
+  * Added missing error codes
+* Update codelists and removed duplicates
+
+### 30-10-2023
+* Fix formatting of Connectivity Guide
+
 ### 20-10-2023
 * Updated the following XML Guides
   * Transit XML Guide
