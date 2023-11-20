@@ -1,3 +1,7 @@
+### 17-11-2023
+* Updated XSDs to reflect PROD update
+* Added IE037 Notification XSD
+
 ### 10-11-2023
 * Added new testcases
 	* Controlling and Victualling
