@@ -1,3 +1,9 @@
+
+### 23-11-2023
+* Updated/corrected testcases
+   * A1-3, B3 standard, B4 standard
+* Updated release notes for version 4.2.5
+
 ### 17-11-2023
 * Updated XSDs to reflect PROD update
 * Added IE037 Notification XSD
