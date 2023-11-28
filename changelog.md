@@ -1,3 +1,23 @@
+### 23-11-2023
+* Updated/corrected testcases
+   * A1-3, B3 standard, B4 standard
+* Updated release notes for version 4.2.5
+
+### 17-11-2023
+* Updated XSDs to reflect PROD update
+* Added IE037 Notification XSD
+
+### 10-11-2023
+* Added new testcases
+	* Controlling and Victualling
+* Updated and corrected all Exit IE Testcases
+	* IE507, IE547, and IE583
+* Updated DMS Online User Manuals
+	* Godkendt frembydelse
+	* Efterfølgende udførselsangivelse
+	* Reeksport fra særlige procedurer
+	* Udførsel til passiv forædling
+
 ### 03-11-2023
 * Updated System Guide
   * Added a table mapping CWM notifications to IE messages in section 12.3.1
