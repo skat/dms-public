@@ -52,6 +52,8 @@
 Added IE582/CC582C XSD notification
 
 ### 05-10-2023
+* Updated "opret angivlese guide".
+* Updated connectivity guide.
 * Updated DMS Online User Manuals
   * Updated "Vejledning - Opret B1-angivelse".
   * Updated "Vejledning - Indsend meddelelse ved udpassage (Eksport)".
@@ -96,21 +98,26 @@ Added IE582/CC582C XSD notification
 ### 07-09-2023
 * Updated all links in the "guide" documents after toldst.dk is the new place for TOLDST related things
 
+
 ### 01-09-2023
 
 * Updated trader-portal-common.xsd to newest version
 * Uploaded IE035, IE906, IE917 notifcations
+* Uploaded DTO messages
 
 * System Guide
     * Changes to section 3.1.3, AS4 notifications
     * Added notification descriptors to transit IE messages
-        * IE022, IE140, IE182, IE906, IE917
+    * IE022, IE140, IE182, IE906, IE917
 
 * Export XML Guide
     * Added changes to reflect C1 Standard and C1 Supplementary optionality difference in the comments
 
 * Brief ManifestReferenceNumber descriptor in IE547 test case PDF. 
 * Changes to diagrams in amendment/correction/invalidation Test Cases for Export
+
+* Minor updates to DMS onboarding manuals
+
 
 ### 25-08-2023
 
@@ -120,6 +127,7 @@ Added IE582/CC582C XSD notification
 * Export XML Guide changes to reflect C2 GPR and C2 EIDR optionality differences in the comments
 
 * Test Case PDFs for export (B1-4, C1-2) have been updated with new diagrams and notification pull changes in the test case test steps
+
 
 ### 04-08-2023
 
@@ -152,7 +160,13 @@ Added IE582/CC582C XSD notification
      
 * Remember to check for the latest version number on your XML Guides following this update
 
-* Minor changes to Test Case XMLs to guarantee functional acceptance in the system.
+### 31-07-2023
+
+* Updated System Guide to version 1.14
+
+
+* Updated Connectivity Guide to version 1.7
+
 
 * Minor XSD changes to cardinality/restrictions within Exit IE Messages. 
     * Will not change XSDs functionally
@@ -165,6 +179,7 @@ Added IE582/CC582C XSD notification
 
 * Minor changes to ID6 reference code in XSDs
 * Reupload test case PDF due to code embedded error on GitHub.
+
 
 ### 13-07-2023
 
