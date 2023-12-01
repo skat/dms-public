@@ -1,6 +1,10 @@
+### 01-12-2023
+* Updated release notes for version 4.2.5.1
+* Updated B3 Testcase XMLs
+* Updated Invalidation testcases to accommodate invalidation notification in pre-lodge flows
+
 ### 29-11-2023
 * Update DMS Online XML examples
-
 
 ### 23-11-2023
 * Updated/corrected testcases
