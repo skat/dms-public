@@ -1,3 +1,9 @@
+### 12-12-2023
+* Updated AES codelists to reflect version 4.2.5.2
+
+### 06-12-2023
+* Updated release notes for version 4.2.5.2
+
 ### 01-12-2023
 * Updated release notes for version 4.2.5.1
 * Updated B3 Testcase XMLs
