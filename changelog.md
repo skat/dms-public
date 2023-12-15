@@ -1,3 +1,6 @@
+### 15-12-2023
+* Updated release notes to v1.5
+
 ### 12-12-2023
 * Updated AES codelists to reflect version 4.2.5.2
 
