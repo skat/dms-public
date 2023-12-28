@@ -1,5 +1,7 @@
-### 19-12-2023
+### 28-12-2023
+* Updated Centralized Clearance testcase
 
+### 19-12-2023
 * Updated release notes to v1.6
    * Fix regarding SE Number has been corrected
 * Updated Validation rules and Error codes list
