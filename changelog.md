@@ -1,3 +1,6 @@
+### 11-01-2024
+* Updated release notes to v1.5
+
 ### 29-12-2023
 * Updated Transit IE testcases
 
