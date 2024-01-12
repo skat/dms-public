@@ -1,3 +1,6 @@
+### 11-01-2024
+* Updated release notes to v1.5
+
 ### 9-1-2024
 * Updated DMS Online User Manuals file structure
 * Commented out the "presentationOfTheGoodsDateAndTime" field.
