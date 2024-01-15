@@ -1,6 +1,9 @@
-### 9-1-2024
+### 15-1-2024
 * Updated DMS Online User Manuals file structure
 * Commented out the "presentationOfTheGoodsDateAndTime" field.
+
+### 11-01-2024
+* Updated release notes to v1.5
 
 ### 29-12-2023
 * Updated Transit IE testcases
