@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="urn:wco:datamodel:WCO:DocumentMetaData-DMS:2"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:ds="urn:wco:datamodel:WCO:MetaData_DS-DMS:2"
+    targetNamespace="urn:wco:datamodel:WCO:DocumentMetaData-DMS:2"
+    elementFormDefault="qualified"
+    version="2.1">
+  <xs:import namespace="urn:wco:datamodel:WCO:MetaData_DS-DMS:2" schemaLocation="WCO_DS/WCO_METADATA_2_DMS.xsd"/>
+  <xs:element name="MetaData">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOName>MetaData</WCOName>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="WCODataModelVersionCode" type="ds:MetaDataWCODataModelVersionCodeType" minOccurs="0">
+          <xs:annotation>
+            <xs:documentation>
+              <WCOFormat>an..6</WCOFormat>
+              <WCOCodeRemarks>WCO code list</WCOCodeRemarks>
+              <DictionaryEntryName>Document Meta Data. WCO Data Model Version. Code</DictionaryEntryName>
+              <NamedComplexType>DocumentMetaDataWCODataModelVersionCodeType</NamedComplexType>
+              <XMLTag>WCODataModelVersionCode</XMLTag>
+              <WCOName>WCO Data Model Version</WCOName>
+              <UniquePositionID>9010</UniquePositionID>
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="WCOTypeName" type="ds:MetaDataWCOTypeNameTextType" minOccurs="0">
+          <xs:annotation>
+            <xs:documentation>
+              <DictionaryEntryName>Document Meta Data. WCO Type Name. Text</DictionaryEntryName>
+              <NamedComplexType>DocumentMetaDataWCOTypeNameTextType</NamedComplexType>
+              <XMLTag>WCOTypeName</XMLTag>
+              <WCOName>WCO Type Name</WCOName>
+              <UniquePositionID>9013</UniquePositionID>
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="ResponsibleCountryCode" type="ds:MetaDataResponsibleCountryCodeType" minOccurs="0">
+          <xs:annotation>
+            <xs:documentation xml:lang="EN">
+              <WCOCodeRemarks>EDIFACT codes (3207) = ISO 3166-1 2-alpha code</WCOCodeRemarks>
+            </xs:documentation>
+            <xs:documentation>
+              <WCOFormat>a2</WCOFormat>
+              <DictionaryEntryName>Document Meta Data. Responsible Country. Code</DictionaryEntryName>
+              <NamedComplexType>DocumentMetaDataResponsibleCountryCodeType</NamedComplexType>
+              <XMLTag>ResponsibleCountryCode</XMLTag>
+              <WCOName>Responsible Country</WCOName>
+              <UniquePositionID>9014</UniquePositionID>
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="ResponsibleAgencyName" type="ds:MetaDataResponsibleAgencyNameTextType" minOccurs="0">
+          <xs:annotation>
+            <xs:documentation>
+              <WCOFormat>an..70</WCOFormat>
+              <DictionaryEntryName>Document Meta Data. ResponsibleAgencyName. Text</DictionaryEntryName>
+              <NamedComplexType>DocumentMetaDataResponsibleAgencyNameTextType</NamedComplexType>
+              <XMLTag>ResponsibleAgencyName</XMLTag>
+              <WCOName>Responsible Agency Name</WCOName>
+              <UniquePositionID>9016</UniquePositionID>
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="AgencyAssignedCustomizationCode" type="ds:MetaDataAgencyAssignedCustomizationCodeType" minOccurs="0">
+          <xs:annotation>
+            <xs:documentation>
+              <WCOFormat>an..6</WCOFormat>
+              <WCOCodeRemarks>User codes</WCOCodeRemarks>
+              <DictionaryEntryName>Document Meta Data. Agency Assigned Customization. Code</DictionaryEntryName>
+              <NamedComplexType>DocumentMetaDataAgencyAssignedCustomizationCodeType</NamedComplexType>
+              <XMLTag>AgencyAssignedCustomizationCode</XMLTag>
+              <WCOName>Agency Assigned Customization</WCOName>
+              <UniquePositionID>9000</UniquePositionID>
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="AgencyAssignedCustomizationVersionCode" type="ds:MetaDataAgencyAssignedCustomizationVersionCodeType" minOccurs="0">
+          <xs:annotation>
+            <xs:documentation>
+              <WCOFormat>an..3</WCOFormat>
+              <WCOCodeRemarks>User codes</WCOCodeRemarks>
+              <DictionaryEntryName>Document Meta Data. Agency Assigned Customization Version. Code</DictionaryEntryName>
+              <NamedComplexType>DocumentMetaDataAgencyAssignedCustomizationVersionCodeType</NamedComplexType>
+              <XMLTag>AgencyAssignedCustomizationVersionCode</XMLTag>
+              <WCOName>Agency Assigned Customization Version</WCOName>
+              <UniquePositionID>9017</UniquePositionID>
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:choice>
+          <xs:group ref="Declaration"/>
+          <xs:group ref="Response" maxOccurs="unbounded"/>
+        </xs:choice>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:group name="Declaration">
+    <xs:choice>
+      <xs:any namespace="urn:wco:datamodel:WCO:DEC-DMS:2" processContents="strict"/>
+    </xs:choice>
+  </xs:group>
+  <xs:group name="Response">
+    <xs:sequence>
+      <xs:any namespace="urn:wco:datamodel:WCO:RES-DMS:2" processContents="strict"/>
+    </xs:sequence>
+  </xs:group>
+</xs:schema>
