@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://ncts.dgtaxud.ec" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" targetNamespace="http://ncts.dgtaxud.ec" elementFormDefault="unqualified" attributeFormDefault="unqualified" version="51.8.2" vc:minVersion="1.1">
+<!--================================================================================-->
+<!--===== IE906: E_FUN_NCK                                                                -->
+<!--===== FUNCTIONAL NACK                                                                 -->
+<!--===== NCTS P5 Phase Definition                                                        -->
+<!--===== XSD Version 51.8.2                                                              -->
+<!--================================================================================-->
+<!--================================================================================-->
+<!--===== Includes                                                                        -->
+<!--================================================================================-->
+  <xs:include schemaLocation="../../Transit XSDs/NCTS_DS/ctypes.xsd" />
+  <xs:include schemaLocation="../../Transit XSDs/NCTS_DS/htypes.xsd" />
+<!--================================================================================-->
+<!--===== Root Element                                                                    -->
+<!--================================================================================-->
+<xs:element name="CC906C" type="CC906CType" />
+<!--================================================================================-->
+<!--===== Root Element Content                                                            -->
+<!--================================================================================-->
+<xs:complexType name="CC906CType">
+  <xs:sequence>
+    <xs:group ref="MESSAGE" />
+    <xs:element name="Header" type="HeaderType01">
+      <xs:annotation>
+        <xs:documentation>
+          <description value="HEADER" />
+          <optionality value="R" />
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+    <xs:element name="FunctionalError" maxOccurs="9999" type="FunctionalErrorType02">
+      <xs:annotation>
+        <xs:documentation>
+          <description value="FUNCTIONAL ERROR" />
+          <optionality value="R" />
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+  <xs:attribute name="PhaseID" type="phaseIDtype" />
+</xs:complexType>
+</xs:schema>
