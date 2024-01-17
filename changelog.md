@@ -1,4 +1,7 @@
-### 15-1-2024
+### 16-01-2024
+* Updated Exit XML Guide
+
+### 15-01-2024
 * Updated DMS Online User Manuals file structure
 * Commented out the "presentationOfTheGoodsDateAndTime" field.
 
