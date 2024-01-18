@@ -1080,6 +1080,8 @@
                 </xs:sequence>
               </xs:complexType>
             </xs:element>
+
+
             <xs:element name="GoodsMeasure" minOccurs="0">
               <xs:annotation>
                 <xs:documentation>
@@ -1263,6 +1265,137 @@
                           </xs:complexType>
                         </xs:element>
 
+                        <xs:element name="DutyTaxFee" maxOccurs="99">
+                          <xs:annotation>
+                            <xs:documentation>
+                              <EUCDMname>Duties and Taxes</EUCDMname>
+                              <type>EUCDM 6.1</type>
+                              <code>14 03 040 014</code>
+                            </xs:documentation>
+                            <xs:documentation>
+                              <EUCDMname>Preference</EUCDMname>
+                              <type>EUCDM 6.1</type>
+                              <code>14 11 000 000 </code>
+                            </xs:documentation>
+                            <xs:documentation>
+                              <EUCDMname>Total duties and taxes amount</EUCDMname>
+                              <type>EUCDM 6.1</type>
+                              <code>14 16 000 000</code>
+                            </xs:documentation>
+                            <xs:documentation>
+                              <EUCDMname>Quota order number</EUCDMname>
+                              <type>EUCDM 6.1</type>
+                              <code>99 01 000 000</code>
+                            </xs:documentation>
+                          </xs:annotation>
+                          <xs:complexType>
+                            <xs:sequence>
+                              <xs:element name="SequenceNumeric" type="ds:CommodityDutyTaxFeeSequenceNumericType" />
+                              <xs:element name="AdValoremTaxBaseAmount" type="ds:DutyTaxFeeAdValoremTaxBaseAmountType" minOccurs="0">
+                                <xs:annotation>
+                                  <xs:documentation>
+                                    <EUCDMname>Amount</EUCDMname>
+                                    <type>EUCDM 6.1</type>
+                                    <code>14 03 040 014</code>
+                                  </xs:documentation>
+                                </xs:annotation>
+                              </xs:element>
+                              <xs:element name="DutyRegimeCode" type="ds:DutyTaxFeeDutyRegimeCodeType">
+                                <xs:annotation>
+                                  <xs:documentation>
+                                    <EUCDMname>Preference</EUCDMname>
+                                    <type>EUCDM 6.1</type>
+                                    <code>14 11 001 000 </code>
+                                  </xs:documentation>
+                                </xs:annotation>
+                              </xs:element>
+                              <xs:element name="SpecificTaxBaseQuantity" type="ds:DutyTaxFeeSpecificTaxBaseQuantityType" minOccurs="0">
+                                <xs:annotation>
+                                  <xs:documentation>
+                                    <EUCDMname>Quantity</EUCDMname>
+                                    <type>EUCDM 6.1</type>
+                                    <code>14 03 040 006 </code>
+                                  </xs:documentation>
+                                  <xs:documentation>
+                                    <EUCDMname>Measurement unit and qualifier</EUCDMname>
+                                    <type>EUCDM 6.1</type>
+                                    <code>14 03 040 005</code>
+                                  </xs:documentation>
+                                </xs:annotation>
+                              </xs:element>
+                              <xs:element name="Tax" type="ds:DutyTaxFeeTaxAmountType" minOccurs="0">
+                                <xs:annotation>
+                                  <xs:documentation>
+                                    <EUCDMname>Tax amount</EUCDMname>
+                                    <type>EUCDM 6.1</type>
+                                    <code>14 03 040 043</code>
+                                  </xs:documentation>
+                                </xs:annotation>
+                              </xs:element>
+                              <xs:element name="TaxRateNumeric" type="ds:DutyTaxFeeTaxRateNumericType" minOccurs="0">
+                                <xs:annotation>
+                                  <xs:documentation>
+                                    <EUCDMname>Tax rate</EUCDMname>
+                                    <type>EUCDM 6.1</type>
+                                    <code>14 03 040 041</code>
+                                  </xs:documentation>
+                                </xs:annotation>
+                              </xs:element>
+                              <xs:element name="TypeCode" type="ds:DutyTaxFeeTypeCodeType" minOccurs="0">
+                                <xs:annotation>
+                                  <xs:documentation>
+                                    <EUCDMname>Tax type</EUCDMname>
+                                    <type>EUCDM 6.1</type>
+                                    <code>14 03 039 000</code>
+                                  </xs:documentation>
+                                </xs:annotation>
+                              </xs:element>
+                              <xs:element name="QuotaOrderID" type="ds:DutyTaxFeeQuotaOrderIDType" minOccurs="0">
+                                <xs:annotation>
+                                  <xs:documentation>
+                                    <EUCDMname>Quota order number</EUCDMname>
+                                    <type>EUCDM 6.1</type>
+                                    <code>99 01 001 000</code>
+                                  </xs:documentation>
+                                </xs:annotation>
+                              </xs:element>
+                              <xs:element name="Payment" minOccurs="0">
+                                <xs:complexType>
+                                  <xs:sequence>
+                                    <xs:element name="MethodCode" type="ds:PaymentMethodCodeType" minOccurs="0" maxOccurs="99">
+                                      <xs:annotation>
+                                        <xs:documentation>
+                                          <EUCDMname>Method of payment</EUCDMname>
+                                          <type>EUCDM 6.1</type>
+                                          <code>14 03 038 000</code>
+                                        </xs:documentation>
+                                      </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="TaxAssessedAmount" type="ds:PaymentTaxAssessedAmountType">
+                                      <xs:annotation>
+                                        <xs:documentation>
+                                          <EUCDMname>Total duties and taxes amount</EUCDMname>
+                                          <type>EUCDM 6.1</type>
+                                          <code>14 16 001 000</code>
+                                        </xs:documentation>
+                                      </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="PaymentAmount" type="ds:PaymentPaymentAmountType">
+                                      <xs:annotation>
+                                        <xs:documentation>
+                                          <EUCDMname>Payable tax amount</EUCDMname>
+                                          <type>EUCDM 6.1</type>
+                                          <code>14 03 042 000</code>
+                                        </xs:documentation>
+                                      </xs:annotation>
+                                    </xs:element>
+                                  </xs:sequence>
+                                </xs:complexType>
+                              </xs:element>
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+
                         <xs:element name="InvoiceLine">
                           <xs:annotation>
                             <xs:documentation>
@@ -1321,7 +1454,7 @@
                                         minOccurs="0">
                                       
                                     </xs:element>
-                                    <xs:element name="TaxBase" minOccurs="0">
+                                    <xs:element name="TaxBase" minOccurs="0" maxOccurs="99">
                                       <xs:complexType>
                                         <xs:sequence>
                                           <xs:element name="TaxRateNumeric"
@@ -1488,38 +1621,6 @@
                               <code>14 10 001 000</code>
                             </xs:documentation>
                           </xs:annotation>
-                        </xs:element>
-                        <xs:element name="ChargeDeduction" minOccurs="0" maxOccurs="99">
-                          <xs:annotation>
-                            <xs:documentation>
-                              <EUCDMname>Additions and deductions</EUCDMname>
-                              <type>EUCDM 6.1</type>
-                              <code>14 04 000 000</code>
-                            </xs:documentation>
-                          </xs:annotation>
-                          <xs:complexType>
-                            <xs:sequence>
-                              <xs:element name="SequenceNumeric" type="ds:CustomsValuationChargeDeductionSequenceNumericType"/>
-                              <xs:element name="ChargesTypeCode" type="ds:ChargeDeductionChargesTypeCodeType">
-                                <xs:annotation>
-                                  <xs:documentation>
-                                    <EUCDMname>Code</EUCDMname>
-                                    <type>EUCDM 6.1</type>
-                                    <code>14 04 008 000</code>
-                                  </xs:documentation>
-                                </xs:annotation>
-                              </xs:element>
-                              <xs:element name="OtherChargeDeductionAmount" type="ds:ChargeDeductionOtherChargeDeductionAmountType">
-                                <xs:annotation>
-                                  <xs:documentation>
-                                    <EUCDMname>Amount</EUCDMname>
-                                    <type>EUCDM 6.1</type>
-                                    <code>14 04 014 000</code>
-                                  </xs:documentation>
-                                </xs:annotation>
-                              </xs:element>
-                            </xs:sequence>
-                          </xs:complexType>
                         </xs:element>
                       </xs:sequence>
                     </xs:complexType>
