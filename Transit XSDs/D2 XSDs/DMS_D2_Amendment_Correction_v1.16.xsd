@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://ncts.dgtaxud.ec" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" targetNamespace="http://ncts.dgtaxud.ec" elementFormDefault="unqualified" attributeFormDefault="unqualified" version="51.8.2" vc:minVersion="1.1">
     <!--================================================================================-->
-    <!--===== IE015: E_DEC_DAT                                                          -->
-    <!--===== DECLARATION DATA                                                          -->
-    <!--===== NCTS P5 Phase Definition                                                  -->
-    <!--===== XSD Version 51.8.2                                                        -->
+    <!--===== IE013: E_DEC_AMD                                                                -->
+    <!--===== DECLARATION AMENDMENT                                                           -->
+    <!--===== NCTS P5 Phase Definition                                                        -->
+    <!--===== XSD Version 51.8.2                                                              -->
     <!--================================================================================-->
     <!--================================================================================-->
-    <!--===== Includes                                                                  -->
+    <!--===== Includes                                                                        -->
     <!--================================================================================-->
     <xs:include schemaLocation="../NCTS_DS/ctypes.xsd" />
     <xs:include schemaLocation="../NCTS_DS/htypes.xsd" />
     <!--================================================================================-->
-    <!--===== Root Element                                                              -->
+    <!--===== Root Element                                                                    -->
     <!--================================================================================-->
-    <xs:element name="CC015C" type="CC015CType" />
+    <xs:element name="CC013C" type="CC013CType" />
     <!--================================================================================-->
-    <!--===== Root Element Content                                                      -->
+    <!--===== Root Element Content                                                            -->
     <!--================================================================================-->
-    <xs:complexType name="CC015CType">
+    <xs:complexType name="CC013CType">
         <xs:sequence>
             <xs:element name="messageSender" type="MessageSenderContentType">
                 <xs:annotation>
@@ -52,6 +52,7 @@
                 <xs:annotation>
                     <xs:documentation>
                         <description value="Message type" />
+                        <codeList name="MessageTypes" />
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
@@ -71,13 +72,23 @@
                 </xs:annotation>
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element name="LRN" type="LRNContentType03">
+                        <xs:element name="LRN" minOccurs="0" type="LRNContentType03">
                             <xs:annotation>
                                 <xs:documentation>
                                     <description value="LRN" />
                                     <format value="an..22" />
-                                    <optionality value="R" />
+                                    <optionality value="D" />
                                     <xsdBaseType value="AlphaNumeric_MAX22_NoSpaces" />
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="MRN" minOccurs="0" type="MrnContentType05">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    <description value="MRN" />
+                                    <format value="an18" />
+                                    <optionality value="D" />
+                                    <xsdBaseType value="MRNType" />
                                 </xs:documentation>
                             </xs:annotation>
                         </xs:element>
@@ -85,7 +96,6 @@
                             <xs:annotation>
                                 <xs:documentation>
                                     <description value="Declaration type" />
-                                    <codeList code="CL231" type="business" name="DeclarationType" />
                                     <format value="an..5" />
                                     <optionality value="R" />
                                 </xs:documentation>
@@ -95,7 +105,6 @@
                             <xs:annotation>
                                 <xs:documentation>
                                     <description value="Additional declaration type" />
-                                    <codeList code="CL042" type="business" name="DeclarationTypeAdditional" />
                                     <format value="a1" />
                                     <optionality value="R" />
                                 </xs:documentation>
@@ -125,7 +134,6 @@
                             <xs:annotation>
                                 <xs:documentation>
                                     <description value="Security" />
-                                    <codeList code="CL217" type="business" name="DeclarationTypeSecurity" />
                                     <format value="n1" />
                                     <optionality value="R" />
                                 </xs:documentation>
@@ -135,7 +143,6 @@
                             <xs:annotation>
                                 <xs:documentation>
                                     <description value="Reduced dataset indicator" />
-                                    <codeList code="CL027" type="technical" name="Flag" />
                                     <format value="n1" />
                                     <optionality value="R" />
                                 </xs:documentation>
@@ -145,7 +152,6 @@
                             <xs:annotation>
                                 <xs:documentation>
                                     <description value="Specific circumstance indicator" />
-                                    <codeList code="CL296" type="business" name="SpecificCircumstanceIndicatorCode" />
                                     <format value="an3" />
                                     <optionality value="O" />
                                 </xs:documentation>
@@ -155,7 +161,6 @@
                             <xs:annotation>
                                 <xs:documentation>
                                     <description value="Communication language at departure" />
-                                    <codeList code="CL192" type="business" name="LanguageByCustoms" />
                                     <format value="a2" />
                                     <optionality value="O" />
                                     <xsdBaseType value="LanguageCodeType" />
@@ -166,7 +171,15 @@
                             <xs:annotation>
                                 <xs:documentation>
                                     <description value="Binding itinerary" />
-                                    <codeList code="CL027" type="technical" name="Flag" />
+                                    <format value="n1" />
+                                    <optionality value="R" />
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="amendmentTypeFlag" type="Flag">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    <description value="Amendment type flag" />
                                     <format value="n1" />
                                     <optionality value="R" />
                                 </xs:documentation>
@@ -207,7 +220,6 @@
                             <xs:annotation>
                                 <xs:documentation>
                                     <description value="Type" />
-                                    <codeList code="CL235" type="business" name="AuthorisationTypeDeparture" />
                                     <format value="an..4" />
                                     <optionality value="R" />
                                 </xs:documentation>
@@ -232,10 +244,6 @@
                         <description value="CUSTOMS OFFICE OF DEPARTURE" />
                         <optionality value="R" />
                     </xs:documentation>
-                    <xs:documentation>
-                        <xs:EUCDMName>Customs Office of Departure</xs:EUCDMName>
-                        <xs:Code>17 03 000 000</xs:Code>
-                    </xs:documentation>
                 </xs:annotation>
                 <xs:complexType>
                     <xs:sequence>
@@ -243,7 +251,6 @@
                             <xs:annotation>
                                 <xs:documentation>
                                     <description value="Reference number" />
-                                    <codeList code="CL171" type="business" name="CustomsOfficeDeparture" />
                                     <format value="an8" />
                                     <optionality value="R" />
                                     <xsdBaseType value="CORefNumType" />
@@ -266,7 +273,6 @@
                             <xs:annotation>
                                 <xs:documentation>
                                     <description value="Reference number" />
-                                    <codeList code="CL172" type="business" name="CustomsOfficeDestination" />
                                     <format value="an8" />
                                     <optionality value="R" />
                                     <xsdBaseType value="CORefNumType" />
@@ -281,10 +287,6 @@
                     <xs:documentation>
                         <description value="CUSTOMS OFFICE OF TRANSIT (DECLARED)" />
                         <optionality value="D" />
-                    </xs:documentation>
-                    <xs:documentation>
-                        <xs:EUCDMName>Customs Office of Transit</xs:EUCDMName>
-                        <xs:Code>17 04 000 000</xs:Code>
                     </xs:documentation>
                 </xs:annotation>
                 <xs:complexType>
@@ -302,7 +304,6 @@
                             <xs:annotation>
                                 <xs:documentation>
                                     <description value="Reference number" />
-                                    <codeList code="CL173" type="business" name="CustomsOfficeTransit" />
                                     <format value="an8" />
                                     <optionality value="R" />
                                     <xsdBaseType value="CORefNumType" />
@@ -344,7 +345,6 @@
                             <xs:annotation>
                                 <xs:documentation>
                                     <description value="Reference number" />
-                                    <codeList code="CL175" type="business" name="CustomsOfficeTransitExit" />
                                     <format value="an8" />
                                     <optionality value="R" />
                                     <xsdBaseType value="CORefNumType" />
@@ -359,10 +359,6 @@
                     <xs:documentation>
                         <description value="HOLDER OF THE TRANSIT PROCEDURE" />
                         <optionality value="R" />
-                    </xs:documentation>
-                    <xs:documentation>
-                        <xs:EUCDMName>Holder of the transit procedure</xs:EUCDMName>
-                        <xs:Code>13 07 000 000</xs:Code>
                     </xs:documentation>
                 </xs:annotation>
                 <xs:complexType>
@@ -440,7 +436,6 @@
                                         <xs:annotation>
                                             <xs:documentation>
                                                 <description value="Country" />
-                                                <codeList code="CL248" type="business" name="CountryCodesForAddress" />
                                                 <format value="a2" />
                                                 <optionality value="R" />
                                                 <xsdBaseType value="CountryCodeType" />
@@ -500,10 +495,6 @@
                         <description value="REPRESENTATIVE" />
                         <optionality value="O" />
                     </xs:documentation>
-                    <xs:documentation>
-                        <xs:EUCDMName>Representative</xs:EUCDMName>
-                        <xs:Code>13 06 000 000</xs:Code>
-                    </xs:documentation>
                 </xs:annotation>
                 <xs:complexType>
                     <xs:sequence>
@@ -521,7 +512,6 @@
                             <xs:annotation>
                                 <xs:documentation>
                                     <description value="Status" />
-                                    <codeList code="CL094" type="business" name="RepresentativeStatusCode" />
                                     <format value="n1" />
                                     <optionality value="R" />
                                 </xs:documentation>
@@ -577,10 +567,6 @@
                         <description value="GUARANTEE" />
                         <optionality value="R" />
                     </xs:documentation>
-                    <xs:documentation>
-                        <xs:EUCDMName>Guarantee Type</xs:EUCDMName>
-                        <xs:Code>99 02 000 000</xs:Code>
-                    </xs:documentation>
                 </xs:annotation>
                 <xs:complexType>
                     <xs:sequence>
@@ -593,13 +579,12 @@
                                 </xs:documentation>
                             </xs:annotation>
                         </xs:element>
-                        <xs:element name="guaranteeType" type="GuaranteeTypeContentType">
+                        <xs:element name="guaranteeType" minOccurs="0" type="GuaranteeTypeContentType">
                             <xs:annotation>
                                 <xs:documentation>
                                     <description value="Guarantee type" />
-                                    <codeList code="CL251" type="business" name="GuaranteeType" />
                                     <format value="an1" />
-                                    <optionality value="R" />
+                                    <optionality value="O" />
                                     <xsdBaseType value="AlphanumericCapital1Type" />
                                 </xs:documentation>
                             </xs:annotation>
@@ -666,7 +651,6 @@
                                         <xs:annotation>
                                             <xs:documentation>
                                                 <description value="Currency" />
-                                                <codeList code="CL048" type="business" name="CurrencyCodes" />
                                                 <format value="a3" />
                                                 <optionality value="O" />
                                             </xs:documentation>
@@ -691,7 +675,6 @@
                             <xs:annotation>
                                 <xs:documentation>
                                     <description value="Country of dispatch" />
-                                    <codeList code="CL008" type="business" name="CountryCodesFullList" />
                                     <format value="a2" />
                                     <optionality value="D" />
                                     <xsdBaseType value="Alpha_2" />
@@ -702,7 +685,6 @@
                             <xs:annotation>
                                 <xs:documentation>
                                     <description value="Country of destination" />
-                                    <codeList code="CL008" type="business" name="CountryCodesFullList" />
                                     <format value="a2" />
                                     <optionality value="D" />
                                 </xs:documentation>
@@ -712,7 +694,6 @@
                             <xs:annotation>
                                 <xs:documentation>
                                     <description value="Container indicator" />
-                                    <codeList code="CL027" type="technical" name="Flag" />
                                     <format value="n1" />
                                     <optionality value="D" />
                                 </xs:documentation>
@@ -722,7 +703,6 @@
                             <xs:annotation>
                                 <xs:documentation>
                                     <description value="Inland mode of transport" />
-                                    <codeList code="CL218" type="business" name="TransportModeCode" />
                                     <format value="n1" />
                                     <optionality value="O" />
                                 </xs:documentation>
@@ -732,7 +712,6 @@
                             <xs:annotation>
                                 <xs:documentation>
                                     <description value="Mode of transport at the border" />
-                                    <codeList code="CL218" type="business" name="TransportModeCode" />
                                     <format value="n1" />
                                     <optionality value="D" />
                                 </xs:documentation>
@@ -893,7 +872,6 @@
                                                     <xs:annotation>
                                                         <xs:documentation>
                                                             <description value="Country" />
-                                                            <codeList code="CL248" type="business" name="CountryCodesForAddress" />
                                                             <format value="a2" />
                                                             <optionality value="R" />
                                                             <xsdBaseType value="CountryCodeType" />
@@ -1019,7 +997,6 @@
                                                     <xs:annotation>
                                                         <xs:documentation>
                                                             <description value="Country" />
-                                                            <codeList code="CL248" type="business" name="CountryCodesForAddress" />
                                                             <format value="a2" />
                                                             <optionality value="R" />
                                                             <xsdBaseType value="CountryCodeType" />
@@ -1054,7 +1031,6 @@
                                         <xs:annotation>
                                             <xs:documentation>
                                                 <description value="Role" />
-                                                <codeList code="CL704" type="business" name="RoleOfActor" />
                                                 <format value="a..3" />
                                                 <optionality value="R" />
                                             </xs:documentation>
@@ -1189,7 +1165,6 @@
                                         <xs:annotation>
                                             <xs:documentation>
                                                 <description value="Type of location" />
-                                                <codeList code="CL347" type="business" name="TypeOfLocation" />
                                                 <format value="a1" />
                                                 <optionality value="R" />
                                             </xs:documentation>
@@ -1199,7 +1174,6 @@
                                         <xs:annotation>
                                             <xs:documentation>
                                                 <description value="Qualifier of identification" />
-                                                <codeList code="CL326" type="business" name="QualifierOfTheIdentification" />
                                                 <format value="a1" />
                                                 <optionality value="R" />
                                             </xs:documentation>
@@ -1229,7 +1203,6 @@
                                         <xs:annotation>
                                             <xs:documentation>
                                                 <description value="UN LOCODE" />
-                                                <codeList code="CL244" type="business" name="UnlocodeExtended" />
                                                 <format value="an..17" />
                                                 <optionality value="D" />
                                             </xs:documentation>
@@ -1248,7 +1221,6 @@
                                                     <xs:annotation>
                                                         <xs:documentation>
                                                             <description value="Reference number" />
-                                                            <codeList code="CL171" type="business" name="CustomsOfficeDeparture" />
                                                             <format value="an8" />
                                                             <optionality value="R" />
                                                             <xsdBaseType value="CORefNumType" />
@@ -1355,7 +1327,6 @@
                                                     <xs:annotation>
                                                         <xs:documentation>
                                                             <description value="Country" />
-                                                            <codeList code="CL009" type="business" name="CountryCodesCommonTransit" />
                                                             <format value="a2" />
                                                             <optionality value="R" />
                                                             <xsdBaseType value="CountryCodeType" />
@@ -1398,7 +1369,6 @@
                                                     <xs:annotation>
                                                         <xs:documentation>
                                                             <description value="Country" />
-                                                            <codeList code="CL190" type="business" name="CountryAddressPostcodeBased" />
                                                             <format value="a2" />
                                                             <optionality value="R" />
                                                             <xsdBaseType value="CountryCodeType" />
@@ -1474,7 +1444,6 @@
                                         <xs:annotation>
                                             <xs:documentation>
                                                 <description value="Type of identification" />
-                                                <codeList code="CL750" type="business" name="ClTypeOfIdentificationOfMeansOfTransport" />
                                                 <format value="n2" />
                                                 <optionality value="O" />
                                             </xs:documentation>
@@ -1494,7 +1463,6 @@
                                         <xs:annotation>
                                             <xs:documentation>
                                                 <description value="Nationality" />
-                                                <codeList code="CL165" type="business" name="Nationality" />
                                                 <format value="a2" />
                                                 <optionality value="O" />
                                                 <xsdBaseType value="CountryCodeType" />
@@ -1526,7 +1494,6 @@
                                         <xs:annotation>
                                             <xs:documentation>
                                                 <description value="Country" />
-                                                <codeList code="CL008" type="business" name="CountryCodesFullList" />
                                                 <format value="a2" />
                                                 <optionality value="R" />
                                                 <xsdBaseType value="CountryCodeType" />
@@ -1558,7 +1525,6 @@
                                         <xs:annotation>
                                             <xs:documentation>
                                                 <description value="Customs office at border reference number" />
-                                                <codeList code="CL141" type="business" name="CustomsOffices" />
                                                 <format value="an8" />
                                                 <optionality value="O" />
                                             </xs:documentation>
@@ -1568,7 +1534,6 @@
                                         <xs:annotation>
                                             <xs:documentation>
                                                 <description value="Type of identification" />
-                                                <codeList code="CL219" type="business" name="TypeOfIdentificationOfMeansOfTransportActive" />
                                                 <format value="n2" />
                                                 <optionality value="O" />
                                             </xs:documentation>
@@ -1588,7 +1553,6 @@
                                         <xs:annotation>
                                             <xs:documentation>
                                                 <description value="Nationality" />
-                                                <codeList code="CL165" type="business" name="Nationality" />
                                                 <format value="a2" />
                                                 <optionality value="O" />
                                                 <xsdBaseType value="CountryCodeType" />
@@ -1621,7 +1585,6 @@
                                         <xs:annotation>
                                             <xs:documentation>
                                                 <description value="UN LOCODE" />
-                                                <codeList code="CL244" type="business" name="UnlocodeExtended" />
                                                 <format value="an..17" />
                                                 <optionality value="O" />
                                             </xs:documentation>
@@ -1631,7 +1594,6 @@
                                         <xs:annotation>
                                             <xs:documentation>
                                                 <description value="Country" />
-                                                <codeList code="CL008" type="business" name="CountryCodesFullList" />
                                                 <format value="a2" />
                                                 <optionality value="D" />
                                                 <xsdBaseType value="CountryCodeType" />
@@ -1664,7 +1626,6 @@
                                         <xs:annotation>
                                             <xs:documentation>
                                                 <description value="UN LOCODE" />
-                                                <codeList code="CL244" type="business" name="UnlocodeExtended" />
                                                 <format value="an..17" />
                                                 <optionality value="O" />
                                             </xs:documentation>
@@ -1674,7 +1635,6 @@
                                         <xs:annotation>
                                             <xs:documentation>
                                                 <description value="Country" />
-                                                <codeList code="CL008" type="business" name="CountryCodesFullList" />
                                                 <format value="a2" />
                                                 <optionality value="D" />
                                                 <xsdBaseType value="CountryCodeType" />
@@ -1716,7 +1676,6 @@
                                         <xs:annotation>
                                             <xs:documentation>
                                                 <description value="Type" />
-                                                <codeList code="CL214" type="business" name="PreviousDocumentType" />
                                                 <format value="an4" />
                                                 <optionality value="R" />
                                             </xs:documentation>
@@ -1767,7 +1726,6 @@
                                         <xs:annotation>
                                             <xs:documentation>
                                                 <description value="Type" />
-                                                <codeList code="CL213" type="business" name="SupportingDocumentType" />
                                                 <format value="an4" />
                                                 <optionality value="R" />
                                             </xs:documentation>
@@ -1828,7 +1786,6 @@
                                         <xs:annotation>
                                             <xs:documentation>
                                                 <description value="Type" />
-                                                <codeList code="CL754" type="business" name="TransportDocumentType" />
                                                 <format value="an4" />
                                                 <optionality value="R" />
                                             </xs:documentation>
@@ -1869,7 +1826,6 @@
                                         <xs:annotation>
                                             <xs:documentation>
                                                 <description value="Type" />
-                                                <codeList code="CL380" type="business" name="AdditionalReferencesType" />
                                                 <format value="an4" />
                                                 <optionality value="R" />
                                             </xs:documentation>
@@ -1910,7 +1866,6 @@
                                         <xs:annotation>
                                             <xs:documentation>
                                                 <description value="Code" />
-                                                <codeList code="CL239" type="business" name="AdditionalInformation" />
                                                 <format value="an5" />
                                                 <optionality value="R" />
                                             </xs:documentation>
@@ -1942,7 +1897,6 @@
                                         <xs:annotation>
                                             <xs:documentation>
                                                 <description value="Method of payment" />
-                                                <codeList code="CL116" type="business" name="TransportChargesMethodOfPayment" />
                                                 <format value="a1" />
                                                 <optionality value="R" />
                                                 <xsdBaseType value="AlphaCapital1Type" />
@@ -1974,7 +1928,6 @@
                                         <xs:annotation>
                                             <xs:documentation>
                                                 <description value="Country of dispatch" />
-                                                <codeList code="CL008" type="business" name="CountryCodesFullList" />
                                                 <format value="a2" />
                                                 <optionality value="D" />
                                                 <xsdBaseType value="Alpha_2" />
@@ -2073,7 +2026,6 @@
                                                                 <xs:annotation>
                                                                     <xs:documentation>
                                                                         <description value="Country" />
-                                                                        <codeList code="CL248" type="business" name="CountryCodesForAddress" />
                                                                         <format value="a2" />
                                                                         <optionality value="R" />
                                                                         <xsdBaseType value="CountryCodeType" />
@@ -2199,7 +2151,6 @@
                                                                 <xs:annotation>
                                                                     <xs:documentation>
                                                                         <description value="Country" />
-                                                                        <codeList code="CL248" type="business" name="CountryCodesForAddress" />
                                                                         <format value="a2" />
                                                                         <optionality value="R" />
                                                                         <xsdBaseType value="CountryCodeType" />
@@ -2234,7 +2185,6 @@
                                                     <xs:annotation>
                                                         <xs:documentation>
                                                             <description value="Role" />
-                                                            <codeList code="CL704" type="business" name="RoleOfActor" />
                                                             <format value="a..3" />
                                                             <optionality value="R" />
                                                         </xs:documentation>
@@ -2275,7 +2225,6 @@
                                                     <xs:annotation>
                                                         <xs:documentation>
                                                             <description value="Type of identification" />
-                                                            <codeList code="CL750" type="business" name="ClTypeOfIdentificationOfMeansOfTransport" />
                                                             <format value="n2" />
                                                             <optionality value="R" />
                                                         </xs:documentation>
@@ -2295,7 +2244,6 @@
                                                     <xs:annotation>
                                                         <xs:documentation>
                                                             <description value="Nationality" />
-                                                            <codeList code="CL165" type="business" name="Nationality" />
                                                             <format value="a2" />
                                                             <optionality value="R" />
                                                             <xsdBaseType value="CountryCodeType" />
@@ -2327,7 +2275,6 @@
                                                     <xs:annotation>
                                                         <xs:documentation>
                                                             <description value="Type" />
-                                                            <codeList code="CL228" type="business" name="PreviousDocumentExportType" />
                                                             <format value="an4" />
                                                             <optionality value="R" />
                                                         </xs:documentation>
@@ -2378,7 +2325,6 @@
                                                     <xs:annotation>
                                                         <xs:documentation>
                                                             <description value="Type" />
-                                                            <codeList code="CL213" type="business" name="SupportingDocumentType" />
                                                             <format value="an4" />
                                                             <optionality value="R" />
                                                         </xs:documentation>
@@ -2439,7 +2385,6 @@
                                                     <xs:annotation>
                                                         <xs:documentation>
                                                             <description value="Type" />
-                                                            <codeList code="CL754" type="business" name="TransportDocumentType" />
                                                             <format value="an4" />
                                                             <optionality value="R" />
                                                         </xs:documentation>
@@ -2480,7 +2425,6 @@
                                                     <xs:annotation>
                                                         <xs:documentation>
                                                             <description value="Type" />
-                                                            <codeList code="CL380" type="business" name="AdditionalReferencesType" />
                                                             <format value="an4" />
                                                             <optionality value="R" />
                                                         </xs:documentation>
@@ -2521,7 +2465,6 @@
                                                     <xs:annotation>
                                                         <xs:documentation>
                                                             <description value="Code" />
-                                                            <codeList code="CL239" type="business" name="AdditionalInformation" />
                                                             <format value="an5" />
                                                             <optionality value="R" />
                                                         </xs:documentation>
@@ -2553,7 +2496,6 @@
                                                     <xs:annotation>
                                                         <xs:documentation>
                                                             <description value="Method of payment" />
-                                                            <codeList code="CL116" type="business" name="TransportChargesMethodOfPayment" />
                                                             <format value="a1" />
                                                             <optionality value="R" />
                                                             <xsdBaseType value="AlphaCapital1Type" />
@@ -2595,7 +2537,6 @@
                                                     <xs:annotation>
                                                         <xs:documentation>
                                                             <description value="Declaration type" />
-                                                            <codeList code="CL232" type="business" name="DeclarationTypeItemLevel" />
                                                             <format value="an..5" />
                                                             <optionality value="D" />
                                                         </xs:documentation>
@@ -2605,7 +2546,6 @@
                                                     <xs:annotation>
                                                         <xs:documentation>
                                                             <description value="Country of dispatch" />
-                                                            <codeList code="CL008" type="business" name="CountryCodesFullList" />
                                                             <format value="a2" />
                                                             <optionality value="D" />
                                                             <xsdBaseType value="Alpha_2" />
@@ -2616,7 +2556,6 @@
                                                     <xs:annotation>
                                                         <xs:documentation>
                                                             <description value="Country of destination" />
-                                                            <codeList code="CL008" type="business" name="CountryCodesFullList" />
                                                             <format value="a2" />
                                                             <optionality value="D" />
                                                         </xs:documentation>
@@ -2704,7 +2643,6 @@
                                                                             <xs:annotation>
                                                                                 <xs:documentation>
                                                                                     <description value="Country" />
-                                                                                    <codeList code="CL248" type="business" name="CountryCodesForAddress" />
                                                                                     <format value="a2" />
                                                                                     <optionality value="R" />
                                                                                     <xsdBaseType value="CountryCodeType" />
@@ -2739,7 +2677,6 @@
                                                                 <xs:annotation>
                                                                     <xs:documentation>
                                                                         <description value="Role" />
-                                                                        <codeList code="CL704" type="business" name="RoleOfActor" />
                                                                         <format value="a..3" />
                                                                         <optionality value="R" />
                                                                     </xs:documentation>
@@ -2781,7 +2718,6 @@
                                                                 <xs:annotation>
                                                                     <xs:documentation>
                                                                         <description value="CUS code" />
-                                                                        <codeList code="CL016" type="business" name="CusCode" />
                                                                         <format value="an9" />
                                                                         <optionality value="O" />
                                                                     </xs:documentation>
@@ -2800,7 +2736,6 @@
                                                                             <xs:annotation>
                                                                                 <xs:documentation>
                                                                                     <description value="Harmonized System sub-heading code" />
-                                                                                    <codeList code="CL152" type="business" name="HsCode" />
                                                                                     <format value="an6" />
                                                                                     <optionality value="R" />
                                                                                 </xs:documentation>
@@ -2841,7 +2776,6 @@
                                                                             <xs:annotation>
                                                                                 <xs:documentation>
                                                                                     <description value="UN Number" />
-                                                                                    <codeList code="CL101" type="business" name="UnDangerousGoodsCode" />
                                                                                     <format value="an4" />
                                                                                     <optionality value="R" />
                                                                                 </xs:documentation>
@@ -2917,7 +2851,6 @@
                                                                 <xs:annotation>
                                                                     <xs:documentation>
                                                                         <description value="Type of packages" />
-                                                                        <codeList code="CL017" type="business" name="KindOfPackages" />
                                                                         <format value="an2" />
                                                                         <optionality value="R" />
                                                                     </xs:documentation>
@@ -2968,7 +2901,6 @@
                                                                 <xs:annotation>
                                                                     <xs:documentation>
                                                                         <description value="Type" />
-                                                                        <codeList code="CL214" type="business" name="PreviousDocumentType" />
                                                                         <format value="an4" />
                                                                         <optionality value="R" />
                                                                     </xs:documentation>
@@ -2998,7 +2930,6 @@
                                                                 <xs:annotation>
                                                                     <xs:documentation>
                                                                         <description value="Type of packages" />
-                                                                        <codeList code="CL017" type="business" name="KindOfPackages" />
                                                                         <format value="an2" />
                                                                         <optionality value="O" />
                                                                     </xs:documentation>
@@ -3018,7 +2949,6 @@
                                                                 <xs:annotation>
                                                                     <xs:documentation>
                                                                         <description value="Measurement unit and qualifier" />
-                                                                        <codeList code="CL349" type="business" name="Unit" />
                                                                         <format value="an..4" />
                                                                         <optionality value="D" />
                                                                     </xs:documentation>
@@ -3069,7 +2999,6 @@
                                                                 <xs:annotation>
                                                                     <xs:documentation>
                                                                         <description value="Type" />
-                                                                        <codeList code="CL213" type="business" name="SupportingDocumentType" />
                                                                         <format value="an4" />
                                                                         <optionality value="R" />
                                                                     </xs:documentation>
@@ -3130,7 +3059,6 @@
                                                                 <xs:annotation>
                                                                     <xs:documentation>
                                                                         <description value="Type" />
-                                                                        <codeList code="CL754" type="business" name="TransportDocumentType" />
                                                                         <format value="an4" />
                                                                         <optionality value="R" />
                                                                     </xs:documentation>
@@ -3171,7 +3099,6 @@
                                                                 <xs:annotation>
                                                                     <xs:documentation>
                                                                         <description value="Type" />
-                                                                        <codeList code="CL380" type="business" name="AdditionalReferencesType" />
                                                                         <format value="an4" />
                                                                         <optionality value="R" />
                                                                     </xs:documentation>
@@ -3212,7 +3139,6 @@
                                                                 <xs:annotation>
                                                                     <xs:documentation>
                                                                         <description value="Code" />
-                                                                        <codeList code="CL239" type="business" name="AdditionalInformation" />
                                                                         <format value="an5" />
                                                                         <optionality value="R" />
                                                                     </xs:documentation>
@@ -3244,7 +3170,6 @@
                                                                 <xs:annotation>
                                                                     <xs:documentation>
                                                                         <description value="Method of payment" />
-                                                                        <codeList code="CL116" type="business" name="TransportChargesMethodOfPayment" />
                                                                         <format value="a1" />
                                                                         <optionality value="R" />
                                                                         <xsdBaseType value="AlphaCapital1Type" />

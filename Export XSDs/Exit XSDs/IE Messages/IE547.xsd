@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://ecs.dgtaxud.ec" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" targetNamespace="http://ecs.dgtaxud.ec" elementFormDefault="unqualified" attributeFormDefault="unqualified" version="51.6.0" vc:minVersion="1.1">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://ecs.dgtaxud.ec" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" targetNamespace="http://ecs.dgtaxud.ec" elementFormDefault="unqualified" attributeFormDefault="unqualified" version="51.8.2" vc:minVersion="1.1">
     <!--================================================================================-->
-    <!--===== IE547: E_MAN_PRE                                                          -->
-    <!--===== MANIFEST PRESENTATION                                                     -->
-    <!--===== AES P1 Phase Definition                                                   -->
-    <!--===== XSD Version 51.6.0                                                        -->
+    <!--===== IE547: E_MAN_PRE                                                                -->
+    <!--===== MANIFEST PRESENTATION                                                           -->
+    <!--===== AES P1 Phase Definition                                                         -->
+    <!--===== XSD Version 51.8.2                                                              -->
     <!--================================================================================-->
     <!--================================================================================-->
-    <!--===== Includes                                                                  -->
+    <!--===== Includes                                                                        -->
     <!--================================================================================-->
-    <xs:include schemaLocation="../../DMS_DS/Exit_DS/ctypes.xsd"/>
-    <xs:include schemaLocation="../../DMS_DS/Exit_DS/htypes.xsd"/>
+    <xs:include schemaLocation="../../DMS_DS/Exit_DS/ctypes.xsd" />
+    <xs:include schemaLocation="../../DMS_DS/Exit_DS/htypes.xsd" />
     <!--================================================================================-->
-    <!--===== Root Element                                                              -->
+    <!--===== Root Element                                                                    -->
     <!--================================================================================-->
     <xs:element name="CC547C" type="CC547CType" />
     <!--================================================================================-->
-    <!--===== Root Element Content                                                      -->
+    <!--===== Root Element Content                                                            -->
     <!--================================================================================-->
     <xs:complexType name="CC547CType">
         <xs:sequence>
@@ -72,7 +72,7 @@
                 </xs:annotation>
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element name="presentationOfTheGoodsDateAndTime" type="DateTimeType">
+                        <xs:element name="presentationOfTheGoodsDateAndTime" type="PresentationOfTheGoodsDateAndTimeContentType">
                             <xs:annotation>
                                 <xs:documentation>
                                     <description value="Presentation of the goods date and time" />
@@ -88,6 +88,7 @@
                                     <description value="Manifest reference number" />
                                     <format value="an..22" />
                                     <optionality value="R" />
+                                    <xsdBaseType value="AlphaNumeric_MAX22_NoSpaces" />
                                 </xs:documentation>
                             </xs:annotation>
                         </xs:element>
@@ -95,7 +96,7 @@
                             <xs:annotation>
                                 <xs:documentation>
                                     <description value="Discrepancies exist" />
-                                    <!-- <codeList code="CL027" type="technical" name="Flag" /> -->
+                                    <codeList code="CL027" type="technical" name="Flag" />
                                     <format value="n1" />
                                     <optionality value="R" />
                                 </xs:documentation>
@@ -104,7 +105,6 @@
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
-
             <xs:element name="Authorisation" minOccurs="0" maxOccurs="9">
                 <xs:annotation>
                     <xs:documentation>
@@ -132,12 +132,13 @@
                                 </xs:documentation>
                             </xs:annotation>
                         </xs:element>
-                        <xs:element name="referenceNumber" type="ReferenceNumberContentType02">
+                        <xs:element name="referenceNumber" type="ReferenceNumberContentType03">
                             <xs:annotation>
                                 <xs:documentation>
                                     <description value="Reference number" />
                                     <format value="an..35" />
                                     <optionality value="R" />
+                                    <xsdBaseType value="AlphaNumeric_MAX35_NoSpaces" />
                                 </xs:documentation>
                             </xs:annotation>
                         </xs:element>
@@ -147,14 +148,13 @@
                                     <description value="Holder of authorisation" />
                                     <format value="an..17" />
                                     <optionality value="O" />
+                                    <xsdBaseType value="HolderOfAuthorisationContentType01_NoSpaces" />
                                 </xs:documentation>
                             </xs:annotation>
                         </xs:element>
                     </xs:sequence>
                 </xs:complexType>
-
             </xs:element>
-
             <xs:element name="CustomsOfficeOfExitActual">
                 <xs:annotation>
                     <xs:documentation>
@@ -164,11 +164,11 @@
                 </xs:annotation>
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element name="referenceNumber" type="CORefNumType">
+                        <xs:element name="referenceNumber" type="ReferenceNumberContentType05">
                             <xs:annotation>
                                 <xs:documentation>
                                     <description value="Reference number" />
-                                    <!-- <codeList code="CL194" type="business" name="Customsofficeexit" /> -->
+                                    <codeList code="CL194" type="business" name="Customsofficeexit" />
                                     <format value="an8" />
                                     <optionality value="R" />
                                     <xsdBaseType value="CORefNumType" />
@@ -177,9 +177,7 @@
                         </xs:element>
                     </xs:sequence>
                 </xs:complexType>
-
             </xs:element>
-
             <xs:element name="ExitCarrier">
                 <xs:annotation>
                     <xs:documentation>
@@ -189,7 +187,7 @@
                 </xs:annotation>
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element name="identificationNumber" type="TINNewType">
+                        <xs:element name="identificationNumber" type="IdentificationNumberContentType05">
                             <xs:annotation>
                                 <xs:documentation>
                                     <description value="Identification number" />
@@ -214,6 +212,7 @@
                                                 <description value="Name" />
                                                 <format value="an..70" />
                                                 <optionality value="R" />
+                                                <xsdBaseType value="AlphaNumeric_MAX70_NoSpaces" />
                                             </xs:documentation>
                                         </xs:annotation>
                                     </xs:element>
@@ -223,6 +222,7 @@
                                                 <description value="Phone number" />
                                                 <format value="an..35" />
                                                 <optionality value="R" />
+                                                <xsdBaseType value="AlphaNumeric_MAX35_NoSpaces" />
                                             </xs:documentation>
                                         </xs:annotation>
                                     </xs:element>
@@ -232,7 +232,7 @@
                                                 <description value="E-mail address" />
                                                 <format value="an..256" />
                                                 <optionality value="O" />
-                                                <xsdBaseType value="EmailAddressType256" />
+                                                <xsdBaseType value="EmailAddressType256_NoSpaces" />
                                             </xs:documentation>
                                         </xs:annotation>
                                     </xs:element>
@@ -242,7 +242,6 @@
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
-
             <xs:element name="GoodsShipment">
                 <xs:annotation>
                     <xs:documentation>
@@ -265,7 +264,7 @@
                                         <xs:annotation>
                                             <xs:documentation>
                                                 <description value="Mode of transport at the border" />
-                                                <!-- <codeList code="CL018" type="business" name="TransportMode" /> -->
+                                                <codeList code="CL018" type="business" name="TransportMode" />
                                                 <format value="n1" />
                                                 <optionality value="O" />
                                             </xs:documentation>
@@ -277,6 +276,7 @@
                                                 <description value="Gross mass" />
                                                 <format value="n..16,6" />
                                                 <optionality value="R" />
+                                                <xsdBaseType value="DecimalWithoutZero_16_6" />
                                             </xs:documentation>
                                         </xs:annotation>
                                     </xs:element>
@@ -293,26 +293,27 @@
                                                     <xs:annotation>
                                                         <xs:documentation>
                                                             <description value="Type of identification" />
-                                                            <!-- <codeList code="CL219" type="business" name="Typeofidentificationofmeansoftransportactive" /> -->
+                                                            <codeList code="CL219" type="business" name="Typeofidentificationofmeansoftransportactive" />
                                                             <format value="n2" />
                                                             <optionality value="O" />
                                                         </xs:documentation>
                                                     </xs:annotation>
                                                 </xs:element>
-                                                <xs:element name="identificationNumber" minOccurs="0" type="IdentificationNumberContentType01">
+                                                <xs:element name="identificationNumber" minOccurs="0" type="IdentificationNumberContentType02">
                                                     <xs:annotation>
                                                         <xs:documentation>
                                                             <description value="Identification number" />
                                                             <format value="an..35" />
                                                             <optionality value="O" />
+                                                            <xsdBaseType value="Alphanumeric_Max35" />
                                                         </xs:documentation>
                                                     </xs:annotation>
                                                 </xs:element>
-                                                <xs:element name="nationality" minOccurs="0" type="CountryCodeType">
+                                                <xs:element name="nationality" minOccurs="0" type="NationalityContentType">
                                                     <xs:annotation>
                                                         <xs:documentation>
                                                             <description value="Nationality" />
-                                                            <!-- <codeList code="CL165" type="business" name="Nationality" /> -->
+                                                            <codeList code="CL165" type="business" name="Nationality" />
                                                             <format value="a2" />
                                                             <optionality value="O" />
                                                             <xsdBaseType value="CountryCodeType" />
@@ -322,15 +323,12 @@
                                             </xs:sequence>
                                         </xs:complexType>
                                     </xs:element>
-
-
                                 </xs:sequence>
                             </xs:complexType>
                         </xs:element>
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
-
             <xs:element name="ManifestItem" maxOccurs="99999">
                 <xs:annotation>
                     <xs:documentation>
@@ -346,6 +344,7 @@
                                     <description value="Manifest item number" />
                                     <format value="n..5" />
                                     <optionality value="R" />
+                                    <xsdBaseType value="NumericWithoutZero_5" />
                                 </xs:documentation>
                             </xs:annotation>
                         </xs:element>
@@ -364,6 +363,7 @@
                                                 <description value="Transport document reference" />
                                                 <format value="an..35" />
                                                 <optionality value="R" />
+                                                <xsdBaseType value="AlphaNumeric_MAX35_NoSpaces" />
                                             </xs:documentation>
                                         </xs:annotation>
                                     </xs:element>
@@ -373,6 +373,7 @@
                                                 <description value="Shipping marks" />
                                                 <format value="an..512" />
                                                 <optionality value="D" />
+                                                <xsdBaseType value="AlphaNumeric_MAX512_NoSpaces" />
                                             </xs:documentation>
                                         </xs:annotation>
                                     </xs:element>
@@ -380,7 +381,7 @@
                                         <xs:annotation>
                                             <xs:documentation>
                                                 <description value="Type of packages" />
-                                                <!-- <codeList code="CL017" type="business" name="KindOfPackages" /> -->
+                                                <codeList code="CL017" type="business" name="KindOfPackages" />
                                                 <format value="an2" />
                                                 <optionality value="R" />
                                             </xs:documentation>
@@ -392,6 +393,7 @@
                                                 <description value="Number of packages" />
                                                 <format value="n..8" />
                                                 <optionality value="D" />
+                                                <xsdBaseType value="NumericWithZero_8" />
                                             </xs:documentation>
                                         </xs:annotation>
                                     </xs:element>
@@ -401,6 +403,7 @@
                                                 <description value="Gross mass" />
                                                 <format value="n..16,6" />
                                                 <optionality value="R" />
+                                                <xsdBaseType value="DecimalWithoutZero_16_6" />
                                             </xs:documentation>
                                         </xs:annotation>
                                     </xs:element>
@@ -408,7 +411,7 @@
                                         <xs:annotation>
                                             <xs:documentation>
                                                 <description value="Harmonized System sub-heading code" />
-                                                <!-- <codeList code="CL152" type="business" name="HsCode" /> -->
+                                                <codeList code="CL152" type="business" name="HsCode" />
                                                 <format value="an6" />
                                                 <optionality value="O" />
                                             </xs:documentation>
@@ -420,6 +423,7 @@
                                                 <description value="Description of goods" />
                                                 <format value="an..512" />
                                                 <optionality value="O" />
+                                                <xsdBaseType value="AlphaNumeric_MAX512_NoSpaces" />
                                             </xs:documentation>
                                         </xs:annotation>
                                     </xs:element>
@@ -441,7 +445,7 @@
                                                         </xs:documentation>
                                                     </xs:annotation>
                                                 </xs:element>
-                                                <xs:element name="MRN" type="MRNType">
+                                                <xs:element name="MRN" type="MrnContentType05">
                                                     <xs:annotation>
                                                         <xs:documentation>
                                                             <description value="MRN" />
@@ -455,7 +459,7 @@
                                                     <xs:annotation>
                                                         <xs:documentation>
                                                             <description value="Final or partial shipment flag" />
-                                                            <!-- <codeList code="CL027" type="technical" name="Flag" /> -->
+                                                            <codeList code="CL027" type="technical" name="Flag" />
                                                             <format value="n1" />
                                                             <optionality value="R" />
                                                         </xs:documentation>
@@ -467,6 +471,7 @@
                                                             <description value="Number of packages" />
                                                             <format value="n..8" />
                                                             <optionality value="D" />
+                                                            <xsdBaseType value="NumericWithZero_8" />
                                                         </xs:documentation>
                                                     </xs:annotation>
                                                 </xs:element>
@@ -476,6 +481,7 @@
                                                             <description value="Gross mass" />
                                                             <format value="n..16,6" />
                                                             <optionality value="R" />
+                                                            <xsdBaseType value="DecimalWithoutZero_16_6" />
                                                         </xs:documentation>
                                                     </xs:annotation>
                                                 </xs:element>
@@ -485,6 +491,7 @@
                                                             <description value="Declaration goods item number" />
                                                             <format value="n..5" />
                                                             <optionality value="R" />
+                                                            <xsdBaseType value="DeclarationGoodsItemNumberType" />
                                                         </xs:documentation>
                                                     </xs:annotation>
                                                 </xs:element>
