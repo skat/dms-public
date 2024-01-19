@@ -1,3 +1,9 @@
+### 18-01-2024
+* Added printing guidelines for EAD and TAD
+   * Can be found in the new folder "Printing Guidelines"
+* Updated XSDs according to AS4 update on 17th of January
+   * The "TFE XSD updates - 11012024" package is now on PROD, so this file has been removed
+
 ### 16-01-2024
 * Updated Exit XML Guide
 
