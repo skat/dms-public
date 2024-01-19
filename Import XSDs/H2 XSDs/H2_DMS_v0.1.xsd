@@ -207,39 +207,6 @@
         </xs:complexType>
       </xs:element>
 
-      <xs:element name="CurrencyExchange" minOccurs="0">
-        <xs:annotation>
-          <xs:documentation>
-            <EUCDMname>Exchange rate</EUCDMname>
-            <type>EUCDM 6.1</type>
-            <code>14 09 000 000</code>
-          </xs:documentation>
-        </xs:annotation>
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element name="SequenceNumeric" type="ds:CurrencyExchangeSequenceNumericType"/>
-            <xs:element name="CurrencyTypeCode" type="ds:CurrencyExchangeCurrencyTypeCodeType" minOccurs="0">
-              <xs:annotation>
-                <xs:documentation>
-                  <EUCDMname>Internal currency unit</EUCDMname>
-                  <type>EUCDM 6.1</type>
-                  <code>14 17 001 000</code>
-                </xs:documentation>
-              </xs:annotation>
-            </xs:element>
-            <xs:element name="RateNumeric" type="ds:CurrencyExchangeRateNumericType">
-              <xs:annotation>
-                <xs:documentation>
-                  <EUCDMname>Exchange rate</EUCDMname>
-                  <type>EUCDM 6.1</type>
-                  <code>14 09 001 000</code>
-                </xs:documentation>
-              </xs:annotation>
-            </xs:element>
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
-
       <xs:element name="Declarant">
         <xs:annotation>
           <xs:documentation>
@@ -1098,11 +1065,6 @@
                         <xs:element name="DutyTaxFee" maxOccurs="99">
                           <xs:annotation>
                             <xs:documentation>
-                              <EUCDMname>Duties and Taxes</EUCDMname>
-                              <type>EUCDM 6.1</type>
-                              <code>14 03 040 014</code>
-                            </xs:documentation>
-                            <xs:documentation>
                               <EUCDMname>Preference</EUCDMname>
                               <type>EUCDM 6.1</type>
                               <code>14 11 000 000 </code>
@@ -1111,7 +1073,7 @@
                           <xs:complexType>
                             <xs:sequence>
                               <xs:element name="SequenceNumeric" type="ds:CommodityDutyTaxFeeSequenceNumericType" />
-                              <xs:element name="DutyRegimeCode" type="ds:DutyTaxFeeDutyRegimeCodeType">
+                              <xs:element name="DutyRegimeCode" type="ds:DutyTaxFeeDutyRegimeCodeType" minOccurs="1">
                                 <xs:annotation>
                                   <xs:documentation>
                                     <EUCDMname>Preference</EUCDMname>
