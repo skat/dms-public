@@ -1,3 +1,6 @@
+### 19-01-2024
+* Added release notes v1.8
+
 ### 18-01-2024
 
 * Updated Transit and Transit IE XML Guides with CommunicationLanguage clarification
