@@ -1,4 +1,5 @@
 ### 18-01-2024
+* Updated Transit and Transit IE XML Guides with CommunicationLanguage clarification
 * Added printing guidelines for EAD and TAD
    * Can be found in the new folder "Printing Guidelines"
 * Updated XSDs according to AS4 update on 17th of January
