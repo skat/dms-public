@@ -1,64 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://ncts.dgtaxud.ec" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" targetNamespace="http://ncts.dgtaxud.ec" elementFormDefault="unqualified" attributeFormDefault="unqualified" version="51.8.0" vc:minVersion="1.1">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://ncts.dgtaxud.ec" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" targetNamespace="http://ncts.dgtaxud.ec" elementFormDefault="unqualified" attributeFormDefault="unqualified" version="51.8.2" vc:minVersion="1.1">
   <!--================================================================================-->
-  <!--===== IE034: E_GUA_QUE                                                          -->
-  <!--===== QUERY ON GUARANTEES                                                       -->
-  <!--===== NCTS P5 Phase Definition                                                  -->
-  <!--===== XSD Version 51.8.0                                                        -->
+  <!--===== IE034: E_GUA_QUE                                                                -->
+  <!--===== QUERY ON GUARANTEES                                                             -->
+  <!--===== NCTS P5 Phase Definition                                                        -->
+  <!--===== XSD Version 51.8.2                                                              -->
   <!--================================================================================-->
   <!--================================================================================-->
-  <!--===== Includes                                                                  -->
+  <!--===== Includes                                                                        -->
   <!--================================================================================-->
   <xs:include schemaLocation="../NCTS_DS/ctypes.xsd" />
   <xs:include schemaLocation="../NCTS_DS/htypes.xsd" />
   <!--================================================================================-->
-  <!--===== Root Element                                                              -->
+  <!--===== Root Element                                                                    -->
   <!--================================================================================-->
   <xs:element name="CC034C" type="CC034CType" />
   <!--================================================================================-->
-  <!--===== Root Element Content                                                      -->
+  <!--===== Root Element Content                                                            -->
   <!--================================================================================-->
   <xs:complexType name="CC034CType">
     <xs:sequence>
       <xs:element name="messageSender" type="MessageSenderContentType">
         <xs:annotation>
           <xs:documentation>
-            <description value="Message sender"/>
+            <description value="Message sender" />
           </xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element name="messageRecipient" type="MessageRecipientContentType">
         <xs:annotation>
           <xs:documentation>
-            <description value="Message recipient"/>
+            <description value="Message recipient" />
           </xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element name="preparationDateAndTime" type="PreparationDateAndTimeContentType">
         <xs:annotation>
           <xs:documentation>
-            <description value="Preparation date and time"/>
+            <description value="Preparation date and time" />
           </xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element name="messageIdentification" type="MessageIdentificationContentType">
         <xs:annotation>
           <xs:documentation>
-            <description value="Message identification"/>
+            <description value="Message identification" />
           </xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element name="messageType" type="MessageTypes">
         <xs:annotation>
           <xs:documentation>
-            <description value="Message type"/>
+            <description value="Message type" />
+            <codeList name="MessageTypes" />
           </xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element name="correlationIdentifier" type="CorrelationIdentifierContentType" minOccurs="0">
         <xs:annotation>
           <xs:documentation>
-            <description value="Correlation identifier"/>
+            <description value="Correlation identifier" />
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -70,6 +71,11 @@
           </xs:documentation>
         </xs:annotation>
         <xs:complexType>
+          <xs:annotation>
+            <xs:documentation>
+              <usedBy>Used by 1/91 messages: CC034C</usedBy>
+            </xs:documentation>
+          </xs:annotation>
           <xs:sequence>
             <xs:element name="identificationNumber" type="IdentificationNumberContentType01">
               <xs:annotation>
@@ -85,7 +91,6 @@
               <xs:annotation>
                 <xs:documentation>
                   <description value="Role" />
-                  <codeList code="CL156" type="business" name="RoleRequester" />
                   <format value="n1" />
                   <optionality value="R" />
                 </xs:documentation>
@@ -94,7 +99,7 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
-      <xs:element name="GuaranteeReference" maxOccurs="99">
+      <xs:element name="GuaranteeReference" maxOccurs="99" >
         <xs:annotation>
           <xs:documentation>
             <description value="GUARANTEE REFERENCE" />
@@ -102,6 +107,11 @@
           </xs:documentation>
         </xs:annotation>
         <xs:complexType>
+          <xs:annotation>
+            <xs:documentation>
+              <usedBy>Used by 1/91 messages: CC034C</usedBy>
+            </xs:documentation>
+          </xs:annotation>
           <xs:sequence>
             <xs:element name="sequenceNumber" type="SequenceNumberContentType">
               <xs:annotation>
@@ -122,33 +132,95 @@
                 </xs:documentation>
               </xs:annotation>
             </xs:element>
-            <xs:element name="GuaranteeQuery" type="GuaranteeQueryType">
+            <xs:element name="GuaranteeQuery">
               <xs:annotation>
                 <xs:documentation>
                   <description value="GUARANTEE QUERY" />
                   <optionality value="R" />
                 </xs:documentation>
               </xs:annotation>
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="queryIdentifier" type="QueryIdentifierContentType">
+                    <xs:annotation>
+                      <xs:documentation>
+                        <description value="Query identifier" />
+                        <format value="n1" />
+                        <optionality value="R" />
+                      </xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+                  <xs:element name="periodFromDate" minOccurs="0" type="PeriodFromDateContentType">
+                    <xs:annotation>
+                      <xs:documentation>
+                        <description value="Period from date" />
+                        <format value="an10" />
+                        <optionality value="O" />
+                        <xsdBaseType value="DateType" />
+                      </xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+                  <xs:element name="periodToDate" minOccurs="0" type="PeriodToDateContentType">
+                    <xs:annotation>
+                      <xs:documentation>
+                        <description value="Period to date" />
+                        <format value="an10" />
+                        <optionality value="O" />
+                        <xsdBaseType value="DateType" />
+                      </xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
             </xs:element>
-            <xs:element name="Owner" minOccurs="0" type="OwnerType01">
+            <xs:element name="Owner" minOccurs="0">
               <xs:annotation>
                 <xs:documentation>
                   <description value="OWNER" />
                   <optionality value="D" />
                 </xs:documentation>
               </xs:annotation>
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="identificationNumber" type="IdentificationNumberContentType01">
+                    <xs:annotation>
+                      <xs:documentation>
+                        <description value="Identification number" />
+                        <format value="an..17" />
+                        <optionality value="R" />
+                        <xsdBaseType value="AlphaNumeric_MAX17_NoSpaces" />
+                      </xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
             </xs:element>
-            <xs:element name="AccessCode" type="AccessCodeType02">
+            <xs:element name="AccessCode">
               <xs:annotation>
                 <xs:documentation>
                   <description value="ACCESS CODE" />
                   <optionality value="R" />
                 </xs:documentation>
               </xs:annotation>
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="accessCode" type="AccessCodeContentType02">
+                    <xs:annotation>
+                      <xs:documentation>
+                        <description value="Access code" />
+                        <format value="an..4" />
+                        <optionality value="R" />
+                        <xsdBaseType value="AlphaNumeric_4_NoSpaces" />
+                      </xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
             </xs:element>
           </xs:sequence>
         </xs:complexType>
       </xs:element>
     </xs:sequence>
+    <xs:attribute name="PhaseID" type="phaseIDtype" />
   </xs:complexType>
 </xs:schema>

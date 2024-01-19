@@ -1,4 +1,16 @@
-### 15-1-2024
+### 18-01-2024
+
+* Updated Transit and Transit IE XML Guides with CommunicationLanguage clarification
+* Added printing guidelines for EAD and TAD
+    * Can be found in the new folder "Printing Guidelines"
+* Updated XSDs according to AS4 update on 17th of January
+    * The "TFE XSD updates - 11012024" package is now on PROD, so this file has been removed
+
+### 16-01-2024
+
+* Updated Exit XML Guide
+
+### 15-01-2024
 
 * Updated DMS Online User Manuals file structure
 * Commented out the "presentationOfTheGoodsDateAndTime" field.
