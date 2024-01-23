@@ -55,13 +55,21 @@
           </xs:documentation>
         </xs:annotation>
       </xs:element>
-<!--      <xs:element name="DeclarationOfficeID" type="ds:DeclarationDeclarationOfficeIDType"
-          minOccurs="0">
-      </xs:element> -->
-<!--      <xs:element name="InvoiceAmount" type="ds:DeclarationInvoiceAmountType"
-          minOccurs="0">
-        
-      </xs:element> -->
+
+      <xs:element name="InvoiceAmount" type="ds:DeclarationInvoiceAmountType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <EUCDMname>Total amount invoiced</EUCDMname>
+            <type>EUCDM 6.1</type>
+            <code>14 06 000 000</code>
+          </xs:documentation>
+          <xs:documentation>
+            <EUCDMname>Invoice currency</EUCDMname>
+            <type>EUCDM 6.1</type>
+            <code>14 05 000 000</code>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
 
       <xs:element name="Submitter">
         <xs:complexType>
@@ -221,6 +229,11 @@
             <EUCDMname>Exchange rate</EUCDMname>
             <type>EUCDM 6.1</type>
             <code>14 09 000 000</code>
+          </xs:documentation>
+          <xs:documentation>
+            <EUCDMname>Internal currency unit</EUCDMname>
+            <type>EUCDM 6.1</type>
+            <code>14 17 000 000</code>
           </xs:documentation>
         </xs:annotation>
         <xs:complexType>
@@ -1091,7 +1104,7 @@
                 </xs:sequence>
               </xs:complexType>
             </xs:element>
-            <xs:element name="CustomsValuation" minOccurs="0">
+            <xs:element name="CustomsValuation" minOccurs="0"> <!--Cina: why does this occur twice here?-->
               <xs:annotation>
                 <xs:documentation>
                   <EUCDMname>Additions and deductions</EUCDMname>
@@ -1472,7 +1485,7 @@
                             <xs:documentation>
                               <EUCDMname>Duties and Taxes</EUCDMname>
                               <type>EUCDM 6.1</type>
-                              <code>14 03 040 014</code>
+                              <code>14 03 000 000</code>
                             </xs:documentation>
                             <xs:documentation>
                               <EUCDMname>Preference</EUCDMname>
@@ -1534,7 +1547,7 @@
                                   </xs:documentation>
                                 </xs:annotation>
                               </xs:element>
-                              <xs:element name="TaxRateNumeric" type="ds:DutyTaxFeeTaxRateNumericType" minOccurs="0">
+                              <xs:element name="TaxRateNumeric" type="ds:DutyTaxFeeTaxRateNumericType" minOccurs="1">
                                 <xs:annotation>
                                   <xs:documentation>
                                     <EUCDMname>Tax rate</EUCDMname>
@@ -1543,7 +1556,7 @@
                                   </xs:documentation>
                                 </xs:annotation>
                               </xs:element>
-                              <xs:element name="TypeCode" type="ds:DutyTaxFeeTypeCodeType" minOccurs="0">
+                              <xs:element name="TypeCode" type="ds:DutyTaxFeeTypeCodeType" minOccurs="1">
                                 <xs:annotation>
                                   <xs:documentation>
                                     <EUCDMname>Tax type</EUCDMname>
@@ -1706,6 +1719,13 @@
                                       
                                     </xs:element>
                                     <xs:element name="TaxBase" minOccurs="0">
+                                      <xs:annotation>
+                                        <xs:documentation>
+                                          <EUCDMname>Tax base</EUCDMname>
+                                          <type>EUCDM 6.1</type>
+                                          <code>14 03 040 000</code>
+                                        </xs:documentation>
+                                      </xs:annotation>
                                       <xs:complexType>
                                         <xs:sequence>
                                           <xs:element name="TaxRateNumeric"
@@ -2076,7 +2096,7 @@
                     <xs:complexType>
                       <xs:sequence>
                         <xs:element name="SequenceNumeric" type="ds:PackagingSequenceNumericType"/>
-                        <xs:element name="MarksNumbersID" type="ds:PackagingMarksNumbersIDType" minOccurs="0">
+                        <xs:element name="MarksNumbersID" type="ds:PackagingMarksNumbersIDType" minOccurs="1">
                           <xs:annotation>
                             <xs:documentation>
                               <EUCDMname>Shipping marks</EUCDMname>
@@ -2085,7 +2105,7 @@
                             </xs:documentation>
                           </xs:annotation>
                         </xs:element>
-                        <xs:element name="QuantityQuantity" type="ds:PackagingQuantityQuantityType" minOccurs="0">
+                        <xs:element name="QuantityQuantity" type="ds:PackagingQuantityQuantityType" minOccurs="1">
                           <xs:annotation>
                             <xs:documentation>
                               <EUCDMname>Number of packages</EUCDMname>
@@ -2808,7 +2828,7 @@
             <xs:element name="Surety" minOccurs="0">
               <xs:annotation>
                 <xs:documentation>
-                  <EUCDMname>Person providing a guarantee</EUCDMname>
+                  <EUCDMname>Person providing a guarantee</EUCDMname> 
                   <type>EUCDM 6.1</type>
                   <code>13 20 000 000</code>
                 </xs:documentation>
@@ -2868,7 +2888,7 @@
                   <xs:element name="CountryCode" type="ds:TradeTermsCountryCode" minOccurs="0">
                     <xs:annotation>
                       <xs:documentation>
-                        <EUCDMname>INCOTERM code</EUCDMname>
+                        <EUCDMname>Country</EUCDMname>
                         <type>EUCDM 6.1</type>
                         <code>14 01 020 000</code>
                       </xs:documentation>
