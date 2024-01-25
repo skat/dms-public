@@ -1,3 +1,7 @@
+### 25-01-2024
+* Updated System guide and Connectivity Guide
+* Added ARC Guide
+
 ### 19-01-2024
 * Added release notes v1.8
 
