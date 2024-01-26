@@ -95,7 +95,7 @@
                                 <xs:documentation>
                                     <EUCDMname>Address</EUCDMname>
                                     <EUCDMversion>EUCDM 6.1</EUCDMversion>
-                                    <code>13 03 018 000</code>
+                                    <code>13 06 018 000</code>
                                 </xs:documentation>
                             </xs:annotation>
                             <xs:complexType>
@@ -113,7 +113,7 @@
                                             <xs:documentation>
                                                 <EUCDMname>City</EUCDMname>
                                                 <EUCDMversion>EUCDM 6.1</EUCDMversion>
-                                                <code>13 03 018 022</code>
+                                                <code>13 06 018 022</code>
                                             </xs:documentation>
                                         </xs:annotation>
                                         <xs:complexType>
@@ -128,7 +128,7 @@
                                             <xs:documentation>
                                                 <EUCDMname>Country</EUCDMname>
                                                 <EUCDMversion>EUCDM 6.1</EUCDMversion>
-                                                <code>13 03 018 020</code>
+                                                <code>13 06 018 020</code>
                                             </xs:documentation>
                                         </xs:annotation>
                                         <xs:complexType>
@@ -346,7 +346,7 @@
                                 <xs:documentation>
                                     <EUCDMname>Address</EUCDMname>
                                     <EUCDMversion>EUCDM 6.1</EUCDMversion>
-                                    <code>13 03 018 000</code>
+                                    <code>13 05 018 000</code>
                                 </xs:documentation>
                             </xs:annotation>
                             <xs:complexType>
@@ -564,7 +564,48 @@
                         </xs:element>
                     </xs:sequence>
                 </xs:complexType>
-            </xs:element>
+            </xs:element>   <!-- Cina: this element should not be in G4? -->
+            <!--           <xs:element name="expectedArrival" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>
+                        <EUCDMname>Estimated date and time of arrival at the port of unloading</EUCDMname>
+                        <EUCDMversion>EUCDM 6.1</EUCDMversion>
+                        <code>15 04 001 000</code>
+                    </xs:documentation>
+                </xs:annotation>
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="DateTime.Content" type="DateTime.Content"/>
+                        </xs:sequence>
+                    </xs:complexType>
+            </xs:element> --> <!-- Cina: this element is in D level according to clarif but in MC according to DM-->
+            <xs:element name="SupervisingOffice" minOccurs="0">
+                 <xs:annotation>
+                     <xs:documentation>
+                         <EUCDMname>Supervising customs office</EUCDMname>
+                         <EUCDMversion>EUCDM 6.1</EUCDMversion>
+                         <code>17 10 000 000</code>
+                     </xs:documentation>
+                 </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="identification_2">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    <EUCDMname>Reference number</EUCDMname>
+                                    <EUCDMversion>EUCDM 6.1</EUCDMversion>
+                                    <code>17 10 001 000</code>
+                                </xs:documentation>
+                            </xs:annotation>
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="Identifier.Content" type="Identifier.Content"/>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+             </xs:element> --> <!-- Cina: this element is in D level according to clarif but in MC according to DM-->
             <!-- MC (Master Consignment) level -->
             <xs:element name="Consignment">
                 <xs:annotation>
@@ -694,13 +735,6 @@
                                         </xs:complexType>
                                     </xs:element>
                                     <xs:element name="identification_2" minOccurs="0">
-                                        <xs:annotation>
-                                            <xs:documentation>
-                                                <EUCDMname>Reference Number</EUCDMname>
-                                                <EUCDMversion>EUCDM 6.1</EUCDMversion>
-                                                <code>12 04 001 000</code>
-                                            </xs:documentation>
-                                        </xs:annotation>
                                         <xs:complexType>
                                             <xs:sequence>
                                                 <xs:element name="Identifier.Content" type="Identifier.Content"/>
@@ -993,6 +1027,13 @@
                                         </xs:complexType>
                                     </xs:element>
                                     <xs:element name="Communication" minOccurs="0">
+                                        <xs:annotation>
+                                            <xs:documentation>
+                                                <EUCDMname>Communication</EUCDMname>
+                                                <EUCDMversion>EUCDM 6.1</EUCDMversion>
+                                                <code>13 03 029 000</code>
+                                            </xs:documentation>
+                                        </xs:annotation>
                                         <xs:complexType>
                                             <xs:sequence>
                                                 <xs:element name="identification_2">
@@ -2624,13 +2665,6 @@
                                                                 </xs:complexType>
                                                             </xs:element>
                                                             <xs:element name="identification_2" minOccurs="0">
-                                                                <xs:annotation>
-                                                                    <xs:documentation>
-                                                                        <EUCDMname>Reference Number</EUCDMname>
-                                                                        <EUCDMversion>EUCDM 6.1</EUCDMversion>
-                                                                        <code>12 04 001 000</code>
-                                                                    </xs:documentation>
-                                                                </xs:annotation>
                                                                 <xs:complexType>
                                                                     <xs:sequence>
                                                                         <xs:element name="Identifier.Content" type="Identifier.Content"/>
@@ -4549,9 +4583,9 @@
                                     <xs:element name="type_2" minOccurs="0">
                                         <xs:annotation>
                                             <xs:documentation>
-                                                <EUCDMname>Name</EUCDMname>
+                                                <EUCDMname>Type</EUCDMname>
                                                 <EUCDMversion>EUCDM 6.1</EUCDMversion>
-                                                <code>13 03 016 000</code>
+                                                <code>12 11 002 000</code>
                                             </xs:documentation>
                                         </xs:annotation>
                                         <xs:complexType>
