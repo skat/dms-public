@@ -1,3 +1,8 @@
+### 02-02-2024
+* Updated Exit IE, Transit IE and Transit XML Guides
+	* Updated the messageSender/Recipient fields
+* Updated Export XML Guide
+
 ### 30-01-2024
 * Updated Transit D1 testcases
 
