@@ -865,11 +865,6 @@
                               <code>18 01 000 000</code>
                             </xs:documentation>
                             <xs:documentation>
-                              <EUCDMname>Supplementary units</EUCDMname>
-                              <type>EUCDM 6.1</type>
-                              <code>18 02 000 000</code>
-                            </xs:documentation>
-                            <xs:documentation>
                               <EUCDMname>Gross mass</EUCDMname>
                               <type>EUCDM 6.1</type>
                               <code>18 04 000 000</code>
@@ -877,7 +872,7 @@
                           </xs:annotation>
                           <xs:complexType>
                             <xs:sequence>
-                              <xs:element name="GrossMassMeasure" type="ds:GoodsMeasureGrossMassMeasureType" minOccurs="0">
+                              <xs:element name="GrossMassMeasure" type="ds:GoodsMeasureGrossMassMeasureType" >
                                 <xs:annotation>
                                   <xs:documentation>
                                     <EUCDMname>Gross mass</EUCDMname>
@@ -886,7 +881,7 @@
                                   </xs:documentation>
                                 </xs:annotation>
                               </xs:element>
-                              <xs:element name="NetNetWeightMeasure" type="ds:GoodsMeasureNetNetWeightMeasureType">
+                              <xs:element name="NetNetWeightMeasure" type="ds:GoodsMeasureNetNetWeightMeasureType" minOccurs="0">
                                 <xs:annotation>
                                   <xs:documentation>
                                     <EUCDMname>Net mass</EUCDMname>
@@ -898,49 +893,35 @@
                             </xs:sequence>
                           </xs:complexType>
                         </xs:element>
-                        <xs:element name="TransportEquipment" minOccurs="0"
-                            maxOccurs="unbounded">
-                          
+                        <xs:element name="TransportEquipment" minOccurs="0" maxOccurs="unbounded">
                           <xs:complexType>
                             <xs:sequence>
                               <xs:element name="SequenceNumeric"
-                                  type="ds:TransportEquipmentSequenceNumericType"
-                                  minOccurs="1">
-                                
+                                  type="ds:TransportEquipmentSequenceNumericType" minOccurs="1">
                               </xs:element>
                               <xs:element name="ID"
-                                  type="ds:TransportEquipmentIdentificationIDType"
-                                  minOccurs="0">
-                                
+                                  type="ds:TransportEquipmentIdentificationIDType" minOccurs="0">
                               </xs:element>
                             </xs:sequence>
                           </xs:complexType>
                         </xs:element>
                         <xs:element name="TaxCalculation" minOccurs="0">
-                          
+
                           <xs:complexType>
                             <xs:sequence>
                               <xs:element name="TaxAssessedAmount"
                                           type="ds:TaxCalculationTaxAssessedAmountAmountType" minOccurs="0"/>
                               <xs:element name="DutyTaxFee" minOccurs="0"
                                   maxOccurs="unbounded">
-                                
                                 <xs:complexType>
                                   <xs:sequence>
-                                    <xs:element name="SequenceNumeric" type="ds:CommodityDutyTaxFeeSequenceNumericType" minOccurs="1">
-                                      
+                                    <xs:element name="SequenceNumeric" type="ds:CommodityDutyTaxFeeSequenceNumericType" >
                                     </xs:element>
-                                    <xs:element name="TypeCode" type="ds:DutyTaxFeeTypeCodeType"
-                                        minOccurs="0">
-                                      
+                                    <xs:element name="TypeCode" type="ds:DutyTaxFeeTypeCodeType" minOccurs="0">
                                     </xs:element>
-                                    <xs:element name="QuotaOrderID"
-                                        type="ds:DutyTaxFeeQuotaOrderIDType" minOccurs="0">
-                                      
+                                    <xs:element name="QuotaOrderID" type="ds:DutyTaxFeeQuotaOrderIDType" minOccurs="0">
                                     </xs:element>
-                                    <xs:element name="Payment" minOccurs="0"
-                                        maxOccurs="1">
-                                      
+                                    <xs:element name="Payment" minOccurs="0">
                                       <xs:complexType>
                                         <xs:sequence>
                                           <xs:element name="FreightChargeAmount" type="ds:CustomsValuationFreightChargeAmountType">
@@ -952,14 +933,9 @@
                                               </xs:documentation>
                                             </xs:annotation>
                                           </xs:element>
-
-                                          <xs:element name="MethodCode" type="ds:PaymentMethodCodeType"
-                                              minOccurs="0">
-                                            
+                                          <xs:element name="MethodCode" type="ds:PaymentMethodCodeType" minOccurs="0">
                                           </xs:element>
-                                          <xs:element name="PaymentAmount"
-                                              type="ds:PaymentPaymentAmountType" minOccurs="0">
-                                            
+                                          <xs:element name="PaymentAmount" type="ds:PaymentPaymentAmountType" minOccurs="0">
                                           </xs:element>
                                         </xs:sequence>
                                       </xs:complexType>
@@ -1180,21 +1156,12 @@
                     <xs:complexType>
                       <xs:sequence>
                         <xs:element name="SequenceNumeric" type="ds:PackagingSequenceNumericType"/>
-                        <xs:element name="QuantityQuantity" type="ds:PackagingQuantityQuantityType" minOccurs="0">
+                        <xs:element name="QuantityQuantity" type="ds:PackagingQuantityQuantityType">
                           <xs:annotation>
                             <xs:documentation>
                               <EUCDMname>Number of packages</EUCDMname>
                               <type>EUCDM 6.1</type>
                               <code>18 06 004 000</code>
-                            </xs:documentation>
-                          </xs:annotation>
-                        </xs:element>
-                        <xs:element name="TypeCode" type="ds:PackagingTypeCodeType">
-                          <xs:annotation>
-                            <xs:documentation>
-                              <EUCDMname>Types of packages</EUCDMname>
-                              <type>EUCDM 6.1</type>
-                              <code>18 06 003 000</code>
                             </xs:documentation>
                           </xs:annotation>
                         </xs:element>
@@ -1208,32 +1175,31 @@
                         <type>EUCDM 6.1</type>
                         <code>12 01 000 000</code>
                       </xs:documentation>
-                        <xs:documentation>
-                          <EUCDMname>Date of acceptance</EUCDMname>
-                          <type>EUCDM 6.1</type>
-                          <code>15 09 000 000</code>
-                        </xs:documentation>
                     </xs:annotation>
                     <xs:complexType>
                       <xs:sequence>
                         <xs:element name="SequenceNumeric" type="ds:PreviousDocumentSequenceNumericType"/>
-
-                        <xs:element name="WriteOff" minOccurs="0">
+                        <xs:element name="WriteOff" >
                           <xs:complexType>
                             <xs:sequence>
-                              <xs:element name="QuantityQuantity" type="ds:WriteOffQuantityQuantityType" minOccurs="0">
+                              <xs:element name="QuantityQuantity" type="ds:WriteOffQuantityQuantityType" >
                                 <xs:annotation>
                                   <xs:documentation>
-                                    <EUCDMname>Write-off quantity</EUCDMname>
+                                    <EUCDMname>Quantity</EUCDMname>
                                     <type>EUCDM 6.1</type>
-                                    <code>12 01 005 000 and 12 01 006 000</code>
+                                    <code>12 01 006 000</code>
+                                  </xs:documentation>
+                                  <xs:documentation>
+                                    <EUCDMname>Measurement unit and qualifier</EUCDMname>
+                                    <type>EUCDM 6.1</type>
+                                    <code>12 01 005 000</code>
                                   </xs:documentation>
                                 </xs:annotation>
                               </xs:element>
-                              <xs:element name="Packaging" minOccurs="0">
+                              <xs:element name="Packaging" >
                                 <xs:complexType>
                                   <xs:sequence>
-                                    <xs:element name="QuantityQuantity" type="ds:PackagingQuantityQuantityType" minOccurs="0">
+                                    <xs:element name="QuantityQuantity" type="ds:PackagingQuantityQuantityType" >
                                       <xs:annotation>
                                         <xs:documentation>
                                           <EUCDMname>Number of packages</EUCDMname>
@@ -1242,7 +1208,7 @@
                                         </xs:documentation>
                                       </xs:annotation>
                                     </xs:element>
-                                    <xs:element name="TypeCode" type="ds:PackagingTypeCodeType" minOccurs="0">
+                                    <xs:element name="TypeCode" type="ds:PackagingTypeCodeType" >
                                       <xs:annotation>
                                         <xs:documentation>
                                           <EUCDMname>Type of packages</EUCDMname>
@@ -1729,7 +1695,7 @@
         </xs:complexType>
       </xs:element>
 
-      <xs:element name="ObligationGuarantee" minOccurs="0" maxOccurs="99">
+      <xs:element name="ObligationGuarantee" maxOccurs="99">
         <xs:annotation>
           <xs:documentation>
             <EUCDMname>Guarantee type</EUCDMname>
@@ -1745,7 +1711,8 @@
         <xs:complexType>
           <xs:sequence>
             <xs:element name="SequenceNumeric" type="ds:ObligationGuaranteeSequenceNumericType"/>
-            <xs:element name="AmountAmount" type="ds:ObligationGuaranteeAmountAmountType">
+
+            <xs:element name="AmountAmount" type="ds:ObligationGuaranteeAmountAmountType" minOccurs="0">
               <xs:annotation>
                 <xs:documentation>
                   <EUCDMname>Amount to be covered</EUCDMname>
@@ -1763,7 +1730,7 @@
                 </xs:documentation>
               </xs:annotation>
             </xs:element>
-            <xs:element name="ReferenceID" type="ds:ObligationGuaranteeReferenceIDType">
+            <xs:element name="ReferenceID" type="ds:ObligationGuaranteeReferenceIDType" minOccurs="0">
               <xs:annotation>
                 <xs:documentation>
                   <EUCDMname>GRN</EUCDMname>
@@ -1781,7 +1748,7 @@
                 </xs:documentation>
               </xs:annotation>
             </xs:element>
-            <xs:element name="AccessCode" type="ds:ObligationGuaranteeAccessCodeType" >
+            <xs:element name="AccessCode" type="ds:ObligationGuaranteeAccessCodeType" minOccurs="0">
               <xs:annotation>
                 <xs:documentation>
                   <EUCDMname>Access code</EUCDMname>
@@ -1790,7 +1757,7 @@
                 </xs:documentation>
               </xs:annotation>
             </xs:element>
-            <xs:element name="GuaranteeOffice">
+            <xs:element name="GuaranteeOffice" minOccurs="0">
               <xs:complexType>
                 <xs:sequence>
                   <xs:element name="ID" type="ds:GuaranteeOfficeIdentificationIDType">
