@@ -1,3 +1,6 @@
+### 06-02-2024
+* Minor correction to Victualling testcase
+
 ### 02-02-2024
 * Updated Exit IE, Transit IE and Transit XML Guides
 	* Updated the messageSender/Recipient fields
