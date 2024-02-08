@@ -32,7 +32,6 @@
           </xs:documentation>
         </xs:annotation>
       </xs:element>
-
       <xs:element name="Submitter">
         <xs:complexType>
           <xs:sequence>
@@ -270,7 +269,7 @@
                               <xs:element name="CityName" type="ds:AddressCityNameTextType" minOccurs="0">
                                 <xs:annotation>
                                   <xs:documentation>
-                                    <EUCDMname>City name</EUCDMname>
+                                    <EUCDMname>City</EUCDMname>
                                     <type>EUCDM 6.1</type>
                                     <code>16 15 018 022</code>
                                   </xs:documentation>
@@ -455,7 +454,6 @@
                 </xs:sequence>
               </xs:complexType>
             </xs:element>
-
             <xs:element name="GovernmentAgencyGoodsItem" maxOccurs="999">
               <xs:complexType>
                 <xs:sequence>
@@ -479,7 +477,7 @@
                             </xs:documentation>
                           </xs:annotation>
                         </xs:element>
-                        <xs:element name="PreviousCode" type="ds:GovernmentProcedurePreviousCodeType" >
+                        <xs:element name="PreviousCode" type="ds:GovernmentProcedurePreviousCodeType">
                           <xs:annotation>
                             <xs:documentation>
                               <EUCDMname>Previous procedure</EUCDMname>
@@ -543,92 +541,73 @@
                           </xs:complexType>
                         </xs:element>
                         <xs:element name="TransportEquipment" minOccurs="0"
-                            maxOccurs="unbounded">
-                          
+                                    maxOccurs="unbounded">
                           <xs:complexType>
                             <xs:sequence>
                               <xs:element name="SequenceNumeric"
-                                  type="ds:TransportEquipmentSequenceNumericType"
-                                  minOccurs="1">
-                                
+                                          type="ds:TransportEquipmentSequenceNumericType">
                               </xs:element>
                               <xs:element name="ID"
-                                  type="ds:TransportEquipmentIdentificationIDType"
-                                  minOccurs="0">
-                                
+                                          type="ds:TransportEquipmentIdentificationIDType"
+                                          minOccurs="0">
                               </xs:element>
                             </xs:sequence>
                           </xs:complexType>
                         </xs:element>
                         <xs:element name="TaxCalculation" minOccurs="0">
-                          
                           <xs:complexType>
                             <xs:sequence>
                               <xs:element name="TaxAssessedAmount"
                                           type="ds:TaxCalculationTaxAssessedAmountAmountType" minOccurs="0"/>
                               <xs:element name="DutyTaxFee" minOccurs="0"
-                                  maxOccurs="unbounded">
-                                
+                                          maxOccurs="unbounded">
                                 <xs:complexType>
                                   <xs:sequence>
                                     <xs:element name="SequenceNumeric" type="ds:CommodityDutyTaxFeeSequenceNumericType" minOccurs="1">
-                                      
                                     </xs:element>
                                     <xs:element name="TypeCode" type="ds:DutyTaxFeeTypeCodeType"
-                                        minOccurs="0">
-                                      
+                                                minOccurs="0">
                                     </xs:element>
                                     <xs:element name="TaxBase" minOccurs="0" maxOccurs="99">
                                       <xs:complexType>
                                         <xs:sequence>
                                           <xs:element name="TaxRateNumeric"
-                                              type="ds:DutyTaxFeeTaxRateNumericType" minOccurs="0">
-                                            
+                                                      type="ds:DutyTaxFeeTaxRateNumericType" minOccurs="0">
                                           </xs:element>
                                           <xs:element name="specificTaxBase" minOccurs="0">
-                                            
                                             <xs:complexType>
                                               <xs:sequence>
                                                 <xs:element name="SpecificTaxBaseQuantity"
-                                                    type="ds:DutyTaxFeeSpecificTaxBaseQuantityType"
-                                                    minOccurs="0">
-                                                  
+                                                            type="ds:DutyTaxFeeSpecificTaxBaseQuantityType"
+                                                            minOccurs="0">
                                                 </xs:element>
                                               </xs:sequence>
                                             </xs:complexType>
                                           </xs:element>
                                           <xs:element name="AdValoremTaxBaseAmount"
-                                              type="ds:DutyTaxFeeAdValoremTaxBaseAmountType"
-                                              minOccurs="0">
-                                            
+                                                      type="ds:DutyTaxFeeAdValoremTaxBaseAmountType"
+                                                      minOccurs="0">
                                           </xs:element>
                                           <xs:element name="TaxAssessedAmount"
-                                              type="ds:PaymentTaxAssessedAmountType" minOccurs="0">
-                                            
+                                                      type="ds:PaymentTaxAssessedAmountType" minOccurs="0">
                                           </xs:element>
                                           <xs:element name="Tax"
-                                              type="ds:PaymentTaxAssessedAmountType" minOccurs="0">
-                                            
+                                                      type="ds:PaymentTaxAssessedAmountType" minOccurs="0">
                                           </xs:element>
                                         </xs:sequence>
                                       </xs:complexType>
                                     </xs:element>
                                     <xs:element name="QuotaOrderID"
-                                        type="ds:DutyTaxFeeQuotaOrderIDType" minOccurs="0">
-                                      
+                                                type="ds:DutyTaxFeeQuotaOrderIDType" minOccurs="0">
                                     </xs:element>
-                                    <xs:element name="Payment" minOccurs="0"
-                                        maxOccurs="1">
-                                      
+                                    <xs:element name="Payment" minOccurs="0">
                                       <xs:complexType>
                                         <xs:sequence>
                                           <xs:element name="MethodCode" type="ds:PaymentMethodCodeType"
-                                              minOccurs="0">
-                                            
+                                                      minOccurs="0">
                                           </xs:element>
                                           <xs:element name="PaymentAmount"
-                                              type="ds:PaymentPaymentAmountType" minOccurs="0">
-                                            
+                                                      type="ds:PaymentPaymentAmountType" minOccurs="0">
                                           </xs:element>
                                         </xs:sequence>
                                       </xs:complexType>
@@ -693,12 +672,12 @@
                                   <xs:documentation>
                                     <EUCDMname>Quantity</EUCDMname>
                                     <type>EUCDM 6.1</type>
-                                    <code>14 03 040 006 </code>
+                                    <code>12 01 006 000</code>
                                   </xs:documentation>
                                   <xs:documentation>
                                     <EUCDMname>Measurement unit and qualifier</EUCDMname>
                                     <type>EUCDM 6.1</type>
-                                    <code>14 03 040 005</code>
+                                    <code>12 01 005 000</code>
                                   </xs:documentation>
                                 </xs:annotation>
                               </xs:element>
@@ -782,7 +761,7 @@
                         <xs:element name="ID" type="ds:AuthorisationIdentificationIDType">
                           <xs:annotation>
                             <xs:documentation>
-                              <EUCDMname>Reference number</EUCDMname>
+                              <EUCDMname>Authorisation</EUCDMname>
                               <type>EUCDM 6.1</type>
                               <code>12 12 001 000</code>
                             </xs:documentation>
@@ -791,7 +770,7 @@
                         <xs:element name="Type" type="ds:AuthorisationReferenceType">
                           <xs:annotation>
                             <xs:documentation>
-                              <EUCDMname>Type</EUCDMname>
+                              <EUCDMname>Authorisation</EUCDMname>
                               <type>EUCDM 6.1</type>
                               <code>12 12 002 000</code>
                             </xs:documentation>
@@ -812,7 +791,6 @@
                 </xs:sequence>
               </xs:complexType>
             </xs:element>
-
             <xs:element name="PreviousDocument" minOccurs="0" maxOccurs="99">
               <xs:annotation>
                 <xs:documentation>
