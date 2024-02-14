@@ -1,3 +1,6 @@
+### 14-02-2024
+* Renamed trader-portal-response xsd example
+
 ### 09-02-2024
 * Updated Transit D2 testcases
 	* Updated entirety of D2 testcases
