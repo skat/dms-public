@@ -1,3 +1,8 @@
+### 09-02-2024
+* Updated Transit D2 testcases
+	* Updated entirety of D2 testcases
+	* Made minor corrections to D1 Standard testcase
+
 ### 06-02-2024
 * Minor correction to Victualling testcase
 
