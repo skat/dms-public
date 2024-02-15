@@ -1,6 +1,76 @@
+### 14-02-2024
+* Renamed trader-portal-response xsd example
+
+### 09-02-2024
+* Updated Transit D2 testcases
+	* Updated entirety of D2 testcases
+	* Made minor corrections to D1 Standard testcase
+
+### 06-02-2024
+* Minor correction to Victualling testcase
+
+### 02-02-2024
+* Updated Exit IE, Transit IE and Transit XML Guides
+	* Updated the messageSender/Recipient fields
+* Updated Export XML Guide
+
+### 30-01-2024
+* Updated Transit D1 testcases
+
+### 25-01-2024
+* Updated System guide and Connectivity Guide
+* Added ARC Guide
+
+### 19-01-2024
+* Added release notes v1.8
+
+### 18-01-2024
+* Updated Transit and Transit IE XML Guides with CommunicationLanguage clarification
+* Added printing guidelines for EAD and TAD
+   * Can be found in the new folder "Printing Guidelines"
+* Updated XSDs according to AS4 update on 17th of January
+   * The "TFE XSD updates - 11012024" package is now on PROD, so this file has been removed
+
+### 16-01-2024
+* Updated Exit XML Guide
+
+### 15-01-2024
+* Updated DMS Online User Manuals file structure
+* Commented out the "presentationOfTheGoodsDateAndTime" field.
+
+### 11-01-2024
+* Updated release notes to v1.5
+
+### 29-12-2023
+* Updated Transit IE testcases
+
+### 28-12-2023
+* Updated Centralized Clearance testcase
+
+### 19-12-2023
+* Updated release notes to v1.6
+   * Fix regarding SE Number has been corrected
+* Updated Validation rules and Error codes list
+* Updated Export XML Guide
+* Updated Exit XML Guide
+
+
+### 15-12-2023
+* Updated release notes to v1.5
+
+### 12-12-2023
+* Updated AES codelists to reflect version 4.2.5.2
+
+### 06-12-2023
+* Updated release notes for version 4.2.5.2
+
+### 01-12-2023
+* Updated release notes for version 4.2.5.1
+* Updated B3 Testcase XMLs
+* Updated Invalidation testcases to accommodate invalidation notification in pre-lodge flows
+
 ### 29-11-2023
 * Update DMS Online XML examples
-
 
 ### 23-11-2023
 * Updated/corrected testcases

@@ -1,24 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
-           xmlns="http://ncts.dgtaxud.ec" targetNamespace="http://ncts.dgtaxud.ec"
-           elementFormDefault="unqualified" attributeFormDefault="unqualified" version="51.8.0" vc:minVersion="1.1">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://ncts.dgtaxud.ec" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" targetNamespace="http://ncts.dgtaxud.ec" elementFormDefault="unqualified" attributeFormDefault="unqualified" version="51.8.2" vc:minVersion="1.1">
   <!--================================================================================-->
-  <!--===== IE141: E_MOV_RSP                                                          -->
-  <!--===== INFORMATION ABOUT NON-ARRIVED MOVEMENT                                    -->
-  <!--===== NCTS P5 Phase Definition                                                  -->
-  <!--===== XSD Version 51.8.0                                                        -->
+  <!--===== IE141: E_MOV_RSP                                                                -->
+  <!--===== INFORMATION ABOUT NON-ARRIVED MOVEMENT                                          -->
+  <!--===== NCTS P5 Phase Definition                                                        -->
+  <!--===== XSD Version 51.8.2                                                              -->
   <!--================================================================================-->
   <!--================================================================================-->
-  <!--===== Includes                                                                  -->
+  <!--===== Includes                                                                        -->
   <!--================================================================================-->
   <xs:include schemaLocation="../NCTS_DS/ctypes.xsd" />
   <xs:include schemaLocation="../NCTS_DS/htypes.xsd" />
   <!--================================================================================-->
-  <!--===== Root Element                                                              -->
+  <!--===== Root Element                                                                    -->
   <!--================================================================================-->
   <xs:element name="CC141C" type="CC141CType" />
   <!--================================================================================-->
-  <!--===== Root Element Content                                                      -->
+  <!--===== Root Element Content                                                            -->
   <!--================================================================================-->
   <xs:complexType name="CC141CType">
     <xs:sequence>
@@ -73,6 +71,11 @@
           </xs:documentation>
         </xs:annotation>
         <xs:complexType>
+          <xs:annotation>
+            <xs:documentation>
+              <usedBy>Used by 15/91 messages: CC141C, CD002C, CD010C, CD027C, CD114C, CD142C, CD143C, CD144C, CD145C, CD150C, CD151C, CD152C, CD164C, CD201C, CD205C</usedBy>
+            </xs:documentation>
+          </xs:annotation>
           <xs:sequence>
             <xs:element name="MRN" type="MrnContentType05">
               <xs:annotation>
@@ -87,7 +90,7 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
-      <xs:element name="CustomsOfficeOfDestinationActual">
+      <xs:element name="CustomsOfficeOfDestinationActual" minOccurs="0">
         <xs:annotation>
           <xs:documentation>
             <description value="CUSTOMS OFFICE OF DESTINATION (ACTUAL)" />
@@ -95,12 +98,16 @@
           </xs:documentation>
         </xs:annotation>
         <xs:complexType>
+          <xs:annotation>
+            <xs:documentation>
+              <usedBy>Used by 1/91 messages: CC141C</usedBy>
+            </xs:documentation>
+          </xs:annotation>
           <xs:sequence>
             <xs:element name="referenceNumber" type="ReferenceNumberContentType05">
               <xs:annotation>
                 <xs:documentation>
                   <description value="Reference number" />
-                  <codeList code="CL172" type="business" name="CustomsOfficeDestination" />
                   <format value="an8" />
                   <optionality value="R" />
                   <xsdBaseType value="CORefNumType" />
@@ -118,12 +125,16 @@
           </xs:documentation>
         </xs:annotation>
         <xs:complexType>
+          <xs:annotation>
+            <xs:documentation>
+              <usedBy>Used by 3/91 messages: CC140C, CC141C, CD143C</usedBy>
+            </xs:documentation>
+          </xs:annotation>
           <xs:sequence>
             <xs:element name="referenceNumber" type="ReferenceNumberContentType05">
               <xs:annotation>
                 <xs:documentation>
                   <description value="Reference number" />
-                  <codeList code="CL176" type="business" name="CustomsOfficeEnquiry" />
                   <format value="an8" />
                   <optionality value="R" />
                   <xsdBaseType value="CORefNumType" />
@@ -141,6 +152,11 @@
           </xs:documentation>
         </xs:annotation>
         <xs:complexType>
+          <xs:annotation>
+            <xs:documentation>
+              <usedBy>Used by 3/91 messages: CC054C, CC141C, CC170C</usedBy>
+            </xs:documentation>
+          </xs:annotation>
           <xs:sequence>
             <xs:element name="identificationNumber" minOccurs="0" type="IdentificationNumberContentType01">
               <xs:annotation>
@@ -180,6 +196,11 @@
                 </xs:documentation>
               </xs:annotation>
               <xs:complexType>
+                <xs:annotation>
+                  <xs:documentation>
+                    <usedBy>Used by 7/91 messages: CC013C, CC015C, CC017C, CC054C, CC141C, CC170C, CC224C</usedBy>
+                  </xs:documentation>
+                </xs:annotation>
                 <xs:sequence>
                   <xs:element name="streetAndNumber" type="StreetAndNumberContentType02">
                     <xs:annotation>
@@ -215,7 +236,6 @@
                     <xs:annotation>
                       <xs:documentation>
                         <description value="Country" />
-                        <codeList code="CL248" type="business" name="Countrycodesforaddress" />
                         <format value="a2" />
                         <optionality value="R" />
                         <xsdBaseType value="CountryCodeType" />
@@ -236,6 +256,11 @@
           </xs:documentation>
         </xs:annotation>
         <xs:complexType>
+          <xs:annotation>
+            <xs:documentation>
+              <usedBy>Used by 1/91 messages: CC141C</usedBy>
+            </xs:documentation>
+          </xs:annotation>
           <xs:sequence>
             <xs:element name="TC11DeliveryDate" minOccurs="0" type="TC11DeliveryDateContentType">
               <xs:annotation>
@@ -268,6 +293,11 @@
           </xs:documentation>
         </xs:annotation>
         <xs:complexType>
+          <xs:annotation>
+            <xs:documentation>
+              <usedBy>Used by 1/91 messages: CC141C</usedBy>
+            </xs:documentation>
+          </xs:annotation>
           <xs:sequence>
             <xs:element name="ConsigneeActual">
               <xs:annotation>
@@ -277,6 +307,11 @@
                 </xs:documentation>
               </xs:annotation>
               <xs:complexType>
+                <xs:annotation>
+                  <xs:documentation>
+                    <usedBy>Used by 1/91 messages: CC141C</usedBy>
+                  </xs:documentation>
+                </xs:annotation>
                 <xs:sequence>
                   <xs:element name="identificationNumber" minOccurs="0" type="IdentificationNumberContentType01">
                     <xs:annotation>
@@ -299,7 +334,18 @@
                     </xs:annotation>
                   </xs:element>
                   <xs:element name="Address">
+                    <xs:annotation>
+                      <xs:documentation>
+                        <description value="ADDRESS" />
+                        <optionality value="R" />
+                      </xs:documentation>
+                    </xs:annotation>
                     <xs:complexType>
+                      <xs:annotation>
+                        <xs:documentation>
+                          <usedBy>Used by 2/91 messages: CC017C, CC141C</usedBy>
+                        </xs:documentation>
+                      </xs:annotation>
                       <xs:sequence>
                         <xs:element name="streetAndNumber" type="StreetAndNumberContentType02">
                           <xs:annotation>
@@ -335,7 +381,6 @@
                           <xs:annotation>
                             <xs:documentation>
                               <description value="Country" />
-                              <codeList code="CL248" type="business" name="Countrycodesforaddress" />
                               <format value="a2" />
                               <optionality value="R" />
                               <xsdBaseType value="CountryCodeType" />
@@ -352,5 +397,6 @@
         </xs:complexType>
       </xs:element>
     </xs:sequence>
+    <xs:attribute name="PhaseID" type="phaseIDtype" />
   </xs:complexType>
 </xs:schema>
