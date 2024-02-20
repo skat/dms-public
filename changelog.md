@@ -1,3 +1,8 @@
+### 20-02-2024
+* Update XML Guides
+    * Removed deprected SKAT links
+	* Updated Export XML tables: Border Transport and AdmissionUse.. Application
+
 ### 14-02-2024
 * Renamed trader-portal-response xsd example
 
