@@ -10,10 +10,14 @@
 ### 14-02-2024
 * Renamed trader-portal-response xsd example
 
+### 13-02-2024
+* Updated CC035C.XSD format to be consistent with the others
+
 ### 09-02-2024
 * Updated Transit D2 testcases
 	* Updated entirety of D2 testcases
 	* Made minor corrections to D1 Standard testcase
+
 
 ### 06-02-2024
 * Minor correction to Victualling testcase
