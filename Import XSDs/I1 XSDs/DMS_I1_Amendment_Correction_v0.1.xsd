@@ -737,7 +737,7 @@
                                                             minOccurs="0">
                                                     <xs:annotation>
                                                         <xs:documentation>
-                                                            <EUCDMname>Location of goods</EUCDMname>
+                                                            <EUCDMname>Latitude</EUCDMname>
                                                             <type>EUCDM 6.1</type>
                                                             <code>16 15 048 049</code>
                                                         </xs:documentation>
@@ -747,7 +747,7 @@
                                                             minOccurs="0">
                                                     <xs:annotation>
                                                         <xs:documentation>
-                                                            <EUCDMname>Location of goods</EUCDMname>
+                                                            <EUCDMname>Longitude</EUCDMname>
                                                             <type>EUCDM 6.1</type>
                                                             <code>16 15 048 050</code>
                                                         </xs:documentation>
@@ -849,7 +849,7 @@
                             </xs:complexType>
                         </xs:element>
 
-                        <xs:element name="Consignor" minOccurs="0">
+                        <xs:element name="Exporter" minOccurs="0">
                             <xs:annotation>
                                 <xs:documentation>
                                     <EUCDMname>Exporter</EUCDMname>
@@ -859,7 +859,7 @@
                             </xs:annotation>
                             <xs:complexType>
                                 <xs:sequence>
-                                    <xs:element name="Name" type="ds:ConsignorNameTextType">
+                                    <xs:element name="Name" type="ds:ExporterNameTextType">
                                         <xs:annotation>
                                             <xs:documentation>
                                                 <EUCDMname>Name</EUCDMname>
@@ -868,7 +868,7 @@
                                             </xs:documentation>
                                         </xs:annotation>
                                     </xs:element>
-                                    <xs:element name="ID" type="ds:ConsignorIdentificationIDType" minOccurs="0">
+                                    <xs:element name="ID" type="ds:ExporterIdentificationIDType" minOccurs="0">
                                         <xs:annotation>
                                             <xs:documentation>
                                                 <EUCDMname>Identification number</EUCDMname>
@@ -1264,6 +1264,11 @@
                                                                         <type>EUCDM 6.1</type>
                                                                         <code>18 08 001 000</code>
                                                                     </xs:documentation>
+                                                                    <xs:documentation>
+                                                                        <EUCDMname>TARIC code</EUCDMname>
+                                                                        <type>EUCDM 6.1</type>
+                                                                        <code>18 09 058 000</code>
+                                                                    </xs:documentation>
                                                                 </xs:annotation>
                                                             </xs:element>
                                                             <xs:element name="IdentificationTypeCode"
@@ -1479,7 +1484,7 @@
                                             </xs:sequence>
                                         </xs:complexType>
                                     </xs:element>
-                                    <xs:element name="Consignor" minOccurs="0">
+                                    <xs:element name="Exporter" minOccurs="0">
                                         <xs:annotation>
                                             <xs:documentation>
                                                 <EUCDMname>Exporter</EUCDMname>
@@ -1489,7 +1494,7 @@
                                         </xs:annotation>
                                         <xs:complexType>
                                             <xs:sequence>
-                                                <xs:element name="Name" type="ds:ConsignorNameTextType">
+                                                <xs:element name="Name" type="ds:ExporterNameTextType">
                                                     <xs:annotation>
                                                         <xs:documentation>
                                                             <EUCDMname>Name</EUCDMname>
@@ -1498,7 +1503,7 @@
                                                         </xs:documentation>
                                                     </xs:annotation>
                                                 </xs:element>
-                                                <xs:element name="ID" type="ds:ConsignorIdentificationIDType"
+                                                <xs:element name="ID" type="ds:ExporterIdentificationIDType"
                                                             minOccurs="0">
                                                     <xs:annotation>
                                                         <xs:documentation>
@@ -1559,59 +1564,6 @@
                                                             </xs:element>
                                                         </xs:sequence>
                                                     </xs:complexType>
-                                                </xs:element>
-                                            </xs:sequence>
-                                        </xs:complexType>
-                                    </xs:element>
-                                    <xs:element name="CustomsValuation">
-                                        <xs:complexType>
-                                            <xs:sequence>
-                                                <xs:element name="ChargeDeduction" minOccurs="0" maxOccurs="99">
-                                                    <xs:annotation>
-                                                    </xs:annotation>
-                                                    <xs:complexType>
-                                                        <xs:sequence>
-                                                            <xs:element name="SequenceNumeric"
-                                                                        type="ds:CustomsValuationChargeDeductionSequenceNumericType"/>
-                                                        </xs:sequence>
-                                                    </xs:complexType>
-                                                </xs:element>
-                                            </xs:sequence>
-                                        </xs:complexType>
-                                    </xs:element>
-                                    <xs:element name="Destination">
-                                        <xs:annotation>
-                                            <xs:documentation>
-                                                <EUCDMname>Country of destination</EUCDMname>
-                                                <type>EUCDM 6.1</type>
-                                                <code>16 03 000 000</code>
-                                            </xs:documentation>
-                                            <xs:documentation>
-                                                <EUCDMname>Region of destination</EUCDMname>
-                                                <type>EUCDM 6.1</type>
-                                                <code>16 04 000 000</code>
-                                            </xs:documentation>
-                                        </xs:annotation>
-                                        <xs:complexType>
-                                            <xs:sequence>
-                                                <xs:element name="CountryCode" type="ds:DestinationCountryCodeType">
-                                                    <xs:annotation>
-                                                        <xs:documentation>
-                                                            <EUCDMname>Country of destination</EUCDMname>
-                                                            <type>EUCDM 6.1</type>
-                                                            <code>16 03 001 000</code>
-                                                        </xs:documentation>
-                                                    </xs:annotation>
-                                                </xs:element>
-                                                <xs:element name="RegionID" type="ds:DestinationRegionIDType"
-                                                            minOccurs="0">
-                                                    <xs:annotation>
-                                                        <xs:documentation>
-                                                            <EUCDMname>Region of destination</EUCDMname>
-                                                            <type>EUCDM 6.1</type>
-                                                            <code>16 04 001 000</code>
-                                                        </xs:documentation>
-                                                    </xs:annotation>
                                                 </xs:element>
                                             </xs:sequence>
                                         </xs:complexType>
