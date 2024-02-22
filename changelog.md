@@ -1,3 +1,7 @@
+### 22-02-2024
+* Update Connectivity Guide
+* Upload Certificate Miniguide
+
 ### 20-02-2024
 * Update XML Guides
     * Removed deprected SKAT links
