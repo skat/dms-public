@@ -1,3 +1,27 @@
+### 22-02-2024
+* Update Connectivity Guide
+* Upload Certificate Miniguide
+
+### 20-02-2024
+* Update XML Guides
+    * Removed deprected SKAT links
+	* Updated Export XML tables: Border Transport and AdmissionUse.. Application
+
+### 14-02-2024
+* Renamed trader-portal-response xsd example
+
+### 13-02-2024
+* Updated CC035C.XSD format to be consistent with the others
+
+### 09-02-2024
+* Updated Transit D2 testcases
+	* Updated entirety of D2 testcases
+	* Made minor corrections to D1 Standard testcase
+
+
+### 06-02-2024
+* Minor correction to Victualling testcase
+
 ### 02-02-2024
 * Updated Exit IE, Transit IE and Transit XML Guides
 	* Updated the messageSender/Recipient fields
