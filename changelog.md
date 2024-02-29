@@ -1,3 +1,6 @@
+### 29-02-2024
+* Updated Export XML Guide
+
 ### 22-02-2024
 * Update Connectivity Guide
 * Upload Certificate Miniguide
