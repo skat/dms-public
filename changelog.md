@@ -1,3 +1,6 @@
+### 04-03-2024
+* Updated Certificate Miniguide
+
 ### 29-02-2024
 * Updated Export XML Guide
 
