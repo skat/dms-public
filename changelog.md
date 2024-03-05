@@ -1,12 +1,15 @@
+### 05-03-2024
+* Updated Certificate Miniguide with additional slides for better user experience.
+
 ### 04-03-2024
-* Updated Certificate Miniguide
+* Updated Certificate Miniguide.
 
 ### 29-02-2024
 * Updated Export XML Guide
 
 ### 22-02-2024
-* Update Connectivity Guide
-* Upload Certificate Miniguide
+* Updated Connectivity Guide.
+* Uploaded Certificate Miniguide.
 
 ### 20-02-2024
 * Update XML Guides
