@@ -1,5 +1,7 @@
 ### 05-03-2024
 * Updated Certificate Miniguide with additional slides for better user experience.
+* Added B1 Guide and general guide for parties and y-codes.
+* Updated incorrect links in XML guide.
 
 ### 04-03-2024
 * Updated Certificate Miniguide.
