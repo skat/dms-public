@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:simpleType name="MRNType">
+        <xs:restriction base="xs:string">
+            <xs:length value="18"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="LRNType">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="22"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:element name="DeclarationStatusDTO">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element type="MRNType" name="MRN"/>
+                <xs:element type="LRNType" name="LRN"/>
+                <xs:element type="xs:string" name="StatusCode"/>
+                <xs:element type="xs:string" name="StatusDescription"/>
+                <xs:element type="xs:dateTime" name="StatusLastUpdated"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

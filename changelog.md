@@ -5,6 +5,7 @@
 * Added new release notes
 * Added example of request to new MRN status service 
    * Placed in OnboardingDocuments/appendix
+* Hotfix: release notes ref 17516 updated
 
 ### 05-03-2024
 * Updated Certificate Miniguide with additional slides for better user experience.
