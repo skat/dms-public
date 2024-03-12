@@ -3,6 +3,8 @@
 * Updated Connectivity Guide
 * Updated System Guide
 * Added new release notes
+* Added example of request to new MRN status service 
+   * Placed in OnboardingDocuments/appendix
 
 ### 05-03-2024
 * Updated Certificate Miniguide with additional slides for better user experience.
