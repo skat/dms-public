@@ -1,3 +1,12 @@
+### 15-03-2024
+* Updated System guide
+* Updated AES, NCTS and GLOBAL codelists
+   * Missing codelist GLOBAL-CL141 has been added
+   * Codelists now include Valid From and To
+   * Value "######" will change to correct datetime when you expand the column
+   * Value "Null" means there is no current expiry or start date (depending on the column)
+* Updated Release Notes with new release date for TFE/UFE
+
 ### 12-03-2024
 * Updated Certificate Miniguide
 * Updated Connectivity Guide
