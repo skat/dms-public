@@ -1,3 +1,6 @@
+### 22-03-2024
+* Updated Exit IE examples with correct recipient
+
 ### 19-03-2024
 * Added Transit IE034 Test Case
 
