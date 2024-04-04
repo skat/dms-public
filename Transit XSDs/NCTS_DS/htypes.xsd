@@ -11,14 +11,14 @@
       <xs:documentation>Used by all messages</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="messageSender" type="MessageSenderContentType">
+      <xs:element name="messageSender">
         <xs:annotation>
           <xs:documentation>
             <description value="Message sender" />
           </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="messageRecipient" type="MessageRecipientContentType">
+      <xs:element name="messageRecipient">
         <xs:annotation>
           <xs:documentation>
             <description value="Message recipient" />
@@ -65,19 +65,35 @@
     </xs:restriction>
   </xs:simpleType>
   <!--================================================================================-->
-  <!--===== MessageRecipient                                                                -->
+  <!--===== MessageRecipient (Declaration)                                                  -->
   <!--================================================================================-->
-  <xs:simpleType name="MessageRecipientContentType">
+  <xs:simpleType name="MessageRecipientContentDeclarationType">
     <xs:restriction base="xs:string">
       <xs:enumeration value="NTA.DK"/>
     </xs:restriction>
   </xs:simpleType>
   <!--================================================================================-->
-  <!--===== MessageSender                                                                   -->
+  <!--===== MessageSender (Declaration)                                                     -->
   <!--================================================================================-->
-  <xs:simpleType name="MessageSenderContentType">
+  <xs:simpleType name="MessageSenderContentDeclarationType">
     <xs:restriction base="xs:token">
       <xs:pattern value=".{1,35}" />
+    </xs:restriction>
+  </xs:simpleType>
+  <!--================================================================================-->
+  <!--===== MessageRecipient (Notification)                                                 -->
+  <!--================================================================================-->
+  <xs:simpleType name="MessageRecipientContentNotificationType">
+    <xs:restriction base="xs:token">
+      <xs:pattern value=".{1,35}" />
+    </xs:restriction>
+  </xs:simpleType>
+  <!--================================================================================-->
+  <!--===== MessageSender (Notification)                                                    -->
+  <!--================================================================================-->
+  <xs:simpleType name="MessageSenderContentNotificationType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NTA.DK"/>
     </xs:restriction>
   </xs:simpleType>
   <!--================================================================================-->
