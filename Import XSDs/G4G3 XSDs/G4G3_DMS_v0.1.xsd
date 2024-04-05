@@ -107,6 +107,14 @@
                         <xs:element name="Contact">
                             <xs:complexType>
                                 <xs:sequence>
+                                    <xs:element name="sequence">
+                                        <xs:complexType>
+                                            <xs:sequence>
+                                                <xs:element name="Numeric.Content" type="Numeric.Content">
+                                                </xs:element>
+                                            </xs:sequence>
+                                        </xs:complexType>
+                                    </xs:element>
                                     <xs:element name="name" minOccurs="0">
                                         <xs:annotation>
                                             <xs:documentation>
@@ -723,6 +731,8 @@
                                                         <xs:sequence>
                                                             <xs:element name="Quantity.Content"
                                                                         type="Quantity.Content"/>
+                                                            <xs:element name="QuantityUnit.Code"
+                                                                        type="QuantityUnit.Code"/>
                                                         </xs:sequence>
                                                     </xs:complexType>
                                                 </xs:element>
@@ -1088,6 +1098,8 @@
                                                                         <xs:sequence>
                                                                             <xs:element name="Quantity.Content"
                                                                                         type="Quantity.Content"/>
+                                                                            <xs:element name="QuantityUnit.Conde"
+                                                                                        type="QuantityUnit.Conde"/>
                                                                         </xs:sequence>
                                                                     </xs:complexType>
                                                                 </xs:element>
@@ -1192,6 +1204,14 @@
                                                         <xs:sequence>
                                                             <xs:element name="Identifier.Content"
                                                                         type="Identifier.Content"/>
+                                                        </xs:sequence>
+                                                    </xs:complexType>
+                                                </xs:element>
+                                                <xs:element name="type_3">
+                                                    <xs:complexType>
+                                                        <xs:sequence>
+                                                            <xs:element name="Code.Content"
+                                                                        type="Code.Content"/>
                                                         </xs:sequence>
                                                     </xs:complexType>
                                                 </xs:element>
@@ -1648,6 +1668,14 @@
                                     <xs:element name="Contact">
                                         <xs:complexType>
                                             <xs:sequence>
+                                                <xs:element name="sequence">
+                                                    <xs:complexType>
+                                                        <xs:sequence>
+                                                            <xs:element name="Numeric.Content" type="Numeric.Content">
+                                                            </xs:element>
+                                                        </xs:sequence>
+                                                    </xs:complexType>
+                                                </xs:element>
                                                 <xs:element name="name" minOccurs="0">
                                                     <xs:annotation>
                                                         <xs:documentation>
@@ -1785,6 +1813,21 @@
                                                     <xs:complexType>
                                                         <xs:sequence>
                                                             <xs:element name="Text.Content" type="Text.Content">
+                                                            </xs:element>
+                                                        </xs:sequence>
+                                                    </xs:complexType>
+                                                </xs:element>
+                                                <xs:element name="statementType">
+                                                    <xs:complexType>
+                                                        <xs:annotation>
+                                                            <xs:documentation>
+                                                                <EUCDMname>Text</EUCDMname>
+                                                                <EUCDMversion>EUCDM 6.1</EUCDMversion>
+                                                                <code>12 02 009 000</code>
+                                                            </xs:documentation>
+                                                        </xs:annotation>
+                                                        <xs:sequence>
+                                                            <xs:element name="Code.Content" type="Code.Content">
                                                             </xs:element>
                                                         </xs:sequence>
                                                     </xs:complexType>
@@ -2167,7 +2210,7 @@
                                                                 </xs:annotation>
                                                                 <xs:complexType>
                                                                     <xs:sequence>
-                                                                        <xs:element name="Text.Content"
+                                                                        <xs:element name="Code.Content"
                                                                                     type="Text.Content">
                                                                         </xs:element>
                                                                     </xs:sequence>
@@ -2424,6 +2467,59 @@
                                                                     </xs:sequence>
                                                                 </xs:complexType>
                                                             </xs:element>
+                                                            <xs:element name="WriteOff">
+                                                                <xs:element name="Packaging" minOccurs="0" maxOccurs="99">
+                                                                    <xs:annotation>
+                                                                        <xs:documentation>
+                                                                            <EUCDMname>Packaging</EUCDMname>
+                                                                            <EUCDMversion>EUCDM 6.1</EUCDMversion>
+                                                                            <code>18 06 000 000</code>
+                                                                        </xs:documentation>
+                                                                    </xs:annotation>
+                                                                    <xs:complexType>
+                                                                        <xs:sequence>
+                                                                            <xs:element name="sequence">
+                                                                                <xs:complexType>
+                                                                                    <xs:sequence>
+                                                                                        <xs:element name="Numeric.Content" type="Numeric.Content"/>
+                                                                                    </xs:sequence>
+                                                                                </xs:complexType>
+                                                                            </xs:element>
+                                                                            <xs:element name="quantity">
+                                                                                <xs:annotation>
+                                                                                    <xs:documentation>
+                                                                                        <EUCDMname>Number of Packages</EUCDMname>
+                                                                                        <EUCDMversion>EUCDM 6.1</EUCDMversion>
+                                                                                        <code>18 06 004 000</code>
+                                                                                    </xs:documentation>
+                                                                                </xs:annotation>
+                                                                                <xs:complexType>
+                                                                                    <xs:sequence>
+                                                                                        <xs:element name="Quantity.Content"
+                                                                                                    type="Quantity.Content"/>
+                                                                                        <xs:element name="QuantityUnit.Conde"
+                                                                                                    type="QuantityUnit.Conde"/>
+                                                                                    </xs:sequence>
+                                                                                </xs:complexType>
+                                                                            </xs:element>
+                                                                            <xs:element name="type_6">
+                                                                                <xs:annotation>
+                                                                                    <xs:documentation>
+                                                                                        <EUCDMname>Type of Packages</EUCDMname>
+                                                                                        <EUCDMversion>EUCDM 6.1</EUCDMversion>
+                                                                                        <code>18 06 003 000</code>
+                                                                                    </xs:documentation>
+                                                                                </xs:annotation>
+                                                                                <xs:complexType>
+                                                                                    <xs:sequence>
+                                                                                        <xs:element name="Code.Content" type="Code.Content"/>
+                                                                                    </xs:sequence>
+                                                                                </xs:complexType>
+                                                                            </xs:element>
+                                                                        </xs:sequence>
+                                                                    </xs:complexType>
+                                                                </xs:element>
+                                                            </xs:element>
                                                         </xs:sequence>
                                                     </xs:complexType>
                                                 </xs:element>
@@ -2658,6 +2754,14 @@
                                                     </xs:annotation>
                                                     <xs:complexType>
                                                         <xs:sequence>
+                                                            <xs:element name="sequence">
+                                                                <xs:complexType>
+                                                                    <xs:sequence>
+                                                                        <xs:element name="Numeric.Content" type="Numeric.Content">
+                                                                        </xs:element>
+                                                                    </xs:sequence>
+                                                                </xs:complexType>
+                                                            </xs:element>
                                                             <xs:element name="identification_2">
                                                                 <xs:annotation>
                                                                     <xs:documentation>
@@ -2786,6 +2890,8 @@
                                                                         <xs:sequence>
                                                                             <xs:element name="Quantity.Content"
                                                                                         type="Quantity.Content"/>
+                                                                            <xs:element name="QuantityUnit.Code"
+                                                                                        type="QuantityUnit.Code"/>
                                                                         </xs:sequence>
                                                                     </xs:complexType>
                                                                 </xs:element>
@@ -2988,6 +3094,14 @@
                                             </xs:sequence>
                                         </xs:complexType>
                                     </xs:element>
+                                    <xs:element name="sequence">
+                                        <xs:complexType>
+                                            <xs:sequence>
+                                                <xs:element name="Numeric.Content" type="Numeric.Content">
+                                                </xs:element>
+                                            </xs:sequence>
+                                        </xs:complexType>
+                                    </xs:element>
                                 </xs:sequence>
                             </xs:complexType>
                         </xs:element>
@@ -3151,6 +3265,14 @@
                                         </xs:annotation>
                                         <xs:complexType>
                                             <xs:sequence>
+                                                <xs:element name="sequence">
+                                                    <xs:complexType>
+                                                        <xs:sequence>
+                                                            <xs:element name="Numeric.Content" type="Numeric.Content">
+                                                            </xs:element>
+                                                        </xs:sequence>
+                                                    </xs:complexType>
+                                                </xs:element>
                                                 <xs:element name="identification_2">
                                                     <xs:annotation>
                                                         <xs:documentation>
@@ -3440,7 +3562,6 @@
                                     </xs:element>
                                 </xs:sequence>
                             </xs:complexType>
-
                         </xs:element>
                         <xs:element name="UCR" minOccurs="0">
                             <xs:annotation>
