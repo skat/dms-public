@@ -1,3 +1,6 @@
+### 08-04-2024
+* Updated release notes for release 4.2.8
+
 ### 22-03-2024
 * Updated Exit IE examples with correct recipient
 
