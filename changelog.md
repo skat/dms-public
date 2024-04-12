@@ -1,3 +1,6 @@
+### 12-04-2024
+* Added Transit Examples (DMS Online User Manuals)
+
 ### 08-04-2024
 * Updated release notes for release 4.2.8
 
