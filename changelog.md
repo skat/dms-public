@@ -1,3 +1,6 @@
+### 26-04-2024
+* Updated AES Codelists CL213, CL214, CL754
+
 ### 19-04-2024
 * Updated Transit and Export XML Guide
 
