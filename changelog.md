@@ -7,6 +7,10 @@
 ### 26-04-2024
 * Updated AES Codelists CL213, CL214, CL754
 
+### 24-04-2024
+* Updated System Guide
+* Added a missing XML line to several testcases
+* 
 ### 19-04-2024
 * Updated Transit and Export XML Guide
 
