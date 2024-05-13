@@ -7,7 +7,7 @@
            targetNamespace="urn:wco:datamodel:WCO:DEC-DMS:2"
            elementFormDefault="qualified" version="1.2.0">
     <xs:import namespace="urn:wco:datamodel:WCO:Declaration_DS:DMS:2"
-               schemaLocation="../DMS_DS/DMS_DS_v1.8.xsd"/>
+               schemaLocation="../DMS_DS/DMS_DS_v1.9.xsd"/>
     <xs:import namespace="urn:wco:datamodel:WCO:WCO_DEC_EDS_AUTHORISATION:1"
                schemaLocation="../DMS_DS/WCO_EDS/WCO_DEC_EDS_AUTHORISATION.xsd"/>
     <xs:import namespace="urn:un:unece:uncefact:data:standard:UnqualifiedDataType:6"
@@ -48,6 +48,7 @@
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
+	        <xs:element name="ID" type="ds:DeclarationIdentificationIDType"/>
             <xs:element name="TypeCode" type="ds:DeclarationTypeCodeType">
                 <xs:annotation>
                     <xs:documentation>
@@ -72,7 +73,6 @@
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
-
             <xs:element name="SpecificCircumstancesCodeCode" type="ds:DeclarationSpecificCircumstancesCodeCodeType" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>
@@ -248,6 +248,15 @@
                                 </xs:documentation>
                             </xs:annotation>
                         </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="Amendment">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="SequenceNumeric" type="ds:AmendmentSequenceNumericType"/>
+                        <xs:element name="ChangeReasonCode" type="ds:AmendmentChangeReasonCodeType"/>
+                        <xs:element name="ChangeReasonText" type="ds:AmendmentChangeReasonTextType"/>
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
@@ -877,28 +886,7 @@
                                         </xs:annotation>
                                         <xs:complexType>
                                             <xs:sequence>
-                                                <xs:element name="SequenceNumeric" type="ds:DepartureTransportMeansSequenceNumericType">
-                                                    <xs:annotation>
-                                                        <xs:documentation xml:lang="EN">
-                                                            <WCOID>006</WCOID>
-                                                            <WCOName>Sequence number</WCOName>
-                                                            <WCODescription>Number indicating the position in a sequence</WCODescription>
-                                                            <EUCDMVersion>EUCDM 6.0</EUCDMVersion>
-                                                            <WCOFormat>n..5</WCOFormat>
-                                                        </xs:documentation>
-                                                        <xs:documentation>
-                                                            <TDEDUID>1050</TDEDUID>
-                                                            <TDEDName>Sequence. Position.Identifier</TDEDName>
-                                                            <DictionaryEntryName>DepartureTransportMeans. Sequence. Numeric</DictionaryEntryName>
-                                                            <NamedComplexType>DepartureTransportMeansSequenceNumericType</NamedComplexType>
-                                                            <XMLTag>SequenceNumeric</XMLTag>
-                                                            <UniquePositionID>10352</UniquePositionID>
-                                                            <WCOUsageDeclarationCRI>X</WCOUsageDeclarationCRI>
-                                                            <WCOUsageDeclarationCRE>X</WCOUsageDeclarationCRE>
-                                                            <WCOUsageDeclarationTRT>X</WCOUsageDeclarationTRT>
-                                                        </xs:documentation>
-                                                    </xs:annotation>
-                                                </xs:element>
+                                                <xs:element name="SequenceNumeric" type="ds:DepartureTransportMeansSequenceNumericType"/>
                                                 <xs:element name="ID" type="ds:DepartureTransportMeansIdentificationIDType" minOccurs="0">
                                                     <xs:annotation>
                                                         <xs:documentation>
@@ -1606,7 +1594,6 @@
                                                         </xs:sequence>
                                                     </xs:complexType>
                                                 </xs:element>
-
                                                 <xs:element name="GoodsMeasure">
                                                     <xs:annotation>
                                                         <xs:documentation>
@@ -1986,7 +1973,7 @@
                                                             <xs:element name="Packaging" minOccurs="0">
                                                                 <xs:complexType>
                                                                     <xs:sequence>
-                                                                        <xs:element name="QuantityQuantity" type="ds:PackagingQuantityQuantityType" minOccurs="0">
+                                                                        <xs:element name="QuantityQuantity" type="ds:PreviousDocumentPackagingQuantityQuantityType" minOccurs="0">
                                                                             <xs:annotation>
                                                                                 <xs:documentation>
                                                                                     <EUCDMname>Number of packages</EUCDMname>

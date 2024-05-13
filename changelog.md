@@ -1,3 +1,10 @@
+### 13-05-2024
+* Correction to B1-B4, C1-C2, A1-A2 XSDs
+  * Updated regex restrictions for datatypes
+* Update Export XML Guide and Exit XML Guide with EU formatting restrictions
+* Hotfix release notes added
+  * 2.1-2.5
+
 ### 30-04-2024
 * Correction to AES codelist CL213
 * Added SE-number Guide
