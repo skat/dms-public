@@ -1,3 +1,6 @@
+### 16-05-2024
+* Changed the location and name of the error codes excel sheets with codes from DDNXA/DDNTA Appendix Q2
+
 ### 15-05-2024
 * Update Export XML Guide and Exit XML Guide with more EU formatting restrictions that were left out in the previous change
 * Added a minor correction and a footnote to hotfix release notes 2.5
@@ -22,7 +25,7 @@
 ### 24-04-2024
 * Updated System Guide
 * Added a missing XML line to several testcases
-* 
+
 ### 19-04-2024
 * Updated Transit and Export XML Guide
 
@@ -88,7 +91,6 @@
 	* Updated entirety of D2 testcases
 	* Made minor corrections to D1 Standard testcase
 
-
 ### 06-02-2024
 * Minor correction to Victualling testcase
 
@@ -108,7 +110,6 @@
 * Added release notes v1.8
 
 ### 18-01-2024
-
 * Updated Transit and Transit IE XML Guides with CommunicationLanguage clarification
 * Added printing guidelines for EAD and TAD
     * Can be found in the new folder "Printing Guidelines"
@@ -116,28 +117,22 @@
     * The "TFE XSD updates - 11012024" package is now on PROD, so this file has been removed
 
 ### 16-01-2024
-
 * Updated Exit XML Guide
 
 ### 15-01-2024
-
 * Updated DMS Online User Manuals file structure
 * Commented out the "presentationOfTheGoodsDateAndTime" field.
 
 ### 11-01-2024
-
 * Updated release notes to v1.5
 
 ### 29-12-2023
-
 * Updated Transit IE testcases
 
 ### 28-12-2023
-
 * Updated Centralized Clearance testcase
 
 ### 19-12-2023
-
 * Updated release notes to v1.6
     * Fix regarding SE Number has been corrected
 * Updated Validation rules and Error codes list
@@ -145,40 +140,32 @@
 * Updated Exit XML Guide
 
 ### 15-12-2023
-
 * Updated release notes to v1.5
 
 ### 12-12-2023
-
 * Updated AES codelists to reflect version 4.2.5.2
 
 ### 06-12-2023
-
 * Updated release notes for version 4.2.5.2
 
 ### 01-12-2023
-
 * Updated release notes for version 4.2.5.1
 * Updated B3 Testcase XMLs
 * Updated Invalidation testcases to accommodate invalidation notification in pre-lodge flows
 
 ### 29-11-2023
-
 * Update DMS Online XML examples
 
 ### 23-11-2023
-
 * Updated/corrected testcases
     * A1-3, B3 standard, B4 standard
 * Updated release notes for version 4.2.5
 
 ### 17-11-2023
-
 * Updated XSDs to reflect PROD update
 * Added IE037 Notification XSD
 
 ### 10-11-2023
-
 * Added new testcases
     * Controlling and Victualling
 * Updated and corrected all Exit IE Testcases
@@ -190,7 +177,6 @@
     * Udførsel til passiv forædling
 
 ### 03-11-2023
-
 * Updated System Guide
     * Added a table mapping CWM notifications to IE messages in section 12.3.1
     * Figure and table captions and formatting updated for all sections, along with many quality improvements
@@ -206,11 +192,9 @@
 * Update codelists and removed duplicates
 
 ### 30-10-2023
-
 * Fix formatting of Connectivity Guide
 
 ### 20-10-2023
-
 * Updated the following XML Guides
     * Transit XML Guide
     * Transit IE XML Guide
@@ -223,11 +207,9 @@
     * Found in Onboarding Documents > appendix > as4_header
 
 ### 12-10-2023
-
 Added IE582/CC582C XSD notification
 
 ### 05-10-2023
-
 * Updated "opret angivlese guide".
 * Updated connectivity guide.
 * Updated DMS Online User Manuals
@@ -243,25 +225,21 @@ Added IE582/CC582C XSD notification
     * Microsoft Edge
 
 ### 28-09-2023
-
 * Removed the outdated system guide 1.18, that was accidentally left after latest systemguide update.
 
 ### 21-09-2023
-
 * Updated System Guide
     * Added new section describing the Synchronous Messages (section 3.3)
 * Added XSDs for the Synchronous Messages
     * The new XSDs can be found under Notification XSDs > SynchronousMessages
 
 ### 18-09-2023
-
 * Updated Transit XML Guide
     * Added MCL, HCL and HCI abbreviations to the Glossary
     * Previous Document updated the table, and added MCL, HCL, HCI
     * Consignor updated the table, and added MCL, HCL, HCI
 
 ### 15-09-2023
-
 * Updated System Guide
     * Added AS4 Error Messages section
 * Updated Export XML Guide
@@ -276,7 +254,6 @@ Added IE582/CC582C XSD notification
 * Corrected IE906 and IE917 XSDs.
 
 ### 07-09-2023
-
 * Updated all links in the "guide" documents after toldst.dk is the new place for TOLDST related things
 
 ### 01-09-2023
@@ -299,7 +276,6 @@ Added IE582/CC582C XSD notification
 * Minor updates to DMS onboarding manuals
 
 ### 25-08-2023
-
 * Minor changes to SystemGuide as well as adding IE026 explanation
 
 * Fixes to Exit IE messages.
@@ -325,9 +301,7 @@ Added IE582/CC582C XSD notification
 * Changes to notification
 
 ### 03-08-2023
-
 * Updates to DMS Online User Manuals
-
 * Review process for Export, Exit, Exit IE, Transit, and Transit IE XML Guides have been performed
     * XSD/XML Elements verified
     * XML Examples checked
@@ -340,36 +314,28 @@ Added IE582/CC582C XSD notification
 * Remember to check for the latest version number on your XML Guides following this update
 
 ### 31-07-2023
-
 * Updated System Guide to version 1.14
-
-
 * Updated Connectivity Guide to version 1.7
+* Minor XSD changes to cardinality/restrictions within Exit IE Messages. 
 
 
 * Minor XSD changes to cardinality/restrictions within Exit IE Messages.
     * Will not change XSDs functionally
-
 * Added TypeCode to B2, B3, B4, C1 and their amendments
-
 * Removed TypeCode from Country of Origin from B1, B2, B3, B4, C1 and their amendments
 
 ### 18-07-2023
-
 * Minor changes to ID6 reference code in XSDs
 * Reupload test case PDF due to code embedded error on GitHub.
 
 ### 13-07-2023
-
 * Updated System Guide to version 1.13
 
 ### 07-07-2023
-
 * Updated codelists by splitting it into three files, each representing one domaine (transit, export and global) to
   better reflect recent ermis changes
 
 ### 26-06-2023
-
 * This is the affected changelog regarding EU Emergency changes as promised.
 * Change of namespace in Export related xsds
     * Affected B1, B2, B3, B4, C1 and C2
@@ -389,7 +355,6 @@ Added IE582/CC582C XSD notification
     * Affected A1, A2 and A3
 
 ### 23-06-2023
-
 * Updated description of Error Element in system guide
 * Updated description of Amendment Element in system guide
 * Added a chapter describing how to use and lookup codelists
@@ -401,7 +366,6 @@ Added IE582/CC582C XSD notification
       declarations.
 
 ### 16-06-2023
-
 * Updated XSDs for Export, Exit and Transit to comply with the EU emergency changes. Specifics coming soon
 * Changes to Exit declarations, A1 A2, changed GoodsLocation to circumvent bug with Customs office and UN/LOCODE.
   Refinement:Adding Storing Flags, Deleting Comments and refining the values in some elements with no technical
