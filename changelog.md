@@ -1,3 +1,6 @@
+### 17-05-2024
+* Added missing national codes (incl. VAB codes) in AES-CL213 codelist
+
 ### 16-05-2024
 * Changed the location and name of the error codes excel sheets with codes from DDNXA/DDNTA Appendix Q2
 
