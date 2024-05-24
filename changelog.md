@@ -1,3 +1,7 @@
+### 24-05-2024
+* Updated Release notes for release 4.2.8.3
+* Removed all Online guides as they will be available at toldstyrelsens website henceforth. (See Readme)
+
 ### 17-05-2024
 * Added missing national codes (incl. VAB codes) in AES-CL213 codelist
 
