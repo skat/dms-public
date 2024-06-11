@@ -1,3 +1,7 @@
+### 11-06-2024
+* Updated System guide to include section about EAD/TAD service
+* Added folder with XSDs and XMLs regarding EAD/TAD service
+
 ### 29-05-2024
 * Updated the C2 Presentation Notification testcase
 
