@@ -1,3 +1,10 @@
+### 11-06-2024
+* Updated System guide to include section about EAD/TAD service
+* Added folder with XSDs and XMLs regarding EAD/TAD service
+
+### 29-05-2024
+* Updated the C2 Presentation Notification testcase
+
 ### 24-05-2024
 * Updated Release notes for release 4.2.8.3
 * Removed all Online guides as they will be available at toldstyrelsens website henceforth. (See Readme)
