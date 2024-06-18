@@ -1,3 +1,6 @@
+### 18-06-2024
+* Updated the release notes for version 4.2.8.4 
+
 ### 11-06-2024
 * Updated System guide to include section about EAD/TAD service
 * Added folder with XSDs and XMLs regarding EAD/TAD service
