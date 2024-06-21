@@ -1,3 +1,7 @@
+### 21-06-2024
+* Updated EAD/TAD service section of the system guide
+* Removed misleading xsds from the EAD/TAD folder in appendix
+
 ### 18-06-2024
 * Updated the release notes for version 4.2.8.4 
 
