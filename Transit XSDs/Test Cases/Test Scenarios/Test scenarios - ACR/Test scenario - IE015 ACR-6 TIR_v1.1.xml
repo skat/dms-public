@@ -1,30 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <nc:CC015C xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"    xmlns:nc="http://ncts.dgtaxud.ec"    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"    xsi:schemaLocation="http://ncts.dgtaxud.ec">
     <messageSender>{{CVR}}</messageSender>
-    <messageRecipient>messageRecipient</messageRecipient>
+    <messageRecipient>NTA.DK</messageRecipient>
     <preparationDateAndTime>2023-02-28T14:27:26</preparationDateAndTime>
     <messageIdentification>messageIdentification</messageIdentification>
     <messageType>CC015C</messageType>
     <correlationIdentifier>correlationIdentifier</correlationIdentifier>
     <TransitOperation>
         <LRN>{{LRN}}</LRN>
-        <declarationType>TIR</declarationType>
+        <declarationType>T2</declarationType>
         <additionalDeclarationType>A</additionalDeclarationType>
-        <TIRCarnetNumber>UX61031536</TIRCarnetNumber>
+        <!-- <TIRCarnetNumber>UX61031536</TIRCarnetNumber> -->
         <presentationOfTheGoodsDateAndTime>2022-09-10T11:10:29</presentationOfTheGoodsDateAndTime>
         <security>0</security>
         <reducedDatasetIndicator>0</reducedDatasetIndicator>
         <bindingItinerary>0</bindingItinerary>
     </TransitOperation>
+    <Authorisation>
+        <sequenceNumber>1</sequenceNumber>
+        <type>C505</type>
+        <referenceNumber>{{CGUAuthorisationID}}</referenceNumber>
+    </Authorisation>
     <CustomsOfficeOfDeparture>
         <referenceNumber>DK005600</referenceNumber>
     </CustomsOfficeOfDeparture>
     <CustomsOfficeOfDestinationDeclared>
         <referenceNumber>HR070491</referenceNumber>
     </CustomsOfficeOfDestinationDeclared>
+    <CustomsOfficeOfTransitDeclared>
+        <sequenceNumber>1</sequenceNumber>
+        <referenceNumber>GB000218</referenceNumber>
+    </CustomsOfficeOfTransitDeclared>
     <HolderOfTheTransitProcedure>
-        <identificationNumber>{{HolderEORI}}</identificationNumber>
-        <TIRHolderIdentificationNumber>{{HolderEORI}}</TIRHolderIdentificationNumber>
+        <identificationNumber>DK19552101</identificationNumber>
+        <!-- <TIRHolderIdentificationNumber>DK19552101</TIRHolderIdentificationNumber> -->
         <name>Name of the testing company</name>
         <Address>
             <streetAndNumber>Street and number</streetAndNumber>
@@ -38,15 +47,31 @@
             <eMailAddress>cthor@email.gr</eMailAddress>
         </ContactPerson>
     </HolderOfTheTransitProcedure>
+    <!-- <Guarantee><sequenceNumber>1</sequenceNumber><guaranteeType>B</guaranteeType></Guarantee> -->
+    <!-- <Guarantee>
+        <sequenceNumber>1</sequenceNumber>
+        <guaranteeType>3</guaranteeType>
+        <GuaranteeReference>
+            <sequenceNumber>1</sequenceNumber>
+            <amountToBeCovered>100</amountToBeCovered>
+            <currency>DKK</currency>
+        </GuaranteeReference>
+    </Guarantee> -->
     <Guarantee>
         <sequenceNumber>1</sequenceNumber>
-        <guaranteeType>B</guaranteeType>
+        <guaranteeType>{{GuaranteeTypeTransit}}</guaranteeType>
+        <GuaranteeReference>
+            <sequenceNumber>1</sequenceNumber>
+            <GRN>{{GRNTransit}}</GRN>
+            <accessCode>1234</accessCode>
+            <amountToBeCovered>5000</amountToBeCovered>
+            <currency>DKK</currency>
+        </GuaranteeReference>
     </Guarantee>
     <Consignment>
-        <countryOfDispatch>DK</countryOfDispatch>
+        <!-- <countryOfDispatch>DK</countryOfDispatch> -->
         <countryOfDestination>DK</countryOfDestination>
         <containerIndicator>1</containerIndicator>
-
         <grossMass>14604</grossMass>
         <referenceNumberUCR>DK1234567891234567891</referenceNumberUCR>
         <Consignor>
@@ -150,7 +175,8 @@
                 </Packaging>
                 <PreviousDocument>
                     <sequenceNumber>1</sequenceNumber>
-                    <type>N952</type> <!--                    TIR carnet-->
+                    <type>N952</type>
+                    <!--                    TIR carnet-->
                     <referenceNumber>UX61031536</referenceNumber>
                     <goodsItemNumber>1</goodsItemNumber>
                     <typeOfPackages>PK</typeOfPackages>
