@@ -1,4 +1,4 @@
-### 15-07-2024
+### 16-07-2024
 * Updated endpoints and added more detailed instructions to several Testcases
 * Updated System Guide
 * Updated Connectivity Guide
