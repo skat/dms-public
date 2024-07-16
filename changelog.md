@@ -1,3 +1,9 @@
+### 16-07-2024
+* Updated endpoints and added more detailed instructions to several Testcases
+* Updated System Guide
+* Updated Connectivity Guide
+* Updated Export and Transit XML Guide
+
 ### 21-06-2024
 * Updated EAD/TAD service section of the system guide
 * Removed misleading xsds from the EAD/TAD folder in appendix
