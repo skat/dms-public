@@ -1,3 +1,7 @@
+### 06-08-2024
+* Added the Customer Portal Guide
+* Updated the Test Scenario - Transit to version 1.3
+
 ### 16-07-2024
 * Updated endpoints and added more detailed instructions to several Testcases
 * Updated System Guide
