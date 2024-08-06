@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="urn:WCOLibraryE7TAXUDEUCDM52public"
+           targetNamespace="urn:WCOLibraryE7TAXUDEUCDM52public"
+           xmlns:edsmetadata="urn:wco:datamodel:WCO:WCO_DEC_EDS_METADATA:1"
+           xmlns:extensions="urn:eds:datamodel:EDS:EDS_EXTENSIONS:1">
+    <xs:import namespace="urn:eds:datamodel:EDS:EDS_EXTENSIONS:1"
+               schemaLocation="../DMS_DS/EDS/EDS_EXTENSIONS.xsd"/>
+  <!--  <xs:include schemaLocation="WCO_TS_DEC.xsd"/> -->
+
+    <xs:element name="Declaration" type="Declaration"/>
+
+    <xs:complexType name="Declaration">
+        <xs:sequence>
+            <xs:element name="Extensions" type="extensions:ExtensionType"/>
+            <xs:element ref="functionalReference"/>
+            <xs:element ref="procedureCategory"/>
+            <xs:element ref="FunctionCode"/>
+            <xs:element ref="Agent" minOccurs="0"/>
+            <xs:element ref="Declarant"/>
+            <xs:element ref="Submitter"/>
+            <xs:element ref="SupervisingOffice"/>
+            <xs:element ref="Consignment"/>
+            <xs:element ref="PreviousDocument" maxOccurs="99"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="functionalReference" type="Identifier.Type"/>
+    <xs:element name="procedureCategory" type="Identifier.Type"/>
+    <xs:element name="FunctionCode" type="FunctionCode"/>
+    <xs:element name="Agent" type="Agent"/>
+    <xs:element name="name" type="Text.Type"/>
+    <xs:element name="identification_2" type="Identifier.Type"/>
+    <xs:element name="sequence" type="Numeric.Type"/>
+    <xs:element name="function_3" type="AgentFunctionCode"/>
+    <xs:element name="Declarant" type="Declarant"/>
+    <xs:element name="Submitter" type="Submitter"/>
+    <xs:element name="SupervisingOffice" type="SupervisingOffice"/>
+    <xs:element name="identification" type="GovernmentAgencyNameCode"/>
+    <xs:element name="Consignment" type="Consignment"/>
+    <xs:element name="AdditionalInformation" type="AdditionalInformation"/>
+    <xs:element name="statement" type="StatementCode"/>
+    <xs:element name="StatementCode" type="StatementCode"/>
+    <xs:element name="statementDescription" type="Text.Type"/>
+    <xs:element name="Consignee" type="Consignee"/>
+    <xs:element name="GoodsLocation" type="GoodsLocation"/>
+    <xs:element name="authorisationReferenceNumber" type="Text.Type"/>
+    <xs:element name="EconomicOperator" type="EconomicOperator"/>
+    <xs:element name="TransportContractDocument" type="TransportContractDocument"/>
+    <xs:element name="UnloadingLocation" type="UnloadingLocation"/>
+    <xs:element name="Address" type="Address"/>
+    <xs:element name="country" type="CountryCode"/>
+    <xs:element name="PreviousDocument" type="PreviousDocument"/>
+    <xs:element name="line_2" type="Numeric.Type"/>
+    <xs:element name="type_3" type="DocumentTypeCode"/>
+    <xs:element name="WriteOff" type="WriteOff"/>
+    <xs:element name="type_6" type="PackageTypeCode"/>
+    <xs:element name="Packaging" type="Packaging"/>
+    <xs:element name="quantity" type="Quantity.Type"/>
+    <xs:element name="Quantity.Content" type="Quantity.Content"/>
+    <xs:element name="QuantityUnit.Code" type="Quantity.Unit.Code"/>
+
+
+    <xs:element name="Identifier.Content" type="Identifier.Content"/>
+    <xs:element name="Code.Content" type="Code.Content"/>
+    <xs:element name="Text.Content" type="Text.Content"/>
+    <xs:element name="Numeric.Content" type="Numeric.Content"/>
+
+    <xs:complexType name="Agent">
+        <xs:sequence>
+            <xs:element ref="identification_2"/>
+            <xs:element ref="sequence"/>
+            <xs:element ref="function_3"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Declarant">
+        <xs:sequence>
+            <xs:element ref="identification_2"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Submitter">
+        <xs:sequence>
+            <xs:element ref="name"/>
+            <xs:element ref="identification_2"/>
+            <xs:element ref="sequence"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="SupervisingOffice">
+        <xs:sequence>
+            <xs:element ref="identification"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Consignment">
+        <xs:sequence>
+            <xs:element ref="sequence"/>
+            <xs:element ref="AdditionalInformation" minOccurs="0" maxOccurs="99"/>
+            <xs:element ref="Consignee"/>
+            <xs:element ref="GoodsLocation"/>
+            <xs:element ref="TransportContractDocument" minOccurs="0" maxOccurs="99"/>
+            <xs:element ref="UnloadingLocation" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="AdditionalInformation">
+        <xs:sequence>
+            <xs:element ref="sequence"/>
+            <xs:element ref="statement"/>
+            <xs:element ref="statementDescription"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="StatementCode">
+        <xs:sequence>
+            <xs:element ref="Code.Content"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Consignee">
+        <xs:sequence>
+            <xs:element ref="identification_2"/>
+            <xs:element ref="sequence"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="GoodsLocation">
+        <xs:sequence>
+            <xs:element ref="sequence"/>
+            <xs:element ref="authorisationReferenceNumber"/>
+            <xs:element ref="EconomicOperator"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="EconomicOperator">
+        <xs:sequence>
+            <xs:element ref="identification_2"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="TransportContractDocument">
+        <xs:sequence>
+            <xs:element ref="sequence"/>
+            <xs:element ref="identification_2"/>
+            <xs:element ref="type_3"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="UnloadingLocation">
+        <xs:sequence>
+            <xs:element ref="name" minOccurs="0"/>
+            <xs:element ref="identification_2" minOccurs="0"/>
+            <xs:element ref="Address" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Address">
+        <xs:sequence>
+            <xs:element ref="sequence"/>
+            <xs:element ref="country"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="PreviousDocument">
+        <xs:sequence>
+            <xs:element ref="sequence"/>
+            <xs:element ref="line_2" minOccurs="0"/>
+            <xs:element ref="identification_2"/>
+            <xs:element ref="type_3"/>
+            <xs:element ref="WriteOff" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="DocumentTypeCode">
+        <xs:sequence>
+            <xs:element ref="Code.Content"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="WriteOff">
+        <xs:sequence>
+            <xs:element ref="Packaging" minOccurs="0"/>
+            <xs:element ref="quantity" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="PackageTypeCode">
+        <xs:sequence>
+            <xs:element ref="Code.Content"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Packaging">
+        <xs:sequence>
+            <xs:element ref="sequence"/>
+            <xs:element ref="quantity" minOccurs="0"/>
+            <xs:element ref="type_6" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="Quantity.Type">
+        <xs:sequence>
+            <xs:element ref="Quantity.Content"/>
+            <xs:element ref="QuantityUnit.Code"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Text.Type">
+        <xs:sequence>
+            <xs:element ref="Text.Content"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Numeric.Type">
+        <xs:sequence>
+            <xs:element ref="Numeric.Content"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Identifier.Type">
+        <xs:sequence>
+            <xs:element ref="Identifier.Content"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="AgentFunctionCode">
+        <xs:complexContent>
+            <xs:extension base="Code.Type"/>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="FunctionCode">
+        <xs:complexContent>
+            <xs:extension base="Code.Type"/>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="Code.Type">
+        <xs:sequence>
+            <xs:element ref="Code.Content"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="GovernmentAgencyNameCode">
+        <xs:sequence>
+            <xs:element ref="Identifier.Content"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="CountryCode">
+        <xs:sequence>
+        <xs:element ref="Code.Content"/>
+    </xs:sequence>
+    </xs:complexType>
+
+
+    <xs:simpleType name="Identifier.Content">
+        <xs:restriction base="xs:string"/>
+    </xs:simpleType>
+    <xs:simpleType name="Code.Content">
+        <xs:restriction base="xs:token"/>
+    </xs:simpleType>
+    <xs:simpleType name="Numeric.Content">
+        <xs:restriction base="xs:decimal"/>
+    </xs:simpleType>
+    <xs:simpleType name="Text.Content">
+        <xs:restriction base="xs:string"/>
+    </xs:simpleType>
+    <xs:simpleType name="Quantity.Content">
+        <xs:restriction base="xs:decimal"/>
+    </xs:simpleType>
+    <xs:simpleType name="Quantity.Unit.Code">
+        <xs:restriction base="xs:string"/>
+    </xs:simpleType>
+</xs:schema>
