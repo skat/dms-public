@@ -7,9 +7,9 @@
            targetNamespace="urn:wco:datamodel:WCO:DEC-DMS:2"
            elementFormDefault="qualified" version="1.2.0">
     <xs:import namespace="urn:wco:datamodel:WCO:Declaration_DS:DMS:2"
-               schemaLocation="../DMS_DS/DMS_DS_V1.0.XSD"/>
+               schemaLocation="../DMS_DS/DMS_DS_V1.0.xsd"/>
     <xs:import namespace="urn:wco:datamodel:WCO:WCO_DEC_EDS_AUTHORISATION:1"
-               schemaLocation="../APPLICATION_XSDS/4C_REPAYMENT_REMISSION.XSD"/>
+               schemaLocation="../APPLICATION_XSDS/4C_REPAYMENT_REMISSION.xsd"/>
     <xs:import namespace="urn:un:unece:uncefact:data:standard:UnqualifiedDataType:6"
                schemaLocation="../DMS_DS/UNECE/UNQUALIFIEDDATATYPE_6_DMS.xsd"/>
     <xs:import namespace="urn:eds:datamodel:EDS:EDS_EXTENSIONS:1"
@@ -83,6 +83,7 @@
                                 <xs:documentation xml:lang="EN">
                                     <WCOFormat>an..4</WCOFormat>
                                     <WCODescription>Authorisation code type for application</WCODescription>
+                                    <EUCDMcode>31 01 000 002</EUCDMcode>
                                 </xs:documentation>
                             </xs:annotation>
                         </xs:element>
@@ -91,195 +92,255 @@
                                 <xs:documentation xml:lang="EN">
                                     <WCOFormat>an..256</WCOFormat>
                                     <WCODescription>Authorisation signature for application</WCODescription>
+                                    <EUCDMcode>31 02 000 202</EUCDMcode>
                                 </xs:documentation>
                             </xs:annotation>
                         </xs:element>
-                        <xs:element name="DecisionReferenceNumber">
-                            <xs:complexType>
-                            <xs:sequence>
-                                <xs:element name="CountryCode" type="eds:AddressCountryCodeType">
-                                    <xs:annotation>
-                                        <xs:documentation xml:lang="EN">
-                                            <WCOFormat>an..2</WCOFormat>
-                                            <WCODescription>Decision reference number country code</WCODescription>
-                                        </xs:documentation>
-                                    </xs:annotation>
-                                </xs:element>
-                                <xs:element name="ReferenceNumber" type="eds:DecisionReferenceNumberTextType">
-                                    <xs:annotation>
-                                        <xs:documentation xml:lang="EN">
-                                            <WCOFormat>an..29</WCOFormat>
-                                            <WCODescription>Decision reference number </WCODescription>
-                                        </xs:documentation>
-                                    </xs:annotation>
-                                </xs:element>
-                                <xs:element name="CodeType" type="eds:DecisionReferenceNumberCodeType">
-                                    <xs:annotation>
-                                        <xs:documentation xml:lang="EN">
-                                            <WCOFormat>an..4</WCOFormat>
-                                            <WCODescription>Decision reference number code </WCODescription>
-                                        </xs:documentation>
-                                    </xs:annotation>
-                                </xs:element>
-                            </xs:sequence>
-                            </xs:complexType>
-                        </xs:element>
-                        <xs:element name="AttachedDocument" minOccurs="0" maxOccurs="999">
-                            <xs:complexType>
-                            <xs:sequence>
-                                <xs:element name="Type" type="eds:AttachedDocumentTypeType" maxOccurs="1">
-                                    <xs:annotation>
-                                        <xs:documentation xml:lang="EN">
-                                            <WCOFormat>an..70</WCOFormat>
-                                            <WCODescription>Attached document type</WCODescription>
-                                        </xs:documentation>
-                                    </xs:annotation>
-                                </xs:element>
-                                <xs:element name="AttachedDocumentID" type="eds:AttachedDocumentIdentifierType" maxOccurs="1">
-                                    <xs:annotation>
-                                        <xs:documentation xml:lang="EN">
-                                            <WCOFormat>an..35</WCOFormat>
-                                            <WCODescription>Attached document identifier</WCODescription>
-                                        </xs:documentation>
-                                    </xs:annotation>
-                                </xs:element>
-                                <xs:element name="AttachedDocumentDate" type="eds:DateTimeType" maxOccurs="1">
-                                    <xs:annotation>
-                                        <xs:documentation xml:lang="EN">
-                                            <WCOFormat>n8</WCOFormat>
-                                            <WCODescription>Attached document type</WCODescription>
-                                        </xs:documentation>
-                                    </xs:annotation>
-                                </xs:element>
-                            </xs:sequence>
-                            </xs:complexType>
-                        </xs:element>
-                        <xs:element name="ApplicationHolder" minOccurs="0">
-                            <xs:complexType>
-                            <xs:sequence>
-                                <xs:element name="Name" type="eds:RepresentativeNameTextType" maxOccurs="1">
-                                    <xs:annotation>
-                                        <xs:documentation xml:lang="EN">
-                                            <WCOFormat>an..70</WCOFormat>
-                                            <WCODescription>Holder name</WCODescription>
-                                        </xs:documentation>
-                                    </xs:annotation>
-                                </xs:element>
-                                <xs:element name="StreetAndNumber" type="eds:StreetAndNumberType" maxOccurs="1">
-                                    <xs:annotation>
-                                        <xs:documentation xml:lang="EN">
-                                            <WCOFormat>an..70</WCOFormat>
-                                            <WCODescription>Holder street and number</WCODescription>
-                                        </xs:documentation>
-                                    </xs:annotation>
-                                </xs:element>
-                                <xs:element name="CountryCode" type="eds:AddressCountryCodeType" maxOccurs="1">
-                                    <xs:annotation>
-                                        <xs:documentation xml:lang="EN">
-                                            <WCOFormat>a2</WCOFormat>
-                                            <WCODescription>Holder country code</WCODescription>
-                                        </xs:documentation>
-                                    </xs:annotation>
-                                </xs:element>
-                                <xs:element name="PostCode" type="eds:AddressPostcodeIDType" maxOccurs="1">
-                                    <xs:annotation>
-                                        <xs:documentation xml:lang="EN">
-                                            <WCOFormat>an..9</WCOFormat>
-                                            <WCODescription>Holder postcode</WCODescription>
-                                        </xs:documentation>
-                                    </xs:annotation>
-                                </xs:element>
-                                <xs:element name="City" type="eds:AddressCityNameTextType" maxOccurs="1">
-                                    <xs:annotation>
-                                        <xs:documentation xml:lang="EN">
-                                            <WCOFormat>an..35</WCOFormat>
-                                            <WCODescription>Holder city</WCODescription>
-                                        </xs:documentation>
-                                    </xs:annotation>
-                                </xs:element>
-                            </xs:sequence>
-                            </xs:complexType>
-                        </xs:element>
-                        <xs:element name="ApplicationHolderId" type="eds:AuthorisationIDType" maxOccurs="1">
+                        <xs:element name="DecisionReferenceNumber" type="eds:DecisionReferenceNumberType" minOccurs="0">
                             <xs:annotation>
                                 <xs:documentation xml:lang="EN">
-                                    <WCOFormat>an..17</WCOFormat>
-                                </xs:documentation>
-                                <xs:documentation>
-                                    <WCODescription>Application holder ID</WCODescription>
-                                </xs:documentation>
-                            </xs:annotation>
-                        </xs:element>
-                        <xs:element name="ApplicationSupervisor">
-                            <xs:annotation>
-                                <xs:documentation xml:lang="EN">
-                                    <WCODescription>Contact details of person responsible for the application</WCODescription>
+                                    <WCODescription>
+                                        Unique reference attributed by the competent customs authority to the decision.
+                                    </WCODescription>
+                                    <EUCDMcode>31 06 000 000</EUCDMcode>
                                 </xs:documentation>
                             </xs:annotation>
                             <xs:complexType>
                                 <xs:sequence>
-                                    <xs:element name="Name" type="eds:PersonContactDetailsNameTextType" maxOccurs="1">
+                                    <xs:element name="CountryCode" type="eds:AddressCountryCodeType">
                                         <xs:annotation>
                                             <xs:documentation xml:lang="EN">
-                                                <WCOFormat>an..70</WCOFormat>
-                                                <WCODescription>Contact details person name</WCODescription>
+                                                <WCOFormat>an..2</WCOFormat>
+                                                <WCODescription>Decision reference number country code</WCODescription>
+                                                <EUCDMcode>31 06 000 020</EUCDMcode>
                                             </xs:documentation>
                                         </xs:annotation>
                                     </xs:element>
-                                    <xs:element name="TelephoneNumber" type="eds:TelephoneNumberTextType" minOccurs="0" maxOccurs="1">
+                                    <xs:element name="ReferenceNumber" type="eds:DecisionReferenceNumberTextType">
                                         <xs:annotation>
                                             <xs:documentation xml:lang="EN">
-                                                <WCOFormat>an..50</WCOFormat>
-                                                <WCODescription>Contact details person telephone</WCODescription>
+                                                <WCOFormat>an..29</WCOFormat>
+                                                <WCODescription>Decision reference number</WCODescription>
+                                                <EUCDMcode>31 06 000 001</EUCDMcode>
                                             </xs:documentation>
                                         </xs:annotation>
                                     </xs:element>
-                                    <xs:element name="FaxNumber" type="eds:TelephoneNumberTextType" minOccurs="0" maxOccurs="1">
+                                    <xs:element name="CodeType" type="eds:DecisionReferenceNumberCodeType">
                                         <xs:annotation>
                                             <xs:documentation xml:lang="EN">
-                                                <WCOFormat>an..50</WCOFormat>
-                                                <WCODescription>Contact details person fax</WCODescription>
-                                            </xs:documentation>
-                                        </xs:annotation>
-                                    </xs:element>
-                                    <xs:element name="EmailAddress" type="eds:EmailTextType" minOccurs="0" maxOccurs="1">
-                                        <xs:annotation>
-                                            <xs:documentation xml:lang="EN">
-                                                <WCOFormat>an..256</WCOFormat>
-                                                <WCODescription>Contact details person email</WCODescription>
+                                                <WCOFormat>an..4</WCOFormat>
+                                                <WCODescription>Decision reference number code</WCODescription>
+                                                <EUCDMcode>31 06 000 205</EUCDMcode>
                                             </xs:documentation>
                                         </xs:annotation>
                                     </xs:element>
                                 </xs:sequence>
                             </xs:complexType>
                         </xs:element>
-                        <xs:element name="ApplicationDate" type="eds:DateTimeType" minOccurs="0" maxOccurs="1">
+                        <xs:element name="AttachedDocument" minOccurs="0" maxOccurs="999">
+                            <xs:annotation>
+                                <xs:documentation xml:lang="EN">
+                                    <WCODescription>Document(s) attached to the application or the decision</WCODescription>
+                                    <EUCDMcode>32 04 000 000</EUCDMcode>
+                                </xs:documentation>
+                            </xs:annotation>
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="TotalDocuments" type="eds:TotalDocumentType">
+                                        <xs:annotation>
+                                            <xs:documentation xml:lang="EN">
+                                                <WCOFormat>n..3</WCOFormat>
+                                                <WCODescription>Total number of attached documents</WCODescription>
+                                                <EUCDMcode>32 04 000 223</EUCDMcode>
+                                            </xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="Document" type="eds:AttachedDocumentType" maxOccurs="999">
+                                        <xs:annotation>
+                                            <xs:documentation xml:lang="EN">
+                                                <WCODescription>Attached document</WCODescription>
+                                                <EUCDMcode>32 04 010 000</EUCDMcode>
+                                            </xs:documentation>
+                                        </xs:annotation>
+                                        <xs:complexType>
+                                            <xs:sequence>
+                                                <xs:element name="Name" type="eds:AttachedDocumentNameType">
+                                                    <xs:annotation>
+                                                        <xs:documentation xml:lang="EN">
+                                                            <WCOFormat>an..2560</WCOFormat>
+                                                            <WCODescription>Attached document name</WCODescription>
+                                                            <EUCDMcode>32 04 010 224</EUCDMcode>
+                                                        </xs:documentation>
+                                                    </xs:annotation>
+                                                </xs:element>
+                                                <xs:element name="AttachedDocumentID" type="eds:AttachedDocumentIdentifierType">
+                                                    <xs:annotation>
+                                                        <xs:documentation xml:lang="EN">
+                                                            <WCOFormat>an..70</WCOFormat>
+                                                            <WCODescription>Attached document identifier</WCODescription>
+                                                            <EUCDMcode>32 04 010 225</EUCDMcode>
+                                                        </xs:documentation>
+                                                    </xs:annotation>
+                                                </xs:element>
+                                                <xs:element name="AttachedDocumentDate" type="eds:DateTimeType">
+                                                    <xs:annotation>
+                                                        <xs:documentation xml:lang="EN">
+                                                            <WCOFormat>n8</WCOFormat>
+                                                            <WCODescription>Attached document date</WCODescription>
+                                                            <EUCDMcode>32 04 010 226</EUCDMcode>
+                                                        </xs:documentation>
+                                                    </xs:annotation>
+                                                </xs:element>
+                                            </xs:sequence>
+                                        </xs:complexType>
+                                    </xs:element>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="ApplicationHolder" type="eds:RepresentativeType" minOccurs="0">
+                            <xs:annotation>
+                                <xs:documentation xml:lang="EN">
+                                    <WCODescription>Applicant of the authorisation</WCODescription>
+                                    <EUCDMcode>33 01 000 000</EUCDMcode>
+                                </xs:documentation>
+                            </xs:annotation>
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="Name" type="eds:RepresentativeNameTextType">
+                                        <xs:annotation>
+                                            <xs:documentation xml:lang="EN">
+                                                <WCOFormat>an..70</WCOFormat>
+                                                <WCODescription>Holder name</WCODescription>
+                                                <EUCDMcode>33 01 000 016</EUCDMcode>
+                                            </xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="StreetAndNumber" type="eds:StreetAndNumberType">
+                                        <xs:annotation>
+                                            <xs:documentation xml:lang="EN">
+                                                <WCOFormat>an..70</WCOFormat>
+                                                <WCODescription>Holder street and number</WCODescription>
+                                                <EUCDMcode>33 01 010 019</EUCDMcode>
+                                            </xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="CountryCode" type="eds:AddressCountryCodeType">
+                                        <xs:annotation>
+                                            <xs:documentation xml:lang="EN">
+                                                <WCOFormat>a2</WCOFormat>
+                                                <WCODescription>Holder country code</WCODescription>
+                                                <EUCDMcode>33 01 010 020</EUCDMcode>
+                                            </xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="PostCode" type="eds:AddressPostcodeIDType">
+                                        <xs:annotation>
+                                            <xs:documentation xml:lang="EN">
+                                                <WCOFormat>an..9</WCOFormat>
+                                                <WCODescription>Holder postcode</WCODescription>
+                                                <EUCDMcode>33 01 010 021</EUCDMcode>
+                                            </xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="City" type="eds:AddressCityNameTextType">
+                                        <xs:annotation>
+                                            <xs:documentation xml:lang="EN">
+                                                <WCOFormat>an..35</WCOFormat>
+                                                <WCODescription>Holder city</WCODescription>
+                                                <EUCDMcode>33 01 010 022</EUCDMcode>
+                                            </xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="ApplicationHolderId" type="eds:AuthorisationIDType">
+                            <xs:annotation>
+                                <xs:documentation xml:lang="EN">
+                                    <WCOFormat>an..17</WCOFormat>
+                                </xs:documentation>
+                                <xs:documentation>
+                                    <WCODescription>Application holder ID</WCODescription>
+                                    <EUCDMcode>33 02 000 229</EUCDMcode>
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="ApplicationSupervisor" type="eds:PersonContactDetailsType">
+                            <xs:annotation>
+                                <xs:documentation xml:lang="EN">
+                                    <WCODescription>Contact details of person responsible for the application</WCODescription>
+                                    <EUCDMcode>33 06 000 000</EUCDMcode>
+                                </xs:documentation>
+                            </xs:annotation>
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="Name" type="eds:PersonContactDetailsNameTextType">
+                                        <xs:annotation>
+                                            <xs:documentation xml:lang="EN">
+                                                <WCOFormat>an..70</WCOFormat>
+                                                <WCODescription>Contact details person name</WCODescription>
+                                                <EUCDMcode>33 06 000 016</EUCDMcode>
+                                            </xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="TelephoneNumber" type="eds:TelephoneNumberTextType" minOccurs="0">
+                                        <xs:annotation>
+                                            <xs:documentation xml:lang="EN">
+                                                <WCOFormat>an..50</WCOFormat>
+                                                <WCODescription>Contact details person telephone</WCODescription>
+                                                <EUCDMcode>33 06 000 234</EUCDMcode>
+                                            </xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="EmailAddress" type="eds:EmailTextType" minOccurs="0">
+                                        <xs:annotation>
+                                            <xs:documentation xml:lang="EN">
+                                                <WCOFormat>an..256</WCOFormat>
+                                                <WCODescription>Contact details person email</WCODescription>
+                                                <EUCDMcode>33 06 000 076</EUCDMcode>
+                                            </xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="ApplicationDate" type="eds:DateTimeType" minOccurs="0">
+                            <xs:annotation>
+                                <xs:documentation xml:lang="EN">
+                                    <WCOFormat>n8(yyyymmdd)</WCOFormat>
+                                    <WCODescription>
+                                        Date on which the applicant has signed or
+                                        otherwise authenticated the application.
+                                    </WCODescription>
+                                    <EUCDMcode>34 02 000 207</EUCDMcode>
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="DecisionDate" type="eds:DateTimeType" minOccurs="0">
                             <xs:annotation>
                                 <xs:documentation xml:lang="EN">
                                     <WCOFormat>n8(yyyymmdd)</WCOFormat>
                                 </xs:documentation>
                                 <xs:documentation>
-                                    <WCODescription>Date on which the applicant has signed or otherwise authenticated the application</WCODescription>
+                                    <WCODescription>
+                                        The date on which the authorisation or decision relating to
+                                        binding information or on the repayment or remission of
+                                        import or export duty was taken.
+                                    </WCODescription>
+                                    <EUCDMcode>34 02 000 207</EUCDMcode>
                                 </xs:documentation>
                             </xs:annotation>
                         </xs:element>
-                        <xs:element name="DecisionDate" type="eds:DateTimeType" minOccurs="0" maxOccurs="1">
-                            <xs:annotation>
-                                <xs:documentation xml:lang="EN">
-                                    <WCOFormat>n8(yyyymmdd)</WCOFormat>
-                                </xs:documentation>
-                                <xs:documentation>
-                                    <WCODescription>The date on which the authorisation or decision relating to binding information
-                                        or on the repayment or remission of import or export duty was taken.</WCODescription>
-                                </xs:documentation>
-                            </xs:annotation>
-                        </xs:element>
-                        <xs:element name="GeneralRemarks" type="eds:GeneralRemarksType" minOccurs="0" maxOccurs="1">
+                        <xs:element name="GeneralRemarks" type="eds:GeneralRemarksType" minOccurs="0">
                             <xs:annotation>
                                 <xs:documentation xml:lang="EN">
                                     <WCOFormat>an..512</WCOFormat>
-                                    <WCODescription>General remarks regarding particulars of any requirements to which
-                                        the goods remain subject pending implementation of the decision</WCODescription>
+                                    <WCODescription>
+                                        General remarks regarding particulars of any
+                                        requirements to which the goods remain subject
+                                        pending implementation of the decision
+                                    </WCODescription>
+                                    <EUCDMcode>36 03 000 000</EUCDMcode>
                                 </xs:documentation>
                             </xs:annotation>
                         </xs:element>
@@ -287,60 +348,67 @@
                             <xs:annotation>
                                 <xs:documentation xml:lang="EN">
                                     <WCODescription>Repayment/Remission representative</WCODescription>
+                                    <EUCDMcode>33 03 000 000</EUCDMcode>
                                 </xs:documentation>
                             </xs:annotation>
                             <xs:complexType>
                                 <xs:sequence>
-                                    <xs:element name="Name" type="eds:RepresentativeNameTextType" maxOccurs="1">
+                                    <xs:element name="Name" type="eds:RepresentativeNameTextType">
                                         <xs:annotation>
                                             <xs:documentation xml:lang="EN">
                                                 <WCOFormat>an..70</WCOFormat>
                                                 <WCODescription>Holder name</WCODescription>
+                                                <EUCDMcode>33 03 000 016</EUCDMcode>
                                             </xs:documentation>
                                         </xs:annotation>
                                     </xs:element>
-                                    <xs:element name="StreetAndNumber" type="eds:StreetAndNumberType" maxOccurs="1">
+                                    <xs:element name="StreetAndNumber" type="eds:StreetAndNumberType">
                                         <xs:annotation>
                                             <xs:documentation xml:lang="EN">
                                                 <WCOFormat>an..70</WCOFormat>
                                                 <WCODescription>Holder street and number</WCODescription>
+                                                <EUCDMcode>33 03 010 019</EUCDMcode>
                                             </xs:documentation>
                                         </xs:annotation>
                                     </xs:element>
-                                    <xs:element name="CountryCode" type="eds:AddressCountryCodeType" maxOccurs="1">
+                                    <xs:element name="CountryCode" type="eds:AddressCountryCodeType">
                                         <xs:annotation>
                                             <xs:documentation xml:lang="EN">
                                                 <WCOFormat>a2</WCOFormat>
                                                 <WCODescription>Holder country code</WCODescription>
+                                                <EUCDMcode>33 03 010 020</EUCDMcode>
                                             </xs:documentation>
                                         </xs:annotation>
                                     </xs:element>
-                                    <xs:element name="PostCode" type="eds:AddressPostcodeIDType" maxOccurs="1">
+                                    <xs:element name="PostCode" type="eds:AddressPostcodeIDType">
                                         <xs:annotation>
                                             <xs:documentation xml:lang="EN">
                                                 <WCOFormat>an..9</WCOFormat>
                                                 <WCODescription>Holder postcode</WCODescription>
+                                                <EUCDMcode>33 03 010 021</EUCDMcode>
                                             </xs:documentation>
                                         </xs:annotation>
                                     </xs:element>
-                                    <xs:element name="City" type="eds:AddressCityNameTextType" maxOccurs="1">
+                                    <xs:element name="City" type="eds:AddressCityNameTextType">
                                         <xs:annotation>
                                             <xs:documentation xml:lang="EN">
                                                 <WCOFormat>an..35</WCOFormat>
                                                 <WCODescription>Holder city</WCODescription>
+                                                <EUCDMcode>33 03 010 022</EUCDMcode>
                                             </xs:documentation>
                                         </xs:annotation>
                                     </xs:element>
                                 </xs:sequence>
                             </xs:complexType>
                         </xs:element>
-                        <xs:element name="RepresentativeId" type="eds:AuthorisationIDType" minOccurs="0" maxOccurs="1" >
+                        <xs:element name="RepresentativeId" type="eds:AuthorisationIDType" minOccurs="0">
                             <xs:annotation>
                                 <xs:documentation xml:lang="EN">
                                     <WCOFormat>an..17</WCOFormat>
                                 </xs:documentation>
                                 <xs:documentation>
                                     <WCODescription>Representative Identification</WCODescription>
+                                    <EUCDMcode>33 03 020 229</EUCDMcode>
                                 </xs:documentation>
                             </xs:annotation>
                         </xs:element>
@@ -348,79 +416,164 @@
                             <xs:annotation>
                                 <xs:documentation xml:lang="EN">
                                     <WCODescription>Locations of goods</WCODescription>
+                                    <EUCDMcode>34 08 000 000</EUCDMcode>
                                 </xs:documentation>
                             </xs:annotation>
                             <xs:complexType>
                                 <xs:sequence>
-                                    <xs:element name="CountryCode" type="eds:AddressCountryCodeType" maxOccurs="1">
+                                    <xs:element name="LocationCodeType" type="eds:LocationCodeCodeType">
                                         <xs:annotation>
                                             <xs:documentation xml:lang="EN">
-                                                <WCOFormat>a2</WCOFormat>
-                                                <WCODescription>Goods Location country code</WCODescription>
-                                            </xs:documentation>
-                                        </xs:annotation>
-                                    </xs:element>
-                                    <xs:element name="LocationCodeType" type="eds:LocationCodeCodeType" maxOccurs="1">
-                                        <xs:annotation>
-                                            <xs:documentation xml:lang="EN">
-                                                <WCOFormat>a1</WCOFormat>
+                                                <WCOFormat>an..17</WCOFormat>
                                                 <WCODescription>Goods location code type</WCODescription>
+                                                <EUCDMcode>34 08 010 036</EUCDMcode>
                                             </xs:documentation>
                                         </xs:annotation>
                                     </xs:element>
-                                    <xs:element name="IdentificationQualifier" type="eds:IdentificationQualifierType" maxOccurs="1">
+                                    <xs:element name="LocationAuthorisation" type="eds:LocationAuthorisationType">
+                                        <xs:annotation>
+                                            <xs:documentation xml:lang="EN">
+                                                <WCOFormat>an..35</WCOFormat>
+                                                <WCODescription>Goods location authorisation</WCODescription>
+                                                <EUCDMcode>34 08 010 052</EUCDMcode>
+                                            </xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="IdentificationQualifier" type="eds:IdentificationQualifierType">
                                         <xs:annotation>
                                             <xs:documentation xml:lang="EN">
                                                 <WCOFormat>a1</WCOFormat>
                                                 <WCODescription>Goods location identification qualifier</WCODescription>
+                                                <EUCDMcode>34 08 010 046</EUCDMcode>
                                             </xs:documentation>
                                         </xs:annotation>
                                     </xs:element>
-                                    <xs:element name="LocationIdentification" type="eds:LocationIdentificationType" minOccurs="0" maxOccurs="1">
+                                    <xs:element name="AdditionalIdentifier" type="eds:AdditionalIdentifierType"
+                                                minOccurs="0">
                                         <xs:annotation>
                                             <xs:documentation xml:lang="EN">
-                                                <WCOFormat>an..35</WCOFormat>
-                                                <WCODescription>Goods location identification</WCODescription>
-                                            </xs:documentation>
-                                        </xs:annotation>
-                                    </xs:element>
-                                    <xs:element name="AdditionalIdentifier" type="eds:AdditionalIdentifierNumericType" minOccurs="0" maxOccurs="1">
-                                        <xs:annotation>
-                                            <xs:documentation xml:lang="EN">
-                                                <WCOFormat>n..3</WCOFormat>
+                                                <WCOFormat>an..8</WCOFormat>
                                                 <WCODescription>Location additional identifier</WCODescription>
+                                                <EUCDMcode>34 08 010 053</EUCDMcode>
                                             </xs:documentation>
                                         </xs:annotation>
                                     </xs:element>
-                                    <xs:element name="Name" type="eds:AuthorisationGoodsLocationNameTextType" minOccurs="0" maxOccurs="1" >
+                                    <xs:element name="CustomsOfficeId" type="eds:CustomsOfficeIdType" minOccurs="0">
                                         <xs:annotation>
                                             <xs:documentation xml:lang="EN">
-                                                <WCOFormat>an..70</WCOFormat>
-                                                <WCODescription>Goods location name</WCODescription>
+                                                <WCOFormat>an8</WCOFormat>
+                                                <WCODescription>Location customs office id</WCODescription>
+                                                <EUCDMcode>34 08 020 001</EUCDMcode>
                                             </xs:documentation>
                                         </xs:annotation>
                                     </xs:element>
-                                    <xs:element name="StreetAndNumber" type="eds:StreetAndNumberType" minOccurs="0" maxOccurs="1">
+                                    <xs:element name="Latitude" type="eds:CoordinatesType" minOccurs="0">
+                                        <xs:annotation>
+                                            <xs:documentation xml:lang="EN">
+                                                <WCOFormat>an..17</WCOFormat>
+                                                <WCODescription>Location latitude</WCODescription>
+                                                <EUCDMcode>34 08 030 049</EUCDMcode>
+                                            </xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="Longitude" type="eds:CoordinatesType" minOccurs="0">
+                                        <xs:annotation>
+                                            <xs:documentation xml:lang="EN">
+                                                <WCOFormat>an..17</WCOFormat>
+                                                <WCODescription>Location longitude</WCODescription>
+                                                <EUCDMcode>34 08 030 049</EUCDMcode>
+                                            </xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="EconomicOperatorId" type="eds:EconomicOperatorIdType"
+                                                minOccurs="0">
+                                        <xs:annotation>
+                                            <xs:documentation xml:lang="EN">
+                                                <WCOFormat>an..17</WCOFormat>
+                                                <WCODescription>Location customs office id</WCODescription>
+                                                <EUCDMcode>34 08 030 050</EUCDMcode>
+                                            </xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="StreetAndNumber" type="eds:StreetAndNumberType" minOccurs="0">
                                         <xs:annotation>
                                             <xs:documentation xml:lang="EN">
                                                 <WCOFormat>an..70</WCOFormat>
                                                 <WCODescription>Location street and number</WCODescription>
+                                                <EUCDMcode>34 08 050 019</EUCDMcode>
                                             </xs:documentation>
                                         </xs:annotation>
                                     </xs:element>
-                                    <xs:element name="PostCode" type="eds:AddressPostcodeIDType" minOccurs="0" maxOccurs="1">
+                                    <xs:element name="CountryCode" type="ds:AddressCountryCodeType">
                                         <xs:annotation>
                                             <xs:documentation xml:lang="EN">
-                                                <WCOFormat>an..9</WCOFormat>
-                                                <WCODescription>Location postcode</WCODescription>
+                                                <WCOFormat>a2</WCOFormat>
+                                                <WCODescription>Goods Location country code</WCODescription>
+                                                <EUCDMcode>34 08 050 020</EUCDMcode>
+                                            </xs:documentation>
+                                            <xs:documentation xml:lang="EN">
+                                                <WCOFormat>a2</WCOFormat>
+                                                <WCODescription>Goods Location country code</WCODescription>
+                                                <EUCDMcode>34 08 060 020</EUCDMcode>
                                             </xs:documentation>
                                         </xs:annotation>
                                     </xs:element>
-                                    <xs:element name="City" type="eds:AddressCityNameTextType" minOccurs="0" maxOccurs="1">
+                                    <xs:element name="PostCode" type="ds:AddressPostcodeIDType" minOccurs="0">
+                                        <xs:annotation>
+                                            <xs:documentation xml:lang="EN">
+                                                <WCOFormat>an..17</WCOFormat>
+                                                <WCODescription>Location postcode</WCODescription>
+                                                <EUCDMcode>34 08 050 021</EUCDMcode>
+                                            </xs:documentation>
+                                            <xs:documentation xml:lang="EN">
+                                                <WCOFormat>an..17</WCOFormat>
+                                                <WCODescription>Location postcode</WCODescription>
+                                                <EUCDMcode>34 08 060 021</EUCDMcode>
+                                            </xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="City" type="ds:AddressCityNameTextType" minOccurs="0">
                                         <xs:annotation>
                                             <xs:documentation xml:lang="EN">
                                                 <WCOFormat>an..35</WCOFormat>
                                                 <WCODescription>Location city</WCODescription>
+                                                <EUCDMcode>34 08 050 022</EUCDMcode>
+                                            </xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="HouseNumber" type="eds:LocationIdentificationType" minOccurs="0">
+                                        <xs:annotation>
+                                            <xs:documentation xml:lang="EN">
+                                                <WCOFormat>an..35</WCOFormat>
+                                                <WCODescription>Goods location house number</WCODescription>
+                                                <EUCDMcode>34 08 050 025</EUCDMcode>
+                                            </xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="Name" type="eds:PersonContactDetailsNameTextType" minOccurs="0">
+                                        <xs:annotation>
+                                            <xs:documentation xml:lang="EN">
+                                                <WCOFormat>an..70</WCOFormat>
+                                                <WCODescription>Contact details person name</WCODescription>
+                                                <EUCDMcode>34 08 070 016</EUCDMcode>
+                                            </xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="TelephoneNumber" type="eds:TelephoneNumberTextType" minOccurs="0">
+                                        <xs:annotation>
+                                            <xs:documentation xml:lang="EN">
+                                                <WCOFormat>an..50</WCOFormat>
+                                                <WCODescription>Contact details person telephone</WCODescription>
+                                                <EUCDMcode>34 08 070 234</EUCDMcode>
+                                            </xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="EmailAddress" type="eds:EmailTextType" minOccurs="0">
+                                        <xs:annotation>
+                                            <xs:documentation xml:lang="EN">
+                                                <WCOFormat>an..256</WCOFormat>
+                                                <WCODescription>Contact details person email</WCODescription>
+                                                <EUCDMcode>34 08 070 076</EUCDMcode>
                                             </xs:documentation>
                                         </xs:annotation>
                                     </xs:element>
@@ -431,39 +584,55 @@
                             <xs:annotation>
                                 <xs:documentation xml:lang="EN">
                                     <WCODescription>Trader commodity codes</WCODescription>
+                                    <EUCDMcode>35 01 010 000</EUCDMcode>
                                 </xs:documentation>
                             </xs:annotation>
                             <xs:complexType>
                                 <xs:sequence>
-                                    <xs:element name="NomenclatureCode" type="eds:NomenclatureCodeType" maxOccurs="1">
+                                    <xs:element name="NomenclatureCode" type="eds:NomenclatureCodeType">
                                         <xs:annotation>
                                             <xs:documentation xml:lang="EN">
                                                 <WCOFormat>an..8</WCOFormat>
-                                                <WCODescription>First subdivision combined nomenclature code</WCODescription>
+                                                <WCODescription>
+                                                    First subdivision combined
+                                                    nomenclature code
+                                                </WCODescription>
+                                                <EUCDMcode>35 01 010 056</EUCDMcode>
+                                            </xs:documentation>
+                                            <xs:documentation xml:lang="EN">
+                                                <WCOFormat>an..8</WCOFormat>
+                                                <WCODescription>
+                                                    First subdivision combined
+                                                    nomenclature code
+                                                </WCODescription>
+                                                <EUCDMcode>35 01 010 057</EUCDMcode>
                                             </xs:documentation>
                                         </xs:annotation>
                                     </xs:element>
-                                    <xs:element name="TaricSubheading" type="eds:TaricSubheadingTextType" maxOccurs="1">
+                                    <xs:element name="TaricSubheading" type="eds:TaricSubheadingTextType">
                                         <xs:annotation>
                                             <xs:documentation xml:lang="EN">
                                                 <WCOFormat>an2</WCOFormat>
                                                 <WCODescription>Second subdivision subheading</WCODescription>
+                                                <EUCDMcode>35 01 010 058</EUCDMcode>
                                             </xs:documentation>
                                         </xs:annotation>
                                     </xs:element>
-                                    <xs:element name="TaricAdditionalCode" type="eds:TaricAdditionalCodeType" maxOccurs="1">
+                                    <xs:element name="TaricAdditionalCode" type="eds:TaricAdditionalCodeType">
                                         <xs:annotation>
                                             <xs:documentation xml:lang="EN">
                                                 <WCOFormat>an4</WCOFormat>
                                                 <WCODescription>Third subdivision taric additional codes</WCODescription>
+                                                <EUCDMcode>35 01 011 047</EUCDMcode>
                                             </xs:documentation>
                                         </xs:annotation>
                                     </xs:element>
-                                    <xs:element name="NationalAdditionalCode" type="eds:NationalAdditionalCodeType" maxOccurs="1">
+                                    <xs:element name="NationalAdditionalCode" type="eds:NationalAdditionalCodeType">
                                         <xs:annotation>
                                             <xs:documentation xml:lang="EN">
                                                 <WCOFormat>an..4</WCOFormat>
                                                 <WCODescription>Fourth subdivision national additional code</WCODescription>
+                                                <EUCDMcode>35 01 011 060</EUCDMcode>
                                             </xs:documentation>
                                         </xs:annotation>
                                     </xs:element>
@@ -477,6 +646,7 @@
                                 </xs:documentation>
                                 <xs:documentation>
                                     <WCODescription>Description of goods</WCODescription>
+                                    <EUCDMcode>35 01 020 009</EUCDMcode>
                                 </xs:documentation>
                             </xs:annotation>
                         </xs:element>
@@ -484,23 +654,26 @@
                             <xs:annotation>
                                 <xs:documentation xml:lang="EN">
                                     <WCODescription>Trader goods quantities</WCODescription>
+                                    <EUCDMcode>35 01 030 000</EUCDMcode>
                                 </xs:documentation>
                             </xs:annotation>
                             <xs:complexType>
                                 <xs:sequence>
-                                    <xs:element name="Measurement" type="eds:GoodsQuantityMeasurementType" maxOccurs="1">
+                                    <xs:element name="Measurement" type="eds:GoodsQuantityMeasurementType">
                                         <xs:annotation>
                                             <xs:documentation xml:lang="EN">
                                                 <WCOFormat>an..4</WCOFormat>
                                                 <WCODescription>Goods quantities measurement</WCODescription>
+                                                <EUCDMcode>35 01 031 249</EUCDMcode>
                                             </xs:documentation>
                                         </xs:annotation>
                                     </xs:element>
-                                    <xs:element name="Quantity" type="eds:GoodsQuantityTypeType" maxOccurs="1">
+                                    <xs:element name="Quantity" type="eds:GoodsQuantityTypeType">
                                         <xs:annotation>
                                             <xs:documentation xml:lang="EN">
                                                 <WCOFormat>n..16,6</WCOFormat>
                                                 <WCODescription>Goods quantities</WCODescription>
+                                                <EUCDMcode>35 01 031 006</EUCDMcode>
                                             </xs:documentation>
                                         </xs:annotation>
                                     </xs:element>
@@ -512,6 +685,7 @@
                                 <xs:documentation xml:lang="EN">
                                     <WCOFormat>an..512</WCOFormat>
                                     <WCODescription>Additional information</WCODescription>
+                                    <EUCDMcode>38 05 000 009</EUCDMcode>
                                 </xs:documentation>
                             </xs:annotation>
                         </xs:element>
@@ -519,9 +693,8 @@
                             <xs:annotation>
                                 <xs:documentation xml:lang="EN">
                                     <WCOFormat>an..35</WCOFormat>
-                                </xs:documentation>
-                                <xs:documentation>
                                     <WCODescription>Title of recovery</WCODescription>
+                                    <EUCDMcode>48 01 000 000</EUCDMcode>
                                 </xs:documentation>
                             </xs:annotation>
                         </xs:element>
@@ -529,9 +702,8 @@
                             <xs:annotation>
                                 <xs:documentation xml:lang="EN">
                                     <WCOFormat>an8</WCOFormat>
-                                </xs:documentation>
-                                <xs:documentation>
                                     <WCODescription>Customs office where the customs debt was notified</WCODescription>
+                                    <EUCDMcode>48 02 000 000</EUCDMcode>
                                 </xs:documentation>
                             </xs:annotation>
                         </xs:element>
@@ -539,9 +711,11 @@
                             <xs:annotation>
                                 <xs:documentation xml:lang="EN">
                                     <WCOFormat>an8</WCOFormat>
-                                </xs:documentation>
-                                <xs:documentation>
-                                    <WCODescription>Customs office responsible for the place where the goods are located</WCODescription>
+                                    <WCODescription>
+                                        Customs office responsible for the place
+                                        where the goods are located
+                                    </WCODescription>
+                                    <EUCDMcode>48 03 000 000</EUCDMcode>
                                 </xs:documentation>
                             </xs:annotation>
                         </xs:element>
@@ -549,43 +723,82 @@
                             <xs:annotation>
                                 <xs:documentation xml:lang="EN">
                                     <WCOFormat>an..512</WCOFormat>
-                                </xs:documentation>
-                                <xs:documentation>
-                                    <WCODescription>Comments of the customs office responsible for the place where the goods are located</WCODescription>
+                                    <WCODescription>
+                                        Comments of the customs office responsible
+                                        for the place where the goods are located
+                                    </WCODescription>
+                                    <EUCDMcode>48 04 000 009</EUCDMcode>
                                 </xs:documentation>
                             </xs:annotation>
                         </xs:element>
                         <xs:element name="CustomsProcedure" minOccurs="0">
                             <xs:annotation>
                                 <xs:documentation xml:lang="EN">
-                                    <WCODescription>Customs procedure (request for prior completion of formalities)</WCODescription>
+                                    <WCODescription>
+                                        Customs procedure (request for
+                                        prior completion of formalities)
+                                    </WCODescription>
+                                    <EUCDMcode>48 05 000 000</EUCDMcode>
                                 </xs:documentation>
                             </xs:annotation>
                             <xs:complexType>
                                 <xs:sequence>
-                                    <xs:element name="Code" type="eds:CustomsProcedureCodeType" maxOccurs="1">
+                                    <xs:element name="Code" type="eds:CustomsProcedureCodeType">
                                         <xs:annotation>
                                             <xs:documentation xml:lang="EN">
                                                 <WCOFormat>an2</WCOFormat>
                                                 <WCODescription>Customs procedure code</WCODescription>
+                                                <EUCDMcode>48 05 000 257</EUCDMcode>
                                             </xs:documentation>
                                         </xs:annotation>
                                     </xs:element>
-                                    <xs:element name="Checked" type="eds:CheckboxIndicatorType" maxOccurs="1">
+                                    <xs:element name="Checked" type="eds:CheckboxIndicatorType">
                                         <xs:annotation>
                                             <xs:documentation xml:lang="EN">
                                                 <WCOFormat>boolean</WCOFormat>
                                                 <WCODescription>Customs procedure checkbox</WCODescription>
+                                                <EUCDMcode>48 05 000 213</EUCDMcode>
                                             </xs:documentation>
                                         </xs:annotation>
                                     </xs:element>
-                                    <xs:element name="DecisionReferenceNumber" type="eds:DecisionReferenceNumberType" maxOccurs="1">
+                                    <xs:element name="DecisionReferenceNumber" type="eds:DecisionReferenceNumberType">
                                         <xs:annotation>
                                             <xs:documentation xml:lang="EN">
-                                                <WCOFormat>an2</WCOFormat>
                                                 <WCODescription>Customs procedure code</WCODescription>
+                                                <EUCDMcode>48 05 010 000</EUCDMcode>
                                             </xs:documentation>
                                         </xs:annotation>
+                                        <xs:complexType>
+                                            <xs:sequence>
+                                                <xs:element name="CountryCode" type="ds:AddressCountryCodeType">
+                                                    <xs:annotation>
+                                                        <xs:documentation xml:lang="EN">
+                                                            <WCOFormat>an..2</WCOFormat>
+                                                            <WCODescription>Decision reference number country code</WCODescription>
+                                                            <EUCDMcode>48 05 010 020</EUCDMcode>
+                                                        </xs:documentation>
+                                                    </xs:annotation>
+                                                </xs:element>
+                                                <xs:element name="ReferenceNumber" type="eds:DecisionReferenceNumberTextType">
+                                                    <xs:annotation>
+                                                        <xs:documentation xml:lang="EN">
+                                                            <WCOFormat>an..29</WCOFormat>
+                                                            <WCODescription>Decision reference number</WCODescription>
+                                                            <EUCDMcode>48 05 010 001</EUCDMcode>
+                                                        </xs:documentation>
+                                                    </xs:annotation>
+                                                </xs:element>
+                                                <xs:element name="CodeType" type="eds:DecisionReferenceNumberCodeType">
+                                                    <xs:annotation>
+                                                        <xs:documentation xml:lang="EN">
+                                                            <WCOFormat>an..4</WCOFormat>
+                                                            <WCODescription>Decision reference number code</WCODescription>
+                                                            <EUCDMcode>48 05 010 205</EUCDMcode>
+                                                        </xs:documentation>
+                                                    </xs:annotation>
+                                                </xs:element>
+                                            </xs:sequence>
+                                        </xs:complexType>
                                     </xs:element>
                                 </xs:sequence>
                             </xs:complexType>
@@ -594,23 +807,26 @@
                             <xs:annotation>
                                 <xs:documentation xml:lang="EN">
                                     <WCODescription>Customs value</WCODescription>
+                                    <EUCDMcode>48 06 000 000</EUCDMcode>
                                 </xs:documentation>
                             </xs:annotation>
                             <xs:complexType>
                                 <xs:sequence>
-                                    <xs:element name="Currency" type="eds:CurrencyType" maxOccurs="1">
+                                    <xs:element name="Currency" type="eds:CurrencyType">
                                         <xs:annotation>
                                             <xs:documentation xml:lang="EN">
                                                 <WCOFormat>a3</WCOFormat>
                                                 <WCODescription>Currency type</WCODescription>
+                                                <EUCDMcode>48 06 000 012</EUCDMcode>
                                             </xs:documentation>
                                         </xs:annotation>
                                     </xs:element>
-                                    <xs:element name="Amount" type="eds:AmountTypeType" maxOccurs="1">
+                                    <xs:element name="Amount" type="eds:AmountTypeType">
                                         <xs:annotation>
                                             <xs:documentation xml:lang="EN">
                                                 <WCOFormat>n..16,6</WCOFormat>
                                                 <WCODescription>Amount type</WCODescription>
+                                                <EUCDMcode>48 06 000 014</EUCDMcode>
                                             </xs:documentation>
                                         </xs:annotation>
                                     </xs:element>
@@ -621,23 +837,26 @@
                             <xs:annotation>
                                 <xs:documentation xml:lang="EN">
                                     <WCODescription>Amount of import or export duty to be repaid or remitted of</WCODescription>
+                                    <EUCDMcode>48 07 000 000</EUCDMcode>
                                 </xs:documentation>
                             </xs:annotation>
                             <xs:complexType>
                                 <xs:sequence>
-                                    <xs:element name="Currency" type="eds:CurrencyType" maxOccurs="1">
+                                    <xs:element name="Currency" type="eds:CurrencyType">
                                         <xs:annotation>
                                             <xs:documentation xml:lang="EN">
                                                 <WCOFormat>a3</WCOFormat>
                                                 <WCODescription>Currency type</WCODescription>
+                                                <EUCDMcode>48 07 000 012</EUCDMcode>
                                             </xs:documentation>
                                         </xs:annotation>
                                     </xs:element>
-                                    <xs:element name="Amount" type="eds:AmountTypeType" maxOccurs="1">
+                                    <xs:element name="Amount" type="eds:AmountTypeType">
                                         <xs:annotation>
                                             <xs:documentation xml:lang="EN">
                                                 <WCOFormat>n..16,6</WCOFormat>
                                                 <WCODescription>Amount type</WCODescription>
+                                                <EUCDMcode>48 07 000 014</EUCDMcode>
                                             </xs:documentation>
                                         </xs:annotation>
                                     </xs:element>
@@ -648,31 +867,26 @@
                             <xs:annotation>
                                 <xs:documentation xml:lang="EN">
                                     <WCODescription>Type of import or export duty</WCODescription>
+                                    <EUCDMcode>48 08 000 000</EUCDMcode>
                                 </xs:documentation>
                             </xs:annotation>
                             <xs:complexType>
                                 <xs:sequence>
-                                    <xs:element name="UnionCode" type="eds:UnionCodeType" minOccurs="0" maxOccurs="1">
+                                    <xs:element name="UnionCode" type="eds:UnionCodeType" minOccurs="0">
                                         <xs:annotation>
                                             <xs:documentation xml:lang="EN">
                                                 <WCOFormat>a1+n2</WCOFormat>
                                                 <WCODescription>Union code type</WCODescription>
+                                                <EUCDMcode>48 08 000 302</EUCDMcode>
                                             </xs:documentation>
                                         </xs:annotation>
                                     </xs:element>
-                                    <xs:element name="NationalCode" type="eds:NationalCodeType" minOccurs="0" maxOccurs="1">
+                                    <xs:element name="NationalCode" type="eds:NationalCodeType" minOccurs="0">
                                         <xs:annotation>
                                             <xs:documentation xml:lang="EN">
                                                 <WCOFormat>n1+an2</WCOFormat>
                                                 <WCODescription>National code type</WCODescription>
-                                            </xs:documentation>
-                                        </xs:annotation>
-                                    </xs:element>
-                                    <xs:element name="Amount" type="eds:AmountTypeType" minOccurs="0" maxOccurs="1">
-                                        <xs:annotation>
-                                            <xs:documentation xml:lang="EN">
-                                                <WCOFormat>n..16,6</WCOFormat>
-                                                <WCODescription>Amount type</WCODescription>
+                                                <EUCDMcode>48 08 000 303</EUCDMcode>
                                             </xs:documentation>
                                         </xs:annotation>
                                     </xs:element>
@@ -683,9 +897,8 @@
                             <xs:annotation>
                                 <xs:documentation xml:lang="EN">
                                     <WCOFormat>a1</WCOFormat>
-                                </xs:documentation>
-                                <xs:documentation>
                                     <WCODescription>Legal basis</WCODescription>
+                                    <EUCDMcode>48 09 000 304</EUCDMcode>
                                 </xs:documentation>
                             </xs:annotation>
                         </xs:element>
@@ -693,9 +906,8 @@
                             <xs:annotation>
                                 <xs:documentation xml:lang="EN">
                                     <WCOFormat>an..512</WCOFormat>
-                                </xs:documentation>
-                                <xs:documentation>
                                     <WCODescription>Use or destination of goods</WCODescription>
+                                    <EUCDMcode>48 10 000 009</EUCDMcode>
                                 </xs:documentation>
                             </xs:annotation>
                         </xs:element>
@@ -703,9 +915,8 @@
                             <xs:annotation>
                                 <xs:documentation xml:lang="EN">
                                     <WCOFormat>an..512</WCOFormat>
-                                </xs:documentation>
-                                <xs:documentation>
                                     <WCODescription>Description of the grounds for repayment or remission A</WCODescription>
+                                    <EUCDMcode>48 13 000 009</EUCDMcode>
                                 </xs:documentation>
                             </xs:annotation>
                         </xs:element>
@@ -713,16 +924,14 @@
                             <xs:annotation>
                                 <xs:documentation xml:lang="EN">
                                     <WCOFormat>an..512</WCOFormat>
-                                </xs:documentation>
-                                <xs:documentation>
                                     <WCODescription>Bank and account details</WCODescription>
+                                    <EUCDMcode>48 08 000 014</EUCDMcode>
                                 </xs:documentation>
                             </xs:annotation>
                         </xs:element>
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
-
         </xs:sequence>
     </xs:complexType>
 </xs:schema>
