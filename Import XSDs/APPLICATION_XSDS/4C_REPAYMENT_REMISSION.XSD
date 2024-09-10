@@ -750,7 +750,7 @@
             <xs:element name="DecisionReferenceNumber" type="DecisionReferenceNumberType" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation xml:lang="EN">
-                        <WCODescription>Customs procedure code</WCODescription>
+                        <WCODescription>Decision reference number</WCODescription>
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
@@ -1211,7 +1211,7 @@
         <xs:simpleContent>
             <xs:restriction base="udt:DateTimeType">
                 <xs:length value="8"/>
-                <xs:pattern value="([0-9])"/>
+                <xs:pattern value="([0-9])*"/>
             </xs:restriction>
         </xs:simpleContent>
     </xs:complexType>
@@ -1224,8 +1224,8 @@
         </xs:annotation>
         <xs:simpleContent>
             <xs:restriction base="ds:AddressCountryCodeType">
-                <xs:length value="8"/>
-                <xs:pattern value="([0-9])"/>
+                <xs:length value="2"/>
+                <xs:pattern value="([a-zA-Z])*"/>
             </xs:restriction>
         </xs:simpleContent>
     </xs:complexType>
@@ -1484,12 +1484,12 @@
     <xs:complexType name="DetailsOfPlannedActivitiesTextType">
         <xs:annotation>
             <xs:documentation>
-                <WCOFormat>an8</WCOFormat>
+                <WCOFormat>an..2560</WCOFormat>
             </xs:documentation>
         </xs:annotation>
         <xs:simpleContent>
             <xs:restriction base="udt:TextType">
-                <xs:length value="512"/>
+                <xs:length value="2560"/>
                 <xs:pattern value=".*[^\s].*"/>
             </xs:restriction>
         </xs:simpleContent>
