@@ -6,7 +6,7 @@
            xmlns:extensions="urn:eds:datamodel:EDS:EDS_EXTENSIONS:1"
            elementFormDefault="qualified" version="2.2">
     <xs:import namespace="urn:wco:datamodel:WCO:Declaration_DS:DMS:2"
-               schemaLocation="../DMS_DS/DMS_DS_v1.0.xsd"/>
+               schemaLocation="../DMS_DS/DMS_DS_V1.0.xsd"/>
     <xs:import namespace="urn:wco:datamodel:WCO:WCO_DEC_EDS_AUTHORISATION:1"
                schemaLocation="../DMS_DS/WCO_DEC_EDS_AUTHORISATION.xsd"/>
     <xs:import namespace="urn:wco:datamodel:WCO:WCO_DEC_EDS_METADATA:1"
@@ -1088,7 +1088,7 @@
                             </xs:complexType>
                         </xs:element>
 
-                        <xs:element name="GoodsMeasure">
+                        <xs:element name="GoodsMeasure" minOccurs="0">
                             <xs:annotation>
                                 <xs:documentation>
                                     <EUCDMname>Gross mass</EUCDMname>
@@ -1425,6 +1425,42 @@
                                                                         </xs:element>
                                                                     </xs:sequence>
                                                                 </xs:complexType>
+                                                            </xs:element>
+                                                        </xs:sequence>
+                                                    </xs:complexType>
+                                                </xs:element>
+                                                <xs:element name="GoodsMeasure" minOccurs="0">
+                                                    <xs:annotation>
+                                                        <xs:documentation>
+                                                            <EUCDMname>Gross mass</EUCDMname>
+                                                            <type>EUCDM 6.1</type>
+                                                            <code>18 04 000 000</code>
+                                                        </xs:documentation>
+                                                        <xs:documentation>
+                                                            <EUCDMname>Supplementary units</EUCDMname>
+                                                            <type>EUCDM 6.1</type>
+                                                            <code>18 02 000 000</code>
+                                                        </xs:documentation>
+                                                    </xs:annotation>
+                                                    <xs:complexType>
+                                                        <xs:sequence>
+                                                            <xs:element name="GrossMassMeasure" type="ds:GoodsMeasureGrossMassMeasureType">
+                                                                <xs:annotation>
+                                                                    <xs:documentation>
+                                                                        <EUCDMname>Gross mass</EUCDMname>
+                                                                        <type>EUCDM 6.1</type>
+                                                                        <code>18 04 001 000</code>
+                                                                    </xs:documentation>
+                                                                </xs:annotation>
+                                                            </xs:element>
+                                                            <xs:element name="TariffQuantity" type="ds:GoodsMeasureTariffQuantityType">
+                                                                <xs:annotation>
+                                                                    <xs:documentation>
+                                                                        <EUCDMname>Supplementary units</EUCDMname>
+                                                                        <type>EUCDM 6.1</type>
+                                                                        <code>18 02 001 000</code>
+                                                                    </xs:documentation>
+                                                                </xs:annotation>
                                                             </xs:element>
                                                         </xs:sequence>
                                                     </xs:complexType>
@@ -1781,7 +1817,7 @@
                                                     </xs:annotation>
                                                 </xs:element>
                                                 <xs:element name="PreviousCode"
-                                                            type="ds:GovernmentProcedurePreviousCodeType" >
+                                                            type="ds:GovernmentProcedurePreviousCodeType" minOccurs="0">
                                                     <xs:annotation>
                                                         <xs:documentation>
                                                             <EUCDMname>Previous procedure</EUCDMname>

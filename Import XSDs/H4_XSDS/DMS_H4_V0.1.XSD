@@ -6,7 +6,7 @@
            xmlns:extensions="urn:eds:datamodel:EDS:EDS_EXTENSIONS:1"
            elementFormDefault="qualified" version="2.2">
     <xs:import namespace="urn:wco:datamodel:WCO:Declaration_DS:DMS:2"
-               schemaLocation="../DMS_DS/DMS_DS_v1.0.xsd"/>
+               schemaLocation="../DMS_DS/DMS_DS_V1.0.xsd"/>
     <xs:import namespace="urn:wco:datamodel:WCO:WCO_DEC_EDS_AUTHORISATION:1"
                schemaLocation="../DMS_DS/WCO_DEC_EDS_AUTHORISATION.xsd"/>
     <xs:import namespace="urn:wco:datamodel:WCO:WCO_DEC_EDS_METADATA:1"
@@ -55,7 +55,7 @@
                 </xs:annotation>
             </xs:element>
             <xs:element name="DeclarationOfficeID" type="ds:DeclarationDeclarationOfficeIDType"/>
-            <xs:element name="InvoiceAmount" type="ds:DeclarationInvoiceAmountType">
+            <xs:element name="InvoiceAmount" type="ds:DeclarationInvoiceAmountType" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>
                         <EUCDMname>Total amount invoiced</EUCDMname>
@@ -1621,54 +1621,6 @@
                                             </xs:sequence>
                                         </xs:complexType>
                                     </xs:element>
-                                    <xs:element name="CustomsValuation" minOccurs="0" maxOccurs="99">
-                                        <xs:annotation>
-                                            <xs:documentation>
-                                                <EUCDMname>Additions and deductions</EUCDMname>
-                                                <type>EUCDM 6.1</type>
-                                                <code>14 04 000 000</code>
-                                            </xs:documentation>
-                                        </xs:annotation>
-                                        <xs:complexType>
-                                            <xs:sequence>
-                                                <xs:element name="ChargeDeduction" maxOccurs="99">
-                                                    <xs:annotation>
-                                                        <xs:documentation>
-                                                            <EUCDMname>Additions and deductions</EUCDMname>
-                                                            <type>EUCDM 6.1</type>
-                                                            <code>14 04 000 000</code>
-                                                        </xs:documentation>
-                                                    </xs:annotation>
-                                                    <xs:complexType>
-                                                        <xs:sequence>
-                                                            <xs:element name="SequenceNumeric"
-                                                                        type="ds:CustomsValuationChargeDeductionSequenceNumericType"/>
-                                                            <xs:element name="ChargesTypeCode"
-                                                                        type="ds:ChargeDeductionChargesTypeCodeType">
-                                                                <xs:annotation>
-                                                                    <xs:documentation>
-                                                                        <EUCDMname>Code</EUCDMname>
-                                                                        <type>EUCDM 6.1</type>
-                                                                        <code>14 04 008 000</code>
-                                                                    </xs:documentation>
-                                                                </xs:annotation>
-                                                            </xs:element>
-                                                            <xs:element name="OtherChargeDeductionAmount"
-                                                                        type="ds:ChargeDeductionOtherChargeDeductionAmountType">
-                                                                <xs:annotation>
-                                                                    <xs:documentation>
-                                                                        <EUCDMname>Amount</EUCDMname>
-                                                                        <type>EUCDM 6.1</type>
-                                                                        <code>14 04 014 000</code>
-                                                                    </xs:documentation>
-                                                                </xs:annotation>
-                                                            </xs:element>
-                                                        </xs:sequence>
-                                                    </xs:complexType>
-                                                </xs:element>
-                                            </xs:sequence>
-                                        </xs:complexType>
-                                    </xs:element>
                                     <xs:element name="CustomsValuation">
                                         <xs:annotation>
                                             <xs:documentation>
@@ -1692,41 +1644,6 @@
                                                             <code>14 10 001 000</code>
                                                         </xs:documentation>
                                                     </xs:annotation>
-                                                </xs:element>
-                                                <xs:element name="ChargeDeduction" minOccurs="0" maxOccurs="99">
-                                                    <xs:annotation>
-                                                        <xs:documentation>
-                                                            <EUCDMname>Additions and deductions</EUCDMname>
-                                                            <type>EUCDM 6.1</type>
-                                                            <code>14 04 000 000</code>
-                                                        </xs:documentation>
-                                                    </xs:annotation>
-                                                    <xs:complexType>
-                                                        <xs:sequence>
-                                                            <xs:element name="SequenceNumeric"
-                                                                        type="ds:CustomsValuationChargeDeductionSequenceNumericType"/>
-                                                            <xs:element name="ChargesTypeCode"
-                                                                        type="ds:ChargeDeductionChargesTypeCodeType">
-                                                                <xs:annotation>
-                                                                    <xs:documentation>
-                                                                        <EUCDMname>Code</EUCDMname>
-                                                                        <type>EUCDM 6.1</type>
-                                                                        <code>14 04 008 000</code>
-                                                                    </xs:documentation>
-                                                                </xs:annotation>
-                                                            </xs:element>
-                                                            <xs:element name="OtherChargeDeductionAmount"
-                                                                        type="ds:ChargeDeductionOtherChargeDeductionAmountType">
-                                                                <xs:annotation>
-                                                                    <xs:documentation>
-                                                                        <EUCDMname>Amount</EUCDMname>
-                                                                        <type>EUCDM 6.1</type>
-                                                                        <code>14 04 014 000</code>
-                                                                    </xs:documentation>
-                                                                </xs:annotation>
-                                                            </xs:element>
-                                                        </xs:sequence>
-                                                    </xs:complexType>
                                                 </xs:element>
                                             </xs:sequence>
                                         </xs:complexType>
@@ -1886,7 +1803,7 @@
                                                     </xs:annotation>
                                                 </xs:element>
                                                 <xs:element name="PreviousCode"
-                                                            type="ds:GovernmentProcedurePreviousCodeType" >
+                                                            type="ds:GovernmentProcedurePreviousCodeType" minOccurs="0">
                                                     <xs:annotation>
                                                         <xs:documentation>
                                                             <EUCDMname>Previous procedure</EUCDMname>
