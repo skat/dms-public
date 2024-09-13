@@ -1,3 +1,9 @@
+### 13-09-2024
+* Added Import XML Guide
+
+### 02-09-2024
+* Added XSDs for H1, H3, H4, H5, H6, and I2 EIDR
+
 ### 26-08-2024
 * Updated the release notes for version 4.2.9
 
