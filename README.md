@@ -16,7 +16,10 @@ DMS-Public contains many guides designed to show you how to start using DMS.
    - <b>DMS Vejledning til roller og rettigheder (Danish)</b>: Guide for assigning roles & rights to users for access to DMS.
    - <b>Customer Portal Guide</b>: A guide for how to create a support case using the Customer Portal support service.
 
+  4. The folder [XML Guides](XML%20Guides) contains guides for how to submit declarations as XML files, and are divided by domain: Import, Export, Exit, and Transit. The XML Schema Definitions (XSDs) can be found in the corresponding folders for each domain type [Export XSDs](Export%20XSDs), [Import XSDs](Import%20XSDs), and [Transit XSDs](Transit%20XSDs). There is also a folder containing XSDs for the notifications that are sent as responses from DMS: [Notification XSDs](Notification%20XSDs). The XML Guides reference data from Codelists, which can be found in the folder [Codelists](Codelists).
 
+
+  5. Our documentation is continuously updated to reflect changes made in DMS, or with other improvements. In order to stay up to date on changes, refer to the [Changelog](changelog.md) where all changes made to the DMS-public repository are listed. Updates to the TFE environment of DMS are also listed in more detail in the [Release Notes](Release%20Notes)
 
 
 
