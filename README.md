@@ -1,4 +1,4 @@
-# Welcome to the DMS-public repository, please read below for information about the files that can be found here.
+# Welcome to DMS-public, please read below for important info
 
 DMS-Public contains many guides designed to show you how to start using DMS.
 
