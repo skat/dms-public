@@ -3,6 +3,7 @@
 * Added miniguides for software vendors, in-house developers, and economic operators
 * Updated Import XML Guide to v1.2
 * Updated H1-6 XSDs
+* Added Import Codelist
 
 ### 26-08-2024
 * Updated the release notes for version 4.2.9
