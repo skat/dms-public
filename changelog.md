@@ -1,3 +1,9 @@
+### 07-10-2024
+* Updated Github folder structure
+* Added miniguides for software vendors, in-house developers, and economic operators
+* Updated Import XML Guide to v1.2
+* Updated H1-6 XSDs
+
 ### 26-08-2024
 * Updated the release notes for version 4.2.9
 
