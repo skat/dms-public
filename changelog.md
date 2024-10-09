@@ -1,3 +1,12 @@
+### 09-10-2024
+* Minor corrections to Import XML Guide
+* Updated Onboarding Guide to v2.1
+* Updated Connectivity Guide to v1.15
+* Split the DMS System guide into three guides
+* Added DMS General System Guide v2.1
+* Added DMS Import/Export System Guide v2.1
+* Added DMS Transit System Guide v2.1
+
 ### 07-10-2024
 * Updated Github folder structure
 * Added miniguides for software vendors, in-house developers, and economic operators
