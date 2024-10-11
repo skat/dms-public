@@ -1,3 +1,6 @@
+### 11-10-2024
+* AS4 Gateway - multiple documents in a request created and located in Onboarding Guides
+
 ### 09-10-2024
 * Minor corrections to Import XML Guide
 * Updated Onboarding Guide to v2.1
