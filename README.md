@@ -10,11 +10,13 @@ DMS-Public contains many guides designed to show you how to start using DMS.
 
   3. The folder [Onboarding Documents/Onboarding Guides](Onboarding%20Documents/Onboarding%20Guides) contains detailed guide documents that provide in-depth information about the technical aspects of using the system. If you have questions that have not been answered by looking in the Quick Guides from steps 1 and 2, try looking in one of these documents:
    - <b>DMS Onboarding Guide (Danish)</b>: A more detailed step-by-step guide for the entire onboarding process. 
-   - <b>DMS System Guide</b>: A guide containing more technical details about how the system works, mainly intended for developers.
+   - <b>DMS General/ImportExport/Transit System Guide</b>: three separate guides containing more technical details about how the system works, mainly intended for developers. The information is split according to general info, export & import related info, and transit related info.
+   - <b>DMS Notification Guide</b>: A detailed guide on the kinds of notifications DMS sends to the user.
    - <b>DMS Connectivity Guide</b>: A detailed guide on establishing connectivity to the AS4 gateway.
    - <b>Certificate Miniguide</b>: Guide on how to register the certificate used to connect to the AS4 gateway.
    - <b>DMS Vejledning til roller og rettigheder (Danish)</b>: Guide for assigning roles & rights to users for access to DMS.
    - <b>Customer Portal Guide</b>: A guide for how to create a support case using the Customer Portal support service.
+   - <b>AS4 Gateway - multiple documents in a request</b>: A guide for how to send bulk declarations through the AS4 gateway.
 
   4. The folder [XML Guides](XML%20Guides) contains guides for how to submit declarations as XML files, and are divided by domain: Import, Export, Exit, and Transit. The XML Schema Definitions (XSDs) can be found in the corresponding folders for each domain type [Export XSDs](Export%20XSDs), [Import XSDs](Import%20XSDs), and [Transit XSDs](Transit%20XSDs). There is also a folder containing XSDs for the notifications that are sent as responses from DMS: [Notification XSDs](Notification%20XSDs). The XML Guides reference data from Codelists, which can be found in the folder [Codelists](Codelists).
 
