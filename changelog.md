@@ -1,3 +1,8 @@
+### 25-10-2024
+* Added H2 XSDs
+* Added test cases for import - H1, H3, H5, H7, and I2 test cases
+* Updated Import XML Guide
+
 ### 11-10-2024
 * AS4 Gateway - multiple documents in a request created and located in Onboarding Guides
 
