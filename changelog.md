@@ -1,3 +1,6 @@
+### 07-11-2024
+* Updated Release notes to version 1.18
+
 ### 25-10-2024
 * Added H2 XSDs
 * Added test cases for import - H1, H3, H5, H7, and I2 test cases
