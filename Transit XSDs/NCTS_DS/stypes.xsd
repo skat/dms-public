@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://ncts.dgtaxud.ec" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" targetNamespace="http://ncts.dgtaxud.ec" elementFormDefault="unqualified" attributeFormDefault="unqualified" version="51.8.2" vc:minVersion="1.1">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://ncts.dgtaxud.ec" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" targetNamespace="http://ncts.dgtaxud.ec" elementFormDefault="unqualified" attributeFormDefault="unqualified" version="51.8.6" vc:minVersion="1.1">
   <!--================================================================================-->
   <!--===== Simple Types                                                                    -->
-  <!--===== DDNTA 5.15.1                                                                    -->
+  <!--===== DDNTA 5.15.2                                                                    -->
   <!--===== NCTS P5 Phase Definition                                                        -->
-  <!--===== XSD version 51.8.2                                                              -->
-  <!--===== Aligned with RFC-List version DDNTA RFC-List.37                                 -->
+  <!--===== XSD version 51.8.6                                                              -->
+  <!--===== Aligned with RFC-List version DDNTA RFC-List.39                                 -->
   <!--================================================================================-->
   <!--================================================================================-->
   <!--===== Data Item Types                                                                 -->
@@ -669,9 +669,7 @@
         <usedBy>Used by 13/91 messages: CC013C, CC015C, CC017C, CC029C, CC043C, CD001C, CD003C, CD012C, CD038C, CD050C, CD115C, CD160C, CD165C</usedBy>
       </xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:token">
-      <xs:pattern value="[A-Za-z]{2}" />
-    </xs:restriction>
+    <xs:restriction base="CountryCodeType" />
   </xs:simpleType>
   <!--================================================================================-->
   <!--===== CountryOfDispatch                                                               -->
@@ -679,10 +677,10 @@
   <xs:simpleType name="CountryOfDispatchContentType">
     <xs:annotation>
       <xs:documentation>
-        <usedBy>Used by 8/91 messages: CC013C, CC015C, CC017C, CC029C, CD001C, CD003C, CD012C, CD038C</usedBy>
+        <usedBy>Used by 12/91 messages: CC013C, CC015C, CC017C, CC029C, CD001C, CD003C, CD012C, CD038C, CD050C, CD115C, CD160C, CD165C</usedBy>
       </xs:documentation>
     </xs:annotation>
-    <xs:restriction base="Alpha_2" />
+    <xs:restriction base="CountryCodeType" />
   </xs:simpleType>
   <!--================================================================================-->
   <!--===== CoveredAmount                                                                   -->
@@ -1139,23 +1137,13 @@
   <!--================================================================================-->
   <!--===== GoodsItemNumber                                                                 -->
   <!--================================================================================-->
-  <xs:simpleType name="GoodsItemNumberContentType01">
+  <xs:simpleType name="GoodsItemNumberContentType">
     <xs:annotation>
       <xs:documentation>
-        <usedBy>Used by 13/91 messages: CC013C, CC015C, CC017C, CC029C, CC190C, CD001C, CD003C, CD012C, CD038C, CD050C, CD115C, CD160C, CD165C</usedBy>
+        <usedBy>Used by 17/91 messages: CC013C, CC015C, CC017C, CC025C, CC029C, CC043C, CC044C, CC190C, CD001C, CD003C, CD012C, CD018C, CD038C, CD050C, CD115C, CD160C, CD165C</usedBy>
       </xs:documentation>
     </xs:annotation>
     <xs:restriction base="NumericWithoutZero_5" />
-  </xs:simpleType>
-  <xs:simpleType name="GoodsItemNumberContentType02">
-    <xs:annotation>
-      <xs:documentation>
-        <usedBy>Used by 16/91 messages: CC013C, CC015C, CC017C, CC025C, CC029C, CC043C, CC044C, CD001C, CD003C, CD012C, CD018C, CD038C, CD050C, CD115C, CD160C, CD165C</usedBy>
-      </xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="xs:token">
-      <xs:pattern value="[0-9]{1,5}" />
-    </xs:restriction>
   </xs:simpleType>
   <!--================================================================================-->
   <!--===== Grn                                                                             -->
@@ -1174,7 +1162,7 @@
   <xs:simpleType name="GrossMassContentType01">
     <xs:annotation>
       <xs:documentation>
-        <usedBy>Used by 15/91 messages: CC013C, CC015C, CC017C, CC029C, CC043C, CC044C, CD001C, CD003C, CD012C, CD018C, CD038C, CD050C, CD115C, CD160C, CD165C</usedBy>
+        <usedBy>Used by 13/91 messages: CC013C, CC015C, CC017C, CC029C, CC043C, CD001C, CD003C, CD012C, CD038C, CD050C, CD115C, CD160C, CD165C</usedBy>
       </xs:documentation>
     </xs:annotation>
     <xs:restriction base="DecimalWithoutZero_16_6" />
@@ -1907,9 +1895,7 @@
         <usedBy>Used by 1/91 messages: CD411D</usedBy>
       </xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:token">
-      <xs:pattern value="[A-Za-z]{2}" />
-    </xs:restriction>
+    <xs:restriction base="CountryCodeType" />
   </xs:simpleType>
   <!--================================================================================-->
   <!--===== OtherGuaranteeReference                                                         -->
@@ -2535,9 +2521,7 @@
         <usedBy>Used by 50/91 messages: CC007C, CC013C, CC015C, CC017C, CC022C, CC025C, CC029C, CC034C, CC037C, CC042C, CC043C, CC044C, CC048C, CC055C, CC060C, CC170C, CC182C, CC190C, CC191C, CC224C, CC225C, CC228C, CD001C, CD003C, CD010C, CD012C, CD018C, CD024C, CD038C, CD050C, CD063C, CD070C, CD071C, CD115C, CD144C, CD145C, CD150C, CD151C, CD160C, CD165C, CD180C, CD181C, CD200C, CD201C, CD203C, CD204C, CD205C, CD209C, CD411D, CD971C</usedBy>
       </xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:token">
-      <xs:pattern value="[0-9]{1,5}" />
-    </xs:restriction>
+    <xs:restriction base="NumericWithoutZero_5" />
   </xs:simpleType>
   <!--================================================================================-->
   <!--===== ShippingMarks                                                                   -->

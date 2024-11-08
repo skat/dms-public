@@ -4,7 +4,7 @@
     <!--===== IE590: E_EXT_NOT                                                                -->
     <!--===== EXIT NOTIFICATION                                                               -->
     <!--===== AES P1 Phase Definition                                                         -->
-    <!--===== XSD Version 51.8.2                                                              -->
+    <!--===== XSD Version 51.8.6                                                              -->
     <!--================================================================================-->
     <!--================================================================================-->
     <!--===== Includes                                                                        -->
@@ -73,7 +73,7 @@
                 <xs:complexType>
                     <xs:annotation>
                         <xs:documentation>
-                            <usedBy>Used by 1/82 messages: CC590C</usedBy>
+                            <usedBy>Used by 1/83 messages: CC590C</usedBy>
                         </xs:documentation>
                     </xs:annotation>
                     <xs:sequence>
@@ -91,7 +91,7 @@
                             <xs:annotation>
                                 <xs:documentation>
                                     <description value="Additional declaration type" />
-                                    <codeList code="CL042" type="business" name="Declarationtypeadditional" />
+                                    <codeList code="CL042" type="business" name="DeclarationTypeAdditional" />
                                     <format value="a1" />
                                     <optionality value="R" />
                                 </xs:documentation>
@@ -130,11 +130,11 @@
                 <xs:complexType>
                     <xs:annotation>
                         <xs:documentation>
-                            <usedBy>Used by 16/82 messages: CC507C, CC521C, CC522C, CC525C, CC547C, CC557C, CC561C, CC590C, CC598C, CC599C, CC604C, CD502C, CD503C, CD518C, CD592C, CD603C</usedBy>
+                            <usedBy>Used by 16/83 messages: CC507C, CC521C, CC522C, CC525C, CC547C, CC557C, CC561C, CC590C, CC598C, CC599C, CC604C, CD502C, CD503C, CD518C, CD592C, CD603C</usedBy>
                         </xs:documentation>
                     </xs:annotation>
                     <xs:sequence>
-                        <xs:element name="referenceNumber" type="ReferenceNumberContentType05">
+                        <xs:element name="referenceNumber" type="ReferenceNumberContentType06">
                             <xs:annotation>
                                 <xs:documentation>
                                     <description value="Reference number" />
@@ -294,7 +294,8 @@
                                                                     </xs:documentation>
                                                                 </xs:annotation>
                                                             </xs:element>
-                                                            <xs:element name="eMailAddress" minOccurs="0" type="EMailAddressContentType02">
+                                                            <xs:element name="eMailAddress" minOccurs="0"
+                                                                        type="EMailAddressContentType02">
                                                                 <xs:annotation>
                                                                     <xs:documentation>
                                                                         <description value="E-mail address" />
@@ -325,10 +326,12 @@
                                                             <description value="Sequence number" />
                                                             <format value="n..5" />
                                                             <optionality value="R" />
+                                                            <xsdBaseType value="NumericWithoutZero_5" />
                                                         </xs:documentation>
                                                     </xs:annotation>
                                                 </xs:element>
-                                                <xs:element name="containerIdentificationNumber" minOccurs="0" type="ContainerIdentificationNumberContentType01">
+                                                <xs:element name="containerIdentificationNumber" minOccurs="0"
+                                                            type="ContainerIdentificationNumberContentType01">
                                                     <xs:annotation>
                                                         <xs:documentation>
                                                             <description value="Container identification number" />
@@ -353,12 +356,14 @@
                             </xs:annotation>
                             <xs:complexType>
                                 <xs:sequence>
-                                    <xs:element name="declarationGoodsItemNumber" type="DeclarationGoodsItemNumberContentType01">
+                                    <xs:element name="declarationGoodsItemNumber"
+                                                type="DeclarationGoodsItemNumberContentType01">
                                         <xs:annotation>
                                             <xs:documentation>
                                                 <description value="Declaration goods item number" />
                                                 <format value="n..5" />
                                                 <optionality value="R" />
+                                                <xsdBaseType value="DeclarationGoodsItemNumberType" />
                                             </xs:documentation>
                                         </xs:annotation>
                                     </xs:element>
@@ -390,7 +395,7 @@
                                                                     </xs:documentation>
                                                                 </xs:annotation>
                                                             </xs:element>
-                                                            <xs:element name="netMass" minOccurs="0" type="NetMassContentType">
+                                                            <xs:element name="netMass" minOccurs="0" type="NetMassContentType02">
                                                                 <xs:annotation>
                                                                     <xs:documentation>
                                                                         <description value="Net mass" />
@@ -421,6 +426,7 @@
                                                             <description value="Sequence number" />
                                                             <format value="n..5" />
                                                             <optionality value="R" />
+                                                            <xsdBaseType value="NumericWithoutZero_5" />
                                                         </xs:documentation>
                                                     </xs:annotation>
                                                 </xs:element>
@@ -434,7 +440,8 @@
                                                         </xs:documentation>
                                                     </xs:annotation>
                                                 </xs:element>
-                                                <xs:element name="numberOfPackages" minOccurs="0" type="NumberOfPackagesContentType02">
+                                                <xs:element name="numberOfPackages" minOccurs="0"
+                                                            type="NumberOfPackagesContentType02">
                                                     <xs:annotation>
                                                         <xs:documentation>
                                                             <description value="Number of packages" />

@@ -1,22 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://ecs.dgtaxud.ec" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" targetNamespace="http://ecs.dgtaxud.ec" elementFormDefault="unqualified" attributeFormDefault="unqualified" version="51.8.2" vc:minVersion="1.1">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://ecs.dgtaxud.ec"
+           xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" targetNamespace="http://ecs.dgtaxud.ec"
+           elementFormDefault="unqualified" attributeFormDefault="unqualified" version="51.8.6"
+           vc:minVersion="1.1">
   <!--================================================================================-->
-  <!--===== IE507: E_ARR_EXT                                                                -->
-  <!--===== ARRIVAL AT EXIT                                                                 -->
-  <!--===== AES P1 Phase Definition                                                         -->
-  <!--===== XSD Version 51.8.2                                                              -->
+  <!--=====
+  IE507: E_ARR_EXT                                                                -->
+  <!--=====
+  ARRIVAL AT EXIT                                                                 -->
+  <!--=====
+  AES P1 Phase Definition                                                         -->
+  <!--=====
+  XSD Version 51.8.6                                                              -->
   <!--================================================================================-->
   <!--================================================================================-->
-  <!--===== Includes                                                                        -->
+  <!--=====
+  Includes                                                                        -->
   <!--================================================================================-->
   <xs:include schemaLocation="../../DMS_DS/Exit_DS/ctypes.xsd" />
   <xs:include schemaLocation="../../DMS_DS/Exit_DS/htypes.xsd" />
   <!--================================================================================-->
-  <!--===== Root Element                                                                    -->
+  <!--=====
+  Root Element                                                                    -->
   <!--================================================================================-->
   <xs:element name="CC507C" type="CC507CType" />
   <!--================================================================================-->
-  <!--===== Root Element Content                                                            -->
+  <!--=====
+  Root Element Content                                                            -->
   <!--================================================================================-->
   <xs:complexType name="CC507CType">
     <xs:sequence>
@@ -73,7 +83,7 @@
         <xs:complexType>
           <xs:annotation>
             <xs:documentation>
-              <usedBy>Used by 1/82 messages: CC507C</usedBy>
+              <usedBy>Used by 1/83 messages: CC507C</usedBy>
             </xs:documentation>
           </xs:annotation>
           <xs:sequence>
@@ -83,26 +93,31 @@
                   <description value="MRN" />
                   <format value="an18" />
                   <optionality value="R" />
-                  <xsdBaseType value="MRNType" />
+                  <xsdBaseType
+                          value="MRNType" />
                 </xs:documentation>
               </xs:annotation>
             </xs:element>
-            <xs:element name="arrivalNotificationDateAndTime" type="ArrivalNotificationDateAndTimeContentType">
+            <xs:element name="arrivalNotificationDateAndTime"
+                        type="ArrivalNotificationDateAndTimeContentType">
               <xs:annotation>
                 <xs:documentation>
                   <description value="Arrival notification date and time" />
                   <format value="an19" />
-                  <optionality value="R" />
+                  <optionality
+                          value="R" />
                   <xsdBaseType value="DateTimeType" />
                 </xs:documentation>
               </xs:annotation>
             </xs:element>
-            <xs:element name="arrivalNotificationPlace" minOccurs="0" type="ArrivalNotificationPlaceContentType">
+            <xs:element name="arrivalNotificationPlace" minOccurs="0"
+                        type="ArrivalNotificationPlaceContentType">
               <xs:annotation>
                 <xs:documentation>
                   <description value="Arrival notification place" />
                   <format value="an..35" />
-                  <optionality value="O" />
+                  <optionality
+                          value="O" />
                   <xsdBaseType value="AlphaNumeric_MAX35_NoSpaces" />
                 </xs:documentation>
               </xs:annotation>
@@ -111,7 +126,8 @@
               <xs:annotation>
                 <xs:documentation>
                   <description value="Storing flag" />
-                  <codeList code="CL027" type="technical" name="Flag" />
+                  <codeList code="CL027" type="technical"
+                            name="Flag" />
                   <format value="n1" />
                   <optionality value="R" />
                 </xs:documentation>
@@ -121,7 +137,8 @@
               <xs:annotation>
                 <xs:documentation>
                   <description value="Discrepancies exist" />
-                  <codeList code="CL027" type="technical" name="Flag" />
+                  <codeList code="CL027" type="technical"
+                            name="Flag" />
                   <format value="n1" />
                   <optionality value="R" />
                 </xs:documentation>
@@ -144,11 +161,12 @@
                 <xs:documentation>
                   <description value="Sequence number" />
                   <format value="n..5" />
-                  <optionality value="R" />
+                  <optionality
+                          value="R" />
                 </xs:documentation>
               </xs:annotation>
             </xs:element>
-            <xs:element name="type" type="TypeContentType04">
+            <xs:element name="type" type="TypeContentType05">
               <xs:annotation>
                 <xs:documentation>
                   <description value="Type" />
@@ -157,22 +175,25 @@
                 </xs:documentation>
               </xs:annotation>
             </xs:element>
-            <xs:element name="referenceNumber" type="ReferenceNumberContentType03">
+            <xs:element name="referenceNumber" type="ReferenceNumberContentType04">
               <xs:annotation>
                 <xs:documentation>
                   <description value="Reference number" />
                   <format value="an..35" />
-                  <optionality value="R" />
+                  <optionality
+                          value="R" />
                   <xsdBaseType value="AlphaNumeric_MAX35_NoSpaces" />
                 </xs:documentation>
               </xs:annotation>
             </xs:element>
-            <xs:element name="holderOfAuthorisation" minOccurs="0" type="HolderOfAuthorisationContentType01">
+            <xs:element name="holderOfAuthorisation" minOccurs="0"
+                        type="HolderOfAuthorisationContentType01">
               <xs:annotation>
                 <xs:documentation>
                   <description value="Holder of authorisation" />
                   <format value="an..17" />
-                  <optionality value="O" />
+                  <optionality
+                          value="O" />
                   <xsdBaseType value="HolderOfAuthorisationContentType01_NoSpaces" />
                 </xs:documentation>
               </xs:annotation>
@@ -190,18 +211,21 @@
         <xs:complexType>
           <xs:annotation>
             <xs:documentation>
-              <usedBy>Used by 16/82 messages: CC507C, CC521C, CC522C, CC525C, CC547C, CC557C, CC561C, CC590C, CC598C, CC599C, CC604C, CD502C, CD503C, CD518C, CD592C, CD603C</usedBy>
+              <usedBy>Used by 16/83 messages: CC507C, CC521C, CC522C, CC525C, CC547C, CC557C,
+                CC561C, CC590C, CC598C, CC599C, CC604C, CD502C, CD503C, CD518C, CD592C, CD603C</usedBy>
             </xs:documentation>
           </xs:annotation>
           <xs:sequence>
-            <xs:element name="referenceNumber" type="ReferenceNumberContentType05">
+            <xs:element name="referenceNumber" type="ReferenceNumberContentType06">
               <xs:annotation>
                 <xs:documentation>
                   <description value="Reference number" />
-                  <codeList code="CL194" type="business" name="Customsofficeexit" />
+                  <codeList code="CL194" type="business"
+                            name="CustomsOfficeExit" />
                   <format value="an8" />
                   <optionality value="R" />
-                  <xsdBaseType value="CORefNumType" />
+                  <xsdBaseType
+                          value="CORefNumType" />
                 </xs:documentation>
               </xs:annotation>
             </xs:element>
@@ -218,7 +242,7 @@
         <xs:complexType>
           <xs:annotation>
             <xs:documentation>
-              <usedBy>Used by 1/82 messages: CC507C</usedBy>
+              <usedBy>Used by 1/83 messages: CC507C</usedBy>
             </xs:documentation>
           </xs:annotation>
           <xs:sequence>
@@ -232,26 +256,31 @@
               <xs:complexType>
                 <xs:annotation>
                   <xs:documentation>
-                    <usedBy>Used by 1/82 messages: CC507C</usedBy>
+                    <usedBy>Used by 1/83 messages: CC507C</usedBy>
                   </xs:documentation>
                 </xs:annotation>
                 <xs:sequence>
-                  <xs:element name="modeOfTransportAtTheBorder" minOccurs="0" type="ModeOfTransportAtTheBorderContentType">
+                  <xs:element name="modeOfTransportAtTheBorder" minOccurs="0"
+                              type="ModeOfTransportAtTheBorderContentType">
                     <xs:annotation>
                       <xs:documentation>
                         <description value="Mode of transport at the border" />
-                        <codeList code="CL018" type="business" name="TransportMode" />
+                        <codeList
+                                code="CL018" type="business" name="TransportMode" />
                         <format value="n1" />
-                        <optionality value="O" />
+                        <optionality
+                                value="O" />
                       </xs:documentation>
                     </xs:annotation>
                   </xs:element>
-                  <xs:element name="referenceNumberUCR" minOccurs="0" type="ReferenceNumberUCRContentType03">
+                  <xs:element name="referenceNumberUCR" minOccurs="0"
+                              type="ReferenceNumberUCRContentType03">
                     <xs:annotation>
                       <xs:documentation>
                         <description value="Reference number UCR" />
                         <format value="an..35" />
-                        <optionality value="O" />
+                        <optionality
+                                value="O" />
                         <xsdBaseType value="UCRReferenceNumber35_NoSpaces" />
                       </xs:documentation>
                     </xs:annotation>
@@ -265,12 +294,14 @@
                     </xs:annotation>
                     <xs:complexType>
                       <xs:sequence>
-                        <xs:element name="identificationNumber" minOccurs="0" type="IdentificationNumberContentType05">
+                        <xs:element name="identificationNumber" minOccurs="0"
+                                    type="IdentificationNumberContentType05">
                           <xs:annotation>
                             <xs:documentation>
                               <description value="Identification number" />
                               <format value="an..17" />
-                              <optionality value="O" />
+                              <optionality
+                                      value="O" />
                               <xsdBaseType value="TINNewType" />
                             </xs:documentation>
                           </xs:annotation>
@@ -280,7 +311,8 @@
                             <xs:documentation>
                               <description value="Name" />
                               <format value="an..70" />
-                              <optionality value="D" />
+                              <optionality
+                                      value="D" />
                               <xsdBaseType value="AlphaNumeric_MAX70_NoSpaces" />
                             </xs:documentation>
                           </xs:annotation>
@@ -299,7 +331,8 @@
                                   <xs:documentation>
                                     <description value="Street and number" />
                                     <format value="an..70" />
-                                    <optionality value="R" />
+                                    <optionality
+                                            value="R" />
                                     <xsdBaseType value="AlphaNumeric_MAX70_NoSpaces" />
                                   </xs:documentation>
                                 </xs:annotation>
@@ -309,7 +342,8 @@
                                   <xs:documentation>
                                     <description value="Postcode" />
                                     <format value="an..17" />
-                                    <optionality value="D" />
+                                    <optionality
+                                            value="D" />
                                     <xsdBaseType value="AlphaNumeric_MAX17_NoSpaces" />
                                   </xs:documentation>
                                 </xs:annotation>
@@ -319,7 +353,8 @@
                                   <xs:documentation>
                                     <description value="City" />
                                     <format value="an..35" />
-                                    <optionality value="R" />
+                                    <optionality
+                                            value="R" />
                                     <xsdBaseType value="AlphaNumeric_MAX35_NoSpaces" />
                                   </xs:documentation>
                                 </xs:annotation>
@@ -328,10 +363,13 @@
                                 <xs:annotation>
                                   <xs:documentation>
                                     <description value="Country" />
-                                    <codeList code="CL248" type="business" name="Countrycodesforaddress" />
-                                    <format value="a2" />
+                                    <codeList code="CL248"
+                                              type="business" name="CountryCodesForAddress" />
+                                    <format
+                                            value="a2" />
                                     <optionality value="R" />
-                                    <xsdBaseType value="CountryCodeType" />
+                                    <xsdBaseType
+                                            value="CountryCodeType" />
                                   </xs:documentation>
                                 </xs:annotation>
                               </xs:element>
@@ -352,7 +390,8 @@
                                   <xs:documentation>
                                     <description value="Name" />
                                     <format value="an..70" />
-                                    <optionality value="R" />
+                                    <optionality
+                                            value="R" />
                                     <xsdBaseType value="AlphaNumeric_MAX70_NoSpaces" />
                                   </xs:documentation>
                                 </xs:annotation>
@@ -362,17 +401,20 @@
                                   <xs:documentation>
                                     <description value="Phone number" />
                                     <format value="an..35" />
-                                    <optionality value="R" />
+                                    <optionality
+                                            value="R" />
                                     <xsdBaseType value="AlphaNumeric_MAX35_NoSpaces" />
                                   </xs:documentation>
                                 </xs:annotation>
                               </xs:element>
-                              <xs:element name="eMailAddress" minOccurs="0" type="EMailAddressContentType01">
+                              <xs:element name="eMailAddress" minOccurs="0"
+                                          type="EMailAddressContentType01">
                                 <xs:annotation>
                                   <xs:documentation>
                                     <description value="E-mail address" />
                                     <format value="an..256" />
-                                    <optionality value="O" />
+                                    <optionality
+                                            value="O" />
                                     <xsdBaseType value="EmailAddressType256_NoSpaces" />
                                   </xs:documentation>
                                 </xs:annotation>
@@ -393,7 +435,7 @@
                     <xs:complexType>
                       <xs:annotation>
                         <xs:documentation>
-                          <usedBy>Used by 1/82 messages: CC507C</usedBy>
+                          <usedBy>Used by 1/83 messages: CC507C</usedBy>
                         </xs:documentation>
                       </xs:annotation>
                       <xs:sequence>
@@ -402,26 +444,32 @@
                             <xs:documentation>
                               <description value="Sequence number" />
                               <format value="n..5" />
-                              <optionality value="R" />
+                              <optionality
+                                      value="R" />
                             </xs:documentation>
                           </xs:annotation>
                         </xs:element>
-                        <xs:element name="containerIdentificationNumber" minOccurs="0" type="ContainerIdentificationNumberContentType02">
+                        <xs:element name="containerIdentificationNumber" minOccurs="0"
+                                    type="ContainerIdentificationNumberContentType02">
                           <xs:annotation>
                             <xs:documentation>
                               <description value="Container identification number" />
-                              <format value="an..17" />
+                              <format
+                                      value="an..17" />
                               <optionality value="O" />
-                              <xsdBaseType value="ContainerIdentificationNumber_NoSpaces" />
+                              <xsdBaseType
+                                      value="ContainerIdentificationNumber_NoSpaces" />
                             </xs:documentation>
                           </xs:annotation>
                         </xs:element>
-                        <xs:element name="numberOfSeals" minOccurs="0" type="NumberOfSealsContentType">
+                        <xs:element name="numberOfSeals" minOccurs="0"
+                                    type="NumberOfSealsContentType">
                           <xs:annotation>
                             <xs:documentation>
                               <description value="Number of seals" />
                               <format value="n..4" />
-                              <optionality value="O" />
+                              <optionality
+                                      value="O" />
                               <xsdBaseType value="NumericWithZero_4" />
                             </xs:documentation>
                           </xs:annotation>
@@ -436,7 +484,7 @@
                           <xs:complexType>
                             <xs:annotation>
                               <xs:documentation>
-                                <usedBy>Used by 1/82 messages: CC507C</usedBy>
+                                <usedBy>Used by 1/83 messages: CC507C</usedBy>
                               </xs:documentation>
                             </xs:annotation>
                             <xs:sequence>
@@ -445,16 +493,19 @@
                                   <xs:documentation>
                                     <description value="Sequence number" />
                                     <format value="n..5" />
-                                    <optionality value="R" />
+                                    <optionality
+                                            value="R" />
                                   </xs:documentation>
                                 </xs:annotation>
                               </xs:element>
-                              <xs:element name="identifier" minOccurs="0" type="IdentifierContentType04">
+                              <xs:element name="identifier" minOccurs="0"
+                                          type="IdentifierContentType04">
                                 <xs:annotation>
                                   <xs:documentation>
                                     <description value="Identifier" />
                                     <format value="an..20" />
-                                    <optionality value="O" />
+                                    <optionality
+                                            value="O" />
                                     <xsdBaseType value="AlphaNumeric_MAX20_NoSpaces" />
                                   </xs:documentation>
                                 </xs:annotation>
@@ -472,7 +523,7 @@
                           <xs:complexType>
                             <xs:annotation>
                               <xs:documentation>
-                                <usedBy>Used by 4/82 messages: CC507C, CC551C, CD518C, CD541C</usedBy>
+                                <usedBy>Used by 4/83 messages: CC507C, CC551C, CD518C, CD541C</usedBy>
                               </xs:documentation>
                             </xs:annotation>
                             <xs:sequence>
@@ -481,17 +532,21 @@
                                   <xs:documentation>
                                     <description value="Sequence number" />
                                     <format value="n..5" />
-                                    <optionality value="R" />
+                                    <optionality
+                                            value="R" />
                                   </xs:documentation>
                                 </xs:annotation>
                               </xs:element>
-                              <xs:element name="declarationGoodsItemNumber" minOccurs="0" type="DeclarationGoodsItemNumberContentType02">
+                              <xs:element name="declarationGoodsItemNumber" minOccurs="0"
+                                          type="DeclarationGoodsItemNumberContentType01">
                                 <xs:annotation>
                                   <xs:documentation>
                                     <description value="Declaration goods item number" />
-                                    <format value="n..5" />
+                                    <format
+                                            value="n..5" />
                                     <optionality value="O" />
-                                    <xsdBaseType value="DeclarationGoodsItemNumberType" />
+                                    <xsdBaseType
+                                            value="DeclarationGoodsItemNumberType" />
                                   </xs:documentation>
                                 </xs:annotation>
                               </xs:element>
@@ -511,7 +566,7 @@
                     <xs:complexType>
                       <xs:annotation>
                         <xs:documentation>
-                          <usedBy>Used by 1/82 messages: CC507C</usedBy>
+                          <usedBy>Used by 1/83 messages: CC507C</usedBy>
                         </xs:documentation>
                       </xs:annotation>
                       <xs:sequence>
@@ -520,7 +575,8 @@
                             <xs:documentation>
                               <description value="Sequence number" />
                               <format value="n..5" />
-                              <optionality value="R" />
+                              <optionality
+                                      value="R" />
                             </xs:documentation>
                           </xs:annotation>
                         </xs:element>
@@ -528,38 +584,47 @@
                           <xs:annotation>
                             <xs:documentation>
                               <description value="Type of location" />
-                              <codeList code="CL347" type="business" name="TypeOfLocation" />
+                              <codeList code="CL347"
+                                        type="business" name="TypeOfLocation" />
                               <format value="a1" />
-                              <optionality value="R" />
+                              <optionality
+                                      value="R" />
                             </xs:documentation>
                           </xs:annotation>
                         </xs:element>
-                        <xs:element name="qualifierOfIdentification" type="QualifierOfIdentificationContentType">
+                        <xs:element name="qualifierOfIdentification"
+                                    type="QualifierOfIdentificationContentType">
                           <xs:annotation>
                             <xs:documentation>
                               <description value="Qualifier of identification" />
-                              <codeList code="CL326" type="business" name="QualifierOfTheIdentification" />
-                              <format value="a1" />
+                              <codeList
+                                      code="CL326" type="business" name="QualifierOfTheIdentification" />
+                              <format
+                                      value="a1" />
                               <optionality value="R" />
                             </xs:documentation>
                           </xs:annotation>
                         </xs:element>
-                        <xs:element name="authorisationNumber" minOccurs="0" type="AuthorisationNumberContentType02">
+                        <xs:element name="authorisationNumber" minOccurs="0"
+                                    type="AuthorisationNumberContentType02">
                           <xs:annotation>
                             <xs:documentation>
                               <description value="Authorisation number" />
                               <format value="an..35" />
-                              <optionality value="D" />
+                              <optionality
+                                      value="D" />
                               <xsdBaseType value="AlphaNumeric_MAX35_NoSpaces" />
                             </xs:documentation>
                           </xs:annotation>
                         </xs:element>
-                        <xs:element name="additionalIdentifier" minOccurs="0" type="AdditionalIdentifierContentType02">
+                        <xs:element name="additionalIdentifier" minOccurs="0"
+                                    type="AdditionalIdentifierContentType02">
                           <xs:annotation>
                             <xs:documentation>
                               <description value="Additional identifier" />
                               <format value="an..4" />
-                              <optionality value="D" />
+                              <optionality
+                                      value="D" />
                               <xsdBaseType value="AlphaNumeric_MAX4_NoSpaces" />
                             </xs:documentation>
                           </xs:annotation>
@@ -568,9 +633,11 @@
                           <xs:annotation>
                             <xs:documentation>
                               <description value="UN LOCODE" />
-                              <codeList code="CL244" type="business" name="Unlocodeextended" />
+                              <codeList code="CL244"
+                                        type="business" name="UnLocodeExtended" />
                               <format value="an..17" />
-                              <optionality value="D" />
+                              <optionality
+                                      value="D" />
                             </xs:documentation>
                           </xs:annotation>
                         </xs:element>
@@ -583,13 +650,15 @@
                           </xs:annotation>
                           <xs:complexType>
                             <xs:sequence>
-                              <xs:element name="referenceNumber" type="ReferenceNumberContentType05">
+                              <xs:element name="referenceNumber" type="ReferenceNumberContentType06">
                                 <xs:annotation>
                                   <xs:documentation>
                                     <description value="Reference number" />
-                                    <codeList code="CL141" type="business" name="CustomsOffices" />
+                                    <codeList code="CL141"
+                                              type="business" name="CustomsOffices" />
                                     <format value="an8" />
-                                    <optionality value="R" />
+                                    <optionality
+                                            value="R" />
                                     <xsdBaseType value="CORefNumType" />
                                   </xs:documentation>
                                 </xs:annotation>
@@ -607,7 +676,9 @@
                           <xs:complexType>
                             <xs:annotation>
                               <xs:documentation>
-                                <usedBy>Used by 16/82 messages: CC190C, CC507C, CC511C, CC513C, CC515C, CC525C, CC529C, CC570C, CC573C, CC599C, CC613C, CC615C, CD533C, CD540C, CD601C, CD603C</usedBy>
+                                <usedBy>Used by 17/83 messages: CC190C, CC507C, CC511C, CC512C,
+                                  CC513C, CC515C, CC525C, CC529C, CC570C, CC573C, CC599C, CC613C,
+                                  CC615C, CD533C, CD540C, CD601C, CD603C</usedBy>
                               </xs:documentation>
                             </xs:annotation>
                             <xs:sequence>
@@ -616,7 +687,8 @@
                                   <xs:documentation>
                                     <description value="Latitude" />
                                     <format value="an..17" />
-                                    <optionality value="R" />
+                                    <optionality
+                                            value="R" />
                                     <xsdBaseType value="GNSSLatitude" />
                                   </xs:documentation>
                                 </xs:annotation>
@@ -626,7 +698,8 @@
                                   <xs:documentation>
                                     <description value="Longitude" />
                                     <format value="an..17" />
-                                    <optionality value="R" />
+                                    <optionality
+                                            value="R" />
                                     <xsdBaseType value="GNSSLongitude" />
                                   </xs:documentation>
                                 </xs:annotation>
@@ -644,17 +717,21 @@
                           <xs:complexType>
                             <xs:annotation>
                               <xs:documentation>
-                                <usedBy>Used by 10/82 messages: CC190C, CC507C, CC511C, CC515C, CC529C, CC570C, CC573C, CC599C, CD533C, CD540C</usedBy>
+                                <usedBy>Used by 11/83 messages: CC190C, CC507C, CC511C, CC512C,
+                                  CC515C, CC529C, CC570C, CC573C, CC599C, CD533C, CD540C</usedBy>
                               </xs:documentation>
                             </xs:annotation>
                             <xs:sequence>
-                              <xs:element name="identificationNumber" type="IdentificationNumberContentType05">
+                              <xs:element name="identificationNumber"
+                                          type="IdentificationNumberContentType05">
                                 <xs:annotation>
                                   <xs:documentation>
                                     <description value="Identification number" />
-                                    <format value="an..17" />
+                                    <format
+                                            value="an..17" />
                                     <optionality value="R" />
-                                    <xsdBaseType value="TINNewType" />
+                                    <xsdBaseType
+                                            value="TINNewType" />
                                   </xs:documentation>
                                 </xs:annotation>
                               </xs:element>
@@ -671,7 +748,8 @@
                           <xs:complexType>
                             <xs:annotation>
                               <xs:documentation>
-                                <usedBy>Used by 8/82 messages: CC507C, CC511C, CC513C, CC515C, CC570C, CC573C, CC613C, CC615C</usedBy>
+                                <usedBy>Used by 9/83 messages: CC507C, CC511C, CC512C, CC513C,
+                                  CC515C, CC570C, CC573C, CC613C, CC615C</usedBy>
                               </xs:documentation>
                             </xs:annotation>
                             <xs:sequence>
@@ -680,7 +758,8 @@
                                   <xs:documentation>
                                     <description value="Street and number" />
                                     <format value="an..70" />
-                                    <optionality value="R" />
+                                    <optionality
+                                            value="R" />
                                     <xsdBaseType value="AlphaNumeric_MAX70_NoSpaces" />
                                   </xs:documentation>
                                 </xs:annotation>
@@ -690,7 +769,8 @@
                                   <xs:documentation>
                                     <description value="Postcode" />
                                     <format value="an..17" />
-                                    <optionality value="D" />
+                                    <optionality
+                                            value="D" />
                                     <xsdBaseType value="AlphaNumeric_MAX17_NoSpaces" />
                                   </xs:documentation>
                                 </xs:annotation>
@@ -700,7 +780,8 @@
                                   <xs:documentation>
                                     <description value="City" />
                                     <format value="an..35" />
-                                    <optionality value="R" />
+                                    <optionality
+                                            value="R" />
                                     <xsdBaseType value="AlphaNumeric_MAX35_NoSpaces" />
                                   </xs:documentation>
                                 </xs:annotation>
@@ -709,10 +790,13 @@
                                 <xs:annotation>
                                   <xs:documentation>
                                     <description value="Country" />
-                                    <codeList code="CL010" type="business" name="CountryCodesCommunity" />
-                                    <format value="a2" />
+                                    <codeList code="CL010"
+                                              type="business" name="CountryCodesCommunity" />
+                                    <format
+                                            value="a2" />
                                     <optionality value="R" />
-                                    <xsdBaseType value="CountryCodeType" />
+                                    <xsdBaseType
+                                            value="CountryCodeType" />
                                   </xs:documentation>
                                 </xs:annotation>
                               </xs:element>
@@ -729,16 +813,19 @@
                           <xs:complexType>
                             <xs:annotation>
                               <xs:documentation>
-                                <usedBy>Used by 8/82 messages: CC507C, CC511C, CC513C, CC515C, CC570C, CC573C, CC613C, CC615C</usedBy>
+                                <usedBy>Used by 9/83 messages: CC507C, CC511C, CC512C, CC513C,
+                                  CC515C, CC570C, CC573C, CC613C, CC615C</usedBy>
                               </xs:documentation>
                             </xs:annotation>
                             <xs:sequence>
-                              <xs:element name="houseNumber" minOccurs="0" type="HouseNumberContentType02">
+                              <xs:element name="houseNumber" minOccurs="0"
+                                          type="HouseNumberContentType02">
                                 <xs:annotation>
                                   <xs:documentation>
                                     <description value="House number" />
                                     <format value="an..17" />
-                                    <optionality value="D" />
+                                    <optionality
+                                            value="D" />
                                     <xsdBaseType value="AlphaNumeric_MAX17_NoSpaces" />
                                   </xs:documentation>
                                 </xs:annotation>
@@ -748,7 +835,8 @@
                                   <xs:documentation>
                                     <description value="Postcode" />
                                     <format value="an..17" />
-                                    <optionality value="R" />
+                                    <optionality
+                                            value="R" />
                                     <xsdBaseType value="AlphaNumeric_MAX17_NoSpaces" />
                                   </xs:documentation>
                                 </xs:annotation>
@@ -757,10 +845,13 @@
                                 <xs:annotation>
                                   <xs:documentation>
                                     <description value="Country" />
-                                    <codeList code="CL190" type="business" name="Countryaddresspostcodebased" />
-                                    <format value="a2" />
+                                    <codeList code="CL190"
+                                              type="business" name="CountryAddressPostcodeBased" />
+                                    <format
+                                            value="a2" />
                                     <optionality value="R" />
-                                    <xsdBaseType value="CountryCodeType" />
+                                    <xsdBaseType
+                                            value="CountryCodeType" />
                                   </xs:documentation>
                                 </xs:annotation>
                               </xs:element>
@@ -777,7 +868,8 @@
                           <xs:complexType>
                             <xs:annotation>
                               <xs:documentation>
-                                <usedBy>Used by 8/82 messages: CC507C, CC511C, CC513C, CC515C, CC570C, CC573C, CC613C, CC615C</usedBy>
+                                <usedBy>Used by 9/83 messages: CC507C, CC511C, CC512C, CC513C,
+                                  CC515C, CC570C, CC573C, CC613C, CC615C</usedBy>
                               </xs:documentation>
                             </xs:annotation>
                             <xs:sequence>
@@ -786,7 +878,8 @@
                                   <xs:documentation>
                                     <description value="Name" />
                                     <format value="an..70" />
-                                    <optionality value="R" />
+                                    <optionality
+                                            value="R" />
                                     <xsdBaseType value="AlphaNumeric_MAX70_NoSpaces" />
                                   </xs:documentation>
                                 </xs:annotation>
@@ -796,17 +889,20 @@
                                   <xs:documentation>
                                     <description value="Phone number" />
                                     <format value="an..35" />
-                                    <optionality value="R" />
+                                    <optionality
+                                            value="R" />
                                     <xsdBaseType value="AlphaNumeric_MAX35_NoSpaces" />
                                   </xs:documentation>
                                 </xs:annotation>
                               </xs:element>
-                              <xs:element name="eMailAddress" minOccurs="0" type="EMailAddressContentType01">
+                              <xs:element name="eMailAddress" minOccurs="0"
+                                          type="EMailAddressContentType01">
                                 <xs:annotation>
                                   <xs:documentation>
                                     <description value="E-mail address" />
                                     <format value="an..256" />
-                                    <optionality value="O" />
+                                    <optionality
+                                            value="O" />
                                     <xsdBaseType value="EmailAddressType256_NoSpaces" />
                                   </xs:documentation>
                                 </xs:annotation>
@@ -827,26 +923,31 @@
                     <xs:complexType>
                       <xs:annotation>
                         <xs:documentation>
-                          <usedBy>Used by 2/82 messages: CC507C, CC547C</usedBy>
+                          <usedBy>Used by 2/83 messages: CC507C, CC547C</usedBy>
                         </xs:documentation>
                       </xs:annotation>
                       <xs:sequence>
-                        <xs:element name="typeOfIdentification" minOccurs="0" type="TypeOfIdentificationContentType">
+                        <xs:element name="typeOfIdentification" minOccurs="0"
+                                    type="TypeOfIdentificationContentType">
                           <xs:annotation>
                             <xs:documentation>
                               <description value="Type of identification" />
-                              <codeList code="CL219" type="business" name="Typeofidentificationofmeansoftransportactive" />
-                              <format value="n2" />
+                              <codeList code="CL219"
+                                        type="business" name="TypeOfIdentificationofMeansOfTransportActive" />
+                              <format
+                                      value="n2" />
                               <optionality value="O" />
                             </xs:documentation>
                           </xs:annotation>
                         </xs:element>
-                        <xs:element name="identificationNumber" minOccurs="0" type="IdentificationNumberContentType02">
+                        <xs:element name="identificationNumber" minOccurs="0"
+                                    type="IdentificationNumberContentType02">
                           <xs:annotation>
                             <xs:documentation>
                               <description value="Identification number" />
                               <format value="an..35" />
-                              <optionality value="O" />
+                              <optionality
+                                      value="O" />
                               <xsdBaseType value="Alphanumeric_Max35" />
                             </xs:documentation>
                           </xs:annotation>
@@ -855,9 +956,11 @@
                           <xs:annotation>
                             <xs:documentation>
                               <description value="Nationality" />
-                              <codeList code="CL165" type="business" name="Nationality" />
+                              <codeList code="CL165"
+                                        type="business" name="Nationality" />
                               <format value="a2" />
-                              <optionality value="O" />
+                              <optionality
+                                      value="O" />
                               <xsdBaseType value="CountryCodeType" />
                             </xs:documentation>
                           </xs:annotation>
@@ -865,7 +968,7 @@
                       </xs:sequence>
                     </xs:complexType>
                   </xs:element>
-                  <xs:element name="TransportDocument" minOccurs="0" maxOccurs="99" >
+                  <xs:element name="TransportDocument" minOccurs="0" maxOccurs="99">
                     <xs:annotation>
                       <xs:documentation>
                         <description value="TRANSPORT DOCUMENT" />
@@ -875,7 +978,7 @@
                     <xs:complexType>
                       <xs:annotation>
                         <xs:documentation>
-                          <usedBy>Used by 1/82 messages: CC507C</usedBy>
+                          <usedBy>Used by 1/83 messages: CC507C</usedBy>
                         </xs:documentation>
                       </xs:annotation>
                       <xs:sequence>
@@ -884,26 +987,32 @@
                             <xs:documentation>
                               <description value="Sequence number" />
                               <format value="n..5" />
-                              <optionality value="R" />
+                              <optionality
+                                      value="R" />
+                              <xsdBaseType value="NumericWithoutZero_5" />
                             </xs:documentation>
                           </xs:annotation>
                         </xs:element>
-                        <xs:element name="type" minOccurs="0" type="TypeContentType01">
+                        <xs:element name="type" minOccurs="0" type="TypeContentType02">
                           <xs:annotation>
                             <xs:documentation>
                               <description value="Type" />
-                              <codeList code="CL754" type="business" name="TransportDocumentType" />
+                              <codeList code="CL754" type="business"
+                                        name="TransportDocumentType" />
                               <format value="an4" />
-                              <optionality value="O" />
+                              <optionality
+                                      value="O" />
                             </xs:documentation>
                           </xs:annotation>
                         </xs:element>
-                        <xs:element name="referenceNumber" minOccurs="0" type="ReferenceNumberContentType06">
+                        <xs:element name="referenceNumber" minOccurs="0"
+                                    type="ReferenceNumberContentType07">
                           <xs:annotation>
                             <xs:documentation>
                               <description value="Reference number" />
                               <format value="an..70" />
-                              <optionality value="O" />
+                              <optionality
+                                      value="O" />
                               <xsdBaseType value="AlphaNumeric_MAX70_NoSpaces" />
                             </xs:documentation>
                           </xs:annotation>
@@ -924,25 +1033,30 @@
               <xs:complexType>
                 <xs:annotation>
                   <xs:documentation>
-                    <usedBy>Used by 1/82 messages: CC507C</usedBy>
+                    <usedBy>Used by 1/83 messages: CC507C</usedBy>
                   </xs:documentation>
                 </xs:annotation>
                 <xs:sequence>
-                  <xs:element name="declarationGoodsItemNumber" type="DeclarationGoodsItemNumberContentType01">
+                  <xs:element name="declarationGoodsItemNumber"
+                              type="DeclarationGoodsItemNumberContentType01">
                     <xs:annotation>
                       <xs:documentation>
                         <description value="Declaration goods item number" />
                         <format value="n..5" />
-                        <optionality value="R" />
+                        <optionality
+                                value="R" />
+                        <xsdBaseType value="DeclarationGoodsItemNumberType" />
                       </xs:documentation>
                     </xs:annotation>
                   </xs:element>
-                  <xs:element name="referenceNumberUCR" minOccurs="0" type="ReferenceNumberUCRContentType03">
+                  <xs:element name="referenceNumberUCR" minOccurs="0"
+                              type="ReferenceNumberUCRContentType03">
                     <xs:annotation>
                       <xs:documentation>
                         <description value="Reference number UCR" />
                         <format value="an..35" />
-                        <optionality value="O" />
+                        <optionality
+                                value="O" />
                         <xsdBaseType value="UCRReferenceNumber35_NoSpaces" />
                       </xs:documentation>
                     </xs:annotation>
@@ -957,7 +1071,7 @@
                     <xs:complexType>
                       <xs:annotation>
                         <xs:documentation>
-                          <usedBy>Used by 2/82 messages: CC507C, CC547C</usedBy>
+                          <usedBy>Used by 2/83 messages: CC507C, CC547C</usedBy>
                         </xs:documentation>
                       </xs:annotation>
                       <xs:sequence>
@@ -966,36 +1080,43 @@
                             <xs:documentation>
                               <description value="Sequence number" />
                               <format value="n..5" />
-                              <optionality value="R" />
+                              <optionality
+                                      value="R" />
+                              <xsdBaseType value="NumericWithoutZero_5" />
                             </xs:documentation>
                           </xs:annotation>
                         </xs:element>
-                        <xs:element name="type" type="TypeContentType04">
+                        <xs:element name="type" type="TypeContentType05">
                           <xs:annotation>
                             <xs:documentation>
                               <description value="Type" />
                               <format value="an..4" />
-                              <optionality value="R" />
+                              <optionality
+                                      value="R" />
                             </xs:documentation>
                           </xs:annotation>
                         </xs:element>
-                        <xs:element name="referenceNumber" type="ReferenceNumberContentType03">
+                        <xs:element name="referenceNumber" type="ReferenceNumberContentType04">
                           <xs:annotation>
                             <xs:documentation>
                               <description value="Reference number" />
                               <format value="an..35" />
-                              <optionality value="R" />
+                              <optionality
+                                      value="R" />
                               <xsdBaseType value="AlphaNumeric_MAX35_NoSpaces" />
                             </xs:documentation>
                           </xs:annotation>
                         </xs:element>
-                        <xs:element name="holderOfAuthorisation" minOccurs="0" type="HolderOfAuthorisationContentType01">
+                        <xs:element name="holderOfAuthorisation" minOccurs="0"
+                                    type="HolderOfAuthorisationContentType01">
                           <xs:annotation>
                             <xs:documentation>
                               <description value="Holder of authorisation" />
                               <format value="an..17" />
-                              <optionality value="O" />
-                              <xsdBaseType value="HolderOfAuthorisationContentType01_NoSpaces" />
+                              <optionality
+                                      value="O" />
+                              <xsdBaseType
+                                      value="HolderOfAuthorisationContentType01_NoSpaces" />
                             </xs:documentation>
                           </xs:annotation>
                         </xs:element>
@@ -1012,7 +1133,7 @@
                     <xs:complexType>
                       <xs:annotation>
                         <xs:documentation>
-                          <usedBy>Used by 2/82 messages: CC507C, CC590C</usedBy>
+                          <usedBy>Used by 2/83 messages: CC507C, CC590C</usedBy>
                         </xs:documentation>
                       </xs:annotation>
                       <xs:sequence>
@@ -1026,26 +1147,30 @@
                           <xs:complexType>
                             <xs:annotation>
                               <xs:documentation>
-                                <usedBy>Used by 6/82 messages: CC507C, CC551C, CC590C, CC598C, CD518C, CD541C</usedBy>
+                                <usedBy>Used by 6/83 messages: CC507C, CC551C, CC590C, CC598C,
+                                  CD518C, CD541C</usedBy>
                               </xs:documentation>
                             </xs:annotation>
                             <xs:sequence>
-                              <xs:element name="grossMass" minOccurs="0" type="GrossMassContentType02">
+                              <xs:element name="grossMass" minOccurs="0"
+                                          type="GrossMassContentType02">
                                 <xs:annotation>
                                   <xs:documentation>
                                     <description value="Gross mass" />
                                     <format value="n..16,6" />
-                                    <optionality value="O" />
+                                    <optionality
+                                            value="O" />
                                     <xsdBaseType value="DecimalWithZero_16_6" />
                                   </xs:documentation>
                                 </xs:annotation>
                               </xs:element>
-                              <xs:element name="netMass" minOccurs="0" type="NetMassContentType">
+                              <xs:element name="netMass" minOccurs="0" type="NetMassContentType02">
                                 <xs:annotation>
                                   <xs:documentation>
                                     <description value="Net mass" />
                                     <format value="n..16,6" />
-                                    <optionality value="O" />
+                                    <optionality
+                                            value="O" />
                                     <xsdBaseType value="DecimalWithoutZero_16_6" />
                                   </xs:documentation>
                                 </xs:annotation>
@@ -1066,7 +1191,7 @@
                     <xs:complexType>
                       <xs:annotation>
                         <xs:documentation>
-                          <usedBy>Used by 1/82 messages: CC507C</usedBy>
+                          <usedBy>Used by 1/83 messages: CC507C</usedBy>
                         </xs:documentation>
                       </xs:annotation>
                       <xs:sequence>
@@ -1075,36 +1200,44 @@
                             <xs:documentation>
                               <description value="Sequence number" />
                               <format value="n..5" />
-                              <optionality value="R" />
+                              <optionality
+                                      value="R" />
                             </xs:documentation>
                           </xs:annotation>
                         </xs:element>
-                        <xs:element name="typeOfPackages" minOccurs="0" type="TypeOfPackagesContentType">
+                        <xs:element name="typeOfPackages" minOccurs="0"
+                                    type="TypeOfPackagesContentType">
                           <xs:annotation>
                             <xs:documentation>
                               <description value="Type of packages" />
-                              <codeList code="CL017" type="business" name="KindOfPackages" />
+                              <codeList code="CL017"
+                                        type="business" name="KindOfPackages" />
                               <format value="an2" />
-                              <optionality value="O" />
+                              <optionality
+                                      value="O" />
                             </xs:documentation>
                           </xs:annotation>
                         </xs:element>
-                        <xs:element name="numberOfPackages" minOccurs="0" type="NumberOfPackagesContentType02">
+                        <xs:element name="numberOfPackages" minOccurs="0"
+                                    type="NumberOfPackagesContentType02">
                           <xs:annotation>
                             <xs:documentation>
                               <description value="Number of packages" />
                               <format value="n..8" />
-                              <optionality value="O" />
+                              <optionality
+                                      value="O" />
                               <xsdBaseType value="NumericWithZero_8" />
                             </xs:documentation>
                           </xs:annotation>
                         </xs:element>
-                        <xs:element name="shippingMarks" minOccurs="0" type="ShippingMarksContentType02">
+                        <xs:element name="shippingMarks" minOccurs="0"
+                                    type="ShippingMarksContentType02">
                           <xs:annotation>
                             <xs:documentation>
                               <description value="Shipping marks" />
                               <format value="an..512" />
-                              <optionality value="O" />
+                              <optionality
+                                      value="O" />
                               <xsdBaseType value="AlphaNumeric_MAX512_NoSpaces" />
                             </xs:documentation>
                           </xs:annotation>
@@ -1122,7 +1255,7 @@
                     <xs:complexType>
                       <xs:annotation>
                         <xs:documentation>
-                          <usedBy>Used by 1/82 messages: CC507C</usedBy>
+                          <usedBy>Used by 1/83 messages: CC507C</usedBy>
                         </xs:documentation>
                       </xs:annotation>
                       <xs:sequence>
@@ -1131,26 +1264,31 @@
                             <xs:documentation>
                               <description value="Sequence number" />
                               <format value="n..5" />
-                              <optionality value="R" />
+                              <optionality
+                                      value="R" />
                             </xs:documentation>
                           </xs:annotation>
                         </xs:element>
-                        <xs:element name="type" minOccurs="0" type="TypeContentType01">
+                        <xs:element name="type" minOccurs="0" type="TypeContentType02">
                           <xs:annotation>
                             <xs:documentation>
                               <description value="Type" />
-                              <codeList code="CL754" type="business" name="TransportDocumentType" />
+                              <codeList code="CL754" type="business"
+                                        name="TransportDocumentType" />
                               <format value="an4" />
-                              <optionality value="O" />
+                              <optionality
+                                      value="O" />
                             </xs:documentation>
                           </xs:annotation>
                         </xs:element>
-                        <xs:element name="referenceNumber" minOccurs="0" type="ReferenceNumberContentType06">
+                        <xs:element name="referenceNumber" minOccurs="0"
+                                    type="ReferenceNumberContentType07">
                           <xs:annotation>
                             <xs:documentation>
                               <description value="Reference number" />
                               <format value="an..70" />
-                              <optionality value="O" />
+                              <optionality
+                                      value="O" />
                               <xsdBaseType value="AlphaNumeric_MAX70_NoSpaces" />
                             </xs:documentation>
                           </xs:annotation>
