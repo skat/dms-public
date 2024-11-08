@@ -1,3 +1,6 @@
+### 08-11-2024
+* Updated XSDs for release 4.2.10 (See release notes)
+
 ### 07-11-2024
 * Updated Release notes to version 1.18
 
