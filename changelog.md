@@ -1,3 +1,7 @@
+### 15-11-2024
+* Updated release notes by adding update to XSDs for B1 standard and amendment under release 4.2.10 (See release notes)
+* Updated B1 standard and B1 amendment XSD to include TypeCode element under Origin (16 08 000 000)
+
 ### 08-11-2024
 * Updated XSDs for release 4.2.10 (See release notes)
 
