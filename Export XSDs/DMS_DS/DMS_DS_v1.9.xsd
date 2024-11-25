@@ -3,7 +3,7 @@
            xmlns:xs="http://www.w3.org/2001/XMLSchema"
            targetNamespace="urn:wco:datamodel:WCO:Declaration_DS:DMS:2" elementFormDefault="qualified" version="1.1.7">
     <xs:import namespace="urn:un:unece:uncefact:data:standard:UnqualifiedDataType:6"
-               schemaLocation="UNECE/UnqualifiedDataType_6_DMS.xsd"/>
+               schemaLocation="UNECE/UnqualifiedDataType_6_dms.xsd"/>
     <xs:import namespace="urn:un:unece:uncefact:codelist:standard:ISO:ISO3AlphaCurrencyCode:2012-08-31"
                schemaLocation="UNECE/ISO_ISO3AlphaCurrencyCode_2012-08-31.xsd"/>
 
@@ -2664,6 +2664,20 @@
         <xs:simpleContent>
             <xs:restriction base="udt:CodeType">
                 <xs:length value="2"/>
+                <xs:pattern value=".*[^\s].*"/>
+            </xs:restriction>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="OriginTypeCodeType2">
+        <xs:annotation>
+            <xs:documentation>
+                <WCOFormat>an1</WCOFormat>
+                <EUCDMFormat>an1</EUCDMFormat>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:simpleContent>
+            <xs:restriction base="udt:CodeType">
+                <xs:length value="1"/>
                 <xs:pattern value=".*[^\s].*"/>
             </xs:restriction>
         </xs:simpleContent>
