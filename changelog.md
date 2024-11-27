@@ -1,3 +1,6 @@
+### 26-11-2024
+* Updated XSDs for Export and Transit to align with RFC 39
+
 ### 19-11-2024
 * Updated ImportExport System Guide
 
