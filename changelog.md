@@ -1,3 +1,7 @@
+### 28-11-2024
+* Uploaded G3, G4, G5, NIM and NCM XSDs
+* Corrected minor errors in H6 and H2 XSDs
+
 ### 26-11-2024
 * Updated XSDs for Export and Transit to align with RFC 39
 

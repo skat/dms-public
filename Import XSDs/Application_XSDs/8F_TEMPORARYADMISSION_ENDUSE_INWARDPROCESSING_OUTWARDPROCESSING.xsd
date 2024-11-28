@@ -5,143 +5,105 @@
     targetNamespace="urn:wco:datamodel:WCO:WCO_DEC_EDS_AUTHORISATION:1"
     elementFormDefault="qualified"
     version="1.0">
-  <xs:import namespace="urn:un:unece:uncefact:data:standard:UnqualifiedDataType:6" schemaLocation="../UNECE/UNQUALIFIEDDATATYPE_6_DMS.xsd"/>
+  <xs:import namespace="urn:un:unece:uncefact:data:standard:UnqualifiedDataType:6" schemaLocation="../DMS_DS/UNECE/UNQUALIFIEDDATATYPE_6_DMS.xsd"/>
   <xs:import namespace="urn:wco:datamodel:WCO:Declaration_DS:DMS:2"
-    schemaLocation="../DMS_DS_V1.0.xsd" />
+    schemaLocation="../DMS_DS/DMS_DS_V1.0.xsd" />
 
-  <xs:complexType name="Authorisation"></xs:complexType>
-
-  <xs:complexType name="AuthorisationBase">
-    <xs:complexContent>
-      <xs:extension base="Authorisation">
+  <xs:complexType name="AdmissionUseProcessingAuthorisation">
+  <!--  <xs:complexContent>
+      <xs:extension base="AdmissionUseProcessingAuthorisationBase"> -->
         <xs:sequence>
-          <xs:element name="ApplicationCodeType" type="AuthorisationCodeType" maxOccurs="1">
+          <xs:element name="CustomsOfficesOfDischarge" type="CustomsOfficesOfDischargeType" maxOccurs="999">
             <xs:annotation>
               <xs:documentation xml:lang="EN">
-                <WCOFormat>an..4</WCOFormat>
-                <WCODescription>Authorisation code type for application</WCODescription>
+                <WCOFormat>an..8</WCOFormat>
+                <WCODescription>Customs Offices of discharge for application</WCODescription>
               </xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element name="DecisionCodeType" type="AuthorisationCodeType" minOccurs="0" maxOccurs="1">
+          <xs:element name="IdentificationOfGoods" type="AuthorisationCode" minOccurs="0" maxOccurs="999">
             <xs:annotation>
               <xs:documentation xml:lang="EN">
-                <WCOFormat>an..4</WCOFormat>
-                <WCODescription>Authorisation code type for decision</WCODescription>
+                <WCODescription>Identification of goods for Authorization</WCODescription>
               </xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element name="ApplicationSignature" type="SignatureType" minOccurs="0" maxOccurs="1">
+          <xs:element name="DetailsOfPlannedActivities" type="DetailsOfPlannedActivitiesTextType" minOccurs="0">
             <xs:annotation>
               <xs:documentation xml:lang="EN">
-                <WCOFormat>an..256</WCOFormat>
-                <WCODescription>Authorisation signature for application</WCODescription>
+                <WCOFormat>an..8</WCOFormat>
+                <WCODescription>Customs Offices of discharge for application</WCODescription>
               </xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element name="DecisionSignature" type="SignatureType" minOccurs="0" maxOccurs="1">
-            <xs:annotation>
-              <xs:documentation xml:lang="EN">
-                <WCOFormat>an.256</WCOFormat>
-                <WCODescription>Authorisation signature for decision</WCODescription>
-              </xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="DecisionReferenceNumber" type="DecisionReferenceNumberType" minOccurs="0" maxOccurs="1">
-            <xs:annotation>
-              <xs:documentation xml:lang="EN">
-                <WCODescription>Unique reference attributed by the competent customs authority to the decision.</WCODescription>
-              </xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="DecisionCustomsAuthority" type="DecisionCustomsAuthorityType" minOccurs="0" maxOccurs="1">
-            <xs:annotation>
-              <xs:documentation xml:lang="EN">
-                <WCODescription>Name and address of the customs authority which takes the decision</WCODescription>
-              </xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="AttachedDocument" type="AttachedDocumentType" minOccurs="0" maxOccurs="unbounded">
-            <xs:annotation>
-              <xs:documentation xml:lang="EN">
-                <WCODescription>Document(s) attached to the application or the decision</WCODescription>
-              </xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="ApplicationHolder" type="RepresentativeType" minOccurs="0" maxOccurs="1">
-            <xs:annotation>
-              <xs:documentation xml:lang="EN">
-                <WCODescription>Applicant of the authorisation</WCODescription>
-              </xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="DecisionHolder" type="RepresentativeType" minOccurs="0" maxOccurs="1">
-            <xs:annotation>
-              <xs:documentation xml:lang="EN">
-                <WCODescription>Decision holder representative</WCODescription>
-              </xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="ApplicationHolderId" type="AuthorisationIDType" maxOccurs="1">
-            <xs:annotation>
-              <xs:documentation xml:lang="EN">
-                <WCOFormat>an..17</WCOFormat>
-              </xs:documentation>
-              <xs:documentation>
-                <WCODescription>Application holder ID</WCODescription>
-              </xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="DecisionHolderId" type="AuthorisationIDType" minOccurs="0" maxOccurs="1">
-            <xs:annotation>
-              <xs:documentation xml:lang="EN">
-                <WCOFormat>an..17</WCOFormat>
-              </xs:documentation>
-              <xs:documentation>
-                <WCODescription>Decision holder ID</WCODescription>
-              </xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="ApplicationSupervisor" type="PersonContactDetailsType" maxOccurs="1">
-            <xs:annotation>
-              <xs:documentation xml:lang="EN">
-                <WCODescription>Contact details of person responsible for the application</WCODescription>
-              </xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="ApplicationDate" type="udt:DateTimeType" minOccurs="0" maxOccurs="1">
-            <xs:annotation>
-              <xs:documentation xml:lang="EN">
-                <WCOFormat>n8(yyyymmdd)</WCOFormat>
-              </xs:documentation>
-              <xs:documentation>
-                <WCODescription>Date on which the applicant has signed or otherwise authenticated the application</WCODescription>
-              </xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="DecisionDate" type="udt:DateTimeType" minOccurs="0" maxOccurs="1">
-            <xs:annotation>
-              <xs:documentation xml:lang="EN">
-                <WCOFormat>n8(yyyymmdd)</WCOFormat>
-              </xs:documentation>
-              <xs:documentation>
-                <WCODescription>The date on which the authorisation or decision relating to binding information
-                  or on the repayment or remission of import or export duty was taken.</WCODescription>
-              </xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="GeneralRemarks" type="GeneralRemarksType" minOccurs="0" maxOccurs="1">
+          <xs:element name="AdditionalInformation" type="AdditionalInformationTextType" minOccurs="0">
             <xs:annotation>
               <xs:documentation xml:lang="EN">
                 <WCOFormat>an..512</WCOFormat>
-                <WCODescription>General remarks regarding particulars of any requirements to which
-                  the goods remain subject pending implementation of the decision</WCODescription>
+                <WCODescription>Additional information</WCODescription>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="GoodsOwner" type="GoodsOwnerType" minOccurs="0" maxOccurs="99">
+            <xs:annotation>
+              <xs:documentation xml:lang="EN">
+                <WCODescription>Non-Union owner of the goods to be placed under the temporary admission</WCODescription>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="FirstPlaceOfUseOrProcessing" type="Place" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation xml:lang="EN">
+                <WCODescription>First place of use or processing under the temporary admission</WCODescription>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="PlaceOfProcessingOrUse" type="Place" minOccurs="0" maxOccurs="999">
+            <xs:annotation>
+              <xs:documentation xml:lang="EN">
+                <WCODescription>Place of use or processing under the temporary admission</WCODescription>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="DischargePeriod" type="DischargeType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation xml:lang="EN">
+                <WCODescription>Period of discharge under the temporary admission</WCODescription>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="YieldRate" type="YieldRateType" minOccurs="0" maxOccurs="999">
+            <xs:annotation>
+              <xs:documentation xml:lang="EN">
+                <WCODescription>Estimated rate of yield or estimated average rate of yield, or where appropriate, the method of determining such rate</WCODescription>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ProcessedProducts" type="ProcessedProductsType" minOccurs="0" maxOccurs="999">
+            <xs:annotation>
+              <xs:documentation xml:lang="EN">
+                <WCODescription>Estimated rate of yield or estimated average rate of yield, or where appropriate, the method of determining such rate</WCODescription>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="EconomicConditions" type="AuthorisationCode" minOccurs="0" maxOccurs="999">
+            <xs:annotation>
+              <xs:documentation xml:lang="EN">
+                <WCODescription>Estimated rate of yield or estimated average rate of yield, or where appropriate, the method of determining such rate</WCODescription>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ImportDuty" type="ImportDutyType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation xml:lang="EN">
+                <WCOFormat>n1</WCOFormat>
+                <WCODescription>Calculation of the amount of the import duty in accordance with Article 86(3) of the Code</WCODescription>
               </xs:documentation>
             </xs:annotation>
           </xs:element>
         </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
+    <!--  </xs:extension>
+    </xs:complexContent> -->
   </xs:complexType>
 
   <xs:complexType name="AdmissionUseProcessingAuthorisationBase">
@@ -192,295 +154,8 @@
     </xs:complexContent>
   </xs:complexType>
 
-  <xs:complexType name="RepaymentRemissionAuthorisation">
-    <xs:complexContent>
-      <xs:extension base="AuthorisationBase">
-        <xs:sequence>
-          <xs:element name="Representative" type="RepresentativeType" minOccurs="0" maxOccurs="1">
-            <xs:annotation>
-              <xs:documentation xml:lang="EN">
-                <WCODescription>Repayment/Remission representative</WCODescription>
-              </xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="RepresentativeId" type="AuthorisationIDType" minOccurs="0" maxOccurs="1" >
-            <xs:annotation>
-              <xs:documentation xml:lang="EN">
-                <WCOFormat>an..17</WCOFormat>
-              </xs:documentation>
-              <xs:documentation>
-                <WCODescription>Representative Identification</WCODescription>
-              </xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="GoodsLocation" type="GoodsLocationType" minOccurs="0" maxOccurs="unbounded">
-            <xs:annotation>
-              <xs:documentation xml:lang="EN">
-                <WCODescription>Locations of goods</WCODescription>
-              </xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="TraderCommodityCode" type="CommodityCodeType" minOccurs="0" maxOccurs="unbounded">
-            <xs:annotation>
-              <xs:documentation xml:lang="EN">
-                <WCODescription>Trader commodity codes</WCODescription>
-              </xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="CustomsCommodityCode" type="CommodityCodeType" minOccurs="0" maxOccurs="1">
-            <xs:annotation>
-              <xs:documentation xml:lang="EN">
-                <WCODescription>Customs commodity code</WCODescription>
-              </xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="GoodsDescription" type="GoodsDescriptionType" minOccurs="0" maxOccurs="unbounded">
-            <xs:annotation>
-              <xs:documentation xml:lang="EN">
-                <WCOFormat>an..2560</WCOFormat>
-              </xs:documentation>
-              <xs:documentation>
-                <WCODescription>Description of goods</WCODescription>
-              </xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="TraderGoodsQuantity" type="GoodsQuantityType" minOccurs="0" maxOccurs="unbounded">
-            <xs:annotation>
-              <xs:documentation xml:lang="EN">
-                <WCODescription>Trader goods quantities</WCODescription>
-              </xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="CustomsGoodsQuantity" type="GoodsQuantityType" minOccurs="0" maxOccurs="1">
-            <xs:annotation>
-              <xs:documentation xml:lang="EN">
-                <WCODescription>Customs goods quantity</WCODescription>
-              </xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="AdditionalInformation" type="AdditionalInformationTextType" minOccurs="0" maxOccurs="1">
-            <xs:annotation>
-              <xs:documentation xml:lang="EN">
-                <WCOFormat>an..512</WCOFormat>
-                <WCODescription>Additional information</WCODescription>
-              </xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="RecoveryTitle" type="RecoveryTitleTextType" minOccurs="0" maxOccurs="unbounded">
-            <xs:annotation>
-              <xs:documentation xml:lang="EN">
-                <WCOFormat>an..35</WCOFormat>
-              </xs:documentation>
-              <xs:documentation>
-                <WCODescription>Title of recovery</WCODescription>
-              </xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="CustomsOfficeNotified" type="CustomsOfficeNotifiedType" minOccurs="0" maxOccurs="1">
-            <xs:annotation>
-              <xs:documentation xml:lang="EN">
-                <WCOFormat>an8</WCOFormat>
-              </xs:documentation>
-              <xs:documentation>
-                <WCODescription>Customs office where the customs debt was notified</WCODescription>
-              </xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="CustomsOfficeLocation" type="CustomsOfficeLocationTextType" minOccurs="0" maxOccurs="1">
-            <xs:annotation>
-              <xs:documentation xml:lang="EN">
-                <WCOFormat>an8</WCOFormat>
-              </xs:documentation>
-              <xs:documentation>
-                <WCODescription>Customs office responsible for the place where the goods are located</WCODescription>
-              </xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="CustomsOfficeComments" type="CustomsOfficeCommentsTextType" minOccurs="0" maxOccurs="1">
-            <xs:annotation>
-              <xs:documentation xml:lang="EN">
-                <WCOFormat>an..512</WCOFormat>
-              </xs:documentation>
-              <xs:documentation>
-                <WCODescription>Comments of the customs office responsible for the place where the goods are located</WCODescription>
-              </xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="CustomsProcedure" type="CustomsProcedureType" minOccurs="0" maxOccurs="1">
-            <xs:annotation>
-              <xs:documentation xml:lang="EN">
-                <WCODescription>Customs procedure (request for prior completion of formalities)</WCODescription>
-              </xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="CustomsValue" type="ValueType" minOccurs="0" maxOccurs="1">
-            <xs:annotation>
-              <xs:documentation xml:lang="EN">
-                <WCODescription>Customs value</WCODescription>
-              </xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="AmountDuty" type="ValueType" maxOccurs="1">
-            <xs:annotation>
-              <xs:documentation xml:lang="EN">
-                <WCODescription>Amount of import or export duty to be repaid or remitted of</WCODescription>
-              </xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="DutyType" type="DutyCodeTypeType" minOccurs="0" maxOccurs="unbounded">
-            <xs:annotation>
-              <xs:documentation xml:lang="EN">
-                <WCODescription>Type of import or export duty</WCODescription>
-              </xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="LegalBasis" type="LegalBasisTextType" maxOccurs="1">
-            <xs:annotation>
-              <xs:documentation xml:lang="EN">
-                <WCOFormat>a1</WCOFormat>
-              </xs:documentation>
-              <xs:documentation>
-                <WCODescription>Legal basis</WCODescription>
-              </xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="GoodsDestination" type="GoodsDestinationTextType" minOccurs="0" maxOccurs="1">
-            <xs:annotation>
-              <xs:documentation xml:lang="EN">
-                <WCOFormat>an..512</WCOFormat>
-              </xs:documentation>
-              <xs:documentation>
-                <WCODescription>Use or destination of goods</WCODescription>
-              </xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="CompletionTimeLimit" type="CompletionTimeLimitNumericType" minOccurs="0" maxOccurs="1">
-            <xs:annotation>
-              <xs:documentation xml:lang="EN">
-                <WCOFormat>n..3</WCOFormat>
-              </xs:documentation>
-              <xs:documentation>
-                <WCODescription>Time-limit for completion of formalities</WCODescription>
-              </xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="CustomsStatement" type="CustomsStatementTextType" minOccurs="0" maxOccurs="1">
-            <xs:annotation>
-              <xs:documentation xml:lang="EN">
-                <WCOFormat>an..512</WCOFormat>
-              </xs:documentation>
-              <xs:documentation>
-                <WCODescription>Statement of the decision-taking customs authority</WCODescription>
-              </xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="TraderGroundsDescription" type="GroundsDescriptionTextType" minOccurs="0" maxOccurs="1">
-            <xs:annotation>
-              <xs:documentation xml:lang="EN">
-                <WCOFormat>an..512</WCOFormat>
-              </xs:documentation>
-              <xs:documentation>
-                <WCODescription>Description of the grounds for repayment or remission A</WCODescription>
-              </xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="CustomsGroundsDescription" type="GroundsDescriptionTextType" minOccurs="0" maxOccurs="1">
-            <xs:annotation>
-              <xs:documentation xml:lang="EN">
-                <WCOFormat>an..512</WCOFormat>
-              </xs:documentation>
-              <xs:documentation>
-                <WCODescription>Description of the grounds for repayment or remission D</WCODescription>
-              </xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="BankDetails" type="BankDetailsTextType" minOccurs="0" maxOccurs="1">
-            <xs:annotation>
-              <xs:documentation xml:lang="EN">
-                <WCOFormat>an..512</WCOFormat>
-              </xs:documentation>
-              <xs:documentation>
-                <WCODescription>Bank and account details</WCODescription>
-              </xs:documentation>
-            </xs:annotation>
-          </xs:element>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
+  <xs:complexType name="Authorisation"/>
 
-  <xs:complexType name="AdmissionUseProcessingAuthorisation">
-    <xs:complexContent>
-      <xs:extension base="AdmissionUseProcessingAuthorisationBase">
-        <xs:sequence>
-          <xs:element name="GoodsOwner" type="GoodsOwnerType" minOccurs="0" maxOccurs="99">
-            <xs:annotation>
-              <xs:documentation xml:lang="EN">
-                <WCODescription>Non-Union owner of the goods to be placed under the temporary admission</WCODescription>
-              </xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="FirstPlaceOfUseOrProcessing" type="Place" minOccurs="0">
-            <xs:annotation>
-              <xs:documentation xml:lang="EN">
-                <WCODescription>First place of use or processing under the temporary admission</WCODescription>
-              </xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="PlaceOfProcessingOrUse" type="Place" minOccurs="0" maxOccurs="999">
-            <xs:annotation>
-              <xs:documentation xml:lang="EN">
-                <WCODescription>Place of use or processing under the temporary admission</WCODescription>
-              </xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="DischargePeriod" type="DischargeType" minOccurs="0">
-            <xs:annotation>
-              <xs:documentation xml:lang="EN">
-                <WCODescription>Period of discharge under the temporary admission</WCODescription>
-              </xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="BillOfDischarge" type="DischargeType" minOccurs="0">
-            <xs:annotation>
-              <xs:documentation xml:lang="EN">
-                <WCODescription>Bill of discharge under the temporary admission</WCODescription>
-              </xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="YieldRate" type="YieldRateType" minOccurs="0" maxOccurs="999">
-            <xs:annotation>
-              <xs:documentation xml:lang="EN">
-                <WCODescription>Estimated rate of yield or estimated average rate of yield, or where appropriate, the method of determining such rate</WCODescription>
-              </xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="ProcessedProducts" type="ProcessedProductsType" minOccurs="0" maxOccurs="999">
-            <xs:annotation>
-              <xs:documentation xml:lang="EN">
-                <WCODescription>Estimated rate of yield or estimated average rate of yield, or where appropriate, the method of determining such rate</WCODescription>
-              </xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="EconomicConditions" type="AuthorisationCode" minOccurs="0" maxOccurs="999">
-            <xs:annotation>
-              <xs:documentation xml:lang="EN">
-                <WCODescription>Estimated rate of yield or estimated average rate of yield, or where appropriate, the method of determining such rate</WCODescription>
-              </xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="ImportDuty" type="ImportDutyType" minOccurs="0">
-            <xs:annotation>
-              <xs:documentation xml:lang="EN">
-                <WCOFormat>n1</WCOFormat>
-                <WCODescription>Calculation of the amount of the import duty in accordance with Article 86(3) of the Code</WCODescription>
-              </xs:documentation>
-            </xs:annotation>
-          </xs:element>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
 
   <!--  *************************************************************************************************-->
   <!--  *************************************************************************************************-->
@@ -888,6 +563,56 @@
       <xs:restriction base="udt:CodeType">
         <xs:length value="3"/>
         <xs:pattern value="([a-zA-Z])*"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="DateTimeType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>n8</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="udt:DateTimeType">
+        <xs:length value="8"/>
+        <xs:pattern value="([0-9])"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="AddressCountryCodeType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>n8</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="ds:AddressCountryCodeType">
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="AddressPostcodeIDType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>an..17</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="ds:AddressPostcodeIDType">
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="AddressCityNameTextType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>an..35</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="ds:AddressCityNameTextType">
       </xs:restriction>
     </xs:simpleContent>
   </xs:complexType>
@@ -1581,7 +1306,7 @@
       <xs:element name="LocationTypeCode" type="LocationCodeCodeType" minOccurs="0">
         <xs:annotation>
           <xs:documentation xml:lang="EN">
-            <WCOFormat>an2</WCOFormat>
+            <WCOFormat>a1</WCOFormat>
             <WCODescription>First Place of Use Location type code</WCODescription>
           </xs:documentation>
         </xs:annotation>
