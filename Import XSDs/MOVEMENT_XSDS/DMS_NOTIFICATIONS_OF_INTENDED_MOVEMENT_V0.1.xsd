@@ -6,7 +6,7 @@
            xmlns:extensions="urn:eds:datamodel:EDS:EDS_EXTENSIONS:1">
     <xs:import namespace="urn:eds:datamodel:EDS:EDS_EXTENSIONS:1"
                schemaLocation="../DMS_DS/EDS/EDS_EXTENSIONS.xsd"/>
-  <!--  <xs:include schemaLocation="WCO_TS_DEC.XSD"/> -->
+  <!--  <xs:include schemaLocation="WCO_TS_DEC.xsd"/> -->
 
     <xs:element name="Declaration" type="Declaration"/>
 
@@ -15,11 +15,9 @@
             <xs:element name="Extensions" type="extensions:ExtensionType"/>
             <xs:element ref="functionalReference"/>
             <xs:element ref="procedureCategory"/>
-            <xs:element ref="FunctionCode"/>
             <xs:element ref="Agent" minOccurs="0"/>
             <xs:element ref="Declarant"/>
             <xs:element ref="Submitter"/>
-            <xs:element ref="SupervisingOffice"/>
             <xs:element ref="Consignment"/>
             <xs:element ref="PreviousDocument" maxOccurs="99"/>
         </xs:sequence>
@@ -27,7 +25,6 @@
 
     <xs:element name="functionalReference" type="Identifier.Type"/>
     <xs:element name="procedureCategory" type="Identifier.Type"/>
-    <xs:element name="FunctionCode" type="FunctionCode"/>
     <xs:element name="Agent" type="Agent"/>
     <xs:element name="name" type="Text.Type"/>
     <xs:element name="identification_2" type="Identifier.Type"/>
@@ -35,8 +32,6 @@
     <xs:element name="function_3" type="AgentFunctionCode"/>
     <xs:element name="Declarant" type="Declarant"/>
     <xs:element name="Submitter" type="Submitter"/>
-    <xs:element name="SupervisingOffice" type="SupervisingOffice"/>
-    <xs:element name="identification" type="GovernmentAgencyNameCode"/>
     <xs:element name="Consignment" type="Consignment"/>
     <xs:element name="AdditionalInformation" type="AdditionalInformation"/>
     <xs:element name="statement" type="StatementCode"/>
@@ -83,11 +78,6 @@
             <xs:element ref="name"/>
             <xs:element ref="identification_2"/>
             <xs:element ref="sequence"/>
-        </xs:sequence>
-    </xs:complexType>
-    <xs:complexType name="SupervisingOffice">
-        <xs:sequence>
-            <xs:element ref="identification"/>
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="Consignment">
@@ -139,8 +129,6 @@
     </xs:complexType>
     <xs:complexType name="UnloadingLocation">
         <xs:sequence>
-            <xs:element ref="name" minOccurs="0"/>
-            <xs:element ref="identification_2" minOccurs="0"/>
             <xs:element ref="Address" minOccurs="0"/>
         </xs:sequence>
     </xs:complexType>
@@ -209,19 +197,9 @@
             <xs:extension base="Code.Type"/>
         </xs:complexContent>
     </xs:complexType>
-    <xs:complexType name="FunctionCode">
-        <xs:complexContent>
-            <xs:extension base="Code.Type"/>
-        </xs:complexContent>
-    </xs:complexType>
     <xs:complexType name="Code.Type">
         <xs:sequence>
             <xs:element ref="Code.Content"/>
-        </xs:sequence>
-    </xs:complexType>
-    <xs:complexType name="GovernmentAgencyNameCode">
-        <xs:sequence>
-            <xs:element ref="Identifier.Content"/>
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="CountryCode">
