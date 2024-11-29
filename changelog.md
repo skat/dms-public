@@ -1,5 +1,5 @@
 ### 29-11-2024
-* Minor correction to G3
+* Minor correction to G3 and G5
 * Updated NCM and NIM XSDs
 
 ### 28-11-2024
