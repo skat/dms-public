@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://ncts.dgtaxud.ec" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" targetNamespace="http://ncts.dgtaxud.ec" elementFormDefault="unqualified" attributeFormDefault="unqualified" version="51.8.6" vc:minVersion="1.1">
+  <!--================================================================================-->
+  <!--===== IE060: E_CTR_DEC                                                                -->
+  <!--===== CONTROL DECISION NOTIFICATION                                                   -->
+  <!--===== NCTS P5 Phase Definition                                                        -->
+  <!--===== XSD Version 51.8.6                                                              -->
+  <!--================================================================================-->
+  <!--================================================================================-->
+  <!--===== Includes                                                                        -->
+  <!--================================================================================-->
+  <xs:include schemaLocation="../../Transit XSDs/NCTS DS/ctypes.xsd" />
+  <xs:include schemaLocation="../../Transit XSDs/NCTS DS/htypes.xsd" />
+  <!--================================================================================-->
+  <!--===== Root Element                                                                    -->
+  <!--================================================================================-->
+  <xs:element name="CC060C" type="CC060CType" />
+  <!--================================================================================-->
+  <!--===== Root Element Content                                                            -->
+  <!--================================================================================-->
+  <xs:complexType name="CC060CType">
+    <xs:sequence>
+      <xs:group ref="MESSAGE" />
+      <xs:element name="TransitOperation" type="TransitOperationType22">
+        <xs:annotation>
+          <xs:documentation>
+            <description value="TRANSIT OPERATION" />
+            <optionality value="R" />
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CustomsOfficeOfDeparture" type="CustomsOfficeOfDepartureType03">
+        <xs:annotation>
+          <xs:documentation>
+            <description value="CUSTOMS OFFICE OF DEPARTURE" />
+            <optionality value="R" />
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="HolderOfTheTransitProcedure" type="HolderOfTheTransitProcedureType13">
+        <xs:annotation>
+          <xs:documentation>
+            <description value="HOLDER OF THE TRANSIT PROCEDURE" />
+            <optionality value="R" />
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Representative" minOccurs="0" type="RepresentativeType04">
+        <xs:annotation>
+          <xs:documentation>
+            <description value="REPRESENTATIVE" />
+            <optionality value="O" />
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TypeOfControls" minOccurs="0" maxOccurs="99" type="TypeOfControlsType">
+        <xs:annotation>
+          <xs:documentation>
+            <description value="TYPE OF CONTROLS" />
+            <optionality value="D" />
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="RequestedDocument" minOccurs="0" maxOccurs="99" type="RequestedDocumentType">
+        <xs:annotation>
+          <xs:documentation>
+            <description value="REQUESTED DOCUMENT" />
+            <optionality value="D" />
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="PhaseID" type="phaseIDtype" />
+  </xs:complexType>
+</xs:schema>
