@@ -2,9 +2,6 @@
 * Minor correction to G3
 * Updated NCM and NIM XSDs
 
-### 29-11-2024
-* Minor correction to G3
-
 ### 28-11-2024
 * Uploaded G3, G4, G5, NIM and NCM XSDs
 * Corrected minor errors in H6 and H2 XSDs
