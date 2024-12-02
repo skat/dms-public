@@ -1,3 +1,6 @@
+### 02-12-2024
+* Updated DMS ImportExport System Guide
+
 ### 29-11-2024
 * Minor correction to G3 and G5
 * Updated NCM and NIM XSDs
