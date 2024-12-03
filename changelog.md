@@ -1,8 +1,13 @@
+### 03-12-2024
+* Corrections to G4, G4G3 and G5 XSDs
+* Created Temporary Storage XML Guide
+* Updated import codelists
+
 ### 02-12-2024
 * Updated DMS ImportExport System Guide
 
 ### 29-11-2024
-* Minor correction to G3 and G5
+* Minor correction to G3 and G5 XSDs
 * Updated NCM and NIM XSDs
 
 ### 28-11-2024
