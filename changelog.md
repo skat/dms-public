@@ -1,4 +1,5 @@
 ### 03-12-2024
+* Updated Export and Transit XML Guides including their IE counterparts
 * Corrections to G4, G4G3 and G5 XSDs
 * Created Temporary Storage XML Guide
 * Updated import codelists
