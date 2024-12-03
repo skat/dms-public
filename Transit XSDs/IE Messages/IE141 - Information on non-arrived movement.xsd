@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://ncts.dgtaxud.ec" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" targetNamespace="http://ncts.dgtaxud.ec" elementFormDefault="unqualified" attributeFormDefault="unqualified" version="51.8.6" vc:minVersion="1.1">
+  <!--================================================================================-->
+  <!--===== IE141: E_MOV_RSP                                                                -->
+  <!--===== INFORMATION ABOUT NON-ARRIVED MOVEMENT                                          -->
+  <!--===== NCTS P5 Phase Definition                                                        -->
+  <!--===== XSD Version 51.8.6                                                              -->
+  <!--================================================================================-->
+  <!--================================================================================-->
+  <!--===== Includes                                                                        -->
+  <!--================================================================================-->
+  <xs:include schemaLocation="../NCTS DS/ctypes.xsd" />
+  <xs:include schemaLocation="../NCTS DS/htypes.xsd" />
+  <!--================================================================================-->
+  <!--===== Root Element                                                                    -->
+  <!--================================================================================-->
+  <xs:element name="CC141C" type="CC141CType" />
+  <!--================================================================================-->
+  <!--===== Root Element Content                                                            -->
+  <!--================================================================================-->
+  <xs:complexType name="CC141CType">
+    <xs:sequence>
+      <xs:element name="messageSender" type="MessageSenderContentType">
+        <xs:annotation>
+          <xs:documentation>
+            <description value="Message sender" />
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="messageRecipient" type="MessageRecipientContentType">
+        <xs:annotation>
+          <xs:documentation>
+            <description value="Message recipient" />
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="preparationDateAndTime" type="PreparationDateAndTimeContentType">
+        <xs:annotation>
+          <xs:documentation>
+            <description value="Preparation date and time" />
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="messageIdentification" type="MessageIdentificationContentType">
+        <xs:annotation>
+          <xs:documentation>
+            <description value="Message identification" />
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="messageType" type="MessageTypes">
+        <xs:annotation>
+          <xs:documentation>
+            <description value="Message type" />
+            <codeList name="MessageTypes" />
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="correlationIdentifier" type="CorrelationIdentifierContentType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <description value="Correlation identifier" />
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TransitOperation">
+        <xs:annotation>
+          <xs:documentation>
+            <description value="TRANSIT OPERATION" />
+            <optionality value="R" />
+          </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:annotation>
+            <xs:documentation>
+              <usedBy>Used by 15/91 messages: CC141C, CD002C, CD010C, CD027C, CD114C, CD142C, CD143C, CD144C, CD145C, CD150C, CD151C, CD152C, CD164C, CD201C, CD205C</usedBy>
+            </xs:documentation>
+          </xs:annotation>
+          <xs:sequence>
+            <xs:element name="MRN" type="MrnContentType05">
+              <xs:annotation>
+                <xs:documentation>
+                  <description value="MRN" />
+                  <format value="an18" />
+                  <optionality value="R" />
+                  <xsdBaseType value="MRNType" />
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomsOfficeOfDestinationActual" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <description value="CUSTOMS OFFICE OF DESTINATION (ACTUAL)" />
+            <optionality value="D" />
+          </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:annotation>
+            <xs:documentation>
+              <usedBy>Used by 1/91 messages: CC141C</usedBy>
+            </xs:documentation>
+          </xs:annotation>
+          <xs:sequence>
+            <xs:element name="referenceNumber" type="ReferenceNumberContentType05">
+              <xs:annotation>
+                <xs:documentation>
+                  <description value="Reference number" />
+                  <format value="an8" />
+                  <optionality value="R" />
+                  <xsdBaseType value="CORefNumType" />
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomsOfficeOfEnquiryAtDeparture">
+        <xs:annotation>
+          <xs:documentation>
+            <description value="CUSTOMS OFFICE OF ENQUIRY AT DEPARTURE" />
+            <optionality value="R" />
+          </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:annotation>
+            <xs:documentation>
+              <usedBy>Used by 3/91 messages: CC140C, CC141C, CD143C</usedBy>
+            </xs:documentation>
+          </xs:annotation>
+          <xs:sequence>
+            <xs:element name="referenceNumber" type="ReferenceNumberContentType05">
+              <xs:annotation>
+                <xs:documentation>
+                  <description value="Reference number" />
+                  <format value="an8" />
+                  <optionality value="R" />
+                  <xsdBaseType value="CORefNumType" />
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="HolderOfTheTransitProcedure">
+        <xs:annotation>
+          <xs:documentation>
+            <description value="HOLDER OF THE TRANSIT PROCEDURE" />
+            <optionality value="R" />
+          </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:annotation>
+            <xs:documentation>
+              <usedBy>Used by 3/91 messages: CC054C, CC141C, CC170C</usedBy>
+            </xs:documentation>
+          </xs:annotation>
+          <xs:sequence>
+            <xs:element name="identificationNumber" minOccurs="0" type="IdentificationNumberContentType01">
+              <xs:annotation>
+                <xs:documentation>
+                  <description value="Identification number" />
+                  <format value="an..17" />
+                  <optionality value="O" />
+                  <xsdBaseType value="AlphaNumeric_MAX17_NoSpaces" />
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="TIRHolderIdentificationNumber" minOccurs="0" type="TIRHolderIdentificationNumberContentType02">
+              <xs:annotation>
+                <xs:documentation>
+                  <description value="TIR holder identification number" />
+                  <format value="an..17" />
+                  <optionality value="D" />
+                  <xsdBaseType value="AlphaNumeric_MAX17_NoSpaces" />
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="name" minOccurs="0" type="NameContentType02">
+              <xs:annotation>
+                <xs:documentation>
+                  <description value="Name" />
+                  <format value="an..70" />
+                  <optionality value="D" />
+                  <xsdBaseType value="AlphaNumeric_MAX70_NoSpaces" />
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="Address" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <description value="ADDRESS" />
+                  <optionality value="D" />
+                </xs:documentation>
+              </xs:annotation>
+              <xs:complexType>
+                <xs:annotation>
+                  <xs:documentation>
+                    <usedBy>Used by 7/91 messages: CC013C, CC015C, CC017C, CC054C, CC141C, CC170C, CC224C</usedBy>
+                  </xs:documentation>
+                </xs:annotation>
+                <xs:sequence>
+                  <xs:element name="streetAndNumber" type="StreetAndNumberContentType02">
+                    <xs:annotation>
+                      <xs:documentation>
+                        <description value="Street and number" />
+                        <format value="an..70" />
+                        <optionality value="R" />
+                        <xsdBaseType value="AlphaNumeric_MAX70_NoSpaces" />
+                      </xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+                  <xs:element name="postcode" minOccurs="0" type="PostcodeContentType02">
+                    <xs:annotation>
+                      <xs:documentation>
+                        <description value="Postcode" />
+                        <format value="an..17" />
+                        <optionality value="D" />
+                        <xsdBaseType value="AlphaNumeric_MAX17_NoSpaces" />
+                      </xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+                  <xs:element name="city" type="CityContentType03">
+                    <xs:annotation>
+                      <xs:documentation>
+                        <description value="City" />
+                        <format value="an..35" />
+                        <optionality value="R" />
+                        <xsdBaseType value="AlphaNumeric_MAX35_NoSpaces" />
+                      </xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+                  <xs:element name="country" type="CountryContentType">
+                    <xs:annotation>
+                      <xs:documentation>
+                        <description value="Country" />
+                        <format value="a2" />
+                        <optionality value="R" />
+                        <xsdBaseType value="CountryCodeType" />
+                      </xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Enquiry" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <description value="ENQUIRY" />
+            <optionality value="O" />
+          </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:annotation>
+            <xs:documentation>
+              <usedBy>Used by 1/91 messages: CC141C</usedBy>
+            </xs:documentation>
+          </xs:annotation>
+          <xs:sequence>
+            <xs:element name="TC11DeliveryDate" minOccurs="0" type="TC11DeliveryDateContentType">
+              <xs:annotation>
+                <xs:documentation>
+                  <description value="TC11 delivery date" />
+                  <format value="an10" />
+                  <optionality value="O" />
+                  <xsdBaseType value="DateType" />
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="text" minOccurs="0" type="TextContentType02">
+              <xs:annotation>
+                <xs:documentation>
+                  <description value="Text" />
+                  <format value="an..512" />
+                  <optionality value="D" />
+                  <xsdBaseType value="AlphaNumeric_MAX512_NoSpaces" />
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Consignment" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <description value="CONSIGNMENT" />
+            <optionality value="D" />
+          </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:annotation>
+            <xs:documentation>
+              <usedBy>Used by 1/91 messages: CC141C</usedBy>
+            </xs:documentation>
+          </xs:annotation>
+          <xs:sequence>
+            <xs:element name="ConsigneeActual">
+              <xs:annotation>
+                <xs:documentation>
+                  <description value="CONSIGNEE (ACTUAL)" />
+                  <optionality value="R" />
+                </xs:documentation>
+              </xs:annotation>
+              <xs:complexType>
+                <xs:annotation>
+                  <xs:documentation>
+                    <usedBy>Used by 1/91 messages: CC141C</usedBy>
+                  </xs:documentation>
+                </xs:annotation>
+                <xs:sequence>
+                  <xs:element name="identificationNumber" minOccurs="0" type="IdentificationNumberContentType01">
+                    <xs:annotation>
+                      <xs:documentation>
+                        <description value="Identification number" />
+                        <format value="an..17" />
+                        <optionality value="O" />
+                        <xsdBaseType value="AlphaNumeric_MAX17_NoSpaces" />
+                      </xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+                  <xs:element name="name" type="NameContentType02">
+                    <xs:annotation>
+                      <xs:documentation>
+                        <description value="Name" />
+                        <format value="an..70" />
+                        <optionality value="R" />
+                        <xsdBaseType value="AlphaNumeric_MAX70_NoSpaces" />
+                      </xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+                  <xs:element name="Address">
+                    <xs:annotation>
+                      <xs:documentation>
+                        <description value="ADDRESS" />
+                        <optionality value="R" />
+                      </xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                      <xs:annotation>
+                        <xs:documentation>
+                          <usedBy>Used by 2/91 messages: CC017C, CC141C</usedBy>
+                        </xs:documentation>
+                      </xs:annotation>
+                      <xs:sequence>
+                        <xs:element name="streetAndNumber" type="StreetAndNumberContentType02">
+                          <xs:annotation>
+                            <xs:documentation>
+                              <description value="Street and number" />
+                              <format value="an..70" />
+                              <optionality value="R" />
+                              <xsdBaseType value="AlphaNumeric_MAX70_NoSpaces" />
+                            </xs:documentation>
+                          </xs:annotation>
+                        </xs:element>
+                        <xs:element name="postcode" minOccurs="0" type="PostcodeContentType02">
+                          <xs:annotation>
+                            <xs:documentation>
+                              <description value="Postcode" />
+                              <format value="an..17" />
+                              <optionality value="D" />
+                              <xsdBaseType value="AlphaNumeric_MAX17_NoSpaces" />
+                            </xs:documentation>
+                          </xs:annotation>
+                        </xs:element>
+                        <xs:element name="city" type="CityContentType03">
+                          <xs:annotation>
+                            <xs:documentation>
+                              <description value="City" />
+                              <format value="an..35" />
+                              <optionality value="R" />
+                              <xsdBaseType value="AlphaNumeric_MAX35_NoSpaces" />
+                            </xs:documentation>
+                          </xs:annotation>
+                        </xs:element>
+                        <xs:element name="country" type="CountryContentType">
+                          <xs:annotation>
+                            <xs:documentation>
+                              <description value="Country" />
+                              <format value="a2" />
+                              <optionality value="R" />
+                              <xsdBaseType value="CountryCodeType" />
+                            </xs:documentation>
+                          </xs:annotation>
+                        </xs:element>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="PhaseID" type="phaseIDtype" />
+  </xs:complexType>
+</xs:schema>

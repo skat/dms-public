@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://ncts.dgtaxud.ec" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" targetNamespace="http://ncts.dgtaxud.ec" elementFormDefault="unqualified" attributeFormDefault="unqualified" version="51.8.6" vc:minVersion="1.1">
+  <!--================================================================================-->
+  <!--===== IE055: E_GUA_INV                                                                -->
+  <!--===== GUARANTEE NOT VALID                                                             -->
+  <!--===== NCTS P5 Phase Definition                                                        -->
+  <!--===== XSD Version 51.8.6                                                              -->
+  <!--================================================================================-->
+  <!--================================================================================-->
+  <!--===== Includes                                                                        -->
+  <!--================================================================================-->
+  <xs:include schemaLocation="../../Transit XSDs/NCTS DS/ctypes.xsd" />
+  <xs:include schemaLocation="../../Transit XSDs/NCTS DS/htypes.xsd" />
+  <!--================================================================================-->
+  <!--===== Root Element                                                                    -->
+  <!--================================================================================-->
+  <xs:element name="CC055C" type="CC055CType" />
+  <!--================================================================================-->
+  <!--===== Root Element Content                                                            -->
+  <!--================================================================================-->
+  <xs:complexType name="CC055CType">
+    <xs:sequence>
+      <xs:group ref="MESSAGE" />
+      <xs:element name="TransitOperation" type="TransitOperationType48">
+        <xs:annotation>
+          <xs:documentation>
+            <description value="TRANSIT OPERATION" />
+            <optionality value="R" />
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CustomsOfficeOfDeparture" type="CustomsOfficeOfDepartureType03">
+        <xs:annotation>
+          <xs:documentation>
+            <description value="CUSTOMS OFFICE OF DEPARTURE" />
+            <optionality value="R" />
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="HolderOfTheTransitProcedure" type="HolderOfTheTransitProcedureType07">
+        <xs:annotation>
+          <xs:documentation>
+            <description value="HOLDER OF THE TRANSIT PROCEDURE" />
+            <optionality value="R" />
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="GuaranteeReference" maxOccurs="99" type="GuaranteeReferenceType08">
+        <xs:annotation>
+          <xs:documentation>
+            <description value="GUARANTEE REFERENCE" />
+            <optionality value="R" />
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="PhaseID" type="phaseIDtype" />
+  </xs:complexType>
+</xs:schema>
