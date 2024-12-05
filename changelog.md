@@ -1,5 +1,5 @@
 ### 05-12-2024
-* Import Test Cases have been removed to do being out of sync with current environment version. They will be reuploaded at a later date with more up-to-date data.
+* Import Test Cases have been removed due to being out of sync with current environment version. They will be reuploaded at a later date with more up-to-date data.
 
 ### 03-12-2024
 * Updated Export and Transit XML Guides including their IE counterparts
