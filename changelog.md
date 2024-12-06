@@ -1,3 +1,6 @@
+### 06-12-2024
+* Updated Export XML Guide
+
 ### 05-12-2024
 * Import Test Cases have been removed due to being out of sync with current environment version. They will be reuploaded at a later date with more up-to-date data.
 
