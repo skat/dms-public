@@ -1,3 +1,7 @@
+### 18-12-2024
+* Added the Release notes for TFE02 to the release notes folder
+
+
 ### 06-12-2024
 * Updated Export XML Guide
 
