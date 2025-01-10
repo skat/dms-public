@@ -1,5 +1,6 @@
 ### 10-01-2025
 * Added folder with TAD Printing Guidellines and contingent specification documents
+* Made a minor update to DMS_H1_INVALIDATION_AND_REPAYMENT to ease the generation of XML from the schema. No functional change to the XSD.
 
 ### 18-12-2024
 * Added the Release notes for TFE02 to the release notes folder
