@@ -1,3 +1,6 @@
+###
+* Added folder with TAD Printing Guidellines and contingent specification documents
+
 ### 18-12-2024
 * Added the Release notes for TFE02 to the release notes folder
 
