@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
            elementFormDefault="qualified">
-
-  <xs:element name="NotificationResult" type="tns:TransitNotificationDTO"/>
-
+  <!-- root element -->
+  <xs:element name="NotificationResult" type="TransitNotificationDTO"/>
+  <!-- Definition for TransitNotificationDTO -->
   <xs:complexType name="TransitNotificationDTO">
     <xs:sequence>
       <xs:element name="totalSize" type="xs:string"/>
       <xs:element name="Notifications" minOccurs="0">
         <xs:complexType>
           <xs:sequence>
-            <xs:element name="Notification" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="Notification" type="xs:anyType" minOccurs="0" maxOccurs="unbounded"/>
           </xs:sequence>
         </xs:complexType>
       </xs:element>
