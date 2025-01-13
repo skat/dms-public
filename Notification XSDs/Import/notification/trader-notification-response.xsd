@@ -1,0 +1,46 @@
+
+<!--This XSD is for the notification response for the v2 end point.-->
+
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="TraderNotificationResponseDTO">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="TotalNumberOfNotifications" type="xs:long" minOccurs="1" maxOccurs="1"/>
+        <xs:element name="TotalPages" type="xs:int" minOccurs="1" maxOccurs="1"/>
+        <xs:element name="ViewedPage" type="xs:int" minOccurs="1" maxOccurs="1"/>
+        <xs:element name="TraderNotification" type="TraderNotification" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:complexType name="TraderNotification">
+    <xs:sequence>
+      <xs:element name="MetaData" type="MetaData" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Payload" type="PayloadType"/>
+
+      <!--      can be derived by CCXXX CCIYYY ETC-->
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="PayloadType">
+    <xs:sequence>
+    <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="MetaData">
+    <xs:sequence>
+      <!--      DDNXA/515_1-->
+      <xs:element name="PayloadSpecification" type="xs:string"/>
+      <xs:element name="PayloadType" type="xs:string"/>
+      <!--      XML-->
+      <xs:element name="PayloadFormatType" type="xs:string"/>
+      <!--      IM/EX/TR/ES/MF-->
+      <xs:element name="PayloadRegime" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:element name="TraderNotification" type="TraderNotification"/>
+
+</xs:schema>

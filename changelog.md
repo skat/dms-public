@@ -1,3 +1,6 @@
+### 13-01-2025
+* Updated the Import Notification XSDs to be in line with expected responses from DMS.
+
 ### 10-01-2025
 * Added folder with TAD Printing Guidellines and contingent specification documents
 * Made a minor update to DMS_H1_INVALIDATION_AND_REPAYMENT to ease the generation of XML from the schema. No functional change to the XSD.
