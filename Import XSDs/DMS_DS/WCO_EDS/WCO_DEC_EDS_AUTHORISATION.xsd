@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns="urn:wco:datamodel:WCO:WCO_DEC_EDS_AUTHORISATION:1"
+<xs:schema
     xmlns:ds="urn:wco:datamodel:WCO:Declaration_DS:DMS:2"
     xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:udt="urn:un:unece:uncefact:data:standard:UnqualifiedDataType:6"
-    targetNamespace="urn:wco:datamodel:WCO:WCO_DEC_EDS_AUTHORISATION:1"
     elementFormDefault="qualified"
     version="1.0">
   <xs:import namespace="urn:un:unece:uncefact:data:standard:UnqualifiedDataType:6" schemaLocation="../UNECE/UNQUALIFIEDDATATYPE_6_DMS.xsd"/>
   <xs:import namespace="urn:wco:datamodel:WCO:Declaration_DS:DMS:2"
-    schemaLocation="../DMS_DS_V1.0.xsd" />
+      schemaLocation="../DMS_DS_V1.0.xsd" />
 
   <xs:complexType name="Authorisation"></xs:complexType>
 
@@ -82,7 +81,7 @@
               </xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element name="ApplicationHolderId" type="AuthorisationIDType" maxOccurs="1">
+          <xs:element name="ApplicationHolderId" type="AuthorisationIDType" minOccurs="0" maxOccurs="1">
             <xs:annotation>
               <xs:documentation xml:lang="EN">
                 <WCOFormat>an..17</WCOFormat>
@@ -102,7 +101,7 @@
               </xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element name="ApplicationSupervisor" type="PersonContactDetailsType" maxOccurs="1">
+          <xs:element name="ApplicationSupervisor" type="PersonContactDetailsType" minOccurs="0" maxOccurs="1">
             <xs:annotation>
               <xs:documentation xml:lang="EN">
                 <WCODescription>Contact details of person responsible for the application</WCODescription>
@@ -718,7 +717,7 @@
 
   <xs:complexType name="RepresentativeType">
     <xs:sequence>
-      <xs:element name="Name" type="RepresentativeNameTextType" maxOccurs="1">
+      <xs:element name="Name" type="RepresentativeNameTextType" minOccurs="0" maxOccurs="1">
         <xs:annotation>
           <xs:documentation xml:lang="EN">
             <WCOFormat>an..70</WCOFormat>
@@ -726,7 +725,7 @@
           </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="StreetAndNumber" type="StreetAndNumberType" maxOccurs="1">
+      <xs:element name="StreetAndNumber" type="StreetAndNumberType" minOccurs="0" maxOccurs="1">
         <xs:annotation>
           <xs:documentation xml:lang="EN">
             <WCOFormat>an..70</WCOFormat>
@@ -734,7 +733,7 @@
           </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="CountryCode" type="ds:AddressCountryCodeType" maxOccurs="1">
+      <xs:element name="CountryCode" type="ds:AddressCountryCodeType" minOccurs="0" maxOccurs="1">
         <xs:annotation>
           <xs:documentation xml:lang="EN">
             <WCOFormat>a2</WCOFormat>
@@ -742,7 +741,7 @@
           </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="PostCode" type="ds:AddressPostcodeIDType" maxOccurs="1">
+      <xs:element name="PostCode" type="ds:AddressPostcodeIDType" minOccurs="0" maxOccurs="1">
         <xs:annotation>
           <xs:documentation xml:lang="EN">
             <WCOFormat>an..9</WCOFormat>
@@ -750,7 +749,7 @@
           </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="City" type="ds:AddressCityNameTextType" maxOccurs="1">
+      <xs:element name="City" type="ds:AddressCityNameTextType" minOccurs="0" maxOccurs="1">
         <xs:annotation>
           <xs:documentation xml:lang="EN">
             <WCOFormat>an..35</WCOFormat>
@@ -1301,10 +1300,10 @@
         <WCOFormat>n..3</WCOFormat>
       </xs:documentation>
     </xs:annotation>
-      <xs:restriction base="udt:NumericType">
-        <xs:totalDigits value="3"/>
-        <xs:fractionDigits value="0"/>
-      </xs:restriction>
+    <xs:restriction base="udt:NumericType">
+      <xs:totalDigits value="3"/>
+      <xs:fractionDigits value="0"/>
+    </xs:restriction>
   </xs:simpleType>
 
   <xs:complexType name="AttachedDocumentTypeType">
