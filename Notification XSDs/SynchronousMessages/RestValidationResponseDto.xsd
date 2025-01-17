@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+  <!-- root element -->
+  <xs:element name="ValidationResponse" type="RestValidationResponseDTO"/>
+  <!-- Definition for RestValidationResponseDTO -->
+  <xs:complexType name="RestValidationResponseDTO">
+    <xs:sequence>
+      <xs:element name="lrn" type="xs:string"/>
+      <xs:element name="ValidationResults" type="RestValidationResultDTO"/>
+      <xs:element name="ValidationServiceStatus" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="RestValidationResultDTO">
+    <xs:sequence>
+      <xs:element name="isRejecting" type="xs:boolean"/>
+      <xs:element name="ValidationResultType" type="xs:string"/>
+      <xs:element name="ValidationResultText" type="xs:string"/>
+      <xs:element name="ViolatedRule" type="xs:string"/>
+      <xs:element name="pointers" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
