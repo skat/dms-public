@@ -1,3 +1,6 @@
+### 17-01-2025
+* Made corrections to the Import Notification XSDs.
+
 ### 16-01-2025
 * Removed comments from G5 XSD file that were not intended to be uploaded.
 
