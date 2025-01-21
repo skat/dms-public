@@ -1,4 +1,7 @@
 ### 20-01-2025
+* Moved TAD specification files from NCTS-P5 Printing Guidelines - v.1.4 (18.09.2024) to Printing Guidelines/TAD/v1.4
+
+### 17-01-2025
 * Made corrections to the Import Notification XSDs.
 * Added Import test cases
 
