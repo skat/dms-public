@@ -165,6 +165,7 @@
                 <xs:annotation>
                     <xs:documentation xml:lang="EN">
                         <WCODescription>Locations of goods</WCODescription>
+                        <EUCDMCode>34 08 000 000</EUCDMCode>
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
@@ -214,7 +215,7 @@
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="RecoveryTitle" type="RecoveryTitleTextType" maxOccurs="999">
+            <xs:element name="RecoveryTitle" type="RecoveryTitleTextType" minOccurs="0" maxOccurs="999">
                 <xs:annotation>
                     <xs:documentation xml:lang="EN">
                         <WCOFormat>an..35</WCOFormat>
@@ -264,7 +265,7 @@
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="CustomsValue" type="ValueType" maxOccurs="1">
+            <xs:element name="CustomsValue" type="ValueType" minOccurs="0" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation xml:lang="EN">
                         <WCODescription>Customs value</WCODescription>
@@ -419,6 +420,7 @@
                         <xs:annotation>
                             <xs:documentation xml:lang="EN">
                                 <WCODescription>Document(s) attached to the application or the decision</WCODescription>
+                                <EUCDMcode>32 04 000 000</EUCDMcode>
                             </xs:documentation>
                         </xs:annotation>
                     </xs:element>
@@ -643,6 +645,7 @@
                         <xs:annotation>
                             <xs:documentation xml:lang="EN">
                                 <WCODescription>Type of import or export duty</WCODescription>
+                                <EUCDMcode>48 08 000 000</EUCDMcode>
                             </xs:documentation>
                         </xs:annotation>
                     </xs:element>
@@ -817,19 +820,31 @@
 
     <xs:complexType name="GoodsLocationType">
         <xs:sequence>
+            <xs:element name="CountryCode" type="ds:AddressCountryCodeType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation xml:lang="EN">
+                        <WCOFormat>a2</WCOFormat>
+                        <WCODescription>Goods Location country code</WCODescription>
+                        <EUCDMcode>34 08 050 020</EUCDMcode>
+                        <EUCDMcode>34 08 060 020</EUCDMcode>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
             <xs:element name="LocationCodeType" type="LocationCodeCodeType" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation xml:lang="EN">
                         <WCOFormat>an..17</WCOFormat>
                         <WCODescription>Goods location code type</WCODescription>
+                        <EUCDMCode>34 08 010 036</EUCDMCode>
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="LocationAuthorisation" type="LocationAuthorisationType" maxOccurs="1">
+            <xs:element name="LocationAuthorisation" type="LocationAuthorisationType" minOccurs="0" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation xml:lang="EN">
                         <WCOFormat>an..35</WCOFormat>
                         <WCODescription>Goods location authorisation</WCODescription>
+                        <EUCDMCode>34 08 010 052</EUCDMCode>
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
@@ -838,6 +853,7 @@
                     <xs:documentation xml:lang="EN">
                         <WCOFormat>a1</WCOFormat>
                         <WCODescription>Goods location identification qualifier</WCODescription>
+                        <EUCDMCode>34 08 010 046</EUCDMCode>
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
@@ -846,6 +862,7 @@
                     <xs:documentation xml:lang="EN">
                         <WCOFormat>an..8</WCOFormat>
                         <WCODescription>Location additional identifier</WCODescription>
+                        <EUCDMcode>34 08 010 053</EUCDMcode>
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
@@ -854,6 +871,7 @@
                     <xs:documentation xml:lang="EN">
                         <WCOFormat>an8</WCOFormat>
                         <WCODescription>Location customs office id</WCODescription>
+                        <EUCDMcode>34 08 020 001</EUCDMcode>
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
@@ -862,6 +880,7 @@
                     <xs:documentation xml:lang="EN">
                         <WCOFormat>an..17</WCOFormat>
                         <WCODescription>Location latitude</WCODescription>
+                        <EUCDMcode>34 08 030 049</EUCDMcode>
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
@@ -870,6 +889,7 @@
                     <xs:documentation xml:lang="EN">
                         <WCOFormat>an..17</WCOFormat>
                         <WCODescription>Location longitude</WCODescription>
+                        <EUCDMcode>34 08 030 049</EUCDMcode>
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
@@ -878,6 +898,7 @@
                     <xs:documentation xml:lang="EN">
                         <WCOFormat>an..17</WCOFormat>
                         <WCODescription>Location customs office id</WCODescription>
+                        <EUCDMcode>34 08 030 050</EUCDMcode>
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
@@ -886,14 +907,7 @@
                     <xs:documentation xml:lang="EN">
                         <WCOFormat>an..70</WCOFormat>
                         <WCODescription>Location street and number</WCODescription>
-                    </xs:documentation>
-                </xs:annotation>
-            </xs:element>
-            <xs:element name="CountryCode" type="ds:AddressCountryCodeType" maxOccurs="1">
-                <xs:annotation>
-                    <xs:documentation xml:lang="EN">
-                        <WCOFormat>a2</WCOFormat>
-                        <WCODescription>Goods Location country code</WCODescription>
+                        <EUCDMcode>34 08 050 019</EUCDMcode>
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
@@ -902,6 +916,8 @@
                     <xs:documentation xml:lang="EN">
                         <WCOFormat>an..17</WCOFormat>
                         <WCODescription>Location postcode</WCODescription>
+                        <EUCDMcode>34 08 050 021</EUCDMcode>
+                        <EUCDMcode>34 08 060 021</EUCDMcode>
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
@@ -910,14 +926,16 @@
                     <xs:documentation xml:lang="EN">
                         <WCOFormat>an..35</WCOFormat>
                         <WCODescription>Location city</WCODescription>
+                        <EUCDMcode>34 08 050 022</EUCDMcode>
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="HouseNumber" type="LocationIdentificationType" minOccurs="0" maxOccurs="1">
+            <xs:element name="LocationIdentification" type="LocationIdentificationType" minOccurs="0" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation xml:lang="EN">
                         <WCOFormat>an..35</WCOFormat>
                         <WCODescription>Goods location house number</WCODescription>
+                        <EUCDMcode>34 08 050 025</EUCDMcode>
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
@@ -979,31 +997,21 @@
 
     <xs:complexType name="AttachedDocumentAmountType">
         <xs:sequence>
-            <xs:element name="TotalDocuments" type="TotalDocumentType" maxOccurs="1">
+            <xs:element name="TotalDocuments" type="TotalDocumentType" minOccurs="0" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation xml:lang="EN">
                         <WCOFormat>n..3</WCOFormat>
                         <WCODescription>Total number of attached documents</WCODescription>
+                        <EUCDMcode>32 04 000 223</EUCDMcode>
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="Document" type="AttachedDocumentType" maxOccurs="999">
-                <xs:annotation>
-                    <xs:documentation xml:lang="EN">
-                        <WCODescription>Attached document</WCODescription>
-                    </xs:documentation>
-                </xs:annotation>
-            </xs:element>
-        </xs:sequence>
-    </xs:complexType>
-
-    <xs:complexType name="AttachedDocumentType">
-        <xs:sequence>
-            <xs:element name="Name" type="AttachedDocumentNameType" maxOccurs="1">
+            <xs:element name="Type" type="AttachedDocumentNameType" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation xml:lang="EN">
                         <WCOFormat>an..2560</WCOFormat>
                         <WCODescription>Attached document name</WCODescription>
+                        <EUCDMcode>32 04 010 224</EUCDMcode>
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
@@ -1012,6 +1020,7 @@
                     <xs:documentation xml:lang="EN">
                         <WCOFormat>an..70</WCOFormat>
                         <WCODescription>Attached document identifier</WCODescription>
+                        <EUCDMcode>32 04 010 225</EUCDMcode>
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
@@ -1020,6 +1029,47 @@
                     <xs:documentation xml:lang="EN">
                         <WCOFormat>n8</WCOFormat>
                         <WCODescription>Attached document date</WCODescription>
+                        <EUCDMcode>32 04 010 226</EUCDMcode>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <!--<xs:element name="Document" type="AttachedDocumentType" maxOccurs="999">
+                <xs:annotation>
+                    <xs:documentation xml:lang="EN">
+                        <WCODescription>Attached document</WCODescription>
+                        <EUCDMcode>32 04 010 000</EUCDMcode>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>-->
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="AttachedDocumentType">
+        <xs:sequence>
+            <xs:element name="Type" type="AttachedDocumentNameType" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation xml:lang="EN">
+                        <WCOFormat>an..2560</WCOFormat>
+                        <WCODescription>Attached document name</WCODescription>
+                        <EUCDMcode>32 04 010 224</EUCDMcode>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="AttachedDocumentID" type="AttachedDocumentIdentifierType" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation xml:lang="EN">
+                        <WCOFormat>an..70</WCOFormat>
+                        <WCODescription>Attached document identifier</WCODescription>
+                        <EUCDMcode>32 04 010 225</EUCDMcode>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="AttachedDocumentDate" type="DateTimeType" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation xml:lang="EN">
+                        <WCOFormat>n8</WCOFormat>
+                        <WCODescription>Attached document date</WCODescription>
+                        <EUCDMcode>32 04 010 226</EUCDMcode>
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
@@ -1371,14 +1421,24 @@
                     <xs:documentation xml:lang="EN">
                         <WCOFormat>a1+n2</WCOFormat>
                         <WCODescription>Union code type</WCODescription>
+                        <EUCDMcode>48 08 000 302</EUCDMcode>
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="NationalCode" type="NationalCodeType" maxOccurs="1">
+            <xs:element name="NationalCode" type="NationalCodeType" minOccurs="0" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation xml:lang="EN">
                         <WCOFormat>n1+an2</WCOFormat>
                         <WCODescription>National code type</WCODescription>
+                        <EUCDMcode>48 08 000 303</EUCDMcode>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Amount" type="AmountTypeType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation xml:lang="EN">
+                        <WCOFormat>n..16,2</WCOFormat>
+                        <WCODescription>Amount type</WCODescription>
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
@@ -1413,17 +1473,19 @@
         </xs:simpleContent>
     </xs:complexType>
 
-    <xs:simpleType name="CheckboxIndicatorType">
+    <xs:complexType name="CheckboxIndicatorType">
         <xs:annotation>
             <xs:documentation>
-                <WCOFormat>n1</WCOFormat>
+                <WCOFormat>an..5</WCOFormat>
             </xs:documentation>
         </xs:annotation>
-        <xs:restriction base="udt:NumericType">
-            <xs:totalDigits value="1"/>
-            <xs:fractionDigits value="0"/>
-        </xs:restriction>
-    </xs:simpleType>
+        <xs:simpleContent>
+            <xs:restriction base="udt:TextType">
+                <xs:maxLength value="5"/>
+                <xs:pattern value="([a-zA-Z])*"/>
+            </xs:restriction>
+        </xs:simpleContent>
+    </xs:complexType>
 
     <xs:complexType name="CustomsProcedureCodeType">
         <xs:annotation>
