@@ -1,5 +1,7 @@
-### 21-01-2025
-* Made multiple corrections to various XSDs.
+### 22-01-2025
+* Several bugs fixed for various import XSDs
+* Made sure the Correction_amendment XSDs corrosponds to the Standard XSDs for each H and I declaration
+* Ensured that xmls can be generated from all H and I XSD's
 
 ### 20-01-2025
 * Moved TAD specification files from NCTS-P5 Printing Guidelines - v.1.4 (18.09.2024) to Printing Guidelines/TAD/v1.4
