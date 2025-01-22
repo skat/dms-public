@@ -63,6 +63,7 @@
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
+            <xs:element name="DeclarationOfficeID" type="ds:DeclarationDeclarationOfficeIDType"/>
             <xs:element name="InvoiceAmount" type="ds:DeclarationInvoiceAmountType">
                 <xs:annotation>
                     <xs:documentation>
@@ -77,7 +78,6 @@
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="DeclarationOfficeID" type="ds:DeclarationDeclarationOfficeIDType"/>
             <xs:element name="Submitter">
                 <xs:complexType>
                     <xs:sequence>
@@ -423,7 +423,6 @@
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
-
             <xs:element name="GoodsShipment">
                 <xs:annotation>
                     <xs:documentation>
@@ -1786,6 +1785,13 @@
                                                 </xs:element>
                                                 <xs:element name="TransportEquipment" minOccurs="0"
                                                             maxOccurs="unbounded">
+                                                    <xs:annotation>
+                                                        <xs:documentation>
+                                                            <EUCDMname>Transport equipment</EUCDMname>
+                                                            <type>EUCDM 6.1</type>
+                                                            <code>19 07 000 000</code>
+                                                        </xs:documentation>
+                                                    </xs:annotation>
                                                     <xs:complexType>
                                                         <xs:sequence>
                                                             <xs:element name="SequenceNumeric"
@@ -2315,12 +2321,11 @@
                                                     </xs:complexType>
                                                 </xs:element>
                                                 <xs:element name="CategoryCode"
-                                                            type="ds:PreviousDocumentCategoryCodeType">
+                                                            type="ds:PreviousDocumentCategoryCodeType" minOccurs="0">
                                                     <xs:annotation>
                                                         <xs:documentation>
-                                                            <EUCDMname>Reference number</EUCDMname>
-                                                            <type>EUCDM 6.1</type>
-                                                            <code>12 01 001 000</code>
+                                                            <WCOName>Document category, coded</WCOName>
+                                                            <WCODescription>Code specifying the category of a document</WCODescription>
                                                         </xs:documentation>
                                                     </xs:annotation>
                                                 </xs:element>
@@ -2843,12 +2848,11 @@
                             <xs:complexType>
                                 <xs:sequence>
                                     <xs:element name="SequenceNumeric" type="ds:PreviousDocumentSequenceNumericType"/>
-                                    <xs:element name="CategoryCode" type="ds:PreviousDocumentCategoryCodeType">
+                                    <xs:element name="CategoryCode" type="ds:PreviousDocumentCategoryCodeType" minOccurs="0">
                                         <xs:annotation>
                                             <xs:documentation>
-                                                <EUCDMname>Reference number</EUCDMname>
-                                                <type>EUCDM 6.1</type>
-                                                <code>12 01 001 000</code>
+                                                <WCOName>Document category, coded</WCOName>
+                                                <WCODescription>Code specifying the category of a document</WCODescription>
                                             </xs:documentation>
                                         </xs:annotation>
                                     </xs:element>
@@ -3122,7 +3126,7 @@
                 <xs:complexType>
                     <xs:sequence>
                         <xs:element name="SequenceNumeric" type="ds:ObligationGuaranteeSequenceNumericType"/>
-                        <xs:element name="AmountAmount" type="ds:ObligationGuaranteeAmountAmountType">
+                        <xs:element name="AmountAmount" type="ds:ObligationGuaranteeAmountAmountType" minOccurs="0">
                             <xs:annotation>
                                 <xs:documentation>
                                     <EUCDMname>Amount to be covered</EUCDMname>
@@ -3140,7 +3144,7 @@
                                 </xs:documentation>
                             </xs:annotation>
                         </xs:element>
-                        <xs:element name="ReferenceID" type="ds:ObligationGuaranteeReferenceIDType">
+                        <xs:element name="ReferenceID" type="ds:ObligationGuaranteeReferenceIDType" minOccurs="0">
                             <xs:annotation>
                                 <xs:documentation>
                                     <EUCDMname>GRN</EUCDMname>
@@ -3149,7 +3153,7 @@
                                 </xs:documentation>
                             </xs:annotation>
                         </xs:element>
-                        <xs:element name="SecurityDetailsCode" type="ds:ObligationGuaranteeSecurityDetailsCodeType">
+                        <xs:element name="SecurityDetailsCode" type="ds:ObligationGuaranteeSecurityDetailsCodeType" minOccurs="0">
                             <xs:annotation>
                                 <xs:documentation>
                                     <EUCDMname>Guarantee type</EUCDMname>
@@ -3158,7 +3162,7 @@
                                 </xs:documentation>
                             </xs:annotation>
                         </xs:element>
-                        <xs:element name="AccessCode" type="ds:ObligationGuaranteeAccessCodeType">
+                        <xs:element name="AccessCode" type="ds:ObligationGuaranteeAccessCodeType" minOccurs="0">
                             <xs:annotation>
                                 <xs:documentation>
                                     <EUCDMname>Access code</EUCDMname>
@@ -3170,7 +3174,7 @@
                         <xs:element name="GuaranteeOffice">
                             <xs:complexType>
                                 <xs:sequence>
-                                    <xs:element name="ID" type="ds:GuaranteeOfficeIdentificationIDType">
+                                    <xs:element name="ID" type="ds:GuaranteeOfficeIdentificationIDType" minOccurs="0">
                                         <xs:annotation>
                                             <xs:documentation>
                                                 <EUCDMname>Customs office of guarantee</EUCDMname>
