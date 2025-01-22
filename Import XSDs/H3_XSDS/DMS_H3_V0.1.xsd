@@ -2051,12 +2051,11 @@
                                                     </xs:complexType>
                                                 </xs:element>
                                                 <xs:element name="CategoryCode"
-                                                            type="ds:PreviousDocumentCategoryCodeType">
+                                                            type="ds:PreviousDocumentCategoryCodeType" minOccurs="0">
                                                     <xs:annotation>
                                                         <xs:documentation>
-                                                            <EUCDMname>Reference number</EUCDMname>
-                                                            <type>EUCDM 6.1</type>
-                                                            <code>12 01 001 000</code>
+                                                            <WCOName>Document category, coded</WCOName>
+                                                            <WCODescription>Code specifying the category of a document</WCODescription>
                                                         </xs:documentation>
                                                     </xs:annotation>
                                                 </xs:element>
@@ -2461,12 +2460,12 @@
                             <xs:complexType>
                                 <xs:sequence>
                                     <xs:element name="SequenceNumeric" type="ds:PreviousDocumentSequenceNumericType"/>
-                                    <xs:element name="CategoryCode" type="ds:PreviousDocumentCategoryCodeType">
+                                    <xs:element name="CategoryCode"
+                                                type="ds:PreviousDocumentCategoryCodeType" minOccurs="0">
                                         <xs:annotation>
                                             <xs:documentation>
-                                                <EUCDMname>Reference number</EUCDMname>
-                                                <type>EUCDM 6.1</type>
-                                                <code>12 01 001 000</code>
+                                                <WCOName>Document category, coded</WCOName>
+                                                <WCODescription>Code specifying the category of a document</WCODescription>
                                             </xs:documentation>
                                         </xs:annotation>
                                     </xs:element>
@@ -2644,18 +2643,50 @@
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
-            <xs:element name="ObligationGuarantee" minOccurs="2" maxOccurs="99">
+            <xs:element name="ObligationGuarantee" minOccurs="0" maxOccurs="99">
                 <xs:annotation>
                     <xs:documentation>
                         <EUCDMname>Guarantee type</EUCDMname>
                         <type>EUCDM 6.1</type>
                         <code>99 02 000 000</code>
                     </xs:documentation>
+                    <xs:documentation>
+                        <EUCDMname>Guarantee reference</EUCDMname>
+                        <type>EUCDM 6.1</type>
+                        <code>99 03 000 000</code>
+                    </xs:documentation>
                 </xs:annotation>
                 <xs:complexType>
                     <xs:sequence>
                         <xs:element name="SequenceNumeric" type="ds:ObligationGuaranteeSequenceNumericType"/>
-                        <xs:element name="SecurityDetailsCode" type="ds:ObligationGuaranteeSecurityDetailsCodeType">
+                        <xs:element name="AmountAmount" type="ds:ObligationGuaranteeAmountAmountType" minOccurs="0">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    <EUCDMname>Amount to be covered</EUCDMname>
+                                    <type>EUCDM 6.1</type>
+                                    <code>99 03 071 000</code>
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="ID" type="ds:ObligationGuaranteeIdentificationIDType" minOccurs="0">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    <EUCDMname>Other guarantee reference</EUCDMname>
+                                    <type>EUCDM 6.1</type>
+                                    <code>99 03 073 000</code>
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="ReferenceID" type="ds:ObligationGuaranteeReferenceIDType" minOccurs="0">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    <EUCDMname>GRN</EUCDMname>
+                                    <type>EUCDM 6.1</type>
+                                    <code>99 03 069 000</code>
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="SecurityDetailsCode" type="ds:ObligationGuaranteeSecurityDetailsCodeType" minOccurs="0">
                             <xs:annotation>
                                 <xs:documentation>
                                     <EUCDMname>Guarantee type</EUCDMname>
@@ -2663,6 +2694,30 @@
                                     <code>99 02 001 000</code>
                                 </xs:documentation>
                             </xs:annotation>
+                        </xs:element>
+                        <xs:element name="AccessCode" type="ds:ObligationGuaranteeAccessCodeType" minOccurs="0">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    <EUCDMname>Access code</EUCDMname>
+                                    <type>EUCDM 6.1</type>
+                                    <code>99 03 070 000</code>
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="GuaranteeOffice">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="ID" type="ds:GuaranteeOfficeIdentificationIDType" minOccurs="0">
+                                        <xs:annotation>
+                                            <xs:documentation>
+                                                <EUCDMname>Customs office of guarantee</EUCDMname>
+                                                <type>EUCDM 6.1</type>
+                                                <code>99 03 072 000</code>
+                                            </xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                </xs:sequence>
+                            </xs:complexType>
                         </xs:element>
                     </xs:sequence>
                 </xs:complexType>
