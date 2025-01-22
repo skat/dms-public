@@ -55,7 +55,6 @@
                 </xs:annotation>
             </xs:element>
             <xs:element name="DeclarationOfficeID" type="ds:DeclarationDeclarationOfficeIDType"/>
-
             <xs:element name="Submitter">
                 <xs:complexType>
                     <xs:sequence>
@@ -367,7 +366,6 @@
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
-
             <xs:element name="GoodsShipment">
                 <xs:annotation>
                     <xs:documentation>
@@ -685,24 +683,6 @@
                                 <xs:sequence>
                                     <xs:element name="SequenceNumeric"
                                                 type="ds:DomesticDutyTaxPartySequenceNumericType"/>
-                                    <xs:element name="ID" type="ds:DomesticDutyTaxPartyIdentificationIDType">
-                                        <xs:annotation>
-                                            <xs:documentation>
-                                                <EUCDMname>VAT identification number</EUCDMname>
-                                                <type>EUCDM 6.1</type>
-                                                <code>13 16 034 000</code>
-                                            </xs:documentation>
-                                        </xs:annotation>
-                                    </xs:element>
-                                    <xs:element name="RoleCode" type="ds:DomesticDutyTaxPartyRoleCodeType">
-                                        <xs:annotation>
-                                            <xs:documentation>
-                                                <EUCDMname>Role</EUCDMname>
-                                                <type>EUCDM 6.1</type>
-                                                <code>13 16 031 000</code>
-                                            </xs:documentation>
-                                        </xs:annotation>
-                                    </xs:element>
                                 </xs:sequence>
                             </xs:complexType>
                         </xs:element>
@@ -851,6 +831,11 @@
                                                             <type>EUCDM 6.1</type>
                                                             <code>18 09 000 000</code>
                                                         </xs:documentation>
+                                                        <xs:documentation>
+                                                             <EUCDMname>Type of goods</EUCDMname>
+                                                             <type>EUCDM 6.1</type>
+                                                             <code>18 10 000 000</code>
+                                                         </xs:documentation>
                                                     </xs:annotation>
                                                     <xs:complexType>
                                                         <xs:sequence>
@@ -875,6 +860,11 @@
                                                                         <EUCDMname>TARIC code</EUCDMname>
                                                                         <type>EUCDM 6.1</type>
                                                                         <code>18 09 058 000</code>
+                                                                    </xs:documentation>
+                                                                    <xs:documentation>
+                                                                        <EUCDMname>Type of goods</EUCDMname>
+                                                                        <type>EUCDM 6.1</type>
+                                                                        <code>18 10 001 000</code>
                                                                     </xs:documentation>
                                                                 </xs:annotation>
                                                             </xs:element>
@@ -925,6 +915,13 @@
                                                 </xs:element>
                                                 <xs:element name="TransportEquipment" minOccurs="0"
                                                             maxOccurs="unbounded">
+                                                    <xs:annotation>
+                                                        <xs:documentation>
+                                                            <EUCDMname>Transport equipment</EUCDMname>
+                                                            <type>EUCDM 6.1</type>
+                                                            <code>19 07 000 000</code>
+                                                        </xs:documentation>
+                                                    </xs:annotation>
                                                     <xs:complexType>
                                                         <xs:sequence>
                                                             <xs:element name="SequenceNumeric"
@@ -1284,12 +1281,11 @@
                                                     </xs:complexType>
                                                 </xs:element>
                                                 <xs:element name="CategoryCode"
-                                                            type="ds:PreviousDocumentCategoryCodeType">
+                                                            type="ds:PreviousDocumentCategoryCodeType" minOccurs="0">
                                                     <xs:annotation>
                                                         <xs:documentation>
-                                                            <EUCDMname>Reference number</EUCDMname>
-                                                            <type>EUCDM 6.1</type>
-                                                            <code>12 01 001 000</code>
+                                                            <WCOName>Document category, coded</WCOName>
+                                                            <WCODescription>Code specifying the category of a document</WCODescription>
                                                         </xs:documentation>
                                                     </xs:annotation>
                                                 </xs:element>
@@ -1628,38 +1624,6 @@
                                 </xs:sequence>
                             </xs:complexType>
                         </xs:element>
-                        <xs:element name="Payer" minOccurs="0">
-                            <xs:annotation>
-                                <xs:documentation>
-                                    <EUCDMname>Person paying the customs duty</EUCDMname>
-                                    <type>EUCDM 6.1</type>
-                                    <code>13 21 000 000</code>
-                                </xs:documentation>
-                            </xs:annotation>
-                            <xs:complexType>
-                                <xs:sequence>
-                                    <xs:element name="SequenceNumeric" type="ds:GoodsShipmentPayerSequenceNumericType"/>
-                                    <xs:element name="ID" type="ds:PayerIdentificationIDType">
-                                        <xs:annotation>
-                                            <xs:documentation>
-                                                <EUCDMname>Identification number</EUCDMname>
-                                                <type>EUCDM 6.1</type>
-                                                <code>13 21 017 000</code>
-                                            </xs:documentation>
-                                        </xs:annotation>
-                                    </xs:element>
-                                    <xs:element name="MethodCode" type="ds:PayerIdentificationIDType">
-                                        <xs:annotation>
-                                            <xs:documentation>
-                                                <EUCDMname>Method of payment</EUCDMname>
-                                                <type>EUCDM 6.2</type>
-                                                <code>14 03 038 000</code>
-                                            </xs:documentation>
-                                        </xs:annotation>
-                                    </xs:element>
-                                </xs:sequence>
-                            </xs:complexType>
-                        </xs:element>
                         <xs:element name="PreviousDocument" minOccurs="0" maxOccurs="99">
                             <xs:annotation>
                                 <xs:documentation>
@@ -1671,12 +1635,12 @@
                             <xs:complexType>
                                 <xs:sequence>
                                     <xs:element name="SequenceNumeric" type="ds:PreviousDocumentSequenceNumericType"/>
-                                    <xs:element name="CategoryCode" type="ds:PreviousDocumentCategoryCodeType">
+                                    <xs:element name="CategoryCode"
+                                                type="ds:PreviousDocumentCategoryCodeType" minOccurs="0">
                                         <xs:annotation>
                                             <xs:documentation>
-                                                <EUCDMname>Reference number</EUCDMname>
-                                                <type>EUCDM 6.1</type>
-                                                <code>12 01 001 000</code>
+                                                <WCOName>Document category, coded</WCOName>
+                                                <WCODescription>Code specifying the category of a document</WCODescription>
                                             </xs:documentation>
                                         </xs:annotation>
                                     </xs:element>
@@ -1751,7 +1715,7 @@
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
-            <xs:element name="ObligationGuarantee" maxOccurs="99">
+            <xs:element name="ObligationGuarantee" minOccurs="0" maxOccurs="99">
                 <xs:annotation>
                     <xs:documentation>
                         <EUCDMname>Guarantee type</EUCDMname>
@@ -1794,7 +1758,7 @@
                                 </xs:documentation>
                             </xs:annotation>
                         </xs:element>
-                        <xs:element name="SecurityDetailsCode" type="ds:ObligationGuaranteeSecurityDetailsCodeType">
+                        <xs:element name="SecurityDetailsCode" type="ds:ObligationGuaranteeSecurityDetailsCodeType" minOccurs="0">
                             <xs:annotation>
                                 <xs:documentation>
                                     <EUCDMname>Guarantee type</EUCDMname>
@@ -1812,10 +1776,10 @@
                                 </xs:documentation>
                             </xs:annotation>
                         </xs:element>
-                        <xs:element name="GuaranteeOffice" minOccurs="0">
+                        <xs:element name="GuaranteeOffice">
                             <xs:complexType>
                                 <xs:sequence>
-                                    <xs:element name="ID" type="ds:GuaranteeOfficeIdentificationIDType">
+                                    <xs:element name="ID" type="ds:GuaranteeOfficeIdentificationIDType" minOccurs="0">
                                         <xs:annotation>
                                             <xs:documentation>
                                                 <EUCDMname>Customs office of guarantee</EUCDMname>
