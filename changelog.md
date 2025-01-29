@@ -1,5 +1,5 @@
 ### 30-01-2025
-* New release notes. So they include notes from RC-12 and RC-final.
+* New release notes. They include notes from RC-12 and RC-final.
 
 ### 22-01-2025
 * Several bugs fixed for various import XSDs
