@@ -1,3 +1,6 @@
+### 30-01-2025
+* New release notes. So they include notes from RC-12 and RC-final.
+
 ### 22-01-2025
 * Several bugs fixed for various import XSDs
 * Made sure the Correction_amendment XSDs corrosponds to the Standard XSDs for each H and I declaration
