@@ -1,3 +1,6 @@
+### 04-02-2025
+* Add README describing release notes.
+
 ### 30-01-2025
 * New release notes. They include notes from RC-12 and RC-final.
 
