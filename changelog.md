@@ -1,3 +1,7 @@
+### 04-02-2025
+* All XSDs changed in last update has thier version increased
+* H7 XSDs changed to use the Vx.x.xsd format. V1.2 are unchanged and V1.3 was changed in the last update
+
 ### 22-01-2025
 * Several bugs fixed for various import XSDs
 * Made sure the Correction_amendment XSDs corrosponds to the Standard XSDs for each H and I declaration
