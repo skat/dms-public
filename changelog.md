@@ -1,5 +1,5 @@
 ### 04-02-2025
-* All XSDs changed in last update has thier version increased
+* All XSDs changed in last update has their version increased
 * H7 XSDs changed to use the Vx.x.xsd format. V1.2 are unchanged and V1.3 was changed in the last update
 
 ### 22-01-2025
