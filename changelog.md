@@ -1,3 +1,13 @@
+### 11-02-2025
+* Updates to the Following XSDs: 
+* All H1-H6 Standard, Correction and Amendment, Invalidation and Repayment, and Repayment Remission XSDs
+* The I1 Supplement XSD
+* The H7 Standard, Correction and Amendment, and Repayment Remission XSDs
+
+* All XSDs changed in this update has their version number increased to V1.x
+* XSDs with V1.0 has not had an update just an increase in version number. XSDs that have been updated has V1.1 
+* H7 XSDs changed to use the Vx.x format. V1.2 are unchanged and V1.3 was changed in the last update
+
 ### 30-01-2025
 * New release notes. They include notes from RC-12 and RC-final.
 
@@ -24,7 +34,6 @@
 
 ### 18-12-2024
 * Added the Release notes for TFE02 to the release notes folder
-
 
 ### 06-12-2024
 * Updated Export XML Guide
