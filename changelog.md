@@ -1,6 +1,15 @@
 ### 11-02-2025
-* All XSDs changed in last update has their version increased
-* H7 XSDs changed to use the Vx.x.xsd format. V1.2 are unchanged and V1.3 was changed in the last update
+* Updates to the Following XSDs: 
+* All H1-H6 Standard, Correction and Amendment, Invalidation and Repayment, and Repayment Remission XSDs
+* The I1 Supplement XSD
+* The H7 Standard, Correction and Amendment, and Repayment Remission XSDs
+
+* All XSDs changed in this update has thier version number increased to V1.x
+* XSDs with V1.0 has not had an update just an increase in version numer. XSDs that have been updated has V1.1 
+* H7 XSDs changed to use the Vx.x format. V1.2 are unchanged and V1.3 was changed in the last update
+
+### 30-01-2025
+* New release notes. They include notes from RC-12 and RC-final.
 
 ### 22-01-2025
 * Several bugs fixed for various import XSDs
