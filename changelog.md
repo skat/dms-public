@@ -1,4 +1,4 @@
-### 04-02-2025
+### 11-02-2025
 * All XSDs changed in last update has their version increased
 * H7 XSDs changed to use the Vx.x.xsd format. V1.2 are unchanged and V1.3 was changed in the last update
 
@@ -25,7 +25,6 @@
 
 ### 18-12-2024
 * Added the Release notes for TFE02 to the release notes folder
-
 
 ### 06-12-2024
 * Updated Export XML Guide
