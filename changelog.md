@@ -1,3 +1,6 @@
+### 13-02-2025
+* Add README describing release notes.
+
 ### 11-02-2025
 * Updates to the Following XSDs: 
 * All H1-H6 Standard, Correction and Amendment, Invalidation and Repayment, and Repayment Remission XSDs
