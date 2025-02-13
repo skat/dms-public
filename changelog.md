@@ -1,4 +1,5 @@
 ### 13-02-2025
+* Fixed a bug due to two missing minOccurs="0" in H1 standard
 * Add README describing release notes.
 
 ### 11-02-2025
