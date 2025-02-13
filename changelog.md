@@ -1,3 +1,6 @@
+### 13-02-2025
+* Fixed a bug due to two missing minOccurs="0" in H1 standard
+
 ### 11-02-2025
 * Updates to the Following XSDs: 
 * All H1-H6 Standard, Correction and Amendment, Invalidation and Repayment, and Repayment Remission XSDs
