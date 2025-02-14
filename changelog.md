@@ -1,4 +1,8 @@
+### 14-02-2025
+* Added a missing minOccurs="0" in H1 amendment Correction.
+
 ### 13-02-2025
+* Fixed a bug due to two missing minOccurs="0" in H1 standard.
 * Fixed a bug due to two missing minOccurs="0" in H1 standard
 * Add README describing release notes.
 
