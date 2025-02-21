@@ -1,9 +1,17 @@
+### 14-02-2025
+* Added a missing minOccurs="0" in H1 amendment Correction.
+
+### 13-02-2025
+* Includes changes to test case PDF's to include more detailed descriptions on authorisations required + minor fixes to outdated text (e.g. mentions of UFE/TFE -> TFE02/TFE01)
+* Fixed a bug due to two missing minOccurs="0" in H1 standard.
+* Fixed a bug due to two missing minOccurs="0" in H1 standard
+* Add README describing release notes.
+
 ### 11-02-2025
 * Updates to the Following XSDs: 
 * All H1-H6 Standard, Correction and Amendment, Invalidation and Repayment, and Repayment Remission XSDs
 * The I1 Supplement XSD
 * The H7 Standard, Correction and Amendment, and Repayment Remission XSDs
-
 * All XSDs changed in this update has their version number increased to V1.x
 * XSDs with V1.0 has not had an update just an increase in version number. XSDs that have been updated has V1.1 
 * H7 XSDs changed to use the Vx.x format. V1.2 are unchanged and V1.3 was changed in the last update
