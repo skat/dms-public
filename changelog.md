@@ -1,3 +1,10 @@
+### 27-02-2025
+* Updated Codelists - AES.xlsx
+* Updated Codelists - Global.xlsx
+* Updated Codelists - Import.xlsx
+* Updated Codelists - NCTS.xlsx
+* Updated Error and warning codes.xlsx
+
 ### 14-02-2025
 * Added a missing minOccurs="0" in H1 amendment Correction.
 
