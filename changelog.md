@@ -1,3 +1,7 @@
+### 03-03-2025
+* Changed the maximum allowed elements of TradeTermsLocationNameTextType from 256 to 36
+* Updated the file
+
 ### 14-02-2025
 * Added a missing minOccurs="0" in H1 amendment Correction.
 
