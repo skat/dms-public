@@ -1,3 +1,6 @@
+### 10-03-2025
+* Added code list 50001 (relates to LocationId D.E. 14 01 036 000) to Codelist - import
+
 ### 07-03-2025
 * Updated Codelist - AES, Global, Import and NCTS.
 * Updated Error and warning codes.
