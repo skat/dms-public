@@ -1,3 +1,6 @@
+### 10-03-2025
+* Updated added CustomsValuation for H6 XSD.
+
 ### 07-03-2025
 * Updated Codelist - AES, Global, Import and NCTS.
 * Updated Error and warning codes.
