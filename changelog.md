@@ -1,3 +1,6 @@
+### 10-03-2025
+* Updated XSD to make sure element 14 04 014 000 did not have the currencyID attribute.
+
 ### 07-03-2025
 * Updated Codelist - AES, Global, Import and NCTS.
 * Updated Error and warning codes.
