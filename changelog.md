@@ -1,3 +1,6 @@
+### 10-03-2025
+* Updates to H declarations updating cardinality of certain elements and adding documentation to clarify purpose.
+
 ### 07-03-2025
 * Updated Codelist - AES, Global, Import and NCTS.
 * Updated Error and warning codes.
