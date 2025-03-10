@@ -1,3 +1,7 @@
+### 07-03-2025
+* Updated Codelist - AES, Global, Import and NCTS.
+* Updated Error and warning codes.
+
 ### 06-03-2025
 * Updated release notes tfe02 to v1.2 to reflect the update on TFE02 the 6th of march.
 
