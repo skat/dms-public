@@ -1,3 +1,6 @@
+### 10-03-2025
+* Updated I1 to include consignor
+
 ### 07-03-2025
 * Updated Codelist - AES, Global, Import and NCTS.
 * Updated Error and warning codes.
