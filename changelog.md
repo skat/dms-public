@@ -1,3 +1,15 @@
+### 10-03-2025
+* Updates to H declarations updating cardinality of certain elements and adding documentation to clarify purpose.
+* Updated XSD to make sure element 14 04 014 000 did not have the currencyID attribute.
+
+### 07-03-2025
+* Updated Codelist - AES, Global, Import and NCTS.
+* Updated Error and warning codes.
+
+### 06-03-2025
+* Updated release notes tfe02 to v1.2 to reflect the update on TFE02 the 6th of march.
+* Updated H1_Standard, H2_Standard and H3_Standard.
+
 ### 14-02-2025
 * Added a missing minOccurs="0" in H1 amendment Correction.
 
