@@ -1,4 +1,5 @@
 ### 10-03-2025
+* Updates to H declarations updating cardinality of certain elements and adding documentation to clarify purpose.
 * Updated XSD to make sure element 14 04 014 000 did not have the currencyID attribute.
 
 ### 07-03-2025
