@@ -1,3 +1,8 @@
+### 11-03-2025
+* Updated added CustomsValuation for H6 XSD.
+* Removed TransportEquipment from SI level 
+* Add TransportEquipment to I2PN on GS level
+
 ### 10-03-2025
 * Updates to H declarations updating cardinality of certain elements and adding documentation to clarify purpose.
 * Updated XSD to make sure element 14 04 014 000 did not have the currencyID attribute.
@@ -11,8 +16,8 @@
 * Updated H1_Standard, H2_Standard and H3_Standard.
 
 ### 03-03-2025
-* Changed the maximum allowed elements of TradeTermsLocationNameTextType from 256 to 36
-* Updated the file
+* Changed the maximum allowed elements of TradeTermsLocationNameTextType from 256 to 36. Updating DMS_DS XSD. 
+* Updating all H nad I XSD as they refer to this XSD
 
 ### 14-02-2025
 * Added a missing minOccurs="0" in H1 amendment Correction.
