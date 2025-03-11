@@ -10,6 +10,10 @@
 * Updated release notes tfe02 to v1.2 to reflect the update on TFE02 the 6th of march.
 * Updated H1_Standard, H2_Standard and H3_Standard.
 
+### 03-03-2025
+* Changed the maximum allowed elements of TradeTermsLocationNameTextType from 256 to 36
+* Updated the file
+
 ### 14-02-2025
 * Added a missing minOccurs="0" in H1 amendment Correction.
 
