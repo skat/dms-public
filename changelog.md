@@ -1,5 +1,9 @@
-### 10-03-2025
+### 13-03-2025
 * Added code list 50001 (relates to LocationId D.E. 14 01 036 000) to Codelist - import
+
+### 10-03-2025
+* Updates to H declarations updating cardinality of certain elements and adding documentation to clarify purpose.
+* Updated XSD to make sure element 14 04 014 000 did not have the currencyID attribute.
 
 ### 07-03-2025
 * Updated Codelist - AES, Global, Import and NCTS.
