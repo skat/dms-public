@@ -1,3 +1,6 @@
+### 14-03-2025
+* Added H6 Amendment testcase pdf and XML
+
 ### 13-03-2025
 * Added code list 50001 (relates to LocationId D.E. 14 01 036 000) to Codelist - import
 
