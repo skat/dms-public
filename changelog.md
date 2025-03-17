@@ -1,3 +1,42 @@
+### 14-03-2025
+* Added H6 Amendment testcase pdf and XML
+
+### 13-03-2025
+* Added code list 50001 (relates to LocationId D.E. 14 01 036 000) to Codelist - import
+
+### 12-03-2025
+* Updated H3 test cases; standard, pre-lodged, amendment/correction, to function after the latest deploy
+
+### 10-03-2025
+* Updates to H declarations updating cardinality of certain elements and adding documentation to clarify purpose.
+* Updated XSD to make sure element 14 04 014 000 did not have the currencyID attribute.
+
+### 07-03-2025
+* Updated Codelist - AES, Global, Import and NCTS.
+* Updated Error and warning codes.
+
+### 06-03-2025
+* Updated release notes tfe02 to v1.2 to reflect the update on TFE02 the 6th of march.
+* Updated H1_Standard, H2_Standard and H3_Standard.
+
+### 14-02-2025
+* Added a missing minOccurs="0" in H1 amendment Correction.
+
+### 13-02-2025
+* Includes changes to test case PDF's to include more detailed descriptions on authorisations required + minor fixes to outdated text (e.g. mentions of UFE/TFE -> TFE02/TFE01)
+* Fixed a bug due to two missing minOccurs="0" in H1 standard.
+* Fixed a bug due to two missing minOccurs="0" in H1 standard
+* Add README describing release notes.
+
+### 11-02-2025
+* Updates to the Following XSDs: 
+* All H1-H6 Standard, Correction and Amendment, Invalidation and Repayment, and Repayment Remission XSDs
+* The I1 Supplement XSD
+* The H7 Standard, Correction and Amendment, and Repayment Remission XSDs
+* All XSDs changed in this update has their version number increased to V1.x
+* XSDs with V1.0 has not had an update just an increase in version number. XSDs that have been updated has V1.1 
+* H7 XSDs changed to use the Vx.x format. V1.2 are unchanged and V1.3 was changed in the last update
+
 ### 30-01-2025
 * New release notes. They include notes from RC-12 and RC-final.
 
@@ -24,7 +63,6 @@
 
 ### 18-12-2024
 * Added the Release notes for TFE02 to the release notes folder
-
 
 ### 06-12-2024
 * Updated Export XML Guide
