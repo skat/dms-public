@@ -1,3 +1,6 @@
+### 18-03-2025
+* Updated Codelist - Import with list 50001
+
 ### 07-03-2025
 * Updated Codelist - AES, Global, Import and NCTS.
 * Updated Error and warning codes.
