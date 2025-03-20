@@ -1,3 +1,6 @@
+### 20-03-2025
+* Uploaded DMS connectivity guide v1.16
+
 ### 07-03-2025
 * Updated Codelist - AES, Global, Import and NCTS.
 * Updated Error and warning codes.
