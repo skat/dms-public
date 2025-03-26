@@ -1,3 +1,6 @@
+### 26-03-2025
+* Added sequence to the loadinglocation XSD for the G4 to align with WCO
+
 ### 21-03-2025
 * Updated DMS Connectivity Guide to v1.16
 
