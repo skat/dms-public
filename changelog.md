@@ -1,3 +1,6 @@
+### 26-03-2025
+* Modified G5 XSD (to include sequence in ArrivalTransportMeans) to follow updated WCO_TS_DEC XSD
+
 ### 21-03-2025
 * Updated DMS Connectivity Guide to v1.16
 
