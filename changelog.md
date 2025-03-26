@@ -1,3 +1,6 @@
+### 26-03-2025
+* Modified G3 XSD (to include sequence in ArrivalTransportMeans) to follow updated WCO_TS_DEC XSD
+
 ### 13-03-2025
 * Added code list 50001 (relates to LocationId D.E. 14 01 036 000) to Codelist - import
 
