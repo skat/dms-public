@@ -7,6 +7,9 @@
 ### 21-03-2025
 * Updated DMS Connectivity Guide to v1.16
 
+### 18-03-2025
+* Updated Codelist - Import with list 50001
+
 ### 14-03-2025
 * Added H6 Amendment testcase pdf and XML
 
@@ -59,6 +62,7 @@
 
 ### 17-01-2025
 * Made corrections to the Import Notification XSDs.
+* Added Import test cases
 
 ### 16-01-2025
 * Removed comments from G5 XSD file that were not intended to be uploaded.
