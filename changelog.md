@@ -1,3 +1,6 @@
+### 27-03-2025
+* Update the DMS_DS XSDs
+
 ### 21-03-2025
 * Updated DMS Connectivity Guide to v1.16
 

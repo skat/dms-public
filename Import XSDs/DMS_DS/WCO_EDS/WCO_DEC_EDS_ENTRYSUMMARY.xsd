@@ -1,0 +1,639 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="urn:wco:datamodel:WCO:WCO_DEC_EDS_ENTRYSUMMARY:1"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:udt="urn:un:unece:uncefact:data:standard:UnqualifiedDataType:6"
+    targetNamespace="urn:wco:datamodel:WCO:WCO_DEC_EDS_ENTRYSUMMARY:1"
+    elementFormDefault="qualified"
+    version="1.0">
+  <xs:import namespace="urn:un:unece:uncefact:data:standard:UnqualifiedDataType:6" schemaLocation="../UNECE/UnqualifiedDataType_6_DMS.xsd"/>
+  <xs:import namespace="urn:wco:datamodel:WCO:Declaration_DS:DMS:2"
+      schemaLocation="../DMS_DS_V1.0.xsd"/>
+
+  <!--Root Element Name Definition and Documentation-->
+
+  <xs:element name="SafetyAndSecurityData" type="SafetyAndSecurityData">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN">
+        <WCODescription>Supplementary Data to be appended on H* and G4 Declarations, to capture F* Dataset</WCODescription>
+      </xs:documentation>
+      <xs:documentation>
+        <WCOUsageDeclarationIM>X</WCOUsageDeclarationIM>
+      </xs:documentation>
+    </xs:annotation>
+  </xs:element>
+
+  <!--Root Element Complex Structure-->
+  <xs:complexType name="SafetyAndSecurityData">
+    <xs:sequence>
+      <xs:element name="BorderTransportMeans" minOccurs="0" >
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="ActualIndicator" minOccurs="0">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Indicator" type="udt:CodeType" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="ArrivalDateTime" type="GenericDateTime" minOccurs="0" />
+            <xs:element name="DepartureDateTime" type="GenericDateTime" minOccurs="0" />
+            <xs:element name="ID" type="udt:IDType" minOccurs="0" />
+            <xs:element name="IdentificationTypeCode" type="udt:CodeType" minOccurs="0" />
+            <xs:element name="Itenerary" minOccurs="0" maxOccurs="unbounded">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="SequenceNumeric" type="SequenceNumericType" minOccurs="1" />
+                  <xs:element name="RoutingCountryCode" type="udt:CodeType" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="JourrneyID" type="udt:IDType" minOccurs="0" />
+            <xs:element name="TypeCode" type="udt:CodeType" minOccurs="0" />
+            <xs:element name="RegistrationNationalityCode" type="udt:CodeType" minOccurs="0" />
+            <xs:element name="ModeCode" type="udt:CodeType" minOccurs="0" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Consignment" minOccurs="0" >
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="AcceptancePlace" minOccurs="0" >
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Name" type="udt:TextType" minOccurs="0" />
+                  <xs:element name="ID" type="udt:IDType" minOccurs="0" />
+                  <xs:element name="Address" type="AddressWithCountryCodeType" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="Carrier" minOccurs="0">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Name" type="udt:TextType" minOccurs="0" />
+                  <xs:element name="ID" type="udt:IDType" minOccurs="0" />
+                  <xs:element name="Address" type="FullAddressType" minOccurs="0" />
+                  <xs:element name="Communication" type="PartyCommunicationListType" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="Consignor" minOccurs="0">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Name" type="udt:TextType" minOccurs="0" />
+                  <xs:element name="ID" type="udt:IDType" minOccurs="0" />
+                  <!--                  We should consider if we use this element to map to 'type' to comply to EUCDM-->
+
+                  <xs:element name="RoleCode" type="udt:CodeType" minOccurs="0" />
+                  <xs:element name="Address" type="FullAddressType" minOccurs="0" />
+                  <xs:element name="Communication" type="PartyCommunicationListType" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="Consignee" minOccurs="0">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Name" type="udt:TextType" minOccurs="0" />
+                  <xs:element name="ID" type="udt:IDType" minOccurs="0" />
+                  <!--                  We should consider if we use this element to map to 'type' to comply to EUCDM-->
+                  <xs:element name="RoleCode" type="udt:CodeType" minOccurs="0" />
+                  <xs:element name="Address" type="FullAddressType" minOccurs="0" />
+                  <xs:element name="Communication" type="PartyCommunicationListType" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="ConsignmentItem" minOccurs="0" maxOccurs="unbounded">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="SequenceNumeric" type="SequenceNumericType" minOccurs="1" />
+                  <xs:element name="Commodity">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="DangerousGoods" minOccurs="0" maxOccurs="unbounded">
+                          <xs:complexType>
+                            <xs:sequence>
+                              <xs:element name="SequenceNumeric" type="SequenceNumericType" minOccurs="1" />
+                              <xs:element name="UNDGID" type="udt:IDType" minOccurs="0" />
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="GoodsMeasure" minOccurs="0" >
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="GrossMassMeasure" type="udt:MeasureType" minOccurs="0"/>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="PassiveTransportMeans" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="SequenceNumeric" type="SequenceNumericType" minOccurs="1" />
+                        <xs:element name="ID" type="udt:IDType" minOccurs="0" />
+                        <xs:element name="IdentificationTypeCode" type="udt:CodeType" minOccurs="0" />
+                        <xs:element name="TypeCode" type="udt:CodeType" minOccurs="0" />
+                        <xs:element name="RegistrationNationalityCode" type="udt:CodeType" minOccurs="0" />
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <!-- In WCO 3.11 under HouseConsignment/ConsignmentItem in
+                       Transport Equipment we have only sequence Number and ID -->
+                  <xs:element name="TransportEquipment" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="SequenceNumeric" type="SequenceNumericType" minOccurs="0">
+                        </xs:element>
+                        <xs:element name="CharacteristicCode" type="udt:CodeType" minOccurs="0">
+                        </xs:element>
+                        <xs:element name="FullnessCode" type="udt:CodeType" minOccurs="0">
+                        </xs:element>
+                        <xs:element name="SupplierPartyTypeCode" type="udt:CodeType" minOccurs="0">
+                        </xs:element>
+                        <xs:element name="ID" type="udt:IDType" minOccurs="0">
+                        </xs:element>
+                        <xs:element name="SealsAffixedQuantity" type="udt:QuantityType" minOccurs="0"/>
+                        <xs:element name="Seal" minOccurs="0" maxOccurs="unbounded">
+                          <xs:complexType>
+                            <xs:sequence>
+                              <xs:element name="SequenceNumeric" type="SequenceNumericType" minOccurs="0"/>
+                              <xs:element name="ID" type="udt:IDType" minOccurs="0"/>
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="ContainerCode" type="udt:CodeType" minOccurs="0" />
+            <xs:element name="Freight" minOccurs="0">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="PaymentMethodCode" minOccurs="0"  type="udt:CodeType"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="GoodsReceiptPlace" minOccurs="0">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Name" type="udt:TextType" minOccurs="0" />
+                  <xs:element name="ID" type="udt:IDType" minOccurs="0" />
+                  <xs:element name="Address" type="AddressWithCountryCodeType" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="GoodsMeasure" minOccurs="0" >
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="GrossMassMeasure" type="udt:MeasureType" minOccurs="0"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="LoadingLocation" minOccurs="0" >
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Name" type="udt:TextType" minOccurs="0"/>
+                  <xs:element name="ID" type="udt:IDType" minOccurs="0"/>
+                  <xs:element name="Address" type="AddressWithCountryCodeType" minOccurs="0" >
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="NotifyParty" minOccurs="0" >
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Name" type="udt:TextType" minOccurs="0" />
+                  <xs:element name="ID" type="udt:IDType" minOccurs="0" />
+                  <!--                  We should consider if we use this element to map to 'type' to comply to EUCDM-->
+                  <xs:element name="RoleCode" type="udt:CodeType" minOccurs="0" />
+                  <xs:element name="Address" type="FullAddressType" minOccurs="0" />
+                  <xs:element name="Communication" type="PartyCommunicationListType" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="PassiveTransportMeans" minOccurs="0" maxOccurs="unbounded">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="SequenceNumeric" type="SequenceNumericType" minOccurs="1" />
+                  <xs:element name="ID" type="udt:IDType" minOccurs="0" />
+                  <xs:element name="IdentificationTypeCode" type="udt:CodeType" minOccurs="0" />
+                  <xs:element name="TypeCode" type="udt:CodeType" minOccurs="0" />
+                  <xs:element name="RegistrationNationalityCode" type="udt:CodeType" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <!--            Possible Discrepancy-->
+            <!--            Pending approval, WCO defines this with cardinality x1, while Analysis flatmaps HC & MC into one element, forcing this to be a list-->
+            <xs:element name="PostalReceptacle" minOccurs="0" maxOccurs="unbounded">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="SequenceNumeric" type="SequenceNumericType" minOccurs="1" />
+                  <xs:element name="PostalReceptacleID" type="udt:IDType" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="HouseConsignment" minOccurs="0" maxOccurs="unbounded">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="SequenceNumeric" type="SequenceNumericType" minOccurs="1" />
+                  <xs:element name="AcceptancePlace" minOccurs="0" >
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="Name" type="udt:TextType" minOccurs="0" />
+                        <xs:element name="ID" type="udt:IDType" minOccurs="0" />
+                        <xs:element name="Address" type="AddressWithCountryCodeType" minOccurs="0" />
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="Carrier" minOccurs="0">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="Name" type="udt:TextType" minOccurs="0" />
+                        <xs:element name="ID" type="udt:IDType" minOccurs="0" />
+                        <xs:element name="Address" type="FullAddressType" minOccurs="0" />
+                        <xs:element name="Communication" type="PartyCommunicationListType" minOccurs="0" maxOccurs="unbounded"/>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="ConsignmentItem" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="SequenceNumeric" type="SequenceNumericType" minOccurs="1" />
+                        <xs:element name="Commodity">
+                          <xs:complexType>
+                            <xs:sequence>
+                              <xs:element name="DangerousGoods" minOccurs="0" maxOccurs="unbounded">
+                                <xs:complexType>
+                                  <xs:sequence>
+                                    <xs:element name="SequenceNumeric" type="SequenceNumericType" minOccurs="1" />
+                                    <xs:element name="UNDGID" type="udt:IDType" minOccurs="0" />
+                                  </xs:sequence>
+                                </xs:complexType>
+                              </xs:element>
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                        <xs:element name="GoodsMeasure" minOccurs="0" >
+                          <xs:complexType>
+                            <xs:sequence>
+                              <xs:element name="GrossMassMeasure" type="udt:MeasureType" minOccurs="0"/>
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                        <xs:element name="PassiveTransportMeans" minOccurs="0" maxOccurs="unbounded">
+                          <xs:complexType>
+                            <xs:sequence>
+                              <xs:element name="SequenceNumeric" type="SequenceNumericType" minOccurs="1" />
+                              <xs:element name="ID" type="udt:IDType" minOccurs="0" />
+                              <xs:element name="IdentificationTypeCode" type="udt:CodeType" minOccurs="0" />
+                              <xs:element name="TypeCode" type="udt:CodeType" minOccurs="0" />
+                              <xs:element name="RegistrationNationalityCode" type="udt:CodeType" minOccurs="0" />
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                        <!-- In WCO 3.11 under HouseConsignment/ConsignmentItem in
+                             Transport Equipment we have only sequence Number and ID -->
+                        <xs:element name="TransportEquipment" minOccurs="0" maxOccurs="unbounded">
+                          <xs:complexType>
+                            <xs:sequence>
+                              <xs:element name="SequenceNumeric" type="SequenceNumericType" minOccurs="0">
+                              </xs:element>
+                              <xs:element name="CharacteristicCode" type="udt:CodeType" minOccurs="0">
+                              </xs:element>
+                              <xs:element name="FullnessCode" type="udt:CodeType" minOccurs="0">
+                              </xs:element>
+                              <xs:element name="SupplierPartyTypeCode" type="udt:CodeType" minOccurs="0">
+                              </xs:element>
+                              <xs:element name="ID" type="udt:IDType" minOccurs="0">
+                              </xs:element>
+                              <xs:element name="SealsAffixedQuantity" type="udt:QuantityType" minOccurs="0"/>
+                              <xs:element name="Seal" minOccurs="0" maxOccurs="unbounded">
+                                <xs:complexType>
+                                  <xs:sequence>
+                                    <xs:element name="SequenceNumeric" type="SequenceNumericType" minOccurs="0"/>
+                                    <xs:element name="ID" type="udt:IDType" minOccurs="0"/>
+                                  </xs:sequence>
+                                </xs:complexType>
+                              </xs:element>
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <!-- Container Code does not exist in WCO 3.11 under House Consignment -->
+                  <xs:element name="ContainerCode" type="udt:CodeType" minOccurs="0" />
+                  <xs:element name="Freight" minOccurs="0">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="PaymentMethodCode" minOccurs="0"  type="udt:CodeType"/>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="GoodsReceiptPlace" minOccurs="0">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="Name" type="udt:TextType" minOccurs="0" />
+                        <xs:element name="ID" type="udt:IDType" minOccurs="0" />
+                        <xs:element name="Address" type="AddressWithCountryCodeType" minOccurs="0" />
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="GoodsShipment" minOccurs="0" >
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="Buyer" minOccurs="0">
+                          <xs:complexType>
+                            <xs:sequence>
+                              <xs:element name="Name" type="udt:TextType" minOccurs="0" />
+                              <xs:element name="ID" type="udt:IDType" minOccurs="0" />
+                              <!--                  We should consider if we use this element to map to 'type' to comply to EUCDM-->
+                              <xs:element name="RoleCode" type="udt:CodeType" minOccurs="0" />
+                              <xs:element name="Address" type="FullAddressType" minOccurs="0" />
+                              <xs:element name="Communication" type="PartyCommunicationListType" minOccurs="0" maxOccurs="unbounded"/>
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                        <xs:element name="Seller" minOccurs="0">
+                          <xs:complexType>
+                            <xs:sequence>
+                              <xs:element name="Name" type="udt:TextType" minOccurs="0" />
+                              <xs:element name="ID" type="udt:IDType" minOccurs="0" />
+                              <!--                  We should consider if we use this element to map to 'type' to comply to EUCDM-->
+                              <xs:element name="RoleCode" type="udt:CodeType" minOccurs="0" />
+                              <xs:element name="Address" type="FullAddressType" minOccurs="0" />
+                              <xs:element name="Communication" type="PartyCommunicationListType" minOccurs="0" maxOccurs="unbounded"/>
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="Itenerary" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="SequenceNumeric" type="SequenceNumericType" minOccurs="1" />
+                        <xs:element name="RoutingCountryCode" type="udt:CodeType" minOccurs="0" />
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="PassiveTransportMeans" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="SequenceNumeric" type="SequenceNumericType" minOccurs="1" />
+                        <xs:element name="ID" type="udt:IDType" minOccurs="0" />
+                        <xs:element name="IdentificationTypeCode" type="udt:CodeType" minOccurs="0" />
+                        <xs:element name="TypeCode" type="udt:CodeType" minOccurs="0" />
+                        <xs:element name="RegistrationNationalityCode" type="udt:CodeType" minOccurs="0" />
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <!--            Possible Discrepancy-->
+                  <!--            Pending approval, WCO defines this with cardinality x1, while Analysis flatmaps HC & MC into one element, forcing this to be a list-->
+                  <xs:element name="PostalReceptacle" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="SequenceNumeric" type="SequenceNumericType" minOccurs="1" />
+                        <xs:element name="PostalReceptacleID" type="udt:IDType" minOccurs="0" />
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="SupplementaryDeclarant" minOccurs="0" >
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="ID" type="udt:IDType" minOccurs="0" />
+                        <xs:element name="RoleCode" type="udt:CodeType" minOccurs="0" />
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="TransportEquipment" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="SequenceNumeric" type="SequenceNumericType" minOccurs="0">
+                        </xs:element>
+                        <xs:element name="CharacteristicCode" type="udt:CodeType" minOccurs="0">
+                        </xs:element>
+                        <xs:element name="FullnessCode" type="udt:CodeType" minOccurs="0">
+                        </xs:element>
+                        <xs:element name="SupplierPartyTypeCode" type="udt:CodeType" minOccurs="0">
+                        </xs:element>
+                        <xs:element name="ID" type="udt:IDType" minOccurs="0">
+                        </xs:element>
+                        <xs:element name="SealsAffixedQuantity" type="udt:QuantityType" minOccurs="0"/>
+                        <xs:element name="Seal" minOccurs="0" maxOccurs="unbounded">
+                          <xs:complexType>
+                            <xs:sequence>
+                              <xs:element name="SequenceNumeric" type="SequenceNumericType" minOccurs="0"/>
+                              <xs:element name="ID" type="udt:IDType" minOccurs="0"/>
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="SupplementaryDeclarant" minOccurs="0" >
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="ID" type="udt:IDType" minOccurs="0" />
+                  <xs:element name="RoleCode" type="udt:CodeType" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="TransportEquipment" minOccurs="0" maxOccurs="unbounded">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="SequenceNumeric" type="SequenceNumericType" minOccurs="0">
+                  </xs:element>
+                  <xs:element name="CharacteristicCode" type="udt:CodeType" minOccurs="0">
+                  </xs:element>
+                  <xs:element name="FullnessCode" type="udt:CodeType" minOccurs="0">
+                  </xs:element>
+                  <xs:element name="SupplierPartyTypeCode" type="udt:CodeType" minOccurs="0">
+                  </xs:element>
+                  <xs:element name="ID" type="udt:IDType" minOccurs="0">
+                  </xs:element>
+                  <xs:element name="SealsAffixedQuantity" type="udt:QuantityType" minOccurs="0"/>
+                  <xs:element name="Seal" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="SequenceNumeric" type="SequenceNumericType" minOccurs="0"/>
+                        <xs:element name="ID" type="udt:IDType" minOccurs="0"/>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="UnloadingLocation" minOccurs="0" >
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Name" type="udt:TextType" minOccurs="0"/>
+                  <xs:element name="ID" type="udt:IDType" minOccurs="0"/>
+                  <xs:element name="Address" type="AddressWithCountryCodeType" minOccurs="0" >
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="EntryOffice" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="ID" type="udt:IDType" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GoodsShipment" minOccurs="0" >
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="TotalGrossMassMeasure" type="udt:MeasureType" minOccurs="0"/>
+            <xs:element name="GovernmentAgencyGoodsItem" minOccurs="0" maxOccurs="unbounded">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="SequenceNumeric" type="SequenceNumericType" minOccurs="1" />
+                  <xs:element name="Commodity">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="DangerousGoods" minOccurs="0" maxOccurs="unbounded">
+                          <xs:complexType>
+                            <xs:sequence>
+                              <xs:element name="SequenceNumeric" type="SequenceNumericType" minOccurs="1" />
+                              <xs:element name="UNDGID" type="udt:IDType" minOccurs="0" />
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                        <!-- In WCO 3.11 under GovernmentAgencyGoodsItem in
+                             Transport Equipment we have only sequence Number and ID -->
+                        <xs:element name="TransportEquipment" minOccurs="0" maxOccurs="unbounded">
+                          <xs:complexType>
+                            <xs:sequence>
+                              <xs:element name="SequenceNumeric" type="SequenceNumericType" minOccurs="0">
+                              </xs:element>
+                              <xs:element name="CharacteristicCode" type="udt:CodeType" minOccurs="0">
+                              </xs:element>
+                              <xs:element name="FullnessCode" type="udt:CodeType" minOccurs="0">
+                              </xs:element>
+                              <xs:element name="SupplierPartyTypeCode" type="udt:CodeType" minOccurs="0">
+                              </xs:element>
+                              <xs:element name="ID" type="udt:IDType" minOccurs="0">
+                              </xs:element>
+                              <xs:element name="SealsAffixedQuantity" type="udt:QuantityType" minOccurs="0"/>
+                              <xs:element name="Seal" minOccurs="0" maxOccurs="unbounded">
+                                <xs:complexType>
+                                  <xs:sequence>
+                                    <xs:element name="SequenceNumeric" type="SequenceNumericType" minOccurs="0"/>
+                                    <xs:element name="ID" type="udt:IDType" minOccurs="0"/>
+                                  </xs:sequence>
+                                </xs:complexType>
+                              </xs:element>
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="PassiveTransportMeans" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="SequenceNumeric" type="SequenceNumericType" minOccurs="1" />
+                        <xs:element name="ID" type="udt:IDType" minOccurs="0" />
+                        <xs:element name="IdentificationTypeCode" type="udt:CodeType" minOccurs="0" />
+                        <xs:element name="TypeCode" type="udt:CodeType" minOccurs="0" />
+                        <xs:element name="RegistrationNationalityCode" type="udt:CodeType" minOccurs="0" />
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReEntryIndicator" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Indicator" type="udt:CodeType"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReferralRequest" type="udt:IDType" minOccurs="0"/>
+      <xs:element name="SpecificCircumstancesCode" type="udt:CodeType" minOccurs="0"/>
+      <xs:element name="SplitConsignment" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Indicator" type="udt:CodeType" minOccurs="0" />
+            <xs:element name="PreviousMRN" type="udt:IDType" minOccurs="0" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!--  *************************************************************************************************-->
+  <!--  *************************************************************************************************-->
+  <!--  *************************************************************************************************-->
+  <!--  Element Types-->
+
+  <!--  *************************************************************************************************-->
+  <!--  *************************************************************************************************-->
+  <!--  *************************************************************************************************-->
+
+  <xs:simpleType name="SequenceNumericType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOID>006</WCOID>
+        <WCOFormat>n..5</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="udt:NumericType">
+      <xs:totalDigits value="5"/>
+      <xs:fractionDigits value="0"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="BaseDateTime">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:complexType name="GenericDateTime">
+    <xs:simpleContent>
+      <xs:extension base="BaseDateTime">
+        <xs:attribute name="formatCode" type="udt:FormatCodeType" use="required"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="FullAddressType">
+    <xs:sequence>
+      <xs:element name="CityName" type="udt:TextType" minOccurs="0" />
+      <xs:element name="CountryCode" type="udt:CodeType" minOccurs="0" />
+      <xs:element name="CountrySubDivisionName" type="udt:TextType" minOccurs="0" />
+      <xs:element name="Line"  type="udt:TextType" minOccurs="0" />
+      <xs:element name="PostcodeID" type="udt:IDType" minOccurs="0" />
+      <xs:element name="StreetName" type="udt:TextType" minOccurs="0" />
+      <xs:element name="StreetNumberNumeric" type="udt:NumericType" minOccurs="0" />
+      <xs:element name="PostOfficeBoxID" type="udt:IDType" minOccurs="0" />
+    </xs:sequence>
+
+  </xs:complexType>
+  <xs:complexType name="AddressWithCountryCodeType">
+    <xs:sequence>
+      <xs:element name="CountryCode" type="udt:CodeType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="PartyCommunicationListType">
+    <xs:sequence>
+      <xs:element name="SequenceNumeric" type="SequenceNumericType"/>
+      <xs:element name="ID" type="udt:IDType" minOccurs="0" />
+      <xs:element name="TypeCode" type="udt:CodeType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+
+
+</xs:schema>
