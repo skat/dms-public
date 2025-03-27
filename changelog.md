@@ -1,7 +1,24 @@
-### 11-03-2025
-* Updated added CustomsValuation for H6 XSD.
-* Removed TransportEquipment from SI level 
+### 27-03-2025
+* Update import XML guide 14 08 000 000
+* Made the following XSD updates:
+* Added CustomsValuation for H6 XSD.
+* Removed TransportEquipment from SI level on all XSDs
 * Add TransportEquipment to I2PN on GS level
+
+### 25-03-2025
+* Update import XML guide with minor changes
+
+### 21-03-2025
+* Updated DMS Connectivity Guide to v1.16
+
+### 14-03-2025
+* Added H6 Amendment testcase pdf and XML
+
+### 13-03-2025
+* Added code list 50001 (relates to LocationId D.E. 14 01 036 000) to Codelist - import
+
+### 12-03-2025
+* Updated H3 test cases; standard, pre-lodged, amendment/correction, to function after the latest deploy
 
 ### 10-03-2025
 * Updates to H declarations updating cardinality of certain elements and adding documentation to clarify purpose.
