@@ -1,4 +1,5 @@
 ### 27-03-2025
+* Update the DMS_DS XSDs
 * Update import XML guide 14 08 000 000
 
 ### 25-03-2025

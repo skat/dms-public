@@ -3,11 +3,14 @@
     xmlns="urn:WCOLibraryE7TAXUDEUCDM52public"
     targetNamespace="urn:WCOLibraryE7TAXUDEUCDM52public"
     xmlns:edsmetadata="urn:wco:datamodel:WCO:WCO_DEC_EDS_METADATA:1"
-    xmlns:extensions="urn:eds:datamodel:EDS:EDS_EXTENSIONS:1">
+    xmlns:extensions="urn:eds:datamodel:EDS:EDS_EXTENSIONS:1"
+    xmlns:entry="urn:wco:datamodel:WCO:WCO_DEC_EDS_ENTRYSUMMARY:1">
   <xs:import namespace="urn:wco:datamodel:WCO:WCO_DEC_EDS_METADATA:1"
-      schemaLocation="WCO_EDS/WCO_DEC_EDS_METADATA.xsd"/>
+      schemaLocation="../WCO_EDS/WCO_DEC_EDS_METADATA.xsd"/>
+  <xs:import namespace="urn:wco:datamodel:WCO:WCO_DEC_EDS_ENTRYSUMMARY:1"
+      schemaLocation="../WCO_EDS/WCO_DEC_EDS_ENTRYSUMMARY.xsd"/>
   <xs:import namespace="urn:eds:datamodel:EDS:EDS_EXTENSIONS:1"
-      schemaLocation="EDS/EDS_EXTENSIONS.xsd"/>
+      schemaLocation="../EDS/EDS_EXTENSIONS.xsd"/>
   <xs:element name="acceptance" type="DateTime.Type"/>
   <xs:element name="AcceptancePlace" type="AcceptancePlace"/>
   <xs:element name="access" type="Code.Type"/>
@@ -246,7 +249,7 @@
   <xs:element name="function_2" type="LocationFunctionCode"/>
   <xs:element name="function_3" type="AgentFunctionCode"/>
   <xs:element name="function_4" type="ContactFunctionCode"/>
-  <!-- <xs:element name="Declaration" type="Declaration"/> -->
+  <xs:element name="Declaration" type="Declaration"/>
   <xs:element name="gender" type="PersonGenderCode"/>
   <xs:element name="geopolitical" type="Identifier.Type"/>
   <xs:element name="givenName" type="Text.Type"/>
@@ -333,7 +336,7 @@
   <xs:element name="Language.Identifier" type="Language.Identifier"/>
   <xs:element name="Language.Locale.Identifier" type="Language.Locale.Identifier"/>
   <xs:element name="LanguageCode" type="LanguageCode"/>
-  <xs:element name="latitude" type="Measure.Type"/>
+  <xs:element name="latitude" type="Text.Type"/>
   <xs:element name="line" type="Text.Type"/>
   <xs:element name="line_2" type="Numeric.Type"/>
   <xs:element name="loading" type="DateTime.Type"/>
@@ -343,7 +346,7 @@
   <xs:element name="Location" type="Location"/>
   <xs:element name="location" type="Identifier.Type"/>
   <xs:element name="LocationFunctionCode" type="LocationFunctionCode"/>
-  <xs:element name="longitude" type="Measure.Type"/>
+  <xs:element name="longitude" type="Text.Type"/>
   <xs:element name="lotNumber" type="Identifier.Type"/>
   <xs:element name="LPCO" type="LPCO"/>
   <xs:element name="LPCOAuthorizedParty" type="LPCOAuthorizedParty"/>
@@ -507,6 +510,7 @@
   <xs:element name="status_2" type="DocumentStatusCode"/>
   <xs:element name="Stevedore" type="Stevedore"/>
   <xs:element name="Storage" type="xs:string"/>
+  <xs:element name="storingFlag" type="StoringFlagCode"/>
   <xs:element name="StowPosition" type="StowPosition"/>
   <xs:element name="streetName" type="Text.Type"/>
   <xs:element name="streetNumber" type="Text.Type"/>
@@ -3222,7 +3226,7 @@
         </xs:annotation>
       </xs:element>
       <xs:element name="Extensions" type="extensions:ExtensionType" minOccurs="0" maxOccurs="unbounded"/>
-      <xs:element ref="Packaging" minOccurs="0"/>
+      <xs:element ref="Packaging" minOccurs="0" maxOccurs="unbounded"/>
       <xs:element ref="AdditionalDocument" minOccurs="0" maxOccurs="unbounded">
         <xs:annotation>
           <xs:documentation xml:lang="EN" source="WCO Association/CRI">requires</xs:documentation>
@@ -3517,6 +3521,11 @@
     <xs:annotation>
       <xs:documentation source="WCO Code Remarks">EDIFACT codes (7365) subset (codes 68 and 69)</xs:documentation>
     </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="Code.Type"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="StoringFlagCode">
     <xs:complexContent>
       <xs:extension base="Code.Type"/>
     </xs:complexContent>
@@ -5295,7 +5304,7 @@
       <xs:extension base="Code.Type"/>
     </xs:complexContent>
   </xs:complexType>
-  <!--<xs:complexType name="Declaration">
+  <xs:complexType name="Declaration">
     <xs:sequence>
       <xs:element name="EDSMetaData" type="edsmetadata:MetaDataType" minOccurs="0" />
       <xs:element name="Extensions" type="extensions:ExtensionType" minOccurs="0" maxOccurs="unbounded"/>
@@ -5311,6 +5320,7 @@
       <xs:element ref="issue" minOccurs="0"/>
       <xs:element ref="specificCircumstances" minOccurs="0"/>
       <xs:element ref="FunctionCode" minOccurs="0"/>
+      <xs:element ref="storingFlag" minOccurs="0"/>
       <xs:element ref="Amendment" minOccurs="0" maxOccurs="unbounded"/>
       <xs:element ref="BorderTransportMeans" minOccurs="0"/>
       <xs:element ref="EntryOffice" minOccurs="0"/>
@@ -5325,8 +5335,9 @@
       <xs:element ref="Consignment" minOccurs="0"/>
       <xs:element ref="PreviousDocument" minOccurs="0" maxOccurs="unbounded">
       </xs:element>
+      <xs:element name="SafetyAndSecurityData" type="entry:SafetyAndSecurityData" minOccurs="0" maxOccurs="1"/>
     </xs:sequence>
-  </xs:complexType> -->
+  </xs:complexType>
   <xs:complexType name="GoodsConsignedPlace">
     <xs:annotation>
       <xs:documentation xml:lang="EN" source="WCO/WCO ID">63A</xs:documentation>
@@ -6449,14 +6460,14 @@
         <xs:annotation>
           <xs:documentation xml:lang="EN" source="WCO Format">an..10</xs:documentation>
           <xs:documentation source="TDED/UID">6000</xs:documentation>
-          <xs:documentation source="TDED/Name">Geographical Coordinate. Latitude.Measure</xs:documentation>
+          <xs:documentation source="TDED/Name">Geographical Coordinate. Latitude.Text</xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element ref="longitude" minOccurs="0">
         <xs:annotation>
           <xs:documentation xml:lang="EN" source="WCO Format">an..11</xs:documentation>
           <xs:documentation source="TDED/UID">6002</xs:documentation>
-          <xs:documentation source="TDED/Name">Geographical Coordinate. Longitude.Measure</xs:documentation>
+          <xs:documentation source="TDED/Name">Geographical Coordinate. Longitude.Text</xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element ref="Address" minOccurs="0" maxOccurs="unbounded"/>
