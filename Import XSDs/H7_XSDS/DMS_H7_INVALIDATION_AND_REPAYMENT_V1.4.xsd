@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ds="urn:wco:datamodel:WCO:Declaration_DS:DMS:2"
+           xmlns:eds="urn:wco:datamodel:WCO:WCO_DEC_EDS_AUTHORISATION:1"
+           xmlns:udt="urn:un:unece:uncefact:data:standard:UnqualifiedDataType:6"
+           xmlns="urn:wco:datamodel:WCO:DEC-DMS:2"
+           targetNamespace="urn:wco:datamodel:WCO:DEC-DMS:2" elementFormDefault="qualified" version="1.2.0">
+    <xs:import namespace="urn:wco:datamodel:WCO:Declaration_DS:DMS:2"
+               schemaLocation="../DMS_DS/DMS_DS_V1.1.xsd"/>
+    <xs:import namespace="urn:un:unece:uncefact:data:standard:UnqualifiedDataType:6"
+               schemaLocation="../DMS_DS/UNECE/UNQUALIFIEDDATATYPE_6_DMS.xsd"/>
+    <xs:import namespace="urn:wco:datamodel:WCO:WCO_DEC_EDS_AUTHORISATION:1"
+               schemaLocation="../DMS_DS/WCO_DEC_EDS_AUTHORISATION.xsd"/>
+    <!--<xs:import namespace="urn:wco:datamodel:WCO:WCO_DEC_EDS_AUTHORISATION:1"
+               schemaLocation="../DMS_DS/WCO_EDS/WCO_DEC_EDS_AUTHORISATION.xsd"/>-->
+    <xs:element name="Declaration" type="Declaration"/>
+
+    <xs:complexType name="Declaration">
+        <xs:annotation>
+            <xs:documentation>
+                <details>
+                    H7 Invalidation and repayment
+                </details>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="FunctionCode" type="ds:DeclarationFunctionCodeType">
+                <xs:annotation>
+                    <xs:documentation>
+                        <type>DMS specific field</type>
+                        <details>
+                            Fill in "1" for invalidation and repayment.
+                        </details>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="ProcedureCategory" type="ds:DeclarationProcedureCategoryCodeType">
+                <xs:annotation>
+                    <xs:documentation>
+                        <type>DMS Specific field</type>
+                        <details>
+                            The type of declaration you want to request invalidation and repayment for.
+                            Fill in "H7" for invalidation and repayment of an H7 declaration.
+                        </details>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="FunctionalReferenceID" type="ds:DeclarationFunctionalReferenceIDType">
+                <xs:annotation>
+                    <xs:documentation>
+                        <type>EUCDM 6.1</type>
+                        <code>12 09 001 000</code>
+                        <details>
+                            LRN.
+                            Fill in the LRN of the declaration you want to request invalidation and repayment for.
+                        </details>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="ID" type="ds:DeclarationIdentificationIDType">
+                <xs:annotation>
+                    <xs:documentation>
+                        <type>DMS specific field</type>
+                        <details>
+                            MRN.
+                            Fill in MRN of the declaration you want to request invalidation and repayment for.
+                        </details>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="TypeCode" type="ds:DeclarationTypeCodeType">
+                <xs:annotation>
+                    <xs:documentation>
+                        <type>DMS specific field</type>
+                        <details>
+                            "INV" for invalidation and repayment.
+                        </details>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="Submitter">
+                <xs:annotation>
+                    <xs:documentation>
+                        <type>DMS specific field</type>
+                        <details>
+                            Name and identifier of submitting company.
+                        </details>
+                    </xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="Name" type="ds:SubmitterNameTextType">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    <details>
+                                        The CVR/SE-number/EORI given by the client certificate used for the submission
+                                        of declarations.
+                                    </details>
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="ID" type="ds:SubmitterIdentificationIDType">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    <details>
+                                        The ID given by the client certificate used for the submission of declarations.
+                                    </details>
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
+            <xs:element name="Amendment" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="SequenceNumeric" type="ds:AmendmentSequenceNumericType"/>
+                        <xs:element name="ChangeReasonCode" type="ds:AmendmentChangeReasonCodeType">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    Code for reason for invalidation.
+
+                                    - '22': Goods have been returned to supplier (Art. 148, 3 DA)
+                                    - '23': Union goods declared by mistake (Art. 148, 4b DA)
+                                    - '24': Registration of same goods on several declarations (Art. 148, C DA)
+                                    - '25': Postal low value consignments returned on basis of barcode S10 (Art. 148 (3)
+                                    and Art. 140 (1)(d) and Art. 141 (4) DA)
+                                    - '26': Accepted declarations with goods to be placed under another customs
+                                    procedure (Art. 174, 1a UCC)
+                                    - '27': The customs procedure is no longer justified due to special circumstances
+                                    (Art. 174, 1b UCC)
+                                    - '28': For Customs officers only!: Disposal of goods (Art. 198 UCC)
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="ChangeReasonText" type="ds:AmendmentChangeReasonTextType">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    Description of reason for invalidation.
+                                    Max. 512 characters.
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
+            <xs:element name="RepaymentRemissionAuthorisation" type="eds:RepaymentRemissionAuthorisation" maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:documentation>
+                        Dataset 4C - Annex A
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

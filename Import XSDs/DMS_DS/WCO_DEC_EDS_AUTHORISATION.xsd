@@ -5,9 +5,9 @@
     targetNamespace="urn:wco:datamodel:WCO:WCO_DEC_EDS_AUTHORISATION:1"
     elementFormDefault="qualified"
     version="1.0">
-  <xs:import namespace="urn:un:unece:uncefact:data:standard:UnqualifiedDataType:6" schemaLocation="../UNECE/UNQUALIFIEDDATATYPE_6_DMS.xsd"/>
+  <xs:import namespace="urn:un:unece:uncefact:data:standard:UnqualifiedDataType:6" schemaLocation="UNECE/UNQUALIFIEDDATATYPE_6_DMS.xsd"/>
   <xs:import namespace="urn:wco:datamodel:WCO:Declaration_DS:DMS:2"
-      schemaLocation="../DMS_DS.xsd" />
+    schemaLocation="DMS_DS.xsd" />
 
   <xs:complexType name="Authorisation"></xs:complexType>
 
@@ -82,7 +82,7 @@
               </xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element name="ApplicationHolderId" type="AuthorisationIDType" minOccurs="0" maxOccurs="1">
+          <xs:element name="ApplicationHolderId" type="AuthorisationIDType" maxOccurs="1">
             <xs:annotation>
               <xs:documentation xml:lang="EN">
                 <WCOFormat>an..17</WCOFormat>
@@ -102,7 +102,7 @@
               </xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element name="ApplicationSupervisor" type="PersonContactDetailsType"  minOccurs="0" maxOccurs="1">
+          <xs:element name="ApplicationSupervisor" type="PersonContactDetailsType" maxOccurs="1">
             <xs:annotation>
               <xs:documentation xml:lang="EN">
                 <WCODescription>Contact details of person responsible for the application</WCODescription>
@@ -554,7 +554,7 @@
           </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="TaricAdditionalCode" type="TaricAdditionalCodeType" maxOccurs="1" minOccurs="0">
+      <xs:element name="TaricAdditionalCode" type="TaricAdditionalCodeType" maxOccurs="1">
         <xs:annotation>
           <xs:documentation xml:lang="EN">
             <WCOFormat>an4</WCOFormat>
@@ -562,7 +562,7 @@
           </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="NationalAdditionalCode" type="NationalAdditionalCodeType" maxOccurs="1" minOccurs="0">
+      <xs:element name="NationalAdditionalCode" type="NationalAdditionalCodeType" maxOccurs="1">
         <xs:annotation>
           <xs:documentation xml:lang="EN">
             <WCOFormat>an..4</WCOFormat>
@@ -679,7 +679,7 @@
       <xs:element name="EmailAddress" type="EmailTextType" minOccurs="0" maxOccurs="1">
         <xs:annotation>
           <xs:documentation xml:lang="EN">
-            <WCOFormat>an..256</WCOFormat>
+            <WCOFormat>an..50</WCOFormat>
             <WCODescription>Contact details person email</WCODescription>
           </xs:documentation>
         </xs:annotation>
@@ -718,7 +718,7 @@
 
   <xs:complexType name="RepresentativeType">
     <xs:sequence>
-      <xs:element name="Name" type="RepresentativeNameTextType" minOccurs="0" maxOccurs="1">
+      <xs:element name="Name" type="RepresentativeNameTextType" maxOccurs="1">
         <xs:annotation>
           <xs:documentation xml:lang="EN">
             <WCOFormat>an..70</WCOFormat>
@@ -726,7 +726,7 @@
           </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="StreetAndNumber" type="StreetAndNumberType" minOccurs="0" maxOccurs="1">
+      <xs:element name="StreetAndNumber" type="StreetAndNumberType" maxOccurs="1">
         <xs:annotation>
           <xs:documentation xml:lang="EN">
             <WCOFormat>an..70</WCOFormat>
@@ -734,7 +734,7 @@
           </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="CountryCode" type="ds:AddressCountryCodeType" minOccurs="0" maxOccurs="1">
+      <xs:element name="CountryCode" type="ds:AddressCountryCodeType" maxOccurs="1">
         <xs:annotation>
           <xs:documentation xml:lang="EN">
             <WCOFormat>a2</WCOFormat>
@@ -742,7 +742,7 @@
           </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="PostCode" type="ds:AddressPostcodeIDType" minOccurs="0" maxOccurs="1">
+      <xs:element name="PostCode" type="ds:AddressPostcodeIDType" maxOccurs="1">
         <xs:annotation>
           <xs:documentation xml:lang="EN">
             <WCOFormat>an..9</WCOFormat>
@@ -750,7 +750,7 @@
           </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="City" type="ds:AddressCityNameTextType" minOccurs="0" maxOccurs="1">
+      <xs:element name="City" type="ds:AddressCityNameTextType" maxOccurs="1">
         <xs:annotation>
           <xs:documentation xml:lang="EN">
             <WCOFormat>an..35</WCOFormat>
@@ -1352,12 +1352,12 @@
   <xs:complexType name="EmailTextType">
     <xs:annotation>
       <xs:documentation>
-        <WCOFormat>an..256</WCOFormat>
+        <WCOFormat>an..50</WCOFormat>
       </xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
       <xs:restriction base="udt:TextType">
-        <xs:maxLength value="256"/>
+        <xs:maxLength value="50"/>
         <xs:pattern value=".*[^\s].*"/>
       </xs:restriction>
     </xs:simpleContent>
@@ -1448,19 +1448,6 @@
   </xs:complexType>
 
   <xs:complexType name="StreetAndNumberType">
-    <xs:annotation>
-      <xs:documentation>
-        <WCOFormat>an..70</WCOFormat>
-      </xs:documentation>
-    </xs:annotation>
-    <xs:simpleContent>
-      <xs:restriction base="udt:TextType">
-        <xs:maxLength value="70"/>
-        <xs:pattern value=".*[^\s].*"/>
-      </xs:restriction>
-    </xs:simpleContent>
-  </xs:complexType>
-  <xs:complexType name="NameType">
     <xs:annotation>
       <xs:documentation>
         <WCOFormat>an..70</WCOFormat>
@@ -1620,14 +1607,6 @@
           <xs:documentation xml:lang="EN">
             <WCOFormat>an..35</WCOFormat>
             <WCODescription>Additional lIdentifier of the First Place of Use</WCODescription>
-          </xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="Name" type="NameType" minOccurs="0">
-        <xs:annotation>
-          <xs:documentation xml:lang="EN">
-            <WCOFormat>an..70</WCOFormat>
-            <WCODescription>Name of the First Place of Use</WCODescription>
           </xs:documentation>
         </xs:annotation>
       </xs:element>
