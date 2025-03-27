@@ -7,9 +7,6 @@
 ### 21-03-2025
 * Updated DMS Connectivity Guide to v1.16
 
-### 18-03-2025
-* Updated Codelist - Import with list 50001
-
 ### 14-03-2025
 * Added H6 Amendment testcase pdf and XML
 
