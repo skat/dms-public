@@ -4,6 +4,9 @@
 * Added CustomsValuation for H6 XSD.
 * Removed TransportEquipment from SI level on all XSDs
 * Add TransportEquipment to I2PN on GS level
+* Made Origin have a MaxOcurr of 2 for H1, H3 and H4
+* Changed the maximum allowed elements of TradeTermsLocationNameTextType from 256 to 36. Updating DMS_DS XSD.
+* Updating all H and I XSD as they refer to this XSD
 
 ### 25-03-2025
 * Update import XML guide with minor changes
@@ -31,10 +34,6 @@
 ### 06-03-2025
 * Updated release notes tfe02 to v1.2 to reflect the update on TFE02 the 6th of march.
 * Updated H1_Standard, H2_Standard and H3_Standard.
-
-### 03-03-2025
-* Changed the maximum allowed elements of TradeTermsLocationNameTextType from 256 to 36. Updating DMS_DS XSD. 
-* Updating all H nad I XSD as they refer to this XSD
 
 ### 14-02-2025
 * Added a missing minOccurs="0" in H1 amendment Correction.
