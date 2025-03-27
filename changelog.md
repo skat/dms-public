@@ -1,6 +1,8 @@
 ### 26-03-2025
 * Updated the G4G3 XSD to align with WCO by adding a sequence to the loadinglocation
 
+### 25-03-2025
+* Update import XML guide with minor changes
 
 ### 21-03-2025
 * Updated DMS Connectivity Guide to v1.16
