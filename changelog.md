@@ -1,5 +1,9 @@
 ### 27-03-2025
 * Update the DMS_DS XSDs
+* Update import XML guide 14 08 000 000
+
+### 25-03-2025
+* Update import XML guide with minor changes
 
 ### 21-03-2025
 * Updated DMS Connectivity Guide to v1.16
