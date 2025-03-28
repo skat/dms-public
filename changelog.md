@@ -1,5 +1,6 @@
-### 18-03-2025
-* Added codelist 11034 to Codlists - Import
+### 28-03-2025
+* Update the pathing of dependencies in the declaration XSD's to match updated structure with GEFEG folder
+* Added codelist 11034 to Codelists - Import
 
 ### 27-03-2025
 * Update the DMS_DS XSDs
