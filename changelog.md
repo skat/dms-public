@@ -1,4 +1,5 @@
 ### 28-03-2025
+* Added H6_Pre-lodged test case
 * Update the pathing of dependencies in the declaration XSD's to match updated structure with GEFEG folder
 
 ### 27-03-2025
