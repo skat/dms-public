@@ -1,5 +1,5 @@
 ### 18-03-2025
-* Added coÂdlist 11034 to Codlists - Import
+* Added codelist 11034 to Codlists - Import
 
 ### 27-03-2025
 * Update the DMS_DS XSDs
