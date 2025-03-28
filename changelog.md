@@ -1,3 +1,6 @@
+### 28-03-2025
+* Added H6_Standard test case
+
 ### 27-03-2025
 * Update the DMS_DS XSDs
 * Update import XML guide 14 08 000 000
