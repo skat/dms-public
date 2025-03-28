@@ -12,6 +12,9 @@
 * Changed the maximum allowed elements of TradeTermsLocationNameTextType from 256 to 36. Updating DMS_DS XSD.
 * Updating all H and I XSD as they refer to this XSD
 
+### 26-03-2025
+* Updated the G4G3 XSD to align with WCO by adding a sequence to the loadinglocation
+
 ### 25-03-2025
 * Update import XML guide with minor changes
 
