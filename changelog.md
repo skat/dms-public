@@ -1,3 +1,7 @@
+### 31-03-2025
+* Added AmountType2 to UNQUALIFIEDDATATYPE_6_DMS.xsd
+* Fix references for WCO XSD files to be internally consistent
+
 ### 28-03-2025
 * Added H6_Pre-lodged test case
 * Added H6_Standard test case
