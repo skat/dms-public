@@ -1,3 +1,36 @@
+### 31-03-2025
+* Added AmountType2 to UNQUALIFIEDDATATYPE_6_DMS.xsd
+* Fix references for WCO XSD files to be internally consistent
+
+### 28-03-2025
+* Added H6_Pre-lodged test case
+* Added H6_Standard test case
+* Update the pathing of dependencies in the declaration XSD's to match updated structure with GEFEG folder
+* Added codelist 11034 to Codelists - Import
+
+### 27-03-2025
+* Update the DMS_DS XSDs
+* Update import XML guide 14 08 000 000
+* Made the following XSD updates:
+* Added CustomsValuation for H6 XSD.
+* Removed TransportEquipment from SI level on all XSDs
+* Add TransportEquipment to I2PN on GS level
+* Made Origin have a MaxOcurr of 2 for H1, H3 and H4
+* Changed the maximum allowed elements of TradeTermsLocationNameTextType from 256 to 36. Updating DMS_DS XSD.
+* Updating all H and I XSD as they refer to this XSD
+
+### 25-03-2025
+* Update import XML guide with minor changes
+
+### 21-03-2025
+* Updated DMS Connectivity Guide to v1.16
+
+### 13-03-2025
+* Added code list 50001 (relates to LocationId D.E. 14 01 036 000) to Codelist - import
+
+### 12-03-2025
+* Updated H3 test cases; standard, pre-lodged, amendment/correction, to function after the latest deploy
+
 ### 10-03-2025
 * Updated I1 to include consignor
 * Updates to H declarations updating cardinality of certain elements and adding documentation to clarify purpose.
