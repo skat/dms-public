@@ -21,6 +21,9 @@
 
 ### 26-03-2025
 * Added sequence to the loadinglocation XSD for the G4 to align with WCO
+* Updated the G4G3 XSD to align with WCO by adding a sequence to the loadinglocation
+* Modified G5 XSD (to include sequence in ArrivalTransportMeans) to follow updated WCO_TS_DEC XSD
+* Modified G3 XSD (to include sequence in ArrivalTransportMeans) to follow updated WCO_TS_DEC XSD
 
 ### 25-03-2025
 * Update import XML guide with minor changes
