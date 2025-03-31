@@ -1,4 +1,8 @@
-### 303-2025
+### 31-03-2025
+* Added AmountType2 to UNQUALIFIEDDATATYPE_6_DMS.xsd
+* Fix references for WCO XSD files to be internally consistent
+
+### 30-03-2025
 * Corections to G4G3. The corrections are:
 * Made PresentationOffice (17 09 001 000) mandatory
 * Made description (18 05 001 000) on MI lvl mandatory
@@ -7,6 +11,29 @@
 * Set Address (13 02 018 000) to have minOcurres=0
 * Set name (13 03 016 000) to have minOcurres=0
 * Annotation elements where added to a few comment less sub elements in the element Writeoff.
+
+### 28-03-2025
+* Added H6_Pre-lodged test case
+* Added H6_Standard test case
+* Update the pathing of dependencies in the declaration XSD's to match updated structure with GEFEG folder
+* Added codelist 11034 to Codelists - Import
+
+### 27-03-2025
+* Update the DMS_DS XSDs
+* Update import XML guide 14 08 000 000
+* Made the following XSD updates:
+* Added CustomsValuation for H6 XSD.
+* Removed TransportEquipment from SI level on all XSDs
+* Add TransportEquipment to I2PN on GS level
+* Made Origin have a MaxOcurr of 2 for H1, H3 and H4
+* Changed the maximum allowed elements of TradeTermsLocationNameTextType from 256 to 36. Updating DMS_DS XSD.
+* Updating all H and I XSD as they refer to this XSD
+
+### 25-03-2025
+* Update import XML guide with minor changes
+
+### 21-03-2025
+* Updated DMS Connectivity Guide to v1.16
 
 ### 14-03-2025
 * Added H6 Amendment testcase pdf and XML
