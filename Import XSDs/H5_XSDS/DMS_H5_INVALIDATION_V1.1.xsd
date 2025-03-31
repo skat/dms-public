@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:ds="urn:wco:datamodel:WCO:Declaration_DS:DMS:2"
+           xmlns="urn:wco:datamodel:WCO:DEC-DMS:2"
+           xmlns:ext="urn:eds:datamodel:EDS:EDS_EXTENSIONS:1"
+           targetNamespace="urn:wco:datamodel:WCO:DEC-DMS:2"
+           elementFormDefault="qualified" version="1.2.0">
+    <xs:import namespace="urn:wco:datamodel:WCO:Declaration_DS:DMS:2"
+               schemaLocation="../DMS_DS/DMS_DS.xsd"/>
+    <xs:import namespace="urn:wco:datamodel:WCO:WCO_DEC_EDS_AUTHORISATION:1"
+               schemaLocation="../DMS_DS/WCO_EDS/WCO_DEC_EDS_AUTHORISATION.xsd"/>
+    <xs:import namespace="urn:un:unece:uncefact:data:standard:UnqualifiedDataType:6"
+               schemaLocation="../DMS_DS/UNECE/UNQUALIFIEDDATATYPE_6_DMS.xsd"/>
+    <xs:import namespace="urn:eds:datamodel:EDS:EDS_EXTENSIONS:1"
+               schemaLocation="../DMS_DS/EDS/EDS_EXTENSIONS.xsd"/>
+
+    <xs:element name="Declaration" type="Declaration">
+        <xs:annotation>
+            <xs:documentation>
+                <EUCDMname>Invalidation of declaration</EUCDMname>
+                <type>EUCDM 6.1</type>
+            </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:complexType name="Declaration">
+        <xs:sequence>
+            <xs:element name="FunctionCode" type="ds:DeclarationFunctionCodeType"/>
+
+            <xs:element name="ProcedureCategory" type="ds:DeclarationProcedureCategoryCodeType"/>
+
+            <xs:element name="FunctionalReferenceID" type="ds:DeclarationFunctionalReferenceIDType">
+                <xs:annotation>
+                    <xs:documentation>
+                        <EUCDMname>LRN</EUCDMname>
+                        <type>EUCDM 6.1</type>
+                        <code>12 09 001 000</code>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="ID" type="ds:DeclarationIdentificationIDType"/>
+
+            <xs:element name="TypeCode" type="ds:DeclarationTypeCodeType">
+                <xs:annotation>
+                    <xs:documentation>
+                        <EUCDMname>Declaration type</EUCDMname>
+                        <type>EUCDM 6.1</type>
+                        <code>11 01 001 000</code>
+                    </xs:documentation>
+                    <xs:documentation>
+                        <EUCDMname>Additional declaration type</EUCDMname>
+                        <type>EUCDM 6.1</type>
+                        <code>11 02 001 000</code>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="Submitter">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="Name" type="ds:SubmitterNameTextType"/>
+                        <xs:element name="ID" type="ds:SubmitterIdentificationIDType"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
+            <xs:element name="Amendment">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="SequenceNumeric" type="ds:AmendmentSequenceNumericType"/>
+                        <xs:element name="ChangeReasonCode" type="ds:AmendmentChangeReasonCodeType"/>
+                        <xs:element name="ChangeReasonText" type="ds:AmendmentChangeReasonTextType"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
