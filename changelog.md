@@ -10,6 +10,7 @@
 
 ### 27-03-2025
 * Moved D.E. 14 13 014 000 from Payment to CustomsValuation in the H6 Standard XSD to align with WCO.
+* Moved D.E. 14 13 014 000 from Payment to CustomsValuation in the H6 Amendment XSD to align with WCO.
 * Update the DMS_DS XSDs
 * Update import XML guide 14 08 000 000
 * Made the following XSD updates:
