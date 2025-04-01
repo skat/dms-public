@@ -1,5 +1,6 @@
 ### 01-04-2025
-* Updated comment for CustomsValuation in: H1, H4, H5, H6 and I1
+* Updated comment for CustomsValuation in standard and Amendment/correction for: H1, H4, H5, H6 and I1.
+* This change was also made in I1 supplementary
 
 ### 31-03-2025
 * Added AmountType2 to UNQUALIFIEDDATATYPE_6_DMS.xsd
