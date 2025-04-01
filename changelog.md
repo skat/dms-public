@@ -6,6 +6,7 @@
 ### 31-03-2025
 * Added AmountType2 to UNQUALIFIEDDATATYPE_6_DMS.xsd
 * Fix references for WCO XSD files to be internally consistent
+* Removed element CategoryCode from all H and I XSDs
 
 ### 30-03-2025
 * Corections to G4G3. The corrections are:
