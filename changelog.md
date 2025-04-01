@@ -1,3 +1,6 @@
+### 01-04-2025
+* Updated comment for CustomsValuation in: H1, H4, H5, H6 and I1
+
 ### 31-03-2025
 * Added AmountType2 to UNQUALIFIEDDATATYPE_6_DMS.xsd
 * Fix references for WCO XSD files to be internally consistent
