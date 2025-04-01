@@ -59,6 +59,7 @@
 * Updated H3 test cases; standard, pre-lodged, amendment/correction, to function after the latest deploy
 
 ### 10-03-2025
+* Updated I1 to include consignor
 * Updates to H declarations updating cardinality of certain elements and adding documentation to clarify purpose.
 * Updated XSD to make sure element 14 04 014 000 did not have the currencyID attribute.
 
