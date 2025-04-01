@@ -22,6 +22,8 @@
 * Added codelist 11034 to Codelists - Import
 
 ### 27-03-2025
+* Moved D.E. 14 13 014 000 from Payment to CustomsValuation in the H6 Standard XSD to align with WCO.
+* Moved D.E. 14 13 014 000 from Payment to CustomsValuation in the H6 Amendment XSD to align with WCO.
 * Update the DMS_DS XSDs
 * Update import XML guide 14 08 000 000
 * Made the following XSD updates:
@@ -31,6 +33,11 @@
 * Made Origin have a MaxOcurr of 2 for H1, H3 and H4
 * Changed the maximum allowed elements of TradeTermsLocationNameTextType from 256 to 36. Updating DMS_DS XSD.
 * Updating all H and I XSD as they refer to this XSD
+
+### 26-03-2025
+* Updated the G4G3 XSD to align with WCO by adding a sequence to the loadinglocation
+* Modified G5 XSD (to include sequence in ArrivalTransportMeans) to follow updated WCO_TS_DEC XSD
+* Modified G3 XSD (to include sequence in ArrivalTransportMeans) to follow updated WCO_TS_DEC XSD
 
 ### 25-03-2025
 * Update import XML guide with minor changes
