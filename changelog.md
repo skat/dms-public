@@ -1,3 +1,6 @@
+### 02-04-2025
+* Updated H6 Amendment testcase PDF, as well as renamed ImportEORI variable that was causing a conflict
+
 ### 21-03-2025
 * Updated DMS Connectivity Guide to v1.16
 
