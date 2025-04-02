@@ -1,4 +1,6 @@
 ### 02-04-2025
+* Updated XML guide:
+* Removed description from the delivery terms tabel
 * Add 10236 codelist to Import Codelists
 
 ### 31-03-2025
