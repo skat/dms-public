@@ -1,3 +1,6 @@
+### 02-04-2025
+* Add 10236 codelist to Import Codelists
+
 ### 31-03-2025
 * Added AmountType2 to UNQUALIFIEDDATATYPE_6_DMS.xsd
 * Fix references for WCO XSD files to be internally consistent
