@@ -1,4 +1,7 @@
 ### 02-04-2025
+* Updated Release Notes for 6.1.5.2 RC-1 to RC-5.
+
+### 02-04-2025
 * Updated XML guide:
 * Removed description from the delivery terms tabel
 * Add 10236 codelist to Import Codelists
