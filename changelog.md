@@ -1,3 +1,7 @@
+### 02-04-2025
+* Updated XML guide:
+* Removed description from the delivery terms tabel
+* Add 10236 codelist to Import Codelists
 
 ### 01-04-2025
 * Updated comment for CustomsValuation in standard and Amendment/correction for: H1, H4, H5, H6 and I1.
@@ -7,16 +11,6 @@
 * Added AmountType2 to UNQUALIFIEDDATATYPE_6_DMS.xsd
 * Fix references for WCO XSD files to be internally consistent
 * Removed element CategoryCode from all H and I XSDs
-
-### 30-03-2025
-* Corections to G4G3. The corrections are:
-* Made PresentationOffice (17 09 001 000) mandatory
-* Made description (18 05 001 000) on MI lvl mandatory
-* Name (13 06 016 000), Address (13 06 018 000), and all Address sub-elements have been removed as representative can't be a private person. Name and address should therefore not be possible to be filled in.
-* Communication (13 13 029 000), (13 05 029 000), and (13 03 029 000) has been changed to have a cardinality of 9 or 0.
-* Set Address (13 02 018 000) to have minOcurres=0
-* Set name (13 03 016 000) to have minOcurres=0
-* Annotation elements where added to a few comment less sub elements in the element Writeoff.
 
 ### 28-03-2025
 * Added H6_Pre-lodged test case
@@ -48,9 +42,6 @@
 
 ### 21-03-2025
 * Updated DMS Connectivity Guide to v1.16
-
-### 14-03-2025
-* Added H6 Amendment testcase pdf and XML
 
 ### 13-03-2025
 * Added code list 50001 (relates to LocationId D.E. 14 01 036 000) to Codelist - import
