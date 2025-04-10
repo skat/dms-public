@@ -1,3 +1,6 @@
+### 10-04-2025
+* Updated codelists after release.
+
 ### 02-04-2025
 * Updated XML guide:
 * Removed description from the delivery terms tabel
