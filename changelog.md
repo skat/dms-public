@@ -1,3 +1,6 @@
+### 11-04-2025
+* Updated standard XML's for H1, H2, H3, H4, H5, H6, I1
+
 ### 10-04-2025
 * Updated codelists after release.
 
