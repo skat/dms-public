@@ -1,4 +1,11 @@
+### 11-04-2025
+* Updated standard XML's for H1, H2, H3, H4, H5, H6, I1
+
+### 10-04-2025
+* Updated codelists after release.
+
 ### 02-04-2025
+* Updated Release Notes for 6.1.5.2 RC-1 to RC-5.
 * Updated XML guide:
 * Removed description from the delivery terms tabel
 * Add 10236 codelist to Import Codelists
