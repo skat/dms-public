@@ -1,3 +1,6 @@
+### 14-04-2025
+* Add the G4 Standard Test case (PDF + XML)
+
 ### 11-04-2025
 * Updated standard XML's for H1, H2, H3, H4, H5, H6, I1
 
