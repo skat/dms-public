@@ -1,5 +1,15 @@
+### 15-04-2025
+* Updated H6 Amendment XML to adhere to updated XSD
+
+### 11-04-2025
+* Updated standard XML's for H1, H2, H3, H4, H5, H6, I1
+
+### 10-04-2025
+* Updated codelists after release.
+
 ### 02-04-2025
 * Updated H6 Amendment testcase PDF, as well as renamed ImportEORI variable that was causing a conflict
+* Updated Release Notes for 6.1.5.2 RC-1 to RC-5.
 * Updated XML guide:
 * Removed description from the delivery terms tabel
 * Add 10236 codelist to Import Codelists
@@ -30,9 +40,6 @@
 
 ### 21-03-2025
 * Updated DMS Connectivity Guide to v1.16
-
-### 14-03-2025
-* Added H6 Amendment testcase pdf and XML
 
 ### 13-03-2025
 * Added code list 50001 (relates to LocationId D.E. 14 01 036 000) to Codelist - import
