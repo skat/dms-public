@@ -1,5 +1,11 @@
+### 16-04-2025
+* Add the H6 Correction Test case (PDF + XML)
+
 ### 15-04-2025
 * Updated H6 Amendment XML to adhere to updated XSD
+
+### 14-04-2025
+* Add the G4 Standard Test case (PDF + XML)
 
 ### 11-04-2025
 * Updated standard XML's for H1, H2, H3, H4, H5, H6, I1
