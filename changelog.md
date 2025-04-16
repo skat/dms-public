@@ -1,3 +1,6 @@
+### 16-04-2025
+* Added H6 Correction test case pair
+
 ### 11-04-2025
 * Updated standard XML's for H1, H2, H3, H4, H5, H6, I1
 
