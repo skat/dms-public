@@ -1,6 +1,9 @@
 ### 16-04-2025
 * Add the H6 Correction Test case (PDF + XML)
 
+### 15-04-2025
+* Updated H6 Amendment XML to adhere to updated XSD
+
 ### 14-04-2025
 * Add the G4 Standard Test case (PDF + XML)
 
@@ -11,6 +14,7 @@
 * Updated codelists after release.
 
 ### 02-04-2025
+* Updated H6 Amendment testcase PDF, as well as renamed ImportEORI variable that was causing a conflict
 * Updated Release Notes for 6.1.5.2 RC-1 to RC-5.
 * Updated XML guide:
 * Removed description from the delivery terms tabel
