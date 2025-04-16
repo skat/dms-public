@@ -215,7 +215,6 @@
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
-
             <xs:element name="Declarant">
                 <xs:annotation>
                     <xs:documentation>
@@ -377,8 +376,6 @@
                 <xs:complexType>
                     <xs:sequence>
                         <xs:element name="Extensions" type="extensions:ExtensionType" minOccurs="0" maxOccurs="15"/>
-
-
                         <xs:element name="SupportingDocument" minOccurs="0" maxOccurs="99">
                             <xs:annotation>
                                 <xs:documentation>
@@ -441,7 +438,6 @@
                                 </xs:sequence>
                             </xs:complexType>
                         </xs:element>
-
                         <xs:element name="AdditionalReference" minOccurs="0" maxOccurs="99">
                             <xs:annotation>
                                 <xs:documentation>
@@ -475,7 +471,6 @@
                                 </xs:sequence>
                             </xs:complexType>
                         </xs:element>
-
                         <xs:element name="AdditionalInformation" minOccurs="0" maxOccurs="99">
                             <xs:annotation>
                                 <xs:documentation>
@@ -510,7 +505,6 @@
                                 </xs:sequence>
                             </xs:complexType>
                         </xs:element>
-
                         <xs:element name="AEOMutualRecognitionParty" minOccurs="0" maxOccurs="99">
                             <xs:annotation>
                                 <xs:documentation>
@@ -672,6 +666,11 @@
                             </xs:complexType>
                         </xs:element>
                         <xs:element name="CustomsValuation">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    <EUCDMnote>This is a structural element with no EUCDM D.E code</EUCDMnote>
+                                </xs:documentation>
+                            </xs:annotation>
                             <xs:complexType>
                                 <xs:sequence>
                                     <xs:element name="FreightChargeAmount" type="ds:CustomsValuationFreightChargeAmountType">
@@ -958,20 +957,6 @@
                                                                         <xs:element name="Payment" minOccurs="0">
                                                                             <xs:complexType>
                                                                                 <xs:sequence>
-                                                                                    <xs:element
-                                                                                            name="FreightChargeAmount"
-                                                                                            type="ds:CustomsValuationFreightChargeAmountType">
-                                                                                        <xs:annotation>
-                                                                                            <xs:documentation
-                                                                                                    xml:lang="EN">
-                                                                                                <EUCDMname>Amount
-                                                                                                </EUCDMname>
-                                                                                                <type>EUCDM 6.2</type>
-                                                                                                <code>14 13 014 000
-                                                                                                </code>
-                                                                                            </xs:documentation>
-                                                                                        </xs:annotation>
-                                                                                    </xs:element>
                                                                                     <xs:element name="MethodCode"
                                                                                                 type="ds:PaymentMethodCodeType"
                                                                                                 minOccurs="0">
@@ -1072,27 +1057,6 @@
                                             </xs:sequence>
                                         </xs:complexType>
                                     </xs:element>
-                                        <xs:element name="CustomsValuation">
-                                            <xs:complexType>
-                                                <xs:sequence> 
-                                                    <xs:element name="FreightChargeAmount" type="ds:CustomsValuationFreightChargeAmountType">
-                                                        <xs:annotation>
-                                                            <xs:documentation>
-                                                                <EUCDMname>Amount</EUCDMname>
-                                                                <type>EUCDM 6.1</type>
-                                                                <code>14 13 014 000</code>
-                                                            </xs:documentation>
-                                                            <xs:documentation>
-                                                                <EUCDMname>Currency</EUCDMname>
-                                                                <type>EUCDM 6.1</type>
-                                                                <code>14 13 012 000</code>
-                                                                <node>Attribute</node>
-                                                            </xs:documentation>
-                                                        </xs:annotation>
-                                                    </xs:element>
-                                                <xs:sequence>
-                                            <xs:complexType>
-                                        </xs:element>
                                     <xs:element name="DomesticDutyTaxParty" minOccurs="0" maxOccurs="99">
                                         <xs:annotation>
                                             <xs:documentation>
@@ -1290,15 +1254,6 @@
                                                             </xs:element>
                                                         </xs:sequence>
                                                     </xs:complexType>
-                                                </xs:element>
-                                                <xs:element name="CategoryCode"
-                                                            type="ds:PreviousDocumentCategoryCodeType" minOccurs="0">
-                                                    <xs:annotation>
-                                                        <xs:documentation>
-                                                            <WCOName>Document category, coded</WCOName>
-                                                            <WCODescription>Code specifying the category of a document</WCODescription>
-                                                        </xs:documentation>
-                                                    </xs:annotation>
                                                 </xs:element>
                                                 <xs:element name="ID" type="ds:PreviousDocumentIdentificationIDType">
                                                     <xs:annotation>
@@ -1646,15 +1601,6 @@
                             <xs:complexType>
                                 <xs:sequence>
                                     <xs:element name="SequenceNumeric" type="ds:PreviousDocumentSequenceNumericType"/>
-                                    <xs:element name="CategoryCode"
-                                                type="ds:PreviousDocumentCategoryCodeType" minOccurs="0">
-                                        <xs:annotation>
-                                            <xs:documentation>
-                                                <WCOName>Document category, coded</WCOName>
-                                                <WCODescription>Code specifying the category of a document</WCODescription>
-                                            </xs:documentation>
-                                        </xs:annotation>
-                                    </xs:element>
                                     <xs:element name="ID" type="ds:PreviousDocumentIdentificationIDType">
                                         <xs:annotation>
                                             <xs:documentation>
