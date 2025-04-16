@@ -1,3 +1,6 @@
+### 16-04-2025
+* Add the H6 Correction Test case (PDF + XML)
+
 ### 14-04-2025
 * Add the G4 Standard Test case (PDF + XML)
 
