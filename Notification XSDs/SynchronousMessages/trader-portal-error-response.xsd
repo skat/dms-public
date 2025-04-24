@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" version="2.2"
 >
-  <xs:import namespace="urn:un:unece:uncefact:data:standard:UnqualifiedDataType:6" schemaLocation="../../Import XSDs/DMS_DS/UNECE/UNQUALIFIEDDATATYPE_6_DMS.xsd"/>
+  <xs:import namespace="urn:un:unece:uncefact:data:standard:UnqualifiedDataType:6" schemaLocation="../../Import XSDs/DMS_DS/UNECE/UNQUALIFIEDDATATYPE_6_DMS.xsd" />
 
   <!--B2B responses-->
+  <xs:element name="ErrorMessage" type="ErrorMessage"/>
+
   <xs:complexType name="ErrorMessage">
     <xs:annotation>
       <xs:documentation xml:lang="en">Error responses</xs:documentation>
@@ -11,17 +13,15 @@
     <xs:sequence>
       <xs:element name="Code" minOccurs="0" type="xs:string"/>
       <xs:element name="Cause" minOccurs="0" type="xs:string"/>
-      <xs:element name="Message" minOccurs="0" type="xs:string"/>
-      <xs:element name="Parameters" type="Parameter" minOccurs="0" maxOccurs="unbounded">
-
+      <xs:element name="Message" minOccurs="0" maxOccurs="unbounded" type="xs:string"/>
+      <xs:element name="Parameters" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Key" type="xs:string"/>
+            <xs:element name="Value" type="xs:anyType"/>
+          </xs:sequence>
+        </xs:complexType>
       </xs:element>
-    </xs:sequence>
-  </xs:complexType>
-
-  <xs:complexType name="Parameter">
-    <xs:sequence>
-      <xs:element name="Key" type="xs:string"/>
-      <xs:element name="Value" type="xs:anyType"/>
     </xs:sequence>
   </xs:complexType>
 

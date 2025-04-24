@@ -1,3 +1,6 @@
+### 24-04-2025
+* Updated trader-portal-error-response to be valid according to intended behaviour
+
 ### 16-04-2025
 * Add the H6 Correction Test case (PDF + XML)
 
