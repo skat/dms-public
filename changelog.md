@@ -1,5 +1,5 @@
-### 25-05-2025
-* Updated both TFE02 and TFE release notes (to version 1.4 and 1.2 respectively)
+### 25-04-2025
+* Updated both TFE02 and TFE release notes (to version 1.4 and 1.20 respectively)
 
 ### 24-04-2025
 * Updated trader-portal-error-response to be valid according to intended behaviour
