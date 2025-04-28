@@ -1,3 +1,23 @@
+### 28-04-2025
+* Updated latitude and longitude from Measure.Content to Text.Content
+* Update Import XML guide: Removed CategoryCode, renamed Exporter to Consignor on import guide. 
+* Update Temporary Storage XML guide: Added sequence to 19 06 000 000 to conform to WCO
+
+### 25-04-2025
+* Updated both TFE02 and TFE release notes (to version 1.4 and 1.20 respectively)
+
+### 24-04-2025
+* Updated trader-portal-error-response to be valid according to intended behaviour
+
+### 16-04-2025
+* Add the H6 Correction Test case (PDF + XML)
+
+### 15-04-2025
+* Updated H6 Amendment XML to adhere to updated XSD
+
+### 14-04-2025
+* Add the G4 Standard Test case (PDF + XML)
+
 ### 11-04-2025
 * Updated standard XML's for H1, H2, H3, H4, H5, H6, I1
 
@@ -5,14 +25,20 @@
 * Updated codelists after release.
 
 ### 02-04-2025
+* Updated H6 Amendment testcase PDF, as well as renamed ImportEORI variable that was causing a conflict
 * Updated Release Notes for 6.1.5.2 RC-1 to RC-5.
 * Updated XML guide:
 * Removed description from the delivery terms tabel
 * Add 10236 codelist to Import Codelists
 
+### 01-04-2025
+* Updated comment for CustomsValuation in standard and Amendment/correction for: H1, H4, H5, H6 and I1.
+* This change was also made in I1 supplementary
+
 ### 31-03-2025
 * Added AmountType2 to UNQUALIFIEDDATATYPE_6_DMS.xsd
 * Fix references for WCO XSD files to be internally consistent
+* Removed element CategoryCode from all H and I XSDs
 
 ### 28-03-2025
 * Added H6_Pre-lodged test case
@@ -21,6 +47,8 @@
 * Added codelist 11034 to Codelists - Import
 
 ### 27-03-2025
+* Moved D.E. 14 13 014 000 from Payment to CustomsValuation in the H6 Standard XSD to align with WCO.
+* Moved D.E. 14 13 014 000 from Payment to CustomsValuation in the H6 Amendment XSD to align with WCO.
 * Update the DMS_DS XSDs
 * Update import XML guide 14 08 000 000
 * Made the following XSD updates:
@@ -30,6 +58,12 @@
 * Made Origin have a MaxOcurr of 2 for H1, H3 and H4
 * Changed the maximum allowed elements of TradeTermsLocationNameTextType from 256 to 36. Updating DMS_DS XSD.
 * Updating all H and I XSD as they refer to this XSD
+
+### 26-03-2025
+* Added sequence to the loadinglocation XSD for the G4 to align with WCO
+* Updated the G4G3 XSD to align with WCO by adding a sequence to the loadinglocation
+* Modified G5 XSD (to include sequence in ArrivalTransportMeans) to follow updated WCO_TS_DEC XSD
+* Modified G3 XSD (to include sequence in ArrivalTransportMeans) to follow updated WCO_TS_DEC XSD
 
 ### 25-03-2025
 * Update import XML guide with minor changes
@@ -44,6 +78,7 @@
 * Updated H3 test cases; standard, pre-lodged, amendment/correction, to function after the latest deploy
 
 ### 10-03-2025
+* Updated I1 to include consignor
 * Updates to H declarations updating cardinality of certain elements and adding documentation to clarify purpose.
 * Updated XSD to make sure element 14 04 014 000 did not have the currencyID attribute.
 
