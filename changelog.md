@@ -1,5 +1,7 @@
 ### 28-04-2025
 * Updated latitude and longitude from Measure.Content to Text.Content
+* Update Import XML guide: Removed CategoryCode, renamed Exporter to Consignor on import guide. 
+* Update Temporary Storage XML guide: Added sequence to 19 06 000 000 to conform to WCO
 
 ### 25-04-2025
 * Updated both TFE02 and TFE release notes (to version 1.4 and 1.20 respectively)
