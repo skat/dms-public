@@ -1,3 +1,6 @@
+### 28-04-2025
+* Updated latitude and longitude from Measure.Content to Text.Content
+
 ### 25-04-2025
 * Updated both TFE02 and TFE release notes (to version 1.4 and 1.20 respectively)
 

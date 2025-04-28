@@ -23,6 +23,18 @@
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
+            <xs:element name="id">
+                <xs:annotation>
+                    <xs:documentation>
+                        <EUCDMname>MRN</EUCDMname>
+                    </xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="Identifier.Content" type="Identifier.Content"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
             <xs:element name="procedureCategory">
                 <xs:complexType>
                     <xs:sequence>
@@ -36,7 +48,7 @@
                     <xs:documentation>
                         <EUCDMname>Specific Circumstance Indicator</EUCDMname>
                         <EUCDMversion>EUCDM 6.1</EUCDMversion>
-                        <code>13 06 030 000</code>
+                        <code>11 04 001 000</code>
                     </xs:documentation>
                 </xs:annotation>
                 <xs:complexType>
@@ -56,6 +68,33 @@
                 <xs:complexType>
                     <xs:sequence>
                         <xs:element name="Code.Content" type="Code.Content"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="Amendment">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="sequence">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="Numeric.Content" type="Numeric.Content"/>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="ChangeReasonCode">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="Code.Content" type="Code.Content"/>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="ChangeReasonText">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="Text.Content" type="Text.Content"/>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
@@ -260,7 +299,7 @@
                                             </xs:sequence>
                                         </xs:complexType>
                                     </xs:element>
-                                    <xs:element name="name" minOccurs="0">
+                                    <xs:element name="name">
                                         <xs:annotation>
                                             <xs:documentation>
                                                 <EUCDMname>Name</EUCDMname>
@@ -1324,7 +1363,7 @@
                                                 <xs:element name="name" minOccurs="0">
                                                     <xs:annotation>
                                                         <xs:documentation>
-                                                            <EUCDMname>Consignee</EUCDMname>
+                                                            <EUCDMname>Consignor</EUCDMname>
                                                             <EUCDMversion>EUCDM 6.1</EUCDMversion>
                                                             <code>13 02 016 000</code>
                                                         </xs:documentation>
@@ -1616,7 +1655,7 @@
                                     <xs:element name="name" minOccurs="0">
                                         <xs:annotation>
                                             <xs:documentation>
-                                                <EUCDMname>Consignee</EUCDMname>
+                                                <EUCDMname>Consignor</EUCDMname>
                                                 <EUCDMversion>EUCDM 6.1</EUCDMversion>
                                                 <code>13 02 016 000</code>
                                             </xs:documentation>
@@ -1822,7 +1861,7 @@
                                         </xs:annotation>
                                         <xs:complexType>
                                             <xs:sequence>
-                                                <xs:element name="Measure.Content" type="Measure.Content"/>
+                                                <xs:element name="Text.Content" type="Measure.Content"/>
                                             </xs:sequence>
                                         </xs:complexType>
                                     </xs:element>
@@ -1836,7 +1875,7 @@
                                         </xs:annotation>
                                         <xs:complexType>
                                             <xs:sequence>
-                                                <xs:element name="Measure.Content" type="Measure.Content"/>
+                                                <xs:element name="Text.Content" type="Measure.Content"/>
                                             </xs:sequence>
                                         </xs:complexType>
                                     </xs:element>
