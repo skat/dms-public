@@ -1,3 +1,6 @@
+### 01-05-2025
+* Added G4G3 Test Case pair (PDF + XML)
+
 ### 28-04-2025
 * Updated latitude and longitude from Measure.Content to Text.Content
 * Update Import XML guide: Removed CategoryCode, renamed Exporter to Consignor on import guide. 
