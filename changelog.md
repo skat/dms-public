@@ -1,3 +1,6 @@
+### 02-05-2025
+* Updated the Import XML guide, adding correct requirement level for elements, correcting names for erroneous data elements, and adding table for group 14 14.
+
 ### 28-04-2025
 * Updated latitude and longitude from Measure.Content to Text.Content
 * Update Import XML guide: Removed CategoryCode, renamed Exporter to Consignor on import guide. 
