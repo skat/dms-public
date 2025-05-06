@@ -1,3 +1,7 @@
+### 02-05-2025
+* Add the H6 Invalidation Test case pair (PDF + XML)
+* Updated the Import XML guide, adding correct requirement level for elements, correcting names for erroneous data elements, and adding table for group 14 14.
+
 ### 01-05-2025
 * Added G4G3 Test Case pair (PDF + XML)
 
