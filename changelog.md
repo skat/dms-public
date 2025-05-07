@@ -1,5 +1,6 @@
 ### 07-05-2025
 * Add the I1 Invalidation Test case pair (PDF + XML)
+* Add the G3 Goods Presentation Test case pair (PDF + XML)
 
 ### 02-05-2025
 * Add the H6 Invalidation Test case pair (PDF + XML)
