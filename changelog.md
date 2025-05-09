@@ -6,6 +6,7 @@
 
 ### 07-05-2025
 * Add the I1 Invalidation Test case pair (PDF + XML)
+* Update notification guide by removing not relevant header
 * Add the G3 Goods Presentation Test case pair (PDF + XML)
 * Added G4 Invalidation Test case and documentation
 
