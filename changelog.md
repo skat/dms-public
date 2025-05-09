@@ -1,3 +1,6 @@
+### 09-05-2025
+* Add the G4 Correction Test case pair (PDF + XML)
+
 ### 08-05-2025
 * Add the I1 Invalidation and Repayment Test case pair (PDF + XML)
 * Add the H3 Invalidation and Repayment Test case pair (PDF + XML)
