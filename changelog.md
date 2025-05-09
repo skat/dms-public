@@ -1,3 +1,7 @@
+### 09-05-2025
+* Updated code lists mentioned for Procedure in XML guide
+* Added CL10146 to the import codelists
+
 ### 28-04-2025
 * Updated latitude and longitude from Measure.Content to Text.Content
 * Update Import XML guide: Removed CategoryCode, renamed Exporter to Consignor on import guide. 
