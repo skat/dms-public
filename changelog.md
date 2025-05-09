@@ -1,4 +1,5 @@
 ### 09-05-2025
+* Add the I1 Amendment Test case pair (PDF + XML)
 * Add the G4 Correction Test case pair (PDF + XML)
 
 ### 08-05-2025
