@@ -1,6 +1,27 @@
 ### 09-05-2025
 * Updated code lists mentioned for Procedure in XML guide
 * Added CL10146 to the import codelists
+* Add the I1 Amendment Test case pair (PDF + XML)
+* Add the G4 Correction Test case pair (PDF + XML)
+
+### 08-05-2025
+* Add the I1 Invalidation and Repayment Test case pair (PDF + XML)
+* Add the H3 Invalidation and Repayment Test case pair (PDF + XML)
+* Add the H6 Invalidation and Repayment Test Case pair (PDF + XML)
+* Add the G5 Movement of Goods Under Temporary Storage Test case pair (PDF + XML)
+
+### 07-05-2025
+* Add the I1 Invalidation Test case pair (PDF + XML)
+* Update notification guide by removing not relevant header
+* Add the G3 Goods Presentation Test case pair (PDF + XML)
+* Added G4 Invalidation Test case and documentation
+
+### 02-05-2025
+* Add the H6 Invalidation Test case pair (PDF + XML)
+* Updated the Import XML guide, adding correct requirement level for elements, correcting names for erroneous data elements, and adding table for group 14 14.
+
+### 01-05-2025
+* Added G4G3 Test Case pair (PDF + XML)
 
 ### 28-04-2025
 * Updated latitude and longitude from Measure.Content to Text.Content
