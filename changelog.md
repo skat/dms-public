@@ -1,3 +1,6 @@
+### 12-05-2025
+* Added codelist for country elements of AdmissionUseProcessingAuthorisation (8f). 
+
 ### 28-04-2025
 * Updated latitude and longitude from Measure.Content to Text.Content
 * Update Import XML guide: Removed CategoryCode, renamed Exporter to Consignor on import guide. 
