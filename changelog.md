@@ -1,3 +1,6 @@
+### 15-05-2025
+* Updated DMS Vejledning til Roller og Rettigheder to version 1.7
+
 ### 13-05-2025
 * Add release notes for 6.1.5.2-RC7 and 6.1.5.2-RC8
 
