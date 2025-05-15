@@ -2,6 +2,8 @@
 * Add release notes for 6.1.5.2-RC7 and 6.1.5.2-RC8
 
 ### 09-05-2025
+* Updated code lists mentioned for Procedure in XML guide
+* Added CL10146 to the import codelists
 * Add the I1 Amendment Test case pair (PDF + XML)
 * Add the G4 Correction Test case pair (PDF + XML)
 
