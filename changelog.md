@@ -1,3 +1,6 @@
+### 16-05-2025
+* Removed an old copy of DMS Import XML Guide
+
 ### 15-05-2025
 * Updated DMS Vejledning til Roller og Rettigheder to version 1.7
 
