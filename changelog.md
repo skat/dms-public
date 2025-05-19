@@ -1,3 +1,6 @@
+### 19-05-2025
+* Added SequenceNumeric to Additional fiscal reference in the XML guide.
+
 ### 16-05-2025
 * Removed an old copy of DMS Import XML Guide
 
