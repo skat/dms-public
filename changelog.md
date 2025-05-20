@@ -1,7 +1,12 @@
+### 20-05-2025
+* Add release notes for 6.1.5.2-RC9.
+* Updated README for release notes.
+
 ### 19-05-2025
 * Added SequenceNumeric to Additional fiscal reference in the XML guide.
 
 ### 16-05-2025
+* Update XML guide for Amendment, updating example and remove codelist listing in description
 * Removed an old copy of DMS Import XML Guide
 
 ### 15-05-2025
@@ -9,6 +14,9 @@
 
 ### 13-05-2025
 * Add release notes for 6.1.5.2-RC7 and 6.1.5.2-RC8
+
+### 12-05-2025
+* Added codelist for country elements of AdmissionUseProcessingAuthorisation (8f). 
 
 ### 09-05-2025
 * Updated code lists mentioned for Procedure in XML guide
