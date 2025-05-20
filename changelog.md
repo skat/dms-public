@@ -3,6 +3,7 @@
 * Updated README for release notes.
 
 ### 16-05-2025
+* Updated Importer path in XML guide
 * Update XML guide for Amendment, updating example and remove codelist listing in description
 * Removed an old copy of DMS Import XML Guide
 
