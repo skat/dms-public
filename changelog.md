@@ -1,3 +1,6 @@
+### 21-05-2025
+* Add the I1 Supplementary Test case pair (PDF + XML)
+
 ### 20-05-2025
 * Add release notes for 6.1.5.2-RC9.
 * Updated README for release notes.
