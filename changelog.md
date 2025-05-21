@@ -27,6 +27,7 @@
 * Add the H3 Invalidation and Repayment Test case pair (PDF + XML)
 * Add the H6 Invalidation and Repayment Test Case pair (PDF + XML)
 * Add the G5 Movement of Goods Under Temporary Storage Test case pair (PDF + XML)
+* Add the H3 Repayment Test case pair (PDF + XML)
 
 ### 07-05-2025
 * Add the I1 Invalidation Test case pair (PDF + XML)
