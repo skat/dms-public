@@ -1,4 +1,6 @@
 ### 23-05-2025
+* Updated codelists
+* Added 10066, 11068 and 11082 to the Codelists - Import
 * Remove CategoryCode under PreviousDocument for B1-4 + C1-2 XSDs
 * Updated Import and TemporaryStorage XSDs
 * Added G4G3 Amendment XSD
