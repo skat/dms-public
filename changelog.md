@@ -1,3 +1,6 @@
+### 23-05-2025
+* Remove CategoryCode under PreviousDocument for B1-4 + C1-2 XSDs
+
 ### 21-05-2025
 * Add the G4 Amendment Test case pair (PDF + XML)
 * Add the I1 Supplementary Test case pair (PDF + XML)
