@@ -1,8 +1,26 @@
+### 23-05-2025
+* Updated codelists
+* Added 10066, 11068 and 11082 to the Codelists - Import
+* Remove CategoryCode under PreviousDocument for B1-4 + C1-2 XSDs
+* Updated Import and TemporaryStorage XSDs
+* Added G4G3 Amendment XSD
+* Add TFE Release Notes for 6.1.5.2-RC10
+* Add TFE Release Notes for 6.1.5.2-RC11
+
+### 21-05-2025
+* Add the G4 Amendment Test case pair (PDF + XML)
+* Add the I1 Supplementary Test case pair (PDF + XML)
+
 ### 20-05-2025
 * Add release notes for 6.1.5.2-RC9.
 * Updated README for release notes.
+* Add the H6 Repayment Test case pair (PDF + XML)
+* Add the I1 Repayment Test case pair (PDF + XML)
+* Add the I1 Correction Test case pair (PDF + XML)
 
 ### 16-05-2025
+* Updated Importer path in XML guide
+* Update XML guide for Amendment, updating example and remove codelist listing in description
 * Removed an old copy of DMS Import XML Guide
 
 ### 15-05-2025
@@ -10,6 +28,9 @@
 
 ### 13-05-2025
 * Add release notes for 6.1.5.2-RC7 and 6.1.5.2-RC8
+
+### 12-05-2025
+* Added codelist for country elements of AdmissionUseProcessingAuthorisation (8f).
 
 ### 09-05-2025
 * Updated code lists mentioned for Procedure in XML guide
@@ -22,6 +43,7 @@
 * Add the H3 Invalidation and Repayment Test case pair (PDF + XML)
 * Add the H6 Invalidation and Repayment Test Case pair (PDF + XML)
 * Add the G5 Movement of Goods Under Temporary Storage Test case pair (PDF + XML)
+* Add the H3 Repayment Test case pair (PDF + XML)
 
 ### 07-05-2025
 * Add the I1 Invalidation Test case pair (PDF + XML)
