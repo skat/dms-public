@@ -1,5 +1,6 @@
 ### 23-05-2025
 * Remove CategoryCode under PreviousDocument for B1-4 + C1-2 XSDs
+* Updated Import and TemporaryStorage XSDs
 
 ### 21-05-2025
 * Add the G4 Amendment Test case pair (PDF + XML)
@@ -24,7 +25,7 @@
 * Add release notes for 6.1.5.2-RC7 and 6.1.5.2-RC8
 
 ### 12-05-2025
-* Added codelist for country elements of AdmissionUseProcessingAuthorisation (8f). 
+* Added codelist for country elements of AdmissionUseProcessingAuthorisation (8f).
 
 ### 09-05-2025
 * Updated code lists mentioned for Procedure in XML guide
