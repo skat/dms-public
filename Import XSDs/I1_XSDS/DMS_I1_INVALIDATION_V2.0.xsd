@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
            xmlns:ds="urn:wco:datamodel:WCO:Declaration_DS:DMS:2"
-           xmlns:eds="urn:wco:datamodel:WCO:WCO_DEC_EDS_AUTHORISATION:1"
            xmlns="urn:wco:datamodel:WCO:DEC-DMS:2"
            xmlns:ext="urn:eds:datamodel:EDS:EDS_EXTENSIONS:1"
            targetNamespace="urn:wco:datamodel:WCO:DEC-DMS:2"
@@ -9,7 +8,7 @@
     <xs:import namespace="urn:wco:datamodel:WCO:Declaration_DS:DMS:2"
                schemaLocation="../DMS_DS/DMS_DS.xsd"/>
     <xs:import namespace="urn:wco:datamodel:WCO:WCO_DEC_EDS_AUTHORISATION:1"
-               schemaLocation="../APPLICATION_XSDS/4C_REPAYMENT_REMISSION.xsd"/>
+               schemaLocation="../DMS_DS/WCO_EDS/WCO_DEC_EDS_AUTHORISATION.xsd"/>
     <xs:import namespace="urn:un:unece:uncefact:data:standard:UnqualifiedDataType:6"
                schemaLocation="../DMS_DS/UNECE/UNQUALIFIEDDATATYPE_6_DMS.xsd"/>
     <xs:import namespace="urn:eds:datamodel:EDS:EDS_EXTENSIONS:1"
@@ -23,6 +22,7 @@
             </xs:documentation>
         </xs:annotation>
     </xs:element>
+
     <xs:complexType name="Declaration">
         <xs:sequence>
             <xs:element name="FunctionCode" type="ds:DeclarationFunctionCodeType"/>
@@ -51,7 +51,6 @@
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
-
             <xs:element name="Submitter">
                 <xs:complexType>
                     <xs:sequence>
@@ -60,8 +59,15 @@
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
-
-            <xs:element name="RepaymentRemissionAuthorisation" type="eds:RepaymentRemissionAuthorisation"/>
+            <xs:element name="Amendment">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="SequenceNumeric" type="ds:AmendmentSequenceNumericType"/>
+                        <xs:element name="ChangeReasonCode" type="ds:AmendmentChangeReasonCodeType"/>
+                        <xs:element name="ChangeReasonText" type="ds:AmendmentChangeReasonTextType"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
         </xs:sequence>
     </xs:complexType>
 </xs:schema>
