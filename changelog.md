@@ -1,6 +1,7 @@
 ### 23-05-2025
 * Remove CategoryCode under PreviousDocument for B1-4 + C1-2 XSDs
 * Updated Import and TemporaryStorage XSDs
+* Added G4G3 Amendment XSD
 
 ### 21-05-2025
 * Add the G4 Amendment Test case pair (PDF + XML)
