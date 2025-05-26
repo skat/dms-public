@@ -1,3 +1,6 @@
+### 26-05-2025
+* H7 and G* XSD updates following the V2.0 XSD updates
+
 ### 23-05-2025
 * Updated codelists
 * Added 10066, 11068 and 11082 to the Codelists - Import
