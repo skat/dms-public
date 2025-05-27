@@ -1,3 +1,6 @@
+### 27-05-2025
+* Update G4 and G4G3 XSDs
+
 ### 26-05-2025
 * H7 and G* XSD updates following the V2.0 XSD updates
 
