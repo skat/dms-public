@@ -1,5 +1,12 @@
 ### 28-05-2025
 * Add the G4G3 Amendment Test case pair (PDF + XML)
+* Update General System Guide to v2.2 to remove mention of milliseconds
+
+### 27-05-2025
+* Update G4 and G4G3 XSDs
+
+### 26-05-2025
+* H7 and G* XSD updates following the V2.0 XSD updates
 
 ### 23-05-2025
 * Updated codelists
@@ -20,6 +27,9 @@
 * Add the H6 Repayment Test case pair (PDF + XML)
 * Add the I1 Repayment Test case pair (PDF + XML)
 * Add the I1 Correction Test case pair (PDF + XML)
+
+### 19-05-2025
+* Added SequenceNumeric to Additional fiscal reference in the XML guide.
 
 ### 16-05-2025
 * Updated Importer path in XML guide
