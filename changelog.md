@@ -1,3 +1,6 @@
+### 28-05-2025
+* Add the G4G3 Amendment Test case pair (PDF + XML)
+
 ### 23-05-2025
 * Updated codelists
 * Added 10066, 11068 and 11082 to the Codelists - Import
