@@ -1,3 +1,6 @@
+### 28-05-2025
+* Update General System Guide to v2.2 to remove mention of milliseconds
+
 ### 26-05-2025
 * H7 and G* XSD updates following the V2.0 XSD updates
 
