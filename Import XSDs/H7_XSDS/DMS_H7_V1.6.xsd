@@ -5,15 +5,17 @@
     <xs:import namespace="urn:wco:datamodel:WCO:Declaration_DS:DMS:2"
                schemaLocation="../DMS_DS/DMS_DS.xsd"/>
     <xs:element name="Declaration" type="Declaration"/>
+
     <xs:complexType name="Declaration">
         <xs:annotation>
             <xs:documentation>
                 <details>
-                    H7 correction or amendment.
+                    H7 declaration.
                 </details>
             </xs:documentation>
         </xs:annotation>
         <xs:sequence>
+
             <xs:element name="FunctionCode" type="ds:DeclarationFunctionCodeType"/>
             <xs:element name="ProcedureCategory" type="ds:DeclarationProcedureCategoryCodeType"/>
             <xs:element name="FunctionalReferenceID" type="ds:DeclarationFunctionalReferenceIDType">
@@ -24,7 +26,6 @@
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="ID" type="ds:DeclarationIdentificationIDType"/>
             <xs:element name="TypeCode" type="ds:DeclarationTypeCodeType">
                 <xs:annotation>
                     <xs:documentation>
@@ -105,16 +106,6 @@
                                 </xs:sequence>
                             </xs:complexType>
                         </xs:element>
-                    </xs:sequence>
-                </xs:complexType>
-            </xs:element>
-
-            <xs:element name="Amendment">
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:element name="SequenceNumeric" type="ds:AmendmentSequenceNumericType"/>
-                        <xs:element name="ChangeReasonCode" type="ds:AmendmentChangeReasonCodeType"/>
-                        <xs:element name="ChangeReasonText" type="ds:AmendmentChangeReasonTextType"/>
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
@@ -643,7 +634,7 @@
                             </xs:complexType>
                         </xs:element>
 
-                        <xs:element name="GovernmentAgencyGoodsItem" minOccurs="1" maxOccurs="999">
+                        <xs:element name="GovernmentAgencyGoodsItem" maxOccurs="999">
                             <xs:annotation>
                                 <xs:documentation>
                                     <type>EUCDM 6.1</type>
@@ -769,7 +760,12 @@
                                                                 <xs:annotation>
                                                                     <xs:documentation>
                                                                         <type>EUCDM 6.1</type>
-                                                                        <code>14 14 014 000 and 14 14 012 000</code>
+                                                                        <code>14 14 014 000</code>
+                                                                    </xs:documentation>
+                                                                    <xs:documentation>
+                                                                        <type>EUCDM 6.1</type>
+                                                                        <code>14 14 012 000</code>
+                                                                        <note>Attribute</note>
                                                                     </xs:documentation>
                                                                 </xs:annotation>
                                                             </xs:element>
@@ -843,7 +839,7 @@
                                             </xs:sequence>
                                         </xs:complexType>
                                     </xs:element>
-                                    <xs:element name="GovernmentProcedure" minOccurs="2" maxOccurs="3">
+                                    <xs:element name="GovernmentProcedure" minOccurs="1" maxOccurs="100">
                                         <xs:annotation>
                                             <xs:documentation>
                                                 <type>EUCDM 6.1</type>
@@ -1179,6 +1175,9 @@
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
+
+
+
         </xs:sequence>
     </xs:complexType>
 </xs:schema>
