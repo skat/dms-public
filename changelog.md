@@ -2,6 +2,7 @@
 * Add the G4G3 Amendment Test case pair (PDF + XML)
 * Update General System Guide to v2.2 to remove mention of milliseconds
 * Update the folder name for G4G3 Standard to G4G3 Temporary Storage with Goods Presentation
+* Corrected example for ArrivalTransportMeans in the Import XML Guide
 
 ### 27-05-2025
 * Update G4 and G4G3 XSDs
