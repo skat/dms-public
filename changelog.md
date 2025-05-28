@@ -24,6 +24,9 @@
 * Add the I1 Repayment Test case pair (PDF + XML)
 * Add the I1 Correction Test case pair (PDF + XML)
 
+### 19-05-2025
+* Added SequenceNumeric to Additional fiscal reference in the XML guide.
+
 ### 16-05-2025
 * Updated Importer path in XML guide
 * Update XML guide for Amendment, updating example and remove codelist listing in description
