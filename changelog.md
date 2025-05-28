@@ -1,6 +1,8 @@
 ### 28-05-2025
 * Add the G4G3 Amendment Test case pair (PDF + XML)
 * Update General System Guide to v2.2 to remove mention of milliseconds
+* Update the folder name for G4G3 Standard to G4G3 Temporary Storage with Goods Presentation
+
 
 ### 27-05-2025
 * Update G4 and G4G3 XSDs
