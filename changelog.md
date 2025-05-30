@@ -1,14 +1,21 @@
+### 30-05-2025
+* Updated TFE Release Notes for 6.1.5.2-RC11
+* Updated TFE Release Notes for 6.1.5.2-RC10
+* Update the codelists for week 22
+
 ### 28-05-2025
 * Add the G4G3 Amendment Test case pair (PDF + XML)
 * Update General System Guide to v2.2 to remove mention of milliseconds
 * Update the folder name for G4G3 Standard to G4G3 Temporary Storage with Goods Presentation
-
+* Corrected example for ArrivalTransportMeans in the Import XML Guide
 
 ### 27-05-2025
 * Update G4 and G4G3 XSDs
 
 ### 26-05-2025
 * H7 and G* XSD updates following the V2.0 XSD updates
+* Update export trader-portal-common.xsd to also include Carrier
+* Added trader-notification-response.xsd to export directory
 
 ### 23-05-2025
 * Updated codelists
@@ -32,6 +39,7 @@
 
 ### 19-05-2025
 * Added SequenceNumeric to Additional fiscal reference in the XML guide.
+* Updated actions and services in H2 standard acceptance test case pdf from TFE02 to TFE01
 
 ### 16-05-2025
 * Updated Importer path in XML guide
