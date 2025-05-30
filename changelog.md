@@ -1,3 +1,6 @@
+### 30-05-2025
+* Update the codelists for week 22
+
 ### 28-05-2025
 * Add the G4G3 Amendment Test case pair (PDF + XML)
 * Update General System Guide to v2.2 to remove mention of milliseconds
