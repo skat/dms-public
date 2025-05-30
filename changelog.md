@@ -39,6 +39,7 @@
 
 ### 19-05-2025
 * Added SequenceNumeric to Additional fiscal reference in the XML guide.
+* Updated actions and services in H2 standard acceptance test case pdf from TFE02 to TFE01
 
 ### 16-05-2025
 * Updated Importer path in XML guide
