@@ -1,3 +1,6 @@
+### 03-06-2025
+* Updated TFE Release Notes for 6.1.5.2-final
+
 ### 30-05-2025
 * Updated TFE Release Notes for 6.1.5.2-RC11
 * Updated TFE Release Notes for 6.1.5.2-RC10
