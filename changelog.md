@@ -1,3 +1,12 @@
+### 04-06-2025
+* Updated DMS General System Guide to v2.3 including information about the updated notification structure
+* Updated DMS Import/Export System Guide to v2.5 including information about the updated notification structure and removing information about UFE as it is no longer active
+* Updated DMS Transit System Guide to v2.2 removing information about UFE as it is no longer active
+* Updated DMS Notification Guide to v1.3 including information about the updated notification structure
+
+### 03-06-2025
+* Updated TFE Release Notes for 6.1.5.2-final
+
 ### 30-05-2025
 * Updated TFE Release Notes for 6.1.5.2-RC11
 * Updated TFE Release Notes for 6.1.5.2-RC10
