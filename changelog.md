@@ -1,5 +1,6 @@
 ### 06-06-2025
 * Updated DMS Notification Guide to v1.4 including information about CWMPGR
+* Add H7_Repayment_Remission XSD
 
 ### 04-06-2025
 * Updated DMS General System Guide to v2.3 including information about the updated notification structure
