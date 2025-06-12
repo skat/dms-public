@@ -1,3 +1,7 @@
+### 12-06-2025
+* Delete obsolete H3 Standard XML
+* Delete duplicate Connectivity Guide
+
 ### 06-06-2025
 * Updated DMS Notification Guide to v1.4 including information about CWMPGR
 * Add H7_Repayment_Remission XSD
