@@ -1,4 +1,4 @@
-### 16-06-2025
+### 12-06-2025
 * Delete obsolete H3 Standard XML
 * Delete duplicate Connectivity Guide
 
