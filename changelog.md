@@ -1,6 +1,10 @@
 ### 13-06-2025
 * Update DMS ImportExport Guide to v2.7. Updated the Declaration overview table in Section 3, as well as the Services for Prod and TFE for the H7 Repayment Remission
 
+### 12-06-2025
+* Delete obsolete H3 Standard XML
+* Delete duplicate Connectivity Guide
+
 ### 11-06-2025
 * Updated DMS Notification Guide to version v1.5. Updated examples for CWMINC, CWMEOG, CWMWTR, and CWMDOC
 * Updated DMS General System Guide to v2.4. Added section 4.3 with system designation for parties and customs offices.
@@ -226,6 +230,7 @@
 
 ### 17-01-2025
 * Made corrections to the Import Notification XSDs.
+* Added Import test cases
 
 ### 16-01-2025
 * Removed comments from G5 XSD file that were not intended to be uploaded.
