@@ -2,7 +2,7 @@
 * Updated DMS Notification Guide to version v1.5. Updated examples for CWMINC, CWMEOG, CWMWTR, and CWMDOC
 * Updated DMS General System Guide to v2.4. Added section 4.3 with system designation for parties and customs offices.
 * Updated DMS Import/export Guide to v2.6. Added Temporary Storage services for TFE and Production, added section 3.1.1.3 regarding ErrorMessage types. Added information about RRA additional messages
-* Updated DMS Connectivity Guide to v1.17. UVarious references updated.
+* Updated DMS Connectivity Guide to v1.17. Various references updated.
 
 ### 06-06-2025
 * Updated DMS Notification Guide to v1.4 including information about CWMPGR
