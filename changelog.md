@@ -1,3 +1,6 @@
+### 18-06-2025
+* Add the H7 Repayment Test case pair (PDF + XML)
+
 ### 13-06-2025
 * Update DMS ImportExport Guide to v2.7. Updated the Declaration overview table in Section 3, as well as the Services for Prod and TFE for the H7 Repayment Remission
 
