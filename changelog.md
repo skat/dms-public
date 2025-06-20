@@ -7,6 +7,7 @@
 * Updated DMS Export XML Guide to v1.30 Updated PreviousDocument/QuantityQuantity, and TraderAs-signedReferenceID with EU formatting restrictions.
 * Updated DMS Import XML Guide to v1.15 Corrected description in 13 06 000 000 now mentioning importer instead of exporter. Added codelists to element 48 09 000 304 and 48 08 000 302
 * Updated Codelist - Import, Codelist - Global, Codelist - AES, Codelist - NCTS, Codelist Global, and Error and warning Codes
+* Updated DMS Temporary Strage XML Guide to v1.3. Updated 18 09 057 000 to be conditionally mandatory and 18 08 000 000 to be optional for Combined Nomenclature Code)
 
 ### 13-06-2025
 * Update DMS ImportExport Guide to v2.7. Updated the Declaration overview table in Section 3, as well as the Services for Prod and TFE for the H7 Repayment Remission
