@@ -1,9 +1,8 @@
-### 18-06-2025
+### 20-06-2025
 * Add the H7 Repayment Test case pair (PDF + XML)
-
-### 17-06-2025
 * Updated DMS General System Guide to v2.5. Updated external references and removed references to the UFE environment as it is no longer available.
 * Updated DMS Notification Guide to v1.6. Updated hyperlinks and external document refrences.
+* Updated DMS ImportExport System Guide to v2.8. Updated hyperlinks, external document references, added information on when to use the Invalidation and Repayment declaration for Import declarations, updated notification flows for import, and added supplemental messages section.
 
 ### 13-06-2025
 * Update DMS ImportExport Guide to v2.7. Updated the Declaration overview table in Section 3, as well as the Services for Prod and TFE for the H7 Repayment Remission
