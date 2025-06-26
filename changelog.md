@@ -1,3 +1,6 @@
+### 26-06-2025
+* Updated the H1 Standard Test case pair (PDF + XML)
+
 ### 20-06-2025
 * Add the H7 Repayment Test case pair (PDF + XML)
 * Updated DMS General System Guide to v2.5. Updated external references and removed references to the UFE environment as it is no longer available.
