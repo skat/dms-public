@@ -2,6 +2,7 @@
 * Updated DMS Import XML Guide to 1.17, with several minor changes to match the 2.0 XSD changes
 * Updated support reference in the Exit IE, Transit IE and Transit XML guides
 * Updated DMS Notification Guide to 1.7, adding EXT as possible PayloadRegime and adding description to each type of Regime
+* Updated DMS ImportExport Sytem Guide to v2.9, added context to table 7-24.
 
 ### 26-06-2025
 * Updated the H1 Standard Test case pair (PDF + XML)
