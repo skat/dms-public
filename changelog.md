@@ -1,5 +1,6 @@
 ### 27-06-2025
-* Updated DMS Import XML Guide to 1.17, with several minor changes to match the 2.0 XSD changes.
+* Updated DMS Import XML Guide to 1.17, with several minor changes to match the 2.0 XSD changes
+* Updated support reference in the Exit IE, Transit IE and Transit XML guides
 
 ### 25-06-2025
 * Updated DMS Import XML Guide to 1.16. Added codelist and updated format of 14 04 008 000
