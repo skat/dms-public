@@ -1,3 +1,6 @@
+### 27-06-2025
+* Updated DMS Import XML Guide to 1.17, with several minor changes to match the 2.0 XSD changes.
+
 ### 20-06-2025
 * Add the H7 Repayment Test case pair (PDF + XML)
 * Updated DMS General System Guide to v2.5. Updated external references and removed references to the UFE environment as it is no longer available.
