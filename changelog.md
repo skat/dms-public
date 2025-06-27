@@ -1,3 +1,6 @@
+### 27-06-2025
+* Updated DMS Import XML Guide to 1.17, with several minor changes to match the 2.0 XSD changes.
+
 ### 25-06-2025
 * Updated DMS Import XML Guide to 1.16. Added codelist and updated format of 14 04 008 000
 * Updated Codelist - Import to include CL10041
