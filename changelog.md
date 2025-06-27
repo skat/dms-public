@@ -1,5 +1,15 @@
+### 27-06-2025
+* Updated DMS Import XML Guide to 1.17, with several minor changes to match the 2.0 XSD changes
+* Updated support reference in the Exit IE, Transit IE and Transit XML guides
+* Updated DMS Notification Guide to 1.7, adding EXT as possible PayloadRegime and adding description to each type of Regime
+
 ### 26-06-2025
 * Updated the H1 Standard Test case pair (PDF + XML)
+
+### 25-06-2025
+* Updated DMS Import XML Guide to 1.16. Added codelist and updated format of 14 04 008 000
+* Updated Codelist - Import to include CL10041
+* Updated the G4 Temporary Storage_v1.1.xml
 
 ### 20-06-2025
 * Add the H7 Repayment Test case pair (PDF + XML)
