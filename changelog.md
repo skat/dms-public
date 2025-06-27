@@ -10,6 +10,7 @@
 * Updated DMS Import XML Guide to 1.16. Added codelist and updated format of 14 04 008 000
 * Updated Codelist - Import to include CL10041
 * Updated the G4 Temporary Storage_v1.1.xml
+* Updated test cases to remove references to TFE02, and correcting services.
 
 ### 20-06-2025
 * Add the H7 Repayment Test case pair (PDF + XML)
