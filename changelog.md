@@ -5,7 +5,7 @@
 
 ### 26-06-2025
 * Updated the H1 Standard Test case pair (PDF + XML)
-* Updated the H1 Pre-lodged Test case PDF
+* Updated the H1 Pre-lodged Test case pair (PDF + XML)
 
 ### 25-06-2025
 * Updated DMS Import XML Guide to 1.16. Added codelist and updated format of 14 04 008 000
