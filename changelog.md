@@ -1,5 +1,6 @@
 ### 30-06-2025
 * Updated the H2 Standard Test case pair (PDF + XML)
+* Updated the H2 Pre-lodged Test case pair (PDF + XML)
 
 ### 27-06-2025
 * Updated DMS Import XML Guide to 1.17, with several minor changes to match the 2.0 XSD changes
