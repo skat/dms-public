@@ -1,4 +1,5 @@
 ### 30-06-2025
+* Updated the H3 Pre-lodged Test case pair (PDF + XML)
 * Updated the H3 Standard Test case pair (PDF + XML)
 * Updated the H2 Standard Test case pair (PDF + XML)
 * Updated the H2 Pre-lodged Test case pair (PDF + XML)
