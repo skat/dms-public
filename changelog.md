@@ -1,4 +1,5 @@
 ### 03-07-2025
+* Updated the G4G3 Temporary Storage with Goods Presentation Test case pair (PDF + XML)
 * Updated the H7 Standard Test case PDF
 * Updated the H7 Pre-lodged Test case PDF
 
