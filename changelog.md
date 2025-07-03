@@ -1,3 +1,6 @@
+### 03-07-2025
+* Updated the H7 Pre-lodged Test case PDF
+
 ### 30-06-2025
 * Updated DMS Temporary Storage XML Guide to 1.5, with several minor changes to match the 2.0 XSD changes
 * Updated the H3 Pre-lodged Test case pair (PDF + XML)
