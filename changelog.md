@@ -1,4 +1,5 @@
 ### 03-07-2025
+* Updated the H7 Standard Test case PDF
 * Updated the H7 Pre-lodged Test case PDF
 
 ### 02-07-2025
