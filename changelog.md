@@ -1,3 +1,6 @@
+### 03-07-2025
+* Updated the H7 Pre-lodged Test case PDF
+
 ### 02-07-2025
 * Updated H5-Standard Test Case PDF from v1.1 to v1.2.
 
