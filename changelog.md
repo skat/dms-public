@@ -1,3 +1,6 @@
+### 03-07-2025
+* Updated the I2 Entry Into Declarants Records Test case pair (PDF + XML)
+
 ### 27-06-2025
 * Updated DMS Import XML Guide to 1.17, with several minor changes to match the 2.0 XSD changes
 * Updated support reference in the Exit IE, Transit IE and Transit XML guides
