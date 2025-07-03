@@ -1,4 +1,5 @@
 ### 03-07-2025
+* Updated the G5 Movement of Goods Under Temporary Storage Test case pair (PDF + XML)
 * Updated the H5 Pre-lodged Test case pair (PDF + XML)
 * Updated the H4 Pre-lodged Test case pair (PDF + XML)
 * Updated the H4 Standard Test case pair (PDF + XML)
@@ -13,7 +14,7 @@
 * Updated the H7 Pre-lodged Test case PDF
 
 ### 02-07-2025
-* Updated the H5-Standard Test Case PDF
+* Updated the H5 Standard Test Case PDF
 
 ### 30-06-2025
 * Updated DMS Temporary Storage XML Guide to 1.5, with several minor changes to match the 2.0 XSD changes
