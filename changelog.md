@@ -1,4 +1,4 @@
-### 27-06-2025
+### 03-07-2025
 * Updated the G4G3 Temporary Storage with Goods Presentation Test case pair (PDF + XML)
 
 ### 27-06-2025
