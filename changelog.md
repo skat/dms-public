@@ -1,4 +1,5 @@
 ### 03-07-2025
+* Updated the H4 Standard Test case pair (PDF + XML)
 * Updated the I1 Standard Test case pair (PDF + XML)
 * Updated the I1 Pre-lodged Test case pair (PDF + XML)
 * Updated the I2 Entry Into Declarants Records Test case pair (PDF + XML)
