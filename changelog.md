@@ -1,4 +1,7 @@
 ### 27-06-2025
+* Updated the G4G3 Temporary Storage with Goods Presentation Test case pair (PDF + XML)
+
+### 27-06-2025
 * Updated DMS Import XML Guide to 1.17, with several minor changes to match the 2.0 XSD changes
 * Updated support reference in the Exit IE, Transit IE and Transit XML guides
 * Updated DMS Notification Guide to 1.7, adding EXT as possible PayloadRegime and adding description to each type of Regime
