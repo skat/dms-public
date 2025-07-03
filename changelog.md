@@ -1,4 +1,5 @@
 ### 03-07-2025
+* Updated the G5 Movement of Goods Under Temporary Storage Test case pair (PDF + XML)
 * Updated the H4 Pre-lodged Test case pair (PDF + XML)
 * Updated the H4 Standard Test case pair (PDF + XML)
 * Updated the I1 Standard Test case pair (PDF + XML)
