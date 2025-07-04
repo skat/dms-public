@@ -1,3 +1,38 @@
+### 04-07-2025
+* Updated the H4 Amendment Test case pair (PDF + XML)
+* Updated the H3 Amendment Test case pair (PDF + XML)
+* Updated the H2 Amendment Test case pair (PDF +  XML)
+* Updated the H1 Amendment Test case pair (XML + PDF)
+* Updated the H4 Correction Test case pair (PDF + XML)
+* Updated the H3 Correction Test case pair (PDF + XML)
+* Updated the H2 Correction Test case pair (PDF + XML)
+* Updated the H1 Correction Test case pair (PDF + XML)
+
+### 03-07-2025
+* Updated the G5 Movement of Goods Under Temporary Storage Test case pair (PDF + XML)
+* Updated the H5 Pre-lodged Test case pair (PDF + XML)
+* Updated the H4 Pre-lodged Test case pair (PDF + XML)
+* Updated the H4 Standard Test case pair (PDF + XML)
+* Updated the I1 Standard Test case pair (PDF + XML)
+* Updated the I1 Pre-lodged Test case pair (PDF + XML)
+* Updated the I2 Entry Into Declarants Records Test case pair (PDF + XML)
+* Updated the H6 Standard Test case pair (PDF + XML)
+* Updated the H6 Pre-lodged Test case pair (PDF + XML)
+* Updated the G3 Goods Presentation Test case pair (PDF + XML)
+* Updated the G4G3 Temporary Storage with Goods Presentation Test case pair (PDF + XML)
+* Updated the H7 Standard Test case PDF
+* Updated the H7 Pre-lodged Test case PDF
+
+### 02-07-2025
+* Updated the H5 Standard Test Case PDF
+
+### 30-06-2025
+* Updated DMS Temporary Storage XML Guide to 1.5, with several minor changes to match the 2.0 XSD changes
+* Updated the H3 Pre-lodged Test case pair (PDF + XML)
+* Updated the H3 Standard Test case pair (PDF + XML)
+* Updated the H2 Standard Test case pair (PDF + XML)
+* Updated the H2 Pre-lodged Test case pair (PDF + XML)
+
 ### 27-06-2025
 * Updated DMS Import XML Guide to 1.17, with several minor changes to match the 2.0 XSD changes
 * Updated support reference in the Exit IE, Transit IE and Transit XML guides
