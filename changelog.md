@@ -1,4 +1,5 @@
 ### 04-07-2025
+* Updated the H2 Correction Test case pair (PDF + XML)
 * Updated the H1 Correction Test case pair (PDF + XML)
 
 ### 03-07-2025
