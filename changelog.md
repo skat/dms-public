@@ -1,5 +1,5 @@
 ### 04-07-2025
-* Updated the H1 Correction Test case PDF
+* Updated the H1 Correction Test case pair (PDF + XML)
 
 ### 03-07-2025
 * Updated the G5 Movement of Goods Under Temporary Storage Test case pair (PDF + XML)
