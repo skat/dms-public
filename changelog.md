@@ -4,6 +4,7 @@
 * Updated the H1 Correction Test case pair (PDF + XML)
 
 ### 03-07-2025
+* Updated the H1 Amendment Test case pair (XML + PDF)
 * Updated the G5 Movement of Goods Under Temporary Storage Test case pair (PDF + XML)
 * Updated the H5 Pre-lodged Test case pair (PDF + XML)
 * Updated the H4 Pre-lodged Test case pair (PDF + XML)
