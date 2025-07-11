@@ -1,3 +1,37 @@
+### 11-07-2025
+* Updated the H1 Invalidation and Repayment Test case pair (PDF + XML)
+
+### 10-07-2025
+* Updated the H1 Amendment Test case pair (PDF + XML)
+* Updated the H1 Correction Test case pair (PDF + XML)
+* Updated the H2 Amendment Test case pair (PDF + XML)
+* Updated the H2 Correction Test case pair (PDF + XML)
+* Updated the H3 Amendment Test case pair (PDF + XML)
+* Updated the H3 Correction Test case pair (PDF + XML)
+
+### 09-07-2025
+* Updated the H4 Amendment Test case pair (PDF + XML)
+* Updated the H4 Correction Test case pair (PDF + XML)
+* Updated the I1 Invalidation Test case pair (PDF + XML)
+* Updated the H7 Invalidation Test case pair (PDF + XML)
+* Updated the G4 Invalidation Test case pair (PDF + XML)
+* Updated the H6 Invalidation Test case pair (PDF + XML)
+
+### 08-07-2025
+* Updated the H5 Invalidation Test case pair (PDF + XML)
+* Updated the H4 Invalidation Test case pair (PDF + XML)
+* Updated the H3 Invalidation Test case pair (PDF + XML)
+* Updated the H2 Invalidation Test case pair (PDF + XML)
+* Updated the H1 Invalidation Test case pair (PDF + XML)
+* Updated the G4 Correction Test case pair (PDF + XML)
+
+### 07-07-2025
+* Updated the I1 Correction Test case pair (PDF + XML)
+* Updated the H7 Correction Test case pair (PDF + XML)
+* Updated the H6 Correction Test case pair (PDF + XML)
+* Updated the H5 Correction Test case pair (PDF + XML)
+* Updated the G4G3 Amendment Test case pair (PDF + XML)
+
 ### 04-07-2025
 * Updated the H4 Amendment Test case pair (PDF + XML)
 * Updated the H3 Amendment Test case pair (PDF + XML)
