@@ -1,5 +1,6 @@
 ### 11-07-2025
 * Updated the H1 Invalidation and Repayment Test case pair (PDF + XML)
+* Updated the H2 Invalidation and Repayment Test case pair (PDF + XML)
 
 ### 10-07-2025
 * Updated the H1 Amendment Test case pair (PDF + XML)
