@@ -16,6 +16,7 @@
 * Updated the H7 Invalidation Test case pair (PDF + XML)
 * Updated the G4 Invalidation Test case pair (PDF + XML)
 * Updated the H6 Invalidation Test case pair (PDF + XML)
+* Updated the H5 Amendment Test case pair (PDF + XML)
 
 ### 08-07-2025
 * Updated the H5 Invalidation Test case pair (PDF + XML)
