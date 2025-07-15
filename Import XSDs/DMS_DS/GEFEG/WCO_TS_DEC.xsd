@@ -12,6 +12,7 @@
   <xs:import namespace="urn:eds:datamodel:EDS:EDS_EXTENSIONS:1"
       schemaLocation="../EDS/EDS_EXTENSIONS.xsd"/>
   <xs:element name="acceptance" type="DateTime.Type"/>
+  <xs:element name="acceptanceDateTime" type="DateTime.Type"/>
   <xs:element name="AcceptancePlace" type="AcceptancePlace"/>
   <xs:element name="access" type="Code.Type"/>
   <xs:element name="acknowledgementRequest" type="Indicator.Type"/>
@@ -5308,6 +5309,7 @@
     <xs:sequence>
       <xs:element name="EDSMetaData" type="edsmetadata:MetaDataType" minOccurs="0" />
       <xs:element name="Extensions" type="extensions:ExtensionType" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element ref="acceptanceDateTime" minOccurs="0" maxOccurs="1"/>
       <xs:element ref="functionalReference" minOccurs="0">
         <xs:annotation>
           <xs:documentation xml:lang="EN" source="WCO Format">an..70</xs:documentation>
@@ -6351,11 +6353,6 @@
     <xs:complexContent>
       <xs:extension base="Location">
         <xs:sequence>
-          <xs:element ref="sequence" >
-            <xs:annotation>
-              <xs:documentation xml:lang="EN" source="WCO Format">n..5</xs:documentation>
-            </xs:annotation>
-          </xs:element>
           <xs:element ref="departure" minOccurs="0">
             <xs:annotation>
               <xs:documentation xml:lang="EN" source="WCO/WCO ID">169</xs:documentation>
@@ -7889,6 +7886,13 @@
         </xs:annotation>
       </xs:element>
       <xs:element ref="acceptance" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN" source="WCO Format">an..35</xs:documentation>
+          <xs:documentation source="TDED/UID">2380</xs:documentation>
+          <xs:documentation source="TDED/Name">Date Or Time Or Period. Text</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element ref="acceptanceDateTime" minOccurs="0">
         <xs:annotation>
           <xs:documentation xml:lang="EN" source="WCO Format">an..35</xs:documentation>
           <xs:documentation source="TDED/UID">2380</xs:documentation>
