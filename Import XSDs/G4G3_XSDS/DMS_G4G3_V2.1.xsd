@@ -157,6 +157,11 @@
                         <EUCDMversion>EUCDM 6.1</EUCDMversion>
                         <code>13 05 000 000</code>
                     </xs:documentation>
+                    <xs:documentation>
+                        <EUCDMname>Person presenting the goods</EUCDMname>
+                        <EUCDMversion>EUCDM 6.1</EUCDMversion>
+                        <code>13 11 000 000</code>
+                    </xs:documentation>
                 </xs:annotation>
                 <xs:complexType>
                     <xs:sequence>
@@ -180,6 +185,11 @@
                                     <EUCDMname>Identification number</EUCDMname>
                                     <EUCDMversion>EUCDM 6.1</EUCDMversion>
                                     <code>13 05 017 000</code>
+                                </xs:documentation>
+                                <xs:documentation>
+                                    <EUCDMname>Person presenting the goods</EUCDMname>
+                                    <EUCDMversion>EUCDM 6.1</EUCDMversion>
+                                    <code>13 11 017 000</code>
                                 </xs:documentation>
                             </xs:annotation>
                             <xs:complexType>
@@ -425,6 +435,26 @@
                                     <code>17 10 001 000</code>
                                 </xs:documentation>
                             </xs:annotation>
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="Identifier.Content" type="Identifier.Content"/>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="PresentationOffice">
+                <xs:annotation>
+                    <xs:documentation>
+                        <EUCDMname>Reference number</EUCDMname>
+                        <EUCDMversion>EUCDM 6.1</EUCDMversion>
+                        <code>17 09 001 000</code>
+                    </xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="identification">
                             <xs:complexType>
                                 <xs:sequence>
                                     <xs:element name="Identifier.Content" type="Identifier.Content"/>
@@ -897,6 +927,7 @@
                                 </xs:sequence>
                             </xs:complexType>
                         </xs:element>
+
                         <!-- MI (Master Item) level -->
                         <xs:element name="ConsignmentItem" maxOccurs="999">
                             <xs:annotation>
@@ -2159,8 +2190,7 @@
                                                 <xs:element name="sequence">
                                                     <xs:complexType>
                                                         <xs:sequence>
-                                                            <xs:element name="Numeric.Content"
-                                                                        type="Numeric.Content"/>
+                                                            <xs:element name="Numeric.Content" type="Numeric.Content"/>
                                                         </xs:sequence>
                                                     </xs:complexType>
                                                 </xs:element>
@@ -2174,8 +2204,7 @@
                                                     </xs:annotation>
                                                     <xs:complexType>
                                                         <xs:sequence>
-                                                            <xs:element name="Code.Content"
-                                                                        type="Code.Content">
+                                                            <xs:element name="Code.Content" type="Code.Content">
                                                             </xs:element>
                                                         </xs:sequence>
                                                     </xs:complexType>
@@ -2190,8 +2219,7 @@
                                                     </xs:annotation>
                                                     <xs:complexType>
                                                         <xs:sequence>
-                                                            <xs:element name="Text.Content"
-                                                                        type="Text.Content">
+                                                            <xs:element name="Text.Content" type="Text.Content">
                                                             </xs:element>
                                                         </xs:sequence>
                                                     </xs:complexType>
@@ -4254,13 +4282,6 @@
                                                         </xs:sequence>
                                                     </xs:complexType>
                                                 </xs:element>
-                                            </xs:sequence>
-                                        </xs:complexType>
-                                    </xs:element>
-                                    <xs:element name="sequence">
-                                        <xs:complexType>
-                                            <xs:sequence>
-                                                <xs:element name="Numeric.Content" type="Numeric.Content"/>
                                             </xs:sequence>
                                         </xs:complexType>
                                     </xs:element>
