@@ -1,5 +1,5 @@
 ### 15-07-2025
-* Updates to Temporary Storage (G5, G3) and Repayment/Remission XSDs
+* Updates to Temporary Storage (G5, G3) and Repayment/Remission XSDs 
 
 ### 11-07-2025
 * Updated the H1 Invalidation and Repayment Test case pair (PDF + XML)
