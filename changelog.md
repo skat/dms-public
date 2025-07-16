@@ -1,5 +1,9 @@
+### 16-07-2025
+* Updates to DMS_DS and UNQUALIFIEDDATATYPE_6_DMS XSDs
+
 ### 15-07-2025
-* Updates to Temporary Storage (G5, G3) and Repayment/Remission XSDs 
+* Updates to Temporary Storage (G3, G4, G4G3, G5) and Repayment/Remission XSDs
+* Updates to WCO_TS_DEC XSDs
 
 ### 11-07-2025
 * Updated the H1 Invalidation and Repayment Test case pair (PDF + XML)
