@@ -6,6 +6,7 @@
            version="2.11">
   <xs:import namespace="urn:un:unece:uncefact:data:standard:UnqualifiedDataType:6"
              schemaLocation="UNECE/UNQUALIFIEDDATATYPE_6_DMS.xsd"/>
+
   <xs:complexType name="AdditionalDocumentCategoryCodeType">
     <xs:annotation>
       <xs:documentation>
@@ -195,8 +196,9 @@
     </xs:annotation>
     <xs:simpleContent>
       <xs:restriction base="udt:QuantityType">
-        <xs:totalDigits value="8"/>
-        <xs:fractionDigits value="0"/>
+        <xs:totalDigits value="22"/>
+        <xs:minInclusive value="0"/>
+        <xs:fractionDigits value="6"/>
       </xs:restriction>
     </xs:simpleContent>
   </xs:complexType>
@@ -515,14 +517,12 @@
       <xs:documentation>
         <WCOID>T034</WCOID>
         <WCOFormat>an..17</WCOFormat>
-        <EUCDMID>19 06 061 000</EUCDMID>
-        <EUCDMFormat>n2</EUCDMFormat>
       </xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
       <xs:restriction base="udt:CodeType">
-        <xs:maxLength value="2"/>
-        <xs:pattern value="([0-9])*"/>
+        <xs:maxLength value="17"/>
+        <xs:pattern value=".*[^\s].*"/>
       </xs:restriction>
     </xs:simpleContent>
   </xs:complexType>
@@ -780,13 +780,13 @@
     <xs:annotation>
       <xs:documentation>
         <WCOID>371</WCOID>
-        <WCOFormat>an..3</WCOFormat>
+        <WCOFormat>a2</WCOFormat>
       </xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
       <xs:restriction base="udt:CodeType">
-        <xs:maxLength value="3"/>
-        <xs:pattern value=".*[^\s].*"/>
+        <xs:length value="2"/>
+        <xs:pattern value="([a-zA-Z])*"/>
       </xs:restriction>
     </xs:simpleContent>
   </xs:complexType>
@@ -798,7 +798,7 @@
       </xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
-      <xs:restriction base="udt:AmountType2">
+      <xs:restriction base="udt:AmountType">
         <xs:totalDigits value="16"/>
         <xs:fractionDigits value="3"/>
       </xs:restriction>
@@ -1282,9 +1282,8 @@
       </xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
-      <xs:restriction base="udt:AmountType">
-        <xs:totalDigits value="16"/>
-        <xs:fractionDigits value="3"/>
+      <xs:restriction base="udt:AmountTypeString">
+        <xs:pattern value="(\d{1,13}(\.\d{1,3})?|\.?\d{1,3})?"/>
       </xs:restriction>
     </xs:simpleContent>
   </xs:complexType>
@@ -1510,7 +1509,7 @@
     </xs:annotation>
     <xs:simpleContent>
       <xs:restriction base="udt:IDType">
-        <xs:maxLength value="9"/>
+        <xs:maxLength value="35"/>
         <xs:pattern value=".*[^\s].*"/>
       </xs:restriction>
     </xs:simpleContent>
@@ -1635,6 +1634,76 @@
       </xs:documentation>
     </xs:annotation>
     <xs:restriction base="udt:NumericType"/>
+  </xs:simpleType>
+  <xs:simpleType name="TaxRateOfGoodsUnderSpecialProcedureType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>n..17,3</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="udt:NumericType">
+      <xs:totalDigits value="17"/>
+      <xs:fractionDigits value="3"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="CustomValuesOfGoodsUnderSpecialProcedureType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>n..16,2</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="udt:NumericType">
+      <xs:totalDigits value="16"/>
+      <xs:fractionDigits value="2"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="DischargingGoodsCNCodeType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>an..8</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="udt:TextType">
+        <xs:maxLength value="8"/>
+        <xs:minLength value="8"/>
+        <xs:pattern value="[A-Za-z0-9]*"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="DischargingGoodsCustomsValueType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>n..16,2</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="udt:NumericType">
+      <xs:totalDigits value="16"/>
+      <xs:fractionDigits value="2"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="RateOfYieldAtDischargeType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>an..2560</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="udt:TextType">
+        <xs:pattern value=".{0,2560}" />
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="PayableTaxAmountOfRemainingQuantityType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>n..16,2</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="udt:NumericType">
+      <xs:totalDigits value="16"/>
+      <xs:fractionDigits value="2"/>
+    </xs:restriction>
   </xs:simpleType>
   <xs:complexType name="DutyTaxFeeTypeCodeType">
     <xs:annotation>
@@ -3250,7 +3319,7 @@
     <xs:annotation>
       <xs:documentation>
         <WCOID>L001</WCOID>
-        <WCOFormat>an..35</WCOFormat>
+        <WCOFormat>an..256</WCOFormat>
       </xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
@@ -3461,7 +3530,7 @@
   <xs:complexType name="AuthorisationAuthorisationHolder">
     <xs:simpleContent>
       <xs:restriction base="udt:TextType">
-        <xs:maxLength value="17"/>
+        <xs:maxLength value="35"/>
         <xs:pattern value=".*[^\s].*"/>
       </xs:restriction>
     </xs:simpleContent>
