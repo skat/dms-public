@@ -1,3 +1,9 @@
+### 28-07-2025
+* Updated DMS General System Guide to v2.6. Added GoodsAccounting Service
+* Added GoodsAccounting Service examples to Onboarding Documents/appendix/GoodsAccounting_Service
+* Updated DMS ImportExport System Guide to v2.10. Added GoodsAccounting Service
+* Updated DMS Export XMl Guide to v1.31. Updated Rules/codes/other relevant information section of Amendment to no longer display ChangeReasonCode referring to Codelist instead.
+
 ### 16-07-2025
 * Updates to DMS_DS and UNQUALIFIEDDATATYPE_6_DMS XSDs
 
