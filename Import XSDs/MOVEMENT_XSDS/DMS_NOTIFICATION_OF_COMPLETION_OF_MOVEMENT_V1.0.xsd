@@ -38,7 +38,12 @@
     <xs:element name="StatementCode" type="StatementCode"/>
     <xs:element name="statementDescription" type="Text.Type"/>
     <xs:element name="Consignee" type="Consignee"/>
+    <xs:element name="GoodsLocation" type="GoodsLocation"/>
+    <xs:element name="EconomicOperator" type="EconomicOperator"/>
     <xs:element name="TransportContractDocument" type="TransportContractDocument"/>
+    <xs:element name="UnloadingLocation" type="UnloadingLocation"/>
+    <xs:element name="Address" type="Address"/>
+    <xs:element name="country" type="CountryCode"/>
     <xs:element name="PreviousDocument" type="PreviousDocument"/>
     <xs:element name="line_2" type="Numeric.Type"/>
     <xs:element name="type_3" type="DocumentTypeCode"/>
@@ -79,7 +84,9 @@
             <xs:element ref="sequence"/>
             <xs:element ref="AdditionalInformation" minOccurs="0" maxOccurs="99"/>
             <xs:element ref="Consignee"/>
+            <xs:element ref="GoodsLocation"/>
             <xs:element ref="TransportContractDocument" minOccurs="0" maxOccurs="99"/>
+            <xs:element ref="UnloadingLocation"/>
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="AdditionalInformation">
@@ -100,11 +107,33 @@
             <xs:element ref="sequence"/>
         </xs:sequence>
     </xs:complexType>
+    <xs:complexType name="GoodsLocation">
+        <xs:sequence>
+            <xs:element ref="sequence"/>
+            <xs:element ref="EconomicOperator"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="EconomicOperator">
+        <xs:sequence>
+            <xs:element ref="identification_2"/>
+        </xs:sequence>
+    </xs:complexType>
     <xs:complexType name="TransportContractDocument">
         <xs:sequence>
             <xs:element ref="sequence"/>
             <xs:element ref="identification_2"/>
             <xs:element ref="type_3"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="UnloadingLocation">
+        <xs:sequence>
+            <xs:element ref="Address"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Address">
+        <xs:sequence>
+            <xs:element ref="sequence"/>
+            <xs:element ref="country"/>
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="PreviousDocument">
@@ -145,12 +174,11 @@
             <xs:element ref="QuantityUnit.Code"/>
         </xs:sequence>
     </xs:complexType>
-
-
-
-
-
-
+    <xs:complexType name="CountryCode">
+        <xs:sequence>
+            <xs:element ref="Code.Content"/>
+        </xs:sequence>
+    </xs:complexType>
 
 
     <xs:complexType name="Text.Type">
