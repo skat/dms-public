@@ -6,13 +6,13 @@
            xmlns:extensions="urn:eds:datamodel:EDS:EDS_EXTENSIONS:1">
     <xs:import namespace="urn:eds:datamodel:EDS:EDS_EXTENSIONS:1"
                schemaLocation="../DMS_DS/EDS/EDS_EXTENSIONS.xsd"/>
-  <!--  <xs:include schemaLocation="WCO_TS_DEC.xsd"/> -->
+    <!--  <xs:include schemaLocation="WCO_TS_DEC.xsd"/> -->
 
     <xs:element name="Declaration" type="Declaration"/>
 
     <xs:complexType name="Declaration">
         <xs:sequence>
-            <xs:element name="Extensions" type="extensions:ExtensionType"/>
+            <xs:element name="Extensions" type="extensions:ExtensionType" minOccurs="2" maxOccurs="2"/>
             <xs:element ref="functionalReference"/>
             <xs:element ref="procedureCategory"/>
             <xs:element ref="Agent" minOccurs="0"/>
@@ -39,7 +39,6 @@
     <xs:element name="statementDescription" type="Text.Type"/>
     <xs:element name="Consignee" type="Consignee"/>
     <xs:element name="GoodsLocation" type="GoodsLocation"/>
-    <xs:element name="authorisationReferenceNumber" type="Text.Type"/>
     <xs:element name="EconomicOperator" type="EconomicOperator"/>
     <xs:element name="TransportContractDocument" type="TransportContractDocument"/>
     <xs:element name="UnloadingLocation" type="UnloadingLocation"/>
@@ -87,7 +86,7 @@
             <xs:element ref="Consignee"/>
             <xs:element ref="GoodsLocation"/>
             <xs:element ref="TransportContractDocument" minOccurs="0" maxOccurs="99"/>
-            <xs:element ref="UnloadingLocation" minOccurs="0"/>
+            <xs:element ref="UnloadingLocation"/>
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="AdditionalInformation">
@@ -111,7 +110,6 @@
     <xs:complexType name="GoodsLocation">
         <xs:sequence>
             <xs:element ref="sequence"/>
-            <xs:element ref="authorisationReferenceNumber"/>
             <xs:element ref="EconomicOperator"/>
         </xs:sequence>
     </xs:complexType>
@@ -129,7 +127,7 @@
     </xs:complexType>
     <xs:complexType name="UnloadingLocation">
         <xs:sequence>
-            <xs:element ref="Address" minOccurs="0"/>
+            <xs:element ref="Address"/>
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="Address">
@@ -170,13 +168,19 @@
             <xs:element ref="type_6" minOccurs="0"/>
         </xs:sequence>
     </xs:complexType>
-
     <xs:complexType name="Quantity.Type">
         <xs:sequence>
             <xs:element ref="Quantity.Content"/>
             <xs:element ref="QuantityUnit.Code"/>
         </xs:sequence>
     </xs:complexType>
+    <xs:complexType name="CountryCode">
+        <xs:sequence>
+            <xs:element ref="Code.Content"/>
+        </xs:sequence>
+    </xs:complexType>
+
+
     <xs:complexType name="Text.Type">
         <xs:sequence>
             <xs:element ref="Text.Content"/>
@@ -201,11 +205,6 @@
         <xs:sequence>
             <xs:element ref="Code.Content"/>
         </xs:sequence>
-    </xs:complexType>
-    <xs:complexType name="CountryCode">
-        <xs:sequence>
-        <xs:element ref="Code.Content"/>
-    </xs:sequence>
     </xs:complexType>
 
 

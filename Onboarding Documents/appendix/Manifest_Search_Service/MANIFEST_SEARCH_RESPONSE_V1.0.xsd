@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:complexType name="manifestSearchOutput">
+    <xs:sequence>
+      <xs:element name="declarations" type="declarationsWrapper" minOccurs="0"/>
+      <xs:element name="errorMessage" type="xs:string" minOccurs="0"/>
+      <xs:element name="page" type="xs:int"/>
+      <xs:element name="totalResults" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="declarationsWrapper">
+    <xs:sequence>
+      <xs:element name="declarations" type="manifestSearchDeclarationEntity" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="manifestSearchDeclarationEntity">
+    <xs:sequence>
+      <xs:element name="arrivalTime" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="containers" type="xs:string" minOccurs="0"/>
+      <xs:element name="created" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="declarant" type="xs:string" minOccurs="0"/>
+      <xs:element name="expectedArrivalTime" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="grossMass" type="xs:string" minOccurs="0"/>
+      <xs:element name="lastUpdated" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="manifestReferenceNumber" type="xs:string" minOccurs="0"/>
+      <xs:element name="mrn" type="xs:string" minOccurs="0"/>
+      <xs:element name="procedureCategory" type="xs:string" minOccurs="0"/>
+      <xs:element name="status" type="xs:string" minOccurs="0"/>
+      <xs:element name="transportId" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

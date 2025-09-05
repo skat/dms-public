@@ -1,3 +1,20 @@
+### 05-09-2025
+
+Added multiple changes in accordance with R2.1:
+
+* Add Request for Closure XSD
+* Added sequence data element under Declarant/Communication
+* Removed possibility to add currency attribute to D.E. 14 03 042 000 and D.E. 14 08 001 000
+* Added correct cardinality for Agent/Communication and Declarant/Communication
+* Added Bill of Discharge message XSD
+* Corrected cardinality for consignment-levels
+* Added Unloading Location and Goods Location data elements to notification of completion of movement
+* Added possibility to see partial amendments in notifications
+* Added new Manifest Search appendix folder under Onboarding documents with XSD and examples
+* Updated General System Guide
+* Updated Import/Export System Guide
+* Added Guide to searching declarations, found in Onboarding Documents/Onboarding Guides
+
 ### 28-07-2025
 * Updated DMS General System Guide to v2.6. Added GoodsAccounting Service
 * Added GoodsAccounting Service examples to Onboarding Documents/appendix/GoodsAccounting_Service
