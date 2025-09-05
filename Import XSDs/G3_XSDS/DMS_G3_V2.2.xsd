@@ -76,7 +76,7 @@
                                 </xs:sequence>
                             </xs:complexType>
                         </xs:element>
-                        <xs:element name="Communication" minOccurs="0">
+                        <xs:element name="Communication" minOccurs="0" maxOccurs="9">
                             <xs:annotation>
                                 <xs:documentation>
                                     <EUCDMname>Communication</EUCDMname>
@@ -327,7 +327,7 @@
                                 </xs:sequence>
                             </xs:complexType>
                         </xs:element>
-                        <xs:element name="Communication" minOccurs="0">
+                        <xs:element name="Communication" minOccurs="0" maxOccurs="9">
                             <xs:annotation>
                                 <xs:documentation>
                                     <EUCDMname>Communication</EUCDMname>
@@ -337,6 +337,14 @@
                             </xs:annotation>
                             <xs:complexType>
                                 <xs:sequence>
+                                    <xs:element name="sequence">
+                                        <xs:complexType>
+                                            <xs:sequence>
+                                                <xs:element name="Numeric.Content" type="Numeric.Content">
+                                                </xs:element>
+                                            </xs:sequence>
+                                        </xs:complexType>
+                                    </xs:element>
                                     <xs:element name="identification_2">
                                         <xs:annotation>
                                             <xs:documentation>
@@ -743,7 +751,7 @@
                             </xs:complexType>
                         </xs:element>
                         <!-- HC (House Consignment) level -->
-                        <xs:element name="HouseConsignment" minOccurs="0">
+                        <xs:element name="HouseConsignment" minOccurs="0" maxOccurs="99999">
                             <xs:complexType>
                                 <xs:sequence>
                                     <xs:element name="sequence">

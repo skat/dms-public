@@ -23,18 +23,6 @@
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
-            <xs:element name="id">
-                <xs:annotation>
-                    <xs:documentation>
-                        <EUCDMname>MRN</EUCDMname>
-                    </xs:documentation>
-                </xs:annotation>
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:element name="Identifier.Content" type="Identifier.Content"/>
-                    </xs:sequence>
-                </xs:complexType>
-            </xs:element>
             <xs:element name="procedureCategory">
                 <xs:complexType>
                     <xs:sequence>
@@ -64,33 +52,6 @@
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
-            <xs:element name="Amendment">
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:element name="sequence">
-                            <xs:complexType>
-                                <xs:sequence>
-                                    <xs:element name="Numeric.Content" type="Numeric.Content"/>
-                                </xs:sequence>
-                            </xs:complexType>
-                        </xs:element>
-                        <xs:element name="ChangeReasonCode">
-                            <xs:complexType>
-                                <xs:sequence>
-                                    <xs:element name="Code.Content" type="Code.Content"/>
-                                </xs:sequence>
-                            </xs:complexType>
-                        </xs:element>
-                        <xs:element name="ChangeReasonText">
-                            <xs:complexType>
-                                <xs:sequence>
-                                    <xs:element name="Text.Content" type="Text.Content"/>
-                                </xs:sequence>
-                            </xs:complexType>
-                        </xs:element>
-                    </xs:sequence>
-                </xs:complexType>
-            </xs:element>
             <xs:element name="Agent" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>
@@ -115,7 +76,7 @@
                                 </xs:sequence>
                             </xs:complexType>
                         </xs:element>
-                        <xs:element name="Communication" minOccurs="0">
+                        <xs:element name="Communication" minOccurs="0" maxOccurs="9">
                             <xs:annotation>
                                 <xs:documentation>
                                     <EUCDMname>Communication</EUCDMname>
@@ -196,11 +157,6 @@
                         <EUCDMversion>EUCDM 6.1</EUCDMversion>
                         <code>13 05 000 000</code>
                     </xs:documentation>
-                    <xs:documentation>
-                        <EUCDMname>Person presenting the goods</EUCDMname>
-                        <EUCDMversion>EUCDM 6.1</EUCDMversion>
-                        <code>13 11 000 000</code>
-                    </xs:documentation>
                 </xs:annotation>
                 <xs:complexType>
                     <xs:sequence>
@@ -224,11 +180,6 @@
                                     <EUCDMname>Identification number</EUCDMname>
                                     <EUCDMversion>EUCDM 6.1</EUCDMversion>
                                     <code>13 05 017 000</code>
-                                </xs:documentation>
-                                <xs:documentation>
-                                    <EUCDMname>Person presenting the goods</EUCDMname>
-                                    <EUCDMversion>EUCDM 6.1</EUCDMversion>
-                                    <code>13 11 017 000</code>
                                 </xs:documentation>
                             </xs:annotation>
                             <xs:complexType>
@@ -474,26 +425,6 @@
                                     <code>17 10 001 000</code>
                                 </xs:documentation>
                             </xs:annotation>
-                            <xs:complexType>
-                                <xs:sequence>
-                                    <xs:element name="Identifier.Content" type="Identifier.Content"/>
-                                </xs:sequence>
-                            </xs:complexType>
-                        </xs:element>
-                    </xs:sequence>
-                </xs:complexType>
-            </xs:element>
-            <xs:element name="PresentationOffice">
-                <xs:annotation>
-                    <xs:documentation>
-                        <EUCDMname>Reference number</EUCDMname>
-                        <EUCDMversion>EUCDM 6.1</EUCDMversion>
-                        <code>17 09 001 000</code>
-                    </xs:documentation>
-                </xs:annotation>
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:element name="identification">
                             <xs:complexType>
                                 <xs:sequence>
                                     <xs:element name="Identifier.Content" type="Identifier.Content"/>
@@ -966,9 +897,8 @@
                                 </xs:sequence>
                             </xs:complexType>
                         </xs:element>
-
                         <!-- MI (Master Item) level -->
-                        <xs:element name="ConsignmentItem" maxOccurs="999">
+                        <xs:element name="ConsignmentItem" maxOccurs="9999">
                             <xs:annotation>
                                 <xs:documentation>
                                     <EUCDMname>Goods item number</EUCDMname>
@@ -2192,7 +2122,7 @@
                             </xs:complexType>
                         </xs:element>
                         <!-- HC (House Consignment) level -->
-                        <xs:element name="HouseConsignment" minOccurs="0">
+                        <xs:element name="HouseConsignment" minOccurs="0" maxOccurs="99999">
                             <xs:complexType>
                                 <xs:sequence>
                                     <xs:element name="sequence">
@@ -2229,7 +2159,8 @@
                                                 <xs:element name="sequence">
                                                     <xs:complexType>
                                                         <xs:sequence>
-                                                            <xs:element name="Numeric.Content" type="Numeric.Content"/>
+                                                            <xs:element name="Numeric.Content"
+                                                                        type="Numeric.Content"/>
                                                         </xs:sequence>
                                                     </xs:complexType>
                                                 </xs:element>
@@ -2243,7 +2174,8 @@
                                                     </xs:annotation>
                                                     <xs:complexType>
                                                         <xs:sequence>
-                                                            <xs:element name="Code.Content" type="Code.Content">
+                                                            <xs:element name="Code.Content"
+                                                                        type="Code.Content">
                                                             </xs:element>
                                                         </xs:sequence>
                                                     </xs:complexType>
@@ -2258,7 +2190,8 @@
                                                     </xs:annotation>
                                                     <xs:complexType>
                                                         <xs:sequence>
-                                                            <xs:element name="Text.Content" type="Text.Content">
+                                                            <xs:element name="Text.Content"
+                                                                        type="Text.Content">
                                                             </xs:element>
                                                         </xs:sequence>
                                                     </xs:complexType>
@@ -2618,7 +2551,7 @@
                                         </xs:complexType>
                                     </xs:element>
                                     <!-- HI (House Item) level -->
-                                    <xs:element name="ConsignmentItem" maxOccurs="999">
+                                    <xs:element name="ConsignmentItem" maxOccurs="9999">
                                         <xs:annotation>
                                             <xs:documentation>
                                                 <EUCDMname>Consignment Item</EUCDMname>
