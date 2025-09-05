@@ -1,3 +1,6 @@
+### 28-08-2025
+* Added new Manifest Search appendix folder under Onboarding documents with XSD and examples
+
 ### 28-07-2025
 * Updated DMS General System Guide to v2.6. Added GoodsAccounting Service
 * Added GoodsAccounting Service examples to Onboarding Documents/appendix/GoodsAccounting_Service
