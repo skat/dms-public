@@ -1,3 +1,8 @@
+### 18-09-2025
+* Changed data type on ItemChargeAmount on H7 back to include currency
+* Changed Seller/Name to minOccurs = "0" in H1 and I1
+* Added submitter in BOD
+
 ### 05-09-2025
 
 Added multiple changes in accordance with R2.1:
