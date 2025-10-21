@@ -1,3 +1,6 @@
+### 20-10-2025
+* Updated Codelist - Import, Codelist - Global, Codelist - AES, Codelist - NCTS, Codelist Global, and Error and warning Codes
+
 ### 18-09-2025
 * Changed data type on ItemChargeAmount on H7 back to include currency
 * Changed Seller/Name to minOccurs = "0" in H1 and I1
