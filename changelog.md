@@ -1,9 +1,12 @@
+### 2025-11-06
+* Updated trader-portal-common.xsd to include new elements in CWMTAX and more
+
 ### 30-10-2025
-Updated Import/Export System Guide with Request for Closure (RCL) and Bill of Discharge (BOD) notification information.
-Updated DMS Notification Guide with RCL and BOD information and updated description on warnings not resulting in rejections at goods presentation for CWMRCV.
-Added Testcase for G4G3 – Request for Closure (PDF + XML)
-Added Testcase for H4 – Bill of Discharge (PDF + XML)
-Added Codelist for warnings NOT resulting in rejections at goods presentation to the Codelists folder.
+* Updated Import/Export System Guide with Request for Closure (RCL) and Bill of Discharge (BOD) notification information.
+* Updated DMS Notification Guide with RCL and BOD information and updated description on warnings not resulting in rejections at goods presentation for CWMRCV.
+* Added Testcase for G4G3 – Request for Closure (PDF + XML)
+* Added Testcase for H4 – Bill of Discharge (PDF + XML)
+* Added Codelist for warnings NOT resulting in rejections at goods presentation to the Codelists folder.
 
 ### 20-10-2025
 * Updated Codelist - Import, Codelist - Global, Codelist - AES, Codelist - NCTS, Codelist Global, and Error and warning Codes
