@@ -1,3 +1,10 @@
+### 2025-11-18
+* Updated endpoints for GetEAD and GetTAD in DMS General System Guide v2.8.
+* Updated GetStatus with a description of attributes in the response message in DMS General System Guide v2.8.
+* IE512 added to DMS ImportExport System Guide v2.13 and DMS Onboardingguide v2.2.
+* DMSGRR-notification added to the DMS Notification Guide v1.9.
+* Updated DMSGRE-notification in the DMS Notification guide with a new element.
+
 ### 2025-11-06
 * Updated trader-portal-common.xsd to include new elements in CWMTAX and more
 
