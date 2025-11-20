@@ -60,8 +60,50 @@
       </xs:element>
       <xs:element name="Goodsitem" type="GoodsItemQuotaType" minOccurs="0" maxOccurs="unbounded" />
       <xs:element name="UpdatedDeclaration" type="xs:string" minOccurs="0"/>
+      <xs:element name="TimerDetails" type="TimerDetailsType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Information about an updated timer</xs:documentation>
+        </xs:annotation>
+      </xs:element>
     </xs:sequence>
   </xs:complexType>
+
+  <xs:complexType name="TimerDetailsType">
+    <xs:sequence>
+      <xs:element name="Timer" type="TimerType" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="TimerType">
+    <xs:sequence>
+      <xs:element name="ExternalId" type="xs:string"/>
+      <xs:element name="Name" type="xs:string"/>
+      <xs:element name="ActionType" type="TimerActionType"/>
+      <xs:element name="CreationTime" type="NotificationDateType" minOccurs="0"/>
+      <xs:element name="ExpirationTime" type="NotificationDateType" minOccurs="0"/>
+      <xs:element name="TerminationTime" type="NotificationDateType" minOccurs="0"/>
+      <xs:element name="Status" type="TimerStatusType" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="TimerActionType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="CREATE"/>
+      <xs:enumeration value="UPDATE"/>
+      <xs:enumeration value="DELETE"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="TimerStatusType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ACTIVE"/>
+      <xs:enumeration value="SUSPENDED"/>
+      <xs:enumeration value="EXPIRED"/>
+      <xs:enumeration value="INTERRUPTED"/>
+      <xs:enumeration value="PENDING"/>
+    </xs:restriction>
+  </xs:simpleType>
+
   <xs:complexType name="GoodsItemQuotaType">
     <xs:sequence>
       <xs:element name="SequenceNumeric" type="SequenceNumericType" maxOccurs="1" minOccurs="0"/>

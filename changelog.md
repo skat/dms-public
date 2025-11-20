@@ -1,3 +1,6 @@
+### 2025-11-20
+* Updated trader-portal-common.xsd to follow R2.1.2
+
 ### 2025-11-18
 * Updated endpoints for GetEAD and GetTAD in DMS General System Guide v2.8.
 * Updated GetStatus with a description of attributes in the response message in DMS General System Guide v2.8.
