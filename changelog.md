@@ -1,3 +1,6 @@
+### 2025-11-28
+* Updated Codelists - Import to include CL11052
+
 ### 2025-11-20
 * Introducing a new Excel representation of import declarations.
 * Updated Import XML Guide to v1.18 - Corrected a bundle of inconsistencies to align with current xsd-schema – several formatting updates, modality changes, fieldnames corrections and structure rearranging’s.
