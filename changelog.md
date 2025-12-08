@@ -1,3 +1,11 @@
+### 2025-12-08
+* Corrected a bundle of inconsistencies to align with transit xsd-schema – several formatting updates, modality changes, fieldnames corrections and structure rearranging’s.
+* Aligning with NCTS-P6 and EUCDM version 7.0
+* Update DMS Notification Guide to version 1.10
+* Update DMS ImportExport System Guide to version 2.14
+* Added AS4 Gateway - Response messages via push version 1.2
+* Added AS4 Gateway - GetEad_Tad services version 1.0
+
 ### 2025-11-28
 * Updated Codelists - Import to include CL11052
 
