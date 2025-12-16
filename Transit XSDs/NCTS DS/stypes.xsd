@@ -468,6 +468,19 @@
     <xs:restriction base="LanguageCodeType" />
   </xs:simpleType>
   <!--================================================================================-->
+  <!--===== CommunicationLanguageAtTransit                                            -->
+  <!--================================================================================-->
+  <xs:simpleType name="CommunicationLanguageAtTransitContentType">
+    <xs:annotation>
+      <xs:documentation>
+        <usedBy>Used by 2/124 messages: CC117D, CD117D</usedBy>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:pattern value="[A-Za-z]{2}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--================================================================================-->
   <!--===== ComplementOfInformation                                                         -->
   <!--================================================================================-->
   <xs:simpleType name="ComplementOfInformationContentType01">
@@ -577,7 +590,15 @@
         <usedBy>Used by 1/91 messages: CC017C</usedBy>
       </xs:documentation>
     </xs:annotation>
-    <xs:restriction base="AlphaNumeric_MAX35_NoSpaces" />
+    <xs:restriction base="AlphaNumeric_MAX70_NoSpaces" />
+  </xs:simpleType>
+  <xs:simpleType name="ErmisControlledByContentType01">
+    <xs:annotation>
+      <xs:documentation>
+        <usedBy>Used by: CaptureResultsOfControlEvent</usedBy>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="AlphaNumeric_MAX70_NoSpaces" />
   </xs:simpleType>
   <xs:simpleType name="ControlledByContentType02">
     <xs:annotation>
@@ -1093,7 +1114,7 @@
         <usedBy>Used by 1/91 messages: CC037C</usedBy>
       </xs:documentation>
     </xs:annotation>
-    <xs:restriction base="NumericWithoutZero_8" />
+    <xs:restriction base="NumericWithZero_8" />
   </xs:simpleType>
   <!--================================================================================-->
   <!--===== Flag                                                                            -->
@@ -1699,6 +1720,32 @@
     </xs:restriction>
   </xs:simpleType>
   <!--================================================================================-->
+  <!--===== MovementStoppedDate                                                       -->
+  <!--================================================================================-->
+  <xs:simpleType name="PassageRefusalDateContentType">
+    <xs:annotation>
+      <xs:documentation>
+        <usedBy>Used by 1/124 messages: CD119D</usedBy>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:pattern value=".{10}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--===========================================================================-->
+  <!--===== PassageRefusalReasonCode                                             -->
+  <!--===========================================================================-->
+  <xs:simpleType name="PassageRefusalReasonCodeContentType">
+    <xs:annotation>
+      <xs:documentation>
+        <usedBy>Used by 1/124 messages: CD119D</usedBy>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:pattern value="[0-9]{1,2}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--================================================================================-->
   <!--===== Mrn                                                                             -->
   <!--================================================================================-->
   <xs:simpleType name="MRNContentType01">
@@ -2036,7 +2083,7 @@
         <usedBy>Used by 36/91 messages: CC004C, CC009C, CC014C, CC019C, CC022C, CC023C, CC026C, CC028C, CC029C, CC035C, CC037C, CC043C, CC045C, CC051C, CC055C, CC056C, CC060C, CC140C, CC182C, CC190C, CC228C, CC229C, CC928C, CD001C, CD003C, CD012C, CD038C, CD050C, CD115C, CD142C, CD150C, CD151C, CD160C, CD165C, CD180C, CD181C</usedBy>
       </xs:documentation>
     </xs:annotation>
-    <xs:restriction base="PostalCodeType" />
+    <xs:restriction base="AlphaNumeric_MAX17_NoSpaces" />
   </xs:simpleType>
   <xs:simpleType name="PostcodeContentType02">
     <xs:annotation>
@@ -4178,7 +4225,7 @@
   <!--================================================================================-->
   <xs:simpleType name="phaseIDtype">
     <xs:restriction base="xs:token">
-      <xs:enumeration value="NCTS5.1">
+      <xs:enumeration value=" NCTS5.1">
         <xs:annotation>
           <xs:documentation>Phase NCTS 5.1</xs:documentation>
         </xs:annotation>
@@ -4190,7 +4237,6 @@
       </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
-
   <!--================================================================================-->
   <!--===== PostalCodeType                                                                  -->
   <!--================================================================================-->
@@ -4347,6 +4393,28 @@
     <xs:restriction base="NumType">
       <xs:length value="4" />
       <xs:pattern value="[2][0][1-9][0-9]" />
+    </xs:restriction>
+  </xs:simpleType>
+  <!--================================================================================-->
+  <!--===== ENSMRN                                                                    -->
+  <!--================================================================================-->
+  <xs:simpleType name="ENSMRNContentType">
+    <xs:annotation>
+      <xs:documentation>
+        <usedBy>Used by 25/124 messages: CC004D, CC009D, CC028D, CC056D, CC060D, CC117D, CC928D, CCA13D, CCA28D, CCA64D, CCA70D, CCA71D, CD004D, CD009D, CD014D, CD056D, CD060D, CD117D, CD928D, CDA13D, CDA52D, CDA64D, CDA70D, CDA71D, CDA93D</usedBy>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="ENS_MRNType"/>
+  </xs:simpleType>
+  <!--================================================================================-->
+  <!--===== ENS_MRNType                                                               -->
+  <!--================================================================================-->
+  <xs:simpleType name="ENS_MRNType">
+    <xs:annotation>
+      <xs:documentation>ENS MRN (format: an18), (alias: ENS_MRNType)</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="AlphaNumType">
+      <xs:pattern value="([2][4-9]|[3-9][0-9])[A-Z]{2}[A-Z0-9]{11}[C][T][0-9]"/>
     </xs:restriction>
   </xs:simpleType>
 </xs:schema>

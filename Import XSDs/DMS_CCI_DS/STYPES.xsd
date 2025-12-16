@@ -1,0 +1,1189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+xmlns="http://cci.dgtaxud.ec" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
+targetNamespace="http://cci.dgtaxud.ec" elementFormDefault="unqualified" attributeFormDefault="unqualified" version="1.0.2_3.00">
+    <xs:simpleType name="DateType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CD464B CC413B CD466B CD440B CC444B CC429B CD441B CD443B CC451B CD403B CD401B CD463B CC462B CC415B CD425B CC460B CC426B CD468B CC438B CC447B CC431B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:date">
+            <xs:pattern value="\d{4}-\d{2}-\d{2}"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SequenceNrContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CD464B CD463B CC462B CC446B CC413B CC429B CD403B CD401B CD468B CC433B CD458B CD443B CC451B CC415B CD440B CC444B CD441B CC456B CD916B CD434B CD070D CD071D CC460B CD445B CD453B CD436B CC432B CD411E CD971D CD469B CC447B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:integer">
+            <xs:pattern value="[1-9][0-9]{0,4}"/>
+            <xs:minInclusive value="1"/>
+            <xs:maxInclusive value="99999"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AuthorisationTypeContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CD464B CD463B CC462B CC413B CC429B CD403B CD401B CD468B CC433B CD458B CD443B CC451B CC415B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[a-zA-Z0-9]{1,4}"/>
+            <xs:maxLength value="4"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AuthorisationNumberContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CD464B CD463B CC462B CC413B CC429B CD403B CD401B CD468B CC433B CD458B CD443B CC451B CC415B CC432B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[ -~]{1,35}"/>
+            <xs:maxLength value="35"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="EOIDContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CD464B CD463B CC462B CC413B CC429B CD403B CD401B CD468B CC433B CD458B CD443B CC451B CC415B CC410B CC444B CC456B CC460B CC426B CC404B CC438B CC428B CC414B CC447B CC431B CC432B CC457B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[A-Z]{2}[!-~]{1,15}"/>
+            <xs:maxLength value="17"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="CORefNumType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CD464B CD466B CD454B CD440B CD403B CD463B CD425B CD441B CD407B CD401B CD436B CD406B CD467B CD468B CD465B CD461B CD445B CD469B CD442B CD435B CD437B CD434B CD459B CD458B CD443B CD449B CD453B CD402B CD427B CC413B CC429B CC415B CC432B CC457B CC433B CC462B CC451B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[A-Z]{2}[A-Z0-9]{6}"/>
+            <xs:length value="8"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="MRNContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CD494B CC446B CC413B CD466B CC410B CD454B CD440B CD441B CD465B CD453B CC444B CC438B CC447B CC431B CC429B CD443B CD403B CC456B CC460B CD407B CD436B CD435B CD406B CD467B CD468B CC451B CC404B CD445B CC457B CD469B CD442B CC428B CC414B CD437B CD916B CD917B CD449B CD427B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{2}[A-Z]{2}[A-Z0-9]{12}[R,V][0-9]"/>
+            <xs:length value="18"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="FlagContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CC446B CC413B CC410B CC444B CC429B CD441B CD443B CC451B CD403B CD401B CC415B CD070D CD071D CD468B CD445B CD971D CD469B CC447B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{1}"/>
+            <xs:length value="1"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="DocumentTypeContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CC446B CC413B CC429B CC451B CD403B CD401B CC415B CC460B CD453B CD468B CC433B CD458B CD469B CD443B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[a-zA-Z0-9]{4}"/>
+            <xs:length value="4"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="CountryCodeType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CC446B CC413B CC429B CD403B CC415B CD401B CD468B CD443B CC451B CC410B CC444B CC456B CC460B CC426B CC404B CC438B CC428B CC414B CC447B CC431B CD903E CD463B CC462B CD070D CD071D CD453B CC432B CC457B CC433B CD458B CD411E CD971D CD469B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[A-Z]{2}"/>
+            <xs:length value="2"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="DocumentRefNumberContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CC446B CC413B CC429B CC451B CD403B CD401B CC415B CC460B CD453B CD468B CC433B CD458B CD469B CD443B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\P{Z}(.*\P{Z})?"/>
+            <xs:maxLength value="70"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="FreeTextContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CC446B CC413B CC410B CD440B CD468B CC444B CC429B CD441B CD443B CC451B CD903E CD403B CD401B CD463B CC462B CC415B CC456B CD916B CD434B CD070D CD071D CC460B CD445B CD453B CD407B CD436B CD461B CD906D CC433B CD458B CD971D CD469B CD442B CC414B CC447B CC431B CD917B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\P{Z}(.*\P{Z})?"/>
+            <xs:maxLength value="512"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="FileTypeContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CC446B CD469B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[a-zA-Z0-9\.\-/]{1,200}"/>
+            <xs:maxLength value="200"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="DocumentImageContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CC446B CD469B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:base64Binary">
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="LRNContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CC413B CC410B CC444B CC438B CC447B CC431B CC429B CD443B CD403B CC415B CC456B CD425B CC460B CC426B CD401B CD436B CD435B CD406B CD467B CC432B CC404B CD461B CC457B CC433B CC428B CC414B CD437B CD434B CD459B CD402B CD458B CD449B CD427B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[!-~]{1,22}"/>
+            <xs:maxLength value="22"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="DeclarationTypeContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CC413B CC429B CD443B CD403B CC415B CD401B CD468B CC451B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[a-zA-Z0-9]{1,5}"/>
+            <xs:maxLength value="5"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AdditionalDeclarationTypeContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CC413B CC429B CD443B CD403B CC415B CD401B CD468B CC451B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[a-zA-Z]{1}"/>
+            <xs:length value="1"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="EONameContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CC413B CC429B CD403B CC415B CD401B CD468B CD443B CC451B CC410B CC444B CC456B CC460B CC426B CC404B CC438B CC428B CC414B CC447B CC431B CC462B CC432B CC457B CC433B CD458B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\P{Z}(.*\P{Z})?"/>
+            <xs:maxLength value="70"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="StreetAndNumberContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CC413B CC429B CD403B CC415B CD401B CD468B CD443B CC451B CC410B CC444B CC456B CC460B CC426B CC404B CC438B CC428B CC414B CC447B CC431B CD463B CC462B CC432B CC457B CC433B CD458B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\P{Z}(.*\P{Z})?"/>
+            <xs:maxLength value="70"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="PostcodeContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CC413B CC429B CD403B CC415B CD401B CD468B CD443B CC451B CC410B CC444B CC456B CC460B CC426B CC404B CC438B CC428B CC414B CC447B CC431B CD463B CC462B CC432B CC457B CC433B CD458B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\P{Z}(.*\P{Z})?"/>
+            <xs:maxLength value="17"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="CityContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CC413B CC429B CD403B CC415B CD401B CD468B CD443B CC451B CC410B CC444B CC456B CC460B CC426B CC404B CC438B CC428B CC414B CC447B CC431B CD463B CC462B CC432B CC457B CC433B CD458B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\P{Z}(.*\P{Z})?"/>
+            <xs:maxLength value="35"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="PhoneNumberContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CC413B CC410B CC444B CC429B CD403B CC415B CC456B CC460B CC426B CD401B CD468B CC404B CC438B CC428B CC414B CC447B CC431B CD443B CC462B CC451B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\P{Z}(.*\P{Z})?"/>
+            <xs:maxLength value="35"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="EmailAddressContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CC413B CC410B CC444B CC429B CD403B CC415B CC456B CC460B CC426B CD401B CD468B CC404B CC438B CC428B CC414B CC447B CC431B CD443B CC462B CC451B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[^@]+@[^\.]+\..+"/>
+            <xs:maxLength value="256"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="RepStatusCodeContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CC413B CC410B CC444B CC429B CD403B CC415B CC456B CC460B CC426B CD401B CD468B CC404B CC438B CC428B CC414B CC447B CC431B CD443B CC462B CC451B CC432B CC457B CC433B CD458B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{1}"/>
+            <xs:length value="1"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TypeOfGuaranteeContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CC413B CC429B CD403B CC415B CD401B CD468B CD443B CC451B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[a-zA-Z0-9]{1}"/>
+            <xs:length value="1"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="GRNContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CC413B CC429B CD403B CC415B CD401B CD468B CD443B CC451B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{2}[A-Z]{2}[A-Z0-9]{12}[0-9]([A-Z][0-9]{6})?"/>
+            <xs:maxLength value="24"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AccessCodeContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CC413B CC429B CD403B CC415B CD401B CD468B CD443B CC451B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[a-zA-Z0-9]{1,4}"/>
+            <xs:maxLength value="4"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="CurrencyContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CC413B CC429B CD403B CC415B CD401B CD468B CD443B CC451B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[a-zA-Z]{3}"/>
+            <xs:length value="3"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AmountContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CC413B CC429B CD403B CC415B CD401B CD468B CD443B CC451B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:decimal">
+            <xs:pattern value="((0|[1-9][0-9]{0,15})(\.[0-9]{1,2})?)"/>
+            <xs:totalDigits value="16"/>
+            <xs:fractionDigits value="2"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="GuaranteeReferenceContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CC413B CC429B CD403B CC415B CD401B CD468B CD443B CC451B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[a-zA-Z0-9]{1,35}"/>
+            <xs:maxLength value="35"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="DeferredPaymentContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CC413B CC429B CD403B CC415B CD401B CD468B CD443B CC451B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[a-zA-Z0-9]{1,35}"/>
+            <xs:maxLength value="35"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="NatureOfTransactionContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CC413B CC429B CC451B CD403B CD401B CC415B CD468B CD443B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{1,2}"/>
+            <xs:maxLength value="2"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AmountNoZeroContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CC413B CC429B CC451B CD403B CD401B CC415B CD468B CD443B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:decimal">
+            <xs:pattern value="([1-9]\d*(\.\d+)?)|(0\.\d*[1-9]\d*)"/>
+            <xs:totalDigits value="16"/>
+            <xs:fractionDigits value="2"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="DateTimeType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CC413B CC410B CD454B CC429B CC451B CD403B CD401B CC415B CC456B CD070D CD071D CD425B CC426B CD407B CD436B CD435B CD406B CD467B CD468B CC404B CD461B CC457B CD971D CD442B CC428B CC414B CD437B CD434B CD459B CD402B CD443B CD449B CD427B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:dateTime">
+            <xs:pattern value="\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="ExchangeRateContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CC413B CC429B CC451B CC415B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:decimal">
+            <xs:pattern value="([1-9]\d*(\.\d+)?)|(0\.\d*[1-9]\d*)"/>
+            <xs:totalDigits value="12"/>
+            <xs:fractionDigits value="5"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="RoleCodeContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CC413B CC429B CC451B CD403B CD401B CC415B CD468B CD443B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:token">
+            <xs:pattern value="[a-zA-Z]{1,3}"/>
+            <xs:maxLength value="3"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="IncotermCodeContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CC413B CC429B CC451B CD403B CD401B CC415B CD468B CD443B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[a-zA-Z]{3}"/>
+            <xs:length value="3"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="UNLOCODEContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CC413B CC429B CC451B CD403B CD401B CD463B CC462B CC415B CD468B CC432B CC433B CD458B CD443B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[a-zA-Z0-9]{1,17}"/>
+            <xs:maxLength value="17"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="LocationNameContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CC413B CC429B CC451B CD403B CD401B CC415B CD468B CD443B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\P{Z}(.*\P{Z})?"/>
+            <xs:maxLength value="35"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="RegionContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CC413B CC429B CC451B CD403B CD401B CC415B CD468B CD443B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\P{Z}(.*\P{Z})?"/>
+            <xs:maxLength value="35"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TypeOfWarehouseContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CC413B CC429B CC451B CD403B CD401B CC415B CD468B CD443B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:token">
+            <xs:pattern value="[a-zA-Z]{1}"/>
+            <xs:length value="1"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="WarehouseIDContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CC413B CC429B CC451B CD403B CD401B CC415B CD468B CD443B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[ -~]{1,35}"/>
+            <xs:maxLength value="35"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="ItemNumberWithoutZeroContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CC413B CC429B CC451B CD403B CD401B CC415B CD468B CC432B CC433B CD458B CD443B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:integer">
+            <xs:pattern value="[1-9][0-9]{0,4}"/>
+            <xs:minInclusive value="1"/>
+            <xs:maxInclusive value="99999"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="IssuingAuthorityNameContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CC413B CC429B CC451B CD403B CD401B CC415B CD468B CD443B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\P{Z}(.*\P{Z})?"/>
+            <xs:maxLength value="70"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AdditionalInfoCodeContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CC413B CC429B CC451B CD403B CD401B CC415B CD468B CD443B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[a-zA-Z0-9]{5}"/>
+            <xs:length value="5"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="ValuationCodeContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CC413B CC429B CC451B CD403B CD401B CC415B CD468B CD443B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[a-zA-Z]{2}"/>
+            <xs:length value="2"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="FiscalRoleContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CC413B CC429B CC451B CD403B CD401B CC415B CD468B CD443B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[a-zA-Z0-9]{3}"/>
+            <xs:length value="3"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="VATIdentificationContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CC413B CC429B CC451B CD403B CD401B CC415B CD468B CD443B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[a-zA-Z0-9]{1,17}"/>
+            <xs:maxLength value="17"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TransportModeContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CC413B CC429B CC451B CD403B CD401B CC415B CD468B CD443B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{1}"/>
+            <xs:length value="1"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="QuantityContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CC413B CC429B CC451B CD403B CD401B CC415B CD468B CC433B CD458B CD443B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:decimal">
+            <xs:pattern value="([1-9]\d*(\.\d+)?)|(0\.\d*[1-9]\d*)"/>
+            <xs:totalDigits value="16"/>
+            <xs:fractionDigits value="6"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="ReferenceNumberUCRContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CC413B CC429B CC451B CD403B CD401B CC415B CD468B CD443B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[a-zA-Z0-9]{1,35}"/>
+            <xs:maxLength value="35"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="ContainerIdentificationNumberContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CC413B CC429B CC451B CD403B CD401B CC415B CD468B CC432B CC433B CD458B CD443B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[ -~]{1,17}"/>
+            <xs:maxLength value="17"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TypeOfLocationContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CC413B CC429B CC451B CD403B CD401B CD463B CC462B CC415B CD468B CC432B CC433B CD458B CD443B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[a-zA-Z]{1}"/>
+            <xs:length value="1"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="LocationIDQualifierContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CC413B CC429B CC451B CD403B CD401B CD463B CC462B CC415B CD468B CC432B CC433B CD458B CD443B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[a-zA-Z]{1}"/>
+            <xs:length value="1"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AdditionalIdentifierContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CC413B CC429B CC451B CD403B CD401B CD463B CC462B CC415B CD468B CC432B CC433B CD458B CD443B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[a-zA-Z0-9]{1,4}"/>
+            <xs:maxLength value="4"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="GNSSLatitudeContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CC413B CC429B CC451B CD403B CD401B CD463B CC462B CC415B CD468B CC432B CC433B CD458B CD443B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[+-]?([0-8]?[0-9]\.[0-9]{5,7}|90.000000?0?)"/>
+            <xs:maxLength value="17"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="GNSSLongitudeContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CC413B CC429B CC451B CD403B CD401B CD463B CC462B CC415B CD468B CC432B CC433B CD458B CD443B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[+-]?((0?[0-9]?|1[0-7])[0-9]\.[0-9]{5,7}|180.000000?0?)"/>
+            <xs:maxLength value="17"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="HouseNumberContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CC413B CC429B CC451B CD403B CD401B CD463B CC462B CC415B CD468B CC432B CC433B CD458B CD443B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\P{Z}(.*\P{Z})?"/>
+            <xs:maxLength value="35"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TransportMeansIdentificationTypeContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CC413B CC429B CC451B CD403B CD401B CC415B CD468B CD443B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{2}"/>
+            <xs:length value="2"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TransportMeansIDContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CC413B CC429B CC451B CD403B CD401B CC415B CD468B CD443B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\P{Z}(.*\P{Z})?"/>
+            <xs:maxLength value="35"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="ProcedureCodeContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CC413B CC429B CC451B CD403B CD401B CC415B CD468B CC433B CD458B CD443B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[a-zA-Z0-9]{2}"/>
+            <xs:length value="2"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AdditionalProcedureContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CC413B CC429B CC451B CD403B CD401B CC415B CD468B CC433B CD458B CD443B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[a-zA-Z0-9]{3}"/>
+            <xs:length value="3"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="PreferentialOriginContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CC413B CC429B CC451B CD403B CD401B CC415B CD468B CD443B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[a-zA-Z0-9]{1,4}"/>
+            <xs:maxLength value="4"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="CUSCodeContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CC413B CC429B CC451B CD403B CD401B CD463B CC462B CC415B CD468B CD443B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value=".{1,9}"/>
+            <xs:length value="9"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="QuotaOrderNumberContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CC413B CC429B CC451B CD403B CD401B CC415B CD468B CD443B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[a-zA-Z0-9]{6}"/>
+            <xs:length value="6"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="HarmonizedSysCodeContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CC413B CC429B CC451B CD403B CD401B CD463B CC462B CC415B CD468B CD443B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[a-zA-Z0-9]{6}"/>
+            <xs:length value="6"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="CombinedNomenclatureCodeContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CC413B CC429B CC451B CD403B CD401B CD463B CC462B CC415B CD468B CD443B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[a-zA-Z0-9]{2}"/>
+            <xs:length value="2"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TaricContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CC413B CC429B CC451B CD403B CD401B CD463B CC462B CC415B CD468B CD443B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[a-zA-Z0-9]{2}"/>
+            <xs:length value="2"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TaricAdditionalCodeContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CC413B CC429B CC451B CD403B CD401B CC415B CD468B CD443B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[a-zA-Z0-9]{4}"/>
+            <xs:length value="4"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="NationalComCodeContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CC413B CC429B CC451B CD403B CD401B CC415B CD468B CD443B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[a-zA-Z0-9]{1,4}"/>
+            <xs:maxLength value="4"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="PreferenceContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CC413B CC429B CC451B CD403B CD401B CC415B CD468B CD443B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[1-9][0-9]{2}"/>
+            <xs:length value="3"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TaxTypeContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CC413B CC429B CC451B CD403B CD401B CC415B CD468B CD443B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[a-zA-Z0-9]{3}"/>
+            <xs:length value="3"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="MethodOfPaymentContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CC413B CC429B CC451B CD403B CD401B CC415B CD468B CD443B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[a-zA-Z]{1}"/>
+            <xs:length value="1"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TaxRateContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CC413B CC429B CC451B CD403B CD401B CC415B CD468B CD443B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:decimal">
+            <xs:pattern value="([1-9]\d*(\.\d+)?)|(0\.\d*[1-9]\d*)"/>
+            <xs:totalDigits value="17"/>
+            <xs:fractionDigits value="3"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="MeasurementUnitContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CC413B CC429B CC451B CD403B CD401B CC415B CD468B CC433B CD458B CD443B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[a-zA-Z0-9]{1,4}"/>
+            <xs:maxLength value="4"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TypeOfPackagesContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CC413B CC429B CC451B CD403B CD401B CC415B CD468B CC433B CD458B CD443B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[a-zA-Z0-9]{2}"/>
+            <xs:length value="2"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="NumberOfPackagesContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CC413B CC429B CC451B CD403B CD401B CC415B CD468B CC433B CD458B CD443B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:integer">
+            <xs:pattern value="(0|[1-9][0-9]{0,7})"/>
+            <xs:minInclusive value="0"/>
+            <xs:maxInclusive value="99999999"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="ValuationMethodContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CC413B CC429B CC451B CD403B CD401B CC415B CD468B CD443B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{1}"/>
+            <xs:length value="1"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="ValuationIndicatorContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CC413B CC429B CC451B CD403B CD401B CC415B CD468B CD443B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-1]{4}"/>
+            <xs:length value="4"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="RiskAnalysisIndicatorContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CD440B CD436B CD468B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[a-zA-Z]{1}"/>
+            <xs:length value="1"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="ItemNumberWithZeroContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CD440B CD468B CC444B CD441B CC429B CD443B CC451B CD436B CD445B CC447B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:integer">
+            <xs:pattern value="[0-9]{0,5}"/>
+            <xs:minInclusive value="0"/>
+            <xs:maxInclusive value="99999"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="RiskAreaCodeContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CD440B CD468B CC444B CD441B CC429B CD443B CC451B CD436B CD445B CC447B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[a-zA-Z0-9]{1,7}"/>
+            <xs:maxLength value="7"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="ControlTypeContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CD440B CD468B CC444B CD441B CC429B CD443B CC451B CC460B CD445B CD436B CC447B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[a-zA-Z0-9]{1,3}"/>
+            <xs:maxLength value="3"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="CRCContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CD440B CD468B CD436B CD445B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[a-zA-Z0-9]{1,17}"/>
+            <xs:maxLength value="17"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="ControlResultContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CD440B CC444B CC429B CD441B CD443B CC451B CD468B CC447B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[a-zA-Z0-9]{2}"/>
+            <xs:length value="2"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="DiscrepanciesContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CD440B CC444B CD441B CC429B CD443B CC451B CD468B CC447B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[a-zA-Z0-9]{1,2}"/>
+            <xs:maxLength value="2"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="MessageTypeContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CD903E </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value=".{6}"/>
+            <xs:length value="6"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="YearContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CD903E CD411E </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[2][0][1-9][0-9]"/>
+            <xs:length value="4"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="MonthContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CD903E CD411E </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value=".{2}"/>
+            <xs:length value="2"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="WarningPointerContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CD903E </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\P{Z}(.*\P{Z})?"/>
+            <xs:maxLength value="512"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="WarningCodeContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CD903E </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value=".{6}"/>
+            <xs:length value="6"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="CRNContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CD403B CD425B CD401B CD436B CD435B CD406B CD467B CD461B CD437B CD916B CD917B CD434B CD459B CD402B CD458B CD449B CD427B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{2}[A-Z]{2}[A-Z0-9]{13}[0-9]"/>
+            <xs:length value="18"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="RejectionTypeContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CC456B CD407B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[a-zA-Z0-9]{3}"/>
+            <xs:length value="3"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="RejectionCodeContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CC456B CD407B CD461B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{1,2}"/>
+            <xs:maxLength value="2"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="ErrorCodeContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CC456B CD916B CD434B CD906D CD917B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{2}"/>
+            <xs:length value="2"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="ErrorReasonContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CC456B CD916B CD434B CD906D </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\P{Z}(.*\P{Z})?"/>
+            <xs:maxLength value="10"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="OperationContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CD070D CD071D CD411E CD971D </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[A-Za-z]{1}"/>
+            <xs:length value="1"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SystemUnavailabilityContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CD070D CD071D CD971D </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[a-zA-Z]{1}"/>
+            <xs:length value="1"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="FunctionalityContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CD070D CD071D CD971D </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[A-Za-z]{1}"/>
+            <xs:length value="1"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="ExplanationContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CD070D CD071D CD971D </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value=".{2}"/>
+            <xs:length value="2"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="NotificationTypeContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CC460B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{1}"/>
+            <xs:length value="1"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SystemCodeContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CD411E </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{1,2}"/>
+            <xs:maxLength value="2"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="StatisticsTypeContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CD411E </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[a-zA-Z0-9]{4}"/>
+            <xs:length value="4"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="StatisticsTypeSupportContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CD411E </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{1}"/>
+            <xs:length value="1"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="OtherCountryContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CD411E </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[A-Za-z]{2}"/>
+            <xs:length value="2"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="CounterContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CD411E </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:integer">
+            <xs:pattern value="(0|[1-9][0-9]{0,8})"/>
+            <xs:minInclusive value="0"/>
+            <xs:maxInclusive value="999999999"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="XMLErrorContentType">
+        <xs:annotation>
+            <xs:documentation>
+                <usedBy> Used by CD917B </usedBy>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="(0|[1-9][0-9]{0,8})"/>
+            <xs:maxLength value="9"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>
+
