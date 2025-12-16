@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+xmlns="http://cci.dgtaxud.ec" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
+targetNamespace="http://cci.dgtaxud.ec" xmlns:extensions="urn:eds:datamodel:EDS:EDS_EXTENSIONS:1" elementFormDefault="unqualified" attributeFormDefault="unqualified" version="1.0.2_3.00">
+    <!--=================================================================================================================-->
+    <!--===== IE433: E_PNO_EDR                                                                                           -->
+    <!--===== Presentation Notification for EIDR                                                                         -->
+    <!--===== CCI Phase 2 (Full) Scope                                                                                   -->
+    <!--===== XSD version 1.0.2_3.00                                                                                     -->
+    <!--=================================================================================================================-->
+    <!--===== Include                                                                                                    -->
+    <xs:include schemaLocation="../DMS_CCI_DS/CTYPES.xsd"/>
+    <xs:include schemaLocation="../DMS_CCI_DS/HTYPES.xsd"/>
+    <xs:import namespace="urn:eds:datamodel:EDS:EDS_EXTENSIONS:1" schemaLocation="../DMS_CCI_DS/EDS/EDS_EXTENSIONS.xsd"/>
+    <!--=================================================================================================================-->
+    <!--===== Root element                                                                                               -->
+    <!--=================================================================================================================-->
+    <xs:element name="CC433B" type="CC433BType"/>
+    <!--=================================================================================================================-->
+    <!--===== Root element Content                                                                                       -->
+    <!--=================================================================================================================-->
+    <xs:complexType name="CC433BType">
+        <xs:sequence>
+            <xs:element name="Extensions" type="extensions:ExtensionType" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:group ref="MESSAGE"/>
+            <xs:element name="ImportOperation" minOccurs="1" maxOccurs="1" type="MCciOperationType38">
+                <xs:annotation>
+                    <xs:documentation>
+                        <description value="IMPORT OPERATION"/>
+                        <optionality value="R"/>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Authorisation" minOccurs="1" maxOccurs="9" type="MAuthorisationType01">
+                <xs:annotation>
+                    <xs:documentation>
+                        <description value="AUTHORISATION"/>
+                        <optionality value="R"/>
+                        <Rule>G0920</Rule>
+                        <Rule>R0598</Rule>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="CustomsOfficeOfPresentation" minOccurs="1" maxOccurs="1" type="MPcoType">
+                <xs:annotation>
+                    <xs:documentation>
+                        <description value="CUSTOMS OFFICE OF PRESENTATION"/>
+                        <optionality value="R"/>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Declarant" minOccurs="1" maxOccurs="1" type="MDeclarantType02">
+                <xs:annotation>
+                    <xs:documentation>
+                        <description value="DECLARANT"/>
+                        <optionality value="R"/>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Representative" minOccurs="0" maxOccurs="1" type="MRepresentativeType02">
+                <xs:annotation>
+                    <xs:documentation>
+                        <description value="REPRESENTATIVE"/>
+                        <optionality value="O"/>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="GoodsShipment" minOccurs="1" maxOccurs="1" type="MGoodsShipmentType03">
+                <xs:annotation>
+                    <xs:documentation>
+                        <description value="GOODS SHIPMENT"/>
+                        <optionality value="R"/>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
+

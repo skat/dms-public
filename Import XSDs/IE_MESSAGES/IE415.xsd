@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+xmlns="http://cci.dgtaxud.ec" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
+targetNamespace="http://cci.dgtaxud.ec"  xmlns:extensions="urn:eds:datamodel:EDS:EDS_EXTENSIONS:1"
+           xmlns:auth="urn:wco:datamodel:WCO:WCO_DEC_EDS_AUTHORISATION:1" elementFormDefault="unqualified" attributeFormDefault="unqualified" version="1.0.2_3.00">
+    <!--=================================================================================================================-->
+    <!--===== IE415: E_IMP_DAT                                                                                           -->
+    <!--===== Customs Declaration for Import                                                                             -->
+    <!--===== CCI Phase 2 (Full) Scope                                                                                   -->
+    <!--===== XSD version 1.0.2_3.00                                                                                     -->
+    <!--=================================================================================================================-->
+    <!--===== Include                                                                                                    -->
+    <xs:include schemaLocation="../DMS_CCI_DS/CTYPES.xsd"/>
+    <xs:include schemaLocation="../DMS_CCI_DS/HTYPES.xsd"/>
+    <xs:include schemaLocation="../DMS_CCI_DS/EXTENDED_CTYPES.xsd"/>
+    <xs:import namespace="urn:eds:datamodel:EDS:EDS_EXTENSIONS:1" schemaLocation="../DMS_CCI_DS/EDS/EDS_EXTENSIONS.xsd"/>
+    <xs:import namespace="urn:wco:datamodel:WCO:WCO_DEC_EDS_AUTHORISATION:1" schemaLocation="../DMS_CCI_DS/WCO_EDS/WCO_DEC_EDS_AUTHORISATION.xsd"/>
+    <!--=================================================================================================================-->
+    <!--===== Root element                                                                                               -->
+    <!--=================================================================================================================-->
+    <xs:element name="CC415B" type="CC415BType"/>
+    <!--=================================================================================================================-->
+    <!--===== Root element Content                                                                                       -->
+    <!--=================================================================================================================-->
+    <xs:complexType name="CC415BType">
+        <xs:sequence>
+            <xs:element name="Extensions" type="extensions:ExtensionType" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:group ref="MESSAGE"/>
+            <xs:element name="ImportOperation" minOccurs="1" maxOccurs="1" type="MCciOperationErmisType04">
+                <xs:annotation>
+                    <xs:documentation>
+                        <description value="IMPORT OPERATION"/>
+                        <optionality value="R"/>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Authorisation" minOccurs="0" maxOccurs="9" type="MAuthorisationType04">
+                <xs:annotation>
+                    <xs:documentation>
+                        <description value="AUTHORISATION"/>
+                        <optionality value="R"/>
+                        <Rule>R0932</Rule>
+                        <Rule>G0920</Rule>
+                        <Rule>R0998</Rule>
+                        <Rule>G0930</Rule>
+                        <Rule>R0933</Rule>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="CustomsOfficeOfPresentation" minOccurs="0" maxOccurs="1" type="MPcoType">
+                <xs:annotation>
+                    <xs:documentation>
+                        <description value="CUSTOMS OFFICE OF PRESENTATION"/>
+                        <optionality value="R"/>
+                        <Rule>R0596</Rule>
+                        <Rule>R0597</Rule>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="SupervisingCustomsOffice" minOccurs="0" maxOccurs="1" type="MScoType">
+                <xs:annotation>
+                    <xs:documentation>
+                        <description value="SUPERVISING CUSTOMS OFFICE"/>
+                        <optionality value="O"/>
+                        <Rule>G0631</Rule>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Importer" minOccurs="1" maxOccurs="1" type="MImporterType01">
+                <xs:annotation>
+                    <xs:documentation>
+                        <description value="IMPORTER"/>
+                        <optionality value="R"/>
+                        <Rule>R0596</Rule>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Declarant" minOccurs="1" maxOccurs="1" type="MDeclarantErmisType01">
+                <xs:annotation>
+                    <xs:documentation>
+                        <description value="DECLARANT"/>
+                        <optionality value="R"/>
+                        <Rule>R0596</Rule>
+                        <Rule>R0597</Rule>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="PersonProvidingAGuarantee" minOccurs="0" maxOccurs="1" type="MPersonProvidingGuaranteeType">
+                <xs:annotation>
+                    <xs:documentation>
+                        <description value="PERSON PROVIDING A GUARANTEE"/>
+                        <optionality value="D"/>
+                        <Rule>R0995</Rule>
+                        <Condition>C0824</Condition>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="PersonPayingCustomsDuty" minOccurs="0" maxOccurs="1" type="MPersonPayingCustomsDutyType">
+                <xs:annotation>
+                    <xs:documentation>
+                        <description value="PERSON PAYING CUSTOMS DUTY"/>
+                        <optionality value="D"/>
+                        <Rule>R0995</Rule>
+                        <Rule>R0596</Rule>
+                        <Condition>C0809</Condition>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Representative" minOccurs="0" maxOccurs="1" type="MRepresentativeErmisType01">
+                <xs:annotation>
+                    <xs:documentation>
+                        <description value="REPRESENTATIVE"/>
+                        <optionality value="O"/>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Guarantee" minOccurs="0" maxOccurs="9" type="MGuaranteeErmisType">
+                <xs:annotation>
+                    <xs:documentation>
+                        <description value="GUARANTEE"/>
+                        <optionality value="D"/>
+                        <Rule>S0014</Rule>
+                        <Condition>C0697</Condition>
+                        <Condition>C0616</Condition>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="CurrencyExchange" minOccurs="0" maxOccurs="1" type="MCurrencyExchangeType">
+                <xs:annotation>
+                    <xs:documentation>
+                        <description value="CURRENCY EXCHANGE"/>
+                        <optionality value="O"/>
+                        <Rule>G0405</Rule>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="DeferredPayment" minOccurs="0" maxOccurs="9" type="MDeferredPaymentType">
+                <xs:annotation>
+                    <xs:documentation>
+                        <description value="DEFERRED PAYMENT"/>
+                        <optionality value="D"/>
+                        <Condition>C0697</Condition>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="GoodsShipment" minOccurs="1" maxOccurs="9999" type="MGoodsShipmentErmisType05">
+                <xs:annotation>
+                    <xs:documentation>
+                        <description value="GOODS SHIPMENT"/>
+                        <optionality value="R"/>
+                        <Rule>R0764</Rule>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="AdmissionUseProcessingAuthorisation" minOccurs="0" maxOccurs="1" type="auth:AdmissionUseProcessingAuthorisation"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
+
