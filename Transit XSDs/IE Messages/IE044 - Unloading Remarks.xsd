@@ -242,6 +242,16 @@
                                 </xs:documentation>
                             </xs:annotation>
                         </xs:element>
+                        <xs:element name="referenceNumberUCR" minOccurs="0" type="ReferenceNumberUCRContentType03">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    <description value="Reference number UCR" />
+                                    <format value="an..70" />
+                                    <optionality value="D" />
+                                    <xsdBaseType value="UCRReferenceNumber70" />
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
                         <xs:element name="TransportEquipment" minOccurs="0" maxOccurs="9999">
                             <xs:annotation>
                                 <xs:documentation>
@@ -308,7 +318,7 @@
                                                         </xs:documentation>
                                                     </xs:annotation>
                                                 </xs:element>
-                                                <xs:element name="identifier" type="IdentifierContentType02">
+                                                <xs:element name="identifier" minOccurs="0" type="IdentifierContentType02">
                                                     <xs:annotation>
                                                         <xs:documentation>
                                                             <description value="Identifier" />
@@ -344,12 +354,12 @@
                                                         </xs:documentation>
                                                     </xs:annotation>
                                                 </xs:element>
-                                                <xs:element name="declarationGoodsItemNumber" type="DeclarationGoodsItemNumberContentType01">
+                                                <xs:element name="declarationGoodsItemNumber" minOccurs="0" type="DeclarationGoodsItemNumberContentType01">
                                                     <xs:annotation>
                                                         <xs:documentation>
                                                             <description value="Declaration goods item number" />
                                                             <format value="n..5" />
-                                                            <optionality value="R" />
+                                                            <optionality value="O" />
                                                             <xsdBaseType value="DeclarationGoodsItemNumberType" />
                                                         </xs:documentation>
                                                     </xs:annotation>
@@ -406,6 +416,44 @@
                                         <xs:annotation>
                                             <xs:documentation>
                                                 <description value="Nationality" />
+                                                <format value="a2" />
+                                                <optionality value="O" />
+                                                <xsdBaseType value="CountryCodeType" />
+                                            </xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="CountryOfRoutingOfConsignment" minOccurs="0" maxOccurs="99">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    <description value="COUNTRY OF ROUTING OF CONSIGNMENT" />
+                                    <optionality value="O" />
+                                </xs:documentation>
+                            </xs:annotation>
+                            <xs:complexType>
+                                <xs:annotation>
+                                    <xs:documentation>
+                                        <usedBy>Used by 2/124 messages: CC044C, CD018C</usedBy>
+                                    </xs:documentation>
+                                </xs:annotation>
+                                <xs:sequence>
+                                    <xs:element name="sequenceNumber" type="SequenceNumberContentType">
+                                        <xs:annotation>
+                                            <xs:documentation>
+                                                <description value="Sequence number" />
+                                                <format value="n..5" />
+                                                <optionality value="R" />
+                                                <xsdBaseType value="NumericWithoutZero_5" />
+                                            </xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="country" minOccurs="0" type="CountryContentType">
+                                        <xs:annotation>
+                                            <xs:documentation>
+                                                <description value="Country" />
+                                                <codeList code="CL008" type="business" name="CountryCodesFullList" />
                                                 <format value="a2" />
                                                 <optionality value="O" />
                                                 <xsdBaseType value="CountryCodeType" />
@@ -590,6 +638,16 @@
                                                 <format value="n..16,6" />
                                                 <optionality value="O" />
                                                 <xsdBaseType value="DecimalWithZero_16_6" />
+                                            </xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="referenceNumberUCR" minOccurs="0" type="ReferenceNumberUCRContentType03">
+                                        <xs:annotation>
+                                            <xs:documentation>
+                                                <description value="Reference number UCR" />
+                                                <format value="an..70" />
+                                                <optionality value="D" />
+                                                <xsdBaseType value="UCRReferenceNumber70" />
                                             </xs:documentation>
                                         </xs:annotation>
                                     </xs:element>
@@ -823,6 +881,16 @@
                                                             <format value="n..5" />
                                                             <optionality value="O" />
                                                             <xsdBaseType value="DeclarationGoodsItemNumberType" />
+                                                        </xs:documentation>
+                                                    </xs:annotation>
+                                                </xs:element>
+                                                <xs:element name="referenceNumberUCR" minOccurs="0" type="ReferenceNumberUCRContentType03">
+                                                    <xs:annotation>
+                                                        <xs:documentation>
+                                                            <description value="Reference number UCR" />
+                                                            <format value="an..70" />
+                                                            <optionality value="D" />
+                                                            <xsdBaseType value="UCRReferenceNumber70" />
                                                         </xs:documentation>
                                                     </xs:annotation>
                                                 </xs:element>
