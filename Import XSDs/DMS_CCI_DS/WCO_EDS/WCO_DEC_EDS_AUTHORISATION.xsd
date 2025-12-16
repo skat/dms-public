@@ -1,0 +1,2959 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="urn:wco:datamodel:WCO:WCO_DEC_EDS_AUTHORISATION:1"
+    xmlns:ds="urn:wco:datamodel:WCO:Declaration_DS:DMS:2"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:udt="urn:un:unece:uncefact:data:standard:UnqualifiedDataType:6"
+    targetNamespace="urn:wco:datamodel:WCO:WCO_DEC_EDS_AUTHORISATION:1"
+    elementFormDefault="qualified"
+    version="1.0">
+  <xs:import namespace="urn:un:unece:uncefact:data:standard:UnqualifiedDataType:6" schemaLocation="../UNECE/UNQUALIFIEDDATATYPE_6_DMS.xsd"/>
+  <xs:import namespace="urn:wco:datamodel:WCO:Declaration_DS:DMS:2"
+    schemaLocation="../WCO_DS/WCO_DEC_DS_2_DMS.xsd" />
+
+  <xs:complexType name="Authorisation"></xs:complexType>
+
+  <xs:complexType name="AuthorisationBase">
+    <xs:complexContent>
+      <xs:extension base="Authorisation">
+        <xs:sequence>
+          <xs:element name="ApplicationCodeType" type="AuthorisationCodeType" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="EN">
+                <WCOFormat>an..4</WCOFormat>
+                <WCODescription>Authorisation code type for application</WCODescription>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="DecisionCodeType" type="AuthorisationCodeType" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="EN">
+                <WCOFormat>an..4</WCOFormat>
+                <WCODescription>Authorisation code type for decision</WCODescription>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ApplicationSignature" type="SignatureType" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="EN">
+                <WCOFormat>an..256</WCOFormat>
+                <WCODescription>Authorisation signature for application</WCODescription>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="DecisionSignature" type="SignatureType" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="EN">
+                <WCOFormat>an.256</WCOFormat>
+                <WCODescription>Authorisation signature for decision</WCODescription>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="DecisionReferenceNumber" type="DecisionReferenceNumberType" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="EN">
+                <WCODescription>Unique reference attributed by the competent customs authority to the decision.</WCODescription>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="DecisionCustomsAuthority" type="DecisionCustomsAuthorityType" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="EN">
+                <WCODescription>Name and address of the customs authority which takes the decision</WCODescription>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="AttachedDocument" type="AttachedDocumentType" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation xml:lang="EN">
+                <WCODescription>Document(s) attached to the application or the decision</WCODescription>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="AttachedDocuments" type="AttachedDocumentsType" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="EN">
+                <WCODescription>Document(s) attached to the application or the decision</WCODescription>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ApplicationHolder" type="RepresentativeType" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="EN">
+                <WCODescription>Applicant of the authorisation</WCODescription>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="DecisionHolder" type="RepresentativeType" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="EN">
+                <WCODescription>Decision holder representative</WCODescription>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ApplicationHolderId" type="AuthorisationIDType" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="EN">
+                <WCOFormat>an..17</WCOFormat>
+              </xs:documentation>
+              <xs:documentation>
+                <WCODescription>Application holder ID</WCODescription>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="DecisionHolderId" type="AuthorisationIDType" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="EN">
+                <WCOFormat>an..17</WCOFormat>
+              </xs:documentation>
+              <xs:documentation>
+                <WCODescription>Decision holder ID</WCODescription>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ApplicationSupervisor" type="PersonContactDetailsType" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="EN">
+                <WCODescription>Contact details of person responsible for the application</WCODescription>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ApplicationDate" type="udt:DateTimeType" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="EN">
+                <WCOFormat>n8(yyyymmdd)</WCOFormat>
+              </xs:documentation>
+              <xs:documentation>
+                <WCODescription>Date on which the applicant has signed or otherwise authenticated the application</WCODescription>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="DecisionDate" type="udt:DateTimeType" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="EN">
+                <WCOFormat>n8(yyyymmdd)</WCOFormat>
+              </xs:documentation>
+              <xs:documentation>
+                <WCODescription>The date on which the authorisation or decision relating to binding information
+                  or on the repayment or remission of import or export duty was taken.</WCODescription>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <!--applicationPlace-->
+          <xs:element name="ApplicationPlace" type="ApplicationPlaceType" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="EN">
+                <WCOFormat>an..2560</WCOFormat>
+              </xs:documentation>
+              <xs:documentation>
+                <WCODescription>Application's place(city)</WCODescription>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="GeneralRemarks" type="GeneralRemarksType" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="EN">
+                <WCOFormat>an..2560</WCOFormat>
+                <WCODescription>General remarks regarding particulars of any requirements to which
+                  the goods remain subject pending implementation of the decision</WCODescription>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="AdmissionUseProcessingAuthorisationBase">
+    <xs:complexContent>
+      <xs:extension base="Authorisation">
+        <xs:sequence>
+          <xs:element name="CustomsOfficesOfDischarge" type="CustomsOfficesOfDischargeType" minOccurs="0" maxOccurs="999">
+            <xs:annotation>
+              <xs:documentation xml:lang="EN">
+                <WCOFormat>an..8</WCOFormat>
+                <WCODescription>Customs Offices of discharge for application</WCODescription>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="SupervisingCustomsOffice" type="CustomsOfficeLocationTextType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation xml:lang="EN">
+                <WCOFormat>an..8</WCOFormat>
+                <WCODescription>Supervising Customs Office for application</WCODescription>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="DetailsOfPlannedActivities" type="DetailsOfPlannedActivitiesType" minOccurs="0" maxOccurs="99">
+          </xs:element>
+          <xs:element name="AdditionalInformation" type="AdditionalInformationTextType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation xml:lang="EN">
+                <WCOFormat>an..2560</WCOFormat>
+                <WCODescription>Additional information</WCODescription>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="RepaymentRemissionAuthorisation">
+    <xs:complexContent>
+      <xs:extension base="AuthorisationBase">
+        <xs:sequence>
+          <xs:element name="Representative" type="RRMRepresentativeType" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="EN">
+                <WCODescription>Repayment/Remission representative</WCODescription>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="RepresentativeId" type="AuthorisationIDType" minOccurs="0" maxOccurs="1" >
+            <xs:annotation>
+              <xs:documentation xml:lang="EN">
+                <WCOFormat>an..17</WCOFormat>
+              </xs:documentation>
+              <xs:documentation>
+                <WCODescription>Representative Identification</WCODescription>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="GoodsLocation" type="GoodsLocationType" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation xml:lang="EN">
+                <WCODescription>Locations of goods</WCODescription>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="TraderCommodityCode" type="CommodityCodeType" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation xml:lang="EN">
+                <WCODescription>Trader commodity codes</WCODescription>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="CustomsCommodityCode" type="CommodityCodeType" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="EN">
+                <WCODescription>Customs commodity code</WCODescription>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="GoodsDescription" type="GoodsDescriptionType" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation xml:lang="EN">
+                <WCOFormat>an..2560</WCOFormat>
+              </xs:documentation>
+              <xs:documentation>
+                <WCODescription>Description of goods</WCODescription>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="DescriptionOfGoods" type="DescriptionOfGoodsType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>
+                <WCODescription>Description of goods</WCODescription>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="TraderGoodsQuantity" type="GoodsQuantityType" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation xml:lang="EN">
+                <WCODescription>Trader goods quantities</WCODescription>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="CustomsGoodsQuantity" type="GoodsQuantityType" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="EN">
+                <WCODescription>Customs goods quantity</WCODescription>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="AdditionalInformation" type="AdditionalInformationTextType" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="EN">
+                <WCOFormat>an..512</WCOFormat>
+                <WCODescription>Additional information</WCODescription>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="RecoveryTitle" type="RecoveryTitleTextType" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation xml:lang="EN">
+                <WCOFormat>an..35</WCOFormat>
+              </xs:documentation>
+              <xs:documentation>
+                <WCODescription>Title of recovery</WCODescription>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="CustomsOfficeNotified" type="CustomsOfficeNotifiedType" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="EN">
+                <WCOFormat>an8</WCOFormat>
+              </xs:documentation>
+              <xs:documentation>
+                <WCODescription>Customs office where the customs debt was notified</WCODescription>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="CustomsOfficeLocation" type="CustomsOfficeLocationTextType" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="EN">
+                <WCOFormat>an8</WCOFormat>
+              </xs:documentation>
+              <xs:documentation>
+                <WCODescription>Customs office responsible for the place where the goods are located</WCODescription>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="CustomsOfficeComments" type="CustomsOfficeCommentsTextType" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="EN">
+                <WCOFormat>an..2560</WCOFormat>
+              </xs:documentation>
+              <xs:documentation>
+                <WCODescription>Comments of the customs office responsible for the place where the goods are located</WCODescription>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="CustomsProcedure" type="CustomsProcedureType" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="EN">
+                <WCODescription>Customs procedure (request for prior completion of formalities)</WCODescription>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="CustomsValue" type="ValueType" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="EN">
+                <WCODescription>Customs value</WCODescription>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="AmountDuty" type="ValueType" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="EN">
+                <WCODescription>Amount of import or export duty to be repaid or remitted of</WCODescription>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="DutyType" type="DutyCodeTypeType" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation xml:lang="EN">
+                <WCODescription>Type of import or export duty</WCODescription>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="LegalBasis" type="LegalBasisTextType" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="EN">
+                <WCOFormat>a1</WCOFormat>
+              </xs:documentation>
+              <xs:documentation>
+                <WCODescription>Legal basis</WCODescription>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="GoodsDestination" type="GoodsDestinationTextType" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="EN">
+                <WCOFormat>an..2560</WCOFormat>
+              </xs:documentation>
+              <xs:documentation>
+                <WCODescription>Use or destination of goods</WCODescription>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="CompletionTimeLimit" type="CompletionTimeLimitNumericType" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="EN">
+                <WCOFormat>n..3</WCOFormat>
+              </xs:documentation>
+              <xs:documentation>
+                <WCODescription>Time-limit for completion of formalities</WCODescription>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="CustomsStatement" type="CustomsStatementTextType" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="EN">
+                <WCOFormat>an..2560</WCOFormat>
+              </xs:documentation>
+              <xs:documentation>
+                <WCODescription>Statement of the decision-taking customs authority</WCODescription>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="TraderGroundsDescription" type="GroundsDescriptionTextType" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="EN">
+                <WCOFormat>an..2560</WCOFormat>
+              </xs:documentation>
+              <xs:documentation>
+                <WCODescription>Description of the grounds for repayment or remission A</WCODescription>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="CustomsGroundsDescription" type="GroundsDescriptionTextType" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="EN">
+                <WCOFormat>an..2560</WCOFormat>
+              </xs:documentation>
+              <xs:documentation>
+                <WCODescription>Description of the grounds for repayment or remission D</WCODescription>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="BankDetails" type="BankDetailsTextType" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="EN">
+                <WCOFormat>an..2560</WCOFormat>
+              </xs:documentation>
+              <xs:documentation>
+                <WCODescription>Bank and account details</WCODescription>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="AdmissionUseProcessingAuthorisation">
+    <xs:complexContent>
+      <xs:extension base="AdmissionUseProcessingAuthorisationBase">
+        <xs:sequence>
+          <xs:element name="GoodsOwner" type="GoodsOwnerType" minOccurs="0" maxOccurs="99">
+            <xs:annotation>
+              <xs:documentation xml:lang="EN">
+                <WCODescription>Non-Union owner of the goods to be placed under the temporary admission</WCODescription>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="HarmonisedSystemSubheadingCode" type="TextSize6Type">
+            <xs:annotation>
+              <xs:documentation xml:lang="EN">
+                <WCOFormat>an..6</WCOFormat>
+                <WCODescription>Harmonised System Subheading Code</WCODescription>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="PlaceWhereMainAccountsForCustomsPurposesAreHeldOrAccessible" type="Place" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="EN">
+                <WCODescription>Place where main accounts for customs purposes are held or accessible
+                </WCODescription>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="FirstPlaceOfUseOrProcessing" type="Place" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation xml:lang="EN">
+                <WCODescription>First place of use or processing under the temporary admission</WCODescription>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="PlaceOfProcessingOrUse" type="Place" minOccurs="0" maxOccurs="999">
+            <xs:annotation>
+              <xs:documentation xml:lang="EN">
+                <WCODescription>Place of use or processing under the temporary admission</WCODescription>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="DischargePeriod" type="DischargeType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation xml:lang="EN">
+                <WCODescription>Period of discharge under the temporary admission</WCODescription>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="BillOfDischarge" type="BillOfDischargeType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation xml:lang="EN">
+                <WCODescription>Bill of discharge under the temporary admission</WCODescription>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ProcessedProducts" type="ProcessedProductsType" minOccurs="0" maxOccurs="999"/>
+          <xs:element name="GoodsInformation" type="GoodsInformationType" minOccurs="0" maxOccurs="999"/>
+          <xs:element name="ImportDuty" type="ImportDutyType" minOccurs="0"/>
+          <xs:element name="PlaceOfMainAccountsForCustomsPurposes" type="PlaceOfMainAccountsForCustomsPurposesType" minOccurs="0"/>
+          <xs:element name="PlaceWhereRecordsAreKept" type="PlaceWhereRecordsAreKeptType" minOccurs="0" maxOccurs="99"/>
+          <xs:element name="GoodsItemDetails" type="GoodsItemDetailsType" minOccurs="0" maxOccurs="9999"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <!--  *************************************************************************************************-->
+  <!--  *************************************************************************************************-->
+  <!--  *************************************************************************************************-->
+
+  <xs:complexType name="CustomsProcedureType">
+    <xs:sequence>
+      <xs:element name="Code" type="CustomsProcedureCodeType" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>an2</WCOFormat>
+            <WCODescription>Customs procedure code</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Checked" type="CheckboxIndicatorType" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>boolean</WCOFormat>
+            <WCODescription>Customs procedure checkbox</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DecisionReferenceNumber" type="DecisionReferenceNumberType" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>an2</WCOFormat>
+            <WCODescription>Customs procedure code</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="GoodsQuantityType">
+    <xs:sequence>
+      <xs:element name="Measurement" type="GoodsQuantityMeasurementType" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>an..4</WCOFormat>
+            <WCODescription>Goods quantities measurement</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Quantity" type="GoodsQuantityTypeType" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>n..16,6</WCOFormat>
+            <WCODescription>Goods quantities</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="CommodityCodeType">
+    <xs:sequence>
+      <xs:element name="HarmonisedSystemSubheadingCode" type="TextSize6Type">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>an..6</WCOFormat>
+            <WCODescription>Harmonised System Subheading Code</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="NomenclatureCode" type="NomenclatureCodeType" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>an..8</WCOFormat>
+            <WCODescription>First subdivision combined nomenclature code</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TaricSubheading" type="TaricSubheadingTextType" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>an2</WCOFormat>
+            <WCODescription>Second subdivision subheading</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TaricAdditionalCodes" type="TaricType" minOccurs="0" maxOccurs="99">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCODescription>TARIC additional codes list</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TaricAdditionalCode" type="TaricAdditionalCodeType" maxOccurs="1" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>an4</WCOFormat>
+            <WCODescription>Third subdivision taric additional codes</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="NationalAdditionalCode" type="NationalAdditionalCodeType" maxOccurs="1" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>an..4</WCOFormat>
+            <WCODescription>Fourth subdivision national additional code</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="TaricType">
+    <xs:sequence>
+      <xs:element name="TaricAdditionalCode" type="TaricAdditionalCodeType" maxOccurs="1" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>an4</WCOFormat>
+            <WCODescription>Third subdivision taric additional codes</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="NationalAdditionalCode" type="NationalAdditionalCodeType" maxOccurs="1" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>an..4</WCOFormat>
+            <WCODescription>Fourth subdivision national additional code</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="GoodsLocationType">
+    <xs:sequence>
+      <xs:element name="CountryCode" type="ds:AddressCountryCodeType" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>a2</WCOFormat>
+            <WCODescription>Goods Location country code</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="LocationCodeType" type="LocationCodeCodeType" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>a1</WCOFormat>
+            <WCODescription>Goods location code type</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IdentificationQualifier" type="IdentificationQualifierType" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>a1</WCOFormat>
+            <WCODescription>Goods location identification qualifier</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="LocationIdentification" type="LocationIdentificationType" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>an..35</WCOFormat>
+            <WCODescription>Goods location identification</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="AuthorizationNumber" type="AuthorizationNumberType" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>an..35</WCOFormat>
+            <WCODescription>Authorization Number identification</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="AdditionalIdentifier" type="AdditionalIdentifierNumericType" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>an..8</WCOFormat>
+            <WCODescription>Location additional identifier</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="LocationParticulars" type="LocationParticularsType" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCODescription>Goods location particulars</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CustomsOffice" type="CustomsOfficeReferenceNumberType" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>an8</WCOFormat>
+            <WCODescription>Customs office reference number</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="GNSS" type="GNSSType" minOccurs="0"  maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCODescription>GNSS</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="EconomicOperator" type="EconomicOperatorIdentificationNumberType" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>an..17</WCOFormat>
+            <WCODescription>Economic operator identification number</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Name" type="AuthorisationGoodsLocationNameTextType" minOccurs="0" maxOccurs="1" >
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>an..70</WCOFormat>
+            <WCODescription>Goods location name</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="StreetAndNumber" type="StreetAndNumberType" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>an..70</WCOFormat>
+            <WCODescription>Location street and number</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PostCode" type="ds:AddressPostcodeIDType" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>an..17</WCOFormat>
+            <WCODescription>Location postcode</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="City" type="ds:AddressCityNameTextType" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>an..35</WCOFormat>
+            <WCODescription>Location city</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Address" type="AddressType" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCODescription>Location of goods address</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PostcodeAddress" type="PostcodeAddressType" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCODescription>Postcode address</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ContactPerson" type="ContactPersonType" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>an..35</WCOFormat>
+            <WCODescription>Contact person</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="PersonContactDetailsType">
+    <xs:sequence>
+      <xs:element name="Name" type="PersonContactDetailsNameTextType" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>an..70</WCOFormat>
+            <WCODescription>Contact details person name</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TelephoneNumber" type="TelephoneNumberTextType" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>an..50</WCOFormat>
+            <WCODescription>Contact details person telephone</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="FaxNumber" type="TelephoneNumberTextType" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>an..50</WCOFormat>
+            <WCODescription>Contact details person fax</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="EmailAddress" type="EmailTextType" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>an..256</WCOFormat>
+            <WCODescription>Contact details person email</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="PostcodeAddressType">
+    <xs:sequence>
+      <xs:element name="Postcode" type="PostcodeType" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>an..17</WCOFormat>
+            <WCODescription>Contact person name</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="HouseNumber" type="HouseNumberTextType" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>an..50</WCOFormat>
+            <WCODescription>Postcode address house number</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PostCodeCountryCode" type="PostCodeCountryCodeType" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>a2</WCOFormat>
+            <WCODescription>Postcode Address country code</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="LocationParticularsType">
+    <xs:sequence>
+      <xs:element name="IdentificationQualifier" type="IdentificationQualifierType" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>a1</WCOFormat>
+            <WCODescription>Goods location identification qualifier</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="UN-LOCODE" type="UNLocodeType" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>an..17</WCOFormat>
+            <WCODescription>The UN-LOCODE</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="AuthorisationNumber" type="AuthorisationNumberType" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>an..35</WCOFormat>
+            <WCODescription>The authorisation number of the location concerned</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="AdditionalIdentifierText" type="AdditionalIdentifierTextType" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>an..8</WCOFormat>
+            <WCODescription>Location additional identifier</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="AddressType">
+    <xs:sequence>
+      <xs:element name="StreetAndNumber" type="StreetAndNumberType" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>an..70</WCOFormat>
+            <WCODescription>Location street and number</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CountryCode" type="ds:AddressCountryCodeType" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>a2</WCOFormat>
+            <WCODescription>Goods Location country code</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PostCode" type="ds:AddressPostcodeIDType" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>an..17</WCOFormat>
+            <WCODescription>Location postcode</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="City" type="ds:AddressCityNameTextType" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>an..35</WCOFormat>
+            <WCODescription>Location city</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ContactPersonType">
+    <xs:sequence>
+      <xs:element name="Name" type="PersonContactDetailsNameTextType" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>an..70</WCOFormat>
+            <WCODescription>Contact person name</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TelephoneNumber" type="TelephoneNumberTextType" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>an..50</WCOFormat>
+            <WCODescription>Contact details person telephone</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="EmailAddress" type="EmailTextType" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>an..256</WCOFormat>
+            <WCODescription>Contact details person email</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="AttachedDocumentsType">
+  <xs:sequence>
+    <xs:element name="TotalAttachedDocuments" type="TotalDocumentsNumericType" minOccurs="0" maxOccurs="1">
+      <xs:annotation>
+        <xs:documentation xml:lang="EN">
+          <WCOFormat>n..3</WCOFormat>
+          <WCODescription>Total number of documents attached to the application or the decision</WCODescription>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+    <xs:element name="AttachedDocument" type="AttachedDocumentType" minOccurs="0" maxOccurs="unbounded">
+      <xs:annotation>
+        <xs:documentation xml:lang="EN">
+          <WCODescription>Document attached to the application or the decision</WCODescription>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="TotalDocumentsNumericType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>n..3</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="udt:NumericType">
+      <xs:totalDigits value="3"/>
+      <xs:fractionDigits value="0"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="AttachedDocumentType">
+    <xs:sequence>
+      <xs:element name="Type" type="AttachedDocumentTypeType" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>an..70</WCOFormat>
+            <WCODescription>Attached document type</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Name" type="AttachedDocumentTypeName" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>an..2560</WCOFormat>
+            <WCODescription>Attached document name</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="AttachedDocumentID" type="AttachedDocumentIdentifierType" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>an..35</WCOFormat>
+            <WCODescription>Attached document identifier</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="AttachedDocumentIDNumber" type="AttachedDocumentIdentificationNumber" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>an..70</WCOFormat>
+            <WCODescription>Attached document identification number</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="AttachedDocumentDate" type="udt:DateTimeType" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>n8</WCOFormat>
+            <WCODescription>Attached document type</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="RepresentativeType">
+    <xs:sequence>
+      <xs:element name="Name" type="RepresentativeNameTextType" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>an..70</WCOFormat>
+            <WCODescription>Holder name</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="StreetAndNumber" type="StreetAndNumberType" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>an..70</WCOFormat>
+            <WCODescription>Holder street and number</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CountryCode" type="ds:AddressCountryCodeType" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>a2</WCOFormat>
+            <WCODescription>Holder country code</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PostCode" type="ds:AddressPostcodeIDType" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>an..17</WCOFormat>
+            <WCODescription>Holder postcode</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="City" type="ds:AddressCityNameTextType" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>an..35</WCOFormat>
+            <WCODescription>Holder city</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="GoodsOwnerType">
+    <xs:complexContent>
+      <xs:extension base="RepresentativeType">
+        <xs:sequence>
+          <xs:element name="SequenceNumeric" type="GoodsOwnerSequenceNumericType">
+            <xs:annotation>
+              <xs:documentation xml:lang="EN">
+                <WCOFormat>n2</WCOFormat>
+                <WCODescription>Sequence numeric of the owner of the goods</WCODescription>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="RRMRepresentativeType">
+    <xs:complexContent>
+      <xs:extension base="RepresentativeType">
+        <xs:sequence>
+          <xs:element name="RepresentativeIdentification" type="AuthorisationIDType" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="EN">
+                <WCOFormat>an..17</WCOFormat>
+                <WCODescription>Representative Identification EORI number</WCODescription>
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:simpleType name="GoodsOwnerSequenceNumericType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>n..5</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="udt:NumericType">
+      <xs:totalDigits value="5"/>
+      <xs:fractionDigits value="0"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="DecisionCustomsAuthorityType">
+    <xs:sequence>
+      <xs:element name="CustomsOfficeId" type="CustomsOfficeLocationTextType" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>an8</WCOFormat>
+            <WCODescription>Customs office encoded location identity</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Name" type="DecisionCustomsAuthorityNameTextType" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>an..70</WCOFormat>
+            <WCODescription>Decision customs authority name</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="StreetAndNumber" type="StreetAndNumberType" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>an..70</WCOFormat>
+            <WCODescription>Decision customs authority street and number</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CountryCode" type="ds:AddressCountryCodeType" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>a2</WCOFormat>
+            <WCODescription>Decision customs authority country code</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PostCode" type="ds:AddressPostcodeIDType" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>an..9</WCOFormat>
+            <WCODescription>Decision customs authority post code</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="City" type="ds:AddressCityNameTextType" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>an..35</WCOFormat>
+            <WCODescription>Decision customs authority city</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ValueType">
+    <xs:sequence>
+      <xs:element name="Currency" type="CurrencyType" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>a3</WCOFormat>
+            <WCODescription>Currency type</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Amount" type="AmountTypeType" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>n..16,6</WCOFormat>
+            <WCODescription>Amount type</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="AmountTypeType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>n..16,6</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="udt:AmountType">
+        <xs:totalDigits value="16"/>
+        <xs:fractionDigits value="6"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="CurrencyType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>a3</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="udt:CodeType">
+        <xs:length value="3"/>
+        <xs:pattern value="([a-zA-Z])*"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="LegalBasisTextType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>a1</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="udt:TextType">
+        <xs:length value="1"/>
+        <xs:pattern value="([a-zA-Z])"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="CompletionTimeLimitNumericType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>n..3</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="udt:NumericType">
+      <xs:totalDigits value="3"/>
+      <xs:fractionDigits value="0"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="GoodsDestinationTextType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>an..2560</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="udt:TextType">
+        <xs:maxLength value="2560"/>
+        <xs:pattern value=".*[^\s].*"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="CustomsStatementTextType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>an..2560</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="udt:TextType">
+        <xs:maxLength value="2560"/>
+        <xs:pattern value=".*[^\s].*"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="GroundsDescriptionTextType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>an..2560</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="udt:TextType">
+        <xs:maxLength value="2560"/>
+        <xs:pattern value=".*[^\s].*"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="BankDetailsTextType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>an..2560</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="udt:TextType">
+        <xs:maxLength value="2560"/>
+        <xs:pattern value=".*[^\s].*"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="PeriodOfDischargeTextType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>an..2560</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="udt:TextType">
+        <xs:maxLength value="2560"/>
+        <xs:pattern value=".*[^\s].*"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="YieldRateTextType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>an..512</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="udt:TextType">
+        <xs:maxLength value="512"/>
+        <xs:pattern value=".*[^\s].*"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="DutyCodeTypeType">
+    <xs:sequence>
+      <xs:element name="UnionCode" type="UnionCodeType" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>a1+n2</WCOFormat>
+            <WCODescription>Union code type</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="NationalCode" type="NationalCodeType" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>n1+an2</WCOFormat>
+            <WCODescription>National code type</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Amount" type="AmountTypeType" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>n..16,6</WCOFormat>
+            <WCODescription>Amount type</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="UnionCodeType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>a1+n2</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="udt:CodeType">
+        <xs:length value="3"/>
+        <xs:pattern value="([a-zA-Z]){1}([0-9]){2}"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="NationalCodeType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>n1+an2</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="udt:CodeType">
+        <xs:length value="3"/>
+        <xs:pattern value="([0-9]){1}([a-zA-Z0-9]){2}"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="CheckboxIndicatorType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>boolean</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="udt:IndicatorType">
+      <xs:pattern value="false" />
+      <xs:pattern value="true" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="CustomsProcedureCodeType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>an2</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="udt:CodeType">
+        <xs:length value="2"/>
+        <xs:pattern value="([a-zA-Z0-9])*"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="RecoveryTitleTextType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>an..35</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="udt:TextType">
+        <xs:maxLength value="35"/>
+        <xs:pattern value="([a-zA-Z0-9])*"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="CustomsOfficeNotifiedType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>an8</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="udt:TextType">
+        <xs:length value="8"/>
+        <xs:pattern value="([a-zA-Z0-9])*"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="CustomsOfficeLocationTextType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>an8</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="udt:TextType">
+        <xs:length value="8"/>
+        <xs:pattern value="([a-zA-Z0-9])*"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="DetailsOfPlannedActivitiesTextType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>an8</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="udt:TextType">
+        <xs:maxLength value="2560"/>
+        <xs:pattern value=".*[^\s].*"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="CustomsOfficeCommentsTextType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>an..2560</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="udt:TextType">
+        <xs:maxLength value="2560"/>
+        <xs:pattern value=".*[^\s].*"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="GoodsQuantityTypeType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>n..16,6</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="udt:QuantityType">
+        <xs:totalDigits value="16"/>
+        <xs:fractionDigits value="6"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="GoodsQuantityMeasurementType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>an..4</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="udt:TextType">
+        <xs:maxLength value="4"/>
+        <xs:pattern value="([a-zA-Z0-9])*"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="GoodsDescriptionType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>an..2560</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="udt:TextType">
+        <xs:maxLength value="2560"/>
+        <xs:pattern value=".*[^\s].*"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="ApplicationPlaceType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>an..2560</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="udt:TextType">
+        <xs:maxLength value="2560"/>
+        <xs:pattern value=".*[^\s].*"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="NationalAdditionalCodeType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>an..4</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="udt:CodeType">
+        <xs:maxLength value="4"/>
+        <xs:pattern value="([a-zA-Z0-9])*"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="TaricAdditionalCodeType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>an4</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="udt:CodeType">
+        <xs:length value="4"/>
+        <xs:pattern value="([a-zA-Z0-9])*"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="NomenclatureCodeType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>an..8</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="udt:CodeType">
+        <xs:maxLength value="8"/>
+        <xs:pattern value="([a-zA-Z0-9])*"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="TaricSubheadingTextType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>an2</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="udt:TextType">
+        <xs:length value="2"/>
+        <xs:pattern value="([a-zA-Z0-9])*"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="LocationCodeCodeType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>a1</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="udt:CodeType">
+        <xs:length value="1"/>
+        <xs:pattern value="([a-zA-Z])"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="IdentificationQualifierType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>a1</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="udt:IDType">
+        <xs:length value="1"/>
+        <xs:pattern value=".*[^\s].*"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="AuthorisationReferenceNumberType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>an..35</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="udt:TextType">
+        <xs:maxLength value="35"/>
+        <xs:pattern value=".*\S.*"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+
+  <xs:complexType name="LocationIdentificationType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>an..35</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="udt:TextType">
+        <xs:maxLength value="35"/>
+        <xs:pattern value=".*[^\s].*"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="AuthorizationNumberType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>an..35</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="udt:TextType">
+        <xs:maxLength value="35"/>
+        <xs:pattern value="([a-zA-Z0-9])*"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="AdditionalIdentifierNumericType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>an..8</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+      <xs:restriction base="udt:NumericType">
+        <xs:totalDigits value="8"/>
+        <xs:fractionDigits value="0"/>
+      </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="AdditionalIdentifierTextType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>an..8</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="udt:TextType">
+        <xs:maxLength value="8"/>
+        <xs:pattern value="([a-zA-Z0-9])*"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="TextSize2Type">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>an2</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="udt:TextType">
+        <xs:length value="2"/>
+        <xs:pattern value="([a-zA-Z0-9])*"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="TextSize6Type">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>an..6</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="udt:TextType">
+        <xs:maxLength value="6"/>
+        <xs:pattern value="([a-zA-Z0-9])*"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="TextSize8Type">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>an..8</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="udt:TextType">
+        <xs:maxLength value="8"/>
+        <xs:pattern value=".*\S.*"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="TextSize17Type">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>an..17</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="udt:TextType">
+        <xs:maxLength value="17"/>
+        <xs:pattern value=".*\S.*"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="TextSize2560Type">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>an..2560</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="udt:TextType">
+        <xs:maxLength value="2560"/>
+        <xs:pattern value=".*\S.*"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="GNSSCoordinateType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>an..17</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="udt:TextType">
+        <xs:maxLength value="17"/>
+        <xs:pattern value=".*\S.*"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="AlfaNumericSize35Type">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>an..35</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="udt:TextType">
+        <xs:maxLength value="35"/>
+        <xs:pattern value="([a-zA-Z0-9])*"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="AttachedDocumentTypeType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>an..70</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="udt:TextType">
+        <xs:maxLength value="70"/>
+        <xs:pattern value=".*[^\s].*"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="AttachedDocumentTypeName">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>an..2560</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="udt:TextType">
+        <xs:maxLength value="2560"/>
+        <xs:pattern value=".*[^\s].*"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="AttachedDocumentIdentifierType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>an..35</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="udt:IDType">
+        <xs:maxLength value="35"/>
+        <xs:pattern value="([a-zA-Z0-9])*"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="AttachedDocumentIdentificationNumber">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>an..70</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="udt:IDType">
+        <xs:maxLength value="70"/>
+        <xs:pattern value="([a-zA-Z0-9])*"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="TelephoneNumberTextType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>an..50</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="udt:TextType">
+        <xs:maxLength value="50"/>
+        <xs:pattern value=".*[^\s].*"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="EmailTextType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>an..256</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="udt:TextType">
+        <xs:maxLength value="256"/>
+        <xs:pattern value=".*[^\s].*"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="NameTextType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>an..70</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="udt:TextType">
+        <xs:maxLength value="70"/>
+        <xs:pattern value=".*[^\s].*"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="UNLocodeType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>an..17</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="udt:TextType">
+        <xs:maxLength value="17"/>
+        <xs:pattern value=".*[^\s].*"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="AuthorisationNumberType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>an..35</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="udt:IDType">
+        <xs:maxLength value="35"/>
+        <xs:pattern value="([a-zA-Z0-9])*"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="PostcodeType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>an..17</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="udt:CodeType">
+        <xs:maxLength value="17"/>
+        <xs:pattern value="([a-zA-Z0-9])*"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="HouseNumberTextType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>an..35</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="udt:TextType">
+        <xs:maxLength value="35"/>
+        <xs:pattern value="([a-zA-Z0-9])*"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="PostCodeCountryCodeType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>a2</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="udt:CodeType">
+        <xs:length value="2"/>
+        <xs:pattern value="([a-zA-Z])*"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="CustomsOfficeReferenceNumberType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>an8</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="udt:TextType">
+        <xs:length value="8"/>
+        <xs:pattern value="([a-zA-Z0-9])*"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="EconomicOperatorIdentificationNumberType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>an..17</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="udt:IDType">
+        <xs:maxLength value="17"/>
+        <xs:pattern value="([a-zA-Z0-9])*"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="AuthorisationGoodsLocationNameTextType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>an..70</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="udt:TextType">
+        <xs:maxLength value="70"/>
+        <xs:pattern value=".*[^\s].*"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="PersonContactDetailsNameTextType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>an..70</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="udt:TextType">
+        <xs:maxLength value="70"/>
+        <xs:pattern value=".*[^\s].*"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="AdditionalInformationTextType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>an..2560</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="udt:TextType">
+        <xs:maxLength value="2560"/>
+        <xs:pattern value=".*[^\s].*"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="GeneralRemarksType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>an..2560</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="udt:TextType">
+        <xs:maxLength value="2560"/>
+        <xs:pattern value=".*[^\s].*"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="AuthorisationIDType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>an..17</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="udt:IDType">
+        <xs:maxLength value="17"/>
+        <xs:pattern value="([a-zA-Z0-9])*"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="DecisionCustomsAuthorityNameTextType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>an..70</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="udt:TextType">
+        <xs:maxLength value="70"/>
+        <xs:pattern value=".*[^\s].*"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="StreetAndNumberType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>an..70</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="udt:TextType">
+        <xs:maxLength value="70"/>
+        <xs:pattern value=".*[^\s].*"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="DecisionReferenceNumberType">
+    <xs:sequence>
+      <xs:element name="CountryCode" type="ds:AddressCountryCodeType" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>an..2</WCOFormat>
+            <WCODescription>Decision reference number country code</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ReferenceNumber" type="DecisionReferenceNumberTextType" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>an..29</WCOFormat>
+            <WCODescription>Decision reference number </WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CodeType" type="DecisionReferenceNumberCodeType" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>an..4</WCOFormat>
+            <WCODescription>Decision reference number code </WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="DecisionReferenceNumberTextType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>an..29</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="udt:TextType">
+        <xs:maxLength value="29"/>
+        <xs:pattern value="([a-zA-Z0-9])*"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="DecisionReferenceNumberCodeType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>an..4</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="udt:CodeType">
+        <xs:maxLength value="4"/>
+        <xs:pattern value="([a-zA-Z0-9])*"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="SignatureType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>an..256</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="udt:TextType">
+        <xs:maxLength value="256"/>
+        <xs:pattern value=".*[^\s].*"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="RepresentativeNameTextType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>an..70</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="udt:TextType">
+        <xs:maxLength value="70"/>
+        <xs:pattern value=".*[^\s].*"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="AuthorisationCodeType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>an..4</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="udt:CodeType">
+        <xs:maxLength value="4"/>
+        <xs:pattern value="([a-zA-Z0-9])*"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="PlaceAllOptional">
+    <xs:sequence>
+      <xs:element name="SequenceNumeric" type="PlaceSequenceNumericType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>n..5</WCOFormat>
+            <WCODescription>Sequence numeric of processed products</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="LocationTypeCode" type="LocationCodeCodeType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>an2</WCOFormat>
+            <WCODescription>First Place of Use Location type code</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="QualifierOfTheIdentification" type="IdentificationQualifierType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>an2</WCOFormat>
+            <WCODescription>Qualifier of the Identification for First Place of Use</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="AuthorisationReferenceNumber" type="AuthorisationReferenceNumberType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>an2</WCOFormat>
+            <WCODescription>Qualifier of the Identification for First Place of Use</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="AdditionalIdentifier" type="TextSize8Type" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>an..35</WCOFormat>
+            <WCODescription>Additional lIdentifier of the First Place of Use</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="UNLocode" type="TextSize17Type" minOccurs="0" />
+      <xs:element name="CustomsOffice" type="CustomsOfficeAllOptionalType" minOccurs="0" />
+      <xs:element name="GNSS" type="GNSSAllOptionalType" minOccurs="0" />
+      <xs:element name="EconomicOperator" type="EconomicOperatorAllOptionalType" minOccurs="0" />
+      <xs:element name="Address" type="PlaceAddressAllOptionalType" minOccurs="0" />
+      <xs:element name="PostcodeAddress" type="PlacePostcodeAddressAllOptionalType" minOccurs="0" />
+      <xs:element name="ContactPerson" type="PlaceContactPersonType" minOccurs="0" maxOccurs="9"/>
+    </xs:sequence>
+  </xs:complexType>
+
+
+  <xs:complexType name="Place">
+    <xs:sequence>
+      <xs:element name="SequenceNumeric" type="PlaceSequenceNumericType">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>n..5</WCOFormat>
+            <WCODescription>Sequence numeric of processed products</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="LocationTypeCode" type="LocationCodeCodeType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>an2</WCOFormat>
+            <WCODescription>First Place of Use Location type code</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="QualifierOfTheIdentification" type="IdentificationQualifierType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>an2</WCOFormat>
+            <WCODescription>Qualifier of the Identification for First Place of Use</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="AuthorisationReferenceNumber" type="AuthorisationReferenceNumberType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>an2</WCOFormat>
+            <WCODescription>Qualifier of the Identification for First Place of Use</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="AdditionalIdentifier" type="AdditionalIdentifierNumericType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>an..35</WCOFormat>
+            <WCODescription>Additional lIdentifier of the First Place of Use</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="UNLocode" type="TextSize17Type" minOccurs="0" />
+      <xs:element name="CustomsOffice" type="CustomsOfficeType" minOccurs="0" />
+      <xs:element name="GNSS" type="GNSSType" minOccurs="0" />
+      <xs:element name="EconomicOperator" type="EconomicOperatorType" minOccurs="0" />
+      <xs:element name="Address" type="PlaceAddressType" minOccurs="0" />
+      <xs:element name="PostcodeAddress" type="PlacePostcodeAddressType" minOccurs="0" />
+      <xs:element name="ContactPerson" type="PlaceContactPersonType" minOccurs="0" maxOccurs="9"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="PlaceSequenceNumericType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>n..5</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="udt:NumericType">
+      <xs:totalDigits value="5"/>
+      <xs:fractionDigits value="0"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="DetailsOfPlannedActivitiesType">
+    <xs:sequence>
+      <xs:element name="SequenceNumeric" type="DetailsOfPlannedActivitiesSequenceNumericType">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>n..5</WCOFormat>
+            <WCODescription>Sequence numeric of processed products</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="MemberState" type="ds:AddressCountryCodeType">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>a2</WCOFormat>
+            <WCODescription>Member state country code</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="FreeText" type="DetailsOfPlannedActivitiesTextType">
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+
+  <xs:complexType name="CustomsOfficesOfDischargeType">
+    <xs:sequence>
+      <xs:element name="SequenceNumeric" type="CustomsOfficesOfDischargeSequenceNumericType">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>n..5</WCOFormat>
+            <WCODescription>Sequence numeric of processed products</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CustomsOfficesOfDischarge" type="CustomsOfficeLocationTextType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>an8</WCOFormat>
+            <WCODescription>Customs Offices of discharge code</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="SequenceNumericType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>n..5</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="udt:NumericType">
+      <xs:totalDigits value="5"/>
+      <xs:fractionDigits value="0"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="CustomsOfficesOfDischargeSequenceNumericType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>n..5</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="udt:NumericType">
+      <xs:totalDigits value="5"/>
+      <xs:fractionDigits value="0"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="DetailsOfPlannedActivitiesSequenceNumericType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>n..5</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="udt:NumericType">
+      <xs:totalDigits value="5"/>
+      <xs:fractionDigits value="0"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="CustomsOfficeType">
+    <xs:sequence>
+      <xs:element name="Identification" type="TextSize8Type"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="CustomsOfficeAllOptionalType">
+    <xs:sequence>
+      <xs:element name="Identification" type="TextSize8Type" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="EconomicOperatorType">
+    <xs:sequence>
+      <xs:element name="Identification" type="TextSize17Type"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="EconomicOperatorAllOptionalType">
+    <xs:sequence>
+      <xs:element name="Identification" type="TextSize17Type" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="PlaceAddressType">
+    <xs:sequence>
+      <xs:element name="StreetAndNumber" type="StreetAndNumberType"/>
+      <xs:element name="PostCode" type="ds:AddressPostcodeIDType" minOccurs="0"/>
+      <xs:element name="City" type="ds:AddressCityNameTextType"/>
+      <xs:element name="CountryCode" type="ds:AddressCountryCodeType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="PlaceAddressAllOptionalType">
+    <xs:sequence>
+      <xs:element name="StreetAndNumber" type="StreetAndNumberType" minOccurs="0"/>
+      <xs:element name="PostCode" type="ds:AddressPostcodeIDType" minOccurs="0"/>
+      <xs:element name="City" type="ds:AddressCityNameTextType" minOccurs="0"/>
+      <xs:element name="CountryCode" type="ds:AddressCountryCodeType" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="HouseNumberType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOID>245</WCOID>
+        <WCOFormat>an..17</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="udt:IDType">
+        <xs:maxLength value="35"/>
+        <xs:pattern value=".*[^\s].*"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="PlacePostcodeAddressType">
+    <xs:sequence>
+      <xs:element name="HouseNumber" type="HouseNumberType" minOccurs="0"/>
+      <xs:element name="PostCode" type="ds:AddressPostcodeIDType"/>
+      <xs:element name="CountryCode" type="ds:AddressCountryCodeType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="PlacePostcodeAddressAllOptionalType">
+    <xs:sequence>
+      <xs:element name="HouseNumber" type="HouseNumberType" minOccurs="0"/>
+      <xs:element name="PostCode" type="ds:AddressPostcodeIDType" minOccurs="0"/>
+      <xs:element name="CountryCode" type="ds:AddressCountryCodeType" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="PlaceContactPersonType">
+    <xs:sequence>
+      <xs:element name="SequenceNumeric" type="SequenceNumericType"/>
+      <xs:element name="Name" type="NameTextType"/>
+      <xs:element name="TelephoneNumber" type="TelephoneNumberTextType"/>
+      <xs:element name="EMailAddress" type="EmailTextType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="PlaceContactPersonAllOptionalType">
+    <xs:sequence>
+      <xs:element name="SequenceNumeric" type="SequenceNumericType" minOccurs="0"/>
+      <xs:element name="Name" type="NameTextType" minOccurs="0"/>
+      <xs:element name="TelephoneNumber" type="TelephoneNumberTextType" minOccurs="0"/>
+      <xs:element name="EMailAddress" type="EmailTextType" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="GNSSType">
+    <xs:sequence>
+      <xs:element name="Latitude" type="GNSSCoordinateType"/>
+      <xs:element name="Longitude" type="GNSSCoordinateType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="GNSSAllOptionalType">
+    <xs:sequence>
+      <xs:element name="Latitude" type="GNSSCoordinateType" minOccurs="0"/>
+      <xs:element name="Longitude" type="GNSSCoordinateType" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="DischargeType">
+    <xs:sequence>
+      <xs:element name="Checked" type="TickBoxType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>n1</WCOFormat>
+            <WCODescription>Period of discharge tickbox</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Code" type="NumericSize1Type" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>n1</WCOFormat>
+            <WCODescription>Period of discharge tickbox</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Period" type="PeriodType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>n2</WCOFormat>
+            <WCODescription>Period of discharge type</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="FreeText" type="PeriodOfDischargeTextType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>an..2560</WCOFormat>
+            <WCODescription>Period of discharge Free text</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="BillOfDischargeType">
+    <xs:sequence>
+      <xs:element name="Period" type="PeriodType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>n2</WCOFormat>
+            <WCODescription>Period of discharge type</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TickBox" type="TickBoxType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>n1</WCOFormat>
+            <WCODescription>Period of discharge tickbox</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="FreeText" type="PeriodOfDischargeTextType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>an..2560</WCOFormat>
+            <WCODescription>Period of discharge Free text</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="PeriodType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>n2</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="udt:NumericType">
+      <xs:totalDigits value="2"/>
+      <xs:fractionDigits value="0"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="TickBoxType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>n1</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="udt:NumericType">
+      <xs:totalDigits value="1"/>
+      <xs:fractionDigits value="0"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="NumericSize1Type">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>n1</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="udt:NumericType">
+      <xs:totalDigits value="1"/>
+      <xs:fractionDigits value="0"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="YieldRateSequenceNumericType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>n..3</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="udt:NumericType">
+      <xs:totalDigits value="3"/>
+      <xs:fractionDigits value="0"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="ProcessedProductsCommodityCodeType">
+    <xs:sequence>
+      <xs:element name="HarmonizedSystemSubheadingCode" type="TextSize6Type"/>
+      <xs:element name="CombinedNomenclatureCode" type="TextSize2Type"/>
+      <xs:element name="TaricCode" type="TextSize2Type" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ProcessedProductsCommodityCodeAllOptionalType">
+    <xs:sequence>
+      <xs:element name="HarmonizedSystemSubheadingCode" type="TextSize6Type" minOccurs="0"/>
+      <xs:element name="CombinedNomenclatureCode" type="TextSize2Type" minOccurs="0"/>
+      <xs:element name="TaricCode" type="TextSize2Type" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ProcessedProductsTaricAdditionalCodeType">
+    <xs:sequence>
+      <xs:element name="SequenceNumeric" type="SequenceNumericType" />
+      <xs:element name="TaricAdditionalCode" type="TaricAdditionalCodeType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ProcessedProductsTaricAdditionalCodeAllOptionalType">
+    <xs:sequence>
+      <xs:element name="SequenceNumeric" type="SequenceNumericType" minOccurs="0"/>
+      <xs:element name="TaricAdditionalCode" type="TaricAdditionalCodeType" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ProcessedProductsDescriptionOfGoodsType">
+    <xs:sequence>
+      <xs:element name="DescriptionOfGoods" type="DescriptionOfGoodsTextType">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>an..2560</WCOFormat>
+            <WCODescription>Description of goods Text</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ProcessedProductsDescriptionOfGoodsAllOptionalType">
+    <xs:sequence>
+      <xs:element name="DescriptionOfGoods" type="DescriptionOfGoodsTextType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>an..2560</WCOFormat>
+            <WCODescription>Description of goods Text</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ProcessedProductsType">
+    <xs:sequence>
+      <xs:element name="SequenceNumeric" type="ProcessedProductsSequenceNumericType">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>n..5</WCOFormat>
+            <WCODescription>Sequence numeric of processed products</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CommodityCode" type="ProcessedProductsCommodityCodeType" minOccurs="0"/>
+      <xs:element name="TaricAdditionalCode" type="ProcessedProductsTaricAdditionalCodeType" minOccurs="0" maxOccurs="99"/>
+      <xs:element name="DescriptionOfGoods" type="ProcessedProductsDescriptionOfGoodsType" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ProcessedProductsAllOptionalType">
+    <xs:sequence>
+      <xs:element name="SequenceNumeric" type="ProcessedProductsSequenceNumericType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>n..5</WCOFormat>
+            <WCODescription>Sequence numeric of processed products</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CommodityCode" type="ProcessedProductsCommodityCodeAllOptionalType" minOccurs="0"/>
+      <xs:element name="TaricAdditionalCode" type="ProcessedProductsTaricAdditionalCodeAllOptionalType" minOccurs="0" maxOccurs="99"/>
+      <xs:element name="DescriptionOfGoods" type="ProcessedProductsDescriptionOfGoodsAllOptionalType" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="EconomicConditionsType">
+    <xs:sequence>
+      <xs:element name="Code" type="NumericSize1Type" minOccurs="0"/>
+      <xs:element name="FreeText" type="TextSize2560Type" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="IdentificationOfGoodsType">
+    <xs:sequence>
+      <xs:element name="SequenceNumeric" type="SequenceNumericType"/>
+      <xs:element name="Code" type="NumericSize1Type" minOccurs="0"/>
+      <xs:element name="FreeText" type="TextSize2560Type" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="IdentificationOfGoodsAllOptionalType">
+    <xs:sequence>
+      <xs:element name="SequenceNumeric" type="SequenceNumericType" minOccurs="0"/>
+      <xs:element name="Code" type="NumericSize1Type" minOccurs="0"/>
+      <xs:element name="FreeText" type="TextSize2560Type" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="RateOfYieldType">
+    <xs:sequence>
+      <xs:element name="FreeText" type="TextSize2560Type"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="RateOfYieldAllOptionalType">
+    <xs:sequence>
+      <xs:element name="FreeText" type="TextSize2560Type" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="GoodsInformationType">
+    <xs:sequence>
+      <xs:element name="SequenceNumeric" type="SequenceNumericType"/>
+      <xs:element name="EconomicConditions" type="EconomicConditionsType" minOccurs="0"/>
+      <xs:element name="IdentificationOfGoods" type="IdentificationOfGoodsType" minOccurs="0" maxOccurs="9"/>
+      <xs:element name="RateOfYield" type="RateOfYieldType" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="GoodsInformationAllOptionalType">
+    <xs:sequence>
+      <xs:element name="SequenceNumeric" type="SequenceNumericType" minOccurs="0"/>
+      <xs:element name="EconomicConditions" type="EconomicConditionsType" minOccurs="0"/>
+      <xs:element name="IdentificationOfGoods" type="IdentificationOfGoodsAllOptionalType" minOccurs="0" maxOccurs="9"/>
+      <xs:element name="RateOfYield" type="RateOfYieldAllOptionalType" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ImportDutyType">
+    <xs:sequence>
+      <xs:element name="Code" type="NumericSize1Type"/>
+      <xs:element name="FreeText" type="TextSize2560Type" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="PlaceOfMainAccountsForCustomsPurposesType">
+    <xs:sequence>
+      <xs:element name="StreetAndNumber" type="StreetAndNumberType"/>
+      <xs:element name="PostCode" type="ds:AddressPostcodeIDType" minOccurs="0"/>
+      <xs:element name="City" type="ds:AddressCityNameTextType"/>
+      <xs:element name="CountryCode" type="ds:AddressCountryCodeType"/>
+      <xs:element name="UNLocode" type="TextSize17Type" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="PlaceWhereRecordsAreKeptType">
+    <xs:sequence>
+      <xs:element name="SequenceNumeric" type="SequenceNumericType"/>
+      <xs:element name="Name" type="NameTextType" minOccurs="0"/>
+      <xs:element name="StreetAndNumber" type="StreetAndNumberType" minOccurs="0"/>
+      <xs:element name="PostCode" type="ds:AddressPostcodeIDType" minOccurs="0"/>
+      <xs:element name="City" type="ds:AddressCityNameTextType" minOccurs="0"/>
+      <xs:element name="CountryCode" type="ds:AddressCountryCodeType" minOccurs="0"/>
+      <xs:element name="UNLocode" type="TextSize17Type" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="DetailsDetailsOfPlannedActivitiesAllOptionalType">
+    <xs:sequence>
+      <xs:element name="SequenceNumeric" type="DetailsOfPlannedActivitiesSequenceNumericType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>n..5</WCOFormat>
+            <WCODescription>Sequence numeric of processed products</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="MemberState" type="ds:AddressCountryCodeType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>a2</WCOFormat>
+            <WCODescription>Member state country code</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="FreeText" type="DetailsOfPlannedActivitiesTextType" minOccurs="0">
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="GoodsItemDetailsGoodsOwnerAllOptionalType">
+    <xs:sequence>
+      <xs:element name="SequenceNumeric" type="DetailsOfPlannedActivitiesSequenceNumericType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>n..5</WCOFormat>
+            <WCODescription>Sequence numeric of processed products</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Name" type="RepresentativeNameTextType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>an..70</WCOFormat>
+            <WCODescription>Holder name</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="StreetAndNumber" type="StreetAndNumberType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>an..70</WCOFormat>
+            <WCODescription>Holder street and number</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CountryCode" type="ds:AddressCountryCodeType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>a2</WCOFormat>
+            <WCODescription>Holder country code</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PostCode" type="ds:AddressPostcodeIDType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>an..17</WCOFormat>
+            <WCODescription>Holder postcode</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="City" type="ds:AddressCityNameTextType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>an..35</WCOFormat>
+            <WCODescription>Holder city</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+
+  <xs:complexType name="GoodsItemDetailsType">
+    <xs:sequence>
+      <xs:element name="SequenceNumeric" type="SequenceNumericType" minOccurs="0"/>
+      <xs:element name="DeclarationGoodsItemNumber" type="SequenceNumericType" minOccurs="0"/>
+      <xs:element name="DetailsOfPlannedActivities" type="DetailsDetailsOfPlannedActivitiesAllOptionalType" minOccurs="0"/>
+      <xs:element name="AdditionalInformation" type="TextSize2560Type" minOccurs="0"/>
+      <xs:element name="GoodsOwner" type="GoodsItemDetailsGoodsOwnerAllOptionalType" minOccurs="0" maxOccurs="99"/>
+      <xs:element name="PlaceOfProcessingOrUse" type="PlaceAllOptional" minOccurs="0" maxOccurs="99"/>
+      <xs:element name="GoodsInformation" type="GoodsInformationAllOptionalType" minOccurs="0" maxOccurs="9999"/>
+      <xs:element name="ProcessedProducts" type="ProcessedProductsAllOptionalType" minOccurs="0" maxOccurs="999"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="ProcessedProductsSequenceNumericType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>n..5</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="udt:NumericType">
+      <xs:totalDigits value="5"/>
+      <xs:fractionDigits value="0"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="DescriptionOfGoodsType">
+    <xs:sequence>
+    <xs:element name="Indicator" type="IndicatorType" minOccurs="0" maxOccurs="1">
+      <xs:annotation>
+        <xs:documentation xml:lang="EN">
+          <WCOFormat>n1</WCOFormat>
+          <WCODescription>Sequence numeric of processed products</WCODescription>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+      <xs:element name="DescriptionOfGoods" type="DescriptionOfGoodsTextType" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>an..2560</WCOFormat>
+            <WCODescription>Description of goods Text</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="DescriptionOfGoodsTextType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>an..2560</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="udt:TextType">
+        <xs:maxLength value="2560"/>
+        <xs:pattern value=".*[^\s].*"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="IndicatorType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>n1</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="udt:NumericType">
+      <xs:totalDigits value="1"/>
+      <xs:fractionDigits value="0"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="AuthorisationCode">
+    <xs:sequence>
+      <xs:element name="SequenceNumeric" type="AuthorisationCodeSequenceNumericType">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>n..3</WCOFormat>
+            <WCODescription>Sequence numeric of identification of goods</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Code" type="AuthorisationCodeCodeType">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>n1</WCOFormat>
+            <WCODescription>Code for processed products</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="FreeText" type="AuthorisationCodeTextType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">
+            <WCOFormat>an..512</WCOFormat>
+            <WCODescription>Description of goods Text</WCODescription>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="AuthorisationCodeSequenceNumericType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>n..3</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="udt:NumericType">
+      <xs:totalDigits value="3"/>
+      <xs:fractionDigits value="0"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="AuthorisationCodeCodeType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>n..2</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="udt:NumericType">
+      <xs:totalDigits value="2"/>
+      <xs:fractionDigits value="0"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="AuthorisationCodeTextType">
+    <xs:annotation>
+      <xs:documentation>
+        <WCOFormat>an..512</WCOFormat>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:restriction base="udt:TextType">
+        <xs:maxLength value="512"/>
+        <xs:pattern value=".*[^\s].*"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+</xs:schema>
