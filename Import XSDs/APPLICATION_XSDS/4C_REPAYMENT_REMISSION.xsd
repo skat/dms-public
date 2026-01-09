@@ -137,13 +137,22 @@
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="Representative" type="RepresentativeType" minOccurs="0">
-                <xs:annotation>
-                    <xs:documentation xml:lang="EN">
-                        <WCODescription>Repayment/Remission representative</WCODescription>
-                    </xs:documentation>
-                </xs:annotation>
-            </xs:element>
+            <xs:choice>
+                <xs:element name="Representative" type="RepresentativeType" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="EN">
+                            <WCODescription>Repayment/Remission representative</WCODescription>
+                        </xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element name="RepresentativeEUCMD7" type="RRMRepresentativeType" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="EN">
+                            <WCODescription>Repayment/Remission representative</WCODescription>
+                        </xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+            </xs:choice>
             <xs:element name="RepresentativeId" type="AuthorisationIDType" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation xml:lang="EN">
@@ -1354,4 +1363,22 @@
             <xs:fractionDigits value="0"/>
         </xs:restriction>
     </xs:simpleType>
+
+    <xs:complexType name="RRMRepresentativeType">
+        <xs:complexContent>
+            <xs:extension base="RepresentativeType">
+                <xs:sequence>
+                    <xs:element name="RepresentativeIdentification" type="AuthorisationIDType" minOccurs="0" maxOccurs="1">
+                        <xs:annotation>
+                            <xs:documentation xml:lang="EN">
+                                <WCOFormat>an..17</WCOFormat>
+                                <WCODescription>Representative Identification EORI number</WCODescription>
+                            </xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
 </xs:schema>
