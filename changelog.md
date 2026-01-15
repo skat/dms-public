@@ -1,3 +1,6 @@
+### 2026-01-09
+* Updated DECLARATION_STATUS_RESPONSE fields from PascalCase to camelCase
+
 ### 2025-12-08
 * Corrected a bundle of inconsistencies to align with transit xsd-schema – several formatting updates, modality changes, fieldnames corrections and structure rearranging’s.
 * Aligning with NCTS-P6 and EUCDM version 7.0
