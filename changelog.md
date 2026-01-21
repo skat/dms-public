@@ -1,3 +1,6 @@
+### 2026-01-21
+* Updated DMS Temporary Storage XML Guide to version 1.6
+
 ### 2026-01-09
 * Updated DECLARATION_STATUS_RESPONSE fields from PascalCase to camelCase
 
