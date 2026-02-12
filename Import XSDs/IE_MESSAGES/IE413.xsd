@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-xmlns="http://cci.dgtaxud.ec" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
-targetNamespace="http://cci.dgtaxud.ec" xmlns:extensions="urn:eds:datamodel:EDS:EDS_EXTENSIONS:1" elementFormDefault="unqualified" attributeFormDefault="unqualified" version="1.0.2_3.00">
+           xmlns="http://cci.dgtaxud.ec" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
+           targetNamespace="http://cci.dgtaxud.ec" xmlns:extensions="urn:eds:datamodel:EDS:EDS_EXTENSIONS:1" elementFormDefault="unqualified" attributeFormDefault="unqualified" version="1.0.2_3.00">
     <!--=================================================================================================================-->
     <!--===== IE413: E_DEC_AMD                                                                                           -->
     <!--===== Customs Declaration Amendment                                                                              -->
@@ -11,7 +11,6 @@ targetNamespace="http://cci.dgtaxud.ec" xmlns:extensions="urn:eds:datamodel:EDS:
     <!--===== Include                                                                                                    -->
     <xs:include schemaLocation="../DMS_CCI_DS/CTYPES.xsd"/>
     <xs:include schemaLocation="../DMS_CCI_DS/HTYPES.xsd"/>
-    <xs:include schemaLocation="../DMS_CCI_DS/EXTENDED_CTYPES.xsd"/>
     <xs:import namespace="urn:eds:datamodel:EDS:EDS_EXTENSIONS:1" schemaLocation="../DMS_CCI_DS/EDS/EDS_EXTENSIONS.xsd"/>
     <!--=================================================================================================================-->
     <!--===== Root element                                                                                               -->
@@ -24,7 +23,7 @@ targetNamespace="http://cci.dgtaxud.ec" xmlns:extensions="urn:eds:datamodel:EDS:
         <xs:sequence>
             <xs:element name="Extensions" type="extensions:ExtensionType" minOccurs="0" maxOccurs="unbounded"/>
             <xs:group ref="MESSAGE"/>
-            <xs:element name="ImportOperation" minOccurs="1" maxOccurs="1" type="MCciOperationErmisType41">
+            <xs:element name="ImportOperation" minOccurs="1" maxOccurs="1" type="MCciOperationType41">
                 <xs:annotation>
                     <xs:documentation>
                         <description value="IMPORT OPERATION"/>
@@ -72,7 +71,7 @@ targetNamespace="http://cci.dgtaxud.ec" xmlns:extensions="urn:eds:datamodel:EDS:
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="Declarant" minOccurs="1" maxOccurs="1" type="MDeclarantErmisType01">
+            <xs:element name="Declarant" minOccurs="1" maxOccurs="1" type="MDeclarantType01">
                 <xs:annotation>
                     <xs:documentation>
                         <description value="DECLARANT"/>
@@ -101,7 +100,7 @@ targetNamespace="http://cci.dgtaxud.ec" xmlns:extensions="urn:eds:datamodel:EDS:
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="Representative" minOccurs="0" maxOccurs="1" type="MRepresentativeErmisType01">
+            <xs:element name="Representative" minOccurs="0" maxOccurs="1" type="MRepresentativeType01">
                 <xs:annotation>
                     <xs:documentation>
                         <description value="REPRESENTATIVE"/>
@@ -110,7 +109,7 @@ targetNamespace="http://cci.dgtaxud.ec" xmlns:extensions="urn:eds:datamodel:EDS:
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="Guarantee" minOccurs="0" maxOccurs="9" type="MGuaranteeErmisType">
+            <xs:element name="Guarantee" minOccurs="0" maxOccurs="9" type="MGuaranteeType">
                 <xs:annotation>
                     <xs:documentation>
                         <description value="GUARANTEE"/>
@@ -139,7 +138,7 @@ targetNamespace="http://cci.dgtaxud.ec" xmlns:extensions="urn:eds:datamodel:EDS:
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="GoodsShipment" minOccurs="1" maxOccurs="9999" type="MGoodsShipmentErmisType04">
+            <xs:element name="GoodsShipment" minOccurs="1" maxOccurs="9999" type="MGoodsShipmentType04">
                 <xs:annotation>
                     <xs:documentation>
                         <description value="GOODS SHIPMENT"/>
