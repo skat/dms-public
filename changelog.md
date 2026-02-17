@@ -1,4 +1,5 @@
 ### 2026-02-17
+* Updated Import XML Guide to version 1.19
 * Added XML Guide for CCI as version 0.4 (beta version)
 * Added Excel representation of CCI declarations as version 1.0
 * Added Excel representation of Export declarations as version 1.0
