@@ -1,3 +1,10 @@
+### 2026-02-17
+* Updated Import XML Guide to version 1.19
+* Added XML Guide for CCI as version 0.4 (beta version)
+* Added Excel representation of CCI declarations as version 1.0
+* Added Excel representation of Export declarations as version 1.0
+* Updated Excel representation of Import declarations to version 1.1
+
 ### 2026-01-21
 * Updated DMS Temporary Storage XML Guide to version 1.6
 
