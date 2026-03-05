@@ -1,3 +1,7 @@
+### 2026-03-05
+* Added AS4 Gateway – Sending large declarations as version 1.1.1
+* Updated DMS Declaration Search via AS4 to version 1.2
+
 ### 2026-02-17
 * Updated Import XML Guide to version 1.19
 * Added XML Guide for CCI as version 0.4 (beta version)
