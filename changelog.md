@@ -1,5 +1,6 @@
 ### 2026-03-23
 * DMS Import CCI System Guide as version 0.4 (beta version)
+* Updated Codelists/Warnings NOT resulting in rejections at goods presentatation
 
 ### 2026-03-05
 * Added AS4 Gateway – Sending large declarations as version 1.1.1
