@@ -1,3 +1,9 @@
+### 2026-04-15
+* Updated Test Case - B2 Standard Acceptance Authorisation on occasional basis to version 1.3
+* Updated Test Case - B2 Standard to version 1.5
+* Updated DMS Export XML Guide to version 1.32
+* Updated DMS_EXPORT to version 1.1
+
 ### 2026-03-23
 * DMS Import CCI System Guide as version 0.4 (beta version)
 * Updated Codelists/Warnings NOT resulting in rejections at goods presentatation
