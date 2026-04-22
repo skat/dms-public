@@ -1,3 +1,7 @@
+### 2026-04-22
+* Updated DMS Import XML Guide to version 1.20 - (A163 and RepaymentRemission)
+* Updated DMS_IMPORT to version 1.2
+
 ### 2026-04-15
 * Updated Test Case - B2 Standard Acceptance Authorisation on occasional basis to version 1.3
 * Updated Test Case - B2 Standard to version 1.5
