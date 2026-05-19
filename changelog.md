@@ -1,3 +1,13 @@
+### 2026-05-19
+* Delete Onboarding Documents/Onboarding - Import directory
+* Delete Onboarding Documents/Onboarding Guides/Certificate Miniguide v1.4.pdf
+* Delete Onboarding Documents/Onboarding Guides/Customer Portal Guide v1.0.pdf
+* Move Onboarding Documents/Onboarding Guides/DMS Connectivity Guide v1.17.pdf into AS4 Gateway - Connectivity folder
+* Move Onboarding Documents/Onboarding Guides/AS4 Gateway - multiple documents in a request.pdf into AS4 Gateway - Connectivity folder
+* Move Onboarding Documents/Onboarding Guides/AS4 Gateway – Sending large declarations v1.1.1.pdf into AS4 Gateway - Connectivity folder
+* Move Onboarding Documents/Onboarding Guides/AS4 Gateway - Response messages via push v1.2.pdf into AS4 Gateway - Connectivity folder
+* Added Onboarding Documents/Onboarding Guides/AS4 Gateway - Connectivity/AS4 Gateway - Notification Broker v1.1.pdf
+
 ### 2026-04-22
 * Updated DMS Import XML Guide to version 1.20 - (A163 and RepaymentRemission)
 * Updated DMS_IMPORT to version 1.2
