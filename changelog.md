@@ -1,3 +1,9 @@
+### 2026-05-26
+* Update testcase scripts for Standard Import H1-H5
+  * TransactionNatureCode set to either 11 or 41
+  * ItemChargeAmount set to match InvoiceAmount
+  * DispatchCountry removed from GIL
+
 ### 2026-05-19
 * Delete Onboarding Documents/Onboarding - Import directory
 * Delete Onboarding Documents/Onboarding Guides/Certificate Miniguide v1.4.pdf
