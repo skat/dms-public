@@ -3,6 +3,10 @@
   * TransactionNatureCode set to either 11 or 41
   * ItemChargeAmount set to match InvoiceAmount
   * DispatchCountry removed from GIL
+* Update testcase scripts for Export A1-A3
+  * Latitude-Measure.Content renamed to Text.Content
+  * Longitude-Measure.Content renamed to Text.Content
+  * ChangeReasonCode set to 124 (Invalidation)
 
 ### 2026-06-04
 * Update testcase scripts for Export B1
