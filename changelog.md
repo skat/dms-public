@@ -1,3 +1,9 @@
+### 2026-06-09
+* Update testcase scripts for Export A1-A3
+  * Latitude-Measure.Content renamed to Text.Content
+  * Longitude-Measure.Content renamed to Text.Content
+  * ChangeReasonCode set to 124 (Invalidation)
+
 ### 2026-06-04
 * Update testcase scripts for Export B1
   * BorderTransportMeansID set to FLIGHT1337
