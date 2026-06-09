@@ -1,3 +1,9 @@
+### 2026-06-09
+* Update testcase scripts for Amendment Import H1-H5
+  * TransactionNatureCode set to either 11 or 41
+  * ItemChargeAmount set to match InvoiceAmount
+  * DispatchCountry removed from GIL
+
 ### 2026-06-04
 * Update testcase scripts for Export B1
   * BorderTransportMeansID set to FLIGHT1337
