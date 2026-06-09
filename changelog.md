@@ -1,3 +1,11 @@
+### 2026-06-09
+* Update testcase scripts for Temporary Storage Gx
+  * Sequence must follow BR10015_086 (start from 1)
+  * TransportEquipment-Seal added with SealIdentifier
+  * LoadingLocation Identifier set to ADESC
+  * LoadingLocation sequence removed
+  * TransportContractDocument added TransDocIdentifier type N740
+
 ### 2026-06-04
 * Update testcase scripts for Export B1
   * BorderTransportMeansID set to FLIGHT1337
