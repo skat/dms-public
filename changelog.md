@@ -1,3 +1,9 @@
+### 2026-06-09
+* Update testcase scripts for Export A1-A3
+  * Latitude-Measure.Content renamed to Text.Content
+  * Longitude-Measure.Content renamed to Text.Content
+  * ChangeReasonCode set to 124 (Invalidation)
+
 ### 2026-05-26
 * Update testcase scripts for Standard Import H1-H5
   * TransactionNatureCode set to either 11 or 41
