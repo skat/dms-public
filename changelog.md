@@ -1,3 +1,8 @@
+### 2026-06-10
+* Update testcase scripts for Export B4
+  * TransactionNatureCode added with value 1
+  * ChangeReasonCode set to 122 (Invalidation)
+
 ### 2026-06-09
 * Update testcase scripts for Temporary Storage Gx
   * Sequence must follow BR10015_086 (start from 1)
