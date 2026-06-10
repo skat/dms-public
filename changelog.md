@@ -1,4 +1,6 @@
 ### 2026-06-10
+* Update testcase scripts for Export B4
+  * TransactionNatureCode added with value 1
 * Update testcase scripts for Export C1
   * Authorisation ID set to {{SDEAuthorisation}}
   * StatisticalValueAmount removed
