@@ -2,6 +2,12 @@
 * Update testcase scripts for Export B2 regular use
   * Authorisation ID set to {{OPOAuthorisation}}
   * TransactionNatureCode added with value 41
+* Update testcase scripts for Export B4
+  * TransactionNatureCode added with value 1
+* Update testcase scripts for Export C1
+  * Authorisation ID set to {{SDEAuthorisation}}
+  * StatisticalValueAmount removed
+  * TariffQuantity set to 123
   * ChangeReasonCode set to 122 (Invalidation)
 
 ### 2026-06-09
