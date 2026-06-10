@@ -1,3 +1,9 @@
+### 2026-06-10
+* Update testcase scripts for Export B2 regular use
+  * Authorisation ID set to {{OPOAuthorisation}}
+  * TransactionNatureCode added with value 41
+  * ChangeReasonCode set to 122 (Invalidation)
+
 ### 2026-06-09
 * Update testcase scripts for Temporary Storage Gx
   * Sequence must follow BR10015_086 (start from 1)
