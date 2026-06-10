@@ -1,4 +1,10 @@
 ### 2026-06-09
+* Update testcase scripts for Temporary Storage Gx
+  * Sequence must follow BR10015_086 (start from 1)
+  * TransportEquipment-Seal added with SealIdentifier
+  * LoadingLocation Identifier set to ADESC
+  * LoadingLocation sequence removed
+  * TransportContractDocument added TransDocIdentifier type N740
 * Update testcase scripts for Amendment Import H1-H5
   * TransactionNatureCode set to either 11 or 41
   * ItemChargeAmount set to match InvoiceAmount
