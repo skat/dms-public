@@ -1,3 +1,10 @@
+### 2026-06-12
+* Update testcase scripts for Export B3
+  * BorderTransportMeansID set to FLIGHT1337
+  * PreviousDocumentType set to N355
+  * GoodShipment-TradeTerms removed
+  * ChangeReasonCode set to 122 (Invalidation)
+
 ### 2026-06-10
 * Update testcase scripts for Export B2 regular use
   * Authorisation ID set to {{OPOAuthorisation}}
