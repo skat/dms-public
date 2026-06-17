@@ -4,6 +4,11 @@
   * This includes authorisation on occasional use
 
 ### 2026-06-12
+* Update DMS General System Guide.pdf
+  * Section 3.1: Updated with description of alternatives to standard notification push/pull process
+* Update DMS Connectivity Guide.pdf
+  * Section 4.2: Certificate renewal
+  * Section 8.1.2 Troubleshooting
 * Update testcase scripts for Export B3
   * BorderTransportMeansID set to FLIGHT1337
   * PreviousDocumentType set to N355
