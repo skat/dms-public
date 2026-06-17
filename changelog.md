@@ -1,3 +1,8 @@
+### 2026-06-16
+* Add DMS - Customs duty on low value consignments.pdf
+* Update Test Case - H4 Standard.pdf
+  * This includes authorisation on occasional use
+
 ### 2026-06-12
 * Update testcase scripts for Export B3
   * BorderTransportMeansID set to FLIGHT1337
