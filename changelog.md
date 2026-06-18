@@ -1,3 +1,12 @@
+### 2026-06-18
+* Update testcase scripts for Invalidation and Repayment (4C)
+  * ChangeReasonCode set to 122
+  * GoodsLocation added with customs office DK003102
+  * TraderCommodityCode added with hssc 080430
+  * TraderGoodsQuantity added with 15.000 kg
+  * RecoveryTitle removed from 4C auth
+  * NationalCode removed from DutyType
+
 ### 2026-06-16
 * Add DMS - Customs duty on low value consignments.pdf
 * Update Test Case - H4 Standard.pdf
