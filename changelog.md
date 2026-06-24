@@ -1,3 +1,7 @@
+### 2026-06-24
+* Update DMS - Customs duty on low value consignments.pdf to version 0.5
+  * Additions regarding guarantee vs. customs debt
+
 ### 2026-06-22
 * Update testcase scripts for Import H4 occasional use
   * SupportingDocument changed to AdditionalReference
