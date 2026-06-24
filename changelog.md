@@ -1,3 +1,7 @@
+### 2026-06-24
+* Update DMS - Customs duty on low value consignments.pdf to version 0.5
+  * Additions regarding guarantee vs. customs debt
+
 ### 2026-06-18
 * Update testcase scripts for Invalidation and Repayment (4C)
   * ChangeReasonCode set to 122
