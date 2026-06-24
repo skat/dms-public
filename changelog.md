@@ -2,6 +2,20 @@
 * Update DMS - Customs duty on low value consignments.pdf to version 0.5
   * Additions regarding guarantee vs. customs debt
 
+### 2026-06-22
+* Update testcase scripts for Import H4 occasional use
+  * SupportingDocument changed to AdditionalReference
+  * 8F IdentificationOfGoods added with 1 AM12345
+* Update testcase scripts for Export B2 regular use
+  * TransactionNatureCode added with value 41
+  * 8F CustomsOfficesOfDischarge set to DK003102
+  * 8F IdentificationOfGoods set to code 6
+  * 8F DetailsOfPlannedActivities changed to EUCDM7
+  * 8F GoodsOwner removed
+  * 8F FirstPlaceOfUseOrProcessing corrected for A and V
+  * 8F PlaceOfProcessingOrUse corrected for A and V
+  * 8F ProcessedProducts CommodityCode changed to EUCDM7
+
 ### 2026-06-18
 * Update testcase scripts for Invalidation and Repayment (4C)
   * ChangeReasonCode set to 122
