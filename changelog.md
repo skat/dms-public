@@ -1,3 +1,7 @@
+### 2026-06-26
+* Update codelists, rules and codes
+* Validation rules and Error codes - NOT MAINTAINED
+
 ### 2026-06-24
 * Update DMS - Customs duty on low value consignments.pdf to version 0.5
   * Additions regarding guarantee vs. customs debt
