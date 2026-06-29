@@ -1,3 +1,7 @@
+### 2026-06-29
+* Update of DMS Onboardingguide to version 2.3
+  * H7 description updated for low value consignments
+
 ### 2026-06-26
 * Update codelists, rules and codes
 * Validation rules and Error codes - NOT MAINTAINED
