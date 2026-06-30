@@ -1,3 +1,9 @@
+### 2026-06-30
+* Update testcase scripts for Import H7 for low value consignments
+  * Commodity Classification set to 482090
+  * Current GovernmentProcedure set to F49
+  * Importer set to DK09999981 with info
+
 ### 2026-06-29
 * Update of DMS Onboardingguide to version 2.3
   * H7 description updated for low value consignments
