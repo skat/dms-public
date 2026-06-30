@@ -1,4 +1,14 @@
 ### 2026-06-29
+* Update testcase scripts for Export Centralized Clerance
+  * Authorisation set to {{CCLAuthorisation}}
+  * BorderTransportMeansID set to FLIGHT1337
+  * TransactionNatureCode added with value 1
+* Update testcase scripts for Export Control
+  * BorderTransportMeansID set to FLIGHT1337
+  * TransactionNatureCode added with value 1
+  * PreviousDocumentType set to N380
+* Update testcase scripts for Export Victualling
+  * TransactionNatureCode added with value 52
 * Update of DMS Onboardingguide to version 2.3
   * H7 description updated for low value consignments
 
