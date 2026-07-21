@@ -1,3 +1,8 @@
+### 2026-07-21
+* Update XML Guides/DMS Import XML Guide.pdf to v1.21
+  * Adjustments to Extensions adding description of isRetrospective and isFallback
+  * Predeleted unreferenced footnotes from chapter 3 list
+
 ### 2026-06-30
 * Update testcase scripts for Import H7 for low value consignments
   * Commodity Classification set to 482090
