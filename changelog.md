@@ -1,3 +1,8 @@
+### 2026-08-06
+* Update XML Guides/DMS Export XML Guide.pdf to v1.33
+  * Adjusted LRN to accept most special characters
+  * Deleted unreferenced footnotes from chapter 3 list.
+
 ### 2026-07-21
 * Update XML Guides/DMS Import XML Guide.pdf to v1.21
   * Adjustments to Extensions adding description of isRetrospective and isFallback
