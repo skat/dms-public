@@ -1,3 +1,6 @@
+### 2026-08-17
+* Added testcase for NIM and NCM
+
 ### 2026-08-14
 * Update testcase scripts for Transit (D1, D2 & IE)
   * PresentationOfTheGoodsDateAndTime set to {{PresentationDateAndTime}}
