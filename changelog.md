@@ -1,3 +1,13 @@
+### 2026-08-14
+* Update testcase scripts for Transit (D1, D2 & IE)
+  * PresentationOfTheGoodsDateAndTime set to {{PresentationDateAndTime}}
+  * Name & Address removed from Holder
+  * CountryOfDispatch added with value SE
+  * ActiveBorderTransportMeans added clone from D1
+  * UCR reference added on consignment
+  * Name & Address removed from Consignor
+  * IncidentFlag removed from TransitOperation (IE007)
+
 ### 2026-08-07
 * Update XML Guides/DMS Import XML Guide.pdf to v1.22
 * Update XML Guides/DMS Export XML Guide.pdf to v1.33
