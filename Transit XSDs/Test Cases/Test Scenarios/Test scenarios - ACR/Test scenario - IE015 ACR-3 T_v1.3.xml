@@ -3,7 +3,7 @@
            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ncts.dgtaxud.ec">
     <messageSender>{{CVR}}</messageSender>
     <messageRecipient>NTA.DK</messageRecipient>
-    <preparationDateAndTime>2023-02-28T14:27:26</preparationDateAndTime>
+    <preparationDateAndTime>2026-08-24T12:34:56</preparationDateAndTime>
     <messageIdentification>messageIdentification</messageIdentification>
     <messageType>CC015C</messageType>
     <correlationIdentifier>correlationIdentifier</correlationIdentifier>
@@ -11,7 +11,7 @@
         <LRN>{{LRN}}</LRN>
         <declarationType>T</declarationType>
         <additionalDeclarationType>A</additionalDeclarationType>
-        <presentationOfTheGoodsDateAndTime>2022-09-10T11:10:29</presentationOfTheGoodsDateAndTime>
+        <presentationOfTheGoodsDateAndTime>{{PresentationDateAndTime}}</presentationOfTheGoodsDateAndTime>
         <security>2</security>
         <reducedDatasetIndicator>0</reducedDatasetIndicator>
         <bindingItinerary>0</bindingItinerary>
@@ -39,13 +39,6 @@
     </CustomsOfficeOfTransitDeclared>
     <HolderOfTheTransitProcedure>
         <identificationNumber>{{HolderEORI}}</identificationNumber>
-        <name>Name of the testing company</name>
-        <Address>
-            <streetAndNumber>Street and number</streetAndNumber>
-            <postcode>Post code</postcode>
-            <city>City</city>
-            <country>DK</country>
-        </Address>
     </HolderOfTheTransitProcedure>
     <Guarantee>
         <sequenceNumber>1</sequenceNumber>
@@ -59,19 +52,23 @@
         </GuaranteeReference>
     </Guarantee>
     <Consignment>
+        <countryOfDispatch>NO</countryOfDispatch>
         <countryOfDestination>DK</countryOfDestination>
         <containerIndicator>1</containerIndicator>
+        <modeOfTransportAtTheBorder>1</modeOfTransportAtTheBorder>
         <grossMass>6000</grossMass>
         <Consignor>
             <identificationNumber>{{ConsignorEORI}}</identificationNumber>
-            <name>Garneksporten</name>
+        </Consignor>
+        <Consignee>
+            <name>Importen A/S</name>
             <Address>
-                <streetAndNumber>Vestergade 11</streetAndNumber>
-                <postcode>8000</postcode>
-                <city>Aarhus</city>
+                <streetAndNumber>Vejen 2</streetAndNumber>
+                <postcode>8900</postcode>
+                <city>Randers</city>
                 <country>DK</country>
             </Address>
-        </Consignor>
+        </Consignee>
         <TransportEquipment>
             <sequenceNumber>1</sequenceNumber>
             <containerIdentificationNumber>MWCU1234567</containerIdentificationNumber>
@@ -106,6 +103,14 @@
             <sequenceNumber>2</sequenceNumber>
             <country>NO</country>
         </CountryOfRoutingOfConsignment>
+        <ActiveBorderTransportMeans>
+            <sequenceNumber>1</sequenceNumber>
+            <customsOfficeAtBorderReferenceNumber>DK000020</customsOfficeAtBorderReferenceNumber>
+            <typeOfIdentification>80</typeOfIdentification>
+            <identificationNumber>??-56984526487521</identificationNumber>
+            <nationality>AE</nationality>
+            <conveyanceReferenceNumber>AIR1234b</conveyanceReferenceNumber>
+        </ActiveBorderTransportMeans>
         <PlaceOfLoading>
             <country>DK</country>
             <location>Aarhus</location>
@@ -117,19 +122,15 @@
         <HouseConsignment>
             <sequenceNumber>1</sequenceNumber>
             <grossMass>6000.00</grossMass>
+            <TransportDocument>
+                <sequenceNumber>1</sequenceNumber>
+                <type>N714</type>
+                <referenceNumber>56788CV7732</referenceNumber>
+            </TransportDocument>
             <ConsignmentItem>
                 <goodsItemNumber>1</goodsItemNumber>
                 <declarationGoodsItemNumber>1</declarationGoodsItemNumber>
                 <declarationType>T1</declarationType>
-                <Consignee>
-                    <name>Importen A/S</name>
-                    <Address>
-                        <streetAndNumber>Vejen 2</streetAndNumber>
-                        <postcode>8900</postcode>
-                        <city>Randers</city>
-                        <country>DK</country>
-                    </Address>
-                </Consignee>
                 <Commodity>
                     <descriptionOfGoods>ACR-3, Yarn</descriptionOfGoods>
                     <CommodityCode>
@@ -152,25 +153,11 @@
                     <referenceNumber>AAA 5-110</referenceNumber>
                     <complementOfInformation>Fraførsel toldoplag</complementOfInformation>
                 </SupportingDocument>
-                <TransportDocument>
-                    <sequenceNumber>1</sequenceNumber>
-                    <type>N235</type>
-                    <referenceNumber>56788CV7732</referenceNumber>
-                </TransportDocument>
             </ConsignmentItem>
             <ConsignmentItem>
                 <goodsItemNumber>2</goodsItemNumber>
                 <declarationGoodsItemNumber>2</declarationGoodsItemNumber>
                 <declarationType>T2</declarationType>
-                <Consignee>
-                    <name>Joyboy A/S</name>
-                    <Address>
-                        <streetAndNumber>Vika 5</streetAndNumber>
-                        <postcode>2050</postcode>
-                        <city>Oslo</city>
-                        <country>NO</country>
-                    </Address>
-                </Consignee>
                 <Commodity>
                     <descriptionOfGoods>Textiles</descriptionOfGoods>
                     <CommodityCode>
@@ -187,25 +174,11 @@
                     <numberOfPackages>445</numberOfPackages>
                     <shippingMarks>Hugo Boss</shippingMarks>
                 </Packaging>
-                <TransportDocument>
-                    <sequenceNumber>1</sequenceNumber>
-                    <type>N235</type>
-                    <referenceNumber>56788CV7732</referenceNumber>
-                </TransportDocument>
             </ConsignmentItem>
             <ConsignmentItem>
                 <goodsItemNumber>3</goodsItemNumber>
                 <declarationGoodsItemNumber>3</declarationGoodsItemNumber>
                 <declarationType>T2</declarationType>
-                <Consignee>
-                    <name>Motorservice A/S</name>
-                    <Address>
-                        <streetAndNumber>Fjellet 45</streetAndNumber>
-                        <postcode>1005</postcode>
-                        <city>Bergen</city>
-                        <country>NO</country>
-                    </Address>
-                </Consignee>
                 <Commodity>
                     <descriptionOfGoods>Chainsaw blades</descriptionOfGoods>
                     <CommodityCode>
@@ -233,11 +206,6 @@
                     <quantity>200</quantity>
                     <complementOfInformation>Complement of Information</complementOfInformation>
                 </PreviousDocument>
-                <TransportDocument>
-                    <sequenceNumber>1</sequenceNumber>
-                    <type>N235</type>
-                    <referenceNumber>56788CV7732</referenceNumber>
-                </TransportDocument>
                 <AdditionalReference>
                     <sequenceNumber>1</sequenceNumber>
                     <type>Y032</type>
