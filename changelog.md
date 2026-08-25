@@ -1,3 +1,18 @@
+### 2026-08-25
+* Updated Test Scenarios - Transit.pdf to version 1.4
+  * Aligned with NCTS phase 6 - no incident in Arrival Notification
+* Updated testscenarios for Authorised consignor (ACR & SP)
+  * PresentationOfTheGoodsDateAndTime set to {{PresentationDateAndTime}}
+  * Name & Address removed from Holder
+  * CountryOfDispatch added with values CH,NO,GB
+  * ModeOfTransportAtTheBorder added with value 1
+  * Name & Address removed from Consignor
+  * Consignee from first GIL moved to MCL
+  * ActiveBorderTransportMeans added clone from D1
+  * TransportDocument moved from GIL to HCL
+* Updated testscenarios for Authorised consignee (ACE)
+  * Incident removed from Arrival Notification (IE007)
+
 ### 2026-08-17
 * Added testcase for NIM and NCM
 
