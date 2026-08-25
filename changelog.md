@@ -1,3 +1,12 @@
+### 2026-08-26
+* Updated DMS General System Guide to v2.10.pdf
+  * Section 3.2.1 Requesting notification. Section updated recommending making small notification request intervals on TFE-environment due to low capacity on TFE.
+  * Section 4.1.2 Requesting an EAD/TAD. Section points out that Declaration related to the EAD has to be in state "Goods released" to avoid error. 
+* Updated DMS Import XML Guide to v1.23
+  * Comments to Supporting documents (12 03 002 000) is updated stating that of Y-codes in CL10275 only Y128 is allowed.
+* Updated DMS Exit XML Guide to v1.17
+  * Updated description for 12 01 Previous Document stating that 12 01 002,3,4,5,6 also applies for A3.
+
 ### 2026-08-25
 * Updated Test Scenarios - Transit.pdf to version 1.4
   * Aligned with NCTS phase 6 - no incident in Arrival Notification
