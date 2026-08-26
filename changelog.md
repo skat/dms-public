@@ -1,8 +1,8 @@
 ### 2026-08-26
 * Updated DMS Import/Export Guide to v2.15.pdf
-  * Corrections to section 7.4 og which procedureTypes to use for which actions  
+  * Corrections to section 7.4 and which procedureTypes to use for which actions  
 
-### 2026-08-26
+### 2026-08-25
 * Updated DMS General System Guide to v2.10.pdf
   * Section 3.2.1 Requesting notification. Section updated recommending making small notification request intervals on TFE-environment due to low capacity on TFE.
   * Section 4.1.2 Requesting an EAD/TAD. Section points out that Declaration related to the EAD has to be in state "Goods released" to avoid error. 
