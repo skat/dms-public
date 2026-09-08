@@ -1,3 +1,8 @@
+### 2026-09-08
+* Added new document "News for coming releases to DMS" to Release notes folder
+* Updated document DMS - Customs duty on low value consignments and general B2C handling fee v1.0.pdf
+  * Added information of EU Handling fee of 1 Nov 2026
+
 ### 2026-09-02
 * Updated DMS Notification Guide to v1.11.pdf
   * Updated table in section 3.1.14. 
