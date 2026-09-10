@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
            xmlns="urn:WCOLibraryE7TAXUDEUCDM52public"
+           xmlns:extensions="urn:eds:datamodel:EDS:EDS_EXTENSIONS:1"
            targetNamespace="urn:WCOLibraryE7TAXUDEUCDM52public"
            elementFormDefault="qualified" version="1.2.0">
     <xs:include schemaLocation="../DMS_DS/GEFEG/WCO_TS_DEC.xsd"/>
+    <xs:import namespace="urn:eds:datamodel:EDS:EDS_EXTENSIONS:1"
+               schemaLocation="../DMS_DS/EDS/EDS_EXTENSIONS.xsd"/>
 
     <xs:element name="Declaration" type="Declaration"/>
 
     <xs:complexType name="Declaration">
         <xs:sequence>
+            <xs:element name="Extensions" type="extensions:ExtensionType" minOccurs="0" maxOccurs="15"/>
             <xs:element name="functionalReference">
                 <xs:annotation>
                     <xs:documentation>
