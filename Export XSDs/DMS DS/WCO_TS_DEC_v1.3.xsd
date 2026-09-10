@@ -1963,6 +1963,12 @@
   <xs:simpleType name="Code.Content">
     <xs:restriction base="xs:token"/>
   </xs:simpleType>
+  <xs:simpleType name="AmendmentChangeReasonCodeContent">
+    <xs:restriction base="Code.Content">
+      <xs:maxLength value="3"/>
+      <xs:pattern value=".*[^\s].*"/>
+    </xs:restriction>
+  </xs:simpleType>
   <xs:simpleType name="Code.Name.Text">
     <xs:restriction base="xs:string"/>
   </xs:simpleType>
@@ -8447,6 +8453,12 @@
   </xs:complexType>
   <xs:simpleType name="Text.Content">
     <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:simpleType name="AmendmentChangeReasonTextContent">
+    <xs:restriction base="Text.Content">
+      <xs:maxLength value="512"/>
+      <xs:pattern value=".*[^\s].*"/>
+    </xs:restriction>
   </xs:simpleType>
   <xs:complexType name="Text.Type">
     <xs:sequence>
