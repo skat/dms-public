@@ -1,6 +1,7 @@
 # News for coming releases to DMS
 
 Here you will find news for coming updates to DMS. The page is specifically aimed for softwaredevelopers either building own customs systems or 3rd party system developers. 
+This is for information purposes only and will be updated continuously until the release implementation date. Always refer to the current documentation, including onboarding documents, for guidance.
 
 
 # Release 2.3.0 planned for Production 24 October 2026
@@ -18,15 +19,15 @@ Below is listed the XSD-changes introduced in this version. Note that there migh
 
 * ***Changes to WriteOffPackagingQuantityQuantityType in DMS_DS_v1.9.xsd***
 This change affects declarations B and C and Applications 4C and 8F. Fraction digits are being changed from 0 to 6, and total digits are increased from 8 to 22. See below:  
-Changed from:    
-<xs:simpleContent>  
+Changed from:  
+<<xs:simpleContent>>  
 <xs:restriction base="udt:QuantityType">  
 <xs:totalDigits value="8"/>  
 <xs:fractionDigits value="0"/>  
 </xs:restriction>  
 </xs:simpleContent>   
 To:  
-<xs:simpleContent>  
+<<xs:simpleContent>>  
 <xs:restriction base="udt:QuantityType">  
 <xs:totalDigits value="22"/>  
 <xs:minInclusive value="0"/>  
@@ -35,34 +36,21 @@ To:
 </xs:simpleContent>  
   
 * ***Allow 9999 goods items to be submitted in the XSDs***
-The elements listed below will have their cardinality increased from x999 to x9999. Note that although these elements also appear in Export AS4 XSDs (B* and C*), these will not be updated in the AS4 XSDs i.e. they will remain as they are prior to this change.     
+The elements listed below will have their cardinality increased from x999 to x9999.  
 TransportEquipment (DE 19 07 000 000), GoodsReference (19 07 044 000), GovernmentAgencyGoodsItem, ConsignmentItem (House and Master Item), HouseConsignment.  
-/*/GoodsShipment/Consignment/**TransportEquipment** (DE 19 07 000 000)  
-Applies to H* and I*  
-This element is already x9999 in the AS4 XSDs (at least as of R2.1.1)  
-/*/GoodsShipment/Consignment/TransportEquipment/**Goodsreference** (19 07 044 000)  
-Applies to H* and I*  
-/*/GoodsShipment/**GoodsShipmentItem**  
-Applies to H* and I*  
-In the AS4 XSDs, this is named "GovernmentAgencyGoodsItem"  
-/*/Consignment/ConsignmentItem  
-Applies to G*  
-Also known as Master Item  
-/*/Consignment/HouseConsignment/ConsignmentItem  
-Applies to G*  
-This is also known as House Item  
-Additionally, the following element will have its cardinality increased from x9999 to x99999:  
-/*/Consignment/HouseConsignment  
-Applies to G*  
+Additionally, Consignment/HouseConsignment will have its cardinality increased from x9999 to x99999.  
+ 
 
-* ***Allowing isRetrospective on G4G3 and G5 declaration by adding Extensions element***
-A retrospective declaration is submitted after the goods have arrived and is only being used in specific business scenarios. Retrospective declarations should contain an acceptance date that is backdated. Use ‘isRetrospective’ in the Key element to submit a retrospective declaration. It only applies to a G4G3 declaration. A G4 declaration is a pre-lodge and cannot be retrospective. See the example below:  
-<ns2:Extensions>  
-<ext:SequenceNumeric>1</ext:SequenceNumeric>  
-<ext:Key>isRetrospective</ext:Key>  
-<ext:Value>0</ext:Value>  
-<ext:DataType>text</ext:DataType>  
+* ***Allowing isRetrospective on G4G3 and G5 declaration by adding Extensions element***  
+Adding a fix to allow submission of retrospective G4G3 and G5 declaration. Use ‘isRetrospective’ to submit a retrospective declaration. A G4 declaration is a pre-lodge and cannot be retrospective. 
+See the example illustrated below:  
+<<ns2:Extensions>>  
+<<ext:SequenceNumeric>1</ext:SequenceNumeric>  
+<<ext:Key>isRetrospective</ext:Key>  
+<<ext:Value>0</ext:Value>  
+<<ext:DataType>text</ext:DataType>  
 </ns2:Extensions>  
+
 
 * ***Update to Export GPRs and A1 Invalidations***  
 This change affects the following endpoints:  
