@@ -5,6 +5,8 @@ This is for information purposes only and will be updated continuously until the
 
 
 # Release 2.3.0 planned for Production 24 October 2026
+***Information below for this release has been updated 23 September 2026***
+
 This releases holds 2 important changes:
   * EU Handling Fee
   * XSD changes
@@ -18,32 +20,31 @@ This version is that DMS will support the new EU Handling Fee which will be intr
 Below is listed the XSD-changes introduced in this version. Note that there might be updates to the descriptions of below changes:
 
 * ***Changes to WriteOffPackagingQuantityQuantityType in DMS_DS_v1.9.xsd***
-This change affects declarations B and C and Applications 4C and 8F. Fraction digits are being changed from 0 to 6, and total digits are increased from 8 to 22. See below:  
+This change affects declarations B and C and Applications 4C and 8F. Fraction digits are being changed from 0 to 6, and total digits are decreased from 22 to 8. See below:  
 Changed from:  
-<<xs:simpleContent>>  
-<xs:restriction base="udt:QuantityType">  
-<xs:totalDigits value="8"/>  
-<xs:fractionDigits value="0"/>  
-</xs:restriction>  
-</xs:simpleContent>   
-To:  
 <<xs:simpleContent>>  
 <xs:restriction base="udt:QuantityType">  
 <xs:totalDigits value="22"/>  
 <xs:minInclusive value="0"/>  
 <xs:fractionDigits value="6"/>  
 </xs:restriction>  
+</xs:simpleContent>   
+To:  
+<<xs:simpleContent>>  
+<xs:restriction base="udt:QuantityType">  
+<xs:totalDigits value="8"/>    
+<xs:fractionDigits value="0"/>  
+</xs:restriction>  
 </xs:simpleContent>  
   
-* ***Allow 9999 goods items to be submitted in the XSDs***
+* ***Allow 9999 goods items to be submitted in DMS***
 The elements listed below will have their cardinality increased from x999 to x9999.  
 TransportEquipment (DE 19 07 000 000), GoodsReference (19 07 044 000), GovernmentAgencyGoodsItem, ConsignmentItem (House and Master Item), HouseConsignment.  
 Additionally, Consignment/HouseConsignment will have its cardinality increased from x9999 to x99999.  
- 
+While these were accepted in previous XSD validations, values above x999 would result in an error in DMS. This has been fixed and the cardinality of the elements above will be increased
 
-* ***Allowing isRetrospective on G4G3 and G5 declaration by adding Extensions element***  
-Adding a fix to allow submission of retrospective G4G3 and G5 declaration. Use ‘isRetrospective’ to submit a retrospective declaration. A G4 declaration is a pre-lodge and cannot be retrospective. 
-See the example illustrated below:  
+* ***Allowing isRetrospective on G4G3 and G5 declaration by adding Extensions element***
+Adding a fix to allow submission of retrospective G4G3 and G5 declaration. Namespace EDS_EXTENSIONS.xsd has been added to G4G3 and G5 XSD. Use ‘isRetrospective’ in Key element to submit a retrospective declaration. A G4 declaration is a pre-lodge and cannot be retrospective. See the example illustrated below:
 <<ns2:Extensions>>  
 <<ext:SequenceNumeric>1</ext:SequenceNumeric>  
 <<ext:Key>isRetrospective</ext:Key>  
@@ -51,12 +52,17 @@ See the example illustrated below:
 <<ext:DataType>text</ext:DataType>  
 </ns2:Extensions>  
 
-
 * ***Update to Export GPRs and A1 Invalidations***  
-This change affects the following endpoints:  
+This change affects the following endpoints:
 DMS.Export.Declaration.Amend.Goodspresented and DMS.Export.Exit.Declaration.Invalidate  
-The change includes making GovernmentAgencyGoodsItem mandatory for Export GPRs submitted through AS4  
-This change also includes making ChangeReason mandatory for A1 invalidations  
+
+  A1 Invalidation ChangeReasonCode and ChangeReasonText types are being changed in DMS_A1_INVALIDATION.xsd:
+  ChangeReasonCode Type is changed from Code.Content to AmendmentChangeReasonCodeContent.
+  ChangeReasonText type is changed from Text.Content to AmendmentChangeReasonTextContent.
+
+  Additionally, the elements ”writeOff” (complex) and “line_2” will be added under Previous Document (12 01) on goods item level for A1 and A2 XSD.
+
+  For Export C2PN, GovernmentAgencyGoodsItem will be removed from the XSD. 
   
 
 # Release 2.2.7 planned for Production 12 September 2026
