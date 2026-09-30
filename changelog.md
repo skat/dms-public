@@ -1,3 +1,12 @@
+### 2026-09-30
+* Updated DMS Temporary Storage XML Guide to v1.7
+  * Extension has been added to G4G3 and G5 declarations
+* Updated DMS Export XML Guide to v1.34
+  * Changed format for PackagingQuantityQuantity in Previous Document
+  * C2 PN has been updated to no longer include GovernmentAgencyGoodsItem
+* Updated DMS Exit XML Guide to v1.18
+  * Added writeOff complex and line_2 to previous document
+
 ### 2026-09-08
 * Corrected and added information to News for coming releases to Release notes/News for coming releases to DMS.md
 
