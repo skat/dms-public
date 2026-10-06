@@ -1,3 +1,6 @@
+### 2026-10-06
+* Updated Release notes/News for coming releases with new EU formatting rules and XSDs
+
 ### 2026-09-30
 * Updated DMS Temporary Storage XML Guide to v1.7
   * Extension has been added to G4G3 and G5 declarations
