@@ -4,6 +4,64 @@ Here you will find news for coming updates to DMS. The page is specifically aime
 This is for information purposes only and will be updated continuously until the release implementation date. Always refer to the current documentation, including onboarding documents, for guidance.
 
 
+
+# New EU validation rules for export messages entered into force across the EU on 1 October 2026.
+6 October 2026
+
+As part of the transition to the common European export system (AES Phase 1), the EU is tightening its data quality requirements. The changes mean that a number of formats, including those relating to customs offices and means of transport, are being significantly tightened.  
+As the changes have already been activated centrally at EU level, you may experience that your AER (Anticipated Export Record) / IE501 is rejected immediately in another country if the data does not comply with the new standards.  
+The changes means that the AES (Export) related XSD’s are generally being updated. In Denmark, the new validation rules are expected to be implemented in DMS with version 2.3.0 (expected to go into production on 24 October 2026), after which declarations containing errors will be rejected directly by the Danish system. The updated XSD’s shall be updated on TFE on 8 October 2026 and also made available on Github at the same time.
+
+In connection with this rollout, you should pay particular attention to the following:
+
+**1. Stricter format requirements for Customs Office codes**  
+The format for customs office references is being tightened so that the system will only accept official, structured codes.
+
+**Where:**
+The referenceNumber field under SupervisingCustomsOfficeType.
+
+**Before:**
+The system accepted free text or numeric values of up to 8 characters (e.g. 12345678).
+
+**Now:**
+The value must consist of exactly 8 characters and follow the format: 2 uppercase letters (country code) followed by 6 alphanumeric characters. Country codes must be written in uppercase.
+
+**Example:**
+DK123456 is valid. Formats such as Dk123456, dk123456 or 12345678 will be rejected.
+
+**2. Prohibition of leading and trailing spaces in text and ID fields**  
+To ensure better data quality, leading and/or trailing spaces are no longer permitted in free-text fields, ID fields, etc.
+
+**Where:**
+The rule applies throughout and affects virtually all free-text and ID fields in the export declaration. This includes, among others:  
+- Transport IDs: DepartureTransportMeans, ActiveBorderTransportMeans and TransportEquipment  
+- Names and addresses: Company names, street names, house numbers and postal codes  
+- Goods and package data: Goods descriptions and shipping marks (ShippingMarks)  
+
+**Before:**
+Leading or trailing spaces in a field were typically ignored or accepted by the system.
+
+**Now:**
+If a value starts or ends with a space, schema validation will fail completely. Internal spaces and hyphens within the code remain fully permitted.
+
+**Example:**
+”CONT-123456” or ”CONT 123456” is valid. “ CONT-123456” (with a leading space) or ”CONT-123456 ” (with a trailing space) will be rejected.
+
+**Action:**
+It is strongly recommended that System-to-System solutions implement a general and automatic trim() function in their declarations, so that any hidden leading or trailing spaces are automatically removed before the XML file is generated and submitted to DMS.
+
+**3. New technical type names in the XML schema (no impact on data)**  
+As part of the update, a large number of fields have been given updated internal technical names in the schema in order to ensure a consistent structure across the EU.
+
+**Where:**
+This concerns a large number of SimpleTypes, including fields for addresses, email addresses, container numbers, goods descriptions, reference numbers and sequence numbers. Typically, a numeric suffix (such as "01" or "02") has been removed from the name, or the use of upper- and lower-case letters has been standardised.
+
+**impact:**
+The changes are purely cosmetic from a coding perspective. The validation rules themselves and the permitted values for these fields remain 100% unchanged. Data and integrations that were valid before the update remain fully valid after the update.
+
+**Action:**
+System-to-System users and software providers must ensure that their systems map to the new names in stypes.xsd. However, there is no need to change the data entered into the fields.
+
 # Release 2.3.0 planned for Production 24 October 2026
 ***Information below for this release has been updated 23 September 2026***
 
