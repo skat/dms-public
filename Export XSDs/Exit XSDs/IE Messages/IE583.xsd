@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://ecs.dgtaxud.ec" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" targetNamespace="http://ecs.dgtaxud.ec" elementFormDefault="unqualified" attributeFormDefault="unqualified" version="51.8.2" vc:minVersion="1.1">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://ecs.dgtaxud.ec" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" targetNamespace="http://ecs.dgtaxud.ec" elementFormDefault="unqualified" attributeFormDefault="unqualified" version="60.4.15" vc:minVersion="1.1">
     <!--================================================================================-->
     <!--===== IE583: E_EXT_RSP                                                                -->
     <!--===== INFORMATION ON NON-EXITED EXPORT                                                -->
     <!--===== AES P1 Phase Definition                                                         -->
-    <!--===== XSD Version 51.8.6                                                              -->
+    <!--===== XSD Version 60.4.15                                                             -->
     <!--================================================================================-->
     <!--================================================================================-->
     <!--===== Includes                                                                        -->
     <!--================================================================================-->
-    <xs:include schemaLocation="../../DMS DS/Exit_DS/ctypes.xsd" />
+    <xs:include schemaLocation="../../DMS DS/Exit_DS/ctypes.xsd"/>
     <xs:include schemaLocation="../../DMS DS/Exit_DS/htypes.xsd" />
     <!--================================================================================-->
     <!--===== Root Element                                                                    -->
@@ -71,13 +71,8 @@
                     </xs:documentation>
                 </xs:annotation>
                 <xs:complexType>
-                    <xs:annotation>
-                        <xs:documentation>
-                            <usedBy>Used by 1/83 messages: CC583C</usedBy>
-                        </xs:documentation>
-                    </xs:annotation>
                     <xs:sequence>
-                        <xs:element name="MRN" type="MrnContentType05">
+                        <xs:element name="MRN" type="MRNContentType05">
                             <xs:annotation>
                                 <xs:documentation>
                                     <description value="MRN" />
@@ -118,13 +113,8 @@
                     </xs:documentation>
                 </xs:annotation>
                 <xs:complexType>
-                    <xs:annotation>
-                        <xs:documentation>
-                            <usedBy>Used by 14/83 messages: CC504C, CC509C, CC512C, CC513C, CC514C, CC515C, CC528C, CC529C, CC551C, CC556C, CC560C, CC582C, CC583C, CC599C</usedBy>
-                        </xs:documentation>
-                    </xs:annotation>
                     <xs:sequence>
-                        <xs:element name="referenceNumber" type="ReferenceNumberContentType06">
+                        <xs:element name="referenceNumber" type="ReferenceNumberContentType03">
                             <xs:annotation>
                                 <xs:documentation>
                                     <description value="Reference number" />
@@ -146,13 +136,8 @@
                     </xs:documentation>
                 </xs:annotation>
                 <xs:complexType>
-                    <xs:annotation>
-                        <xs:documentation>
-                            <usedBy>Used by 3/83 messages: CC548C, CC583C, CD588C</usedBy>
-                        </xs:documentation>
-                    </xs:annotation>
                     <xs:sequence>
-                        <xs:element name="referenceNumber" type="ReferenceNumberContentType06">
+                        <xs:element name="referenceNumber" type="ReferenceNumberContentType03">
                             <xs:annotation>
                                 <xs:documentation>
                                     <description value="Reference number" />
@@ -174,13 +159,8 @@
                     </xs:documentation>
                 </xs:annotation>
                 <xs:complexType>
-                    <xs:annotation>
-                        <xs:documentation>
-                            <usedBy>Used by 5/82 messages: CC511C, CC513C, CC514C, CC515C, CC583C</usedBy>
-                        </xs:documentation>
-                    </xs:annotation>
                     <xs:sequence>
-                        <xs:element name="identificationNumber" type="IdentificationNumberContentType01">
+                        <xs:element name="identificationNumber" type="IdentificationNumberContentType02">
                             <xs:annotation>
                                 <xs:documentation>
                                     <description value="Identification number" />
@@ -190,7 +170,7 @@
                                 </xs:documentation>
                             </xs:annotation>
                         </xs:element>
-                        <xs:element name="name" minOccurs="0" type="NameContentType01">
+                        <xs:element name="name" minOccurs="0" type="NameContentType">
                             <xs:annotation>
                                 <xs:documentation>
                                     <description value="Name" />
@@ -208,13 +188,8 @@
                                 </xs:documentation>
                             </xs:annotation>
                             <xs:complexType>
-                                <xs:annotation>
-                                    <xs:documentation>
-                                        <usedBy>Used by 8/82 messages: CC507C, CC511C, CC513C, CC514C, CC515C, CC583C, CC613C, CC615C</usedBy>
-                                    </xs:documentation>
-                                </xs:annotation>
                                 <xs:sequence>
-                                    <xs:element name="streetAndNumber" type="StreetAndNumberContentType01">
+                                    <xs:element name="streetAndNumber" type="StreetAndNumberContentType">
                                         <xs:annotation>
                                             <xs:documentation>
                                                 <description value="Street and number" />
@@ -224,7 +199,7 @@
                                             </xs:documentation>
                                         </xs:annotation>
                                     </xs:element>
-                                    <xs:element name="postcode" minOccurs="0" type="PostcodeContentType01">
+                                    <xs:element name="postcode" minOccurs="0" type="PostcodeContentType">
                                         <xs:annotation>
                                             <xs:documentation>
                                                 <description value="Postcode" />
@@ -248,7 +223,7 @@
                                         <xs:annotation>
                                             <xs:documentation>
                                                 <description value="Country" />
-                                                <codeList code="CL248" type="business" name="Countrycodesforaddress" />
+                                                <codeList code="CL248" type="business" name="CountryCodesForAddress" />
                                                 <format value="a2" />
                                                 <optionality value="R" />
                                                 <xsdBaseType value="CountryCodeType" />
@@ -266,13 +241,8 @@
                                 </xs:documentation>
                             </xs:annotation>
                             <xs:complexType>
-                                <xs:annotation>
-                                    <xs:documentation>
-                                        <usedBy>Used by 12/82 messages: CC507C, CC511C, CC513C, CC514C, CC515C, CC547C, CC570C, CC573C, CC583C, CC613C, CC614C, CC615C</usedBy>
-                                    </xs:documentation>
-                                </xs:annotation>
                                 <xs:sequence>
-                                    <xs:element name="name" type="NameContentType01">
+                                    <xs:element name="name" type="NameContentType">
                                         <xs:annotation>
                                             <xs:documentation>
                                                 <description value="Name" />
@@ -292,7 +262,7 @@
                                             </xs:documentation>
                                         </xs:annotation>
                                     </xs:element>
-                                    <xs:element name="eMailAddress" minOccurs="0" type="EMailAddressContentType01">
+                                    <xs:element name="eMailAddress" minOccurs="0" type="EMailAddressContentType">
                                         <xs:annotation>
                                             <xs:documentation>
                                                 <description value="E-mail address" />
@@ -316,13 +286,8 @@
                     </xs:documentation>
                 </xs:annotation>
                 <xs:complexType>
-                    <xs:annotation>
-                        <xs:documentation>
-                            <usedBy>Used by 10/82 messages: CC511C, CC513C, CC514C, CC515C, CC570C, CC573C, CC583C, CC613C, CC614C, CC615C</usedBy>
-                        </xs:documentation>
-                    </xs:annotation>
                     <xs:sequence>
-                        <xs:element name="identificationNumber" type="IdentificationNumberContentType05">
+                        <xs:element name="identificationNumber" type="IdentificationNumberContentType03">
                             <xs:annotation>
                                 <xs:documentation>
                                     <description value="Identification number" />
@@ -350,13 +315,8 @@
                                 </xs:documentation>
                             </xs:annotation>
                             <xs:complexType>
-                                <xs:annotation>
-                                    <xs:documentation>
-                                        <usedBy>Used by 12/82 messages: CC507C, CC511C, CC513C, CC514C, CC515C, CC547C, CC570C, CC573C, CC583C, CC613C, CC614C, CC615C</usedBy>
-                                    </xs:documentation>
-                                </xs:annotation>
                                 <xs:sequence>
-                                    <xs:element name="name" type="NameContentType01">
+                                    <xs:element name="name" type="NameContentType">
                                         <xs:annotation>
                                             <xs:documentation>
                                                 <description value="Name" />
@@ -376,7 +336,7 @@
                                             </xs:documentation>
                                         </xs:annotation>
                                     </xs:element>
-                                    <xs:element name="eMailAddress" minOccurs="0" type="EMailAddressContentType01">
+                                    <xs:element name="eMailAddress" minOccurs="0" type="EMailAddressContentType">
                                         <xs:annotation>
                                             <xs:documentation>
                                                 <description value="E-mail address" />
@@ -400,13 +360,8 @@
                     </xs:documentation>
                 </xs:annotation>
                 <xs:complexType>
-                    <xs:annotation>
-                        <xs:documentation>
-                            <usedBy>Used by 1/82 messages: CC583C</usedBy>
-                        </xs:documentation>
-                    </xs:annotation>
                     <xs:sequence>
-                        <xs:element name="identificationNumber" minOccurs="0" type="IdentificationNumberContentType05">
+                        <xs:element name="identificationNumber" minOccurs="0" type="IdentificationNumberContentType03">
                             <xs:annotation>
                                 <xs:documentation>
                                     <description value="Identification number" />
@@ -416,7 +371,7 @@
                                 </xs:documentation>
                             </xs:annotation>
                         </xs:element>
-                        <xs:element name="name" minOccurs="0" type="NameContentType01">
+                        <xs:element name="name" minOccurs="0" type="NameContentType">
                             <xs:annotation>
                                 <xs:documentation>
                                     <description value="Name" />
@@ -434,13 +389,8 @@
                                 </xs:documentation>
                             </xs:annotation>
                             <xs:complexType>
-                                <xs:annotation>
-                                    <xs:documentation>
-                                        <usedBy>Used by 8/82 messages: CC507C, CC511C, CC513C, CC514C, CC515C, CC583C, CC613C, CC615C</usedBy>
-                                    </xs:documentation>
-                                </xs:annotation>
                                 <xs:sequence>
-                                    <xs:element name="streetAndNumber" type="StreetAndNumberContentType01">
+                                    <xs:element name="streetAndNumber" type="StreetAndNumberContentType">
                                         <xs:annotation>
                                             <xs:documentation>
                                                 <description value="Street and number" />
@@ -450,7 +400,7 @@
                                             </xs:documentation>
                                         </xs:annotation>
                                     </xs:element>
-                                    <xs:element name="postcode" minOccurs="0" type="PostcodeContentType01">
+                                    <xs:element name="postcode" minOccurs="0" type="PostcodeContentType">
                                         <xs:annotation>
                                             <xs:documentation>
                                                 <description value="Postcode" />
@@ -474,7 +424,7 @@
                                         <xs:annotation>
                                             <xs:documentation>
                                                 <description value="Country" />
-                                                <codeList code="CL248" type="business" name="Countrycodesforaddress" />
+                                                <codeList code="CL248" type="business" name="CountryCodesForAddress" />
                                                 <format value="a2" />
                                                 <optionality value="R" />
                                                 <xsdBaseType value="CountryCodeType" />
@@ -495,18 +445,14 @@
                     </xs:documentation>
                 </xs:annotation>
                 <xs:complexType>
-                    <xs:annotation>
-                        <xs:documentation>
-                            <usedBy>Used by 1/82 messages: CC583C</usedBy>
-                        </xs:documentation>
-                    </xs:annotation>
                     <xs:sequence>
-                        <xs:element name="sequenceNumber" type="SequenceNumberContentType">
+                        <xs:element name="sequenceNumber" type="SequenceNumberContentType02">
                             <xs:annotation>
                                 <xs:documentation>
                                     <description value="Sequence number" />
                                     <format value="n..5" />
                                     <optionality value="R" />
+                                    <xsdBaseType value="NumericWithoutZero_5" />
                                 </xs:documentation>
                             </xs:annotation>
                         </xs:element>
@@ -514,7 +460,7 @@
                             <xs:annotation>
                                 <xs:documentation>
                                     <description value="Type" />
-                                    <codeList code="CL170" type="business" name="ClTypeOfAlternativeEvidence" />
+                                    <codeList code="CL170" type="business" name="TypeOfAlternativeEvidence" />
                                     <format value="n2" />
                                     <optionality value="R" />
                                 </xs:documentation>
@@ -528,13 +474,8 @@
                                 </xs:documentation>
                             </xs:annotation>
                             <xs:complexType>
-                                <xs:annotation>
-                                    <xs:documentation>
-                                        <usedBy>Used by 1/83 messages: CC583C</usedBy>
-                                    </xs:documentation>
-                                </xs:annotation>
                                 <xs:sequence>
-                                    <xs:element name="sequenceNumber" type="SequenceNumberContentType">
+                                    <xs:element name="sequenceNumber" type="SequenceNumberContentType02">
                                         <xs:annotation>
                                             <xs:documentation>
                                                 <description value="Sequence number" />
@@ -554,7 +495,7 @@
                                             </xs:documentation>
                                         </xs:annotation>
                                     </xs:element>
-                                    <xs:element name="referenceNumber" type="ReferenceNumberContentType07">
+                                    <xs:element name="referenceNumber" type="ReferenceNumberContentType01">
                                         <xs:annotation>
                                             <xs:documentation>
                                                 <description value="Reference number" />
