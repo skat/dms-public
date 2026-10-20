@@ -5,6 +5,20 @@ This is for information purposes only and will be updated continuously until the
 
 
 
+      
+
+# Discontinuation of Test Authorisations in the DMS TFE Test Environment.
+20 October 2026
+
+As of 26 October 2026, we will unfortunately no longer be able to issue test authorisations (customs decisions) for use in the DMS TFE test environment.
+
+This is because, from that date, the test environment will contain an exact copy of the production database, meaning that the creation of test authorisations will no longer be possible.
+
+We therefore recommend using genuine authorisations issued by Danish Customs to your customers instead.
+
+We appreciate that this change may cause inconvenience and make testing more challenging. We are currently exploring alternative solutions and will provide further information as soon as possible.
+
+
 # New EU validation rules for export messages entered into force across the EU on 1 October 2026.
 6 October 2026
 
