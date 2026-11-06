@@ -7,11 +7,11 @@ This is for information purposes only and will be updated continuously until the
 
       
 # Hotfix regarding new EU Validation rules. 
-4 November 2026
+6 November 2026
 
 In relation to the post below of 6 October regarding new EU validation rules for export messages we still experience formatting error regarding leading and trailing whitespaces in certain fields. The reason is that XSD’s weren’t updated completely. 
 
-Those errors are causing serious problems in the EU-domain resulting in delays and we need to hotfix those problems. Hotfix will be implemented on TFE on xx-xx-xxxx and on PROD on xx-xx-xxxx. New XSD’s will be published on Github asap. 
+Those errors are causing serious problems in the EU-domain resulting in delays and we need to hotfix those problems. Hotfix has today 06-11-2026 been implemented on TFE. Implementation on PROD will take place Tueday 10-11-2026. New XSD’s will be published on Github asap. 
 
 We request you to implement format validations that ensure that leading and trailing whitespaces aren’t allowed for the following field for export declarations (e.g. “ West Street 27 “ is not allowed): 
 
