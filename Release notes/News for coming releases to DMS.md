@@ -6,7 +6,7 @@ This is for information purposes only and will be updated continuously until the
 
 
 # Release 2.3.1 planned for production 28 November 2026
-4 November 2026
+9 November 2026
 
 This release holds 2 important changes:
 -	New CWMUCS notification
