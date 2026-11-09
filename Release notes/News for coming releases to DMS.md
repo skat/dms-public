@@ -5,6 +5,19 @@ This is for information purposes only and will be updated continuously until the
 
 
 
+# Release 2.3.1 planned for production 28 November 2026
+4 November 2026
+
+This release holds 2 important changes:
+-	New CWMUCS notification
+-	Update H7 XSD as 14 03 038 000 'Method of Payment' became mandatory on H7 as of July 1st, with the introduction of the 3€ fee
+
+New CWMUCS notification
+For Gx and GRE declarations you will, instead of receiving a CWMROG notification, receive CWMUCS – Under Customs Supervision. Please refer to DMS Notification Guide found on Github.
+
+Update H7 XSD
+14 03 038 000 'Method of Payment' became mandatory on H7 as of July 1st, with the introduction of the 3€ fee. This will be reflected in the WCO_DEC_2_DMS.xsd found on Github.
+
       
 # Hotfix regarding new EU Validation rules. 
 6 November 2026
