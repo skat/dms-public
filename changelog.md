@@ -1,3 +1,6 @@
+### 2026-11-09
+* Updated Onboarding Documents/DMS Notification Guide to v1.12
+
 ### 2026-10-06
 * Updated Release notes/News for coming releases with new EU formatting rules and XSDs
 
