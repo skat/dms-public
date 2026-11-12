@@ -3,6 +3,9 @@
   * Added optional section DutyTaxFee to GIL/Commodity
     * Change in 'Import XSDs\H7_XSDS\DMS_H7.xsd - v1.10
     * Change in 'Import XSDs\H7_XSDS\DMS_H7_AMENDMENT_CORRECTION.xsd - v1.9
+* Hotfix package v.2.3.0.5
+  * Updated text formats to restrict whitespaces
+    * Change in 'Export XSDs/DMS DS/DMS_DS_v1.9.xsd'
 
 ### 2026-11-09
 * Updated Onboarding Documents/DMS Notification Guide to v1.12
