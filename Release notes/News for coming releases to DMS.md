@@ -6,18 +6,16 @@ This is for information purposes only and will be updated continuously until the
 
 
 # Release 2.3.1 planned for production 28 November 2026
-9 November 2026
+Updated 18 November 2026
 
-This release holds 2 important changes:
--	New CWMUCS notification
--	Update H7 XSD as 14 03 038 000 'Method of Payment' became mandatory on H7 as of July 1st, with the introduction of the 3€ fee
+This release holds 2 important changes:  
+•	New CWMUCS notification  
+•	Update H7 XSD as 14 03 038 000 'Method of Payment' has been added  
 
-New CWMUCS notification
-For Gx and GRE declarations you will, instead of receiving a CWMROG notification, receive CWMUCS – Under Customs Supervision. Please refer to DMS Notification Guide found on Github.
+New CWMUCS notification For Gx and GRE declarations you will, instead of receiving a CWMROG notification, receive CWMUCS – Under Customs Supervision. Please refer to DMS Notification Guide found on Github.
 
-Update H7 XSD
-14 03 038 000 'Method of Payment' became mandatory on H7 as of July 1st, with the introduction of the 3€ fee. This will be reflected in the WCO_DEC_2_DMS.xsd found on Github.
-
+Update H7 and H7 amendment XSD. Element 14 03 038 000 'Method of Payment' has been added as an optional field. The DMS system automatically takes into account whether the declarant's EORI has the necessary guarantee, thereby determining whether the declaration is to be selected for cash payment or not. If the declarant does not have the necessary guarantee, this will thus be caught by the system and the declaration will be selected for manual cash payment. The field can therefore be left blank. The field only needs to be filled in in special cases, for instance where comprehensive guarantee is used, but one nevertheless wishes for the H7 declaration to be handled via manual cash payment. In such cases, the code "A - cash payment" must be used. The remaining codes (B-V) cannot currently be used.became mandatory on H7 as of July 1st, with the introduction of the 3€ fee.   
+  
       
 # Hotfix regarding new EU Validation rules. 
 6 November 2026
